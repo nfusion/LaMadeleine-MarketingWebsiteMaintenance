@@ -1,0 +1,6 @@
+\.DS_Store
+searchreplacedb2\.php
+wp-content/uploads
+\.sass-cache
+\.hgignore
+wp-config\.php
