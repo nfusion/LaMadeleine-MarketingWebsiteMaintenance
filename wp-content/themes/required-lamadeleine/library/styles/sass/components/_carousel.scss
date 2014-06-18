@@ -1,0 +1,139 @@
+/**
+* La Madeleine
+* Carousel component
+**/
+
+/* Swipe.js styles */
+// https://github.com/thebird/Swipe
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Custom carousel styles */
+#carousel{
+  .carousel-text{
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    pointer-events:none;
+  }
+  .btn{
+    pointer-events:auto;
+  }
+  h1{
+    font-size: 14px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $darkBrown;
+  }
+  p.subhead{
+    font-style: italic;
+    color: $darkBrown;
+    line-height: 1.2;
+  }
+  .carousel-paginate{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    .dot{
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      margin: 0 5px;
+      background: $white;
+      @include border-radius(11px);
+      @include opacity(0.5);
+      &:hover{
+        cursor: pointer;
+        @include opacity(0.75);
+      }
+      &.active{
+        @include opacity(1);
+      }
+    }
+  }
+}
+
+// Carousel controls for no touch only
+.no-touch #carousel{
+  .carousel-controls{
+    width: 100%;
+    padding: 0 10px;
+    position: absolute;
+    top: 45%;
+    .control{
+      width: 40px;
+      height: 40px;
+      color: $white;
+      background: $darkBrown;
+      @include border-radius(40px);
+      @include opacity (0.8);
+      @include transition-duration(0.25s);
+      &:hover{
+        @include opacity(1);
+        cursor: pointer;
+      }
+    }
+    .icon{
+      font-size: 24px;
+    }
+    .control.prev{
+      padding: 8px 6px;
+      float: left;
+    }
+    .control.next{
+      padding: 8px 10px;
+      float: right;
+    }
+  }
+}
+
+@media (min-width: $medium-screen-min){
+  #carousel{
+    h1{
+      font-size: 22px;
+    }
+    p{
+      font-size: 16px;
+    }
+    .carousel-paginate{
+      height: 40px;
+    }
+  }
+}
+
+@media (min-width: $large-screen-min){
+  #carousel{
+    .carousel-text{
+      padding: 20px;
+    }
+    h1{
+      font-size: $h1-font-size;
+    }
+    p{
+      font-size: 20px;
+    }
+  }
+}

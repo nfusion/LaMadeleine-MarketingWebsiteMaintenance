@@ -1,0 +1,101 @@
+/**
+* La Madeleine
+* Global header layout
+**/
+
+#header{
+	width: 100%;
+	height: 70px;
+	padding: 8px 10px;
+	text-align: center;
+	position: relative;
+	z-index: 101;
+	background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
+	.header-wrapper{
+		max-width: 1140px;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+	}
+	.logo{
+		width: 200px;
+		height: auto;
+	}
+	.tagline{
+		display: none;
+	}
+	.icon-menu{
+		float: left;
+		position: absolute;
+		top: 5px;
+		left: 0;
+		font-size: 40px;
+		color: $lightCream;
+		&:before{
+			@include lam-text-shadow();
+		}
+		span{
+			visibility: hidden;
+		}
+	}
+	.icon-phone{
+		position: absolute;
+		top: 2px;
+		right: 0;
+		font-size: 50px;
+		color: $lightCream;
+		@include lam-text-shadow();
+		@include rotate(-45deg);
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#header{
+		height: 80px;
+		padding: 13px 15px;
+		background-position: 0 0;
+		.logo-wrapper{
+			float: right;
+		}
+		.logo{
+			float: left;
+		}
+		.tagline{
+			display: block;
+			float: left;
+			position: relative;
+			top: 19px;
+			left: 2px;
+		}
+		.icon-menu{
+			&:hover{
+				cursor: pointer;
+			}
+			span{
+				visibility: visible;
+				font-size: $h3-font-size;
+				color: $darkBrown;
+				font-family: $sans-serif;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				position: relative;
+				top: -10px;
+				left: 8px;
+			}
+		}
+		.icon-phone{
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $large-screen-min){
+	#header{
+		.logo-wrapper{
+			padding-right: 20px;
+		}
+		.icon-menu{
+			padding-left: 20px;
+		}
+	}
+}
