@@ -97,7 +97,7 @@ function process_menu($mypod,$daypart){
     
     //$menu = explode(',', $menu_categories);
     //$menu = array_flip(explode(',', $menu_categories));
-    $menu = array_fill_keys(explode(',', $menu_categories),[]);
+    $menu = array_fill_keys(explode(',', $menu_categories),array());
     
     if($mypod->total_found()){
         while( $mypod->fetch() ) {
