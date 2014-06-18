@@ -1,6 +1,0 @@
-
-Demo: http://www.codespacing.com/
-
-To get start: http://www.codespacing.com/progress-map-get-start/
-
-Shortcodes documentation: http://www.codespacing.com/progress-map-shortcodes/
