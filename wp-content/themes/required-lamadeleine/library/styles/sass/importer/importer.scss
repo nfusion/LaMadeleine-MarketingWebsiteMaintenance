@@ -8,7 +8,7 @@ Author: nFusion (http://nfusion.com)
 @import "compass/utilities/general/clearfix";
 
 // STYLE GUIDE
-@import '../styleguide/media_queries';
+@import '../styleguide/media-queries';
 @import '../styleguide/mixins';
 @import '../styleguide/colors';
 @import '../styleguide/fonts';
@@ -23,6 +23,7 @@ Author: nFusion (http://nfusion.com)
 @import '../framework/utilities';
 @import '../framework/layout';
 @import '../framework/nav';
+@import '../framework/mobile-nav';
 @import '../framework/header';
 @import '../framework/override';
 
