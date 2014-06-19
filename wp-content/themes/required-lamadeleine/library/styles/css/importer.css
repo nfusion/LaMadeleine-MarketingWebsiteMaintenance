@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 /*
 SCSS custom theme styling importer
 Author: nFusion (http://nfusion.com)
@@ -93,12 +93,12 @@ a:hover {
 /* line 6, ../sass/styleguide/_buttons.scss */
 a.btn {
   color: #fffdf0;
-  font-family: "ostrich_sans_roundregular", sans-serif;
+  font-family: "Lato", sans-serif;
   font-style: none;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  padding: 6px 30px 7px 20px;
+  padding: 7px 30px 7px 20px;
   font-weight: bold;
   position: relative;
   -webkit-border-radius: 5px;
@@ -157,7 +157,7 @@ a.btn:after {
 /* line 43, ../sass/styleguide/_buttons.scss */
 a.btn-light {
   color: #7a3910;
-  font-family: "ostrich_sans_roundregular", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   line-height: 16px;
   text-transform: uppercase;
@@ -650,75 +650,76 @@ body {
 
 /* line 11, ../sass/framework/_layout.scss */
 #container {
-  max-width: 1140px;
   width: 100%;
+  max-width: 1140px;
+  min-width: 320px;
   margin: 0 auto;
   background: white;
 }
 
-/* line 18, ../sass/framework/_layout.scss */
+/* line 19, ../sass/framework/_layout.scss */
 #content {
   background: #fffdf0;
   position: relative;
 }
-/* line 21, ../sass/framework/_layout.scss */
+/* line 22, ../sass/framework/_layout.scss */
 #content #main {
   width: 100%;
   padding: 0;
 }
-/* line 25, ../sass/framework/_layout.scss */
+/* line 26, ../sass/framework/_layout.scss */
 #content #sidebar {
   width: 100%;
   padding: 0;
 }
-/* line 28, ../sass/framework/_layout.scss */
+/* line 29, ../sass/framework/_layout.scss */
 #content #sidebar .widget {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px dashed #cbaf9a;
 }
-/* line 32, ../sass/framework/_layout.scss */
+/* line 33, ../sass/framework/_layout.scss */
 #content #sidebar .widget:last-of-type {
   border-bottom: 0;
 }
-/* line 37, ../sass/framework/_layout.scss */
+/* line 38, ../sass/framework/_layout.scss */
 #content .sidebar-wrapper {
   padding: 10px;
 }
 
 @media (min-width: 980px) {
-  /* line 43, ../sass/framework/_layout.scss */
+  /* line 44, ../sass/framework/_layout.scss */
   #content {
     width: 100%;
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 46, ../sass/framework/_layout.scss */
+  /* line 47, ../sass/framework/_layout.scss */
   #content #main {
     width: 70%;
     float: left;
   }
-  /* line 50, ../sass/framework/_layout.scss */
+  /* line 51, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 30%;
     float: left;
   }
-  /* line 53, ../sass/framework/_layout.scss */
+  /* line 54, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper {
     padding: 15px 25px 0;
   }
-  /* line 55, ../sass/framework/_layout.scss */
+  /* line 56, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper .widget:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
   }
 }
 @media (min-width: 1140px) {
-  /* line 66, ../sass/framework/_layout.scss */
+  /* line 67, ../sass/framework/_layout.scss */
   #content #main {
     width: 72%;
   }
-  /* line 69, ../sass/framework/_layout.scss */
+  /* line 70, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 28%;
   }
@@ -880,6 +881,49 @@ body {
 /* line 114, ../sass/framework/_nav.scss */
 #nav .eclub p {
   font-size: 14px;
+}
+
+/**
+* La Madeleine
+* Mobile navigation
+**/
+/* line 6, ../sass/framework/_mobile-nav.scss */
+#mobile-nav {
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  overflow: hidden;
+}
+/* line 11, ../sass/framework/_mobile-nav.scss */
+#mobile-nav a {
+  display: block;
+  float: left;
+  width: 25%;
+  padding: 5px 2% 5px;
+  border-left: 1px solid #cbaf9a;
+}
+/* line 17, ../sass/framework/_mobile-nav.scss */
+#mobile-nav a.active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffdf0), color-stop(100%, #e7d5b8));
+  background-image: -webkit-linear-gradient(#fffdf0, #e7d5b8);
+  background-image: -moz-linear-gradient(#fffdf0, #e7d5b8);
+  background-image: -o-linear-gradient(#fffdf0, #e7d5b8);
+  background-image: linear-gradient(#fffdf0, #e7d5b8);
+}
+/* line 21, ../sass/framework/_mobile-nav.scss */
+#mobile-nav .nav-item {
+  font-size: 9px;
+  text-align: center;
+  color: #310d00;
+}
+/* line 25, ../sass/framework/_mobile-nav.scss */
+#mobile-nav .nav-item:first-child {
+  border: 0;
+}
+/* line 29, ../sass/framework/_mobile-nav.scss */
+#mobile-nav .icon {
+  font-size: 40px;
+  color: #7a3910;
 }
 
 /**
@@ -1069,11 +1113,12 @@ aside p {
 }
 /* line 49, ../sass/components/_carousel.scss */
 #carousel p.subhead {
+  font-family: "Playfair Display", serif;
   font-style: italic;
   color: #310d00;
   line-height: 1.2;
 }
-/* line 54, ../sass/components/_carousel.scss */
+/* line 55, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate {
   width: 100%;
   height: 30px;
@@ -1081,7 +1126,7 @@ aside p {
   position: absolute;
   bottom: 0;
 }
-/* line 60, ../sass/components/_carousel.scss */
+/* line 61, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate .dot {
   display: inline-block;
   width: 11px;
@@ -1096,26 +1141,26 @@ aside p {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-/* line 68, ../sass/components/_carousel.scss */
+/* line 69, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate .dot:hover {
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   opacity: 0.75;
 }
-/* line 72, ../sass/components/_carousel.scss */
+/* line 73, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate .dot.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 81, ../sass/components/_carousel.scss */
+/* line 82, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls {
   width: 100%;
   padding: 0 10px;
   position: absolute;
   top: 45%;
 }
-/* line 86, ../sass/components/_carousel.scss */
+/* line 87, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control {
   width: 40px;
   height: 40px;
@@ -1133,51 +1178,51 @@ aside p {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 94, ../sass/components/_carousel.scss */
+/* line 95, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   cursor: pointer;
 }
-/* line 99, ../sass/components/_carousel.scss */
+/* line 100, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .icon {
   font-size: 24px;
 }
-/* line 102, ../sass/components/_carousel.scss */
+/* line 103, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control.prev {
   padding: 8px 6px;
   float: left;
 }
-/* line 106, ../sass/components/_carousel.scss */
+/* line 107, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control.next {
   padding: 8px 10px;
   float: right;
 }
 
 @media (min-width: 980px) {
-  /* line 115, ../sass/components/_carousel.scss */
+  /* line 116, ../sass/components/_carousel.scss */
   #carousel h1 {
     font-size: 22px;
   }
-  /* line 118, ../sass/components/_carousel.scss */
+  /* line 119, ../sass/components/_carousel.scss */
   #carousel p {
     font-size: 16px;
   }
-  /* line 121, ../sass/components/_carousel.scss */
+  /* line 122, ../sass/components/_carousel.scss */
   #carousel .carousel-paginate {
     height: 40px;
   }
 }
 @media (min-width: 1140px) {
-  /* line 129, ../sass/components/_carousel.scss */
+  /* line 130, ../sass/components/_carousel.scss */
   #carousel .carousel-text {
     padding: 20px;
   }
-  /* line 132, ../sass/components/_carousel.scss */
+  /* line 133, ../sass/components/_carousel.scss */
   #carousel h1 {
     font-size: 32px;
   }
-  /* line 135, ../sass/components/_carousel.scss */
+  /* line 136, ../sass/components/_carousel.scss */
   #carousel p {
     font-size: 20px;
   }

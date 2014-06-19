@@ -7,38 +7,73 @@
  * @package required+ Foundation
  * @since required+ Foundation 0.1.0
  */
-
     
-    $menuArray  = process_menu($mypod,$pageDetails['title']);
+$menuArray  = process_menu($mypod,$pageDetails['title']);
+
 ?>
 
-<H2><?php echo $pageDetails['title'] ?></H2>
+<!-- <H2><?php // echo $pageDetails['title'] ?></H2>
+ -->
 
-<?php
+<div id="mobile-nav">
+    <a href="/breakfast" <?php if($pageDetails['title'] === 'breakfast'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-breakfast"></div>
+            Breakfast
+        </div>
+    </a>
+    <a href="/lunch" <?php if($pageDetails['title'] === 'lunch'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-lunch"></div>
+            Lunch
+        </div>
+    </a>
+    <a href="/dinner" <?php if($pageDetails['title'] === 'dinner'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-dinner"></div>
+            Dinner &amp; Wine
+        </div>
+    </a>
+    <a href="/bakery" <?php if($pageDetails['title'] === 'bakery'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-bakery"></div>
+            Bakery
+        </div>
+    </a>
+</div>
 
-   // echo "<pre>";
-   // print_r($menuArray);
+<div class="menu-overview">
+    <?php while ( have_posts() ) : the_post(); ?>
 
-   //  die();
+        <div class="menu-featured-image">
+            <?php the_post_thumbnail('menu-featured'); ?>
+        </div>
+        <div class="menu-title">
+            <h1><?php the_title();?></h1>
+        </div>
+        <div class="menu-text">
+            <?php the_content(); ?>
+        </div>
+    <?php endwhile; // end of the loop. ?>
+</div>
 
-
-    foreach ($menuArray as $category => $menu) {
+<div class="menu-details">
+    <?php
+        foreach ($menuArray as $category => $menu) {
     ?>
 
-         <h3><?php echo $category ?></h3>
+        <h3><?php echo $category ?></h3>
 
         The Feature Item : <br>
-        <pre>
+        
         <?php print_r($menu['featured']) ?>
-        </pre>
+        
         <hr>
         The Items for <?php echo $category ?>: <br>
-        <pre>
+        
         <?php print_r($menu['items']) ?>
-        </pre>
-    
-
-
 
     <?php 
-    } // End of the $menuArray (full menu object) for each
+        } // End of the $menuArray (full menu object) for each
+    ?>
+</div>
