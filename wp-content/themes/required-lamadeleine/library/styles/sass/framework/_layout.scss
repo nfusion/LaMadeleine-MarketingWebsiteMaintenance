@@ -1,0 +1,73 @@
+/**
+* La Madeleine
+* Global framework layout
+**/
+
+body{
+	background: $lightCream;
+	font-family: $georgia;
+}
+
+#container{
+	max-width: 1140px;
+	width: 100%;
+	margin: 0 auto;
+	background: $white;
+}
+
+#content{
+	background: $lightCream;
+	position: relative;
+	#main{
+		width: 100%;
+		padding: 0;
+	}
+	#sidebar{
+		width: 100%;
+		padding: 0;
+		.widget{
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+			border-bottom: 1px dashed $fadedBrown;
+			&:last-of-type{
+				border-bottom: 0;
+			}
+		}
+	}
+	.sidebar-wrapper{
+		padding: 10px;
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#content{
+		width: 100%;
+		@include clearfix();
+		#main{
+			width: 70%;
+			float: left;
+		}
+		#sidebar{
+			width: 30%;
+			float: left;
+			.sidebar-wrapper{
+				padding: 15px 25px 0;
+				.widget:last-child{
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $large-screen-min){
+	#content {
+		#main{
+			width: 72%;
+		}
+		#sidebar {
+			width: 28%;
+		}
+	}
+}
