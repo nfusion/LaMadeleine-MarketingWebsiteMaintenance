@@ -48,9 +48,9 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
         <div class="menu-featured-image">
             <?php the_post_thumbnail('menu-featured'); ?>
         </div>
-        <div class="menu-title">
-            <h1><?php the_title();?></h1>
-        </div>
+        
+        <h1 class="menu-title"><span class="outer"><span class="inner"><?php the_title();?></span></span></h1>
+        
         <div class="menu-text">
             <?php the_content(); ?>
         </div>
@@ -60,18 +60,25 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
 <div class="menu-details">
     <?php
         foreach ($menuArray as $category => $menu) {
+
+        $categoryName = $menu['items'][0]['menu_category']['name'];
     ?>
 
-        <h3><?php echo $category ?></h3>
+        <h3><?php echo $categoryName; ?></h3>
 
-        The Feature Item : <br>
+        <h5>The Featured Item:</h5>
         
+        <pre>
         <?php print_r($menu['featured']) ?>
+        </pre>
+
+        <h5>The Items:</h5>
         
-        <hr>
-        The Items for <?php echo $category ?>: <br>
-        
+        <pre>
         <?php print_r($menu['items']) ?>
+        </pre>
+
+        <hr>
 
     <?php 
         } // End of the $menuArray (full menu object) for each

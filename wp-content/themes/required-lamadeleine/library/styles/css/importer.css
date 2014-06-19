@@ -643,83 +643,93 @@ hr.dashed {
 * Global framework layout
 **/
 /* line 6, ../sass/framework/_layout.scss */
+html, body, #container {
+  height: 100%;
+}
+
+/* line 10, ../sass/framework/_layout.scss */
 body {
-  background: #fffdf0;
+  background: url(../../../img/halftone.png);
   font-family: Georgia, serif;
 }
 
-/* line 11, ../sass/framework/_layout.scss */
+/* line 15, ../sass/framework/_layout.scss */
 #container {
   width: 100%;
   max-width: 1140px;
   min-width: 320px;
   margin: 0 auto;
-  background: white;
+  padding-top: 70px;
+  background: #fffdf0;
 }
 
-/* line 19, ../sass/framework/_layout.scss */
+/* line 24, ../sass/framework/_layout.scss */
 #content {
-  background: #fffdf0;
   position: relative;
 }
-/* line 22, ../sass/framework/_layout.scss */
+/* line 26, ../sass/framework/_layout.scss */
 #content #main {
   width: 100%;
   padding: 0;
 }
-/* line 26, ../sass/framework/_layout.scss */
+/* line 30, ../sass/framework/_layout.scss */
 #content #sidebar {
   width: 100%;
   padding: 0;
 }
-/* line 29, ../sass/framework/_layout.scss */
+/* line 33, ../sass/framework/_layout.scss */
 #content #sidebar .widget {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px dashed #cbaf9a;
 }
-/* line 33, ../sass/framework/_layout.scss */
+/* line 37, ../sass/framework/_layout.scss */
 #content #sidebar .widget:last-of-type {
   border-bottom: 0;
 }
-/* line 38, ../sass/framework/_layout.scss */
+/* line 42, ../sass/framework/_layout.scss */
 #content .sidebar-wrapper {
   padding: 10px;
 }
 
 @media (min-width: 980px) {
-  /* line 44, ../sass/framework/_layout.scss */
+  /* line 48, ../sass/framework/_layout.scss */
+  #container {
+    padding-top: 0;
+  }
+
+  /* line 51, ../sass/framework/_layout.scss */
   #content {
     width: 100%;
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 47, ../sass/framework/_layout.scss */
+  /* line 54, ../sass/framework/_layout.scss */
   #content #main {
     width: 70%;
     float: left;
   }
-  /* line 51, ../sass/framework/_layout.scss */
+  /* line 58, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 30%;
     float: left;
   }
-  /* line 54, ../sass/framework/_layout.scss */
+  /* line 61, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper {
     padding: 15px 25px 0;
   }
-  /* line 56, ../sass/framework/_layout.scss */
+  /* line 63, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper .widget:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
   }
 }
 @media (min-width: 1140px) {
-  /* line 67, ../sass/framework/_layout.scss */
+  /* line 74, ../sass/framework/_layout.scss */
   #content #main {
     width: 72%;
   }
-  /* line 70, ../sass/framework/_layout.scss */
+  /* line 77, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 28%;
   }
@@ -885,7 +895,7 @@ body {
 
 /**
 * La Madeleine
-* Mobile navigation
+* Mobile secondary navigation
 **/
 /* line 6, ../sass/framework/_mobile-nav.scss */
 #mobile-nav {
@@ -899,7 +909,7 @@ body {
   display: block;
   float: left;
   width: 25%;
-  padding: 5px 2% 5px;
+  padding: 5px 2% 6px;
   border-left: 1px solid #cbaf9a;
 }
 /* line 17, ../sass/framework/_mobile-nav.scss */
@@ -926,6 +936,12 @@ body {
   color: #7a3910;
 }
 
+@media (min-width: 980px) {
+  /* line 36, ../sass/framework/_mobile-nav.scss */
+  #mobile-nav {
+    display: none;
+  }
+}
 /**
 * La Madeleine
 * Global header layout
@@ -935,9 +951,9 @@ body {
   width: 100%;
   height: 70px;
   padding: 8px 10px;
-  text-align: center;
-  position: relative;
+  position: fixed;
   z-index: 101;
+  text-align: center;
   background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
 }
 /* line 14, ../sass/framework/_header.scss */
@@ -993,17 +1009,18 @@ body {
   #header {
     height: 80px;
     padding: 13px 15px;
+    position: relative;
     background-position: 0 0;
   }
-  /* line 57, ../sass/framework/_header.scss */
+  /* line 58, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     float: right;
   }
-  /* line 60, ../sass/framework/_header.scss */
+  /* line 61, ../sass/framework/_header.scss */
   #header .logo {
     float: left;
   }
-  /* line 63, ../sass/framework/_header.scss */
+  /* line 64, ../sass/framework/_header.scss */
   #header .tagline {
     display: block;
     float: left;
@@ -1011,11 +1028,11 @@ body {
     top: 19px;
     left: 2px;
   }
-  /* line 71, ../sass/framework/_header.scss */
+  /* line 72, ../sass/framework/_header.scss */
   #header .icon-menu:hover {
     cursor: pointer;
   }
-  /* line 74, ../sass/framework/_header.scss */
+  /* line 75, ../sass/framework/_header.scss */
   #header .icon-menu span {
     visibility: visible;
     font-size: 22px;
@@ -1027,17 +1044,17 @@ body {
     top: -10px;
     left: 8px;
   }
-  /* line 86, ../sass/framework/_header.scss */
+  /* line 87, ../sass/framework/_header.scss */
   #header .icon-phone {
     display: none;
   }
 }
 @media (min-width: 1140px) {
-  /* line 94, ../sass/framework/_header.scss */
+  /* line 95, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     padding-right: 20px;
   }
-  /* line 97, ../sass/framework/_header.scss */
+  /* line 98, ../sass/framework/_header.scss */
   #header .icon-menu {
     padding-left: 20px;
   }
@@ -1712,4 +1729,59 @@ aside p {
     float: right;
     padding-top: 14px;
   }
+}
+/**
+* La Madeleine
+* Les Menu Page Styling
+**/
+/* line 6, ../sass/templates/_les-menu.scss */
+.menu-overview {
+  position: relative;
+}
+/* line 8, ../sass/templates/_les-menu.scss */
+.menu-overview .menu-featured-image {
+  overflow: hidden;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #e5d7cd;
+}
+/* line 12, ../sass/templates/_les-menu.scss */
+.menu-overview .menu-featured-image img {
+  width: 100%;
+}
+/* line 16, ../sass/templates/_les-menu.scss */
+.menu-overview h1.menu-title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: -20px;
+  color: #310d00;
+  font-size: 24px;
+}
+/* line 22, ../sass/templates/_les-menu.scss */
+.menu-overview h1.menu-title span {
+  background: #fffdf0;
+}
+/* line 25, ../sass/templates/_les-menu.scss */
+.menu-overview h1.menu-title span.inner {
+  padding: 15px 25px 11px;
+  border: 1px solid #e5d7cd;
+  position: relative;
+  top: 17px;
+}
+/* line 31, ../sass/templates/_les-menu.scss */
+.menu-overview h1.menu-title span.outer {
+  display: inline-block;
+  max-height: 30px;
+  padding: 5px;
+  position: relative;
+  top: -15px;
+}
+/* line 39, ../sass/templates/_les-menu.scss */
+.menu-overview .menu-text {
+  padding: 15px 10px;
+  text-align: center;
+}
+
+/* line 45, ../sass/templates/_les-menu.scss */
+.menu-details {
+  padding: 0 15px;
 }

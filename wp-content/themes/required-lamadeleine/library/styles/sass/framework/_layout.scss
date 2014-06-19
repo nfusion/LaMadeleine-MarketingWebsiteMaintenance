@@ -3,8 +3,12 @@
 * Global framework layout
 **/
 
+html,body,#container{
+	height: 100%;
+}
+
 body{
-	background: $lightCream;
+	background: url(../../../img/halftone.png);
 	font-family: $georgia;
 }
 
@@ -13,11 +17,11 @@ body{
 	max-width: 1140px;
 	min-width: 320px;
 	margin: 0 auto;
-	background: $white;
+	padding-top: 70px; // Compenate for fixed header at mobile
+	background: $lightCream;
 }
 
 #content{
-	background: $lightCream;
 	position: relative;
 	#main{
 		width: 100%;
@@ -41,6 +45,9 @@ body{
 }
 
 @media (min-width: $medium-screen-min){
+	#container{
+		padding-top: 0;
+	}
 	#content{
 		width: 100%;
 		@include clearfix();
