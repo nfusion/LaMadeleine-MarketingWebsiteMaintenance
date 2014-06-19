@@ -117,6 +117,7 @@
         @include backface-visibility(hidden);
       }
       .front{
+        height: 270px;
         z-index: 2;
         background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
       }
