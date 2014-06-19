@@ -13,7 +13,7 @@
 
 <?php
 
-    foreach(['community','culture', 'food'] as $catName){
+    foreach(array('community','culture', 'food') as $catName){
 
         ?>
         <h2> <?php echo $catName ?> </h2>

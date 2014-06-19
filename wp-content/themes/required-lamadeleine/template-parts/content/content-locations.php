@@ -47,7 +47,7 @@ LaMadLocations.initializeLargeMap = function() {
         var markers = [];
         <?php 
              while( $mypod->fetch() ) {
-                foreach ([  
+                foreach (array(  
                             'id',
                             'latitude',
                             'longitude',
@@ -73,7 +73,7 @@ LaMadLocations.initializeLargeMap = function() {
                             'friday_close',
                             'saturday_close'
 
-                            ] as $key => $value) {
+                            ) as $key => $value) {
 
                                 $item[$value] = $mypod->field($value);
                             }

@@ -97,16 +97,15 @@ function process_menu($mypod,$daypart){
     
     //$menu = explode(',', $menu_categories);
     //$menu = array_flip(explode(',', $menu_categories));
-    $menu = array_fill_keys(explode(',', $menu_categories),[]);
+    $menu = array_fill_keys(explode(',', $menu_categories),array());
     
     if($mypod->total_found()){
         while( $mypod->fetch() ) {
-            foreach (['featured_item','title','description', 'fma_promo', 'story', 'menu_key_relationship', 'price_max', 'price_min','daypart_relationship','menu_category'] as $key => $value) {
+            foreach (array('featured_item','title','description', 'fma_promo', 'story', 'menu_key_relationship', 'price_max', 'price_min','daypart_relationship','menu_category') as $key => $value) {
                  $item[$value] = $mypod->field($value);
             }
             $item['featured_img'] =  get_the_post_thumbnail( $mypod->id() ); 
 
-            
                 if(strtolower($item['daypart_relationship']['post_title']) == strtolower($daypart)){
                     $menu[$item['menu_category']['slug']]['items'][] = $item;
 

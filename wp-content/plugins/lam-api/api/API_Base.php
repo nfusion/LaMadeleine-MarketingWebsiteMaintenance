@@ -68,9 +68,6 @@ abstract class API_Base {
 		return $this->app->$method( $match, function() use ( $app, $callback ) {
 
 
-
-
-
 					$args = func_get_args();
 					array_unshift( $args, $app );
 

@@ -49,7 +49,7 @@ class API extends \Voce\Thermal\API_Base {
 
 		$this->registerRoute( 'GET', 'locations/image/:id/', array( __NAMESPACE__ . '\\controllers\\Locations', 'findImage' ) );
 
-		$this->registerRoute( 'GET', 'dayparts/:time/:offset/?', array( __NAMESPACE__ . '\\controllers\\Dayparts', 'find' ) );
+		$this->registerRoute( 'GET', 'dayparts/:time/:offset/?', array(__NAMESPACE__ . '\\controllers\\Dayparts', 'find' ) );
 		/************* SERNA ***********/
 
 

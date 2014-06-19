@@ -1,5 +1,4 @@
 <?php
-
 namespace Voce\Thermal\v1\Controllers;
 
 class Dayparts {
@@ -20,9 +19,9 @@ class Dayparts {
     public static  function daypartToJson($clientTime, $offset){
 
         $dayPartPods = pods('daypart')->find(); 
-        $return = [];
+        $return = array();
             while( $dayPartPods->fetch() ) {
-                    foreach (['title','descriptor', 'daypart', 'start_display_time', 'end_display_time','link'] as $key => $value) {
+                    foreach (array('title','descriptor', 'daypart', 'start_display_time', 'end_display_time','link') as $key => $value) {
                         $item[$value] = $dayPartPods->field($value);
                     }
                     $imgSrc =  wp_get_attachment_image_src( get_post_thumbnail_id($dayPartPods->id()), 'daypart'); 
@@ -47,19 +46,19 @@ class Dayparts {
             
             switch($clientTime){
                 case ( $clientTime < $breakfastEnd->getTimestamp()):
-                    $order =  ['Breakfast','Lunch','Bakery','Dinner/Wine'];
+                    $order =  array('Breakfast','Lunch','Bakery','Dinner/Wine');
                 break;
                 case ( $clientTime < $lunchEnd->getTimestamp()) :
-                    $order =  ['Lunch','Bakery','Dinner/Wine','Breakfast',];
+                    $order =  array('Lunch','Bakery','Dinner/Wine','Breakfast');
                 break;
                case ( $clientTime < $bakeryEnd->getTimestamp() ):
-                    $order =  ['Bakery','Dinner/Wine','Breakfast', 'Lunch'];
+                    $order =  array('Bakery','Dinner/Wine','Breakfast', 'Lunch');
                 break;
                 case ($clientTime < $dinnerEnd->getTimestamp()):
-                    $order =  ['Dinner/Wine','Breakfast', 'Lunch','Bakery'];
+                    $order =  array('Dinner/Wine','Breakfast', 'Lunch','Bakery');
                 break;
                 default:
-                   $order =  ['Bakery','Breakfast', 'Lunch', 'Dinner/Wine'];
+                   $order =  array('Bakery','Breakfast', 'Lunch', 'Dinner/Wine');
             }
 
             foreach ($order as  $value) {

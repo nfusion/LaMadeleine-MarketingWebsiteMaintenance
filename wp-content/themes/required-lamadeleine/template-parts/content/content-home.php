@@ -18,7 +18,7 @@ EOT;
 
     while( $mypod->fetch() ) {
         
-        foreach (['ID','title','description', 'url', 'cta', 'new_window', 'display_order'] as $key => $value) {
+        foreach (array('ID','title','description', 'url', 'cta', 'new_window', 'display_order') as $key => $value) {
              $item[$value] = $mypod->field($value);
         }
         $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'fma-full'); 

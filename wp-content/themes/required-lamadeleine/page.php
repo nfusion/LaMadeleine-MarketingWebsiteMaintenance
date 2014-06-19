@@ -19,7 +19,7 @@ get_header(); ?>
 			<div class="post-box">
 
 				<?php
-				$pageDetails = [];
+				$pageDetails = array();
 				switch ($pagename){
 					case'':
 						$mypods = pods('home_fma')->find();
@@ -53,7 +53,7 @@ get_header(); ?>
 
 					case 'shop':
 						$pageDetails['title']=$pagename;
-						$mypods = [];
+						$mypods = array();
 						$sidebar = 'sidebar-shop';
 					break;
 					
@@ -81,9 +81,9 @@ get_header(); ?>
 				// 	}
 				// }
 
-				$mypods = isset($mypods) ? $mypods : [];
+				$mypods = isset($mypods) ? $mypods : array();
 				if($pagename){
-					pods_view( '/template-parts/content/content-'.$pagename.'.php' , ['mypod' => $mypods, 'pageDetails'=>$pageDetails]);
+					pods_view( '/template-parts/content/content-'.$pagename.'.php' , array('mypod' => $mypods, 'pageDetails'=>$pageDetails));
 				}
 
 				?>
