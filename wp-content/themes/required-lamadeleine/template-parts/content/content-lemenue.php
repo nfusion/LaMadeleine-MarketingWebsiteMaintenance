@@ -68,8 +68,6 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
 
             ?>
 
-            <h5>The Featured Item:</h5>
-
             <?php
 
                 $featured = $menu['featured'];
@@ -83,13 +81,13 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
                     $str .= count($featured['story']);
                 endif;
 
-                echo $str;
+                // echo $str;
 
             ?>
             
-            <pre>
-            <?php print_r($menu['featured']) ?>
-            </pre>
+            <!-- <pre>
+            <?php // print_r($menu['featured']) ?>
+            </pre> -->
 
         <?php 
 
