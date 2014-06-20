@@ -89,10 +89,9 @@ function process_menu($mypod,$daypart){
                     );
     $daypart_pod = pods('daypart')->find($params);
 
-    
+
     while( $daypart_pod->fetch() ) {
         $menu_categories = $daypart_pod->field('menu_categories');
-         
     }
     
     //$menu = explode(',', $menu_categories);
@@ -101,12 +100,20 @@ function process_menu($mypod,$daypart){
     
     if($mypod->total_found()){
         while( $mypod->fetch() ) {
+
+         
+
             foreach (array('featured_item','title','description', 'fma_promo', 'story', 'menu_key_relationship', 'price_max', 'price_min','daypart_relationship','menu_category') as $key => $value) {
                  $item[$value] = $mypod->field($value);
             }
-            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id() ); 
 
-                if(strtolower($item['daypart_relationship']['post_title']) == strtolower($daypart)){
+            //  echo "<pre>";
+            // print_r( $item );
+
+
+            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id() );;
+                if(in_array(ucwords($daypart), $item['daypart_relationship'])){
+
                     $menu[$item['menu_category']['slug']]['items'][] = $item;
 
                     if($item['featured_item'] = 1){

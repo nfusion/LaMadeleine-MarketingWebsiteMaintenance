@@ -111,7 +111,7 @@ var LaMadLocations = {
 
 
         getLocationCookie: function(){
-
+            
             cookieLoc = $.cookie('LAM-location');
 
             if(typeof(cookieLoc) != 'undefined'){
@@ -125,6 +125,9 @@ var LaMadLocations = {
 
                 // We have a map!
                 LaMadLocations.$locationCta.addClass('map-loaded');
+
+                
+                
             }
             else{
                 console.log("No cookie for you!");
