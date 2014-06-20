@@ -671,71 +671,72 @@ body {
 /* line 24, ../sass/framework/_layout.scss */
 #content {
   position: relative;
+  background: #fffdf0;
 }
-/* line 26, ../sass/framework/_layout.scss */
+/* line 27, ../sass/framework/_layout.scss */
 #content #main {
   width: 100%;
   padding: 0;
 }
-/* line 30, ../sass/framework/_layout.scss */
+/* line 31, ../sass/framework/_layout.scss */
 #content #sidebar {
   width: 100%;
   padding: 0;
 }
-/* line 33, ../sass/framework/_layout.scss */
+/* line 34, ../sass/framework/_layout.scss */
 #content #sidebar .widget {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px dashed #cbaf9a;
 }
-/* line 37, ../sass/framework/_layout.scss */
+/* line 38, ../sass/framework/_layout.scss */
 #content #sidebar .widget:last-of-type {
   border-bottom: 0;
 }
-/* line 42, ../sass/framework/_layout.scss */
+/* line 43, ../sass/framework/_layout.scss */
 #content .sidebar-wrapper {
   padding: 10px;
 }
 
 @media (min-width: 768px) {
-  /* line 48, ../sass/framework/_layout.scss */
+  /* line 49, ../sass/framework/_layout.scss */
   #container {
     padding-top: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 54, ../sass/framework/_layout.scss */
+  /* line 55, ../sass/framework/_layout.scss */
   #content {
     width: 100%;
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 57, ../sass/framework/_layout.scss */
+  /* line 58, ../sass/framework/_layout.scss */
   #content #main {
     width: 70%;
     float: left;
   }
-  /* line 61, ../sass/framework/_layout.scss */
+  /* line 62, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 30%;
     float: left;
   }
-  /* line 64, ../sass/framework/_layout.scss */
+  /* line 65, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper {
     padding: 15px 25px 0;
   }
-  /* line 66, ../sass/framework/_layout.scss */
+  /* line 67, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper .widget:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
   }
 }
 @media (min-width: 1140px) {
-  /* line 77, ../sass/framework/_layout.scss */
+  /* line 78, ../sass/framework/_layout.scss */
   #content #main {
     width: 72%;
   }
-  /* line 80, ../sass/framework/_layout.scss */
+  /* line 81, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 28%;
   }
