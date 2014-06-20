@@ -34,7 +34,7 @@ get_header(); ?>
 
 					$params = array(
 					    //'where' => "daypart_relationship = 'Lunch'",
-					    //'orderby' => "vinyl_capacity.meta_value ASC",
+					    'orderby' => 'order_weight ASC',
 					    'limit' => '0'
 					);
 
