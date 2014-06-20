@@ -44,10 +44,13 @@ body{
 	}
 }
 
-@media (min-width: $medium-screen-min){
+@media (min-width: $small-screen-min){
 	#container{
 		padding-top: 0;
 	}
+}
+
+@media (min-width: $medium-screen-min){
 	#content{
 		width: 100%;
 		@include clearfix();
