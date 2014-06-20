@@ -33,15 +33,16 @@ get_header(); ?>
 					case 'dinner':
 
 					$params = array(
-					    'where' => "daypart_relationship = 'Lunch'",
+					    //'where' => "daypart_relationship = 'Lunch'",
 					    //'orderby' => "vinyl_capacity.meta_value ASC",
-					    'limit' => '100'
+					    'limit' => '0'
 					);
 
 					$pageDetails['title']=$pagename;
-					$mypods = pods('menu_item')->find();
+					$mypods = pods('menu_item')->find($params);
 					$sidebar = 'sidebar-menu';
 					$pagename = 'lemenue';
+
 
 					break;
 
