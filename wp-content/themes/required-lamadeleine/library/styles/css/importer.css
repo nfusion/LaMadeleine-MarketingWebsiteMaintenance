@@ -251,124 +251,129 @@ a.btn-light {
 /* line 56, ../sass/styleguide/_icons.scss */
 .icon-legend-signature:before {
   content: "\e609";
+  color: #5b2a06;
 }
 
-/* line 59, ../sass/styleguide/_icons.scss */
+/* line 60, ../sass/styleguide/_icons.scss */
 .icon-legend-nuts:before {
   content: "\e60a";
+  color: #bb922c;
 }
 
-/* line 62, ../sass/styleguide/_icons.scss */
+/* line 64, ../sass/styleguide/_icons.scss */
 .icon-legend-low-calorie:before {
   content: "\e60b";
-}
-
-/* line 65, ../sass/styleguide/_icons.scss */
-.icon-legend-egg-whites:before {
-  content: "\e60c";
+  color: #95ac00;
 }
 
 /* line 68, ../sass/styleguide/_icons.scss */
-.icon-legend-alcohol:before {
-  content: "\e60d";
+.icon-legend-egg-whites:before {
+  content: "\e60c";
+  color: #dedab9;
 }
 
-/* line 71, ../sass/styleguide/_icons.scss */
+/* line 72, ../sass/styleguide/_icons.scss */
+.icon-legend-alcohol:before {
+  content: "\e60d";
+  color: #9c2f21;
+}
+
+/* line 76, ../sass/styleguide/_icons.scss */
 .icon-food:before {
   content: "\e60e";
 }
 
-/* line 74, ../sass/styleguide/_icons.scss */
+/* line 79, ../sass/styleguide/_icons.scss */
 .icon-dinner:before {
   content: "\e60f";
 }
 
-/* line 77, ../sass/styleguide/_icons.scss */
+/* line 82, ../sass/styleguide/_icons.scss */
 .icon-culture:before {
   content: "\e61b";
 }
 
-/* line 80, ../sass/styleguide/_icons.scss */
+/* line 85, ../sass/styleguide/_icons.scss */
 .icon-community:before {
   content: "\e61c";
 }
 
-/* line 83, ../sass/styleguide/_icons.scss */
+/* line 88, ../sass/styleguide/_icons.scss */
 .icon-catering:before {
   content: "\e61d";
 }
 
-/* line 86, ../sass/styleguide/_icons.scss */
+/* line 91, ../sass/styleguide/_icons.scss */
 .icon-breakfast:before {
   content: "\e61e";
 }
 
-/* line 89, ../sass/styleguide/_icons.scss */
+/* line 94, ../sass/styleguide/_icons.scss */
 .icon-bakery:before {
   content: "\e61f";
 }
 
-/* line 92, ../sass/styleguide/_icons.scss */
+/* line 97, ../sass/styleguide/_icons.scss */
 .icon-youtube:before {
   content: "\f167";
 }
 
-/* line 95, ../sass/styleguide/_icons.scss */
+/* line 100, ../sass/styleguide/_icons.scss */
 .icon-facebook:before {
   content: "\e610";
 }
 
-/* line 98, ../sass/styleguide/_icons.scss */
+/* line 103, ../sass/styleguide/_icons.scss */
 .icon-instagram:before {
   content: "\e611";
 }
 
-/* line 101, ../sass/styleguide/_icons.scss */
+/* line 106, ../sass/styleguide/_icons.scss */
 .icon-twitter:before {
   content: "\e612";
 }
 
-/* line 104, ../sass/styleguide/_icons.scss */
+/* line 109, ../sass/styleguide/_icons.scss */
 .icon-pinterest:before {
   content: "\e613";
 }
 
-/* line 107, ../sass/styleguide/_icons.scss */
+/* line 112, ../sass/styleguide/_icons.scss */
 .icon-arrow-left:before {
   content: "\e614";
 }
 
-/* line 110, ../sass/styleguide/_icons.scss */
+/* line 115, ../sass/styleguide/_icons.scss */
 .icon-arrow-down:before {
   content: "\e615";
 }
 
-/* line 113, ../sass/styleguide/_icons.scss */
+/* line 118, ../sass/styleguide/_icons.scss */
 .icon-arrow-up:before {
   content: "\e616";
 }
 
-/* line 116, ../sass/styleguide/_icons.scss */
+/* line 121, ../sass/styleguide/_icons.scss */
 .icon-arrow-right:before {
   content: "\e617";
 }
 
-/* line 119, ../sass/styleguide/_icons.scss */
+/* line 124, ../sass/styleguide/_icons.scss */
 .icon-arrow-left-large:before {
   content: "\e618";
 }
 
-/* line 122, ../sass/styleguide/_icons.scss */
+/* line 127, ../sass/styleguide/_icons.scss */
 .icon-arrow-down-large:before {
   content: "\e619";
 }
 
-/* line 125, ../sass/styleguide/_icons.scss */
+/* line 130, ../sass/styleguide/_icons.scss */
 .icon-arrow-up-large:before {
   content: "\e61a";
 }
 
-/* line 128, ../sass/styleguide/_icons.scss */
+/* line 133, ../sass/styleguide/_icons.scss */
 .icon-arrow-right-large:before {
   content: "\e620";
 }
@@ -644,7 +649,7 @@ hr.dashed {
 **/
 /* line 6, ../sass/framework/_layout.scss */
 html, body, #container {
-  height: 100%;
+  min-height: 100%;
 }
 
 /* line 10, ../sass/framework/_layout.scss */
@@ -1783,5 +1788,43 @@ aside p {
 
 /* line 45, ../sass/templates/_les-menu.scss */
 .menu-details {
+  width: 100%;
   padding: 0 15px;
+  overflow: hidden;
+}
+/* line 49, ../sass/templates/_les-menu.scss */
+.menu-details .category-title {
+  padding: 0 15px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #310d00;
+}
+
+/* line 60, ../sass/templates/_les-menu.scss */
+.menu-item {
+  margin-bottom: 30px;
+}
+/* line 62, ../sass/templates/_les-menu.scss */
+.menu-item .title-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 65, ../sass/templates/_les-menu.scss */
+.menu-item .title-wrapper .title {
+  margin-bottom: 2px;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  float: left;
+}
+/* line 71, ../sass/templates/_les-menu.scss */
+.menu-item .title-wrapper .menu-keys {
+  float: left;
+  padding: 4px 0 0 5px;
+}
+/* line 76, ../sass/templates/_les-menu.scss */
+.menu-item .desc {
+  font-size: 13px;
 }

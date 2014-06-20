@@ -84,7 +84,7 @@ function process_menu($mypod,$daypart){
 
     $params = array(
                         'where' => "t.post_title = '".ucfirst($daypart)."'",
-                        //'orderby' => "vinyl_capacity.meta_value ASC",
+                        'orderby' => "date ASC",
                         'limit' => '1'
                     );
     $daypart_pod = pods('daypart')->find($params);
