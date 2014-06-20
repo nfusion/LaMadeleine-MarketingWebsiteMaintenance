@@ -107,6 +107,7 @@ LaMadLocations.initializeLargeMap = function() {
                  var markerclusterer = new MarkerClusterer(largeMap, markers);
 
                  //getLocationCookieLg(largeMap);
+                 LaMadLocations.setCenterToCookie();
         
     }
 
@@ -116,6 +117,21 @@ LaMadLocations.initializeLargeMap = function() {
             largeMap.setCenter(Latlng);
             largeMap.setZoom(12);
     }
+
+
+    LaMadLocations.setCenterToCookie = function(){
+            cookieLoc = $.cookie('LAM-location');
+            if(typeof(cookieLoc) != 'undefined'){
+                jsonCookie = $.parseJSON(cookieLoc);
+                if(typeof(largeMap) != 'undefined'){
+                    LaMadLocations.setLargLocation(jsonCookie.latitude, jsonCookie.longitude) ;   
+                }
+            }
+            else{
+                //console.log("No Center cookie for you!");
+                
+            };
+        },
 
 
     $(document).ready(function(){

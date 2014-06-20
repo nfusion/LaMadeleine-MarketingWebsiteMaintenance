@@ -18,14 +18,76 @@
 /** The name of the database for WordPress */
 define('DB_NAME', 'lam_wp');
 
-/** MySQL database username */
-define('DB_USER', 'LAM-14');
+/*** We are going to use up Environments Vars to identify Configurations **/
+$env = isset($_SERVER['APPLICATION_ENVIRONMENT'])?$_SERVER['APPLICATION_ENVIRONMENT']:'production';
+define('ENV',$env);
 
-/** MySQL database password */
-define('DB_PASSWORD', 'Bagu3tt314');
+switch($env){
+    case "serna":
+        define('DB_NAME', 'lam_wp');
+        /** MySQL database username */
+        define('DB_USER', 'nfusion');
+        /** MySQL database password */
+        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
+        /** MySQL hostname */
+        define('DB_HOST', '127.0.0.1');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+         //define('WP_DEBUG', true);
+         define('WP_DEBUG_LOG', true);
+         define('WP_DEBUG_DISPLAY', true);
+         error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+      //  @ini_set('display_errors', 0);
+
+
+            break;
+    case "heath":
+        /** MySQL database username */
+        define('DB_USER', 'root');
+        /** MySQL database password */
+        define('DB_PASSWORD', 'root');
+        /** MySQL hostname */
+        define('DB_HOST', '127.0.0.1');
+
+        // define('WP_DEBUG', true);
+        // define('WP_DEBUG_LOG', true);
+        // define('WP_DEBUG_DISPLAY', true);
+        // @ini_set('display_errors', 0);
+            break;
+    case "remote":
+        /** MySQL database username */
+        define('DB_USER', 'nfusion');
+        /** MySQL database password */
+        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
+        /** MySQL hostname */
+        define('DB_HOST', '127.0.0.1:7878');
+
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        @ini_set('display_errors', 0);
+
+            break;
+    case "production":
+    default:
+        /** The name of the database for WordPress */
+        define('DB_NAME', 'lam_wp');
+
+        /** MySQL database username */
+        define('DB_USER', 'LAM-14');
+
+        /** MySQL database password */
+        define('DB_PASSWORD', 'Bagu3tt314');
+
+        /** MySQL hostname */
+        define('DB_HOST', 'localhost');
+        define('WP_DEBUG', false);
+
+}
+
+
+
+
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -42,14 +104,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '=?dI,H9`=?A3`B-tiZ~<tGBomDrVh=~cnBF}Q-oNUa<(_Ff3#x->%#3v|LDifh:<');
-define('SECURE_AUTH_KEY',  '4ttvID76lVEn3!Vw%j4gorZAM=*tL(u1$p$[hx)n6qVt&x&s_+y2Z~xBucAs`]@w');
-define('LOGGED_IN_KEY',    'd&Hx=5HX<4:-%:g48s:$G+@UoBTDs>Eaeg&3+eE6cH^%-]jO=uvfLL}#~s~BVE_T');
-define('NONCE_KEY',        'e%MP_mxpRg/]X2%wRGZ}JAANK/OsH~XH/ChvC?,K%(C1qSzEuJ+*e-+A92JcXU&3');
-define('AUTH_SALT',        'ud.yJ;_v=8|:7!X:H(bQuC9 S[0Tw EL?h|46B3uz(f33<]AI=e),_j1Tj l+5@t');
-define('SECURE_AUTH_SALT', ':7}1(]opQ`wIka4{|2sP-.2D %aG C7_45oDC+bPD-l/-|%Jz&-(]]kHh]M|h054');
-define('LOGGED_IN_SALT',   'p8Xe?SbX*oFRF,G?eBu`t0%5nis,=N>I+M^e{%JUxX<-xJ]8D_DV,!5Jf_r<V!4,');
-define('NONCE_SALT',       'DUD}%RPk/i76N0mzF!S9L+WzodH@Z >63=M  pho@>>=R=nlj` Nt^ s*MAf5$.y');
+define('AUTH_KEY',         'jx297Rkg5Lnprkk');
+define('SECURE_AUTH_KEY',  '352AmYUAkrWLXKF');
+define('LOGGED_IN_KEY',    'aMWDjH2X7PsN2CK');
+define('NONCE_KEY',        'ykyLSd8yuLBpPHb');
+define('AUTH_SALT',        'awz4YgwLaHSjnvc');
+define('SECURE_AUTH_SALT', 'a8cnmVGNWyNnNXm');
+define('LOGGED_IN_SALT',   '5ru7bM38c9eTXjd');
+define('NONCE_SALT',       'n8RWbN6Vq8q6qHt');
 
 /**#@-*/
 
@@ -78,7 +140,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+//define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
