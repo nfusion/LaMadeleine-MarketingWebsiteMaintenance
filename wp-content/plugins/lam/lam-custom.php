@@ -111,7 +111,9 @@ function process_menu($mypod,$daypart){
             // print_r( $item );
 
 
-            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'featured-menu-item' );;
+            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
+            $item['featured_img_story'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured-story' );
+
                 if(in_array(ucwords($daypart), $item['daypart_relationship'])){
 
                     $menu[$item['menu_category']['slug']]['items'][] = $item;

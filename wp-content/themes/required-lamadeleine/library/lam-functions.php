@@ -145,7 +145,8 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'fma-full', 820, 750, true ); // 820 pixels wide by 750 pixels tall, hard crop true
 	add_image_size( 'daypart', 265, 95, true ); // 265 pixels wide by 95 pixels tall, hard crop true
 	add_image_size( 'menu-featured', 820, 360, true ); // 820 pixels wide by 360 pixels tall, hard crop true
-	add_image_size( 'menu-item-featured', 350, 350, true ); // 350 pixels wide by 350 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured', 365, 200, true ); // 365 pixels wide by 200 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured-story', 365, 365, true ); // 365 pixels wide by 365 pixels tall, hard crop true
 }
 
 /**
@@ -177,12 +178,111 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /**
+* Create Teaser
+* Accepts string and length value, returns teaser
+*/
+function create_teaser($content,$length,$hellip=TRUE) {
+	$i=0; // array units
+	$c=0; // character counter
+	$para = explode(" ", $content);
+
+	if ($length >= (strlen($content) - strlen(end($para)))) { // desired length is longer than the content minus the last word
+		$teaser = $content;
+		$hellip = FALSE;
+	} else { // trim this puppy
+		while ($c <= $length) {
+			$teaser .= ($i==0 ? "" : " ") . $para[$i];
+			$c = $c + strlen($para[$i]) + 1; // extra +1 is for the space we're appending
+			$i++;
+		}
+	}
+
+	// prettify -- if the last character just happens to be a period, remove it before appending the ellipsis
+	$teaser = (substr($teaser,-1) == "." && $hellip==TRUE) ? substr($teaser,0,-1) : $teaser ;
+
+	// add ellipsis if requested or necessary
+	$teaser .= ($hellip==TRUE ? "&hellip;" : "");
+
+	return $teaser;
+}
+
+/**
 *
-* Display menu item
-* Accepts menu item object, returns markup
+* Display featured menu item
+* Accept featured menu item object, returns markup
 *
 **/
-function displayMenuItem($menuItemObj){
+function display_featured_item($featuredObj){
+	// This featured item object
+  $featured = $featuredObj;
+
+  // If the featured item object is populated
+  if(count($featured) > 0) :
+
+  		// Does this featured item have a story related? 
+  		if(count($featured['story']) > 1) :
+  			$hasStory = true;
+  		endif;
+
+      // Start featured item element
+      $str = '<div class="featured-menu-item">';
+
+      if($hasStory) :
+	      // This featured item has a story. Use a larger image size to make room for story teaser. 
+	      $str .= $featured['featured_img_story'];
+	   	else :
+	   		// No story, use standard image size
+	   		$str .= $featured['featured_img'];
+	   	endif;
+
+      // Start text wrapper
+      $str .= '<div class="text-wrapper">';
+
+      // Include featured item title
+      $str .= '<p class="title">' . $featured['title'] . '</p>';
+
+      // If there is a story associated with this featured item
+      if($hasStory) :
+
+          // This story
+          $story = $featured['story'];
+
+          // Story wrapper
+          $str .= '<div class="story-wrapper">';
+
+          // Add story icon
+          $str .= '<div class="icon icon-stories"></div>';
+
+          // Generate and include story teaser
+          $str .= '<div class="story-teaser">' . create_teaser($story['post_content'], 75) . ' <a href="' . $story['guid'] . '">' . $story['call_to_action'] . ' <span class="icon icon-arrow-right"></span></a></div>';
+
+          // Close .story-wrapper
+          $str .= '</div>';
+
+      endif;
+
+      // Close .text-wrapper and .featured-menu-item
+      $str .= "</div></div>";
+
+      return $str;
+
+  endif;
+}
+
+/**
+*
+* Display menu item
+* Accepts menu item object and featured item obj, returns markup
+*
+**/
+function display_menu_item($menuItemObj, $featuredItemObj){
+
+	// Does this menu item  have a story related? 
+	if(count($menuItemObj['story']) > 1) :
+		$hasStory = true;
+		// This story
+		$story = $menuItemObj['story'];
+	endif;
 
   // Count menu item keys
   $keyLength = count($menuItemObj['menu_key_relationship']);
@@ -210,6 +310,14 @@ function displayMenuItem($menuItemObj){
   // Echo menu item description
   $str .= '<p class="desc">' . $menuItemObj['description'] . '</p>';
 
+  if($hasStory) :
+  	// If this menu item is not also the featured item, display the story CTA under the menu item in the category
+  	if($menuItemObj['title'] != $featuredItemObj['title']) :
+  		// Generate and include story teaser
+  		$str .= '<div class="story-teaser"><div class="icon icon-stories"></div><p>' . create_teaser($story['post_content'], 75) . ' <a href="' . $story['guid'] . '">' . $story['call_to_action'] . ' <span class="icon icon-arrow-right"></span></a></p></div>';
+  	endif;
+  endif;
+
   // Closing .menu-item
   $str .= '</div>';
 
@@ -223,7 +331,7 @@ function displayMenuItem($menuItemObj){
 * Accepts menu object, returns markup containing menu category and all menu items
 *
 **/
-function displayMenuCategory($menuObj,$layout){
+function display_menu_category($menuObj,$layout){
 
 	if(count($menuObj > 0)) : 
 
@@ -249,11 +357,17 @@ function displayMenuCategory($menuObj,$layout){
 
 	  // Start first column
 	  $str .= '<div class="six columns">';
+
+	  // If 'left' layout, include featured menu item at top of left column
+	  if($layout === 'left') :
+	  	// Display featured menu item
+	  	$str .= display_featured_item($menuObj['featured']);
+	  endif; 
 	      
 	  // Iterate through first half of total menu items and populate first column
 	  for($i = 0; $i < ($totalMenuItems / 2); $i++){ 
 
-	    $str .= displayMenuItem($menuObj['items'][$i]);
+	    $str .= display_menu_item($menuObj['items'][$i]);
 
 	  };
 	          
@@ -263,11 +377,17 @@ function displayMenuCategory($menuObj,$layout){
 
 		  // Start second column
 		  $str .= '<div class="six columns">';
+
+			// If 'right' layout, include featured menu item at top of right column
+		  if($layout === 'right') :
+		  	// Display featured menu item
+		  	$str .= display_featured_item($menuObj['featured']);
+		  endif; 
 		          
 		  // Iterate through second half of total menu items and populate second column
 		  for($i = ($totalMenuItems / 2); $i < $totalMenuItems; $i++){
 
-		  	$str .= displayMenuItem($menuObj['items'][$i]);
+		  	$str .= display_menu_item($menuObj['items'][$i],$menuObj['featured']);
 		    
 		  };
 		          

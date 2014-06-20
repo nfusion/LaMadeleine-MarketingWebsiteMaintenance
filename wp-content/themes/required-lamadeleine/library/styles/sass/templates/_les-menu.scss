@@ -58,8 +58,53 @@
 }
 
 .featured-menu-item{
-	max-width: 350px;	height: auto;
+	height: auto;
 	position: relative;
+	margin-bottom: 30px;
+	.text-wrapper{
+		padding: 15px;
+		position: absolute;
+		bottom: 0;
+		color: $white;
+		background: rgba(0,0,0,0.7);
+	}
+	.title{
+		margin-bottom: 10px;
+		text-align: center;
+		font-family: $merriweather;
+	}
+	.icon-stories{
+		width: 15%;
+		float: left;
+		color: $white;
+		font-size: 30px;
+		text-align: center;
+	}
+	.story-teaser{
+		width: 85%;
+		float: left;
+		font-style: italic;
+		font-size: 13px;
+		line-height: 1.5;
+		a{
+			font-size: 13px;
+			color: $deepOrange;
+			white-space: nowrap;
+			&:hover{
+				color: lighten($deepOrange, 10%);
+				.icon{
+					left: 1px;
+				}
+			}
+			.icon{
+				font-size: 16px;
+				line-height: 12px;
+				position: relative;
+				top: 3px;
+				left: -3px;
+			}
+		}
+	}
 }
 
 .menu-item{
@@ -80,6 +125,45 @@
 	}
 	.desc{
 		font-size: 13px;
+	}
+	.story-teaser{
+		width: 100%;
+		padding: 15px;
+		border: 1px solid $darkBrown;
+		background: $white;
+		overflow: hidden;
+		@include border-radius(5px);
+		.icon-stories{
+			width: 15%;
+			padding-top: 10px;
+			font-size: 30px;
+			float: left;
+			text-align: center;
+		}
+		p, a{
+			font-size: 13px;
+			line-height: 1.5;
+		}
+		p{
+			width: 85%;
+			float: left;
+			margin-bottom: 0;
+		}
+		a{
+			white-space: nowrap;
+		}
+		a:hover{
+			.icon-arrow-right{
+				left: 1px;
+			}
+		}
+		.icon-arrow-right{
+			font-size: 16px;
+			line-height: 13px;
+			position: relative;
+			top: 3px;
+			left: -3px;
+		}
 	}
 }
 

@@ -1807,33 +1807,133 @@ aside p {
 
 /* line 60, ../sass/templates/_les-menu.scss */
 .featured-menu-item {
-  max-width: 350px;
   height: auto;
   position: relative;
+  margin-bottom: 30px;
+}
+/* line 64, ../sass/templates/_les-menu.scss */
+.featured-menu-item .text-wrapper {
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+}
+/* line 71, ../sass/templates/_les-menu.scss */
+.featured-menu-item .title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+/* line 76, ../sass/templates/_les-menu.scss */
+.featured-menu-item .icon-stories {
+  width: 15%;
+  float: left;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+/* line 83, ../sass/templates/_les-menu.scss */
+.featured-menu-item .story-teaser {
+  width: 85%;
+  float: left;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.5;
+}
+/* line 89, ../sass/templates/_les-menu.scss */
+.featured-menu-item .story-teaser a {
+  font-size: 13px;
+  color: #ff6600;
+  white-space: nowrap;
+}
+/* line 93, ../sass/templates/_les-menu.scss */
+.featured-menu-item .story-teaser a:hover {
+  color: #ff8533;
+}
+/* line 95, ../sass/templates/_les-menu.scss */
+.featured-menu-item .story-teaser a:hover .icon {
+  left: 1px;
+}
+/* line 99, ../sass/templates/_les-menu.scss */
+.featured-menu-item .story-teaser a .icon {
+  font-size: 16px;
+  line-height: 12px;
+  position: relative;
+  top: 3px;
+  left: -3px;
 }
 
-/* line 65, ../sass/templates/_les-menu.scss */
+/* line 110, ../sass/templates/_les-menu.scss */
 .menu-item {
   margin-bottom: 30px;
 }
-/* line 67, ../sass/templates/_les-menu.scss */
+/* line 112, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper {
   width: 100%;
   overflow: hidden;
 }
-/* line 70, ../sass/templates/_les-menu.scss */
+/* line 115, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper .title {
   margin-bottom: 2px;
   font-family: "Merriweather", serif;
   font-weight: bold;
   float: left;
 }
-/* line 76, ../sass/templates/_les-menu.scss */
+/* line 121, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper .menu-keys {
   float: left;
   padding: 4px 0 0 5px;
 }
-/* line 81, ../sass/templates/_les-menu.scss */
+/* line 126, ../sass/templates/_les-menu.scss */
 .menu-item .desc {
   font-size: 13px;
+}
+/* line 129, ../sass/templates/_les-menu.scss */
+.menu-item .story-teaser {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #310d00;
+  background: white;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 136, ../sass/templates/_les-menu.scss */
+.menu-item .story-teaser .icon-stories {
+  width: 15%;
+  padding-top: 10px;
+  font-size: 30px;
+  float: left;
+  text-align: center;
+}
+/* line 143, ../sass/templates/_les-menu.scss */
+.menu-item .story-teaser p, .menu-item .story-teaser a {
+  font-size: 13px;
+  line-height: 1.5;
+}
+/* line 147, ../sass/templates/_les-menu.scss */
+.menu-item .story-teaser p {
+  width: 85%;
+  float: left;
+  margin-bottom: 0;
+}
+/* line 152, ../sass/templates/_les-menu.scss */
+.menu-item .story-teaser a {
+  white-space: nowrap;
+}
+/* line 156, ../sass/templates/_les-menu.scss */
+.menu-item .story-teaser a:hover .icon-arrow-right {
+  left: 1px;
+}
+/* line 160, ../sass/templates/_les-menu.scss */
+.menu-item .story-teaser .icon-arrow-right {
+  font-size: 16px;
+  line-height: 13px;
+  position: relative;
+  top: 3px;
+  left: -3px;
 }

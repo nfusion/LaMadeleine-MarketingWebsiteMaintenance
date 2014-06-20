@@ -65,40 +65,26 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
 
         // Iterate through menu results
         foreach ($menuArray as $menu) {
-
-            ?>
-
-            <?php
-
-                $featured = $menu['featured'];
-
-                $str = '<div class="featured-menu-item">'; 
-                $str .= $featured['featured_img'];
-                $str .= '<div class="text-wrapper">';
-                $str .= '<p class="title">' . $featured['title'] . '</p>';
-
-                if(count($featured['story'] > 0)) :
-                    $str .= count($featured['story']);
-                endif;
-
-                // echo $str;
-
+                
             ?>
             
             <!-- <pre>
-            <?php // print_r($menu['featured']) ?>
+            <?php //print_r($menu['featured']) ?>
             </pre> -->
 
         <?php 
 
+            // Determine if odd or even iteration to alternate menu category layout
             if ($categoryCount % 2 == 0) : 
-                $layout = 'left'; 
-            else : 
-                $layout = 'right'; 
+                $layout = 'left';
+            else :
+                $layout = 'right';
             endif;
 
-            echo displayMenuCategory($menu,$layout);
+            // Display menu category, pass menu object and layout identifier
+            echo display_menu_category($menu,$layout);
 
+            // If menu object is populate, add divider
             if(count($menu) > 0) :
                 echo '<hr class="dashed">';
             endif;
