@@ -146,7 +146,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'daypart', 265, 95, true ); // 265 pixels wide by 95 pixels tall, hard crop true
 	add_image_size( 'menu-featured', 820, 360, true ); // 820 pixels wide by 360 pixels tall, hard crop true
 	add_image_size( 'menu-item-featured', 365, 200, true ); // 365 pixels wide by 200 pixels tall, hard crop true
-	add_image_size( 'menu-item-featured-story', 365, 365, true ); // 365 pixels wide by 365 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured-story', 365, 300, true ); // 365 pixels wide by 300 pixels tall, hard crop true
 }
 
 /**
