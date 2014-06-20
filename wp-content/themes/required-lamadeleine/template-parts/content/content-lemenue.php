@@ -59,28 +59,28 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
 
 <div class="menu-details">
     <?php
-        foreach ($menuArray as $category => $menu) {
 
-        $categoryName = $menu['items'][0]['menu_category']['name'];
-    ?>
+        // Used to track odd/even category in iteration and adjust layout accordingly
+        $categoryCount = 0;
 
-        <h3><?php echo $categoryName; ?></h3>
+        // Iterate through menu results
+        foreach ($menuArray as $menu) {
 
-        <h5>The Featured Item:</h5>
-        
-        <pre>
-        <?php print_r($menu['featured']) ?>
-        </pre>
+            if ($categoryCount % 2 == 0) : 
+                $layout = 'left'; 
+            else : 
+                $layout = 'right'; 
+            endif;
 
-        <h5>The Items:</h5>
-        
-        <pre>
-        <?php print_r($menu['items']) ?>
-        </pre>
+            echo displayMenuCategory($menu,$layout);
 
-        <hr>
+            if(count($menu) > 0) :
+                echo '<hr class="dashed">';
+            endif;
 
-    <?php 
+            // Increment category count
+            $categoryCount++;
+
         } // End of the $menuArray (full menu object) for each
     ?>
 </div>

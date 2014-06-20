@@ -110,30 +110,30 @@ add_action( 'wp_enqueue_scripts', 'required_lam_enqueue' );
 * Font Awesome Shortcodes
 *
 **/ 
-function addscFontAwesome($atts) {
-    extract(shortcode_atts(array(
-    'type'  => '',
-    'size' => '',
-    'rotate' => '',
-    'flip' => '',
-    'pull' => '',
-    'animated' => '',
+// function addscFontAwesome($atts) {
+//     extract(shortcode_atts(array(
+//     'type'  => '',
+//     'size' => '',
+//     'rotate' => '',
+//     'flip' => '',
+//     'pull' => '',
+//     'animated' => '',
  
-    ), $atts));
+//     ), $atts));
      
-    $type = ($type) ? 'fa-'.$type. '' : 'fa-star';
-    $size = ($size) ? 'fa-'.$size. '' : '';
-    $rotate = ($rotate) ? 'fa-rotate-'.$rotate. '' : '';
-    $flip = ($flip) ? 'fa-flip-'.$flip. '' : '';
-    $pull = ($pull) ? 'pull-'.$pull. '' : '';
-    $animated = ($animated) ? 'fa-spin' : '';
+//     $type = ($type) ? 'fa-'.$type. '' : 'fa-star';
+//     $size = ($size) ? 'fa-'.$size. '' : '';
+//     $rotate = ($rotate) ? 'fa-rotate-'.$rotate. '' : '';
+//     $flip = ($flip) ? 'fa-flip-'.$flip. '' : '';
+//     $pull = ($pull) ? 'pull-'.$pull. '' : '';
+//     $animated = ($animated) ? 'fa-spin' : '';
  
-    $theAwesomeFont = '<i class="fa '.sanitize_html_class($type).' '.sanitize_html_class($size).' '.sanitize_html_class($rotate).' '.sanitize_html_class($flip).' '.sanitize_html_class($pull).' '.sanitize_html_class($animated).'"></i>';
+//     $theAwesomeFont = '<i class="fa '.sanitize_html_class($type).' '.sanitize_html_class($size).' '.sanitize_html_class($rotate).' '.sanitize_html_class($flip).' '.sanitize_html_class($pull).' '.sanitize_html_class($animated).'"></i>';
      
-    return $theAwesomeFont;
-}
+//     return $theAwesomeFont;
+// }
  
-add_shortcode('icon', 'addscFontAwesome');
+// add_shortcode('icon', 'addscFontAwesome');
 
 
 /**
@@ -145,6 +145,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'fma-full', 820, 750, true ); // 820 pixels wide by 750 pixels tall, hard crop true
 	add_image_size( 'daypart', 265, 95, true ); // 265 pixels wide by 95 pixels tall, hard crop true
 	add_image_size( 'menu-featured', 820, 360, true ); // 820 pixels wide by 360 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured', 330, 180, true ); // 330 pixels wide by 180 pixels tall, hard crop true
 }
 
 /**
@@ -175,3 +176,128 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+/**
+*
+* Display menu category by item
+* Accepts menu object, returns full markup containing menu category and all menu items
+*
+**/
+function displayMenuCategory($menuObj,$layout){
+
+	if(count($menuObj > 0)) : 
+
+		// If no layout is defined, default to left layout
+		if(!$layout){
+			$layout = 'left';
+		}
+
+		// This category's name
+	  $categoryName = $menuObj['items'][0]['menu_category']['name'];
+
+	  // This category's total number of menu items
+	  $totalMenuItems = count($menuObj['items']);
+
+	  // String to return containing markup
+	  $str = "";
+
+	  // Start new menu category row
+	  $str .= '<div clas="row">';
+
+	  // Include menu category name
+	  $str .= '<h2 class="category-title">' . $categoryName . '</h2>';
+
+	  // Start first column
+	  $str .= '<div class="six columns">';
+	      
+	  // Iterate through first half of total menu items and populate first column
+	  for($i = 0; $i < ($totalMenuItems / 2); $i++){ 
+
+	    // This menu item
+	    $item = $menuObj['items'][$i];
+
+	    // Count menu item keys
+	    $keyLength = count($item['menu_key_relationship']);
+
+	    // Echo menu item wrapper
+	    $str .= '<div class="menu-item">';
+
+	    // Echo menu item title
+	    $str .= '<div class="title-wrapper"><p class="title">' . $item['title'] . '</p>';
+
+	    // If there are menu keys assigned with this item display associated icons
+	    if($keyLength > 0) :
+	        $str .= '<div class="menu-keys">';
+	        // Iterate through menu item keys
+	        foreach($item['menu_key_relationship'] as $menuKey){
+	            // Echo this menu item key
+	            $str .= '<span class="icon icon-legend-' . $menuKey['slug'] . '"></span>';
+	        }
+	        $str .= '</div>';
+	    endif;
+
+	    // Closing .title-wrapper
+	    $str .= '</div>';
+
+	    // Echo menu item description
+	    $str .= '<p class="desc">' . $item['description'] . '</p>';
+
+	    // Closing .menu-item
+	    $str .= '</div>';
+
+	  };
+	          
+	  $str .= '</div>';
+
+	  if($totalMenuItems > 1) :
+
+		  // Start second column
+		  $str .= '<div class="six columns">';
+		          
+		  // Iterate through second half of total menu items and populate second column
+		  for($i = ($totalMenuItems / 2); $i < $totalMenuItems; $i++){
+
+		    // This menu item
+		    $item = $menuObj['items'][$i];
+
+		    // Count menu item keys
+		    $keyLength = count($item['menu_key_relationship']);
+
+		    // Echo menu item wrapper
+		    $str .= '<div class="menu-item">';
+
+		    // Echo menu item title
+		    $str .= '<div class="title-wrapper"><p class="title">' . $item['title'] . '</p>';
+
+		    // If there are menu keys assigned with this item display associated icons
+		    if($keyLength > 0) :
+		        $str .= '<div class="menu-keys">';
+		        // Iterate through menu item keys
+		        foreach($item['menu_key_relationship'] as $menuKey){
+		            // Echo this menu item key
+		            $str .= '<span class="icon icon-legend-' . $menuKey['slug'] . '"></span>';
+		        }
+		        $str .= '</div>';
+		    endif;
+
+	      // Closing .title-wrapper
+	      $str .= '</div>';
+
+	      // Echo menu item description
+	      $str .= '<p class="desc">' . $item['description'] . '</p>';
+
+	      // Closing .menu-item
+	      $str .= '</div>';
+		  };
+		          
+			// Closing second column
+			$str .= '</div>';
+
+		endif;
+	  
+	  // Closing menu category row
+	  $str .= '</div>';
+
+	  return $str;
+
+	endif;
+}
