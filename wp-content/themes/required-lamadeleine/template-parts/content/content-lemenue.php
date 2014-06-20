@@ -66,6 +66,33 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
         // Iterate through menu results
         foreach ($menuArray as $menu) {
 
+            ?>
+
+            <h5>The Featured Item:</h5>
+
+            <?php
+
+                $featured = $menu['featured'];
+
+                $str = '<div class="featured-menu-item">'; 
+                $str .= $featured['featured_img'];
+                $str .= '<div class="text-wrapper">';
+                $str .= '<p class="title">' . $featured['title'] . '</p>';
+
+                if(count($featured['story'] > 0)) :
+                    $str .= count($featured['story']);
+                endif;
+
+                echo $str;
+
+            ?>
+            
+            <pre>
+            <?php print_r($menu['featured']) ?>
+            </pre>
+
+        <?php 
+
             if ($categoryCount % 2 == 0) : 
                 $layout = 'left'; 
             else : 

@@ -145,7 +145,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'fma-full', 820, 750, true ); // 820 pixels wide by 750 pixels tall, hard crop true
 	add_image_size( 'daypart', 265, 95, true ); // 265 pixels wide by 95 pixels tall, hard crop true
 	add_image_size( 'menu-featured', 820, 360, true ); // 820 pixels wide by 360 pixels tall, hard crop true
-	add_image_size( 'menu-item-featured', 330, 180, true ); // 330 pixels wide by 180 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured', 350, 350, true ); // 350 pixels wide by 350 pixels tall, hard crop true
 }
 
 /**
@@ -178,8 +178,49 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /**
 *
+* Display menu item
+* Accepts menu item object, returns markup
+*
+**/
+function displayMenuItem($menuItemObj){
+
+  // Count menu item keys
+  $keyLength = count($menuItemObj['menu_key_relationship']);
+
+  // Echo menu item wrapper
+  $str .= '<div class="menu-item">';
+
+  // Echo menu item title
+  $str .= '<div class="title-wrapper"><p class="title">' . $menuItemObj['title'] . '</p>';
+
+  // If there are menu keys assigned with this item display associated icons
+  if($keyLength > 0) :
+      $str .= '<div class="menu-keys">';
+      // Iterate through menu item keys
+      foreach($menuItemObj['menu_key_relationship'] as $menuKey){
+          // Echo this menu item key
+          $str .= '<span class="icon icon-legend-' . $menuKey['slug'] . '"></span>';
+      }
+      $str .= '</div>';
+  endif;
+
+  // Closing .title-wrapper
+  $str .= '</div>';
+
+  // Echo menu item description
+  $str .= '<p class="desc">' . $menuItemObj['description'] . '</p>';
+
+  // Closing .menu-item
+  $str .= '</div>';
+
+  return $str;
+
+}
+
+/**
+*
 * Display menu category by item
-* Accepts menu object, returns full markup containing menu category and all menu items
+* Accepts menu object, returns markup containing menu category and all menu items
 *
 **/
 function displayMenuCategory($menuObj,$layout){
@@ -212,37 +253,7 @@ function displayMenuCategory($menuObj,$layout){
 	  // Iterate through first half of total menu items and populate first column
 	  for($i = 0; $i < ($totalMenuItems / 2); $i++){ 
 
-	    // This menu item
-	    $item = $menuObj['items'][$i];
-
-	    // Count menu item keys
-	    $keyLength = count($item['menu_key_relationship']);
-
-	    // Echo menu item wrapper
-	    $str .= '<div class="menu-item">';
-
-	    // Echo menu item title
-	    $str .= '<div class="title-wrapper"><p class="title">' . $item['title'] . '</p>';
-
-	    // If there are menu keys assigned with this item display associated icons
-	    if($keyLength > 0) :
-	        $str .= '<div class="menu-keys">';
-	        // Iterate through menu item keys
-	        foreach($item['menu_key_relationship'] as $menuKey){
-	            // Echo this menu item key
-	            $str .= '<span class="icon icon-legend-' . $menuKey['slug'] . '"></span>';
-	        }
-	        $str .= '</div>';
-	    endif;
-
-	    // Closing .title-wrapper
-	    $str .= '</div>';
-
-	    // Echo menu item description
-	    $str .= '<p class="desc">' . $item['description'] . '</p>';
-
-	    // Closing .menu-item
-	    $str .= '</div>';
+	    $str .= displayMenuItem($menuObj['items'][$i]);
 
 	  };
 	          
@@ -256,37 +267,8 @@ function displayMenuCategory($menuObj,$layout){
 		  // Iterate through second half of total menu items and populate second column
 		  for($i = ($totalMenuItems / 2); $i < $totalMenuItems; $i++){
 
-		    // This menu item
-		    $item = $menuObj['items'][$i];
-
-		    // Count menu item keys
-		    $keyLength = count($item['menu_key_relationship']);
-
-		    // Echo menu item wrapper
-		    $str .= '<div class="menu-item">';
-
-		    // Echo menu item title
-		    $str .= '<div class="title-wrapper"><p class="title">' . $item['title'] . '</p>';
-
-		    // If there are menu keys assigned with this item display associated icons
-		    if($keyLength > 0) :
-		        $str .= '<div class="menu-keys">';
-		        // Iterate through menu item keys
-		        foreach($item['menu_key_relationship'] as $menuKey){
-		            // Echo this menu item key
-		            $str .= '<span class="icon icon-legend-' . $menuKey['slug'] . '"></span>';
-		        }
-		        $str .= '</div>';
-		    endif;
-
-	      // Closing .title-wrapper
-	      $str .= '</div>';
-
-	      // Echo menu item description
-	      $str .= '<p class="desc">' . $item['description'] . '</p>';
-
-	      // Closing .menu-item
-	      $str .= '</div>';
+		  	$str .= displayMenuItem($menuObj['items'][$i]);
+		    
 		  };
 		          
 			// Closing second column

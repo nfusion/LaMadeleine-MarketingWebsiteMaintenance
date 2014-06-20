@@ -649,7 +649,7 @@ hr.dashed {
 **/
 /* line 6, ../sass/framework/_layout.scss */
 html, body, #container {
-  min-height: 100%;
+  height: 100%;
 }
 
 /* line 10, ../sass/framework/_layout.scss */
@@ -1805,27 +1805,34 @@ aside p {
 }
 
 /* line 60, ../sass/templates/_les-menu.scss */
+.featured-menu-item {
+  max-width: 350px;
+  height: auto;
+  position: relative;
+}
+
+/* line 65, ../sass/templates/_les-menu.scss */
 .menu-item {
   margin-bottom: 30px;
 }
-/* line 62, ../sass/templates/_les-menu.scss */
+/* line 67, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper {
   width: 100%;
   overflow: hidden;
 }
-/* line 65, ../sass/templates/_les-menu.scss */
+/* line 70, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper .title {
   margin-bottom: 2px;
   font-family: "Merriweather", serif;
   font-weight: bold;
   float: left;
 }
-/* line 71, ../sass/templates/_les-menu.scss */
+/* line 76, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper .menu-keys {
   float: left;
   padding: 4px 0 0 5px;
 }
-/* line 76, ../sass/templates/_les-menu.scss */
+/* line 81, ../sass/templates/_les-menu.scss */
 .menu-item .desc {
   font-size: 13px;
 }
