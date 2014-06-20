@@ -1,0 +1,118 @@
+/**
+* La Madeleine
+* Primary navigation
+**/
+
+#nav{
+	width: 100%;
+	max-width: 1140px;
+	height: 830px;
+	max-height: 830px;
+	margin: 0 auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	color: $lightCream;
+	.nav-wrapper{
+		width: 320px;
+		height: 830px;
+		max-width: 320px;
+		max-height: 830px;
+		padding-top: 82px;
+		position: absolute;
+		top: 0;
+		left: -340px;
+		z-index: 100;
+		background: url(../../../img/nav/nav-bg.jpg) no-repeat;
+		@include transition-property(left);
+		@include transition-duration(0.35s);
+		@include box-shadow(rgba(0,0,0,0.5) 8px -8px 18px);
+		&.active{
+			left: 0;
+		}
+	}
+	h4{
+		margin: 10px 0;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: 300;
+		color: $orange;
+		text-align: center;
+		@include text-shadow(rgba(0,0,0,0.5) 0 1px 1px);
+	}
+	hr{
+		width: 80%;
+		margin: 15px auto;
+		border: 0;
+		border-bottom: 1px dashed $redBrown;
+	}
+	.nav-group{
+		padding-bottom: 15px;
+		a:first-of-type{
+			@include box-shadow(rgba(0,0,0,0.5) 0 1px 2px inset);
+		}
+	}
+	.nav-item{
+		display: block;
+		padding: 8px 25px;
+		margin: 2px 0;
+		position: relative;
+		color: $lightCream;
+		background: rgba(0,0,0,0.35);
+		@include transition-duration(0.3s);
+		&:after{
+			content: "\e620";
+			font-family: 'icomoon';
+			color: $lightCream;
+			font-size: 16px;
+			position: absolute;
+			top: 16px;
+			right: 25px;
+			@include transition-duration(0.3s);
+		}
+		&:hover{
+			color: $orange;
+			background: rgba(0,0,0,0.5);
+			&:after{
+				color: $orange;
+				right: 15px;
+			}
+		}
+		.icon{
+			font-size: 30px;
+		}
+		.item-title{
+			position: relative;
+			top: -5px;
+			left: 20px;
+			font-size: 21px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-family: $ostrich;
+		}
+	}
+	.social-group{
+		text-align: center;
+		a{
+			display: inline-block;
+			margin: 7px;
+			padding: 8px;
+			font-size: 24px;
+			color: $lightCream;
+			border: 1px solid $orange;
+			@include border-radius(24px);
+			@include transition-duration(0.3s);
+			@include lam-text-shadow();
+			&:hover{
+				color: $orange;
+			}
+		}
+	}
+	.eclub{
+		text-align: center;
+		p{
+			font-size: 14px;
+		}
+	}
+}

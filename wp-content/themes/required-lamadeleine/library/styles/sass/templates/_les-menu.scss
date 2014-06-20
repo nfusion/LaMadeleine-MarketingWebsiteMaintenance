@@ -1,0 +1,85 @@
+/**
+* La Madeleine
+* Les Menu Page Styling
+**/
+
+.menu-overview{
+	position: relative;
+	.menu-featured-image{
+		overflow: hidden;
+		padding-bottom: 3px;
+		border-bottom: 1px solid $lightFadedBrown;
+		img{
+			width: 100%;
+		}
+	}
+	h1.menu-title{
+		text-align: center;
+		text-transform: uppercase;
+		margin-top: -20px;
+		color: $darkBrown;
+		font-size: 24px;
+		span{
+			background: $lightCream;
+		}
+		span.inner{
+			padding: 15px 25px 11px;
+			border: 1px solid $lightFadedBrown;
+			position: relative;
+			top: 17px;
+		}
+		span.outer{
+			display: inline-block;
+			max-height: 30px;
+			padding: 5px;
+			position: relative;
+			top: -15px
+		}
+	}
+	.menu-text{
+		padding: 15px 10px;
+		text-align: center;
+	}
+}
+
+.menu-details{
+	width: 100%;
+	padding: 0 15px;
+	overflow: hidden;
+	.category-title{
+		padding: 0 15px;
+		margin-bottom: 30px;
+		text-transform: uppercase;
+		font-family: $playfair;
+		font-size: 18px;
+		letter-spacing: 1px;
+		color: $darkBrown;
+	}
+}
+
+.featured-menu-item{
+	max-width: 350px;	height: auto;
+	position: relative;
+}
+
+.menu-item{
+	margin-bottom: 30px;
+	.title-wrapper{
+		width: 100%;
+		overflow: hidden;
+		.title{
+			margin-bottom: 2px;
+			font-family: $merriweather;
+			font-weight: bold;
+			float: left;
+		}
+		.menu-keys{
+			float: left;
+			padding: 4px 0 0 5px;
+		}
+	}
+	.desc{
+		font-size: 13px;
+	}
+}
+

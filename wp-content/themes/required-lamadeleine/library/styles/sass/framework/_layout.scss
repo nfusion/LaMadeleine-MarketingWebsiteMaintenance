@@ -1,0 +1,84 @@
+/**
+* La Madeleine
+* Global framework layout
+**/
+
+html,body,#container{
+	height: 100%;
+}
+
+body{
+	background: url(../../../img/halftone.png);
+	font-family: $georgia;
+}
+
+#container{
+	width: 100%;
+	max-width: 1140px;
+	min-width: 320px;
+	margin: 0 auto;
+	padding-top: 70px; // Compenate for fixed header at mobile
+	background: $lightCream;
+}
+
+#content{
+	position: relative;
+	#main{
+		width: 100%;
+		padding: 0;
+	}
+	#sidebar{
+		width: 100%;
+		padding: 0;
+		.widget{
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+			border-bottom: 1px dashed $fadedBrown;
+			&:last-of-type{
+				border-bottom: 0;
+			}
+		}
+	}
+	.sidebar-wrapper{
+		padding: 10px;
+	}
+}
+
+@media (min-width: $small-screen-min){
+	#container{
+		padding-top: 0;
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#content{
+		width: 100%;
+		@include clearfix();
+		#main{
+			width: 70%;
+			float: left;
+		}
+		#sidebar{
+			width: 30%;
+			float: left;
+			.sidebar-wrapper{
+				padding: 15px 25px 0;
+				.widget:last-child{
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $large-screen-min){
+	#content {
+		#main{
+			width: 72%;
+		}
+		#sidebar {
+			width: 28%;
+		}
+	}
+}
