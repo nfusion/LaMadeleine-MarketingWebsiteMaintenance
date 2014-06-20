@@ -110,7 +110,6 @@ function process_menu($mypod,$daypart){
             //  echo "<pre>";
             // print_r( $item );
 
-
             $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
             $item['featured_img_story'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured-story' );
 
@@ -118,7 +117,7 @@ function process_menu($mypod,$daypart){
 
                     $menu[$item['menu_category']['slug']]['items'][] = $item;
 
-                    if($item['featured_item'] = 1){
+                    if($item['featured_item'] == 1){
                         $menu[$item['menu_category']['slug']]['featured'] = $item;
                     }
                 }
