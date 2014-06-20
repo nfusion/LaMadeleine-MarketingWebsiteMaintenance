@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Include custom La Madeleine theme functions
  *
