@@ -1812,6 +1812,10 @@ aside p {
   margin-bottom: 30px;
 }
 /* line 64, ../sass/templates/_les-menu.scss */
+.featured-menu-item img {
+  display: block;
+}
+/* line 67, ../sass/templates/_les-menu.scss */
 .featured-menu-item .text-wrapper {
   width: 100%;
   padding: 15px;
@@ -1820,13 +1824,13 @@ aside p {
   color: white;
   background: rgba(0, 0, 0, 0.6);
 }
-/* line 72, ../sass/templates/_les-menu.scss */
+/* line 75, ../sass/templates/_les-menu.scss */
 .featured-menu-item .title {
   margin-bottom: 10px;
   text-align: center;
   font-family: "Merriweather", serif;
 }
-/* line 77, ../sass/templates/_les-menu.scss */
+/* line 80, ../sass/templates/_les-menu.scss */
 .featured-menu-item .icon-stories {
   width: 15%;
   float: left;
@@ -1834,7 +1838,7 @@ aside p {
   font-size: 30px;
   text-align: center;
 }
-/* line 84, ../sass/templates/_les-menu.scss */
+/* line 87, ../sass/templates/_les-menu.scss */
 .featured-menu-item .story-teaser {
   width: 85%;
   float: left;
@@ -1842,21 +1846,21 @@ aside p {
   font-size: 13px;
   line-height: 1.5;
 }
-/* line 90, ../sass/templates/_les-menu.scss */
+/* line 93, ../sass/templates/_les-menu.scss */
 .featured-menu-item .story-teaser a {
   font-size: 13px;
   color: #ff6600;
   white-space: nowrap;
 }
-/* line 94, ../sass/templates/_les-menu.scss */
+/* line 97, ../sass/templates/_les-menu.scss */
 .featured-menu-item .story-teaser a:hover {
   color: #ff8533;
 }
-/* line 96, ../sass/templates/_les-menu.scss */
+/* line 99, ../sass/templates/_les-menu.scss */
 .featured-menu-item .story-teaser a:hover .icon {
   left: 1px;
 }
-/* line 100, ../sass/templates/_les-menu.scss */
+/* line 103, ../sass/templates/_les-menu.scss */
 .featured-menu-item .story-teaser a .icon {
   font-size: 16px;
   line-height: 12px;
@@ -1865,32 +1869,32 @@ aside p {
   left: -3px;
 }
 
-/* line 111, ../sass/templates/_les-menu.scss */
+/* line 114, ../sass/templates/_les-menu.scss */
 .menu-item {
   margin-bottom: 30px;
 }
-/* line 113, ../sass/templates/_les-menu.scss */
+/* line 116, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper {
   width: 100%;
   overflow: hidden;
 }
-/* line 116, ../sass/templates/_les-menu.scss */
+/* line 119, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper .title {
   margin-bottom: 2px;
   font-family: "Merriweather", serif;
   font-weight: bold;
   float: left;
 }
-/* line 122, ../sass/templates/_les-menu.scss */
+/* line 125, ../sass/templates/_les-menu.scss */
 .menu-item .title-wrapper .menu-keys {
   float: left;
   padding: 4px 0 0 5px;
 }
-/* line 127, ../sass/templates/_les-menu.scss */
+/* line 130, ../sass/templates/_les-menu.scss */
 .menu-item .desc {
   font-size: 13px;
 }
-/* line 130, ../sass/templates/_les-menu.scss */
+/* line 133, ../sass/templates/_les-menu.scss */
 .menu-item .story-teaser {
   width: 100%;
   padding: 15px;
@@ -1903,34 +1907,33 @@ aside p {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 137, ../sass/templates/_les-menu.scss */
+/* line 140, ../sass/templates/_les-menu.scss */
 .menu-item .story-teaser .icon-stories {
   width: 15%;
-  padding-top: 10px;
   font-size: 30px;
   float: left;
   text-align: center;
 }
-/* line 144, ../sass/templates/_les-menu.scss */
+/* line 146, ../sass/templates/_les-menu.scss */
 .menu-item .story-teaser p, .menu-item .story-teaser a {
   font-size: 13px;
   line-height: 1.5;
 }
-/* line 148, ../sass/templates/_les-menu.scss */
+/* line 150, ../sass/templates/_les-menu.scss */
 .menu-item .story-teaser p {
   width: 85%;
   float: left;
   margin-bottom: 0;
 }
-/* line 153, ../sass/templates/_les-menu.scss */
+/* line 155, ../sass/templates/_les-menu.scss */
 .menu-item .story-teaser a {
   white-space: nowrap;
 }
-/* line 157, ../sass/templates/_les-menu.scss */
+/* line 159, ../sass/templates/_les-menu.scss */
 .menu-item .story-teaser a:hover .icon-arrow-right {
   left: 1px;
 }
-/* line 161, ../sass/templates/_les-menu.scss */
+/* line 163, ../sass/templates/_les-menu.scss */
 .menu-item .story-teaser .icon-arrow-right {
   font-size: 16px;
   line-height: 13px;
