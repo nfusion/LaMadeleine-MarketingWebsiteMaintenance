@@ -343,8 +343,24 @@ function display_menu_category($menuObj,$layout){
 		// This category's name
 	  $categoryName = $menuObj['items'][0]['menu_category']['name'];
 
+	  // Is there a featured menu item? 
+	  if(count($menuObj['featured'])) :
+	  	// Yes! 
+	  	$isFeatured = true;
+	  	$featured = $menuObj['featured'];
+	  endif; 
+
 	  // This category's total number of menu items
 	  $totalMenuItems = count($menuObj['items']);
+
+	  // Determine where to split columns
+	  if($isFeatured && $totalMenuItems > 2) :
+	  	// Featured item and more than two items, stop one item short to better balance column against featured item image
+	  	$splitItems = (($totalMenuItems / 2) - 1);
+	  else : 
+	  	// Less than two items or no featured item, split evenly in half
+	  	$splitItems = $totalMenuItems;
+	  endif; 
 
 	  // String to return containing markup
 	  $str = "";
@@ -361,13 +377,14 @@ function display_menu_category($menuObj,$layout){
 	  // If 'left' layout, include featured menu item at top of left column
 	  if($layout === 'left') :
 	  	// Display featured menu item
-	  	$str .= display_featured_item($menuObj['featured']);
+	  	$str .= display_featured_item($featured);
 	  endif; 
 	      
 	  // Iterate through first half of total menu items and populate first column
-	  for($i = 0; $i < ($totalMenuItems / 2); $i++){ 
+	  for($i = 0; $i < $splitItems; $i++){ 
 
-	    $str .= display_menu_item($menuObj['items'][$i]);
+	    // Display menu item, pass menu item object and featured item object
+	    $str .= display_menu_item($menuObj['items'][$i],$featured);
 
 	  };
 	          
@@ -381,13 +398,14 @@ function display_menu_category($menuObj,$layout){
 			// If 'right' layout, include featured menu item at top of right column
 		  if($layout === 'right') :
 		  	// Display featured menu item
-		  	$str .= display_featured_item($menuObj['featured']);
+		  	$str .= display_featured_item($featured);
 		  endif; 
 		          
 		  // Iterate through second half of total menu items and populate second column
-		  for($i = ($totalMenuItems / 2); $i < $totalMenuItems; $i++){
+		  // Starting 1 item before half to better balance against featured item image
+		  for($i = $splitItems; $i < $totalMenuItems; $i++){
 
-		  	$str .= display_menu_item($menuObj['items'][$i],$menuObj['featured']);
+		  	$str .= display_menu_item($menuObj['items'][$i],$featured);
 		    
 		  };
 		          
