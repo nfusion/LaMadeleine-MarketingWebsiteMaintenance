@@ -77,7 +77,7 @@
             $locationImage = '<div id="location-image"></div>';
             $locationInfo = '<div id="location-info"></div>';
             $locationsList = '<div id="location-list"></div>';
-            $btnWrapper = '<div class="btn-wrapper"><a class="btn" target="_blank" href="https://online.lamadeleine.com/Exit41Online/home.htm">To Go</a><a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a></div>';
+            $btnWrapper = '<div class="btn-wrapper"><a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a><a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a></div>';
 
             if($onLocationPage == 'true') { 
                 $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . '</div></div></div><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList;
