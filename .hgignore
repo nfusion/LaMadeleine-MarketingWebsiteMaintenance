@@ -2,3 +2,4 @@
 \.sass-cache
 \.hgignore
 wp-config\.php
+wp-content/uploads
