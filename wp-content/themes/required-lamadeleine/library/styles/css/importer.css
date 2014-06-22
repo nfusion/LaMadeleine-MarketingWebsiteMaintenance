@@ -764,7 +764,7 @@ body {
   height: 830px;
   max-width: 320px;
   max-height: 830px;
-  padding-top: 82px;
+  padding-top: 96px;
   position: absolute;
   top: 0;
   left: -340px;
@@ -788,7 +788,7 @@ body {
 }
 /* line 35, ../sass/framework/_nav.scss */
 #nav h4 {
-  margin: 10px 0;
+  margin: 2px 0 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 300;
@@ -799,7 +799,7 @@ body {
 /* line 44, ../sass/framework/_nav.scss */
 #nav hr {
   width: 80%;
-  margin: 15px auto;
+  margin: 10px auto;
   border: 0;
   border-bottom: 1px dashed #6c2904;
 }
@@ -816,7 +816,7 @@ body {
 /* line 56, ../sass/framework/_nav.scss */
 #nav .nav-item {
   display: block;
-  padding: 8px 25px;
+  padding: 6px 25px;
   margin: 2px 0;
   position: relative;
   color: #fffdf0;
@@ -871,16 +871,16 @@ body {
 /* line 97, ../sass/framework/_nav.scss */
 #nav .social-group a {
   display: inline-block;
-  margin: 7px;
+  margin: 5px 7px;
   padding: 8px;
-  font-size: 24px;
+  font-size: 20px;
   color: #fffdf0;
   border: 1px solid #e5730e;
-  -webkit-border-radius: 24px;
-  -moz-border-radius: 24px;
-  -ms-border-radius: 24px;
-  -o-border-radius: 24px;
-  border-radius: 24px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -891,13 +891,47 @@ body {
 #nav .social-group a:hover {
   color: #e5730e;
 }
-/* line 112, ../sass/framework/_nav.scss */
+/* line 110, ../sass/framework/_nav.scss */
+#nav .social-group a .icon {
+  position: relative;
+  top: 1px;
+}
+/* line 116, ../sass/framework/_nav.scss */
 #nav .eclub {
   text-align: center;
+  padding-bottom: 3px;
 }
-/* line 114, ../sass/framework/_nav.scss */
+/* line 119, ../sass/framework/_nav.scss */
 #nav .eclub p {
   font-size: 14px;
+  margin-bottom: 10px;
+}
+/* line 125, ../sass/framework/_nav.scss */
+#nav .bottom-links .columns:first-child {
+  padding-left: 55px;
+}
+/* line 128, ../sass/framework/_nav.scss */
+#nav .bottom-links p {
+  margin-bottom: 5px;
+}
+/* line 131, ../sass/framework/_nav.scss */
+#nav .bottom-links a {
+  font-size: 16px;
+  color: #fffdf0;
+}
+/* line 134, ../sass/framework/_nav.scss */
+#nav .bottom-links a:hover {
+  color: #e5730e;
+}
+/* line 139, ../sass/framework/_nav.scss */
+#nav .copyright {
+  margin-top: 7px;
+  text-align: center;
+}
+/* line 142, ../sass/framework/_nav.scss */
+#nav .copyright p {
+  font-size: 10px;
+  color: black;
 }
 
 /**
