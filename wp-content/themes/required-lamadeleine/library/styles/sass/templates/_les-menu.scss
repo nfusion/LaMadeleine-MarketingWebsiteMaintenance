@@ -130,6 +130,7 @@
 			line-height: 1.5;
 			a{
 				font-size: 13px;
+				font-weight: bold;
 				color: $deepOrange;
 				white-space: nowrap;
 				&:hover{
@@ -196,6 +197,7 @@
 				margin-bottom: 0;
 			}
 			a{
+				font-weight: bold;
 				white-space: nowrap;
 			}
 			a:hover{
