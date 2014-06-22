@@ -17,33 +17,38 @@
 			<h4>More La Madeleine</h4>
 			<a class="nav-item" href="/locations/"><span class="icon icon-pin"><span class="item-title">McKinney, TX</span></span></a>
 			<a class="nav-item" target="_blank" href="http://cateringbylamadeleine.com"><span class="icon icon-catering"><span class="item-title">Catering</span></span></a>
-			<a class="nav-item" target="_blank" href="https://online.lamadeleine.com/Exit41Online/home.htm"><span class="icon icon-store"><span class="item-title">Online Store</span></span></a>
+			<a class="nav-item" target="_blank" href="https://online.lamadeleine.com"><span class="icon icon-store"><span class="item-title">Online Store</span></span></a>
 			<a class="nav-item" href="/stories/"><span class="icon icon-stories"><span class="item-title">La Madeleine Stories</span></span></a>
 		</div>
 		<div class="social-group">
 			<h4>Connect</h4>
-			<a href="#"><span class="icon icon-facebook"></span></a>
-			<a href="#"><span class="icon icon-twitter"></span></a>
-			<a href="#"><span class="icon icon-instagram"></span></a>
-			<a href="#"><span class="icon icon-pinterest"></span></a>
-			<a href="#"><span class="icon icon-youtube"></span></a>
+			<a target="_blank" href="https://www.facebook.com/laMadeleineCafe"><span class="icon icon-facebook"></span></a>
+			<a target="_blank" href="https://twitter.com/lamadeleine"><span class="icon icon-twitter"></span></a>
+			<a target="_blank" href="#"><span class="icon icon-instagram"></span></a>
+			<a target="_blank" href="http://www.pinterest.com/lamadeleinecafe/"><span class="icon icon-pinterest"></span></a>
+			<a target="_blank" href="https://www.youtube.com/user/laMadeleineCafe"><span class="icon icon-youtube"></span></a>
 		</div>
 		<hr>
 		<div class="eclub">
 			<p>Get the latest news and offers.</p>
-			<p><a href="#" class="btn">Join Our E-Club</a></p>
+			<p><a target="_blank" href="http://lamadeleinecafe.fbmta.com/members/UpdateProfile.aspx" class="btn">Join Our E-Club</a></p>
 		</div>
 			<hr>
-			<!-- <div class="row">
+			<div class="row bottom-links">
 				<div class="six columns">
-					<p><a href="#">About Us</a></p>
-					<p><a href="#">Blog</a></p>
+					<p><a href="/about">About Us</a></p>
+					<p><a target="_blank" href="http://blog.lamadeleine.com/">Blog</a></p>
 				</div>
 				<div class="six columns">
-					<p><a href="#">Franchises</a></p>
-					<p><a href="#">Careers</a></p>
+					<p><a href="/franchises">Franchises</a></p>
+					<p><a href="/careers">Careers</a></p>
 				</div>
-			</div> -->
-	</div>
+			</div>
+			<div class="row copyright">
+				<div class="twelve columns">
+					<p>&copy; <?php echo date('Y'); ?> La Madeleine de Corps, Inc.</p>
+				</div>
+			</div>
+ 	</div>
 </nav>
 
