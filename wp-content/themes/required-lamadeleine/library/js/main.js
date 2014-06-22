@@ -26,7 +26,7 @@ $(function(){
 			});
 
 			$nav.on('mouseleave', function(){
-				//$('body').removeClass('nav-active');
+				$('body').removeClass('nav-active');
 			});
 		}
 	}
