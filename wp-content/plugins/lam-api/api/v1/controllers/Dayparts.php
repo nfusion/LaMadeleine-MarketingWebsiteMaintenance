@@ -41,25 +41,25 @@ class Dayparts {
             $lunchStart = new \DateTime($return['Lunch']['start_display_time'], new \DateTimeZone($tsString)); 
             $bakeryEnd = new \DateTime($return['Bakery']['end_display_time'], new \DateTimeZone($tsString)); 
             $bakeryStart = new \DateTime($return['Bakery']['start_display_time'], new \DateTimeZone($tsString)); 
-            $dinnerEnd = new \DateTime($return['Dinner/Wine']['end_display_time'], new \DateTimeZone($tsString)); 
-            $dinnerStart = new \DateTime($return['Dinner/Wine']['end_display_time'], new \DateTimeZone($tsString)); 
+            $dinnerEnd = new \DateTime($return['Dinner & Wine']['end_display_time'], new \DateTimeZone($tsString)); 
+            $dinnerStart = new \DateTime($return['Dinner & Wine']['end_display_time'], new \DateTimeZone($tsString)); 
             
             
             switch($clientTime){
                 case ( $clientTime < $breakfastEnd->getTimestamp()):
-                    $order =  array('Breakfast','Lunch','Bakery','Dinner/Wine');
+                    $order =  array('Breakfast','Lunch','Bakery','Dinner & Wine');
                 break;
                 case ( $clientTime < $lunchEnd->getTimestamp()) :
-                    $order =  array('Lunch','Bakery','Dinner/Wine','Breakfast');
+                    $order =  array('Lunch','Bakery','Dinner & Wine','Breakfast');
                 break;
                case ( $clientTime < $bakeryEnd->getTimestamp() ):
-                    $order =  array('Bakery','Dinner/Wine','Breakfast', 'Lunch');
+                    $order =  array('Bakery','Dinner & Wine','Breakfast', 'Lunch');
                 break;
                 case ($clientTime < $dinnerEnd->getTimestamp()):
-                    $order =  array('Dinner/Wine','Breakfast', 'Lunch','Bakery');
+                    $order =  array('Dinner & Wine','Breakfast', 'Lunch','Bakery');
                 break;
                 default:
-                   $order =  array('Bakery','Breakfast', 'Lunch', 'Dinner/Wine');
+                   $order =  array('Bakery','Breakfast', 'Lunch', 'Dinner & Wine');
             }
 
             foreach ($order as  $value) {
