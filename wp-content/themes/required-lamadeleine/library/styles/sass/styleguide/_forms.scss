@@ -1,0 +1,20 @@
+/**
+* La Madeleine
+* Custom form styling
+**/ 
+
+::-webkit-input-placeholder {
+	color: $fadedBrown;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	color: $fadedBrown;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	color: $fadedBrown;
+}
+
+:-ms-input-placeholder {  
+	color: $fadedBrown;
+}
