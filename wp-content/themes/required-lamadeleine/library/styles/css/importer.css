@@ -685,8 +685,8 @@ body {
 }
 /* line 34, ../sass/framework/_layout.scss */
 #content #sidebar .widget {
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px dashed #cbaf9a;
 }
 /* line 38, ../sass/framework/_layout.scss */
@@ -1562,7 +1562,7 @@ aside p {
     display: block;
     width: 100%;
     min-height: 270px;
-    margin-top: 10px;
+    margin-top: 9px;
     text-align: center;
     position: relative;
     -webkit-perspective: 1000;
@@ -2039,14 +2039,49 @@ aside p {
   .breakfast #sidebar, .lunch #sidebar, .dinner #sidebar, .bakery #sidebar {
     display: block;
   }
+  /* line 238, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .order-online.widget, .lunch #sidebar .order-online.widget, .dinner #sidebar .order-online.widget, .bakery #sidebar .order-online.widget {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* line 241, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .order-online.widget .btn, .lunch #sidebar .order-online.widget .btn, .dinner #sidebar .order-online.widget .btn, .bakery #sidebar .order-online.widget .btn {
+    display: block;
+    width: 46%;
+    margin: 0 2%;
+    float: left;
+    text-align: center;
+  }
+  /* line 251, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .menu-legend.widget .legend-wrapper, .lunch #sidebar .menu-legend.widget .legend-wrapper, .dinner #sidebar .menu-legend.widget .legend-wrapper, .bakery #sidebar .menu-legend.widget .legend-wrapper {
+    margin-bottom: 30px;
+  }
+  /* line 254, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .menu-legend.widget .legend-item, .lunch #sidebar .menu-legend.widget .legend-item, .dinner #sidebar .menu-legend.widget .legend-item, .bakery #sidebar .menu-legend.widget .legend-item {
+    margin: 15px 0;
+    font-size: 11px;
+    font-family: georgia;
+  }
+  /* line 258, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .menu-legend.widget .legend-item .icon, .lunch #sidebar .menu-legend.widget .legend-item .icon, .dinner #sidebar .menu-legend.widget .legend-item .icon, .bakery #sidebar .menu-legend.widget .legend-item .icon {
+    font-size: 15px;
+    padding-right: 10px;
+    position: relative;
+    top: 1px;
+  }
+  /* line 266, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar p.disclaimer, .lunch #sidebar p.disclaimer, .dinner #sidebar p.disclaimer, .bakery #sidebar p.disclaimer {
+    font-size: 10px;
+    font-style: italic;
+  }
 }
 @media (min-width: 1140px) {
-  /* line 242, ../sass/templates/_les-menu.scss */
+  /* line 276, ../sass/templates/_les-menu.scss */
   .breakfast .menu-overview .menu-text, .lunch .menu-overview .menu-text, .dinner .menu-overview .menu-text, .bakery .menu-overview .menu-text {
     padding-left: 40px;
     padding-right: 40px;
   }
-  /* line 246, ../sass/templates/_les-menu.scss */
+  /* line 280, ../sass/templates/_les-menu.scss */
   .breakfast .menu-details, .lunch .menu-details, .dinner .menu-details, .bakery .menu-details {
     padding: 0 30px;
   }
