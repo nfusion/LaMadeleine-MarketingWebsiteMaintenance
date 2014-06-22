@@ -3,16 +3,26 @@
 * Primary navigation
 **/
 
+body.nav-active{
+	overflow: hidden;
+	#nav{
+		.nav-wrapper{
+			left: 0;
+		}
+	}
+}
+
 #nav{
 	width: 100%;
 	max-width: 1140px;
-	height: 830px;
+	height: 100%;
 	max-height: 830px;
 	margin: 0 auto;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	right: 0;
-	overflow: hidden;
+	z-index: 101;
+	overflow: auto;
 	color: $lightCream;
 	.nav-wrapper{
 		width: 320px;
@@ -28,9 +38,6 @@
 		@include transition-property(left);
 		@include transition-duration(0.35s);
 		@include box-shadow(rgba(0,0,0,0.5) 8px -8px 18px);
-		&.active{
-			left: 0;
-		}
 	}
 	h4{
 		margin: 2px 0 10px;
@@ -122,8 +129,15 @@
 		}
 	}
 	.bottom-links{
-		.columns:first-child{
-			padding-left: 55px;
+		width: 100%;
+		overflow: hidden;
+		.link-wrapper{
+			width: 50%;
+			float: left;
+			padding-left: 20px;
+		}
+		.link-wrapper:first-child{
+			padding-left: 50px;
 		}
 		p{
 			margin-bottom: 5px;
@@ -142,6 +156,7 @@
 		p{
 			font-size: 10px;
 			color: $black;
+			margin-bottom: 0;
 		}
 	}
 }
