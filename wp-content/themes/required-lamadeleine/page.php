@@ -93,10 +93,13 @@ get_header(); ?>
 		</div><!-- /#main -->
 
 		<aside id="sidebar" role="complementary">
-
 			<div class="sidebar-wrapper">
 				<?php 
-					dynamic_sidebar($sidebar);
+					if($sidebar == 'sidebar-menu') :
+						get_sidebar('menu');
+					else :
+						dynamic_sidebar($sidebar);
+					endif;
 				?>
 			</div>
 		</aside><!-- /#sidebar -->
