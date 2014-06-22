@@ -90,9 +90,11 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
                 <?php 
 
                 // Determine if odd or even iteration to alternate menu category layout
-                if ($categoryCount % 2 == 0) : 
+                if ($categoryCount % 2 == 0) :
+                    // Featured image appears at top of left column
                     $layout = 'left';
                 else :
+                    // Featured image appears at top of right column
                     $layout = 'right';
                 endif;
 
