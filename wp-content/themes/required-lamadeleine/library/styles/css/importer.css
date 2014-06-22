@@ -746,19 +746,29 @@ body {
 * Primary navigation
 **/
 /* line 6, ../sass/framework/_nav.scss */
+body.nav-active {
+  overflow: hidden;
+}
+/* line 9, ../sass/framework/_nav.scss */
+body.nav-active #nav .nav-wrapper {
+  left: 0;
+}
+
+/* line 15, ../sass/framework/_nav.scss */
 #nav {
   width: 100%;
   max-width: 1140px;
-  height: 830px;
+  height: 100%;
   max-height: 830px;
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
-  overflow: hidden;
+  z-index: 101;
+  overflow: auto;
   color: #fffdf0;
 }
-/* line 17, ../sass/framework/_nav.scss */
+/* line 27, ../sass/framework/_nav.scss */
 #nav .nav-wrapper {
   width: 320px;
   height: 830px;
@@ -782,11 +792,7 @@ body {
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
   box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
 }
-/* line 31, ../sass/framework/_nav.scss */
-#nav .nav-wrapper.active {
-  left: 0;
-}
-/* line 35, ../sass/framework/_nav.scss */
+/* line 42, ../sass/framework/_nav.scss */
 #nav h4 {
   margin: 2px 0 10px;
   text-transform: uppercase;
@@ -796,24 +802,24 @@ body {
   text-align: center;
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px;
 }
-/* line 44, ../sass/framework/_nav.scss */
+/* line 51, ../sass/framework/_nav.scss */
 #nav hr {
   width: 80%;
   margin: 10px auto;
   border: 0;
   border-bottom: 1px dashed #6c2904;
 }
-/* line 50, ../sass/framework/_nav.scss */
+/* line 57, ../sass/framework/_nav.scss */
 #nav .nav-group {
   padding-bottom: 15px;
 }
-/* line 52, ../sass/framework/_nav.scss */
+/* line 59, ../sass/framework/_nav.scss */
 #nav .nav-group a:first-of-type {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
 }
-/* line 56, ../sass/framework/_nav.scss */
+/* line 63, ../sass/framework/_nav.scss */
 #nav .nav-item {
   display: block;
   padding: 6px 25px;
@@ -826,7 +832,7 @@ body {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 64, ../sass/framework/_nav.scss */
+/* line 71, ../sass/framework/_nav.scss */
 #nav .nav-item:after {
   content: "\e620";
   font-family: 'icomoon';
@@ -840,21 +846,21 @@ body {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 74, ../sass/framework/_nav.scss */
+/* line 81, ../sass/framework/_nav.scss */
 #nav .nav-item:hover {
   color: #e5730e;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 77, ../sass/framework/_nav.scss */
+/* line 84, ../sass/framework/_nav.scss */
 #nav .nav-item:hover:after {
   color: #e5730e;
   right: 15px;
 }
-/* line 82, ../sass/framework/_nav.scss */
+/* line 89, ../sass/framework/_nav.scss */
 #nav .nav-item .icon {
   font-size: 30px;
 }
-/* line 85, ../sass/framework/_nav.scss */
+/* line 92, ../sass/framework/_nav.scss */
 #nav .nav-item .item-title {
   position: relative;
   top: -5px;
@@ -864,11 +870,11 @@ body {
   letter-spacing: 1px;
   font-family: "ostrich_sans_roundregular", sans-serif;
 }
-/* line 95, ../sass/framework/_nav.scss */
+/* line 102, ../sass/framework/_nav.scss */
 #nav .social-group {
   text-align: center;
 }
-/* line 97, ../sass/framework/_nav.scss */
+/* line 104, ../sass/framework/_nav.scss */
 #nav .social-group a {
   display: inline-block;
   margin: 5px 7px;
@@ -887,51 +893,63 @@ body {
   transition-duration: 0.3s;
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 107, ../sass/framework/_nav.scss */
+/* line 114, ../sass/framework/_nav.scss */
 #nav .social-group a:hover {
   color: #e5730e;
 }
-/* line 110, ../sass/framework/_nav.scss */
+/* line 117, ../sass/framework/_nav.scss */
 #nav .social-group a .icon {
   position: relative;
   top: 1px;
 }
-/* line 116, ../sass/framework/_nav.scss */
+/* line 123, ../sass/framework/_nav.scss */
 #nav .eclub {
   text-align: center;
   padding-bottom: 3px;
 }
-/* line 119, ../sass/framework/_nav.scss */
+/* line 126, ../sass/framework/_nav.scss */
 #nav .eclub p {
   font-size: 14px;
   margin-bottom: 10px;
 }
-/* line 125, ../sass/framework/_nav.scss */
-#nav .bottom-links .columns:first-child {
-  padding-left: 55px;
+/* line 131, ../sass/framework/_nav.scss */
+#nav .bottom-links {
+  width: 100%;
+  overflow: hidden;
 }
-/* line 128, ../sass/framework/_nav.scss */
+/* line 134, ../sass/framework/_nav.scss */
+#nav .bottom-links .link-wrapper {
+  width: 50%;
+  float: left;
+  padding-left: 20px;
+}
+/* line 139, ../sass/framework/_nav.scss */
+#nav .bottom-links .link-wrapper:first-child {
+  padding-left: 50px;
+}
+/* line 142, ../sass/framework/_nav.scss */
 #nav .bottom-links p {
   margin-bottom: 5px;
 }
-/* line 131, ../sass/framework/_nav.scss */
+/* line 145, ../sass/framework/_nav.scss */
 #nav .bottom-links a {
   font-size: 16px;
   color: #fffdf0;
 }
-/* line 134, ../sass/framework/_nav.scss */
+/* line 148, ../sass/framework/_nav.scss */
 #nav .bottom-links a:hover {
   color: #e5730e;
 }
-/* line 139, ../sass/framework/_nav.scss */
+/* line 153, ../sass/framework/_nav.scss */
 #nav .copyright {
   margin-top: 7px;
   text-align: center;
 }
-/* line 142, ../sass/framework/_nav.scss */
+/* line 156, ../sass/framework/_nav.scss */
 #nav .copyright p {
   font-size: 10px;
   color: black;
+  margin-bottom: 0;
 }
 
 /**
@@ -1182,6 +1200,10 @@ aside p {
   line-height: 1.2;
 }
 /* line 55, ../sass/components/_carousel.scss */
+#carousel .carousel-controls {
+  display: none;
+}
+/* line 58, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate {
   width: 100%;
   height: 30px;
@@ -1189,7 +1211,7 @@ aside p {
   position: absolute;
   bottom: 0;
 }
-/* line 61, ../sass/components/_carousel.scss */
+/* line 64, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate .dot {
   display: inline-block;
   width: 11px;
@@ -1204,26 +1226,27 @@ aside p {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-/* line 69, ../sass/components/_carousel.scss */
+/* line 72, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate .dot:hover {
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
   opacity: 0.75;
 }
-/* line 73, ../sass/components/_carousel.scss */
+/* line 76, ../sass/components/_carousel.scss */
 #carousel .carousel-paginate .dot.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 82, ../sass/components/_carousel.scss */
+/* line 85, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls {
+  display: block;
   width: 100%;
   padding: 0 10px;
   position: absolute;
   top: 45%;
 }
-/* line 87, ../sass/components/_carousel.scss */
+/* line 91, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control {
   width: 40px;
   height: 40px;
@@ -1241,51 +1264,51 @@ aside p {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 95, ../sass/components/_carousel.scss */
+/* line 99, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   cursor: pointer;
 }
-/* line 100, ../sass/components/_carousel.scss */
+/* line 104, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .icon {
   font-size: 24px;
 }
-/* line 103, ../sass/components/_carousel.scss */
+/* line 107, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control.prev {
   padding: 8px 6px;
   float: left;
 }
-/* line 107, ../sass/components/_carousel.scss */
+/* line 111, ../sass/components/_carousel.scss */
 .no-touch #carousel .carousel-controls .control.next {
   padding: 8px 10px;
   float: right;
 }
 
 @media (min-width: 980px) {
-  /* line 116, ../sass/components/_carousel.scss */
+  /* line 120, ../sass/components/_carousel.scss */
   #carousel h1 {
     font-size: 22px;
   }
-  /* line 119, ../sass/components/_carousel.scss */
+  /* line 123, ../sass/components/_carousel.scss */
   #carousel p {
     font-size: 16px;
   }
-  /* line 122, ../sass/components/_carousel.scss */
+  /* line 126, ../sass/components/_carousel.scss */
   #carousel .carousel-paginate {
     height: 40px;
   }
 }
 @media (min-width: 1140px) {
-  /* line 130, ../sass/components/_carousel.scss */
+  /* line 134, ../sass/components/_carousel.scss */
   #carousel .carousel-text {
     padding: 20px;
   }
-  /* line 133, ../sass/components/_carousel.scss */
+  /* line 137, ../sass/components/_carousel.scss */
   #carousel h1 {
     font-size: 32px;
   }
-  /* line 136, ../sass/components/_carousel.scss */
+  /* line 140, ../sass/components/_carousel.scss */
   #carousel p {
     font-size: 20px;
   }

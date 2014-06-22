@@ -15,13 +15,20 @@ $(function(){
 	if($nav.length){
 		var $navIcon = $('#header .icon-menu');
 
-		$navIcon.on('mouseover', function(){
-			$nav.addClass('active');
-		});
+		if(Modernizr.touch){
+			$navIcon.on('touchend', function(){
+				$('body').toggleClass('nav-active');
+			});
+		}
+		else{
+			$navIcon.on('mouseover', function(){
+				$('body').addClass('nav-active');
+			});
 
-		$nav.on('mouseleave', function(){
-			$nav.removeClass('active');
-		});
+			$nav.on('mouseleave', function(){
+				//$('body').removeClass('nav-active');
+			});
+		}
 	}
 
 	/********

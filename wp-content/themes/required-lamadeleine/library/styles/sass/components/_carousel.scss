@@ -52,6 +52,9 @@
     color: $darkBrown;
     line-height: 1.2;
   }
+  .carousel-controls{
+    display: none;
+  }
   .carousel-paginate{
     width: 100%;
     height: 30px;
@@ -80,6 +83,7 @@
 // Carousel controls for no touch only
 .no-touch #carousel{
   .carousel-controls{
+    display: block;
     width: 100%;
     padding: 0 10px;
     position: absolute;

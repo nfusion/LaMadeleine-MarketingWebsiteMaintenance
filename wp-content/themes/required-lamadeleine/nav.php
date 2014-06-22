@@ -34,20 +34,18 @@
 			<p><a target="_blank" href="http://lamadeleinecafe.fbmta.com/members/UpdateProfile.aspx" class="btn">Join Our E-Club</a></p>
 		</div>
 			<hr>
-			<div class="row bottom-links">
-				<div class="six columns">
+			<div class="bottom-links">
+				<div class="link-wrapper">
 					<p><a href="/about">About Us</a></p>
 					<p><a target="_blank" href="http://blog.lamadeleine.com/">Blog</a></p>
 				</div>
-				<div class="six columns">
+				<div class="link-wrapper">
 					<p><a href="/franchises">Franchises</a></p>
 					<p><a href="/careers">Careers</a></p>
 				</div>
 			</div>
-			<div class="row copyright">
-				<div class="twelve columns">
+			<div class="copyright">
 					<p>&copy; <?php echo date('Y'); ?> La Madeleine de Corps, Inc.</p>
-				</div>
 			</div>
  	</div>
 </nav>
