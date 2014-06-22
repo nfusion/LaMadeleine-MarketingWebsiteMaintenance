@@ -26,6 +26,7 @@ class Dayparts {
                     }
                     $imgSrc =  wp_get_attachment_image_src( get_post_thumbnail_id($dayPartPods->id()), 'daypart'); 
                     $item['featured_img'] = $imgSrc[0];
+                    $item['menu_cat'] = Dayparts::getDayPartMenuCategories($item['daypart']);
                     $return[$item['title']]= $item;
             }
             switch ($offset) {
@@ -66,9 +67,31 @@ class Dayparts {
             }
 
 
+
+
+
             return $returnOrdered;
         }
 
+    private function getDayPartMenuCategories($daypart){
+
+       
+        $params = array(
+                        'where' => "t.post_title = '".ucfirst($daypart)."'",
+                        'orderby' => "date ASC",
+                        'limit' => '1'
+                    );
+            $daypart_pod = pods('daypart')->find($params);
+
+
+            while( $daypart_pod->fetch() ) {
+                $menu_categories = $daypart_pod->field('menu_categories');
+
+            }
+    
+        return json_encode( explode(",", $menu_categories));
+
+    }
    
 
 }
