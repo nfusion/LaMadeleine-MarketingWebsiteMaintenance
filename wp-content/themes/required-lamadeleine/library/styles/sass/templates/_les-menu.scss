@@ -1,0 +1,285 @@
+/**
+* La Madeleine
+* Les Menu Page Styling
+**/
+
+.breakfast,.lunch,.dinner,.bakery{
+	
+	#main{
+		background: $medCream;
+		overflow: visible;
+		border-right: 1px solid $lightFadedBrown;
+	}
+
+	#sidebar{
+		display: none;
+	}
+
+	// Menu overview
+	.menu-overview{
+		position: relative;
+		.menu-featured-image{
+			overflow: hidden;
+			padding-bottom: 3px;
+			border-bottom: 1px solid $lightFadedBrown;
+			img{
+				width: 100%;
+			}
+		}
+		h1.menu-title{
+			text-align: center;
+			text-transform: uppercase;
+			margin-top: -20px;
+			color: $darkBrown;
+			font-size: 24px;
+			span{
+				background: $medCream;
+			}
+			span.inner{
+				padding: 15px 25px 11px;
+				border: 1px solid $lightFadedBrown;
+				position: relative;
+				top: 17px;
+			}
+			span.outer{
+				display: inline-block;
+				max-height: 30px;
+				padding: 5px;
+				position: relative;
+				top: -15px
+			}
+		}
+		.menu-text{
+			padding: 15px 25px 0;
+			text-align: center;
+		}
+	}
+
+	// Menu details
+	.menu-details{
+		width: 100%;
+		padding: 0 15px;
+		overflow: hidden;
+		.menu-links{
+			padding: 15px 0;
+			margin: 10px 0;
+			text-align: center;
+			border-top: 1px dashed $fadedBrown;
+			border-bottom: 1px dashed $fadedBrown;
+			a{
+				display: block;
+				margin: 5px 0;
+				padding: 10px 0;
+				background: $lightCream;
+				@include border-radius(5px);
+			}
+		}
+		.category-title{
+			padding: 0 15px;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+			font-family: $playfair;
+			font-size: 20px;
+			letter-spacing: 1px;
+			color: $darkBrown;
+		}
+	}
+
+	// Featured menu item
+	.featured-menu-item{
+		width: 100%;
+		max-width: 365px;
+		height: auto;
+		position: relative;
+		margin: 0 0 30px;
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+		.text-wrapper{
+			width: 100%;
+			padding: 15px;
+			position: absolute;
+			bottom: 0;
+			color: $white;
+			background: rgba(0,0,0,0.6);
+		}
+		.text-wrapper.no-story{
+			.title{
+				margin-bottom: 0;
+			}
+		}
+		.title{
+			margin-bottom: 10px;
+			text-align: center;
+			font-family: $merriweather;
+			font-style: italic;
+		}
+		.icon-stories{
+			width: 15%;
+			float: left;
+			color: $white;
+			font-size: 30px;
+			text-align: center;
+		}
+		.story-teaser{
+			width: 85%;
+			float: left;
+			font-style: italic;
+			font-size: 13px;
+			line-height: 1.5;
+			a{
+				font-size: 13px;
+				font-weight: bold;
+				color: $deepOrange;
+				white-space: nowrap;
+				&:hover{
+					color: lighten($deepOrange, 10%);
+					.icon{
+						left: 1px;
+					}
+				}
+				.icon{
+					font-size: 16px;
+					line-height: 12px;
+					position: relative;
+					top: 3px;
+					left: -3px;
+				}
+			}
+		}
+	}
+
+	// Menu item
+
+	.menu-item{
+		margin-bottom: 30px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		.title-wrapper{
+			width: 100%;
+			overflow: hidden;
+			.title{
+				margin-bottom: 2px;
+				font-family: $merriweather;
+				font-weight: bold;
+				float: left;
+			}
+			.menu-keys{
+				float: left;
+				padding: 4px 0 0 5px;
+			}
+		}
+		.desc{
+			font-size: 13px;
+		}
+		.story-teaser{
+			width: 100%;
+			padding: 15px;
+			border: 1px solid $darkBrown;
+			background: $lightCream;
+			overflow: hidden;
+			@include border-radius(5px);
+			.icon-stories{
+				width: 15%;
+				font-size: 30px;
+				float: left;
+				text-align: center;
+			}
+			p, a{
+				font-size: 13px;
+				line-height: 1.5;
+			}
+			p{
+				width: 85%;
+				float: left;
+				margin-bottom: 0;
+			}
+			a{
+				font-weight: bold;
+				white-space: nowrap;
+			}
+			a:hover{
+				.icon-arrow-right{
+					left: 1px;
+				}
+			}
+			.icon-arrow-right{
+				font-size: 16px;
+				line-height: 13px;
+				position: relative;
+				top: 3px;
+				left: -3px;
+			}
+		}
+	}
+}
+
+@media (min-width: $small-screen-min){
+	.breakfast,.lunch,.dinner,.bakery{
+		.menu-details{
+			padding: 0 15px;
+			.menu-links a{
+				display: inline;
+				font-size: 13px;
+				background: none;
+			}
+		}
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	.breakfast,.lunch,.dinner,.bakery{
+		#sidebar{
+			display: block;
+
+			// Static widgets
+			.order-online.widget{
+				width: 100%;
+				overflow: hidden;
+				.btn{
+					display: block;
+					width: 46%;
+					margin: 0 2%;
+					float: left;
+					text-align: center;
+				}
+			}
+
+			.menu-legend.widget{
+				.legend-wrapper{
+					margin-bottom: 30px;
+				}
+				.legend-item{
+					margin: 15px 0;
+					font-size: 11px;
+					font-family: georgia;
+					.icon{
+						font-size: 15px;
+						padding-right: 10px;
+						position: relative;
+						top: 1px;
+					}
+				}
+			}
+			p.disclaimer{
+				font-size: 10px;
+				font-style: italic;
+			}
+		}
+	}
+}
+
+@media (min-width: $large-screen-min){
+	.breakfast,.lunch,.dinner,.bakery{
+		.menu-overview .menu-text{
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+		.menu-details{
+			padding: 0 30px;
+		}
+	}
+}
+
