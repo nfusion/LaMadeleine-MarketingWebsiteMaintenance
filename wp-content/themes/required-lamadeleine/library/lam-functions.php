@@ -145,8 +145,8 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'fma-full', 820, 750, true ); // 820 pixels wide by 750 pixels tall, hard crop true
 	add_image_size( 'daypart', 265, 95, true ); // 265 pixels wide by 95 pixels tall, hard crop true
 	add_image_size( 'menu-featured', 820, 360, true ); // 820 pixels wide by 360 pixels tall, hard crop true
-	add_image_size( 'menu-item-featured', 365, 200, true ); // 365 pixels wide by 200 pixels tall, hard crop true
-	add_image_size( 'menu-item-featured-story', 365, 300, true ); // 365 pixels wide by 300 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured', 350, 200, true ); // 350 pixels wide by 200 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured-story', 350, 300, true ); // 350 pixels wide by 300 pixels tall, hard crop true
 }
 
 /**
@@ -230,13 +230,15 @@ function display_featured_item($featuredObj){
       if($hasStory) :
 	      // This featured item has a story. Use a larger image size to make room for story teaser. 
 	      $str .= $featured['featured_img_story'];
+	    	$featuredItemClass = "has-story";
 	   	else :
 	   		// No story, use standard image size
 	   		$str .= $featured['featured_img'];
+	   		$featuredItemClass = "no-story";
 	   	endif;
 
       // Start text wrapper
-      $str .= '<div class="text-wrapper">';
+      $str .= '<div class="text-wrapper ' . $featuredItemClass . '">';
 
       // Include featured item title
       $str .= '<p class="title">' . $featured['title'] . '</p>';
@@ -356,17 +358,21 @@ function display_menu_category($menuObj,$layout){
 	  // Determine where to split columns
 	  if($isFeatured && $totalMenuItems > 2) :
 	  	// Featured item and more than two items, stop one item short to better balance column against featured item image
-	  	$splitItems = (($totalMenuItems / 2) - 1);
+			if($layout === 'left') :
+	  		$splitItems = (($totalMenuItems / 2) - 1);
+	  	else :
+	  		$splitItems = (($totalMenuItems / 2) + 1);
+	  	endif;
 	  else : 
 	  	// Less than two items or no featured item, split evenly in half
-	  	$splitItems = $totalMenuItems;
+	  	$splitItems = $totalMenuItems / 2;
 	  endif; 
 
 	  // String to return containing markup
 	  $str = "";
 
 	  // Start new menu category row
-	  $str .= '<div clas="row">';
+	  $str .= '<div class="row menu-category">';
 
 	  // Include menu category name
 	  $str .= '<h2 class="category-title">' . $categoryName . '</h2>';
@@ -375,7 +381,7 @@ function display_menu_category($menuObj,$layout){
 	  $str .= '<div class="six columns">';
 
 	  // If 'left' layout, include featured menu item at top of left column
-	  if($layout === 'left') :
+	  if($isFeatured && $layout === 'left') :
 	  	// Display featured menu item
 	  	$str .= display_featured_item($featured);
 	  endif; 
@@ -396,7 +402,7 @@ function display_menu_category($menuObj,$layout){
 		  $str .= '<div class="six columns">';
 
 			// If 'right' layout, include featured menu item at top of right column
-		  if($layout === 'right') :
+		  if($isFeatured && $layout === 'right') :
 		  	// Display featured menu item
 		  	$str .= display_featured_item($featured);
 		  endif; 

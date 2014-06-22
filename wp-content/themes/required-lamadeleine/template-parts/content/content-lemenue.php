@@ -58,6 +58,19 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
 </div>
 
 <div class="menu-details">
+
+    <div class="row menu-links">
+        <div class="four columns">
+            <a href="/locations" class="get-location">Choose a Location for Menu Pricing</a>
+        </div>
+        <div class="four columns">
+            <a target="_blank" href="http://www.nutritionix.com/la-madeleine/portal">Get Nutritional Information</a>
+        </div>
+        <div class="four columns">
+            <a target="_blank" href="https://online.lamadeleine.com/">Place an Order Online, S'il Vous Pla&icirc;t</a>
+        </div>
+    </div>
+
     <?php
 
         // Used to track odd/even category in iteration and adjust layout accordingly
@@ -65,32 +78,36 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
 
         // Iterate through menu results
         foreach ($menuArray as $menu) {
+
+            if(count($menu) > 0) :
                 
             ?>
             
-            <!-- <pre>
-            <?php //print_r($menu['featured']) ?>
-            </pre> -->
+                <!-- <pre>
+                <?php // print_r($menu['featured']) ?>
+                </pre> -->
 
-        <?php 
+                <?php 
 
-            // Determine if odd or even iteration to alternate menu category layout
-            if ($categoryCount % 2 == 0) : 
-                $layout = 'left';
-            else :
-                $layout = 'right';
+                // Determine if odd or even iteration to alternate menu category layout
+                if ($categoryCount % 2 == 0) : 
+                    $layout = 'left';
+                else :
+                    $layout = 'right';
+                endif;
+
+                // Display menu category, pass menu object and layout identifier
+                echo display_menu_category($menu,$layout);
+
+                // If menu object is populated, add divider
+                if(count($menu) > 0) :
+                    echo '<hr class="dashed">';
+                endif;
+
+                // Increment category count
+                $categoryCount++;
+
             endif;
-
-            // Display menu category, pass menu object and layout identifier
-            echo display_menu_category($menu,$layout);
-
-            // If menu object is populate, add divider
-            if(count($menu) > 0) :
-                echo '<hr class="dashed">';
-            endif;
-
-            // Increment category count
-            $categoryCount++;
 
         } // End of the $menuArray (full menu object) for each
     ?>

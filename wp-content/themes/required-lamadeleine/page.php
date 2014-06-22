@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<div id="content">
+	<div id="content" class="<?php echo $pagename; ?>">
 
 		<div id="main" role="main">
 			<div class="post-box">
