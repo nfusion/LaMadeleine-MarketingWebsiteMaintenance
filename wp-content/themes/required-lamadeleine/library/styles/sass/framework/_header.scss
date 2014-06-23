@@ -5,6 +5,7 @@
 
 #header{
 	width: 100%;
+	min-width: 320px;
 	height: 70px;
 	padding: 8px 10px;
 	position: fixed;
@@ -27,9 +28,9 @@
 	.icon-menu{
 		float: left;
 		position: absolute;
-		top: 5px;
+		top: 10px;
 		left: 0;
-		font-size: 40px;
+		font-size: 30px;
 		color: $lightCream;
 		&:before{
 			@include lam-text-shadow();
@@ -41,7 +42,7 @@
 	.icon-wrapper{
 		position: absolute;
 		top: 2px;
-		right: 0;
+		right: -3px;
 		.icon{
 			display: none;
 			position: absolute;
@@ -71,8 +72,8 @@
 		.loading{
 			display: none;
 			position: absolute;
-			top: -7px;
-			right: -5px;
+			top: -9px;
+			right: -7px;
 		}
 	}
 }
@@ -132,8 +133,8 @@ body.has-location #header{
 				text-transform: uppercase;
 				letter-spacing: 2px;
 				position: relative;
-				top: -10px;
-				left: 8px;
+				top: -5px;
+				left: 15px;
 			}
 		}
 		.icon-wrapper{

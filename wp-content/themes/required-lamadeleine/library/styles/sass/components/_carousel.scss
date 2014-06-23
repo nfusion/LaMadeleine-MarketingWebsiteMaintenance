@@ -80,37 +80,38 @@
   }
 }
 
-// Carousel controls for no touch only
-.no-touch #carousel{
-  .carousel-controls{
-    display: block;
-    width: 100%;
-    padding: 0 10px;
-    position: absolute;
-    top: 45%;
-    .control{
-      width: 40px;
-      height: 40px;
-      color: $white;
-      background: $darkBrown;
-      @include border-radius(40px);
-      @include opacity (0.8);
-      @include transition-duration(0.25s);
-      &:hover{
-        @include opacity(1);
-        cursor: pointer;
+@media (min-width: $small-screen-min){
+  #carousel{
+    .carousel-controls{
+      display: block;
+      width: 100%;
+      padding: 0 10px;
+      position: absolute;
+      top: 45%;
+      .control{
+        width: 40px;
+        height: 40px;
+        color: $white;
+        background: $darkBrown;
+        @include border-radius(40px);
+        @include opacity (0.8);
+        @include transition-duration(0.25s);
+        &:hover{
+          @include opacity(1);
+          cursor: pointer;
+        }
       }
-    }
-    .icon{
-      font-size: 24px;
-    }
-    .control.prev{
-      padding: 8px 6px;
-      float: left;
-    }
-    .control.next{
-      padding: 8px 10px;
-      float: right;
+      .icon{
+        font-size: 24px;
+      }
+      .control.prev{
+        padding: 8px 6px;
+        float: left;
+      }
+      .control.next{
+        padding: 8px 10px;
+        float: right;
+      }
     }
   }
 }

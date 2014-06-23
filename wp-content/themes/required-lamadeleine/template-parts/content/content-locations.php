@@ -3,19 +3,6 @@
 */
 
 ?>
-<style>
-    #map_div_large{
-        height: 500px;
-        /*width: 800px;*/
-        max-width: none;
-    }
-
-    .gmnoprint > div > * {
-        max-width: none;
-    }
-
-
-</style>
 
 <script type="text/javascript">
 
@@ -42,7 +29,7 @@ LaMadLocations.initializeLargeMap = function() {
             zoom: 5
         };
 
-        largeMap = new google.maps.Map(document.getElementById("map_div_large"),mapOptions);
+        largeMap = new google.maps.Map(document.getElementById("map-full"),mapOptions);
         
 
         var markers = [];
@@ -140,14 +127,41 @@ LaMadLocations.initializeLargeMap = function() {
         LaMadLocations.initializeLargeMap();
 
         
-        //getLocationCookie(map_div_large);
+        //getLocationCookie(map-full);
         
     });
 });
 
 </script>  
 
-<div id='map_div_large'>
+<div id="mobile-nav">
+    <a href="/breakfast" <?php if($pageDetails['title'] === 'breakfast'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-breakfast"></div>
+            Breakfast
+        </div>
+    </a>
+    <a href="/lunch" <?php if($pageDetails['title'] === 'lunch'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-lunch"></div>
+            Lunch
+        </div>
+    </a>
+    <a href="/dinner" <?php if($pageDetails['title'] === 'dinner'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-dinner"></div>
+            Dinner &amp; Wine
+        </div>
+    </a>
+    <a href="/bakery" <?php if($pageDetails['title'] === 'bakery'){echo 'class="active"';}; ?>>
+        <div class="nav-item">
+            <div class="icon icon-bakery"></div>
+            Bakery
+        </div>
+    </a>
+</div>
+
+<div id='map-full'>
 
 </div>
 <?php

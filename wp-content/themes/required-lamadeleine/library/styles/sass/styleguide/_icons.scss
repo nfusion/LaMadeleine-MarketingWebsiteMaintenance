@@ -23,76 +23,145 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-menu:before {
-	content: "\e621";
-}
-.icon-stories:before {
+.icon-bakery:before {
 	content: "\e600";
 }
-.icon-store:before {
+.icon-breakfast:before {
 	content: "\e601";
 }
-.icon-shopping:before {
+.icon-catering:before {
 	content: "\e602";
 }
-.icon-pin:before {
+.icon-community:before {
 	content: "\e603";
 }
-.icon-phone:before {
+.icon-culture:before {
 	content: "\e604";
 }
-.icon-other:before {
+.icon-dinner:before {
 	content: "\e605";
 }
-.icon-nearby:before {
+.icon-food:before {
 	content: "\e606";
 }
-.icon-map:before {
+.icon-legend-alcohol:before {
 	content: "\e607";
 }
-.icon-lunch:before {
+.icon-legend-egg-whites:before {
 	content: "\e608";
 }
-.icon-legend-signature:before {
+.icon-legend-low-calorie:before {
 	content: "\e609";
-	color: #5b2a06;
+}
+.icon-legend-nuts:before {
+	content: "\e60a";
+}
+.icon-legend-signature:before {
+	content: "\e60b";
+}
+.icon-lunch:before {
+	content: "\e60c";
+}
+.icon-magnify:before {
+	content: "\e60d";
+}
+.icon-map:before {
+	content: "\e60e";
+}
+.icon-menu:before {
+	content: "\e60f";
+}
+.icon-nearby:before {
+	content: "\e61b";
+}
+.icon-menu-dots:before {
+	content: "\e61c";
+}
+.icon-phone:before {
+	content: "\e61d";
+}
+.icon-pin:before {
+	content: "\e61e";
+}
+.icon-shopping:before {
+	content: "\e61f";
+}
+.icon-store:before {
+	content: "\e622";
+}
+.icon-stories:before {
+	content: "\e623";
+}
+.icon-youtube:before {
+	content: "\f167";
+}
+.icon-catering:before {
+	content: "\e602";
+}
+.icon-community:before {
+	content: "\e603";
+}
+.icon-culture:before {
+	content: "\e604";
+}
+.icon-dinner:before {
+	content: "\e605";
+}
+.icon-food:before {
+	content: "\e606";
+}
+.icon-legend-alcohol:before {
+	content: "\e607";
+	color: #9c2f21;
+}
+.icon-legend-egg-whites:before {
+	content: "\e608";
+	color: #dedab9;
+}
+.icon-legend-low-calorie:before {
+	content: "\e609";
+	color: #95ac00;
 }
 .icon-legend-nuts:before {
 	content: "\e60a";
 	color: #bb922c;
 }
-.icon-legend-low-calorie:before {
+.icon-legend-signature:before {
 	content: "\e60b";
-	color: #95ac00;
+	color: #5b2a06;
 }
-.icon-legend-egg-whites:before {
+.icon-lunch:before {
 	content: "\e60c";
-	color: #dedab9;
 }
-.icon-legend-alcohol:before {
+.icon-magnify:before {
 	content: "\e60d";
-	color: #9c2f21;
 }
-.icon-food:before {
+.icon-map:before {
 	content: "\e60e";
 }
-.icon-dinner:before {
+.icon-menu:before {
 	content: "\e60f";
 }
-.icon-culture:before {
+.icon-nearby:before {
 	content: "\e61b";
 }
-.icon-community:before {
+.icon-menu-dots:before {
 	content: "\e61c";
 }
-.icon-catering:before {
+.icon-phone:before {
 	content: "\e61d";
 }
-.icon-breakfast:before {
+.icon-pin:before {
 	content: "\e61e";
 }
-.icon-bakery:before {
+.icon-shopping:before {
 	content: "\e61f";
+}
+.icon-store:before {
+	content: "\e622";
+}
+.icon-stories:before {
+	content: "\e623";
 }
 .icon-youtube:before {
 	content: "\f167";

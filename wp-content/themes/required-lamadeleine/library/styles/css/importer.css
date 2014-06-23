@@ -199,181 +199,296 @@ a.btn-light {
 }
 
 /* line 26, ../sass/styleguide/_icons.scss */
-.icon-menu:before {
-  content: "\e621";
-}
-
-/* line 29, ../sass/styleguide/_icons.scss */
-.icon-stories:before {
+.icon-bakery:before {
   content: "\e600";
 }
 
-/* line 32, ../sass/styleguide/_icons.scss */
-.icon-store:before {
+/* line 29, ../sass/styleguide/_icons.scss */
+.icon-breakfast:before {
   content: "\e601";
 }
 
-/* line 35, ../sass/styleguide/_icons.scss */
-.icon-shopping:before {
+/* line 32, ../sass/styleguide/_icons.scss */
+.icon-catering:before {
   content: "\e602";
 }
 
-/* line 38, ../sass/styleguide/_icons.scss */
-.icon-pin:before {
+/* line 35, ../sass/styleguide/_icons.scss */
+.icon-community:before {
   content: "\e603";
 }
 
-/* line 41, ../sass/styleguide/_icons.scss */
-.icon-phone:before {
+/* line 38, ../sass/styleguide/_icons.scss */
+.icon-culture:before {
   content: "\e604";
 }
 
-/* line 44, ../sass/styleguide/_icons.scss */
-.icon-other:before {
+/* line 41, ../sass/styleguide/_icons.scss */
+.icon-dinner:before {
   content: "\e605";
 }
 
-/* line 47, ../sass/styleguide/_icons.scss */
-.icon-nearby:before {
+/* line 44, ../sass/styleguide/_icons.scss */
+.icon-food:before {
   content: "\e606";
 }
 
-/* line 50, ../sass/styleguide/_icons.scss */
-.icon-map:before {
+/* line 47, ../sass/styleguide/_icons.scss */
+.icon-legend-alcohol:before {
   content: "\e607";
 }
 
-/* line 53, ../sass/styleguide/_icons.scss */
-.icon-lunch:before {
+/* line 50, ../sass/styleguide/_icons.scss */
+.icon-legend-egg-whites:before {
   content: "\e608";
 }
 
-/* line 56, ../sass/styleguide/_icons.scss */
-.icon-legend-signature:before {
+/* line 53, ../sass/styleguide/_icons.scss */
+.icon-legend-low-calorie:before {
   content: "\e609";
-  color: #5b2a06;
 }
 
-/* line 60, ../sass/styleguide/_icons.scss */
+/* line 56, ../sass/styleguide/_icons.scss */
+.icon-legend-nuts:before {
+  content: "\e60a";
+}
+
+/* line 59, ../sass/styleguide/_icons.scss */
+.icon-legend-signature:before {
+  content: "\e60b";
+}
+
+/* line 62, ../sass/styleguide/_icons.scss */
+.icon-lunch:before {
+  content: "\e60c";
+}
+
+/* line 65, ../sass/styleguide/_icons.scss */
+.icon-magnify:before {
+  content: "\e60d";
+}
+
+/* line 68, ../sass/styleguide/_icons.scss */
+.icon-map:before {
+  content: "\e60e";
+}
+
+/* line 71, ../sass/styleguide/_icons.scss */
+.icon-menu:before {
+  content: "\e60f";
+}
+
+/* line 74, ../sass/styleguide/_icons.scss */
+.icon-nearby:before {
+  content: "\e61b";
+}
+
+/* line 77, ../sass/styleguide/_icons.scss */
+.icon-menu-dots:before {
+  content: "\e61c";
+}
+
+/* line 80, ../sass/styleguide/_icons.scss */
+.icon-phone:before {
+  content: "\e61d";
+}
+
+/* line 83, ../sass/styleguide/_icons.scss */
+.icon-pin:before {
+  content: "\e61e";
+}
+
+/* line 86, ../sass/styleguide/_icons.scss */
+.icon-shopping:before {
+  content: "\e61f";
+}
+
+/* line 89, ../sass/styleguide/_icons.scss */
+.icon-store:before {
+  content: "\e622";
+}
+
+/* line 92, ../sass/styleguide/_icons.scss */
+.icon-stories:before {
+  content: "\e623";
+}
+
+/* line 95, ../sass/styleguide/_icons.scss */
+.icon-youtube:before {
+  content: "\f167";
+}
+
+/* line 98, ../sass/styleguide/_icons.scss */
+.icon-catering:before {
+  content: "\e602";
+}
+
+/* line 101, ../sass/styleguide/_icons.scss */
+.icon-community:before {
+  content: "\e603";
+}
+
+/* line 104, ../sass/styleguide/_icons.scss */
+.icon-culture:before {
+  content: "\e604";
+}
+
+/* line 107, ../sass/styleguide/_icons.scss */
+.icon-dinner:before {
+  content: "\e605";
+}
+
+/* line 110, ../sass/styleguide/_icons.scss */
+.icon-food:before {
+  content: "\e606";
+}
+
+/* line 113, ../sass/styleguide/_icons.scss */
+.icon-legend-alcohol:before {
+  content: "\e607";
+  color: #9c2f21;
+}
+
+/* line 117, ../sass/styleguide/_icons.scss */
+.icon-legend-egg-whites:before {
+  content: "\e608";
+  color: #dedab9;
+}
+
+/* line 121, ../sass/styleguide/_icons.scss */
+.icon-legend-low-calorie:before {
+  content: "\e609";
+  color: #95ac00;
+}
+
+/* line 125, ../sass/styleguide/_icons.scss */
 .icon-legend-nuts:before {
   content: "\e60a";
   color: #bb922c;
 }
 
-/* line 64, ../sass/styleguide/_icons.scss */
-.icon-legend-low-calorie:before {
+/* line 129, ../sass/styleguide/_icons.scss */
+.icon-legend-signature:before {
   content: "\e60b";
-  color: #95ac00;
+  color: #5b2a06;
 }
 
-/* line 68, ../sass/styleguide/_icons.scss */
-.icon-legend-egg-whites:before {
+/* line 133, ../sass/styleguide/_icons.scss */
+.icon-lunch:before {
   content: "\e60c";
-  color: #dedab9;
 }
 
-/* line 72, ../sass/styleguide/_icons.scss */
-.icon-legend-alcohol:before {
+/* line 136, ../sass/styleguide/_icons.scss */
+.icon-magnify:before {
   content: "\e60d";
-  color: #9c2f21;
 }
 
-/* line 76, ../sass/styleguide/_icons.scss */
-.icon-food:before {
+/* line 139, ../sass/styleguide/_icons.scss */
+.icon-map:before {
   content: "\e60e";
 }
 
-/* line 79, ../sass/styleguide/_icons.scss */
-.icon-dinner:before {
+/* line 142, ../sass/styleguide/_icons.scss */
+.icon-menu:before {
   content: "\e60f";
 }
 
-/* line 82, ../sass/styleguide/_icons.scss */
-.icon-culture:before {
+/* line 145, ../sass/styleguide/_icons.scss */
+.icon-nearby:before {
   content: "\e61b";
 }
 
-/* line 85, ../sass/styleguide/_icons.scss */
-.icon-community:before {
+/* line 148, ../sass/styleguide/_icons.scss */
+.icon-menu-dots:before {
   content: "\e61c";
 }
 
-/* line 88, ../sass/styleguide/_icons.scss */
-.icon-catering:before {
+/* line 151, ../sass/styleguide/_icons.scss */
+.icon-phone:before {
   content: "\e61d";
 }
 
-/* line 91, ../sass/styleguide/_icons.scss */
-.icon-breakfast:before {
+/* line 154, ../sass/styleguide/_icons.scss */
+.icon-pin:before {
   content: "\e61e";
 }
 
-/* line 94, ../sass/styleguide/_icons.scss */
-.icon-bakery:before {
+/* line 157, ../sass/styleguide/_icons.scss */
+.icon-shopping:before {
   content: "\e61f";
 }
 
-/* line 97, ../sass/styleguide/_icons.scss */
+/* line 160, ../sass/styleguide/_icons.scss */
+.icon-store:before {
+  content: "\e622";
+}
+
+/* line 163, ../sass/styleguide/_icons.scss */
+.icon-stories:before {
+  content: "\e623";
+}
+
+/* line 166, ../sass/styleguide/_icons.scss */
 .icon-youtube:before {
   content: "\f167";
 }
 
-/* line 100, ../sass/styleguide/_icons.scss */
+/* line 169, ../sass/styleguide/_icons.scss */
 .icon-facebook:before {
   content: "\e610";
 }
 
-/* line 103, ../sass/styleguide/_icons.scss */
+/* line 172, ../sass/styleguide/_icons.scss */
 .icon-instagram:before {
   content: "\e611";
 }
 
-/* line 106, ../sass/styleguide/_icons.scss */
+/* line 175, ../sass/styleguide/_icons.scss */
 .icon-twitter:before {
   content: "\e612";
 }
 
-/* line 109, ../sass/styleguide/_icons.scss */
+/* line 178, ../sass/styleguide/_icons.scss */
 .icon-pinterest:before {
   content: "\e613";
 }
 
-/* line 112, ../sass/styleguide/_icons.scss */
+/* line 181, ../sass/styleguide/_icons.scss */
 .icon-arrow-left:before {
   content: "\e614";
 }
 
-/* line 115, ../sass/styleguide/_icons.scss */
+/* line 184, ../sass/styleguide/_icons.scss */
 .icon-arrow-down:before {
   content: "\e615";
 }
 
-/* line 118, ../sass/styleguide/_icons.scss */
+/* line 187, ../sass/styleguide/_icons.scss */
 .icon-arrow-up:before {
   content: "\e616";
 }
 
-/* line 121, ../sass/styleguide/_icons.scss */
+/* line 190, ../sass/styleguide/_icons.scss */
 .icon-arrow-right:before {
   content: "\e617";
 }
 
-/* line 124, ../sass/styleguide/_icons.scss */
+/* line 193, ../sass/styleguide/_icons.scss */
 .icon-arrow-left-large:before {
   content: "\e618";
 }
 
-/* line 127, ../sass/styleguide/_icons.scss */
+/* line 196, ../sass/styleguide/_icons.scss */
 .icon-arrow-down-large:before {
   content: "\e619";
 }
 
-/* line 130, ../sass/styleguide/_icons.scss */
+/* line 199, ../sass/styleguide/_icons.scss */
 .icon-arrow-up-large:before {
   content: "\e61a";
 }
 
-/* line 133, ../sass/styleguide/_icons.scss */
+/* line 202, ../sass/styleguide/_icons.scss */
 .icon-arrow-right-large:before {
   content: "\e620";
 }
@@ -745,30 +860,12 @@ body {
 * La Madeleine
 * Primary navigation
 **/
-/* line 7, ../sass/framework/_nav.scss */
-html.touch #nav {
-  pointer-events: none;
-  height: 100%;
-  position: fixed;
-  z-index: 101;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-/* line 15, ../sass/framework/_nav.scss */
-html.touch body.nav-active {
-  overflow: hidden;
-}
-/* line 17, ../sass/framework/_nav.scss */
-html.touch body.nav-active #nav {
-  pointer-events: auto;
-}
-
-/* line 25, ../sass/framework/_nav.scss */
+/* line 8, ../sass/framework/_nav.scss */
 body.nav-active #nav .nav-wrapper {
   left: 0;
 }
 
-/* line 31, ../sass/framework/_nav.scss */
+/* line 14, ../sass/framework/_nav.scss */
 #nav {
   width: 100%;
   max-width: 1140px;
@@ -781,7 +878,7 @@ body.nav-active #nav .nav-wrapper {
   color: #fffdf0;
   overflow: hidden;
 }
-/* line 42, ../sass/framework/_nav.scss */
+/* line 25, ../sass/framework/_nav.scss */
 #nav .nav-wrapper {
   width: 320px;
   height: 830px;
@@ -805,7 +902,7 @@ body.nav-active #nav .nav-wrapper {
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
   box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
 }
-/* line 57, ../sass/framework/_nav.scss */
+/* line 40, ../sass/framework/_nav.scss */
 #nav h4 {
   margin: 2px 0 10px;
   text-transform: uppercase;
@@ -815,24 +912,24 @@ body.nav-active #nav .nav-wrapper {
   text-align: center;
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px;
 }
-/* line 66, ../sass/framework/_nav.scss */
+/* line 49, ../sass/framework/_nav.scss */
 #nav hr {
   width: 80%;
   margin: 10px auto;
   border: 0;
   border-bottom: 1px dashed #6c2904;
 }
-/* line 72, ../sass/framework/_nav.scss */
+/* line 55, ../sass/framework/_nav.scss */
 #nav .nav-group {
   padding-bottom: 15px;
 }
-/* line 74, ../sass/framework/_nav.scss */
+/* line 57, ../sass/framework/_nav.scss */
 #nav .nav-group a:first-of-type {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
 }
-/* line 78, ../sass/framework/_nav.scss */
+/* line 61, ../sass/framework/_nav.scss */
 #nav .nav-item {
   display: block;
   padding: 6px 25px;
@@ -845,7 +942,7 @@ body.nav-active #nav .nav-wrapper {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 86, ../sass/framework/_nav.scss */
+/* line 69, ../sass/framework/_nav.scss */
 #nav .nav-item:after {
   content: "\e620";
   font-family: 'icomoon';
@@ -859,21 +956,21 @@ body.nav-active #nav .nav-wrapper {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 96, ../sass/framework/_nav.scss */
+/* line 79, ../sass/framework/_nav.scss */
 #nav .nav-item:hover {
   color: #e5730e;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 99, ../sass/framework/_nav.scss */
+/* line 82, ../sass/framework/_nav.scss */
 #nav .nav-item:hover:after {
   color: #e5730e;
   right: 15px;
 }
-/* line 104, ../sass/framework/_nav.scss */
+/* line 87, ../sass/framework/_nav.scss */
 #nav .nav-item .icon {
   font-size: 30px;
 }
-/* line 107, ../sass/framework/_nav.scss */
+/* line 90, ../sass/framework/_nav.scss */
 #nav .nav-item .item-title {
   position: relative;
   top: -5px;
@@ -883,11 +980,11 @@ body.nav-active #nav .nav-wrapper {
   letter-spacing: 1px;
   font-family: "ostrich_sans_roundregular", sans-serif;
 }
-/* line 117, ../sass/framework/_nav.scss */
+/* line 100, ../sass/framework/_nav.scss */
 #nav .social-group {
   text-align: center;
 }
-/* line 119, ../sass/framework/_nav.scss */
+/* line 102, ../sass/framework/_nav.scss */
 #nav .social-group a {
   display: inline-block;
   margin: 5px 7px;
@@ -906,65 +1003,84 @@ body.nav-active #nav .nav-wrapper {
   transition-duration: 0.3s;
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 129, ../sass/framework/_nav.scss */
+/* line 112, ../sass/framework/_nav.scss */
 #nav .social-group a:hover {
   color: #e5730e;
 }
-/* line 132, ../sass/framework/_nav.scss */
+/* line 115, ../sass/framework/_nav.scss */
 #nav .social-group a .icon {
   position: relative;
   top: 1px;
 }
-/* line 138, ../sass/framework/_nav.scss */
+/* line 121, ../sass/framework/_nav.scss */
 #nav .eclub {
   text-align: center;
   padding-bottom: 3px;
 }
-/* line 141, ../sass/framework/_nav.scss */
+/* line 124, ../sass/framework/_nav.scss */
 #nav .eclub p {
   font-size: 14px;
   margin-bottom: 10px;
 }
-/* line 146, ../sass/framework/_nav.scss */
+/* line 129, ../sass/framework/_nav.scss */
 #nav .bottom-links {
   width: 100%;
   overflow: hidden;
 }
-/* line 149, ../sass/framework/_nav.scss */
+/* line 132, ../sass/framework/_nav.scss */
 #nav .bottom-links .link-wrapper {
   width: 50%;
   float: left;
   padding-left: 20px;
 }
-/* line 154, ../sass/framework/_nav.scss */
+/* line 137, ../sass/framework/_nav.scss */
 #nav .bottom-links .link-wrapper:first-child {
   padding-left: 50px;
 }
-/* line 157, ../sass/framework/_nav.scss */
+/* line 140, ../sass/framework/_nav.scss */
 #nav .bottom-links p {
   margin-bottom: 5px;
 }
-/* line 160, ../sass/framework/_nav.scss */
+/* line 143, ../sass/framework/_nav.scss */
 #nav .bottom-links a {
   font-size: 16px;
   color: #fffdf0;
 }
-/* line 163, ../sass/framework/_nav.scss */
+/* line 146, ../sass/framework/_nav.scss */
 #nav .bottom-links a:hover {
   color: #e5730e;
 }
-/* line 168, ../sass/framework/_nav.scss */
+/* line 151, ../sass/framework/_nav.scss */
 #nav .copyright {
   margin-top: 7px;
   text-align: center;
 }
-/* line 171, ../sass/framework/_nav.scss */
+/* line 154, ../sass/framework/_nav.scss */
 #nav .copyright p {
   font-size: 10px;
   color: black;
   margin-bottom: 0;
 }
 
+@media (max-width: 767px) {
+  /* line 164, ../sass/framework/_nav.scss */
+  html.touch #nav {
+    pointer-events: none;
+    height: 100%;
+    position: fixed;
+    z-index: 101;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* line 172, ../sass/framework/_nav.scss */
+  html.touch body.nav-active {
+    overflow: hidden;
+  }
+  /* line 174, ../sass/framework/_nav.scss */
+  html.touch body.nav-active #nav {
+    pointer-events: auto;
+  }
+}
 /**
 * La Madeleine
 * Mobile secondary navigation
@@ -1021,6 +1137,7 @@ body.nav-active #nav .nav-wrapper {
 /* line 6, ../sass/framework/_header.scss */
 #header {
   width: 100%;
+  min-width: 320px;
   height: 70px;
   padding: 8px 10px;
   position: fixed;
@@ -1028,46 +1145,46 @@ body.nav-active #nav .nav-wrapper {
   text-align: center;
   background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
 }
-/* line 14, ../sass/framework/_header.scss */
+/* line 15, ../sass/framework/_header.scss */
 #header .header-wrapper {
   max-width: 1140px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
-/* line 20, ../sass/framework/_header.scss */
+/* line 21, ../sass/framework/_header.scss */
 #header .logo {
   width: 200px;
   height: auto;
 }
-/* line 24, ../sass/framework/_header.scss */
+/* line 25, ../sass/framework/_header.scss */
 #header .tagline {
   display: none;
 }
-/* line 27, ../sass/framework/_header.scss */
+/* line 28, ../sass/framework/_header.scss */
 #header .icon-menu {
   float: left;
   position: absolute;
-  top: 5px;
+  top: 10px;
   left: 0;
-  font-size: 40px;
+  font-size: 30px;
   color: #fffdf0;
 }
-/* line 34, ../sass/framework/_header.scss */
+/* line 35, ../sass/framework/_header.scss */
 #header .icon-menu:before {
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 37, ../sass/framework/_header.scss */
+/* line 38, ../sass/framework/_header.scss */
 #header .icon-menu span {
   visibility: hidden;
 }
-/* line 41, ../sass/framework/_header.scss */
+/* line 42, ../sass/framework/_header.scss */
 #header .icon-wrapper {
   position: absolute;
   top: 2px;
-  right: 0;
+  right: -3px;
 }
-/* line 45, ../sass/framework/_header.scss */
+/* line 46, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon {
   display: none;
   position: absolute;
@@ -1077,11 +1194,11 @@ body.nav-active #nav .nav-wrapper {
   color: #fffdf0;
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 53, ../sass/framework/_header.scss */
+/* line 54, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon:hover {
   cursor: pointer;
 }
-/* line 57, ../sass/framework/_header.scss */
+/* line 58, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon-phone {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1089,7 +1206,7 @@ body.nav-active #nav .nav-wrapper {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 59, ../sass/framework/_header.scss */
+/* line 60, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon-phone a {
   position: absolute;
   top: 0;
@@ -1098,53 +1215,53 @@ body.nav-active #nav .nav-wrapper {
   width: 50px;
   height: 50px;
 }
-/* line 68, ../sass/framework/_header.scss */
+/* line 69, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon-pin {
   top: -2px;
 }
-/* line 71, ../sass/framework/_header.scss */
+/* line 72, ../sass/framework/_header.scss */
 #header .icon-wrapper .loading {
   display: none;
   position: absolute;
-  top: -7px;
-  right: -5px;
+  top: -9px;
+  right: -7px;
 }
 
-/* line 83, ../sass/framework/_header.scss */
+/* line 84, ../sass/framework/_header.scss */
 body.no-location #header .icon-wrapper .icon-phone {
   display: none;
 }
-/* line 86, ../sass/framework/_header.scss */
+/* line 87, ../sass/framework/_header.scss */
 body.no-location #header .icon-wrapper .icon-pin {
   display: block;
 }
 
-/* line 95, ../sass/framework/_header.scss */
+/* line 96, ../sass/framework/_header.scss */
 body.has-location #header .icon-wrapper .icon-phone {
   display: block;
 }
-/* line 98, ../sass/framework/_header.scss */
+/* line 99, ../sass/framework/_header.scss */
 body.has-location #header .icon-wrapper .icon-pin {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* line 105, ../sass/framework/_header.scss */
+  /* line 106, ../sass/framework/_header.scss */
   #header {
     height: 80px;
     padding: 13px 15px;
     position: relative;
     background-position: 0 0;
   }
-  /* line 110, ../sass/framework/_header.scss */
+  /* line 111, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     float: right;
   }
-  /* line 113, ../sass/framework/_header.scss */
+  /* line 114, ../sass/framework/_header.scss */
   #header .logo {
     float: left;
   }
-  /* line 116, ../sass/framework/_header.scss */
+  /* line 117, ../sass/framework/_header.scss */
   #header .tagline {
     display: block;
     float: left;
@@ -1152,11 +1269,11 @@ body.has-location #header .icon-wrapper .icon-pin {
     top: 19px;
     left: 2px;
   }
-  /* line 124, ../sass/framework/_header.scss */
+  /* line 125, ../sass/framework/_header.scss */
   #header .icon-menu:hover {
     cursor: pointer;
   }
-  /* line 127, ../sass/framework/_header.scss */
+  /* line 128, ../sass/framework/_header.scss */
   #header .icon-menu span {
     visibility: visible;
     font-size: 22px;
@@ -1165,20 +1282,20 @@ body.has-location #header .icon-wrapper .icon-pin {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
-    top: -10px;
-    left: 8px;
+    top: -5px;
+    left: 15px;
   }
-  /* line 139, ../sass/framework/_header.scss */
+  /* line 140, ../sass/framework/_header.scss */
   #header .icon-wrapper {
     display: none;
   }
 }
 @media (min-width: 1140px) {
-  /* line 147, ../sass/framework/_header.scss */
+  /* line 148, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     padding-right: 20px;
   }
-  /* line 150, ../sass/framework/_header.scss */
+  /* line 151, ../sass/framework/_header.scss */
   #header .icon-menu {
     padding-left: 20px;
   }
@@ -1303,77 +1420,78 @@ aside p {
   opacity: 1;
 }
 
-/* line 85, ../sass/components/_carousel.scss */
-.no-touch #carousel .carousel-controls {
-  display: block;
-  width: 100%;
-  padding: 0 10px;
-  position: absolute;
-  top: 45%;
+@media (min-width: 768px) {
+  /* line 85, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    position: absolute;
+    top: 45%;
+  }
+  /* line 91, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control {
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: #310d00;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    border-radius: 40px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 99, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    cursor: pointer;
+  }
+  /* line 104, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .icon {
+    font-size: 24px;
+  }
+  /* line 107, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control.prev {
+    padding: 8px 6px;
+    float: left;
+  }
+  /* line 111, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control.next {
+    padding: 8px 10px;
+    float: right;
+  }
 }
-/* line 91, ../sass/components/_carousel.scss */
-.no-touch #carousel .carousel-controls .control {
-  width: 40px;
-  height: 40px;
-  color: white;
-  background: #310d00;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
-  -webkit-transition-duration: 0.25s;
-  -moz-transition-duration: 0.25s;
-  -o-transition-duration: 0.25s;
-  transition-duration: 0.25s;
-}
-/* line 99, ../sass/components/_carousel.scss */
-.no-touch #carousel .carousel-controls .control:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
-  cursor: pointer;
-}
-/* line 104, ../sass/components/_carousel.scss */
-.no-touch #carousel .carousel-controls .icon {
-  font-size: 24px;
-}
-/* line 107, ../sass/components/_carousel.scss */
-.no-touch #carousel .carousel-controls .control.prev {
-  padding: 8px 6px;
-  float: left;
-}
-/* line 111, ../sass/components/_carousel.scss */
-.no-touch #carousel .carousel-controls .control.next {
-  padding: 8px 10px;
-  float: right;
-}
-
 @media (min-width: 980px) {
-  /* line 120, ../sass/components/_carousel.scss */
+  /* line 121, ../sass/components/_carousel.scss */
   #carousel h1 {
     font-size: 22px;
   }
-  /* line 123, ../sass/components/_carousel.scss */
+  /* line 124, ../sass/components/_carousel.scss */
   #carousel p {
     font-size: 16px;
   }
-  /* line 126, ../sass/components/_carousel.scss */
+  /* line 127, ../sass/components/_carousel.scss */
   #carousel .carousel-paginate {
     height: 40px;
   }
 }
 @media (min-width: 1140px) {
-  /* line 134, ../sass/components/_carousel.scss */
+  /* line 135, ../sass/components/_carousel.scss */
   #carousel .carousel-text {
     padding: 20px;
   }
-  /* line 137, ../sass/components/_carousel.scss */
+  /* line 138, ../sass/components/_carousel.scss */
   #carousel h1 {
     font-size: 32px;
   }
-  /* line 140, ../sass/components/_carousel.scss */
+  /* line 141, ../sass/components/_carousel.scss */
   #carousel p {
     font-size: 20px;
   }
@@ -1542,15 +1660,12 @@ aside p {
 #mobile-location {
   width: 100%;
   height: 0;
+  padding: 0 6px;
   background: #fffdf0;
-  -webkit-transition-property: height;
-  -moz-transition-property: height;
-  -o-transition-property: height;
-  transition-property: height;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   overflow: hidden;
   *zoom: 1;
 }
@@ -2195,4 +2310,26 @@ aside p {
   .breakfast .menu-details, .lunch .menu-details, .dinner .menu-details, .bakery .menu-details {
     padding: 0 30px;
   }
+}
+/**
+* La Madeleine
+* Locations Page Styling
+**/
+/* line 5, ../sass/templates/_locations.scss */
+#content.locations {
+  height: 100%;
+}
+/* line 7, ../sass/templates/_locations.scss */
+#content.locations #main, #content.locations #main .post-box {
+  height: 100%;
+}
+/* line 10, ../sass/templates/_locations.scss */
+#content.locations #map-full {
+  height: 100%;
+  /*width: 800px;*/
+  max-width: none;
+}
+/* line 18, ../sass/templates/_locations.scss */
+#content.locations .gmnoprint > div > * {
+  max-width: none;
 }

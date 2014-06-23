@@ -3,23 +3,6 @@
 * Primary navigation
 **/
 
-html.touch{
-	#nav{
-		pointer-events: none;
-		height: 100%;
-		position: fixed;
-		z-index: 101;
-		overflow: auto;
-		-webkit-overflow-scrolling: touch;
-	}
-	body.nav-active{
-		overflow: hidden;
-		#nav{
-			pointer-events: auto
-		}
-	}
-}
-
 body.nav-active{
 	#nav{
 		.nav-wrapper{
@@ -172,6 +155,25 @@ body.nav-active{
 			font-size: 10px;
 			color: $black;
 			margin-bottom: 0;
+		}
+	}
+}
+
+@media (max-width: 767px){
+	html.touch{
+		#nav{
+			pointer-events: none;
+			height: 100%;
+			position: fixed;
+			z-index: 101;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+		body.nav-active{
+			overflow: hidden;
+			#nav{
+				pointer-events: auto
+			}
 		}
 	}
 }
