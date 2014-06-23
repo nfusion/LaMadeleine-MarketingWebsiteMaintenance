@@ -4,15 +4,15 @@
 **/
 
 html.touch{
+	#nav{
+		pointer-events: auto;
+		height: 100%;
+		position: fixed;
+		z-index: 101;
+		overflow: auto;
+	}
 	body.nav-active{
 		overflow: hidden;
-		#nav{
-			pointer-events: auto;
-			height: 100%;
-			position: fixed;
-			z-index: 101;
-			overflow: auto;
-		}
 	}
 }
 

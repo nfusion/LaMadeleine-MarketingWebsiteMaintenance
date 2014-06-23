@@ -101,9 +101,15 @@
       &.map-loaded .flipper{
         @include rotateY(180deg);
       }
-      .flipper{
-        transform-style: preserve-3d; 
+      &.has-location{
+        .front{
+          // Firefox bug fix. Hide front if no flip transition is firing.
+          display: none;
+        }
+      }
+      .flipper{ 
         position: relative;
+        @include transform-style(preserve-3d);
       }
       .flipper.transition{
         @include transition-duration(0.6s);
@@ -123,7 +129,6 @@
       }
       .back{
         @include rotateY(180deg);
-        //background-color: $medCream;
       }
   	}
     .location-cta-divider{
@@ -217,7 +222,6 @@
     }
     .btn-wrapper{
       width: 100%;
-      overflow: hidden;
     }
     .btn-wrapper .btn{
       width: 46%;
