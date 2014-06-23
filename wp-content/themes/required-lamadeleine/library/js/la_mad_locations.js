@@ -99,6 +99,10 @@ var LaMadLocations = {
             if(typeof(reloadmap)!= 'undefined'){
                 LaMadLocations.initializeMap(location.latitude, location.longitude, mapContainer);
             }
+
+            // Update body classes
+            $('body').removeClass('no-location');
+            $('body').addClass('has-location');
         },
 
         setLocationCookie: function (location){
@@ -123,14 +127,11 @@ var LaMadLocations = {
                 LaMadLocations.nearestLocationObj.longitude = jsonCookie.longitude;
                 LaMadLocations.setLocation(jsonCookie, true, true);
 
-                // We have a map!
-                LaMadLocations.$locationCta.addClass('map-loaded has-location');
-
-                console.log("HAVE MAP");
+                // We have a map, no need to show location CTA
+                LaMadLocations.$locationCta.addClass('map-loaded no-cta');
                 
             }
             else{
-                console.log("No cookie for you!");
                 // Add CSS transitions to prepare for flip
                 LaMadLocations.$locationCta.find('.flipper').addClass('transition');
             };

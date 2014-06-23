@@ -38,14 +38,66 @@
 			visibility: hidden;
 		}
 	}
-	.icon-phone{
+	.icon-wrapper{
 		position: absolute;
 		top: 2px;
 		right: 0;
-		font-size: 50px;
-		color: $lightCream;
-		@include lam-text-shadow();
-		@include rotate(-45deg);
+		.icon{
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 50px;
+			color: $lightCream;
+			@include lam-text-shadow();
+			&:hover{
+				cursor: pointer;
+			}
+		}
+		.icon-phone{
+			@include rotate(-45deg);
+			a{
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				width: 50px;
+				height: 50px;
+			}
+		}
+		.icon-pin{
+			top: -2px;
+		}
+		.loading{
+			display: none;
+			position: absolute;
+			top: -7px;
+			right: -5px;
+		}
+	}
+}
+
+// Location has not been set
+body.no-location #header{
+	.icon-wrapper{
+		.icon-phone{
+			display: none;
+		}
+		.icon-pin{
+			display: block;
+		}
+	}
+}
+
+// Location has been set
+body.has-location #header{
+	.icon-wrapper{
+		.icon-phone{
+			display: block;
+		}
+		.icon-pin{
+			display: none;
+		}
 	}
 }
 
@@ -84,7 +136,7 @@
 				left: 8px;
 			}
 		}
-		.icon-phone{
+		.icon-wrapper{
 			display: none;
 		}
 	}

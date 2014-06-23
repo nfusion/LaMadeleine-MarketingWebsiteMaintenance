@@ -12,9 +12,9 @@
             success:function(data){
                 var str = "";
                 $.each(data, function(index, obj){
-                    console.log('******');
-                    console.log(obj);
-                    console.log('******');
+                    // console.log('******');
+                    // console.log(obj);
+                    // console.log('******');
 
 
                     if(index == 0){
