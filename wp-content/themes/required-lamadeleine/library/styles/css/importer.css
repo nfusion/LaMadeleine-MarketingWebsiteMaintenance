@@ -757,15 +757,18 @@ html.touch #nav {
 /* line 15, ../sass/framework/_nav.scss */
 html.touch body.nav-active {
   overflow: hidden;
+}
+/* line 17, ../sass/framework/_nav.scss */
+html.touch body.nav-active #nav {
   pointer-events: auto;
 }
 
-/* line 23, ../sass/framework/_nav.scss */
+/* line 25, ../sass/framework/_nav.scss */
 body.nav-active #nav .nav-wrapper {
   left: 0;
 }
 
-/* line 29, ../sass/framework/_nav.scss */
+/* line 31, ../sass/framework/_nav.scss */
 #nav {
   width: 100%;
   max-width: 1140px;
@@ -778,7 +781,7 @@ body.nav-active #nav .nav-wrapper {
   color: #fffdf0;
   overflow: hidden;
 }
-/* line 40, ../sass/framework/_nav.scss */
+/* line 42, ../sass/framework/_nav.scss */
 #nav .nav-wrapper {
   width: 320px;
   height: 830px;
@@ -802,7 +805,7 @@ body.nav-active #nav .nav-wrapper {
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
   box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
 }
-/* line 55, ../sass/framework/_nav.scss */
+/* line 57, ../sass/framework/_nav.scss */
 #nav h4 {
   margin: 2px 0 10px;
   text-transform: uppercase;
@@ -812,24 +815,24 @@ body.nav-active #nav .nav-wrapper {
   text-align: center;
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px;
 }
-/* line 64, ../sass/framework/_nav.scss */
+/* line 66, ../sass/framework/_nav.scss */
 #nav hr {
   width: 80%;
   margin: 10px auto;
   border: 0;
   border-bottom: 1px dashed #6c2904;
 }
-/* line 70, ../sass/framework/_nav.scss */
+/* line 72, ../sass/framework/_nav.scss */
 #nav .nav-group {
   padding-bottom: 15px;
 }
-/* line 72, ../sass/framework/_nav.scss */
+/* line 74, ../sass/framework/_nav.scss */
 #nav .nav-group a:first-of-type {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
 }
-/* line 76, ../sass/framework/_nav.scss */
+/* line 78, ../sass/framework/_nav.scss */
 #nav .nav-item {
   display: block;
   padding: 6px 25px;
@@ -842,7 +845,7 @@ body.nav-active #nav .nav-wrapper {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 84, ../sass/framework/_nav.scss */
+/* line 86, ../sass/framework/_nav.scss */
 #nav .nav-item:after {
   content: "\e620";
   font-family: 'icomoon';
@@ -856,21 +859,21 @@ body.nav-active #nav .nav-wrapper {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 94, ../sass/framework/_nav.scss */
+/* line 96, ../sass/framework/_nav.scss */
 #nav .nav-item:hover {
   color: #e5730e;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 97, ../sass/framework/_nav.scss */
+/* line 99, ../sass/framework/_nav.scss */
 #nav .nav-item:hover:after {
   color: #e5730e;
   right: 15px;
 }
-/* line 102, ../sass/framework/_nav.scss */
+/* line 104, ../sass/framework/_nav.scss */
 #nav .nav-item .icon {
   font-size: 30px;
 }
-/* line 105, ../sass/framework/_nav.scss */
+/* line 107, ../sass/framework/_nav.scss */
 #nav .nav-item .item-title {
   position: relative;
   top: -5px;
@@ -880,11 +883,11 @@ body.nav-active #nav .nav-wrapper {
   letter-spacing: 1px;
   font-family: "ostrich_sans_roundregular", sans-serif;
 }
-/* line 115, ../sass/framework/_nav.scss */
+/* line 117, ../sass/framework/_nav.scss */
 #nav .social-group {
   text-align: center;
 }
-/* line 117, ../sass/framework/_nav.scss */
+/* line 119, ../sass/framework/_nav.scss */
 #nav .social-group a {
   display: inline-block;
   margin: 5px 7px;
@@ -903,59 +906,59 @@ body.nav-active #nav .nav-wrapper {
   transition-duration: 0.3s;
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 127, ../sass/framework/_nav.scss */
+/* line 129, ../sass/framework/_nav.scss */
 #nav .social-group a:hover {
   color: #e5730e;
 }
-/* line 130, ../sass/framework/_nav.scss */
+/* line 132, ../sass/framework/_nav.scss */
 #nav .social-group a .icon {
   position: relative;
   top: 1px;
 }
-/* line 136, ../sass/framework/_nav.scss */
+/* line 138, ../sass/framework/_nav.scss */
 #nav .eclub {
   text-align: center;
   padding-bottom: 3px;
 }
-/* line 139, ../sass/framework/_nav.scss */
+/* line 141, ../sass/framework/_nav.scss */
 #nav .eclub p {
   font-size: 14px;
   margin-bottom: 10px;
 }
-/* line 144, ../sass/framework/_nav.scss */
+/* line 146, ../sass/framework/_nav.scss */
 #nav .bottom-links {
   width: 100%;
   overflow: hidden;
 }
-/* line 147, ../sass/framework/_nav.scss */
+/* line 149, ../sass/framework/_nav.scss */
 #nav .bottom-links .link-wrapper {
   width: 50%;
   float: left;
   padding-left: 20px;
 }
-/* line 152, ../sass/framework/_nav.scss */
+/* line 154, ../sass/framework/_nav.scss */
 #nav .bottom-links .link-wrapper:first-child {
   padding-left: 50px;
 }
-/* line 155, ../sass/framework/_nav.scss */
+/* line 157, ../sass/framework/_nav.scss */
 #nav .bottom-links p {
   margin-bottom: 5px;
 }
-/* line 158, ../sass/framework/_nav.scss */
+/* line 160, ../sass/framework/_nav.scss */
 #nav .bottom-links a {
   font-size: 16px;
   color: #fffdf0;
 }
-/* line 161, ../sass/framework/_nav.scss */
+/* line 163, ../sass/framework/_nav.scss */
 #nav .bottom-links a:hover {
   color: #e5730e;
 }
-/* line 166, ../sass/framework/_nav.scss */
+/* line 168, ../sass/framework/_nav.scss */
 #nav .copyright {
   margin-top: 7px;
   text-align: center;
 }
-/* line 169, ../sass/framework/_nav.scss */
+/* line 171, ../sass/framework/_nav.scss */
 #nav .copyright p {
   font-size: 10px;
   color: black;
