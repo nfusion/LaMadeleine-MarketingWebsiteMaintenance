@@ -114,13 +114,24 @@ LaMadLocations.initializeLargeMap = function() {
                 if(typeof(largeMap) != 'undefined'){
                     LaMadLocations.setLargLocation(jsonCookie.latitude, jsonCookie.longitude) ;   
                 }
+                LaMadLocations.getImage(jsonCookie.id);
+                LaMadLocations.loadNearest();
+                
             }
             else{
                 //console.log("No Center cookie for you!");
                 
             };
         },
+     LaMadLocations.loadNearest = function(){
 
+        cookieNear = $.cookie('LAM-near-locations');
+
+            if(typeof(cookieNear) != 'undefined'){
+                $('#location-list').append(cookieNear);
+            }
+
+     }
 
     $(document).ready(function(){
 
