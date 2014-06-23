@@ -31,7 +31,7 @@ class Dayparts {
             }
             switch ($offset) {
                     default:
-                   $tsString =  "America/Denver";
+                   $tsString =  "America/Chicago";
                     break;
             }
 
@@ -43,6 +43,8 @@ class Dayparts {
             $bakeryStart = new \DateTime($return['Bakery']['start_display_time'], new \DateTimeZone($tsString)); 
             $dinnerEnd = new \DateTime($return['Dinner & Wine']['end_display_time'], new \DateTimeZone($tsString)); 
             $dinnerStart = new \DateTime($return['Dinner & Wine']['end_display_time'], new \DateTimeZone($tsString)); 
+            
+
             
             
             switch($clientTime){

@@ -114,6 +114,10 @@ LaMadLocations.initializeLargeMap = function() {
                 if(typeof(largeMap) != 'undefined'){
                     LaMadLocations.setLargLocation(jsonCookie.latitude, jsonCookie.longitude) ;   
                 }
+
+                console.log(jsonCookie.id);
+                LaMadLocations.getImage(jsonCookie.id);
+                
             }
             else{
                 //console.log("No Center cookie for you!");
