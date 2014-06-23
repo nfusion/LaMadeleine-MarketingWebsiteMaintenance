@@ -14,7 +14,9 @@ html.touch{
 	}
 	body.nav-active{
 		overflow: hidden;
-		pointer-events: auto
+		#nav{
+			pointer-events: auto
+		}
 	}
 }
 
