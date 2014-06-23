@@ -113,6 +113,14 @@ var LaMadLocations = {
             });
         },  
 
+         setNearestLocationsCookie: function (html){
+            
+            $.cookie("LAM-near-locations",html, {
+               expires : 10,          //expires in 10 days
+               path: '/'
+            });
+        },  
+
 
         getLocationCookie: function(){
             
@@ -192,6 +200,7 @@ var LaMadLocations = {
                     
                     
                     $('#location-list').html('');
+                    nearLocationHtmlList = '';
                     $.each(data, function( idx, location){
                         add_li = true;
                         var Latlng = new google.maps.LatLng(location.latitude,location.longitude);
@@ -212,9 +221,15 @@ var LaMadLocations = {
                          if(add_li === true){
                             locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'>"+location.title+'</li>';
                             $('#location-list').append(locationItem);  
+
+                            nearLocationHtmlList += locationItem;
                          }  
                     });
                     
+                    if (nearLocationHtmlList){
+                        LaMadLocations.setNearestLocationsCookie(nearLocationHtmlList);
+                    }
+
                     // Done loading
                     LaMadLocations.$locationCta.removeClass('map-loading').addClass('map-loaded');
 
