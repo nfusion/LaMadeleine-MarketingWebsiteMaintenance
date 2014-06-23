@@ -5,14 +5,16 @@
 
 html.touch{
 	#nav{
-		pointer-events: auto;
+		pointer-events: none;
 		height: 100%;
 		position: fixed;
 		z-index: 101;
 		overflow: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 	body.nav-active{
 		overflow: hidden;
+		pointer-events: auto
 	}
 }
 

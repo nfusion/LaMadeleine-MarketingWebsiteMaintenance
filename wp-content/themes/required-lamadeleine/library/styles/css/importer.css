@@ -747,23 +747,25 @@ body {
 **/
 /* line 7, ../sass/framework/_nav.scss */
 html.touch #nav {
-  pointer-events: auto;
+  pointer-events: none;
   height: 100%;
   position: fixed;
   z-index: 101;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
-/* line 14, ../sass/framework/_nav.scss */
+/* line 15, ../sass/framework/_nav.scss */
 html.touch body.nav-active {
   overflow: hidden;
+  pointer-events: auto;
 }
 
-/* line 21, ../sass/framework/_nav.scss */
+/* line 23, ../sass/framework/_nav.scss */
 body.nav-active #nav .nav-wrapper {
   left: 0;
 }
 
-/* line 27, ../sass/framework/_nav.scss */
+/* line 29, ../sass/framework/_nav.scss */
 #nav {
   width: 100%;
   max-width: 1140px;
@@ -776,7 +778,7 @@ body.nav-active #nav .nav-wrapper {
   color: #fffdf0;
   overflow: hidden;
 }
-/* line 38, ../sass/framework/_nav.scss */
+/* line 40, ../sass/framework/_nav.scss */
 #nav .nav-wrapper {
   width: 320px;
   height: 830px;
@@ -800,7 +802,7 @@ body.nav-active #nav .nav-wrapper {
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
   box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
 }
-/* line 53, ../sass/framework/_nav.scss */
+/* line 55, ../sass/framework/_nav.scss */
 #nav h4 {
   margin: 2px 0 10px;
   text-transform: uppercase;
@@ -810,24 +812,24 @@ body.nav-active #nav .nav-wrapper {
   text-align: center;
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px;
 }
-/* line 62, ../sass/framework/_nav.scss */
+/* line 64, ../sass/framework/_nav.scss */
 #nav hr {
   width: 80%;
   margin: 10px auto;
   border: 0;
   border-bottom: 1px dashed #6c2904;
 }
-/* line 68, ../sass/framework/_nav.scss */
+/* line 70, ../sass/framework/_nav.scss */
 #nav .nav-group {
   padding-bottom: 15px;
 }
-/* line 70, ../sass/framework/_nav.scss */
+/* line 72, ../sass/framework/_nav.scss */
 #nav .nav-group a:first-of-type {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
 }
-/* line 74, ../sass/framework/_nav.scss */
+/* line 76, ../sass/framework/_nav.scss */
 #nav .nav-item {
   display: block;
   padding: 6px 25px;
@@ -840,7 +842,7 @@ body.nav-active #nav .nav-wrapper {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 82, ../sass/framework/_nav.scss */
+/* line 84, ../sass/framework/_nav.scss */
 #nav .nav-item:after {
   content: "\e620";
   font-family: 'icomoon';
@@ -854,21 +856,21 @@ body.nav-active #nav .nav-wrapper {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 92, ../sass/framework/_nav.scss */
+/* line 94, ../sass/framework/_nav.scss */
 #nav .nav-item:hover {
   color: #e5730e;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 95, ../sass/framework/_nav.scss */
+/* line 97, ../sass/framework/_nav.scss */
 #nav .nav-item:hover:after {
   color: #e5730e;
   right: 15px;
 }
-/* line 100, ../sass/framework/_nav.scss */
+/* line 102, ../sass/framework/_nav.scss */
 #nav .nav-item .icon {
   font-size: 30px;
 }
-/* line 103, ../sass/framework/_nav.scss */
+/* line 105, ../sass/framework/_nav.scss */
 #nav .nav-item .item-title {
   position: relative;
   top: -5px;
@@ -878,11 +880,11 @@ body.nav-active #nav .nav-wrapper {
   letter-spacing: 1px;
   font-family: "ostrich_sans_roundregular", sans-serif;
 }
-/* line 113, ../sass/framework/_nav.scss */
+/* line 115, ../sass/framework/_nav.scss */
 #nav .social-group {
   text-align: center;
 }
-/* line 115, ../sass/framework/_nav.scss */
+/* line 117, ../sass/framework/_nav.scss */
 #nav .social-group a {
   display: inline-block;
   margin: 5px 7px;
@@ -901,59 +903,59 @@ body.nav-active #nav .nav-wrapper {
   transition-duration: 0.3s;
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 125, ../sass/framework/_nav.scss */
+/* line 127, ../sass/framework/_nav.scss */
 #nav .social-group a:hover {
   color: #e5730e;
 }
-/* line 128, ../sass/framework/_nav.scss */
+/* line 130, ../sass/framework/_nav.scss */
 #nav .social-group a .icon {
   position: relative;
   top: 1px;
 }
-/* line 134, ../sass/framework/_nav.scss */
+/* line 136, ../sass/framework/_nav.scss */
 #nav .eclub {
   text-align: center;
   padding-bottom: 3px;
 }
-/* line 137, ../sass/framework/_nav.scss */
+/* line 139, ../sass/framework/_nav.scss */
 #nav .eclub p {
   font-size: 14px;
   margin-bottom: 10px;
 }
-/* line 142, ../sass/framework/_nav.scss */
+/* line 144, ../sass/framework/_nav.scss */
 #nav .bottom-links {
   width: 100%;
   overflow: hidden;
 }
-/* line 145, ../sass/framework/_nav.scss */
+/* line 147, ../sass/framework/_nav.scss */
 #nav .bottom-links .link-wrapper {
   width: 50%;
   float: left;
   padding-left: 20px;
 }
-/* line 150, ../sass/framework/_nav.scss */
+/* line 152, ../sass/framework/_nav.scss */
 #nav .bottom-links .link-wrapper:first-child {
   padding-left: 50px;
 }
-/* line 153, ../sass/framework/_nav.scss */
+/* line 155, ../sass/framework/_nav.scss */
 #nav .bottom-links p {
   margin-bottom: 5px;
 }
-/* line 156, ../sass/framework/_nav.scss */
+/* line 158, ../sass/framework/_nav.scss */
 #nav .bottom-links a {
   font-size: 16px;
   color: #fffdf0;
 }
-/* line 159, ../sass/framework/_nav.scss */
+/* line 161, ../sass/framework/_nav.scss */
 #nav .bottom-links a:hover {
   color: #e5730e;
 }
-/* line 164, ../sass/framework/_nav.scss */
+/* line 166, ../sass/framework/_nav.scss */
 #nav .copyright {
   margin-top: 7px;
   text-align: center;
 }
-/* line 167, ../sass/framework/_nav.scss */
+/* line 169, ../sass/framework/_nav.scss */
 #nav .copyright p {
   font-size: 10px;
   color: black;
@@ -1432,14 +1434,21 @@ aside p {
   font-style: italic;
 }
 
+@media (max-width: 980px) {
+  /* line 53, ../sass/widgets/_daypart.scss */
+  #content #sidebar .widget.home-daypart {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+}
 @media (min-width: 980px) {
-  /* line 55, ../sass/widgets/_daypart.scss */
+  /* line 62, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a {
     display: block;
     width: 100%;
     overflow: hidden;
   }
-  /* line 59, ../sass/widgets/_daypart.scss */
+  /* line 66, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:after {
     right: 10px;
     -webkit-transition-duration: 0.25s;
@@ -1447,19 +1456,19 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 64, ../sass/widgets/_daypart.scss */
+  /* line 71, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:hover:after {
     right: 0;
   }
-  /* line 67, ../sass/widgets/_daypart.scss */
+  /* line 74, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:hover .daypart {
     background-color: #f4f2df;
   }
-  /* line 73, ../sass/widgets/_daypart.scss */
+  /* line 80, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child:after {
     content: "";
   }
-  /* line 76, ../sass/widgets/_daypart.scss */
+  /* line 83, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart {
     padding: 5px 5px 10px;
     margin: 0 0 10px;
@@ -1475,20 +1484,20 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 84, ../sass/widgets/_daypart.scss */
+  /* line 91, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart:hover {
     background-color: #edeacc;
   }
-  /* line 87, ../sass/widgets/_daypart.scss */
+  /* line 94, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-image {
     width: 100%;
   }
-  /* line 90, ../sass/widgets/_daypart.scss */
+  /* line 97, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text {
     width: 100%;
     padding-top: 5px;
   }
-  /* line 93, ../sass/widgets/_daypart.scss */
+  /* line 100, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text:before {
     content: url(../../../img/menu/now.png);
     width: 50px;
@@ -1496,7 +1505,7 @@ aside p {
     padding-top: 5px;
     float: left;
   }
-  /* line 103, ../sass/widgets/_daypart.scss */
+  /* line 110, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper .daypart {
     width: 100%;
     margin: 7px 0;
@@ -1510,14 +1519,14 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 110, ../sass/widgets/_daypart.scss */
+  /* line 117, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-image-bg {
     width: 45px;
     height: 45px;
     float: left;
     background-size: cover;
   }
-  /* line 116, ../sass/widgets/_daypart.scss */
+  /* line 123, ../sass/widgets/_daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-text {
     width: 70%;
   }
