@@ -10,11 +10,10 @@ var LaMadLocations = {
         },
 
     initializeMap:  function(lat, lng, mapContainer) {
-
             var $mapContainer = $('#' + mapContainer);
 
             if($mapContainer.length){
-                
+
                 /** do to map size (too small) we actually need to offset the center toward the bottom of the map 
                 to allow marker to fit
                 */
@@ -51,7 +50,7 @@ var LaMadLocations = {
                                                     });
                 this.sideMap = map;
                 $('#directionsLinkButton').show();
-            }
+            } 
         },
 
         // Accepts location object, returns current day open/close hours as object
@@ -89,6 +88,7 @@ var LaMadLocations = {
                 todayHours = LaMadLocations.getTodayHours(location);
 
             LaMadLocations.nearestLocationObj = location;
+
             
             $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours: ' + todayHours.open + ' - ' + todayHours.close);
             
@@ -113,6 +113,14 @@ var LaMadLocations = {
             });
         },  
 
+         setNearestLocationsCookie: function (html){
+            
+            $.cookie("LAM-near-locations",html, {
+               expires : 10,          //expires in 10 days
+               path: '/'
+            });
+        },  
+
 
         getLocationCookie: function(){
             
@@ -121,7 +129,6 @@ var LaMadLocations = {
             if(typeof(cookieLoc) != 'undefined'){
               
                 jsonCookie = $.parseJSON(cookieLoc);
-
                 LaMadLocations.getLocation(true);
                 LaMadLocations.nearestLocationObj.latitude = jsonCookie.latitude;
                 LaMadLocations.nearestLocationObj.longitude = jsonCookie.longitude;
@@ -193,6 +200,7 @@ var LaMadLocations = {
                     
                     
                     $('#location-list').html('');
+                    nearLocationHtmlList = '';
                     $.each(data, function( idx, location){
                         add_li = true;
                         var Latlng = new google.maps.LatLng(location.latitude,location.longitude);
@@ -213,9 +221,15 @@ var LaMadLocations = {
                          if(add_li === true){
                             locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'>"+location.title+'</li>';
                             $('#location-list').append(locationItem);  
+
+                            nearLocationHtmlList += locationItem;
                          }  
                     });
                     
+                    if (nearLocationHtmlList){
+                        LaMadLocations.setNearestLocationsCookie(nearLocationHtmlList);
+                    }
+
                     // Done loading
                     LaMadLocations.$locationCta.removeClass('map-loading').addClass('map-loaded');
 
