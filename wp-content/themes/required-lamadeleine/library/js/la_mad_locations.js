@@ -124,9 +124,9 @@ var LaMadLocations = {
                 LaMadLocations.setLocation(jsonCookie, true, true);
 
                 // We have a map!
-                LaMadLocations.$locationCta.addClass('map-loaded');
+                LaMadLocations.$locationCta.addClass('map-loaded has-location');
 
-                
+                console.log("HAVE MAP");
                 
             }
             else{
