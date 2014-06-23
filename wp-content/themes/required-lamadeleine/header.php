@@ -48,7 +48,30 @@
 				</a>
 				<img class="tagline" src="<?php echo get_stylesheet_directory_uri();?>/img/header/tagline.png">
 			</div>
-			<div class="icon-phone"></div>
+			<div class="icon-wrapper">
+				<div class="icon icon-phone lam-call"><a href="#"></a></div>
+				<div class="icon icon-pin lam-geolocate"></div>
+				<div class="loading">
+          <div id="floatingCirclesG">
+          <div class="f_circleG" id="frotateG_01">
+          </div>
+          <div class="f_circleG" id="frotateG_02">
+          </div>
+          <div class="f_circleG" id="frotateG_03">
+          </div>
+          <div class="f_circleG" id="frotateG_04">
+          </div>
+          <div class="f_circleG" id="frotateG_05">
+          </div>
+          <div class="f_circleG" id="frotateG_06">
+          </div>
+          <div class="f_circleG" id="frotateG_07">
+          </div>
+          <div class="f_circleG" id="frotateG_08">
+          </div>
+          </div>
+      </div>
+			</div>
 		</div>
 	</header>
 	

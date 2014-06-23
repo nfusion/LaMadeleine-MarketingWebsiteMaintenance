@@ -37,6 +37,13 @@
     z-index: 3;
 		@include background-image(linear-gradient($lightCream, lighten($fadedBrown,15%)));
 		@include border-radius(5px);
+    a{
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 45px;
+      height: 45px;
+    }
 	}
   a.location-link{
     display: block;
@@ -101,7 +108,7 @@
       &.map-loaded .flipper{
         @include rotateY(180deg);
       }
-      &.has-location{
+      &.no-cta{
         .front{
           // Firefox bug fix. Hide front if no flip transition is firing.
           display: none;

@@ -35,28 +35,70 @@ $(function(){
 	LOCATIONS
 	********/
 
-	// Homepage mobile location widget
+	// Check location cookie
+	cookieLoc = $.cookie('LAM-location');
+
+	// Parse as JSON
+	if(typeof(cookieLoc) != 'undefined'){
+		var myLocation = $.parseJSON(cookieLoc),
+				hasLocation = true;
+	}
+
+	// If location exists, add class to body and set phone number for any phone links
+	if(hasLocation){
+		$('body').addClass('has-location');
+		$('.lam-call a').attr('href', 'tel:' + myLocation.phone);
+	}
+	// Else add no location class to body
+	else{
+		$('body').addClass('no-location');
+	}
+
+	/**
+	* Homepage mobile location widget
+	*	Displays selected location data at top of homepage
+	*
+	**/ 
+
 	var $mobileLocation = $('#mobile-location');
 
-	if($mobileLocation.length && $mobileLocation.is(':visible') && LaMadLocations.nearestLocationObj){
-		mobileLocationInt = setInterval(function(){
-			if(LaMadLocations.nearestLocationObj.id){
+	var mobileLocationWidget = function(){
+		// Get today's hours
+		var todayHours = LaMadLocations.getTodayHours(myLocation);
 
-				clearInterval(mobileLocationInt);
+		// Create html string
+		str = '<div class="icon-phone"><a href="tel:' + myLocation.phone + '"></a></div><a class="location-link" href="/locations"></a><div class="location-text"><p class="title">' + myLocation.title + '</p><p class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.open + ' - ' + todayHours.close + '</p>';
 
-				// Get today's hours
-				var todayHours = LaMadLocations.getTodayHours(LaMadLocations.nearestLocationObj);
+		$mobileLocation.append(str);
 
-				// Show mobile location widget
-				$mobileLocation.addClass('loaded');
-
-				// Create html string
-				str = '<div class="icon-phone"></div><a class="location-link" href="/locations"></a><div class="location-text"><p class="title">' + LaMadLocations.nearestLocationObj.title + '</p><p class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.open + ' - ' + todayHours.close + '</p>';
-
-				$mobileLocation.append(str);
-			}
-		}, 1000);
+		// Show mobile location widget
+		$mobileLocation.addClass('loaded');
 	};
+
+	if($mobileLocation.length && $mobileLocation.is(':visible') && hasLocation){
+		mobileLocationWidget();
+	};
+
+	// Mobile header locate/call interactions
+	// *** This needs to be cleaned up ***
+
+	var $header = $('#header');
+
+	$header.find('.lam-geolocate').on('click touchstart', function(){
+		LaMadLocations.getLocation();
+		$(this).hide();
+		$header.find('.loading').show();
+		locateInt = setInterval(function(){
+			console.log(LaMadLocations.nearestLocationObj.id);
+			if(LaMadLocations.nearestLocationObj.id){
+				clearInterval(locateInt);
+				$header.find('.loading').hide();
+				myLocation = LaMadLocations.nearestLocationObj;
+				$header.find('.lam-call a').attr('href', 'tel:' + myLocation.phone);
+				mobileLocationWidget();
+			}
+		}, 100);
+	});
 
 	/********
 	CAROUSEL

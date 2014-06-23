@@ -28,13 +28,14 @@ var markerclusterer = null;
 LaMadLocations.initializeLargeMap = function() {
         var myLatlng = new google.maps.LatLng(32.2997,-90.5783);
         var mapOptions = {
+              mapTypeControl: false,
               streetViewControl: false,
               scrollwheel: false,
               panControl:false,
               zoomControl: true,
               zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.SMALL,
-                 position: google.maps.ControlPosition.RIGHT_BOTTOM
+                style: google.maps.ZoomControlStyle.LARGE,
+                position: google.maps.ControlPosition.RIGHT_BOTTOM
               },
              
             center: myLatlng,
@@ -144,10 +145,7 @@ LaMadLocations.initializeLargeMap = function() {
     });
 });
 
-</script>    
-
-
-<H2><?php echo $pageDetails['title'] ?></H2>
+</script>  
 
 <div id='map_div_large'>
 
