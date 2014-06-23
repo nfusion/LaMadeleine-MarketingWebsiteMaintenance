@@ -49,6 +49,13 @@
   }
 }
 
+@media (max-width: $medium-screen-min){
+  #content #sidebar .widget.home-daypart{
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
 @media (min-width: $medium-screen-min){
   .widget-daypart{
     .daypart-wrapper{
