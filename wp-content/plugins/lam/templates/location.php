@@ -61,11 +61,12 @@
             <div class="front">
                 <div class="front-wrapper">
                     <div class="geo">
-                        <div class="icon-pin"></div>
+                        <div class="icon icon-pin"></div>
                         <p><a id="use-location" class="btn" href="#">Use My Location</a></p>
                     </div>
                     <div class="location-cta-divider"></div>
                     <div class="zip">
+                        <div class="icon icon-magnify"></div>
                         <input id="zip-input" maxlength="5" placeholder='Enter Zip Code'> <a id="use-zip" class="btn" href="#">Go</a>
                     </div>
                 </div>

@@ -812,7 +812,7 @@ body {
   padding: 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   /* line 48, ../sass/framework/_layout.scss */
   #container {
     margin: -80px auto 0;
@@ -1077,6 +1077,19 @@ body.nav-active #nav .nav-wrapper {
     overflow: hidden;
   }
   /* line 174, ../sass/framework/_nav.scss */
+  html.touch body.nav-active #content {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition-duration: 0;
+    -moz-transition-duration: 0;
+    -o-transition-duration: 0;
+    transition-duration: 0;
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+  }
+  /* line 179, ../sass/framework/_nav.scss */
   html.touch body.nav-active #nav {
     pointer-events: auto;
   }
@@ -1245,7 +1258,7 @@ body.has-location #header .icon-wrapper .icon-pin {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   /* line 106, ../sass/framework/_header.scss */
   #header {
     height: 80px;
@@ -1379,7 +1392,7 @@ aside p {
   font-family: "Playfair Display", serif;
   font-style: italic;
   color: #310d00;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 /* line 55, ../sass/components/_carousel.scss */
 #carousel .carousel-controls {
@@ -1500,23 +1513,23 @@ aside p {
 * La Madeleine
 * Daypart widget
 **/
-/* line 6, ../sass/widgets/_daypart.scss */
+/* line 6, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart {
   width: 100%;
   overflow: hidden;
 }
-/* line 9, ../sass/widgets/_daypart.scss */
+/* line 9, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .daypart-wrapper {
   position: relative;
   max-width: 400px;
   margin: 0 auto;
 }
-/* line 13, ../sass/widgets/_daypart.scss */
+/* line 13, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .daypart-wrapper a {
   display: none;
   position: relative;
 }
-/* line 16, ../sass/widgets/_daypart.scss */
+/* line 16, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .daypart-wrapper a:after {
   color: #b55a0f;
   font-family: 'icomoon';
@@ -1526,16 +1539,16 @@ aside p {
   top: 20px;
   right: 0;
 }
-/* line 26, ../sass/widgets/_daypart.scss */
+/* line 26, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .daypart-wrapper a:first-child {
   display: block;
 }
-/* line 30, ../sass/widgets/_daypart.scss */
+/* line 30, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .daypart-image {
   width: 50%;
   float: left;
 }
-/* line 34, ../sass/widgets/_daypart.scss */
+/* line 34, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .daypart-text {
   width: 50%;
   padding: 0 15px;
@@ -1543,33 +1556,33 @@ aside p {
   font-family: "Merriweather", serif;
   color: #310d00;
 }
-/* line 41, ../sass/widgets/_daypart.scss */
+/* line 41, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .title {
   font-family: "Merriweather", serif;
   font-size: 16px;
   line-height: 1.6;
 }
-/* line 46, ../sass/widgets/_daypart.scss */
+/* line 46, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .desc {
   font-size: 12px;
   font-style: italic;
 }
 
 @media (max-width: 980px) {
-  /* line 53, ../sass/widgets/_daypart.scss */
+  /* line 53, ../sass/widgets/_widget-daypart.scss */
   #content #sidebar .widget.home-daypart {
     border-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 62, ../sass/widgets/_daypart.scss */
+  /* line 62, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a {
     display: block;
     width: 100%;
     overflow: hidden;
   }
-  /* line 66, ../sass/widgets/_daypart.scss */
+  /* line 66, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:after {
     right: 10px;
     -webkit-transition-duration: 0.25s;
@@ -1577,19 +1590,19 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 71, ../sass/widgets/_daypart.scss */
+  /* line 71, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:hover:after {
     right: 0;
   }
-  /* line 74, ../sass/widgets/_daypart.scss */
+  /* line 74, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:hover .daypart {
     background-color: #f4f2df;
   }
-  /* line 80, ../sass/widgets/_daypart.scss */
+  /* line 80, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child:after {
     content: "";
   }
-  /* line 83, ../sass/widgets/_daypart.scss */
+  /* line 83, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart {
     padding: 5px 5px 10px;
     margin: 0 0 10px;
@@ -1605,20 +1618,20 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 91, ../sass/widgets/_daypart.scss */
+  /* line 91, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart:hover {
     background-color: #edeacc;
   }
-  /* line 94, ../sass/widgets/_daypart.scss */
+  /* line 94, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-image {
     width: 100%;
   }
-  /* line 97, ../sass/widgets/_daypart.scss */
+  /* line 97, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text {
     width: 100%;
     padding-top: 5px;
   }
-  /* line 100, ../sass/widgets/_daypart.scss */
+  /* line 100, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text:before {
     content: url(../../../img/menu/now.png);
     width: 50px;
@@ -1626,7 +1639,7 @@ aside p {
     padding-top: 5px;
     float: left;
   }
-  /* line 110, ../sass/widgets/_daypart.scss */
+  /* line 110, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart {
     width: 100%;
     margin: 7px 0;
@@ -1640,14 +1653,14 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 117, ../sass/widgets/_daypart.scss */
+  /* line 117, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-image-bg {
     width: 45px;
     height: 45px;
     float: left;
     background-size: cover;
   }
-  /* line 123, ../sass/widgets/_daypart.scss */
+  /* line 123, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-text {
     width: 70%;
   }
@@ -1656,7 +1669,7 @@ aside p {
 * La Madeleine
 * Location widget
 **/
-/* line 6, ../sass/widgets/_location.scss */
+/* line 6, ../sass/widgets/_widget-location.scss */
 #mobile-location {
   width: 100%;
   height: 0;
@@ -1669,7 +1682,7 @@ aside p {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 13, ../sass/widgets/_location.scss */
+/* line 13, ../sass/widgets/_widget-location.scss */
 #mobile-location.loaded {
   height: 50px;
   padding: 6px;
@@ -1679,11 +1692,11 @@ aside p {
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
   box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
 }
-/* line 19, ../sass/widgets/_location.scss */
+/* line 19, ../sass/widgets/_widget-location.scss */
 #mobile-location.loaded:hover {
   cursor: pointer;
 }
-/* line 22, ../sass/widgets/_location.scss */
+/* line 22, ../sass/widgets/_widget-location.scss */
 #mobile-location.loaded:after {
   color: #b55a0f;
   font-family: 'icomoon';
@@ -1693,7 +1706,7 @@ aside p {
   top: 15px;
   right: 5px;
 }
-/* line 32, ../sass/widgets/_location.scss */
+/* line 32, ../sass/widgets/_widget-location.scss */
 #mobile-location .icon-phone {
   font-size: 35px;
   border: 1px solid #310d00;
@@ -1711,7 +1724,7 @@ aside p {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 40, ../sass/widgets/_location.scss */
+/* line 40, ../sass/widgets/_widget-location.scss */
 #mobile-location .icon-phone a {
   position: absolute;
   top: -5px;
@@ -1719,7 +1732,7 @@ aside p {
   width: 45px;
   height: 45px;
 }
-/* line 48, ../sass/widgets/_location.scss */
+/* line 48, ../sass/widgets/_widget-location.scss */
 #mobile-location a.location-link {
   display: block;
   width: 100%;
@@ -1727,55 +1740,55 @@ aside p {
   position: absolute;
   z-index: 2;
 }
-/* line 55, ../sass/widgets/_location.scss */
+/* line 55, ../sass/widgets/_widget-location.scss */
 #mobile-location .location-text {
   width: 80%;
   float: left;
   text-align: center;
 }
-/* line 59, ../sass/widgets/_location.scss */
+/* line 59, ../sass/widgets/_widget-location.scss */
 #mobile-location .location-text p {
   margin: 0;
 }
-/* line 63, ../sass/widgets/_location.scss */
+/* line 63, ../sass/widgets/_widget-location.scss */
 #mobile-location .title {
   font-size: 18px;
   line-height: 1.2;
   color: #7a3910;
 }
-/* line 68, ../sass/widgets/_location.scss */
+/* line 68, ../sass/widgets/_widget-location.scss */
 #mobile-location .hours {
   font-size: 12px;
 }
-/* line 71, ../sass/widgets/_location.scss */
+/* line 71, ../sass/widgets/_widget-location.scss */
 #mobile-location .location-cta {
   display: none;
 }
 
-/* line 76, ../sass/widgets/_location.scss */
+/* line 76, ../sass/widgets/_widget-location.scss */
 .widget-location {
   display: none;
 }
 
 @media (min-width: 980px) {
-  /* line 81, ../sass/widgets/_location.scss */
+  /* line 81, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location {
     display: block;
     border-bottom: 0;
     width: 100%;
     overflow: hidden;
   }
-  /* line 86, ../sass/widgets/_location.scss */
+  /* line 86, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title h3 {
     text-align: left;
     margin: 5px 0;
   }
-  /* line 90, ../sass/widgets/_location.scss */
+  /* line 90, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #map {
     height: 95px;
     width: 100%;
   }
-  /* line 94, ../sass/widgets/_location.scss */
+  /* line 94, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta {
     display: block;
     width: 100%;
@@ -1789,13 +1802,13 @@ aside p {
     -o-perspective: 1000;
     perspective: 1000;
   }
-  /* line 103, ../sass/widgets/_location.scss */
+  /* line 103, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loading .loading {
     display: block;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
-  /* line 108, ../sass/widgets/_location.scss */
+  /* line 108, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loaded .flipper {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -1803,11 +1816,11 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 112, ../sass/widgets/_location.scss */
+  /* line 112, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.no-cta .front {
     display: none;
   }
-  /* line 117, ../sass/widgets/_location.scss */
+  /* line 117, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper {
     position: relative;
     -webkit-transform-style: preserve-3d;
@@ -1816,14 +1829,14 @@ aside p {
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  /* line 121, ../sass/widgets/_location.scss */
+  /* line 121, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper.transition {
     -webkit-transition-duration: 0.6s;
     -moz-transition-duration: 0.6s;
     -o-transition-duration: 0.6s;
     transition-duration: 0.6s;
   }
-  /* line 124, ../sass/widgets/_location.scss */
+  /* line 124, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front, #sidebar .widget-location #location-cta .back {
     width: 100%;
     height: 270 px;
@@ -1836,13 +1849,13 @@ aside p {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  /* line 132, ../sass/widgets/_location.scss */
+  /* line 132, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front {
     height: 270px;
     z-index: 2;
     background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
   }
-  /* line 137, ../sass/widgets/_location.scss */
+  /* line 137, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .back {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -1850,7 +1863,7 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 141, ../sass/widgets/_location.scss */
+  /* line 141, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .location-cta-divider {
     display: block;
     width: 230px;
@@ -1860,7 +1873,7 @@ aside p {
     left: 20px;
     background: url(../../../img/map/location-cta-divider.png) no-repeat;
   }
-  /* line 150, ../sass/widgets/_location.scss */
+  /* line 150, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .loading {
     display: none;
     position: absolute;
@@ -1873,32 +1886,33 @@ aside p {
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
   }
-  /* line 158, ../sass/widgets/_location.scss */
+  /* line 158, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .geo {
     width: 100%;
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 0;
     right: 0;
   }
-  /* line 165, ../sass/widgets/_location.scss */
+  /* line 165, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .zip {
     width: 100%;
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
     left: 0;
     right: 0;
   }
-  /* line 171, ../sass/widgets/_location.scss */
+  /* line 171, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .zip input {
     width: 50%;
     height: 29px;
     margin-right: 3%;
-    padding: 0 5px;
+    padding: 1px 5px 0;
     position: relative;
-    font-size: 16px;
+    font-size: 15px;
     font-family: "Merriweather", serif;
     font-style: italic;
+    text-align: center;
     border: 0;
     color: #b55a0f;
     background-color: #fffdf0;
@@ -1908,36 +1922,37 @@ aside p {
     -o-border-radius: 5px;
     border-radius: 5px;
   }
-  /* line 186, ../sass/widgets/_location.scss */
-  #sidebar .widget-location .icon-pin {
+  /* line 187, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .icon {
     color: #fffdf0;
     font-size: 30px;
+    margin-bottom: 5px;
   }
-  /* line 190, ../sass/widgets/_location.scss */
+  /* line 192, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #use-location {
     position: relative;
     top: 10px;
   }
-  /* line 194, ../sass/widgets/_location.scss */
+  /* line 196, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info {
     width: 100%;
     overflow: hidden;
   }
-  /* line 197, ../sass/widgets/_location.scss */
+  /* line 199, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .location-title {
     font-family: "Merriweather", serif;
     font-size: 15px;
     color: #7a3910;
     margin: 10px 0 5px;
   }
-  /* line 203, ../sass/widgets/_location.scss */
+  /* line 205, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .info-wrapper {
     width: 100%;
     padding: 5px 5px 0;
     overflow: hidden;
     border-bottom: 1px solid #e5d7cd;
   }
-  /* line 209, ../sass/widgets/_location.scss */
+  /* line 211, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address, #sidebar .widget-location #location-info .phone {
     float: left;
     text-align: left;
@@ -1946,56 +1961,56 @@ aside p {
     padding: 0 10px 10px;
     color: #310d00;
   }
-  /* line 217, ../sass/widgets/_location.scss */
+  /* line 219, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address {
     width: 55%;
     border-right: 1px solid #e5d7cd;
   }
-  /* line 221, ../sass/widgets/_location.scss */
+  /* line 223, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .phone {
     width: 45%;
   }
-  /* line 224, ../sass/widgets/_location.scss */
+  /* line 226, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .hours {
     font-size: 12px;
     margin: 10px 0;
     color: #310d00;
   }
-  /* line 230, ../sass/widgets/_location.scss */
+  /* line 232, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper {
     width: 100%;
   }
-  /* line 233, ../sass/widgets/_location.scss */
+  /* line 235, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper .btn {
     width: 46%;
     display: block;
     float: left;
     margin: 0 2%;
   }
-  /* line 244, ../sass/widgets/_location.scss */
+  /* line 246, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .location-view #location-image {
     height: 150px;
     overflow: hidden;
     background-color: #f4f2df;
   }
 
-  /* line 251, ../sass/widgets/_location.scss */
+  /* line 253, ../sass/widgets/_widget-location.scss */
   #mobile-location {
     display: none;
   }
 }
 @media (min-width: 1140px) {
-  /* line 258, ../sass/widgets/_location.scss */
+  /* line 260, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title {
     width: 100%;
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 261, ../sass/widgets/_location.scss */
+  /* line 263, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title h3 {
     float: left;
   }
-  /* line 264, ../sass/widgets/_location.scss */
+  /* line 266, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title a {
     float: right;
     padding-top: 14px;

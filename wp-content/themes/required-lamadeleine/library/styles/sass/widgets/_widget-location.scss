@@ -158,34 +158,36 @@
   	.geo{
   		width: 100%;
   		position: absolute;
-  		top: 20px;
+  		top: 30px;
   		left: 0;
   		right: 0;
   	}
   	.zip{
   		width: 100%;
   		position: absolute;
-  		bottom: 50px;
+  		bottom: 40px;
   		left: 0;
   		right: 0;
       input{
         width: 50%;
         height: 29px;
         margin-right: 3%;
-        padding: 0 5px;
+        padding: 1px 5px 0;
         position: relative;
-        font-size: 16px;
+        font-size: 15px;
         font-family: $merriweather;
         font-style: italic;
+        text-align: center;
         border: 0;
         color: $lightBrown;
         background-color: $lightCream;
         @include border-radius(5px);
       }
   	}
-  	.icon-pin{
+  	.icon{
   		color: $lightCream;
   		font-size: 30px;
+      margin-bottom: 5px;
   	}
     #use-location{
       position: relative;

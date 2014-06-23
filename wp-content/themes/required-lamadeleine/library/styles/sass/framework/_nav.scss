@@ -171,6 +171,11 @@ body.nav-active{
 		}
 		body.nav-active{
 			overflow: hidden;
+			#content{
+				@include opacity(0);
+				@include transition-duration(0);
+				@include transition-delay(0.5s);
+			}
 			#nav{
 				pointer-events: auto
 			}
