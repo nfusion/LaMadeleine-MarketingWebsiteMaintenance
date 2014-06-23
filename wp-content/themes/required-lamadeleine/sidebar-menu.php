@@ -17,7 +17,7 @@
     <h3>Place an order online</h3>
 
     <div class="btn-wrapper">
-        <a class="btn" target="_blank" href="https://online.lamadeleine.com">To-Go</a>
+        <a class="btn" target="_blank" href="https://online.lamadeleine.com">To Go</a>
 
         <a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a>
     </div>
