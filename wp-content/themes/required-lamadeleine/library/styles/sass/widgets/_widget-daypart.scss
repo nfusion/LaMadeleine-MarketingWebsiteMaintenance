@@ -8,7 +8,7 @@
   overflow: hidden;
   .daypart-wrapper{
     position: relative; 
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     a{
       display: none;
@@ -46,6 +46,7 @@
   .desc{
     font-size: 12px;
     font-style: italic;
+    line-height: 1.4;
   }
 }
 
@@ -97,7 +98,7 @@
           .daypart-text{
             width: 100%;
             padding-top: 5px;
-            padding-left: 50px;
+            padding-left: 49px;
             position: relative;
             &:before{
               content: url(../../../img/menu/now.png);
@@ -105,7 +106,7 @@
               height: 30px;
               position: absolute;
               top: 10px;
-              left: 10px;
+              left: 7px;
             }
           }
         }
@@ -124,7 +125,6 @@
       }
       .daypart-text{
         width: 70%;
-        line-height: 1.4;
         padding: 0 10px;
       }
       .desc{

@@ -1477,6 +1477,18 @@ aside p {
 
 @media (min-width: 768px) {
   /* line 85, ../sass/components/_carousel.scss */
+  #carousel h1 {
+    font-size: 22px;
+  }
+  /* line 88, ../sass/components/_carousel.scss */
+  #carousel p {
+    font-size: 16px;
+  }
+  /* line 91, ../sass/components/_carousel.scss */
+  #carousel .carousel-paginate {
+    height: 40px;
+  }
+  /* line 94, ../sass/components/_carousel.scss */
   #carousel .carousel-controls {
     display: block;
     width: 100%;
@@ -1484,7 +1496,7 @@ aside p {
     position: absolute;
     top: 45%;
   }
-  /* line 91, ../sass/components/_carousel.scss */
+  /* line 100, ../sass/components/_carousel.scss */
   #carousel .carousel-controls .control {
     width: 40px;
     height: 40px;
@@ -1502,51 +1514,37 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 99, ../sass/components/_carousel.scss */
+  /* line 108, ../sass/components/_carousel.scss */
   #carousel .carousel-controls .control:hover {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     cursor: pointer;
   }
-  /* line 104, ../sass/components/_carousel.scss */
+  /* line 113, ../sass/components/_carousel.scss */
   #carousel .carousel-controls .icon {
     font-size: 24px;
   }
-  /* line 107, ../sass/components/_carousel.scss */
+  /* line 116, ../sass/components/_carousel.scss */
   #carousel .carousel-controls .control.prev {
     padding: 8px 6px;
     float: left;
   }
-  /* line 111, ../sass/components/_carousel.scss */
+  /* line 120, ../sass/components/_carousel.scss */
   #carousel .carousel-controls .control.next {
     padding: 8px 10px;
     float: right;
   }
 }
-@media (min-width: 980px) {
-  /* line 121, ../sass/components/_carousel.scss */
-  #carousel h1 {
-    font-size: 22px;
-  }
-  /* line 124, ../sass/components/_carousel.scss */
-  #carousel p {
-    font-size: 16px;
-  }
-  /* line 127, ../sass/components/_carousel.scss */
-  #carousel .carousel-paginate {
-    height: 40px;
-  }
-}
 @media (min-width: 1140px) {
-  /* line 135, ../sass/components/_carousel.scss */
+  /* line 130, ../sass/components/_carousel.scss */
   #carousel .carousel-text {
     padding: 20px;
   }
-  /* line 138, ../sass/components/_carousel.scss */
+  /* line 133, ../sass/components/_carousel.scss */
   #carousel h1 {
     font-size: 32px;
   }
-  /* line 141, ../sass/components/_carousel.scss */
+  /* line 136, ../sass/components/_carousel.scss */
   #carousel p {
     font-size: 20px;
   }
@@ -1563,7 +1561,7 @@ aside p {
 /* line 9, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .daypart-wrapper {
   position: relative;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 }
 /* line 13, ../sass/widgets/_widget-daypart.scss */
@@ -1608,23 +1606,24 @@ aside p {
 .widget-daypart .desc {
   font-size: 12px;
   font-style: italic;
+  line-height: 1.4;
 }
 
 @media (max-width: 980px) {
-  /* line 53, ../sass/widgets/_widget-daypart.scss */
+  /* line 54, ../sass/widgets/_widget-daypart.scss */
   #content #sidebar .widget.home-daypart {
     border-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 62, ../sass/widgets/_widget-daypart.scss */
+  /* line 63, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a {
     display: block;
     width: 100%;
     overflow: hidden;
   }
-  /* line 66, ../sass/widgets/_widget-daypart.scss */
+  /* line 67, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:after {
     right: 10px;
     -webkit-transition-duration: 0.25s;
@@ -1632,19 +1631,19 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 71, ../sass/widgets/_widget-daypart.scss */
+  /* line 72, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:hover:after {
     right: 0;
   }
-  /* line 74, ../sass/widgets/_widget-daypart.scss */
+  /* line 75, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:hover .daypart {
     background-color: #f4f2df;
   }
-  /* line 80, ../sass/widgets/_widget-daypart.scss */
+  /* line 81, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child:after {
     content: "";
   }
-  /* line 83, ../sass/widgets/_widget-daypart.scss */
+  /* line 84, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart {
     padding: 5px 5px 10px;
     margin: 0 0 10px;
@@ -1660,31 +1659,31 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 91, ../sass/widgets/_widget-daypart.scss */
+  /* line 92, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart:hover {
     background-color: #edeacc;
   }
-  /* line 94, ../sass/widgets/_widget-daypart.scss */
+  /* line 95, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-image {
     width: 100%;
   }
-  /* line 97, ../sass/widgets/_widget-daypart.scss */
+  /* line 98, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text {
     width: 100%;
     padding-top: 5px;
-    padding-left: 50px;
+    padding-left: 49px;
     position: relative;
   }
-  /* line 102, ../sass/widgets/_widget-daypart.scss */
+  /* line 103, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text:before {
     content: url(../../../img/menu/now.png);
     width: 50px;
     height: 30px;
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 7px;
   }
-  /* line 113, ../sass/widgets/_widget-daypart.scss */
+  /* line 114, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart {
     width: 100%;
     margin: 5px 0;
@@ -1698,16 +1697,15 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 120, ../sass/widgets/_widget-daypart.scss */
+  /* line 121, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-image-thumb {
     width: 45px;
     height: 45px;
     float: left;
   }
-  /* line 125, ../sass/widgets/_widget-daypart.scss */
+  /* line 126, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-text {
     width: 70%;
-    line-height: 1.4;
     padding: 0 10px;
   }
   /* line 130, ../sass/widgets/_widget-daypart.scss */
