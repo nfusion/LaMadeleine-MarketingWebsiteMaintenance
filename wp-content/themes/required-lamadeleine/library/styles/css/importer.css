@@ -1711,6 +1711,7 @@ aside p {
   }
   /* line 129, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .desc {
+    font-family: Georgia, serif;
     font-size: 11px;
   }
 }
