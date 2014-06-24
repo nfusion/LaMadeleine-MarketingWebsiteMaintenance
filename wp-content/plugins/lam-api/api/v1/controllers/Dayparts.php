@@ -46,10 +46,13 @@ class Dayparts {
             $dinnerEnd = new \DateTime($return['Dinner & Wine']['end_display_time'], new \DateTimeZone($tsString)); 
             $dinnerStart = new \DateTime($return['Dinner & Wine']['end_display_time'], new \DateTimeZone($tsString)); 
             
-
-            
-            
+		    
             switch($clientTime){
+
+                case (( $clientTime < $breakfastEnd->getTimestamp()) && ($clientTime < $breakfastStart->getTimestamp())):
+                    $order =  array('Bakery','Breakfast', 'Lunch', 'Dinner & Wine');
+                break;
+
                 case ( $clientTime < $breakfastEnd->getTimestamp()):
                     $order =  array('Breakfast','Lunch','Bakery','Dinner & Wine');
                 break;
