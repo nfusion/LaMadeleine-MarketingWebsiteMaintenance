@@ -1178,16 +1178,21 @@ body.nav-active #nav .nav-wrapper {
 }
 
 /* line 36, ../sass/framework/_mobile-nav.scss */
+#mobile-nav.two a {
+  width: 50%;
+}
+
+/* line 42, ../sass/framework/_mobile-nav.scss */
 #mobile-nav.three a {
   width: 33%;
 }
-/* line 39, ../sass/framework/_mobile-nav.scss */
+/* line 45, ../sass/framework/_mobile-nav.scss */
 #mobile-nav.three:first-child {
   width: 34%;
 }
 
 @media (min-width: 980px) {
-  /* line 45, ../sass/framework/_mobile-nav.scss */
+  /* line 51, ../sass/framework/_mobile-nav.scss */
   #mobile-nav {
     display: none;
   }

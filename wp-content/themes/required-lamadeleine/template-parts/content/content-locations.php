@@ -140,52 +140,23 @@ LaMadLocations.initializeLargeMap = function() {
     $(document).ready(function(){
 
         LaMadLocations.initializeLargeMap();
+
         
         //getLocationCookie(map-full);
-
-        /**
-        *   Locations page interactions
-        *
-        **/
-
-        var $locations = $('#content.locations');
-
-        if($locations.length){
-            var $mobileNav = $locations.find('#mobile-nav'),
-                    $map = $locations.find('#map-full');
-
-            $mobileNav.find('.locations-map').on('click touchend', function(e){
-                e.preventDefault();
-                $mobileNav.find('.active').removeClass('active');
-                $(this).addClass('active');
-                $map.addClass('mobile-tall');
-                largeMap.setZoom(9);
-                largeMap.setCenter();
-                setTimeout(function(){
-                    google.maps.event.trigger(largeMap,'resize')
-                },1000);
-            });
-        }
         
     });
 });
 
 </script>  
 
-<div id="mobile-nav" class="three">
-    <a href="/locations" class="locations-closest active">
-        <div class="nav-item">
-            <div class="icon icon-nearby"></div>
-            Closest
-        </div>
-    </a>
-    <a href="#" class="locations-map">
+<div id="mobile-nav" class="two">
+    <a href="#" <?php if($pageDetails['title'] === 'locations'){echo 'class="active"';}; ?>>
         <div class="nav-item">
             <div class="icon icon-map"></div>
             Map
         </div>
     </a>
-    <a href="#" class="locations-list">
+    <a href="/locations?list=true" <?php if($pageDetails['title'] === 'locations-list'){echo 'class="active"';}; ?>>
         <div class="nav-item">
             <div class="icon icon-menu-dots"></div>
             See All
