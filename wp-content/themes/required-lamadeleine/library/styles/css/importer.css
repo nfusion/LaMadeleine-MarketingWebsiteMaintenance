@@ -1686,7 +1686,7 @@ aside p {
   /* line 114, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart {
     width: 100%;
-    margin: 5px 0;
+    margin: 6px 0;
     overflow: hidden;
     -webkit-transition-property: background-color;
     -moz-transition-property: background-color;
@@ -1891,7 +1891,7 @@ aside p {
     display: block;
     width: 100%;
     min-height: 270px;
-    margin-top: 9px;
+    margin-top: 12px;
     text-align: center;
     position: relative;
     -webkit-perspective: 1000;
