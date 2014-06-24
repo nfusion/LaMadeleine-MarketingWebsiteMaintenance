@@ -1672,7 +1672,7 @@ aside p {
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text {
     width: 100%;
     padding-top: 5px;
-    padding-left: 40px;
+    padding-left: 43px;
     position: relative;
   }
   /* line 102, ../sass/widgets/_widget-daypart.scss */
@@ -1708,6 +1708,10 @@ aside p {
   .widget-daypart .daypart-wrapper .daypart-text {
     width: 70%;
     line-height: 1.4;
+  }
+  /* line 129, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .desc {
+    font-size: 11px;
   }
 }
 /**

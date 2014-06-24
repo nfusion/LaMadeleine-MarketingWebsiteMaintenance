@@ -97,7 +97,7 @@
           .daypart-text{
             width: 100%;
             padding-top: 5px;
-            padding-left: 40px;
+            padding-left: 43px;
             position: relative;
             &:before{
               content: url(../../../img/menu/now.png);
@@ -125,6 +125,9 @@
       .daypart-text{
         width: 70%;
         line-height: 1.4;
+      }
+      .desc{
+        font-size: 11px;
       }
     }
   }
