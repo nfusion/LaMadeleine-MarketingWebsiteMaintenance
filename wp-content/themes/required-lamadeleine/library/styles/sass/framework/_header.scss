@@ -108,6 +108,11 @@ body.has-location #header{
 		padding: 13px 15px;
 		position: relative;
 		background-position: 0 0;
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#header{
 		.logo-wrapper{
 			float: right;
 		}

@@ -11,6 +11,10 @@
         height: 200px;
         // Foundation Google Maps fix
         max-width: none;
+        @include transition-duration(0.5s);
+    }
+    #map-full.mobile-tall{
+        height: 400px;
     }
     // Foundation Google Maps fix
     .gmnoprint > div > * {

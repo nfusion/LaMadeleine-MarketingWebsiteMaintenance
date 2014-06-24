@@ -32,6 +32,18 @@ $(function(){
 	}
 
 	/********
+	MENUS
+	********/
+
+	var $content = $('#content');
+
+	// If on a menu 
+	if($content.hasClass('breakfast') || $content.hasClass('lunch') || $content.hasClass('dinner') || $content.hasClass('bakery')){
+		// Sticky the sidebar widgets
+		$("#sidebar .menu-legend").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
+	};
+
+	/********
 	LOCATIONS
 	********/
 
