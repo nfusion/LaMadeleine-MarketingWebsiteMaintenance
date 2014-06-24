@@ -82,7 +82,7 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
             ?>
             
                 <!-- <pre>
-                <?php // print_r($menu['featured']) ?>
+                <?php // print_r($menu) ?>
                 </pre> -->
 
                 <?php 

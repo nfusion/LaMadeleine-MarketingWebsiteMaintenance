@@ -62,7 +62,7 @@
 		overflow: hidden;
 		.menu-links{
 			padding: 15px 0;
-			margin: 10px 0;
+			margin: 10px 0 21px;
 			text-align: center;
 			border-top: 1px dashed $fadedBrown;
 			border-bottom: 1px dashed $fadedBrown;
@@ -74,14 +74,22 @@
 				@include border-radius(5px);
 			}
 		}
-		.category-title{
+		.category-wrapper{
 			padding: 0 15px;
-			margin-bottom: 30px;
+			margin: 15px 0 30px;
+		}
+		.category-title{
+			margin: 0;
 			text-transform: uppercase;
 			font-family: $playfair;
 			font-size: 20px;
 			letter-spacing: 1px;
 			color: $darkBrown;
+		}
+		.category-desc{
+			margin: 0;
+			font-size: 12px;
+			font-style: italic;
 		}
 	}
 
@@ -94,7 +102,7 @@
 		margin: 0 0 30px;
 		img{
 			display: block;
-			margin: 0 auto;
+			width: 100%;
 		}
 		.text-wrapper{
 			width: 100%;

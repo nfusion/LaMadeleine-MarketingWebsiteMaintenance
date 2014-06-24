@@ -1626,25 +1626,26 @@ aside p {
   }
   /* line 67, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:after {
+    top: 18px;
     right: 10px;
     -webkit-transition-duration: 0.25s;
     -moz-transition-duration: 0.25s;
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 72, ../sass/widgets/_widget-daypart.scss */
+  /* line 73, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:hover:after {
     right: 0;
   }
-  /* line 75, ../sass/widgets/_widget-daypart.scss */
+  /* line 76, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:hover .daypart {
     background-color: #f4f2df;
   }
-  /* line 81, ../sass/widgets/_widget-daypart.scss */
+  /* line 82, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child:after {
     content: "";
   }
-  /* line 84, ../sass/widgets/_widget-daypart.scss */
+  /* line 85, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart {
     padding: 5px 5px 10px;
     margin: 0 0 10px;
@@ -1660,22 +1661,22 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 92, ../sass/widgets/_widget-daypart.scss */
+  /* line 93, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart:hover {
     background-color: #edeacc;
   }
-  /* line 95, ../sass/widgets/_widget-daypart.scss */
+  /* line 96, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-image {
     width: 100%;
   }
-  /* line 98, ../sass/widgets/_widget-daypart.scss */
+  /* line 99, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text {
     width: 100%;
     padding-top: 5px;
     padding-left: 49px;
     position: relative;
   }
-  /* line 103, ../sass/widgets/_widget-daypart.scss */
+  /* line 104, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text:before {
     content: url(../../../img/menu/now.png);
     width: 50px;
@@ -1684,7 +1685,7 @@ aside p {
     top: 10px;
     left: 7px;
   }
-  /* line 114, ../sass/widgets/_widget-daypart.scss */
+  /* line 115, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart {
     width: 100%;
     margin: 6px 0;
@@ -1698,18 +1699,18 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 121, ../sass/widgets/_widget-daypart.scss */
+  /* line 122, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-image-thumb {
     width: 45px;
     height: 45px;
     float: left;
   }
-  /* line 126, ../sass/widgets/_widget-daypart.scss */
+  /* line 127, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-text {
     width: 70%;
     padding: 0 10px;
   }
-  /* line 130, ../sass/widgets/_widget-daypart.scss */
+  /* line 131, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .desc {
     font-family: Georgia, serif;
     font-size: 11px;
@@ -2194,7 +2195,7 @@ aside p {
 /* line 63, ../sass/templates/_les-menu.scss */
 .breakfast .menu-details .menu-links, .lunch .menu-details .menu-links, .dinner .menu-details .menu-links, .bakery .menu-details .menu-links {
   padding: 15px 0;
-  margin: 10px 0;
+  margin: 10px 0 21px;
   text-align: center;
   border-top: 1px dashed #cbaf9a;
   border-bottom: 1px dashed #cbaf9a;
@@ -2212,9 +2213,13 @@ aside p {
   border-radius: 5px;
 }
 /* line 77, ../sass/templates/_les-menu.scss */
-.breakfast .menu-details .category-title, .lunch .menu-details .category-title, .dinner .menu-details .category-title, .bakery .menu-details .category-title {
+.breakfast .menu-details .category-wrapper, .lunch .menu-details .category-wrapper, .dinner .menu-details .category-wrapper, .bakery .menu-details .category-wrapper {
   padding: 0 15px;
-  margin-bottom: 30px;
+  margin: 15px 0 30px;
+}
+/* line 81, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .category-title, .lunch .menu-details .category-title, .dinner .menu-details .category-title, .bakery .menu-details .category-title {
+  margin: 0;
   text-transform: uppercase;
   font-family: "Playfair Display", serif;
   font-size: 20px;
@@ -2222,6 +2227,12 @@ aside p {
   color: #310d00;
 }
 /* line 89, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .category-desc, .lunch .menu-details .category-desc, .dinner .menu-details .category-desc, .bakery .menu-details .category-desc {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+}
+/* line 97, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item, .lunch .featured-menu-item, .dinner .featured-menu-item, .bakery .featured-menu-item {
   width: 100%;
   max-width: 365px;
@@ -2229,12 +2240,12 @@ aside p {
   position: relative;
   margin: 0 0 30px;
 }
-/* line 95, ../sass/templates/_les-menu.scss */
+/* line 103, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item img, .lunch .featured-menu-item img, .dinner .featured-menu-item img, .bakery .featured-menu-item img {
   display: block;
-  margin: 0 auto;
+  width: 100%;
 }
-/* line 99, ../sass/templates/_les-menu.scss */
+/* line 107, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .text-wrapper, .lunch .featured-menu-item .text-wrapper, .dinner .featured-menu-item .text-wrapper, .bakery .featured-menu-item .text-wrapper {
   width: 100%;
   padding: 15px;
@@ -2243,18 +2254,18 @@ aside p {
   color: white;
   background: rgba(0, 0, 0, 0.6);
 }
-/* line 108, ../sass/templates/_les-menu.scss */
+/* line 116, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .text-wrapper.no-story .title, .lunch .featured-menu-item .text-wrapper.no-story .title, .dinner .featured-menu-item .text-wrapper.no-story .title, .bakery .featured-menu-item .text-wrapper.no-story .title {
   margin-bottom: 0;
 }
-/* line 112, ../sass/templates/_les-menu.scss */
+/* line 120, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .title, .lunch .featured-menu-item .title, .dinner .featured-menu-item .title, .bakery .featured-menu-item .title {
   margin-bottom: 10px;
   text-align: center;
   font-family: "Merriweather", serif;
   font-style: italic;
 }
-/* line 118, ../sass/templates/_les-menu.scss */
+/* line 126, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .icon-stories, .lunch .featured-menu-item .icon-stories, .dinner .featured-menu-item .icon-stories, .bakery .featured-menu-item .icon-stories {
   width: 15%;
   float: left;
@@ -2262,7 +2273,7 @@ aside p {
   font-size: 30px;
   text-align: center;
 }
-/* line 125, ../sass/templates/_les-menu.scss */
+/* line 133, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .story-teaser, .lunch .featured-menu-item .story-teaser, .dinner .featured-menu-item .story-teaser, .bakery .featured-menu-item .story-teaser {
   width: 85%;
   float: left;
@@ -2270,22 +2281,22 @@ aside p {
   font-size: 13px;
   line-height: 1.5;
 }
-/* line 131, ../sass/templates/_les-menu.scss */
+/* line 139, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .story-teaser a, .lunch .featured-menu-item .story-teaser a, .dinner .featured-menu-item .story-teaser a, .bakery .featured-menu-item .story-teaser a {
   font-size: 13px;
   font-weight: bold;
   color: #ff6600;
   white-space: nowrap;
 }
-/* line 136, ../sass/templates/_les-menu.scss */
+/* line 144, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .story-teaser a:hover, .lunch .featured-menu-item .story-teaser a:hover, .dinner .featured-menu-item .story-teaser a:hover, .bakery .featured-menu-item .story-teaser a:hover {
   color: #ff8533;
 }
-/* line 138, ../sass/templates/_les-menu.scss */
+/* line 146, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .story-teaser a:hover .icon, .lunch .featured-menu-item .story-teaser a:hover .icon, .dinner .featured-menu-item .story-teaser a:hover .icon, .bakery .featured-menu-item .story-teaser a:hover .icon {
   left: 1px;
 }
-/* line 142, ../sass/templates/_les-menu.scss */
+/* line 150, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .story-teaser a .icon, .lunch .featured-menu-item .story-teaser a .icon, .dinner .featured-menu-item .story-teaser a .icon, .bakery .featured-menu-item .story-teaser a .icon {
   font-size: 16px;
   line-height: 12px;
@@ -2293,36 +2304,36 @@ aside p {
   top: 3px;
   left: -3px;
 }
-/* line 155, ../sass/templates/_les-menu.scss */
+/* line 163, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item, .lunch .menu-item, .dinner .menu-item, .bakery .menu-item {
   margin-bottom: 30px;
 }
-/* line 157, ../sass/templates/_les-menu.scss */
+/* line 165, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item:last-child, .lunch .menu-item:last-child, .dinner .menu-item:last-child, .bakery .menu-item:last-child {
   margin-bottom: 0;
 }
-/* line 160, ../sass/templates/_les-menu.scss */
+/* line 168, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .title-wrapper, .lunch .menu-item .title-wrapper, .dinner .menu-item .title-wrapper, .bakery .menu-item .title-wrapper {
   width: 100%;
   overflow: hidden;
 }
-/* line 163, ../sass/templates/_les-menu.scss */
+/* line 171, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .title-wrapper .title, .lunch .menu-item .title-wrapper .title, .dinner .menu-item .title-wrapper .title, .bakery .menu-item .title-wrapper .title {
   margin-bottom: 2px;
   font-family: "Merriweather", serif;
   font-weight: bold;
   float: left;
 }
-/* line 169, ../sass/templates/_les-menu.scss */
+/* line 177, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .title-wrapper .menu-keys, .lunch .menu-item .title-wrapper .menu-keys, .dinner .menu-item .title-wrapper .menu-keys, .bakery .menu-item .title-wrapper .menu-keys {
   float: left;
   padding: 4px 0 0 5px;
 }
-/* line 174, ../sass/templates/_les-menu.scss */
+/* line 182, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .desc, .lunch .menu-item .desc, .dinner .menu-item .desc, .bakery .menu-item .desc {
   font-size: 13px;
 }
-/* line 177, ../sass/templates/_les-menu.scss */
+/* line 185, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser, .lunch .menu-item .story-teaser, .dinner .menu-item .story-teaser, .bakery .menu-item .story-teaser {
   width: 100%;
   padding: 15px;
@@ -2335,34 +2346,34 @@ aside p {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 184, ../sass/templates/_les-menu.scss */
+/* line 192, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser .icon-stories, .lunch .menu-item .story-teaser .icon-stories, .dinner .menu-item .story-teaser .icon-stories, .bakery .menu-item .story-teaser .icon-stories {
   width: 15%;
   font-size: 30px;
   float: left;
   text-align: center;
 }
-/* line 190, ../sass/templates/_les-menu.scss */
+/* line 198, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser p, .breakfast .menu-item .story-teaser a, .lunch .menu-item .story-teaser p, .lunch .menu-item .story-teaser a, .dinner .menu-item .story-teaser p, .dinner .menu-item .story-teaser a, .bakery .menu-item .story-teaser p, .bakery .menu-item .story-teaser a {
   font-size: 13px;
   line-height: 1.5;
 }
-/* line 194, ../sass/templates/_les-menu.scss */
+/* line 202, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser p, .lunch .menu-item .story-teaser p, .dinner .menu-item .story-teaser p, .bakery .menu-item .story-teaser p {
   width: 85%;
   float: left;
   margin-bottom: 0;
 }
-/* line 199, ../sass/templates/_les-menu.scss */
+/* line 207, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser a, .lunch .menu-item .story-teaser a, .dinner .menu-item .story-teaser a, .bakery .menu-item .story-teaser a {
   font-weight: bold;
   white-space: nowrap;
 }
-/* line 204, ../sass/templates/_les-menu.scss */
+/* line 212, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser a:hover .icon-arrow-right, .lunch .menu-item .story-teaser a:hover .icon-arrow-right, .dinner .menu-item .story-teaser a:hover .icon-arrow-right, .bakery .menu-item .story-teaser a:hover .icon-arrow-right {
   left: 1px;
 }
-/* line 208, ../sass/templates/_les-menu.scss */
+/* line 216, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser .icon-arrow-right, .lunch .menu-item .story-teaser .icon-arrow-right, .dinner .menu-item .story-teaser .icon-arrow-right, .bakery .menu-item .story-teaser .icon-arrow-right {
   font-size: 16px;
   line-height: 13px;
@@ -2372,11 +2383,11 @@ aside p {
 }
 
 @media (min-width: 768px) {
-  /* line 221, ../sass/templates/_les-menu.scss */
+  /* line 229, ../sass/templates/_les-menu.scss */
   .breakfast .menu-details, .lunch .menu-details, .dinner .menu-details, .bakery .menu-details {
     padding: 0 15px;
   }
-  /* line 223, ../sass/templates/_les-menu.scss */
+  /* line 231, ../sass/templates/_les-menu.scss */
   .breakfast .menu-details .menu-links a, .lunch .menu-details .menu-links a, .dinner .menu-details .menu-links a, .bakery .menu-details .menu-links a {
     display: inline;
     font-size: 13px;
@@ -2384,16 +2395,16 @@ aside p {
   }
 }
 @media (min-width: 980px) {
-  /* line 234, ../sass/templates/_les-menu.scss */
+  /* line 242, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar, .lunch #sidebar, .dinner #sidebar, .bakery #sidebar {
     display: block;
   }
-  /* line 238, ../sass/templates/_les-menu.scss */
+  /* line 246, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar .order-online.widget, .lunch #sidebar .order-online.widget, .dinner #sidebar .order-online.widget, .bakery #sidebar .order-online.widget {
     width: 100%;
     overflow: hidden;
   }
-  /* line 241, ../sass/templates/_les-menu.scss */
+  /* line 249, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar .order-online.widget .btn, .lunch #sidebar .order-online.widget .btn, .dinner #sidebar .order-online.widget .btn, .bakery #sidebar .order-online.widget .btn {
     display: block;
     width: 46%;
@@ -2401,36 +2412,36 @@ aside p {
     float: left;
     text-align: center;
   }
-  /* line 251, ../sass/templates/_les-menu.scss */
+  /* line 259, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar .menu-legend.widget .legend-wrapper, .lunch #sidebar .menu-legend.widget .legend-wrapper, .dinner #sidebar .menu-legend.widget .legend-wrapper, .bakery #sidebar .menu-legend.widget .legend-wrapper {
     margin-bottom: 30px;
   }
-  /* line 254, ../sass/templates/_les-menu.scss */
+  /* line 262, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar .menu-legend.widget .legend-item, .lunch #sidebar .menu-legend.widget .legend-item, .dinner #sidebar .menu-legend.widget .legend-item, .bakery #sidebar .menu-legend.widget .legend-item {
     margin: 15px 0;
     font-size: 11px;
     font-family: georgia;
   }
-  /* line 258, ../sass/templates/_les-menu.scss */
+  /* line 266, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar .menu-legend.widget .legend-item .icon, .lunch #sidebar .menu-legend.widget .legend-item .icon, .dinner #sidebar .menu-legend.widget .legend-item .icon, .bakery #sidebar .menu-legend.widget .legend-item .icon {
     font-size: 15px;
     padding-right: 10px;
     position: relative;
     top: 1px;
   }
-  /* line 266, ../sass/templates/_les-menu.scss */
+  /* line 274, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar p.disclaimer, .lunch #sidebar p.disclaimer, .dinner #sidebar p.disclaimer, .bakery #sidebar p.disclaimer {
     font-size: 10px;
     font-style: italic;
   }
 }
 @media (min-width: 1140px) {
-  /* line 276, ../sass/templates/_les-menu.scss */
+  /* line 284, ../sass/templates/_les-menu.scss */
   .breakfast .menu-overview .menu-text, .lunch .menu-overview .menu-text, .dinner .menu-overview .menu-text, .bakery .menu-overview .menu-text {
     padding-left: 40px;
     padding-right: 40px;
   }
-  /* line 280, ../sass/templates/_les-menu.scss */
+  /* line 288, ../sass/templates/_les-menu.scss */
   .breakfast .menu-details, .lunch .menu-details, .dinner .menu-details, .bakery .menu-details {
     padding: 0 30px;
   }

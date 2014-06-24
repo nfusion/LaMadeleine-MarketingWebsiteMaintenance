@@ -65,6 +65,7 @@
         width: 100%;
         overflow: hidden;
         &:after{
+          top: 18px;
           right: 10px;
           @include transition-duration(0.25s);
         }

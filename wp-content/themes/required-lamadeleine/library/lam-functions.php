@@ -107,37 +107,6 @@ add_action( 'wp_enqueue_scripts', 'required_lam_enqueue' );
 
 /**
 *
-* Font Awesome Shortcodes
-*
-**/ 
-// function addscFontAwesome($atts) {
-//     extract(shortcode_atts(array(
-//     'type'  => '',
-//     'size' => '',
-//     'rotate' => '',
-//     'flip' => '',
-//     'pull' => '',
-//     'animated' => '',
- 
-//     ), $atts));
-     
-//     $type = ($type) ? 'fa-'.$type. '' : 'fa-star';
-//     $size = ($size) ? 'fa-'.$size. '' : '';
-//     $rotate = ($rotate) ? 'fa-rotate-'.$rotate. '' : '';
-//     $flip = ($flip) ? 'fa-flip-'.$flip. '' : '';
-//     $pull = ($pull) ? 'pull-'.$pull. '' : '';
-//     $animated = ($animated) ? 'fa-spin' : '';
- 
-//     $theAwesomeFont = '<i class="fa '.sanitize_html_class($type).' '.sanitize_html_class($size).' '.sanitize_html_class($rotate).' '.sanitize_html_class($flip).' '.sanitize_html_class($pull).' '.sanitize_html_class($animated).'"></i>';
-     
-//     return $theAwesomeFont;
-// }
- 
-// add_shortcode('icon', 'addscFontAwesome');
-
-
-/**
-*
 * Custom Image Sizes
 *
 **/
@@ -145,8 +114,8 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'fma-full', 820, 750, true ); // 820 pixels wide by 750 pixels tall, hard crop true
 	add_image_size( 'daypart', 265, 95, true ); // 265 pixels wide by 95 pixels tall, hard crop true
 	add_image_size( 'menu-featured', 820, 360, true ); // 820 pixels wide by 360 pixels tall, hard crop true
-	add_image_size( 'menu-item-featured', 350, 200, true ); // 350 pixels wide by 200 pixels tall, hard crop true
-	add_image_size( 'menu-item-featured-story', 350, 300, true ); // 350 pixels wide by 300 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured', 365, 200, true ); // 365 pixels wide by 200 pixels tall, hard crop true
+	add_image_size( 'menu-item-featured-story', 365, 300, true ); // 365 pixels wide by 300 pixels tall, hard crop true
 }
 
 /**
@@ -343,7 +312,7 @@ function display_menu_category($menuObj,$layout){
 		}
 
 		// This category's name
-	  $categoryName = $menuObj['items'][0]['menu_category']['name'];
+	  $menuCategory = $menuObj['items'][0]['menu_category'];
 
 	  // Is there a featured menu item? 
 	  if(count($menuObj['featured'])) :
@@ -374,8 +343,19 @@ function display_menu_category($menuObj,$layout){
 	  // Start new menu category row
 	  $str .= '<div class="row menu-category">';
 
+	  // Wrap in category title & description
+	  $str .= '<div class="category-wrapper">';
+
 	  // Include menu category name
-	  $str .= '<h2 class="category-title">' . $categoryName . '</h2>';
+	  $str .= '<h2 class="category-title">' . $menuCategory['name'] . '</h2>';
+
+	  // Add menu category subhead if exists
+	  if(count($menuCategory['description']) > 0) :
+	  	$str .= '<p class="category-desc">' . $menuCategory['description'] . '</p>';
+	  endif;
+
+	  // Close category wrapper
+	  $str .= '</div>';
 
 	  // Start first column
 	  $str .= '<div class="six columns">';
