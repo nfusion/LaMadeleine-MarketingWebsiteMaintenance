@@ -2459,3 +2459,18 @@ aside p {
 #content.locations .gmnoprint > div > * {
   max-width: none;
 }
+
+@media (min-width: 980px) {
+  /* line 22, ../sass/templates/_locations.scss */
+  #content.locations {
+    height: 100%;
+  }
+  /* line 24, ../sass/templates/_locations.scss */
+  #content.locations #main, #content.locations #main .post-box {
+    height: 100%;
+  }
+  /* line 27, ../sass/templates/_locations.scss */
+  #content.locations #map-full {
+    height: 100%;
+  }
+}
