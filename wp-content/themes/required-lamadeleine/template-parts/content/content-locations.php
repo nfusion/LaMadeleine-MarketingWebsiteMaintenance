@@ -1,6 +1,10 @@
 <?php
 /**
-*/
+ * The template for displaying the locations page
+ *
+ * Learn more: http://codex.wordpress.org/Post_Formats
+ *
+ */
 
 ?>
 
@@ -21,7 +25,7 @@ LaMadLocations.initializeLargeMap = function() {
               panControl:false,
               zoomControl: true,
               zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.LARGE,
+                style: google.maps.ZoomControlStyle.MEDIUM,
                 position: google.maps.ControlPosition.RIGHT_BOTTOM
               },
              
@@ -145,29 +149,23 @@ LaMadLocations.initializeLargeMap = function() {
 
 </script>  
 
-<div id="mobile-nav">
-    <a href="/breakfast" <?php if($pageDetails['title'] === 'breakfast'){echo 'class="active"';}; ?>>
+<div id="mobile-nav" class="three">
+    <a href="/breakfast" <?php if($pageDetails['title'] === 'locations'){echo 'class="active"';}; ?>>
         <div class="nav-item">
-            <div class="icon icon-breakfast"></div>
-            Breakfast
+            <div class="icon icon-nearby"></div>
+            Closest
         </div>
     </a>
     <a href="/lunch" <?php if($pageDetails['title'] === 'lunch'){echo 'class="active"';}; ?>>
         <div class="nav-item">
-            <div class="icon icon-lunch"></div>
-            Lunch
+            <div class="icon icon-map"></div>
+            Map
         </div>
     </a>
     <a href="/dinner" <?php if($pageDetails['title'] === 'dinner'){echo 'class="active"';}; ?>>
         <div class="nav-item">
-            <div class="icon icon-dinner"></div>
-            Dinner &amp; Wine
-        </div>
-    </a>
-    <a href="/bakery" <?php if($pageDetails['title'] === 'bakery'){echo 'class="active"';}; ?>>
-        <div class="nav-item">
-            <div class="icon icon-bakery"></div>
-            Bakery
+            <div class="icon icon-menu-dots"></div>
+            See All
         </div>
     </a>
 </div>

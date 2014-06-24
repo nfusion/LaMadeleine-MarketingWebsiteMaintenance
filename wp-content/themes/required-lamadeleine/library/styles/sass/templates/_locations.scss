@@ -3,18 +3,16 @@
 * Locations Page Styling
 **/
 #content.locations{
-	height: 100%;
+	//height: 100%;
 	#main, #main .post-box{
-		height: 100%;
+		//height: 100%;
 	}
 	#map-full{
-        height: 100%;
-        /*width: 800px;*/
-        // Foundation fix
+        height: 200px;
+        // Foundation Google Maps fix
         max-width: none;
     }
-
-    // Foundation fix
+    // Foundation Google Maps fix
     .gmnoprint > div > * {
         max-width: none;
     }

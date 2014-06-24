@@ -32,6 +32,15 @@
 	}
 }
 
+#mobile-nav.three{
+	a{
+		width: 33%;
+	}
+	&:first-child{
+		width: 34%;
+	}
+}
+
 @media (min-width: $medium-screen-min){
 	#mobile-nav{
 		display: none;

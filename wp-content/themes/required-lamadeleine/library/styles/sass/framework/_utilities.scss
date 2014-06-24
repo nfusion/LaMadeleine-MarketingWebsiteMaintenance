@@ -25,3 +25,20 @@
 		padding: 0;
 	}
 }
+
+.show-small{
+	display: block;
+}
+
+.hide-small{
+	display: none;
+}
+
+@media (min-width: $medium-screen-min){
+	.show-small{
+		display: none;
+	}
+	.hide-small{
+		display: block;
+	}
+}

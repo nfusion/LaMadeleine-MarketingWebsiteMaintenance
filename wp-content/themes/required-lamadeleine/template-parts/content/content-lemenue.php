@@ -4,8 +4,6 @@
  *
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
- * @package required+ Foundation
- * @since required+ Foundation 0.1.0
  */
     
 $menuArray  = process_menu($mypod,$pageDetails['title']);

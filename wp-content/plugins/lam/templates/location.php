@@ -51,65 +51,73 @@
 
 </script>
 <div class="widget widget-location">
-    
-    <div class='widget-title'>
-        <h3><?php echo $title ?></h3> <?php if($onLocationPage == 'false'){ echo '<a href="/locations/">See&nbsp;All</a>';}; ?><br>
-    </div>
 
-    <div id="location-cta">
-        <div class="flipper">
-            <div class="front">
-                <div class="front-wrapper">
-                    <div class="geo">
-                        <div class="icon icon-pin"></div>
-                        <p><a id="use-location" class="btn" href="#">Use My Location</a></p>
-                    </div>
-                    <div class="location-cta-divider"></div>
-                    <div class="zip">
-                        <div class="icon icon-magnify"></div>
-                        <input id="zip-input" maxlength="5" placeholder='Enter Zip Code'> <a id="use-zip" class="btn" href="#">Go</a>
+    <div id="widget-location-mobile">
+        
+    </div>
+    
+    <div id="widget-location-full">
+
+        <div class='widget-title'>
+            <h3><?php echo $title ?></h3> <?php if($onLocationPage == 'false'){ echo '<a href="/locations/">See&nbsp;All</a>';}; ?><br>
+        </div>
+
+        <div id="location-cta">
+            <div class="flipper">
+                <div class="front">
+                    <div class="front-wrapper">
+                        <div class="geo">
+                            <div class="icon icon-pin"></div>
+                            <p><a id="use-location" class="btn" href="#">Use My Location</a></p>
+                        </div>
+                        <div class="location-cta-divider"></div>
+                        <div class="zip">
+                            <div class="icon icon-magnify"></div>
+                            <input id="zip-input" maxlength="5" placeholder='Enter Zip Code'> <a id="use-zip" class="btn" href="#">Go</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <?php 
+                <?php 
 
-            $map = '<div id="map"></div>';
-            $locationImage = '<div id="location-image"></div>';
-            $locationInfo = '<div id="location-info"></div>';
-            $locationsList = '<div id="location-list"></div>';
-            $btnWrapper = '<div class="btn-wrapper"><a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a><a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a></div>';
+                $map = '<div id="map"></div>';
+                $locationImage = '<div id="location-image"></div>';
+                $locationInfo = '<div id="location-info"></div>';
+                $locationsList = '<div id="location-list"></div>';
+                $btnWrapper = '<div class="btn-wrapper"><a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a><a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a></div>';
 
-            if($onLocationPage == 'true') { 
-                $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . '</div></div></div><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList;
-            } else {
-                $locationMarkup = '<div class="back map-view"><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>';
-            }
+                if($onLocationPage == 'true') { 
+                    $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . '</div></div></div><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList;
+                } else {
+                    $locationMarkup = '<div class="back map-view"><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>';
+                }
 
-            echo $locationMarkup;
+                echo $locationMarkup;
 
-            ?>
+                ?>
 
-        <div class="loading">
-            <div id="floatingCirclesG">
-            <div class="f_circleG" id="frotateG_01">
-            </div>
-            <div class="f_circleG" id="frotateG_02">
-            </div>
-            <div class="f_circleG" id="frotateG_03">
-            </div>
-            <div class="f_circleG" id="frotateG_04">
-            </div>
-            <div class="f_circleG" id="frotateG_05">
-            </div>
-            <div class="f_circleG" id="frotateG_06">
-            </div>
-            <div class="f_circleG" id="frotateG_07">
-            </div>
-            <div class="f_circleG" id="frotateG_08">
-            </div>
+            <div class="loading">
+                <div id="floatingCirclesG">
+                <div class="f_circleG" id="frotateG_01">
+                </div>
+                <div class="f_circleG" id="frotateG_02">
+                </div>
+                <div class="f_circleG" id="frotateG_03">
+                </div>
+                <div class="f_circleG" id="frotateG_04">
+                </div>
+                <div class="f_circleG" id="frotateG_05">
+                </div>
+                <div class="f_circleG" id="frotateG_06">
+                </div>
+                <div class="f_circleG" id="frotateG_07">
+                </div>
+                <div class="f_circleG" id="frotateG_08">
+                </div>
+                </div>
             </div>
         </div>
+
     </div>
 
 </div>
