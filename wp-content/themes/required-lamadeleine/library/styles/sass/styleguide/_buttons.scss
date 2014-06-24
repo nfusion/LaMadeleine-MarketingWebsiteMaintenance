@@ -40,6 +40,18 @@ a.btn{
 	}
 }
 
+a.btn.call{
+	&:after{
+		content: "";
+	}
+	span.icon-phone{
+		font-size: 20px;
+		line-height: 0;
+		position: relative;
+		top: 5px;
+	}
+}
+
 a.btn-light{
 	color: $medBrown;
 	font-family: $lato;
