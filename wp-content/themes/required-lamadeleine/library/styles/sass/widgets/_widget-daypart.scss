@@ -1,0 +1,137 @@
+/**
+* La Madeleine
+* Daypart widget
+**/
+
+.widget-daypart{
+  width: 100%;
+  overflow: hidden;
+  .daypart-wrapper{
+    position: relative; 
+    max-width: 500px;
+    margin: 0 auto;
+    a{
+      display: none;
+      position: relative;
+      &:after{
+        color: $lightBrown;
+        font-family: 'icomoon';
+        font-size: 24px;
+        content: "\e620";
+        position: absolute;
+        top: 20px;
+        right: 0;
+      }
+    }
+    a:first-child{
+      display: block;
+    }
+  }
+  .daypart-image{
+    width: 50%;
+    float: left;
+  }
+  .daypart-text{
+    width: 50%;
+    padding: 0 15px;
+    float: left;
+    font-family: $merriweather;
+    color: $darkBrown;
+  }
+  .title{
+    font-family: $merriweather;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .desc{
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: $medium-screen-min){
+  #content #sidebar .widget.home-daypart{
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $medium-screen-min){
+  .widget-daypart{
+    .daypart-wrapper{
+      a{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        &:after{
+          top: 18px;
+          right: 10px;
+          @include transition-duration(0.25s);
+        }
+        &:hover{
+          &:after{
+            right: 0;
+          }
+          .daypart{
+            background-color: $medCream;
+          }
+        }
+      }
+      a:first-child{
+        &:after{
+          content: "";
+        }
+        .daypart{
+          padding: 5px 5px 10px;
+          margin: 0 0 10px;
+          border: 1px solid;
+          border-color: $fadedBrown $fadedBrown $medBrown $fadedBrown;
+          background-color: $medCream;
+          @include transition-property(background-color);
+          @include transition-duration(0.25s);
+          &:hover{
+            background-color: $darkCream;
+          }
+          .daypart-image{
+            width: 100%;
+          }
+          .daypart-text{
+            width: 100%;
+            padding-top: 5px;
+            padding-left: 49px;
+            position: relative;
+            &:before{
+              content: url(../../../img/menu/now.png);
+              width: 50px;
+              height: 30px;
+              position: absolute;
+              top: 10px;
+              left: 7px;
+            }
+          }
+        }
+      }
+      .daypart{
+        width: 100%;
+        margin: 6px 0;
+        overflow: hidden;
+        @include transition-property(background-color);
+        @include transition-duration(0.25s);
+      }
+      .daypart-image-thumb{
+        width: 45px;
+        height: 45px;
+        float: left;
+      }
+      .daypart-text{
+        width: 70%;
+        padding: 0 10px;
+      }
+      .desc{
+        font-family: $georgia;
+        font-size: 11px;
+      }
+    }
+  }
+}
