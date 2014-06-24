@@ -150,19 +150,19 @@ LaMadLocations.initializeLargeMap = function() {
 </script>  
 
 <div id="mobile-nav" class="three">
-    <a href="/breakfast" <?php if($pageDetails['title'] === 'locations'){echo 'class="active"';}; ?>>
+    <a href="/locations" <?php if($pageDetails['title'] === 'locations'){echo 'class="active"';}; ?>>
         <div class="nav-item">
             <div class="icon icon-nearby"></div>
             Closest
         </div>
     </a>
-    <a href="/lunch" <?php if($pageDetails['title'] === 'lunch'){echo 'class="active"';}; ?>>
+    <a href="/locations?map=true" <?php if($pageDetails['title'] === 'lunch'){echo 'class="active"';}; ?>>
         <div class="nav-item">
             <div class="icon icon-map"></div>
             Map
         </div>
     </a>
-    <a href="/dinner" <?php if($pageDetails['title'] === 'dinner'){echo 'class="active"';}; ?>>
+    <a href="/locations?list=true" <?php if($pageDetails['title'] === 'dinner'){echo 'class="active"';}; ?>>
         <div class="nav-item">
             <div class="icon icon-menu-dots"></div>
             See All

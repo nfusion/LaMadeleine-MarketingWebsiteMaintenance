@@ -24,8 +24,10 @@ class Dayparts {
                     foreach (array('title','descriptor', 'daypart', 'start_display_time', 'end_display_time','link') as $key => $value) {
                         $item[$value] = $dayPartPods->field($value);
                     }
-                    $imgSrc =  wp_get_attachment_image_src( get_post_thumbnail_id($dayPartPods->id()), 'daypart'); 
+                    $imgSrc =  wp_get_attachment_image_src( get_post_thumbnail_id($dayPartPods->id()), 'daypart');
+                    $imgSrcThumb =  wp_get_attachment_image_src( get_post_thumbnail_id($dayPartPods->id()), 'thumbnail');
                     $item['featured_img'] = $imgSrc[0];
+                    $item['thumb_img'] = $imgSrcThumb[0];
                     $item['menu_cat'] = Dayparts::getDayPartMenuCategories($item['daypart']);
                     $return[$item['title']]= $item;
             }

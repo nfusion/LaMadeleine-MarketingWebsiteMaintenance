@@ -1672,19 +1672,22 @@ aside p {
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text {
     width: 100%;
     padding-top: 5px;
+    padding-left: 40px;
+    position: relative;
   }
-  /* line 100, ../sass/widgets/_widget-daypart.scss */
+  /* line 102, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a:first-child .daypart .daypart-text:before {
     content: url(../../../img/menu/now.png);
     width: 50px;
     height: 30px;
-    padding-top: 5px;
-    float: left;
+    position: absolute;
+    top: 10px;
+    left: 5px;
   }
-  /* line 110, ../sass/widgets/_widget-daypart.scss */
+  /* line 113, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart {
     width: 100%;
-    margin: 7px 0;
+    margin: 5px 0;
     overflow: hidden;
     -webkit-transition-property: background-color;
     -moz-transition-property: background-color;
@@ -1695,16 +1698,16 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 117, ../sass/widgets/_widget-daypart.scss */
-  .widget-daypart .daypart-wrapper .daypart-image-bg {
+  /* line 120, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .daypart-image-thumb {
     width: 45px;
     height: 45px;
     float: left;
-    background-size: cover;
   }
-  /* line 123, ../sass/widgets/_widget-daypart.scss */
+  /* line 125, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-text {
     width: 70%;
+    line-height: 1.4;
   }
 }
 /**
@@ -1821,13 +1824,13 @@ aside p {
 #sidebar #widget-location-mobile .address {
   width: 50%;
   float: left;
-  padding: 0 15px;
+  padding: 0 5px;
 }
 /* line 90, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .hours {
   width: 50%;
   float: left;
-  padding: 0 15px;
+  padding: 0 5px;
 }
 /* line 95, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper {
@@ -1838,8 +1841,8 @@ aside p {
 /* line 99, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper .btn {
   display: block;
-  width: 46%;
-  margin: 0 2%;
+  width: 48%;
+  margin: 0 1%;
   float: left;
   text-align: center;
 }
