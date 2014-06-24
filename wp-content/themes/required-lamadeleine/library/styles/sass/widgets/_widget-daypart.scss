@@ -113,7 +113,7 @@
       }
       .daypart{
         width: 100%;
-        margin: 5px 0;
+        margin: 6px 0;
         overflow: hidden;
         @include transition-property(background-color);
         @include transition-duration(0.25s);
