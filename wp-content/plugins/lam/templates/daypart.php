@@ -18,10 +18,10 @@
 
 
                     if(index == 0){
-                        str += '<a href="'+obj.link.guid+'"><div class="daypart"><div class="daypart-image"><img src="' + obj.featured_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';
+                        str += '<a href="'+obj.link.guid+'"><div class="daypart featured"><div class="daypart-image"><img src="' + obj.featured_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';
                     }
                     else{
-                        str += '<a href="'+obj.link.guid+'"><div class="daypart"><div class="daypart-image-bg" style="background-image: url(' + obj.featured_img + ');"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';
+                        str += '<a href="'+obj.link.guid+'"><div class="daypart"><div class="daypart-image-thumb"><img src="' + obj.thumb_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';
                     }
 
                 });

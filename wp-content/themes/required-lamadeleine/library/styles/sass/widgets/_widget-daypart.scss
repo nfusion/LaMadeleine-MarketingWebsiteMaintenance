@@ -97,31 +97,34 @@
           .daypart-text{
             width: 100%;
             padding-top: 5px;
+            padding-left: 40px;
+            position: relative;
             &:before{
               content: url(../../../img/menu/now.png);
               width: 50px;
               height: 30px;
-              padding-top: 5px;
-              float: left;
+              position: absolute;
+              top: 10px;
+              left: 5px;
             }
           }
         }
       }
       .daypart{
         width: 100%;
-        margin: 7px 0;
+        margin: 5px 0;
         overflow: hidden;
         @include transition-property(background-color);
         @include transition-duration(0.25s);
       }
-      .daypart-image-bg{
+      .daypart-image-thumb{
         width: 45px;
         height: 45px;
         float: left;
-        background-size: cover;
       }
       .daypart-text{
         width: 70%;
+        line-height: 1.4;
       }
     }
   }
