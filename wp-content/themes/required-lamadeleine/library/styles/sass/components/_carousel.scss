@@ -82,6 +82,15 @@
 
 @media (min-width: $small-screen-min){
   #carousel{
+    h1{
+      font-size: 22px;
+    }
+    p{
+      font-size: 16px;
+    }
+    .carousel-paginate{
+      height: 40px;
+    }
     .carousel-controls{
       display: block;
       width: 100%;
@@ -112,20 +121,6 @@
         padding: 8px 10px;
         float: right;
       }
-    }
-  }
-}
-
-@media (min-width: $medium-screen-min){
-  #carousel{
-    h1{
-      font-size: 22px;
-    }
-    p{
-      font-size: 16px;
-    }
-    .carousel-paginate{
-      height: 40px;
     }
   }
 }
