@@ -141,8 +141,20 @@ LaMadLocations.initializeLargeMap = function() {
 
         LaMadLocations.initializeLargeMap();
 
-        
         //getLocationCookie(map-full);
+
+        var nearbyLocations = $.cookie('LAM-near-locations');
+
+        /**
+        *   Locations page interactions
+        *
+        **/
+
+        var $locations = $('#content.locations');
+
+        $locations.find('.btn.directions').on('click touchend', function(){
+            LaMadLocations.getDirections();
+        });
         
     });
 });
