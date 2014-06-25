@@ -186,20 +186,20 @@ LaMadLocations.initializeLargeMap = function() {
 
 </script>  
 
-<div id="mobile-nav" class="two">
-    <a href="#" <?php if($pageDetails['title'] === 'locations'){echo 'class="active"';}; ?>>
+<!-- <div id="mobile-nav" class="two">
+    <a href="#" class="active">
         <div class="nav-item">
             <div class="icon icon-map"></div>
             Map
         </div>
     </a>
-    <a href="/locations?list=true" <?php if($pageDetails['title'] === 'locations-list'){echo 'class="active"';}; ?>>
+    <a href="/locations?list=true">
         <div class="nav-item">
             <div class="icon icon-menu-dots"></div>
             See All
         </div>
     </a>
-</div>
+</div> -->
 
 <div id='map-full'>
 
