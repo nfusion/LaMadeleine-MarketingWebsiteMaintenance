@@ -116,6 +116,11 @@
   .widget-title, #location-cta, .loading{
     display: none;
   }
+  #location-list{
+    height: 265px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .other-locations{
     @include opacity(1);
     @include transition-duration(0.5s);
@@ -132,7 +137,7 @@
         font-size: 24px;
         content: "\e620";
         position: absolute;
-        top: 16px;
+        top: 35%;
         right: 10px;
         @include transition-duration(0.25s);
       }
@@ -150,7 +155,7 @@
     }
     .location-info{
       width: 80%;
-      padding: 5px 25px 5px 15px;
+      padding: 20px 25px 5px 15px;
       float: left;
     }
     .location-name{
@@ -182,6 +187,17 @@
     #widget-location-full{
       position: relative;
       display: block;
+      .widget-title, #location-cta, .loading{
+        display: block;
+      }
+      .other-locations{
+        .location-item:after{
+          top: 19px;
+        }
+        .location-info{
+          padding-top: 5px;
+        }
+      }
     }
     .widget-title h3{
   		text-align: left;
@@ -362,10 +378,6 @@
       height: 150px;
       overflow: hidden;
       background-color: $medCream;
-    }
-    #location-list{
-      height: 265px;
-      overflow-y: auto;
     }
     .btn-wrapper{
       width: 100%;
