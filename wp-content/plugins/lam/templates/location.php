@@ -50,7 +50,16 @@
     
 
 </script>
-<div class="widget widget-location">
+
+<?php 
+    if($onLocationPage == 'false') :
+        $locationClass = "map-view";
+    else:
+        $locationClass = "location-view";
+    endif;
+?>
+
+<div class="widget widget-location <?php echo $locationClass; ?>">
 
     <div id="widget-location-mobile">
         
@@ -85,9 +94,10 @@
                 $locationInfo = '<div id="location-info"></div>';
                 $locationsList = '<div id="location-list"></div>';
                 $btnWrapper = '<div class="btn-wrapper"><a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a><a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a></div>';
+                $btnWrapperLocations = '<div class="btn-wrapper"><a class="btn-light" href="/menu">Menu</a><a class="btn-light get-directions" href="#">Directions</a><a class="btn-light" href="#">Order</a></div>';
 
                 if($onLocationPage == 'true') { 
-                    $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . '</div></div></div><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList;
+                    $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div></div></div><div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div>';
                 } else {
                     $locationMarkup = '<div class="back map-view"><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>';
                 }

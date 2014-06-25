@@ -90,10 +90,10 @@ var LaMadLocations = {
             LaMadLocations.nearestLocationObj = location;
             
             // Full size location widget
-            $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours: ' + todayHours.open + ' - ' + todayHours.close);
+            $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.open + ' - ' + todayHours.close + '</div>');
             
             // Mobile location widget
-            $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a>');
+            $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn get-directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a>');
 
             if( (typeof(skipCookie) == 'undefined') || (skipCookie == false) ){
                 LaMadLocations.setLocationCookie(location);
@@ -220,9 +220,9 @@ var LaMadLocations = {
                         });
                          markers.push(marker);
 
-                         if(add_li === true){
-                            console.log(location);  
-                            locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'>"+location.title+'</li>';
+                         if(add_li === true){ 
+                            console.log(location);
+                            locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
                             $('#location-list').append(locationItem);  
 
                             nearLocationHtmlList += locationItem;

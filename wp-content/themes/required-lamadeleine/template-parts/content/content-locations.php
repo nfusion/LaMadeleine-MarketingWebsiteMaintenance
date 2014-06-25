@@ -152,7 +152,7 @@ LaMadLocations.initializeLargeMap = function() {
 
         var $locations = $('#content.locations');
 
-        $locations.find('.btn.directions').on('click touchend', function(){
+        $locations.find('.btn.get-directions').on('click touchend', function(){
             LaMadLocations.getDirections();
         });
         
