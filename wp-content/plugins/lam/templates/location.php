@@ -5,14 +5,6 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
-        $(document).on('click', '.other_location', function(){
-
-            var img = LaMadLocations.getImage($(this).attr('data-id'));
-
-            LaMadLocations.setLargLocation($(this).attr('data-latitude'),$(this).attr('data-longitude'));
-            LaMadLocations.showPosition($(this).attr('data-latitude'),$(this).attr('data-longitude'), img);
-
-        }); 
 
         // Do we have a location stored in client cookie?
         LaMadLocations.getLocationCookie();

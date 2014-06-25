@@ -132,6 +132,7 @@
       display: none;
     }
     #widget-location-full{
+      position: relative;
       display: block;
     }
     .widget-title h3{
@@ -201,7 +202,7 @@
     .loading{
       display: none;
       position: absolute;
-      top: 37%;
+      top: 105px;
       left: 38%;
       @include opacity(0);
       @include transition-duration(0.3s);
@@ -331,10 +332,13 @@
         margin: 0 4%;
       }
     }
+    .loading{
+      top: 153px;
+    }
     .other-locations{
       @include opacity(1);
       @include transition-duration(0.5s);
-      .other_location{
+      .location-item{
         width: 100%;
         margin-bottom: 15px;
         overflow: hidden;

@@ -115,15 +115,11 @@ var LaMadLocations = {
                expires : 10,          //expires in 10 days
                path: '/'
             });
-        },  
+        }, 
 
-        setNearestLocationsCookie: function (html){
-            
-            $.cookie("LAM-near-locations",html, {
-               expires : 10,          //expires in 10 days
-               path: '/'
-            });
-        },  
+        setNearbyLocationsStorage: function (nearby){
+            localStorage.setItem("LAM-nearby", JSON.stringify(nearby));
+        },
 
         getLocationCookie: function(){
             
@@ -201,35 +197,38 @@ var LaMadLocations = {
                     
                 success: function(data){
 
-                    $('#location-list').html('');
-                    nearLocationHtmlList = '';
+                    var nearbyLocations = [];
+                    
                     $.each(data, function( idx, location){
-                        add_li = true;
-                        var Latlng = new google.maps.LatLng(location.latitude,location.longitude);
+
                         if(idx == 0 ){
-                            
-                            //initializeMap(Latlng);
                             LaMadLocations.setLocation(location, true, false);
                             add_li= false;
                         }
 
+                        var Latlng = new google.maps.LatLng(location.latitude,location.longitude);
+
                         var marker = new google.maps.Marker({
                             position: Latlng,
                             map: this.map,
-                            title: 'Closest Location'
+                            title: 'Selected Location'
                         });
-                         markers.push(marker);
 
-                         if(add_li === true){ 
-                            locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
-                            $('#location-list').append(locationItem);  
+                        markers.push(marker);
 
-                            nearLocationHtmlList += locationItem;
-                        }
+                        nearbyLocations[idx] = location;
+
+                        //  if(add_li === true){ 
+                        //     locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
+                        //     $('#location-list').append(locationItem);
+
+                        //     nearLocationHtmlList += locationItem;
+                        // }
                     });
                     
-                    if (nearLocationHtmlList){
-                        LaMadLocations.setNearestLocationsCookie(nearLocationHtmlList);
+                    if (nearbyLocations){
+                        //LaMadLocations.setNearestLocationsCookie(nearLocationHtmlList);
+                        LaMadLocations.setNearbyLocationsStorage(nearbyLocations);
                     }
 
                     // Done loading
