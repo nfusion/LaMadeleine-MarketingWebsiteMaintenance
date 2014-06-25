@@ -220,10 +220,10 @@ var LaMadLocations = {
                         });
                          markers.push(marker);
 
-                        if(add_li === true){
-                            console.log("img: " + LaMadLocations.getImage(location.id));
-                            locationItem = "<li class='other_location clickable' data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'>"+location.title+'</li>';
-                            $('#location-list').append(locationItem);
+                         if(add_li === true){
+                            console.log(location);  
+                            locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'>"+location.title+'</li>';
+                            $('#location-list').append(locationItem);  
 
                             nearLocationHtmlList += locationItem;
                         }
