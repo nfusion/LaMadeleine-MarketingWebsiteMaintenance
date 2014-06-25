@@ -12,10 +12,6 @@
             success:function(data){
                 var str = "";
                 $.each(data, function(index, obj){
-                    // console.log('******');
-                    // console.log(obj);
-                    // console.log('******');
-
 
                     if(index == 0){
                         str += '<a href="'+obj.link.guid+'"><div class="daypart featured"><div class="daypart-image"><img src="' + obj.featured_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';

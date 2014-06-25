@@ -291,7 +291,20 @@
     }
   }
 
-  // Locations view-specific styling (i.e. locations page)
+  // Map view styling (homepage)
+  #sidebar .widget-location.map-view{
+    position: relative;
+    .map-link{
+      display: block;
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      top: 0px;
+      z-index: 101;
+    }
+  }
+
+  // Locations view  styling (locations page)
   #sidebar .widget-location.location-view{
     #location-cta{
       height: 330px;
@@ -300,6 +313,10 @@
       height: 150px;
       overflow: hidden;
       background-color: $medCream;
+    }
+    #location-list{
+      min-height: 300px;
+      overflow-y: auto;
     }
     .btn-wrapper{
       width: 100%;

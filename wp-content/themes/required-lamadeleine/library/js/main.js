@@ -7,6 +7,18 @@
 $(function(){
 
 	/********
+	COOKIES
+	********/
+	// Check location cookie
+	var cookieLoc = $.cookie('LAM-location');
+
+	// Parse as JSON
+	if(typeof(cookieLoc) != 'undefined'){
+		var myLocation = $.parseJSON(cookieLoc),
+				hasLocation = true;
+	}
+
+	/********
 	NAVIGATION
 	********/
 
@@ -39,6 +51,10 @@ $(function(){
 
 	// If on a menu 
 	if($content.hasClass('breakfast') || $content.hasClass('lunch') || $content.hasClass('dinner') || $content.hasClass('bakery')){
+		// If user has selected a location, show pricing
+		if(myLocation){
+			$content.find('.menu-details').addClass(myLocation.menu_pricing.toLowerCase());
+		}
 		// Sticky the sidebar widgets
 		$("#sidebar .menu-legend").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
 	};
@@ -46,15 +62,6 @@ $(function(){
 	/********
 	LOCATIONS
 	********/
-
-	// Check location cookie
-	cookieLoc = $.cookie('LAM-location');
-
-	// Parse as JSON
-	if(typeof(cookieLoc) != 'undefined'){
-		var myLocation = $.parseJSON(cookieLoc),
-				hasLocation = true;
-	}
 
 	// If location exists, add class to body and set phone number for any phone links
 	if(hasLocation){

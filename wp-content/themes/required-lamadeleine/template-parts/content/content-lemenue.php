@@ -10,9 +10,6 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
 
 ?>
 
-<!-- <H2><?php // echo $pageDetails['title'] ?></H2>
- -->
-
 <div id="mobile-nav">
     <a href="/breakfast" <?php if($pageDetails['title'] === 'breakfast'){echo 'class="active"';}; ?>>
         <div class="nav-item">
