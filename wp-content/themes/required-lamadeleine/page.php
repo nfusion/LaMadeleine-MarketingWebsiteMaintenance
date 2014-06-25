@@ -52,10 +52,10 @@ get_header(); ?>
 						$sidebar = 'sidebar-location';
 					break;
 
-					case 'shop':
+					case 'store':
 						$pageDetails['title']=$pagename;
 						$mypods = array();
-						$sidebar = 'sidebar-shop';
+						$sidebar = 'sidebar-store';
 					break;
 					
 					case 'stories':
