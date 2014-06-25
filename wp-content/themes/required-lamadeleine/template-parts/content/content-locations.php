@@ -75,7 +75,8 @@ LaMadLocations.initializeLargeMap = function() {
                 var marker_<?php echo $item['id'] ?> = new google.maps.Marker({
                         position: Latlng,
                         map: largeMap,
-                        title: 'Closest Location'
+                        title: 'Closest Location',
+                        icon: '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png',
                     });
                     marker_<?php echo $item['id'] ?>.info = new google.maps.InfoWindow({ content: '<b>'+ <?php echo $items['title']; ?>+':</b>' });
                     
