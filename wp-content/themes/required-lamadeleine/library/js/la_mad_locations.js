@@ -93,7 +93,7 @@ var LaMadLocations = {
             $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours: ' + todayHours.open + ' - ' + todayHours.close);
             
             // Mobile location widget
-            $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a>');
+            $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a>');
 
             if( (typeof(skipCookie) == 'undefined') || (skipCookie == false) ){
                 LaMadLocations.setLocationCookie(location);
@@ -123,7 +123,6 @@ var LaMadLocations = {
                path: '/'
             });
         },  
-
 
         getLocationCookie: function(){
             
@@ -227,7 +226,7 @@ var LaMadLocations = {
                             $('#location-list').append(locationItem);  
 
                             nearLocationHtmlList += locationItem;
-                         }  
+                        }
                     });
                     
                     if (nearLocationHtmlList){
@@ -249,7 +248,6 @@ var LaMadLocations = {
             directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
             window.open(directionsLink);
         },
-
 
         changeSideImage: function(url){
 
