@@ -99,7 +99,7 @@
                 if($onLocationPage == 'true') { 
                     $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div></div></div><div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div>';
                 } else {
-                    $locationMarkup = '<div class="back map-view"><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>';
+                    $locationMarkup = '<div class="back map-view"><a class="map-link" href="/locations"></a><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>';
                 }
 
                 echo $locationMarkup;

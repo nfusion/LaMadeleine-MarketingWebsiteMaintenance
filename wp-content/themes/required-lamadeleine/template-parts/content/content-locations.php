@@ -81,7 +81,11 @@ LaMadLocations.initializeLargeMap = function() {
                     
                     google.maps.event.addListener(marker_<?php echo $item['id'] ?>, 'click', function() {
                         
-                        var img =  <?php echo '"'.wp_get_attachment_url( get_post_thumbnail_id( $item['id'] ) ) . '"' ?>;
+                        <?php
+                            $featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($item['id']), 'location-featured');
+                        ?>
+
+                        var img = '<?php echo $featuredImg[0]; ?>';
 
                         LaMadLocations.changeSideImage(img);
 
@@ -112,6 +116,7 @@ LaMadLocations.initializeLargeMap = function() {
 
 
     LaMadLocations.setCenterToCookie = function(){
+        console.log("Set center");
             cookieLoc = $.cookie('LAM-location');
             if(typeof(cookieLoc) != 'undefined'){
                 jsonCookie = $.parseJSON(cookieLoc);
@@ -141,9 +146,9 @@ LaMadLocations.initializeLargeMap = function() {
 
         LaMadLocations.initializeLargeMap();
 
-        //getLocationCookie(map-full);
+        LaMadLocations.loadNearest();
 
-        var nearbyLocations = $.cookie('LAM-near-locations');
+        //getLocationCookie(map-full);
 
         /**
         *   Locations page interactions

@@ -10,11 +10,12 @@ var LaMadLocations = {
         },
 
     initializeMap:  function(lat, lng, mapContainer) {
-            var $mapContainer = $('#' + mapContainer);
+        
+        var $mapContainer = $('#' + mapContainer);
 
             if($mapContainer.length){
 
-                /** do to map size (too small) we actually need to offset the center toward the bottom of the map 
+                /** due to map size (too small) we actually need to offset the center toward the bottom of the map 
                 to allow marker to fit
                 */
                 newLat=parseFloat(lat)+0.007;
@@ -116,7 +117,7 @@ var LaMadLocations = {
             });
         },  
 
-         setNearestLocationsCookie: function (html){
+        setNearestLocationsCookie: function (html){
             
             $.cookie("LAM-near-locations",html, {
                expires : 10,          //expires in 10 days
@@ -199,8 +200,7 @@ var LaMadLocations = {
                 url:'/wp_api/v1/locations/?lat='+lat+'&lng='+lng,
                     
                 success: function(data){
-                    
-                    
+
                     $('#location-list').html('');
                     nearLocationHtmlList = '';
                     $.each(data, function( idx, location){
@@ -221,7 +221,6 @@ var LaMadLocations = {
                          markers.push(marker);
 
                          if(add_li === true){ 
-                            console.log(location);
                             locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
                             $('#location-list').append(locationItem);  
 
