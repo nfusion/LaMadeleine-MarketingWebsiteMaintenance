@@ -11,10 +11,9 @@
 			// $currentOpenProp= strtolower(date('l')).'_open';
 
 			foreach ($return as  $loc) {
-				// $loc->current_open=$loc->$currentOpenProp;
-				// $loc->current_close=$loc->$currentCloseProp;
+				
 
-				 $loc->imageInfo = wp_get_attachment_url( get_post_thumbnail_id( $loc->id ) );
+				 $loc->image_info = wp_get_attachment_url( get_post_thumbnail_id( $loc->id ) );
 			}
 			//$return['current_open'] = $location->tuesday_close;
 
