@@ -114,31 +114,51 @@ LaMadLocations.initializeLargeMap = function() {
             largeMap.setZoom(12);
     }
 
-
     LaMadLocations.setCenterToCookie = function(){
-        console.log("Set center");
-            cookieLoc = $.cookie('LAM-location');
-            if(typeof(cookieLoc) != 'undefined'){
-                jsonCookie = $.parseJSON(cookieLoc);
-                if(typeof(largeMap) != 'undefined'){
-                    LaMadLocations.setLargLocation(jsonCookie.latitude, jsonCookie.longitude) ;   
-                }
-                LaMadLocations.getImage(jsonCookie.id);
-                LaMadLocations.loadNearest();
-                
+        cookieLoc = $.cookie('LAM-location');
+        if(typeof(cookieLoc) != 'undefined'){
+            jsonCookie = $.parseJSON(cookieLoc);
+            if(typeof(largeMap) != 'undefined'){
+                LaMadLocations.setLargLocation(jsonCookie.latitude, jsonCookie.longitude) ;   
             }
-            else{
-                //console.log("No Center cookie for you!");
-                
-            };
-        },
+            LaMadLocations.getImage(jsonCookie.id);
+            LaMadLocations.loadNearest();
+            
+        }
+        else{
+            //console.log("No Center cookie for you!");
+            
+        };
+    },
+
      LaMadLocations.loadNearest = function(){
 
-        cookieNear = $.cookie('LAM-near-locations');
+        var nearbyList = localStorage.getItem("LAM-nearby");
 
-            if(typeof(cookieNear) != 'undefined'){
-                $('#location-list').append(cookieNear);
-            }
+        if(nearbyList){
+
+            var locationList = "";
+
+            nearbyList = $.parseJSON(nearbyList);
+            
+            $.each(nearbyList, function(key, location){
+                if(key > 0){
+                    locationItem = "<li class='location-item'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
+                    locationList += locationItem;
+                }
+            });
+
+            $('#location-list').html(locationList);
+
+            $('#location-list .location-item').on('click', function(){
+
+                var img = LaMadLocations.getImage($(this).attr('data-id'));
+
+                LaMadLocations.setLargLocation($(this).attr('data-latitude'),$(this).attr('data-longitude'));
+                LaMadLocations.showPosition($(this).attr('data-latitude'),$(this).attr('data-longitude'), img);
+                LaMadLocations.loadNearest();
+            });
+        }
 
      }
 
@@ -146,7 +166,7 @@ LaMadLocations.initializeLargeMap = function() {
 
         LaMadLocations.initializeLargeMap();
 
-        LaMadLocations.loadNearest();
+        //LaMadLocations.loadNearest();
 
         //getLocationCookie(map-full);
 
@@ -155,7 +175,7 @@ LaMadLocations.initializeLargeMap = function() {
         *
         **/
 
-        var $locations = $('#content.locations');
+        var $locations = $('#content.locations')
 
         $locations.find('.btn.get-directions').on('click touchend', function(){
             LaMadLocations.getDirections();
