@@ -165,21 +165,6 @@ LaMadLocations.initializeLargeMap = function() {
     $(document).ready(function(){
 
         LaMadLocations.initializeLargeMap();
-
-        //LaMadLocations.loadNearest();
-
-        //getLocationCookie(map-full);
-
-        /**
-        *   Locations page interactions
-        *
-        **/
-
-        var $locations = $('#content.locations')
-
-        $locations.find('.btn.get-directions').on('click touchend', function(){
-            LaMadLocations.getDirections();
-        });
         
     });
 });

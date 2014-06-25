@@ -6,6 +6,8 @@
 
 $(function(){
 
+	$content = $('#content');
+
 	/********
 	COOKIES
 	********/
@@ -47,8 +49,6 @@ $(function(){
 	MENUS
 	********/
 
-	var $content = $('#content');
-
 	// If on a menu 
 	if($content.hasClass('breakfast') || $content.hasClass('lunch') || $content.hasClass('dinner') || $content.hasClass('bakery')){
 		// If user has selected a location, show pricing
@@ -72,6 +72,16 @@ $(function(){
 	else{
 		$('body').addClass('no-location');
 	}
+
+	// If any .btn.get-directions or .btn-light.get-directions element is clicked, fir getDirections() method.
+	$content.find('.btn.get-directions').on('click touchend', function(e){
+			e.preventDefault();
+      LaMadLocations.getDirections();
+  });
+  $content.find('.btn-light.get-directions').on('click touchend', function(e){
+  		e.preventDefault();
+      LaMadLocations.getDirections();
+  });
 
 	/**
 	* Homepage mobile location widget

@@ -1888,6 +1888,12 @@ aside p {
   display: none;
 }
 /* line 119, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-full #location-list {
+  height: 265px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* line 124, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -1896,7 +1902,7 @@ aside p {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 122, ../sass/widgets/_widget-location.scss */
+/* line 127, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-item {
   width: 100%;
   margin-bottom: 15px;
@@ -1908,84 +1914,96 @@ aside p {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 129, ../sass/widgets/_widget-location.scss */
+/* line 134, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-item:after {
   color: #b55a0f;
   font-family: 'icomoon';
   font-size: 24px;
   content: "\e620";
   position: absolute;
-  top: 16px;
+  top: 35%;
   right: 10px;
   -webkit-transition-duration: 0.25s;
   -moz-transition-duration: 0.25s;
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 139, ../sass/widgets/_widget-location.scss */
+/* line 144, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-item:hover {
   background: #f4f2df;
   cursor: pointer;
 }
-/* line 142, ../sass/widgets/_widget-location.scss */
+/* line 147, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-item:hover:after {
   right: 0px;
 }
-/* line 147, ../sass/widgets/_widget-location.scss */
+/* line 152, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-thumb {
   width: 20%;
   float: left;
 }
-/* line 151, ../sass/widgets/_widget-location.scss */
+/* line 156, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-info {
   width: 80%;
-  padding: 5px 25px 5px 15px;
+  padding: 20px 25px 5px 15px;
   float: left;
 }
-/* line 156, ../sass/widgets/_widget-location.scss */
+/* line 161, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-name {
   font-family: "Merriweather", serif;
   margin-bottom: 2px;
 }
-/* line 160, ../sass/widgets/_widget-location.scss */
+/* line 165, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full .other-locations .location-city {
   font-size: 11px;
   font-style: italic;
 }
 
 @media (min-width: 980px) {
-  /* line 170, ../sass/widgets/_widget-location.scss */
+  /* line 175, ../sass/widgets/_widget-location.scss */
   #mobile-location {
     display: none;
   }
 
-  /* line 174, ../sass/widgets/_widget-location.scss */
+  /* line 179, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location {
     display: block;
     border-bottom: 0;
     width: 100%;
     overflow: hidden;
   }
-  /* line 179, ../sass/widgets/_widget-location.scss */
+  /* line 184, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-mobile {
     display: none;
   }
-  /* line 182, ../sass/widgets/_widget-location.scss */
+  /* line 187, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full {
     position: relative;
     display: block;
   }
-  /* line 186, ../sass/widgets/_widget-location.scss */
+  /* line 190, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .widget-title, #sidebar .widget-location #widget-location-full #location-cta, #sidebar .widget-location #widget-location-full .loading {
+    display: block;
+  }
+  /* line 194, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-item:after {
+    top: 19px;
+  }
+  /* line 197, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-info {
+    padding-top: 5px;
+  }
+  /* line 202, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title h3 {
     text-align: left;
     margin: 5px 0;
   }
-  /* line 190, ../sass/widgets/_widget-location.scss */
+  /* line 206, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #map {
     height: 95px;
     width: 100%;
   }
-  /* line 194, ../sass/widgets/_widget-location.scss */
+  /* line 210, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta {
     display: block;
     width: 100%;
@@ -1999,13 +2017,13 @@ aside p {
     -o-perspective: 1000;
     perspective: 1000;
   }
-  /* line 203, ../sass/widgets/_widget-location.scss */
+  /* line 219, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loading .loading {
     display: block;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
-  /* line 208, ../sass/widgets/_widget-location.scss */
+  /* line 224, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loaded .flipper {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -2013,11 +2031,11 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 212, ../sass/widgets/_widget-location.scss */
+  /* line 228, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.no-cta .front {
     display: none;
   }
-  /* line 217, ../sass/widgets/_widget-location.scss */
+  /* line 233, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper {
     position: relative;
     -webkit-transform-style: preserve-3d;
@@ -2026,14 +2044,14 @@ aside p {
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  /* line 221, ../sass/widgets/_widget-location.scss */
+  /* line 237, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper.transition {
     -webkit-transition-duration: 0.6s;
     -moz-transition-duration: 0.6s;
     -o-transition-duration: 0.6s;
     transition-duration: 0.6s;
   }
-  /* line 224, ../sass/widgets/_widget-location.scss */
+  /* line 240, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front, #sidebar .widget-location #location-cta .back {
     width: 100%;
     height: 270px;
@@ -2046,13 +2064,13 @@ aside p {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  /* line 232, ../sass/widgets/_widget-location.scss */
+  /* line 248, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front {
     height: 270px;
     z-index: 2;
     background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
   }
-  /* line 237, ../sass/widgets/_widget-location.scss */
+  /* line 253, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .back {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -2060,7 +2078,7 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 241, ../sass/widgets/_widget-location.scss */
+  /* line 257, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .location-cta-divider {
     display: block;
     width: 230px;
@@ -2070,7 +2088,7 @@ aside p {
     left: 20px;
     background: url(../../../img/map/location-cta-divider.png) no-repeat;
   }
-  /* line 250, ../sass/widgets/_widget-location.scss */
+  /* line 266, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .loading {
     display: none;
     position: absolute;
@@ -2083,7 +2101,7 @@ aside p {
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
   }
-  /* line 258, ../sass/widgets/_widget-location.scss */
+  /* line 274, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .geo {
     width: 100%;
     position: absolute;
@@ -2091,7 +2109,7 @@ aside p {
     left: 0;
     right: 0;
   }
-  /* line 265, ../sass/widgets/_widget-location.scss */
+  /* line 281, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .zip {
     width: 100%;
     position: absolute;
@@ -2099,7 +2117,7 @@ aside p {
     left: 0;
     right: 0;
   }
-  /* line 271, ../sass/widgets/_widget-location.scss */
+  /* line 287, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .zip input {
     width: 50%;
     height: 29px;
@@ -2119,37 +2137,37 @@ aside p {
     -o-border-radius: 5px;
     border-radius: 5px;
   }
-  /* line 287, ../sass/widgets/_widget-location.scss */
+  /* line 303, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .icon {
     color: #fffdf0;
     font-size: 30px;
     margin-bottom: 5px;
   }
-  /* line 292, ../sass/widgets/_widget-location.scss */
+  /* line 308, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #use-location {
     position: relative;
     top: 10px;
   }
-  /* line 296, ../sass/widgets/_widget-location.scss */
+  /* line 312, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info {
     width: 100%;
     overflow: hidden;
   }
-  /* line 299, ../sass/widgets/_widget-location.scss */
+  /* line 315, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .location-title {
     font-family: "Merriweather", serif;
     font-size: 15px;
     color: #7a3910;
     margin: 10px 0 5px;
   }
-  /* line 305, ../sass/widgets/_widget-location.scss */
+  /* line 321, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .info-wrapper {
     width: 100%;
     padding: 5px 5px 0;
     overflow: hidden;
     border-bottom: 1px solid #e5d7cd;
   }
-  /* line 311, ../sass/widgets/_widget-location.scss */
+  /* line 327, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address, #sidebar .widget-location #location-info .phone {
     float: left;
     text-align: left;
@@ -2158,26 +2176,26 @@ aside p {
     padding: 0 10px 10px;
     color: #310d00;
   }
-  /* line 319, ../sass/widgets/_widget-location.scss */
+  /* line 335, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address {
     width: 55%;
     border-right: 1px solid #e5d7cd;
   }
-  /* line 323, ../sass/widgets/_widget-location.scss */
+  /* line 339, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .phone {
     width: 45%;
   }
-  /* line 326, ../sass/widgets/_widget-location.scss */
+  /* line 342, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .hours {
     font-size: 12px;
     margin: 10px 0;
     color: #310d00;
   }
-  /* line 332, ../sass/widgets/_widget-location.scss */
+  /* line 348, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper {
     width: 100%;
   }
-  /* line 335, ../sass/widgets/_widget-location.scss */
+  /* line 351, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper .btn {
     width: 46%;
     display: block;
@@ -2185,11 +2203,11 @@ aside p {
     margin: 0 2%;
   }
 
-  /* line 344, ../sass/widgets/_widget-location.scss */
+  /* line 360, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.map-view {
     position: relative;
   }
-  /* line 346, ../sass/widgets/_widget-location.scss */
+  /* line 362, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.map-view .map-link {
     display: block;
     width: 100%;
@@ -2199,60 +2217,55 @@ aside p {
     z-index: 101;
   }
 
-  /* line 358, ../sass/widgets/_widget-location.scss */
+  /* line 374, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view #location-cta {
     height: 330px;
   }
-  /* line 361, ../sass/widgets/_widget-location.scss */
+  /* line 377, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view #location-image {
     height: 150px;
     overflow: hidden;
     background-color: #f4f2df;
   }
-  /* line 366, ../sass/widgets/_widget-location.scss */
-  #sidebar .widget-location.location-view #location-list {
-    height: 265px;
-    overflow-y: auto;
-  }
-  /* line 370, ../sass/widgets/_widget-location.scss */
+  /* line 382, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper {
     width: 100%;
     margin-top: 2px;
     overflow: hidden;
     text-align: center;
   }
-  /* line 375, ../sass/widgets/_widget-location.scss */
+  /* line 387, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a {
     display: inline-block;
     min-width: 65px;
   }
-  /* line 379, ../sass/widgets/_widget-location.scss */
+  /* line 391, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a.get-directions {
     margin: 0 4%;
   }
-  /* line 383, ../sass/widgets/_widget-location.scss */
+  /* line 395, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .loading {
     top: 153px;
   }
 
-  /* line 388, ../sass/widgets/_widget-location.scss */
+  /* line 400, ../sass/widgets/_widget-location.scss */
   body.no-location #sidebar .widget-location.location-view .other-locations {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
 }
 @media (min-width: 1140px) {
-  /* line 395, ../sass/widgets/_widget-location.scss */
+  /* line 407, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title {
     width: 100%;
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 398, ../sass/widgets/_widget-location.scss */
+  /* line 410, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title h3 {
     float: left;
   }
-  /* line 401, ../sass/widgets/_widget-location.scss */
+  /* line 413, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title a {
     float: right;
     padding-top: 14px;
