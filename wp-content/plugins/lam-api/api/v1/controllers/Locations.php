@@ -5,12 +5,10 @@
 			$location = new \Voce\Thermal\v1\Models\Locations;
 			$return = $location->findbyCord($app->request()->get('lat'), $app->request()->get('lng'));
 
-			/** We have decided to do this on client to avoid timezone issues **/
-
-			// $currentCloseProp= strtolower(date('l')).'_close';
-			// $currentOpenProp= strtolower(date('l')).'_open';
-
+			
+			/* get the imaages */
 			foreach ($return as  $loc) {
+
 				
 				$featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'location-featured');
 				$thumbImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'thumbnail');
@@ -18,8 +16,7 @@
 				$loc->images->thumbnail = $thumbImg[0];
 
 			}
-			//$return['current_open'] = $location->tuesday_close;
-
+			
 			
 			if(count($return)){
 				header("Content-Type: application/json");
