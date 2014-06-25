@@ -12,8 +12,11 @@
 
 			foreach ($return as  $loc) {
 				
+				$featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'location-featured');
+				$thumbImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'thumbnail');
+				$loc->images->featured = $featuredImg[0];
+				$loc->images->thumbnail = $thumbImg[0];
 
-				 $loc->image_info = wp_get_attachment_url( get_post_thumbnail_id( $loc->id ) );
 			}
 			//$return['current_open'] = $location->tuesday_close;
 

@@ -116,6 +116,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'menu-featured', 820, 360, true ); // 820 pixels wide by 360 pixels tall, hard crop true
 	add_image_size( 'menu-item-featured', 365, 200, true ); // 365 pixels wide by 200 pixels tall, hard crop true
 	add_image_size( 'menu-item-featured-story', 365, 300, true ); // 365 pixels wide by 300 pixels tall, hard crop true
+	add_image_size( 'location-featured', 270, 150, true ); // 270 pixels wide by 150 pixels tall, hard crop true
 }
 
 /**

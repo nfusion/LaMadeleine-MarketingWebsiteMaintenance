@@ -53,14 +53,20 @@ a.btn.call{
 }
 
 a.btn-light{
-	color: $medBrown;
+	color: $darkBrown;
 	font-family: $lato;
-	font-size: 16px;
-	line-height: 16px;
+	font-size: 11px;
+	line-height: 14px;
 	text-transform: uppercase;
 	font-weight: bold;
 	padding: 10px;
 	border: 1px solid $darkBrown;
 	@include background-image(linear-gradient($lightCream, lighten($fadedBrown,15%)));
+	@include box-shadow(rgba(0,0,0,0.5) 0 2px 1px);
 	@include border-radius(5px);
+	@include transition-duration(0.25s);
+	&:hover{
+		color: $lightBrown;
+		border-color: $lightBrown;
+	}
 }

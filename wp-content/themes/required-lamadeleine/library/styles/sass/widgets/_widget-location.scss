@@ -118,6 +118,11 @@
 
 // Sidebar location widget
 @media (min-width: $medium-screen-min){
+
+  #mobile-location{
+    display: none;
+  }
+
   #sidebar .widget-location{
     display: block;
     border-bottom: 0;
@@ -169,7 +174,7 @@
       }
       .front, .back{
         width: 100%;
-        height: 270 px;
+        height: 270px;
         position: absolute;
         top: 0;
         left: 0;
@@ -284,20 +289,81 @@
       float: left;
       margin: 0 2%;
     }
+  }
 
-    // Map view-specific styling (i.e. homepage)
-
-    // Locations view-specific styling (i.e. locations page)
-    .location-view{
-      #location-image{
-        height: 150px;
+  // Locations view-specific styling (i.e. locations page)
+  #sidebar .widget-location.location-view{
+    #location-cta{
+      height: 330px;
+    }
+    #location-image{
+      height: 150px;
+      overflow: hidden;
+      background-color: $medCream;
+    }
+    .btn-wrapper{
+      width: 100%;
+      margin-top: 2px;
+      overflow: hidden;
+      text-align: center;
+      a{
+        display: inline-block;
+        min-width: 65px;
+      }
+      a.get-directions{
+        margin: 0 4%;
+      }
+    }
+    .other-locations{
+      @include opacity(1);
+      @include transition-duration(0.5s);
+      .other_location{
+        width: 100%;
+        margin-bottom: 15px;
         overflow: hidden;
-        background-color: $medCream;
+        list-style: none;
+        position: relative;
+        @include transition-duration(0.25s);
+        &:after{
+          color: $lightBrown;
+          font-family: 'icomoon';
+          font-size: 24px;
+          content: "\e620";
+          position: absolute;
+          top: 16px;
+          right: 10px;
+          @include transition-duration(0.25s);
+        }
+        &:hover{
+          background: $medCream;
+          cursor: pointer;
+          &:after{
+            right: 0px;
+          }
+        }
+      }
+      .location-thumb{
+        width: 20%;
+        float: left;
+      }
+      .location-info{
+        width: 80%;
+        padding: 5px 25px 5px 15px;
+        float: left;
+      }
+      .location-name{
+        font-family: $merriweather;
+        margin-bottom: 2px;
+      }
+      .location-city{
+        font-size: 11px;
+        font-style: italic;
       }
     }
   }
-  #mobile-location{
-  	display: none;
+
+  body.no-location #sidebar .widget-location.location-view .other-locations{
+    @include opacity(0);
   }
 }
 
