@@ -113,7 +113,55 @@
 
 // Hide full size sidebar location widget from mobile
 #sidebar #widget-location-full{
-  display: none;
+  .widget-title, #location-cta, .loading{
+    display: none;
+  }
+  .other-locations{
+    @include opacity(1);
+    @include transition-duration(0.5s);
+    .location-item{
+      width: 100%;
+      margin-bottom: 15px;
+      overflow: hidden;
+      list-style: none;
+      position: relative;
+      @include transition-duration(0.25s);
+      &:after{
+        color: $lightBrown;
+        font-family: 'icomoon';
+        font-size: 24px;
+        content: "\e620";
+        position: absolute;
+        top: 16px;
+        right: 10px;
+        @include transition-duration(0.25s);
+      }
+      &:hover{
+        background: $medCream;
+        cursor: pointer;
+        &:after{
+          right: 0px;
+        }
+      }
+    }
+    .location-thumb{
+      width: 20%;
+      float: left;
+    }
+    .location-info{
+      width: 80%;
+      padding: 5px 25px 5px 15px;
+      float: left;
+    }
+    .location-name{
+      font-family: $merriweather;
+      margin-bottom: 2px;
+    }
+    .location-city{
+      font-size: 11px;
+      font-style: italic;
+    }
+  }
 }
 
 // Sidebar location widget
@@ -305,7 +353,7 @@
     }
   }
 
-  // Locations view  styling (locations page)
+  // Locations view styling (locations page)
   #sidebar .widget-location.location-view{
     #location-cta{
       height: 330px;
@@ -316,7 +364,7 @@
       background-color: $medCream;
     }
     #location-list{
-      min-height: 300px;
+      height: 265px;
       overflow-y: auto;
     }
     .btn-wrapper{
@@ -334,52 +382,6 @@
     }
     .loading{
       top: 153px;
-    }
-    .other-locations{
-      @include opacity(1);
-      @include transition-duration(0.5s);
-      .location-item{
-        width: 100%;
-        margin-bottom: 15px;
-        overflow: hidden;
-        list-style: none;
-        position: relative;
-        @include transition-duration(0.25s);
-        &:after{
-          color: $lightBrown;
-          font-family: 'icomoon';
-          font-size: 24px;
-          content: "\e620";
-          position: absolute;
-          top: 16px;
-          right: 10px;
-          @include transition-duration(0.25s);
-        }
-        &:hover{
-          background: $medCream;
-          cursor: pointer;
-          &:after{
-            right: 0px;
-          }
-        }
-      }
-      .location-thumb{
-        width: 20%;
-        float: left;
-      }
-      .location-info{
-        width: 80%;
-        padding: 5px 25px 5px 15px;
-        float: left;
-      }
-      .location-name{
-        font-family: $merriweather;
-        margin-bottom: 2px;
-      }
-      .location-city{
-        font-size: 11px;
-        font-style: italic;
-      }
     }
   }
 
