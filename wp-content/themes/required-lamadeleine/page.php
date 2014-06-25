@@ -48,7 +48,7 @@ get_header(); ?>
 
 					case 'locations':
 						$pageDetails['title']=$pagename;
-						$mypods = pods('locations')->find();
+						$mypods = pods('locations')->find(array('limit' => '0'));
 						$sidebar = 'sidebar-location';
 					break;
 
