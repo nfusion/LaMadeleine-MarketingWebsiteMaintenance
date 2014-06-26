@@ -76,7 +76,7 @@ LaMadLocations.initializeLargeMap = function() {
 
                                 $item[$value] = $mypod->field($value);
                             }
-                $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'fma-full');
+                $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'location-featured');
                 ?>
                 var Latlng = new google.maps.LatLng( <?php echo $item['latitude'] .','.  $item['longitude'] ?>);
                 var marker_<?php echo $item['id'] ?> = new google.maps.Marker({

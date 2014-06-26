@@ -22,7 +22,13 @@ get_header(); ?>
 				$pageDetails = array();
 				switch ($pagename){
 					case'':
-						$mypods = pods('home_fma')->find();
+
+						$params = array(
+					    'orderby' => 'order.meta_value ASC',
+					    'limit' => '0'
+						);
+
+						$mypods = pods('home_fma')->find($params);
 						$sidebar = 'sidebar-home';
 						$pagename = 'home';
 					break;
