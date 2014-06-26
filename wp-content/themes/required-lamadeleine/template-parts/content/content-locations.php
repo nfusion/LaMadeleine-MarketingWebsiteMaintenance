@@ -133,7 +133,12 @@ LaMadLocations.initializeLargeMap = function() {
         };
     },
 
-     LaMadLocations.loadNearest = function(){
+    /**
+    *
+    * Gets list of nearby locations from local storage and populates location list
+    *
+    **/
+    LaMadLocations.loadNearest = function(){
 
         // Ensure this runs after local storage is set
         setTimeout(function(){
@@ -174,8 +179,7 @@ LaMadLocations.initializeLargeMap = function() {
                 });
             }
         }, 250);
-
-     }
+    }
 
     $(document).ready(function(){
 
