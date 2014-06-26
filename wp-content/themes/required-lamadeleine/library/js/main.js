@@ -11,6 +11,7 @@ $(function(){
 	/********
 	COOKIES
 	********/
+
 	// Check location cookie
 	var cookieLoc = $.cookie('LAM-location');
 
@@ -18,6 +19,15 @@ $(function(){
 	if(typeof(cookieLoc) != 'undefined'){
 		var myLocation = $.parseJSON(cookieLoc),
 				hasLocation = true;
+	}
+
+	// Check daypart cookie
+	var cookieDaypart = $.cookie('LAM-daypart');
+
+	// Parse as JSON
+	if(typeof(cookieDaypart) != 'undefined'){
+		var myDaypart = $.parseJSON(cookieDaypart),
+				hasDaypart = true;
 	}
 
 	/********
@@ -60,6 +70,15 @@ $(function(){
 	};
 
 	/********
+	DAYPARTS
+	********/
+
+	if(hasDaypart){
+	  // Find any .daypart-menu links and set href to current daypart menu
+		$content.find('a.daypart-menu').attr('href', myDaypart.link.guid);
+	}
+
+	/********
 	LOCATIONS
 	********/
 
@@ -67,21 +86,17 @@ $(function(){
 	if(hasLocation){
 		$('body').addClass('has-location');
 		$('.lam-call a').attr('href', 'tel:' + myLocation.phone);
+
+		// If any .get-directions links and fire getDirections() method when clicked.
+		$content.find('a.get-directions').on('click touchend', function(e){
+				e.preventDefault();
+	      LaMadLocations.getDirections();
+	  });
 	}
-	// Else add no location class to body
+	// Else add .no-location class to body
 	else{
 		$('body').addClass('no-location');
 	}
-
-	// If any .btn.get-directions or .btn-light.get-directions element is clicked, fir getDirections() method.
-	$content.find('.btn.get-directions').on('click touchend', function(e){
-			e.preventDefault();
-      LaMadLocations.getDirections();
-  });
-  $content.find('.btn-light.get-directions').on('click touchend', function(e){
-  		e.preventDefault();
-      LaMadLocations.getDirections();
-  });
 
 	/**
 	* Homepage mobile location widget

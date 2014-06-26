@@ -38,6 +38,13 @@
             LaMadLocations.geoCodeZip($('#zip-input').val());
         });
 
+        $('#use-zip-secondary').on('click', function(e){
+            e.preventDefault();
+
+            // Use zipcode for location
+            LaMadLocations.geoCodeZip($('#zip-input-secondary').val());
+        });
+
     });
     
 
@@ -86,38 +93,19 @@
                 $locationInfo = '<div id="location-info"></div>';
                 $locationsList = '<div id="location-list"></div>';
                 $btnWrapper = '<div class="btn-wrapper"><a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a><a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a></div>';
-                $btnWrapperLocations = '<div class="btn-wrapper"><a class="btn-light" href="/menu">Menu</a><a class="btn-light get-directions" href="#">Directions</a><a class="btn-light" href="#">Order</a></div>';
+                $btnWrapperLocations = '<div class="btn-wrapper"><a class="btn-light daypart-menu" href="#">Menu</a><a class="btn-light get-directions" href="#">Directions</a><a class="btn-light" target="_blank" href="https://online.lamadeleine.com">Order</a></div>';
+                $loading = '<div class="loading"><div id="floatingCirclesG"><div class="f_circleG" id="frotateG_01"></div><div class="f_circleG" id="frotateG_02"></div><div class="f_circleG" id="frotateG_03"></div><div class="f_circleG" id="frotateG_04"></div><div class="f_circleG" id="frotateG_05"></div><div class="f_circleG" id="frotateG_06"></div><div class="f_circleG" id="frotateG_07"></div><div class="f_circleG" id="frotateG_08"></div>=</div></div>';
 
                 if($onLocationPage == 'true') { 
-                    $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div></div></div><div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div>';
+                    $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div></div>' . $loading . '</div><div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div>';
                 } else {
-                    $locationMarkup = '<div class="back map-view"><a class="map-link" href="/locations"></a><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>';
+                    $locationMarkup = '<div class="back map-view"><a class="map-link" href="/locations"></a><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>' . $loading;
                 }
 
                 echo $locationMarkup;
 
                 ?>
 
-            <div class="loading">
-                <div id="floatingCirclesG">
-                <div class="f_circleG" id="frotateG_01">
-                </div>
-                <div class="f_circleG" id="frotateG_02">
-                </div>
-                <div class="f_circleG" id="frotateG_03">
-                </div>
-                <div class="f_circleG" id="frotateG_04">
-                </div>
-                <div class="f_circleG" id="frotateG_05">
-                </div>
-                <div class="f_circleG" id="frotateG_06">
-                </div>
-                <div class="f_circleG" id="frotateG_07">
-                </div>
-                <div class="f_circleG" id="frotateG_08">
-                </div>
-                </div>
-            </div>
         </div>
 
     </div>
