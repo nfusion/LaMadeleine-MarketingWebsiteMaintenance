@@ -146,7 +146,7 @@ LaMadLocations.initializeLargeMap = function() {
     *
     **/
     LaMadLocations.loadNearest = function(){
-        console.log('nearest');
+        
         // Ensure this runs after local storage is set
         setTimeout(function(){
 
@@ -178,7 +178,7 @@ LaMadLocations.initializeLargeMap = function() {
                 $('#location-list .location-item').on('click', function(){
 
                     // Update selected destination image
-                    var img = LaMadLocations.getImage($(this).attr('data-id'));
+                    var img = LaMadLocations.getImage($(this).attr('data-id'), true);
 
                     LaMadLocations.setLargLocation($(this).attr('data-latitude'),$(this).attr('data-longitude'));
                     LaMadLocations.showPosition($(this).attr('data-latitude'),$(this).attr('data-longitude'), img);

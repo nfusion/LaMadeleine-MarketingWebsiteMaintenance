@@ -322,22 +322,14 @@ var LaMadLocations = {
 
                         nearbyLocations[idx] = location;
 
-                        //  if(add_li === true){ 
-                        //     locationItem = "<li class='other_location clickable'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
-                        //     $('#location-list').append(locationItem);
-
-                        //     nearLocationHtmlList += locationItem;
-                        // }
                     });
                     
                     if (nearbyLocations){
-                        //LaMadLocations.setNearestLocationsCookie(nearLocationHtmlList);
                         LaMadLocations.setNearbyLocationsStorage(nearbyLocations);
                     }
 
                     // Done loading
                     LaMadLocations.$locationCta.removeClass('map-loading').addClass('map-loaded');
-
                     return data;
                 },
                 error : function(data){
@@ -358,11 +350,14 @@ var LaMadLocations = {
             $('#location-image').html( img );
         },
 
-        getImage: function(postID){
+        getImage: function(postID, skipImg){
+            if(typeof(skipImg) == 'undefined'){skipImg = false};
             $.ajax({
                 url:"/wp_api/v1/locations/image/"+postID,
                 success: function(data){
-                    LaMadLocations.changeSideImage(data);
+                    if(skipImg == false) {
+                        LaMadLocations.changeSideImage(data);
+                    }
                     return data;
                 }
             })
