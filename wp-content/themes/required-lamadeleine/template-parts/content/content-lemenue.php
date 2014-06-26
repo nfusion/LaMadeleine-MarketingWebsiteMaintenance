@@ -8,6 +8,9 @@
     
 $menuArray  = process_menu($mypod,$pageDetails['title']);
 
+
+
+
 ?>
 
 <div id="mobile-nav">
@@ -72,7 +75,6 @@ $menuArray  = process_menu($mypod,$pageDetails['title']);
         $categoryCount = 0;
 
         // Iterate through menu results
-        
         foreach ($menuArray as $menu) {
 
             if(count($menu) > 0) :
