@@ -8,6 +8,89 @@ var LaMadLocations = {
         $frontWrapper: function(){
             return this.$locationCta.find('.front-wrapper');
         },
+        mapStyles: [{
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#e0d5ab" }
+                    ]
+                  },
+                  {
+                    "featureType": "road",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "visibility": "on" },
+                      { "color": "#fff6da" }
+                    ]
+                  },{
+                    "featureType": "landscape.man_made",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#e4dbb9" }
+                    ]
+                  },{
+                    "featureType": "poi.business",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#eee4c6" }
+                    ]
+                  },{
+                    "featureType": "poi.attraction",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#eee4c6" }
+                    ]
+                  },{
+                    "featureType": "poi.government",
+                    "stylers": [
+                      { "color": "#eee4c6" }
+                    ]
+                  },{
+                    "featureType": "poi.medical",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#eee4c6" }
+                    ]
+                  },{
+                    "featureType": "poi.park",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#c0e4ba" }
+                    ]
+                  },{
+                    "featureType": "poi.place_of_worship",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#efe5c6" }
+                    ]
+                  },{
+                    "featureType": "poi.school",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#efe5c6" }
+                    ]
+                  },{
+                    "featureType": "poi.sports_complex",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#efe5c6" }
+                    ]
+                  },{
+                    "featureType": "road.highway.controlled_access",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#ffa93d" }
+                    ]
+                  },{
+                    "featureType": "road.local",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#f1e6c6" }
+                    ]
+                  },{
+                    "featureType": "poi.government",
+                    "elementType": "geometry.fill"  }
+                ],
 
     initializeMap:  function(lat, lng, mapContainer) {
         
@@ -21,6 +104,8 @@ var LaMadLocations = {
                 newLat=parseFloat(lat)+0.007;
                 myCenter = new google.maps.LatLng(newLat,lng);
 
+                var styledMap = new google.maps.StyledMapType(LaMadLocations.mapStyles, {name: "La Madeleine"});
+
                 var myLatlng = new google.maps.LatLng(lat,lng),
                     mapOptions = {
                     panControl: false,
@@ -32,11 +117,18 @@ var LaMadLocations = {
                     streetViewControl: false,
                     overviewMapControl: false,  
                     center: myCenter,
-                    zoom: 12
+                    zoom: 12,
+                    mapTypeControlOptions: {
+                        mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+                    }
                 };
 
                 var map = new google.maps.Map(document.getElementById(mapContainer),
                     mapOptions);
+
+                //Associate the styled map with the MapTypeId and set it to display.
+                map.mapTypes.set('map_style', styledMap);
+                map.setMapTypeId('map_style');
 
                 if(typeof(icon)!='undefined'){
                     displayIcon = '/wp-content/themes/required-lamadeleine/img/map/blue-dot.png';

@@ -17,25 +17,32 @@ var largeMap = [];
 var markerclusterer = null;
 
 LaMadLocations.initializeLargeMap = function() {
+        var styledMap = new google.maps.StyledMapType(LaMadLocations.mapStyles, {name: "La Madeleine"});
         var myLatlng = new google.maps.LatLng(32.2997,-90.5783);
         var mapOptions = {
-              mapTypeControl: false,
-              streetViewControl: false,
-              scrollwheel: false,
-              panControl:false,
-              zoomControl: true,
-              zoomControlOptions: {
-                style: google.maps.ZoomControlStyle.MEDIUM,
-                position: google.maps.ControlPosition.RIGHT_BOTTOM
-              },
+            mapTypeControl: false,
+            mapTypeControlOptions: {
+                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+            },
+            streetViewControl: false,
+            scrollwheel: false,
+            panControl:false,
+            zoomControl: true,
+            zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.MEDIUM,
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+            },
              
             center: myLatlng,
             zoom: 5
         };
 
         largeMap = new google.maps.Map(document.getElementById("map-full"),mapOptions);
-        
 
+        //Associate the styled map with the MapTypeId and set it to display.
+        largeMap.mapTypes.set('map_style', styledMap);
+        largeMap.setMapTypeId('map_style');
+        
         var markers = [];
         <?php 
              while( $mypod->fetch() ) {
