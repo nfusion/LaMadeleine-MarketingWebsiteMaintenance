@@ -269,10 +269,12 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   if($keyLength > 0) :
       $str .= '<div class="menu-keys">';
       // Iterate through menu item keys
-      foreach($menuItemObj['menu_key_relationship'] as $menuKey){
-          // Echo this menu item key
-          $str .= '<span class="icon icon-legend-' . $menuKey['slug'] . '"></span>';
-      }
+        if((isset($menuItemObj['menu_key_relationship']))&& is_array($menuItemObj['menu_key_relationship'])){
+          foreach($menuItemObj['menu_key_relationship'] as $menuKey){
+              // Echo this menu item key
+              $str .= '<span class="icon icon-legend-' . $menuKey['slug'] . '"></span>';
+          }
+        }
       $str .= '</div>';
   endif;
 
