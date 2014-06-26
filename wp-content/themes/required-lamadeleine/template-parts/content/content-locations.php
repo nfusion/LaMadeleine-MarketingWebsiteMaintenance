@@ -188,6 +188,8 @@ LaMadLocations.initializeLargeMap = function() {
         }, 250);
     }
 
+    /*** we need to extend this functionality ***/
+
     $(document).ready(function(){
 
         LaMadLocations.initializeLargeMap();

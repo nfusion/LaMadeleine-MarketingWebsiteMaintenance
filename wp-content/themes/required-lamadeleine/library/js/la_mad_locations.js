@@ -218,6 +218,11 @@ var LaMadLocations = {
 
         setNearbyLocationsStorage: function (nearby){
             localStorage.setItem("LAM-nearby", JSON.stringify(nearby));
+
+            if(typeof(LaMadLocations.loadNearest ) != 'undefined'){
+                 LaMadLocations.loadNearest();
+            }
+           
         },
 
         getLocationCookie: function(){
