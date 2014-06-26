@@ -2236,7 +2236,7 @@ aside p {
   }
 
   /* line 388, ../sass/widgets/_widget-location.scss */
-  body.no-location .zip-wrapper {
+  body.no-location #sidebar .zip-wrapper {
     height: 0;
     padding-top: 0;
   }
