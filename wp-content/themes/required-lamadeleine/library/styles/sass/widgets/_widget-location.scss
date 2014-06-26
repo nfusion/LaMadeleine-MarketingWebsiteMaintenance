@@ -1,0 +1,451 @@
+/**
+* La Madeleine
+* Location widget
+**/
+
+// Homepage mobile location widget
+#mobile-location{
+	width: 100%;
+	height: 0;
+  padding: 0 6px;
+	background: $lightCream;
+	@include transition-duration(0.5s);
+	@include clearfix();
+	&.loaded{
+		height: 50px;
+		padding: 6px;
+		position: relative;
+		z-index: 2;
+		@include box-shadow(rgba(0,0,0,0.25) 0 2px 2px);
+		&:hover{
+			cursor: pointer;
+		}
+		&:after{
+      color: $lightBrown;
+      font-family: 'icomoon';
+      font-size: 24px;
+      content: "\e620";
+      position: absolute;
+      top: 15px;
+      right: 5px;
+    }
+	}
+	.icon-phone{
+		font-size: 35px;
+		border: 1px solid $darkBrown;
+		float: left;
+    position: relative;
+    z-index: 3;
+		@include background-image(linear-gradient($lightCream, lighten($fadedBrown,15%)));
+		@include border-radius(5px);
+    a{
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 45px;
+      height: 45px;
+    }
+	}
+  a.location-link{
+    display: block;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 2;
+  }
+	.location-text{
+		width: 80%;
+		float: left;
+		text-align: center;
+		p{
+			margin: 0;
+		}
+	}
+	.title{
+		font-size: 18px;
+		line-height: 1.2	;
+		color: $medBrown;	
+	}
+	.hours{
+		font-size: 12px;
+	}
+  .location-cta{
+    display: none;
+  }
+}
+
+// Mobile sidebar location widget
+#sidebar #widget-location-mobile{
+  display: block;
+  .location-title{
+    margin: 10px 0 -10px;
+    font-family: $merriweather;
+    color: $redBrown;
+  }
+  .address{
+    width: 50%;
+    float: left;
+    padding: 0 5px;
+  }
+  .hours{
+    width: 50%;
+    float: left;
+    padding: 0 5px;
+  }
+  .btn-wrapper{
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    .btn{
+      display: block;
+      width: 48%;
+      margin: 0 1%;
+      float: left;
+      text-align: center;
+    }
+    .icon.call{
+      span{
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+// Hide full size sidebar location widget from mobile
+// Except for location list
+#sidebar {
+  .zip-wrapper{
+    display: none;
+  }
+  #widget-location-full{
+    .widget-title, #location-cta, .loading{
+      display: none;
+    }
+    #location-list{
+      height: 260px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .other-locations{
+      @include opacity(1);
+      @include transition-duration(0.5s);
+      .location-item{
+        width: 100%;
+        margin-bottom: 15px;
+        overflow: hidden;
+        list-style: none;
+        position: relative;
+        @include transition-duration(0.25s);
+        &:after{
+          color: $lightBrown;
+          font-family: 'icomoon';
+          font-size: 24px;
+          content: "\e620";
+          position: absolute;
+          top: 35%;
+          right: 10px;
+          @include transition-duration(0.25s);
+        }
+        &:hover{
+          background: $medCream;
+          cursor: pointer;
+          &:after{
+            right: 0px;
+          }
+        }
+      }
+      .location-thumb{
+        width: 75px;
+        height: 75px;
+        float: left;
+      }
+      .location-info{
+        padding: 20px 25px 5px 15px;
+        float: left;
+      }
+      .location-name{
+        font-family: $merriweather;
+        margin-bottom: 2px;
+      }
+      .location-city{
+        font-size: 11px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// Sidebar location widget
+@media (min-width: $medium-screen-min){
+
+  #mobile-location{
+    display: none;
+  }
+
+  #sidebar .widget-location{
+    display: block;
+    border-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    #widget-location-mobile{
+      display: none;
+    }
+    #widget-location-full{
+      position: relative;
+      display: block;
+      #location-list{
+        height: 195px;
+      }
+      .widget-title, #location-cta, .loading{
+        display: block;
+      }
+      .other-locations{
+        .location-item:after{
+          top: 17px;
+        }
+        .location-thumb{
+          width: 20%;
+          height: auto;
+        }
+        .location-info{
+          width: 80%;
+          padding-top: 5px;
+        }
+      }
+    }
+    .widget-title h3{
+  		text-align: left;
+  		margin: 5px 0;
+  	}
+    #map { 
+      height: 95px;
+      width: 100%;
+    }
+  	#location-cta{
+      display: block;
+  		width: 100%;
+  		min-height: 270px;
+      margin-top: 12px;
+  		text-align: center;
+  		position: relative;
+      @include perspective(1000);
+      &.map-loading{
+        .loading{
+          display: block;
+          @include opacity(1);
+        }
+      }
+      &.map-loaded .flipper{
+        @include rotateY(180deg);
+      }
+      &.no-cta{
+        .front{
+          // Firefox bug fix. Hide front if no flip transition is firing.
+          display: none;
+        }
+      }
+      .flipper{ 
+        position: relative;
+        @include transform-style(preserve-3d);
+      }
+      .flipper.transition{
+        @include transition-duration(0.6s);
+      }
+      .front, .back{
+        width: 100%;
+        height: 270px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include backface-visibility(hidden);
+      }
+      .front{
+        z-index: 2;
+        background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
+      }
+      .back{
+        @include rotateY(180deg);
+      }
+  	}
+    .location-cta-divider{
+      display: block;
+      width: 230px;
+      height: 16px;
+      position: absolute;
+      top: 130px;
+      left: 20px;
+      background: url(../../../img/map/location-cta-divider.png) no-repeat;
+    }
+    .loading{
+      display: none;
+      position: absolute;
+      top: 105px;
+      left: 38%;
+      @include opacity(0);
+      @include transition-duration(0.3s);
+    }
+  	.geo{
+  		width: 100%;
+  		position: absolute;
+  		top: 30px;
+  		left: 0;
+  		right: 0;
+  	}
+  	.zip{
+  		width: 100%;
+  		position: absolute;
+  		bottom: 40px;
+  		left: 0;
+  		right: 0;
+  	}
+  	.icon{
+  		color: $lightCream;
+  		font-size: 30px;
+      margin-bottom: 5px;
+  	}
+    #use-location{
+      position: relative;
+      top: 10px;
+    }
+    #location-info{
+      width: 100%;
+      overflow: hidden;
+      .location-title{
+        font-family: $merriweather;
+        font-size: 15px;
+        color: $medBrown;
+        margin: 10px 0 5px;
+      }
+      .info-wrapper{
+        width: 100%;
+        padding: 5px 5px 0;
+        overflow: hidden;
+        border-bottom: 1px solid lighten($fadedBrown, 15%);
+      }
+      .address, .phone{
+        float: left;
+        text-align: left;
+        font-size: 11px;
+        line-height: 1.3;
+        padding: 0 10px 10px;
+        color: $darkBrown;
+      }
+      .address{
+        width: 65%;
+        border-right: 1px solid lighten($fadedBrown, 15%);
+      }
+      .phone{
+        width: 35%;
+      }
+      .hours{
+        font-size: 12px;
+        margin: 10px 0;
+        color: $darkBrown;
+      }
+    }
+    .btn-wrapper{
+      width: 100%;
+    }
+    .btn-wrapper .btn{
+      width: 46%;
+      display: block;
+      float: left;
+      margin: 0 2%;
+    }
+  }
+
+  #zip-input, #zip-input-secondary{
+    width: 50%;
+    height: 29px;
+    margin-right: 3%;
+    padding: 1px 5px 0;
+    position: relative;
+    font-size: 15px;
+    font-family: $merriweather;
+    font-style: italic;
+    text-align: center;
+    border: 0;
+    color: $lightBrown;
+    background-color: $lightCream;
+    @include border-radius(5px);
+  }
+
+  #sidebar .zip-wrapper{
+    display: block;
+    width: 320px;
+    height: 65px;
+    padding-top: 17px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    top: -15px;
+    left: -25px;
+    background: url(../../../img/map/location-zip-bg.jpg) no-repeat;
+    @include transition-duration(0.5s);
+  }
+
+  body.no-location{
+    #sidebar .zip-wrapper{
+      height: 0;
+      padding-top: 0;
+    }
+  }
+
+  // Map view styling (homepage)
+  #sidebar .widget-location.map-view{
+    position: relative;
+    .map-link{
+      display: block;
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      top: 0px;
+      z-index: 101;
+    }
+  }
+
+  // Locations view styling (locations page)
+  #sidebar .widget-location.location-view{
+    #location-cta{
+      height: 330px;
+    }
+    #location-image{
+      height: 150px;
+      overflow: hidden;
+      background-color: $medCream;
+    }
+    .btn-wrapper{
+      width: 100%;
+      margin-top: 2px;
+      overflow: hidden;
+      text-align: center;
+      a{
+        display: inline-block;
+        min-width: 65px;
+      }
+      a.get-directions{
+        margin: 0 4%;
+      }
+    }
+  }
+
+  body.no-location #sidebar #widget-location-full .other-locations{
+    @include opacity(0);
+  }
+}
+
+@media (min-width: $large-screen-min){
+	#sidebar .widget-location{
+  	.widget-title{
+  		width: 100%;
+  		@include clearfix();
+  		h3{
+	  		float: left;
+	  	}
+	  	a{
+	  		float: right;
+	  		padding-top: 14px;
+	  	}
+  	}
+  }
+}
