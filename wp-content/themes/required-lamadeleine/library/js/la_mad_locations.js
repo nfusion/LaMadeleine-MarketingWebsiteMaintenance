@@ -351,7 +351,6 @@ var LaMadLocations = {
         },
 
         getImage: function(postID, skipImg){
-            console.log(skipImg);
             if(typeof(skipImg) == 'undefined'){skipImg = false};
             $.ajax({
                 url:"/wp_api/v1/locations/image/"+postID,

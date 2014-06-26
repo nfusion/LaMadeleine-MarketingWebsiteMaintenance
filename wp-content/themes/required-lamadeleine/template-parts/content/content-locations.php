@@ -164,8 +164,6 @@ LaMadLocations.initializeLargeMap = function() {
                 // Iterate through JSON and build HTML for location list
                 $.each(nearbyList, function(key, location){
 
-
-
                     if(key == 0){
                         LaMadLocations.getImage(location.id, false);
                     }  else if ((key > 0)&&(key<4)){
