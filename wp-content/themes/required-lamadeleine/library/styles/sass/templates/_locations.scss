@@ -1,0 +1,19 @@
+/**
+* La Madeleine
+* Locations Page Styling
+**/
+#content.locations{
+	//height: 100%;
+	#main, #main .post-box{
+		//height: 100%;
+	}
+	#map-full{
+        height: 200px;
+        // Foundation Google Maps fix
+        max-width: none;
+    }
+    // Foundation Google Maps fix
+    .gmnoprint > div > * {
+        max-width: none;
+    }
+}
