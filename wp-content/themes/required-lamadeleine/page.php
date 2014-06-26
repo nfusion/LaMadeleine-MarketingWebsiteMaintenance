@@ -97,6 +97,8 @@ get_header(); ?>
 				<?php 
 					if($sidebar == 'sidebar-menu') :
 						get_sidebar('menu');
+					elseif($sidebar == 'sidebar-location') :
+						get_sidebar('locations');
 					else :
 						dynamic_sidebar($sidebar);
 					endif;

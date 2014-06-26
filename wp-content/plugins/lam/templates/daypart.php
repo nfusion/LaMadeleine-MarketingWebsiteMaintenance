@@ -14,6 +14,7 @@
                 $.each(data, function(index, obj){
 
                     if(index == 0){
+                        setDaypartCookie(obj);
                         str += '<a href="'+obj.link.guid+'"><div class="daypart featured"><div class="daypart-image"><img src="' + obj.featured_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';
                     }
                     else{
@@ -24,6 +25,13 @@
                 $('.widget-daypart .daypart-wrapper').append(str);
             }
         });
+
+        var setDaypartCookie = function(obj){
+            // No expires property sets cookie to expire at end of session
+            $.cookie("LAM-daypart", JSON.stringify(obj), {
+               path: '/'
+            });
+        }
     }
 </script>
 

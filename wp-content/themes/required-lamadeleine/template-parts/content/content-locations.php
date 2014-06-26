@@ -93,6 +93,7 @@ LaMadLocations.initializeLargeMap = function() {
                         LaMadLocations.showPosition(<?php echo $item['latitude'].',' .$item['longitude']?> );
                         largeMap.setZoom(12);
                         largeMap.setCenter(marker_<?php echo $item['id'] ?>.getPosition());
+                        LaMadLocations.loadNearest();
    
                     });
 
@@ -134,32 +135,45 @@ LaMadLocations.initializeLargeMap = function() {
 
      LaMadLocations.loadNearest = function(){
 
-        var nearbyList = localStorage.getItem("LAM-nearby");
+        // Ensure this runs after local storage is set
+        setTimeout(function(){
 
-        if(nearbyList){
+            // Get data from local storage
+            var nearbyList = localStorage.getItem("LAM-nearby");
 
-            var locationList = "";
+            // If there are results 
+            if(nearbyList){
 
-            nearbyList = $.parseJSON(nearbyList);
-            
-            $.each(nearbyList, function(key, location){
-                if(key > 0){
-                    locationItem = "<li class='location-item'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
-                    locationList += locationItem;
-                }
-            });
+                var locationList = "";
 
-            $('#location-list').html(locationList);
+                // Parse list as JSON
+                nearbyList = $.parseJSON(nearbyList);
+                
+                // Iterate through JSON and build HTML for location list
+                $.each(nearbyList, function(key, location){
+                    if(key > 0){
+                        locationItem = "<li class='location-item'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
+                        locationList += locationItem;
+                    }
+                });
 
-            $('#location-list .location-item').on('click', function(){
+                // Set location list HTML to element
+                $('#location-list').html(locationList);
 
-                var img = LaMadLocations.getImage($(this).attr('data-id'));
+                // Click event for location list items
+                $('#location-list .location-item').on('click', function(){
 
-                LaMadLocations.setLargLocation($(this).attr('data-latitude'),$(this).attr('data-longitude'));
-                LaMadLocations.showPosition($(this).attr('data-latitude'),$(this).attr('data-longitude'), img);
-                LaMadLocations.loadNearest();
-            });
-        }
+                    // Update selected destination image
+                    var img = LaMadLocations.getImage($(this).attr('data-id'));
+
+                    LaMadLocations.setLargLocation($(this).attr('data-latitude'),$(this).attr('data-longitude'));
+                    LaMadLocations.showPosition($(this).attr('data-latitude'),$(this).attr('data-longitude'), img);
+
+                    // Update locations list
+                    LaMadLocations.loadNearest();
+                });
+            }
+        }, 250);
 
      }
 
