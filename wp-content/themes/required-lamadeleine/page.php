@@ -20,6 +20,7 @@ get_header(); ?>
 
 				<?php
 				$pageDetails = array();
+
 				switch ($pagename){
 					case'':
 
@@ -38,6 +39,23 @@ get_header(); ?>
 					case 'lunch':
 					case 'dinner':
 
+
+						switch ($pagename){
+
+							case 'breakfast':
+								$daypartTitle = 'Breakfast';
+								break;
+							case 'bakery':
+								$daypartTitle = 'Bakery';
+								break;
+							case 'lunch':
+								$daypartTitle = 'Lunch';
+								break;
+							case 'dinner':
+								$daypartTitle = 'Dinner & Wine';
+								break;
+
+						}
 					$params = array(
 					    //'where' => "daypart_relationship = 'Lunch'",
 					    'orderby' => 'order_weight ASC',
@@ -46,6 +64,20 @@ get_header(); ?>
 
 					$pageDetails['title']=$pagename;
 					$mypods = pods('menu_item')->find($params);
+
+					$params2 = array(
+					    'where' => "t.post_title = '".$daypartTitle."'",
+					    //'orderby' => 'order_weight ASC',
+					    'limit' => '0'
+					);
+
+					$daypart = pods('daypart')->find($params2 );
+
+					while( $daypart->fetch() ) {
+						$pageDetails['foodCats'] = $daypart->field('menu_categories');
+					}
+
+					
 					$sidebar = 'sidebar-menu';
 					$pagename = 'lemenue';
 

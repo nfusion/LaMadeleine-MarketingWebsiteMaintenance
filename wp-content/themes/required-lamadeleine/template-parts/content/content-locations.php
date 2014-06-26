@@ -130,7 +130,7 @@ LaMadLocations.initializeLargeMap = function() {
             if(typeof(largeMap) != 'undefined'){
                 LaMadLocations.setLargLocation(jsonCookie.latitude, jsonCookie.longitude) ;   
             }
-            LaMadLocations.getImage(jsonCookie.id);
+            //LaMadLocations.getImage(jsonCookie.id);
             LaMadLocations.loadNearest();
             
         }
@@ -146,7 +146,7 @@ LaMadLocations.initializeLargeMap = function() {
     *
     **/
     LaMadLocations.loadNearest = function(){
-
+        
         // Ensure this runs after local storage is set
         setTimeout(function(){
 
@@ -163,10 +163,13 @@ LaMadLocations.initializeLargeMap = function() {
                 
                 // Iterate through JSON and build HTML for location list
                 $.each(nearbyList, function(key, location){
-                    if(key > 0){
+
+                    if(key == 0){
+                        LaMadLocations.getImage(location.id, false);
+                    }  else if ((key > 0)&&(key<4)){
                         locationItem = "<li class='location-item'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
                         locationList += locationItem;
-                    }
+                    } 
                 });
 
                 // Set location list HTML to element
@@ -176,7 +179,7 @@ LaMadLocations.initializeLargeMap = function() {
                 $('#location-list .location-item').on('click', function(){
 
                     // Update selected destination image
-                    var img = LaMadLocations.getImage($(this).attr('data-id'));
+                    var img = LaMadLocations.getImage($(this).attr('data-id'), true);
 
                     LaMadLocations.setLargLocation($(this).attr('data-latitude'),$(this).attr('data-longitude'));
                     LaMadLocations.showPosition($(this).attr('data-latitude'),$(this).attr('data-longitude'), img);
@@ -187,6 +190,8 @@ LaMadLocations.initializeLargeMap = function() {
             }
         }, 250);
     }
+
+    /*** we need to extend this functionality ***/
 
     $(document).ready(function(){
 
