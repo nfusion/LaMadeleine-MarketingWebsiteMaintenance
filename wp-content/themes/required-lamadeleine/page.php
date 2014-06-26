@@ -65,17 +65,17 @@ get_header(); ?>
 					$pageDetails['title']=$pagename;
 					$mypods = pods('menu_item')->find($params);
 
-					// $params2 = array(
-					//     'where' => "t.post_title = '".$daypartTitle."'",
-					//     //'orderby' => 'order_weight ASC',
-					//     'limit' => '0'
-					// );
+					$params2 = array(
+					    'where' => "t.post_title = '".$daypartTitle."'",
+					    //'orderby' => 'order_weight ASC',
+					    'limit' => '0'
+					);
 
-					// $daypart = pods('daypart')->find($params2 );
+					$daypart = pods('daypart')->find($params2 );
 
-					// while( $daypart->fetch() ) {
-					// 	$pageDetails['foodCats'] = $daypart->field('menu_categories');
-					// }
+					while( $daypart->fetch() ) {
+						$pageDetails['foodCats'] = $daypart->field('menu_categories');
+					}
 
 					
 					$sidebar = 'sidebar-menu';
