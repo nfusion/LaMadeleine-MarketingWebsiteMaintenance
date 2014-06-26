@@ -8,6 +8,9 @@
     
 $menuArray  = process_menu($mypod,$pageDetails['title']);
 
+
+
+
 ?>
 
 <div id="mobile-nav">
