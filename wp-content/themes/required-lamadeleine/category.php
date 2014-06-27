@@ -11,7 +11,14 @@
  * @since required+ Foundation 0.3.0
  */
 
-get_header();?>
+get_header();
+
+					$cat = get_query_var('cat');//get_the_category(  ) ;
+
+					 echo "<pre>";
+					 print_r(get_cat_name($cat));
+					 die();
+?>
 	<!-- Row for main content area -->
 	<div id="content" class="row">
 

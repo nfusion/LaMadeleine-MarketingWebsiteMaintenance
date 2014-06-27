@@ -91,6 +91,24 @@ function my_wp_enqueue() {
 add_action( 'wp_enqueue_scripts', 'my_wp_enqueue' );
 
 
+
+function process_stories($mypod){
+   while( $mypod->fetch() ) {
+            foreach (array('title','description', 'content','fma_promo', 'is_featured', 'call_to_action', 'categorey') as $key => $value) {
+                 $item[$value] = $mypod->field($value);
+            }
+
+            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
+            
+              $return[]=$item;
+        }
+
+
+        return $return;
+}
+
+
+
 function process_menu($mypod,$daypart){
 
     $params = array(
