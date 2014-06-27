@@ -457,30 +457,35 @@ function display_story_carousel($stories){
 		// Close swipe wrapper
 		$str .= '</div>';
 
-		// Open carousel controls wrapper
-		$str .= '<div class="carousel-controls">';
+		if($storyCount > 1) :
 
-		// Add previous button
-		$str .= '<div class="control prev"><div class="icon icon-arrow-left-large"></div></div>';
+			// Open carousel controls wrapper
+			$str .= '<div class="carousel-controls">';
 
-		// Add next button
-		$str .= '<div class="control next"><div class="icon icon-arrow-right-large"></div></div>'; 
+			// Add previous button
+			$str .= '<div class="control prev"><div class="icon icon-arrow-left-large"></div></div>';
 
-		// Close carousel controls
-    $str .= '</div>';
+			// Add next button
+			$str .= '<div class="control next"><div class="icon icon-arrow-right-large"></div></div>'; 
+
+			// Close carousel controls
+	    $str .= '</div>';
+
+	  endif;
 
     // Open carousel pagination wrapper
     $str .= '<div class="carousel-paginate">';
 
-    for($i = 0; $i < $storyCount; $i++){
-    	if($i == 0){
-          $dotClasses = 'active dot dot-' . $i;
-      }
-      else{
-          $dotClasses = 'dot dot-' . $i;
-      }
-      $str .= '<div class="' . $dotClasses . '" data-order="' . $i . '"></div>';
-    };
+    if($storyCount > 2) :
+	    for($i = 0; $i < $storyCount; $i++){
+	    	if($i == 0) :
+	          $dotClasses = 'active dot dot-' . $i;
+	      else :
+	          $dotClasses = 'dot dot-' . $i;
+	      endif;
+	      $str .= '<div class="' . $dotClasses . '" data-order="' . $i . '"></div>';
+	    };
+	  endif;
 
     // Close carousel pagination wrapper
     $str .= '</div>';
@@ -492,30 +497,3 @@ function display_story_carousel($stories){
 
 	};
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

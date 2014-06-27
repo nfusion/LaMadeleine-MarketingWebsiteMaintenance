@@ -21,7 +21,7 @@ EOT;
         foreach (array('ID','title','description', 'url', 'cta', 'new_window') as $key => $value) {
              $item[$value] = $mypod->field($value);
         }
-        $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'fma-full'); 
+        $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'fma-full');
         $linkTarget = ($item['new_window'] == 1 ? '_blank' : '_self'); 
        
             echo <<<EOT

@@ -94,6 +94,12 @@ add_action( 'wp_enqueue_scripts', 'my_wp_enqueue' );
 
 function process_stories($mypod){
 
+  $params = array(
+      'where' => "t.post_title = '".ucfirst($daypart)."'",
+      'orderby' => "date ASC",
+      'limit' => '1'
+  );
+
    while( $mypod->fetch() ) {
             foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'is_featured', 'call_to_action', 'category') as $key => $value) {
                 $item[$value] = $mypod->field($value);
