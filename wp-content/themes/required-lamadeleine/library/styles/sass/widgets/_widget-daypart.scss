@@ -10,7 +10,7 @@
     position: relative; 
     max-width: 500px;
     margin: 0 auto;
-    a{
+    a.daypart-link{
       display: none;
       position: relative;
       &:after{
@@ -23,7 +23,7 @@
         right: 0;
       }
     }
-    a:first-child{
+    a.daypart-link:first-child{
       display: block;
     }
   }
@@ -48,6 +48,46 @@
     font-style: italic;
     line-height: 1.4;
   }
+  .categories{
+    display: none;
+  }
+}
+
+// Set styles for currently selected menu
+#content.breakfast .widget-daypart .breakfast, 
+#content.lunch .widget-daypart .lunch,
+#content.dinner .widget-daypart .dinner,
+#content.bakery .widget-daypart .bakery{
+  cursor: default;
+  &:hover .daypart{
+    background: none;
+  }
+  &:hover .daypart.featured{
+    background: $medCream;
+  }
+  &:after{
+    display: none;
+  }
+  .categories{
+    display: block;
+    margin: 15px 15px 10px 15px;
+    li{
+      font-size: 12px;
+      list-style: circle;
+    }
+    span{
+      font-family: $merriweather;
+      font-weight: bold;
+      color: $redBrown;
+      @include transition-duration(0.3s);
+      &:hover, &.active{
+        color: $orange;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 @media (max-width: $medium-screen-min){
@@ -60,7 +100,7 @@
 @media (min-width: $medium-screen-min){
   .widget-daypart{
     .daypart-wrapper{
-      a{
+      a.daypart-link{
         display: block;
         width: 100%;
         overflow: hidden;
@@ -78,7 +118,7 @@
           }
         }
       }
-      a:first-child{
+      a.daypart-link:first-child{
         &:after{
           content: "";
         }
