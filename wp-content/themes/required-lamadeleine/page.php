@@ -21,6 +21,8 @@ get_header(); ?>
 				<?php
 				$pageDetails = array();
 
+
+
 				switch ($pagename){
 					case'':
 
@@ -97,7 +99,10 @@ get_header(); ?>
 					break;
 					
 					case 'stories':
-						$mypods = get_posts();
+
+
+					$cat = get_query_var('cat');//get_the_category(  ) ;
+						$mypods = pods('post')->find(array('limit' => 0, 'where'=>'is_featured="1"'));
 						$sidebar = 'sidebar-story';
 						break;
 					default:
