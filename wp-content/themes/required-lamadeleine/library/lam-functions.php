@@ -82,6 +82,8 @@ function required_lam_enqueue() {
 	wp_enqueue_script( 'required_lam_main', get_stylesheet_directory_uri().'/library/js/main.js', array('jquery'), false, true);
 
     wp_enqueue_script( 'required_lam_location', get_stylesheet_directory_uri().'/library/js/la_mad_locations.js', array('jquery'), false, true);
+
+    wp_enqueue_script( 'required_lam_cart', get_stylesheet_directory_uri().'/library/js/la_mad_cart.js', array('jquery'), false, true);
 }
 
 /**
