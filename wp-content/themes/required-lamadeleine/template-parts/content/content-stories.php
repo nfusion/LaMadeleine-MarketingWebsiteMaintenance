@@ -13,23 +13,15 @@
 
 <?php
 
-    foreach(array('community','culture', 'food') as $catName){
+    $stories = process_stories($mypod);
 
-        ?>
-        <h2> <?php echo $catName ?> </h2>
-        <?php
+    //print_r($stories);
 
-
-        $args = array(  'category' => get_cat_ID( $catName )  );
-
-        $myposts = get_posts( $args );
-        foreach ( $myposts as $post ) { 
-             echo"<pre>";
-             print_r($post); 
-             echo"</pre>";
-        }
+    foreach($stories as $story){
+        echo '<pre>';
+        print_r($story);
         
-        wp_reset_postdata();
+       
     }
 
 ?>
