@@ -285,7 +285,11 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   $str .= '</div>';
 
   // Echo menu item description
-  $str .= '<p class="desc">' . $menuItemObj['description'] . '<span class="pricing"><span class="min">$' . $menuItemObj['price_min'] . '</span><span class="max">$' . $menuItemObj['price_max'] . '</span></span></p>';
+  if($menuItemObj['price_min'] == '0.00') :
+  	$isPriced = "ispriced-false";
+  endif;
+
+  $str .= '<p class="desc">' . $menuItemObj['description'] . '<span class="pricing ' . $isPriced . '"><span class="min">$' . $menuItemObj['price_min'] . '</span><span class="max">$' . $menuItemObj['price_max'] . '</span></span></p>';
 
   if($hasStory) :
   	// If this menu item is not also the featured item, display the story CTA under the menu item in the category
