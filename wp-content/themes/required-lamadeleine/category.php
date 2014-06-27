@@ -13,9 +13,7 @@
 
 get_header();
 	
-		$cat =get_cat_name($cat);
-
-
+   		 $cat =get_cat_name($cat);
 		 $mypods = pods('post')->find(array('limit' => 0, 'where'=>"category.name='".$cat."'"));
 		 $stories = process_stories($mypods);
 

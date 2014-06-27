@@ -11,44 +11,23 @@
  * @since required+ Foundation 0.3.0
  */
 
-get_header(); ?>
-	<!-- Row for main content area -->
-	<div id="content" class="row">
+get_header(); 
 
-		<div id="main" class="eight columns" role="main">
 
-			<div class="post-box">
-				
-					<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'story'  ); ?>
-					<?php $fma = get_post_meta( get_the_ID(), 'fma', true ); 
-					
-					?>
+ 		 $id = $wp_query->post->ID;
+		 $mypods = pods('post')->find(array('limit' => 0, 'where'=>"d.id=".$id));
+		 $stories = process_stories($mypods);
 
-				<?php endwhile; ?>
+    
 
-			</div>
+    foreach($stories as $story){
+        echo '<pre>';
+        print_r($story);
+        
+       
+    }
 
-		</div><!-- /#main -->
-
-		<aside id="sidebar" class="four columns" role="complementary">
-
-			<div class="sidebar-box">
-
-			
-				<?php
-				$sidebar = 'sidebar-story';
-				dynamic_sidebar($sidebar);
-
-				print_r( $fma );
-			?>
-
-			
-
-			</div>
-
-		</aside><!-- /#sidebar -->
-
-	</div><!-- End Content row -->
+?>
+	
 
 <?php get_footer(); ?>
