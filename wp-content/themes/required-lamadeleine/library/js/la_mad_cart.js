@@ -46,7 +46,6 @@ var lamCart = {
 
         addShippingTotal: function(increment){
                 this.totalShipping += parseFloat(increment);
-
                 $('#shippingTotal').html(this.totalShipping.toFixed(2));
         },
 

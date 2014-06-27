@@ -250,14 +250,19 @@ var LaMadLocations = {
         getLocation: function(objOnly){
             if(navigator.geolocation){
                 if(typeof(objOnly) != 'undefined'){
-                    navigator.geolocation.getCurrentPosition(this.geoFoundObjOnly);
+                    navigator.geolocation.getCurrentPosition(this.geoFoundObjOnly, this.geoErr);
                 } else {
-                    navigator.geolocation.getCurrentPosition(this.geoFound);
+                    navigator.geolocation.getCurrentPosition(this.geoFound, this.geoErr);
                 }
             }
             else {
                 $('#map').innerHTML = "Geolocation is not supported by this browser.";
             }
+        },
+
+        geoErr: function(error){
+            alert('Sorry, we were not able to determine your location.\nPlease feel free to continue browsing.\nMerci');   
+            $('body').addClass('location-err');  
         },
 
         geoFoundObjOnly: function(position){
