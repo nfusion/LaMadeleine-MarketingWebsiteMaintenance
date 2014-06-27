@@ -112,6 +112,7 @@ function process_stories($mypod){
 
 function process_menu($mypod,$daypart){
 
+
     $params = array(
                         'where' => "t.post_title = '".ucfirst($daypart)."'",
                         'orderby' => "date ASC",
@@ -123,6 +124,8 @@ function process_menu($mypod,$daypart){
     while( $daypart_pod->fetch() ) {
         $menu_categories = $daypart_pod->field('menu_categories');
     }
+
+
     
     //$menu = explode(',', $menu_categories);
     //$menu = array_flip(explode(',', $menu_categories));
@@ -144,9 +147,30 @@ function process_menu($mypod,$daypart){
             $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
             $item['featured_img_story'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured-story' );
            
+
+            switch ($daypart) {
+              case 'Dinner & Wine':
+                $daySearch = 'Dinner';
+
+                break;
+               case 'Lunch':
+                $daySearch = 'Lunch';
+
+                break;
+               case 'Breakfast':
+                $daySearch = 'Breakfast';
+
+                break;
+              
+              default:
+               $daySearch = 'Bakery';
+                break;
+            }
+            
+
               if(in_array( $item['menu_category']['slug'],  explode(', ', $menu_categories) )){
                 
-                if(in_array(ucwords($daypart), $item['daypart_relationship'])){
+                if(in_array($daySearch , $item['daypart_relationship'])){
 
                     $menu[$item['menu_category']['slug'] ] ['items'][] = $item;
 
