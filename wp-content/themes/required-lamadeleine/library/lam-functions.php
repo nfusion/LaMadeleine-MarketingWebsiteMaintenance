@@ -415,4 +415,105 @@ function display_menu_category($menuObj,$layout){
 	  return $str;
 
 	endif;
-}
+};
+
+/**
+*
+* Build and return stories carousel
+* Accepts stories object, returns markup ready for slide.js to initialize
+*
+**/
+function display_story_carousel($stories){
+
+	$storyCount = count($stories);
+	
+	// If stories object contains data
+	if($storyCount > 0){
+		// Open carousel wrapper
+		$str = '<div id="carousel" class="swipe">';
+
+		// Open carousel swipe wrapper
+		$str .= '<div class="swipe-wrap">';
+
+		foreach ($stories as $key => $story){
+			// Open carousel item wrapper
+			$str .= '<div class="carousel-item">';
+			// Include image
+			$str .= '<div>' . $story['fma_full'] . '</div>';
+			// Open carousel text wrapper
+			$str .= '<div class="carousel-text">';
+			// Carousel header
+			$str .= '<h1>' . $story['title'] . '</h1>';
+			// Carousel subhead
+			$str .= '<p class="subhead">' . $story['excerpt'] . '</p>';
+			// Carousel call-to-action button
+			$str .= '<p><a class="btn" href="' . $story['permalink'] . '">' . $story['call_to_action'] . '</a></p>';
+			// Close carousel text wrapper and carousel item wrapper
+			$str .= '</div></div>';
+		};
+
+		// Close swipe wrapper
+		$str .= '</div>';
+
+		// Open carousel controls wrapper
+		$str .= '<div class="carousel-controls">';
+
+		// Add previous button
+		$str .= '<div class="control prev"><div class="icon icon-arrow-left-large"></div></div>';
+
+		// Add next button
+		$str .= '<div class="control next"><div class="icon icon-arrow-right-large"></div></div>'; 
+
+		// Close carousel controls
+    $str .= '</div>';
+
+    // Open carousel pagination wrapper
+    $str .= '<div class="carousel-paginate">';
+
+    for($i = 0; $i < $storyCount; $i++){
+    	if($i == 0){
+          $dotClasses = 'active dot dot-' . $i;
+      }
+      else{
+          $dotClasses = 'dot dot-' . $i;
+      }
+      $str .= '<div class="' . $dotClasses . '" data-order="' . $i . '"></div>';
+    };
+
+    // Close carousel pagination wrapper
+    $str .= '</div>';
+
+		// Close carousel wrapper
+		$str .= '</div>';
+
+		return $str;
+
+	};
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

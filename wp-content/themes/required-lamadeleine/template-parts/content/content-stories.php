@@ -15,13 +15,17 @@
 
     $stories = process_stories($mypod);
 
-    //print_r($stories);
+    echo display_story_carousel($stories);
+
+    // echo '<pre>';
+    // print_r($stories);
+    // echo '</pre>';
 
     foreach($stories as $story){
-        echo '<pre>';
-        print_r($story);
-        
-       
+
+    		// echo '<pre>';
+      //   print_r($story);
+      //  	echo '</pre>';   
     }
 
 ?>
