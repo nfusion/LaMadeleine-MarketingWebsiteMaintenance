@@ -99,9 +99,6 @@ get_header(); ?>
 					break;
 					
 					case 'stories':
-
-
-					$cat = get_query_var('cat');//get_the_category(  ) ;
 						$mypods = pods('post')->find(array('limit' => 0, 'where'=>'is_featured="1"'));
 						$sidebar = 'sidebar-story';
 						break;
