@@ -172,6 +172,8 @@ $(function(){
 
 	var $carousel = $('#carousel');
 
+	console.log($carousel);
+
 	if($carousel.length){
 		var $controls = $carousel.find('.carousel-controls'),
 				$paginate = $carousel.find('.carousel-paginate');

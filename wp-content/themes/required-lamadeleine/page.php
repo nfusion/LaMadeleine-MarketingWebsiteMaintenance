@@ -100,7 +100,7 @@ get_header(); ?>
 					break;
 					
 					case 'stories':
-						$mypods = pods('post')->find(array('limit' => 0, 'where'=>'is_featured="1"'));
+						$mypods = pods('post')->find(array('limit' => 0, 'where'=>'is_featured="1"', 'orderby'=>'date DESC'));
 						$sidebar = 'sidebar-story';
 						break;
 					default:

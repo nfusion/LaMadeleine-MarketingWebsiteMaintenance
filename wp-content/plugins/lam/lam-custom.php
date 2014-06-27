@@ -95,11 +95,12 @@ add_action( 'wp_enqueue_scripts', 'my_wp_enqueue' );
 function process_stories($mypod){
 
    while( $mypod->fetch() ) {
-            foreach (array('id','title','description', 'content','fma_promo', 'is_featured', 'call_to_action', 'categorey') as $key => $value) {
-                 $item[$value] = $mypod->field($value);
+            foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'is_featured', 'call_to_action', 'category') as $key => $value) {
+                $item[$value] = $mypod->field($value);
+                $item['fma_full'] =  get_the_post_thumbnail($item['id'], 'fma-full');
+                $item['featured_top'] =  get_the_post_thumbnail($item['id'], 'featured-top');
+                $item['permalink'] =  get_post_permalink($item['id']);
             }
-
-            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
             
               $return[]=$item;
         }
