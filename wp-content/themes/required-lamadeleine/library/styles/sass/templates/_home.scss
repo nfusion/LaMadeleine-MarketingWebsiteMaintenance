@@ -1,0 +1,12 @@
+/**
+* La Madeleine
+* Homepage Styling
+**/
+
+@media (max-width: 767px){
+	body.home{
+		.widget-location{
+			display: none;
+		}
+	}
+}

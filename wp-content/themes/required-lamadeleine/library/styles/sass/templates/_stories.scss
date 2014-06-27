@@ -1,0 +1,18 @@
+/**
+* La Madeleine
+* Stories Styling
+**/
+
+#content.stories, body.category	{
+	#sidebar{
+		display: none;
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#content.stories, body.category	{
+		#sidebar{
+			display: block;
+		}
+	}
+}
