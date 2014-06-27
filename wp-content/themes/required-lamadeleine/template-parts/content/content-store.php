@@ -20,7 +20,7 @@
 <script>
 
 $(document).ready(function(){
-        lamCart.getCartCookie();
+        lamCart.getCartCookie(<?php echo $shippingBase ?>);
         $('.product-button').click(function(){
                 lamCart.addItem($(this));
         });
