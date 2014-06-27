@@ -93,8 +93,9 @@ add_action( 'wp_enqueue_scripts', 'my_wp_enqueue' );
 
 
 function process_stories($mypod){
+
    while( $mypod->fetch() ) {
-            foreach (array('title','description', 'content','fma_promo', 'is_featured', 'call_to_action', 'categorey') as $key => $value) {
+            foreach (array('id','title','description', 'content','fma_promo', 'is_featured', 'call_to_action', 'categorey') as $key => $value) {
                  $item[$value] = $mypod->field($value);
             }
 
