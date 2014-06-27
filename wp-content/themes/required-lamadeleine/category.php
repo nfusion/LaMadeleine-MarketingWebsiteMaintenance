@@ -12,43 +12,22 @@
  */
 
 get_header();
+	
+		$cat =get_cat_name($cat);
 
-					$cat = get_query_var('cat');//get_the_category(  ) ;
 
-					 echo "<pre>";
-					 print_r(get_cat_name($cat));
-					 die();
+		 $mypods = pods('post')->find(array('limit' => 0, 'where'=>"category.name='".$cat."'"));
+		 $stories = process_stories($mypods);
+
+    
+
+    foreach($stories as $story){
+        echo '<pre>';
+        print_r($story);
+        
+       
+    }
+
 ?>
-	<!-- Row for main content area -->
-	<div id="content" class="row">
-
-		<div id="main" class="eight columns" role="main">
-			<div class="post-box">
-
-				<?php if ( have_posts() ) : ?>
-
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'content', get_post_format() ); ?>
-
-				<?php endwhile; ?>
-
-			<?php else : ?>
-				<?php get_template_part( 'content', 'none' ); ?>
-			<?php endif; ?>
-
-			</div>
-		</div><!-- /#main -->
-
-		<aside id="sidebar" class="four columns" role="complementary">
-			<div class="sidebar-box">
-				<?php 
-					$sidebar = 'sidebar-story';
-					dynamic_sidebar($sidebar);
-				?>
-			</div>
-		</aside><!-- /#sidebar -->
-
-	</div><!-- End Content row -->
 
 <?php get_footer(); ?>
