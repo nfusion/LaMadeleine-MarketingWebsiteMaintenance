@@ -345,7 +345,12 @@ function display_menu_category($menuObj,$layout){
 	  $str = "";
 
 	  // Start new menu category row
-	  $str .= '<div class="row menu-category">';
+
+	  // Set a unqiue ID based on the category name
+	  $uniqueID = strtolower($menuCategory['name']);
+	  $uniqueID = str_replace(' ', '-', $uniqueID);
+
+	  $str .= '<div class="row menu-category" id="category-' . $uniqueID . '">';
 
 	  // Wrap in category title & description
 	  $str .= '<div class="category-wrapper">';

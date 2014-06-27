@@ -6,7 +6,10 @@
 
 $(function(){
 
-	$content = $('#content');
+	var $content = $('#content'),
+			$main = $content.find('#main'),
+			$sidebar = $content.find('#sidebar');
+
 
 	/********
 	COOKIES
@@ -65,8 +68,27 @@ $(function(){
 		if(myLocation){
 			$content.find('.menu-details').addClass(myLocation.menu_pricing.toLowerCase());
 		}
-		// Sticky the sidebar widgets
-		$("#sidebar .menu-legend").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
+
+		// Wait for dayparts API to populate widget
+		var daypartInt = setInterval(function(){
+			if($sidebar.find('.widget-daypart').length > 0){
+
+				clearInterval(daypartInt);
+
+				// Click events for menu category links
+				$sidebar.find('ul.categories li').on('click', function(e){
+					e.preventDefault();
+					var catName = $(this).data('cat-name');
+					console.log($('#category-' + catName));
+					$("html, body").animate({ scrollTop: $('#category-' + catName).offset().top }, 1000);
+				});
+
+			}
+		}, 1000);
+		
+
+		// Sticky the sidebar legend
+		$sidebar.find(".menu-legend").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
 	};
 
 	/********

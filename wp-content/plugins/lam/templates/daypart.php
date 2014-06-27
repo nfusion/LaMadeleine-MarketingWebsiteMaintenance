@@ -13,12 +13,20 @@
                 var str = "";
                 $.each(data, function(index, obj){
 
+                    var menuCategories = $.parseJSON(obj.menu_cat),
+                        categoryList = "";
+
+                    $.each(menuCategories, function(key, category){
+                        slug = category.trim().replace(/\s+/g, '-').toLowerCase();
+                        categoryList += '<li data-cat-name="' + slug + '"><span>' + category + '</span></li>';
+                    });
+
                     if(index == 0){
                         setDaypartCookie(obj);
-                        str += '<a href="'+obj.link.guid+'"><div class="daypart featured"><div class="daypart-image"><img src="' + obj.featured_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';
+                        str += '<a class="daypart-link ' + obj.link.post_name + '" href="'+obj.link.guid+'"><div class="daypart featured"><div class="daypart-image"><img src="' + obj.featured_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div><ul class="categories">' + categoryList + '</ul></div></div></a>';
                     }
                     else{
-                        str += '<a href="'+obj.link.guid+'"><div class="daypart"><div class="daypart-image-thumb"><img src="' + obj.thumb_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div></div></div></a>';
+                        str += '<a class="daypart-link ' + obj.link.post_name + '" href="'+obj.link.guid+'"><div class="daypart"><div class="daypart-image-thumb"><img src="' + obj.thumb_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div><ul class="categories">' + categoryList + '</ul></div></div></div></a>';
                     }
 
                 });
