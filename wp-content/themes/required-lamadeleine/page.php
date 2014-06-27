@@ -58,6 +58,7 @@ get_header(); ?>
 								break;
 
 						}
+					$pageDetails['daypartTitle'] = $daypartTitle;
 					$params = array(
 					    //'where' => "daypart_relationship = 'Lunch'",
 					    'orderby' => 'order_weight ASC',

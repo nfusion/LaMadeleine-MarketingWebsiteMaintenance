@@ -6,7 +6,7 @@
  *
  */
     
-$menuArray  = process_menu($mypod,$pageDetails['title']);
+$menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
 
 
 
