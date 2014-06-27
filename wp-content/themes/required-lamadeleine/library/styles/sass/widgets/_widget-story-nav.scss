@@ -1,0 +1,73 @@
+/**
+* La Madeleine
+* Story Navigation widget
+**/
+
+.widget.widget-story-nav{
+  a.story-nav-link{
+    display: block;
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+    color: $medBrown;
+    &:hover{
+      color: $medBrown;
+    }
+    .cat-wrapper{
+      width: 100%;
+      height: 100%;
+      @include transition-duration(0.25s);
+      &:after{
+        color: $lightBrown;
+        font-family: 'icomoon';
+        font-size: 24px;
+        content: "\e620";
+        position: absolute;
+        top: 11px;
+        right: 10px;
+        @include transition-duration(0.25s);
+      }
+      &:hover{
+        background: $medCream;
+        &:after{
+          right: 0px;
+        }
+      }
+    }
+    .text-wrapper{
+      padding-top: 7px;
+    }
+    .icon{
+      width: 45px;
+      height: 45px;
+      margin-right: 7px;
+      font-size: 36px;
+      padding: 5px;
+      background: $darkCream;
+      float: left;
+    }
+    .cat-name{
+      padding: 3px 0;
+      font-family: $merriweather;
+    }
+    .cat-desc{
+      font-size: 10px;
+      font-style: italic;
+    }
+  }
+}
+
+// Higlight current nav item
+#content.stories .widget-story-nav .story-nav-link.stories,
+body.category-food .widget-story-nav .story-nav-link.category-food,
+body.category-culture .widget-story-nav .story-nav-link.category-culture,
+body.category-community .widget-story-nav .story-nav-link.category-community{
+  .cat-wrapper{
+    background: $medCream;
+    &:after{
+      content: "";
+    }
+  }
+}
