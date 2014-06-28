@@ -22,7 +22,6 @@ get_header(); ?>
 				$pageDetails = array();
 
 
-
 				switch ($pagename){
 					case'':
 
@@ -94,6 +93,12 @@ get_header(); ?>
 					break;
 
 					case 'store':
+						$pageDetails['title']=$pagename;
+						$mypods = array();
+						$sidebar = 'sidebar-store';
+					break;
+
+					case 'thank-you':
 						$pageDetails['title']=$pagename;
 						$mypods = array();
 						$sidebar = 'sidebar-store';

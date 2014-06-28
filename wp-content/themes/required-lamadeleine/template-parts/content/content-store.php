@@ -13,8 +13,9 @@
         $shippingBase = 5.99;
 
         $paypalLink = "https://sandbox.PayPal.com/cgi-bin/webscr";
-        $paypalUser = "cs45977@gmail.com"; //"guestrelations@lamadeleine.com";
-        $returnURL = "get_site_url()";
+        /*** https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/cps/general/OptionalAccount-outside **/
+        $paypalUser = "cs45977@gmail.com"; //"guestrelations@lamadeleine.com"; 
+        $returnURL = get_site_url().'/thank-you';
 
 ?>
 
@@ -252,7 +253,7 @@ div.cart input {
                 <input type="hidden" name="upload" value="1">  <!-- add this line in your code -->
                 <input type="hidden" id='payPalShipping' name="shipping_1" value="1.00">
                 <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="hidden" value="<?php echo $returnURL?>">
+                <input type="hidden" name="return" value="<?php echo $returnURL?>">
 
                 <!-- <input type="hidden" name="return" value="http://www.yoursite.com/thankyou.htm"> -->
            
