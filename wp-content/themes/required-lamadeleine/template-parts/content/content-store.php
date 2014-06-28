@@ -10,10 +10,11 @@
         $dressingShippingIncremental = 3.99;
 
         //Shippig
-        $shippingBase = 5.99
+        $shippingBase = 5.99;
 
-
-
+        $paypalLink = "https://sandbox.PayPal.com/cgi-bin/webscr";
+        $paypalUser = "cs45977@gmail.com"; //"guestrelations@lamadeleine.com";
+        $returnURL = "get_site_url()";
 
 ?>
 
@@ -31,7 +32,7 @@ $(document).ready(function(){
 
         });
 
-        $('input').hide();
+        
 
         // on('focus', function(){
         //     cd
@@ -40,6 +41,11 @@ $(document).ready(function(){
           j
             lamCart.recalculate(this);
         });
+
+        $('#paypal').click(function(e){
+            lamCart.prepPayment();
+            event.preventDefault();
+        })
 })
 
 
@@ -235,11 +241,29 @@ div.cart input {
                 
                <div class='tallies'> <div class='title'> Shipping: </div> <div id='shippingTotal' class='info'></div></div>
                
-               <div class='tallies'> <div class='title'> Total<sup>*</sup>: </div> <div id='orderTotal' class='info'></div></div>
+               <div class='tallies'> <div class='title'> Total<sup></sup>: </div> <div id='orderTotal' class='info'></div></div>
               
               <br>
-        <div><sup>*</sup> Tax will be calculated at time of payment</div>
+           
+            <form id='payPal' method="post" action="<?php echo $paypalLink ?>">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="upload" value="1">  <!-- add this line in your code -->
+                <input type="hidden" name="business" value="<?php echo $paypalUser ?>">
+                <input type="hidden" name="upload" value="1">  <!-- add this line in your code -->
+                <input type="hidden" id='payPalShipping' name="shipping_1" value="1.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="hidden" value="<?php echo $returnURL?>">
+
+                <!-- <input type="hidden" name="return" value="http://www.yoursite.com/thankyou.htm"> -->
+           
+              <p><a id='paypal' class='btn' > Check Out </a></p>
+
+
+            </form>
+
+        <!-- <div><sup>*</sup> Tax will be calculated at time of payment</div> -->
                 
         </div>
+
         
     </div>
