@@ -27,7 +27,7 @@ function lam_metaboxes() {
 
     pods_group_add('menu_item', 
                    'Description',
-                   'Price-Min',
+                   'Price Min',
                    'Price Max', 
                    'Menu Key', 
                    'Story', 
