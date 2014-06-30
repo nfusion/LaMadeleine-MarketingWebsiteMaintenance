@@ -2966,13 +2966,13 @@ aside p {
 * Stories & Standard (Generic) Pages Styling
 **/
 /* line 7, ../sass/templates/_stories-pages.scss */
-#content.stories #main, #content.is-standard-page #main, body.category #main, body.single-post #main {
+#content.stories #main, #content.page-single #main, body.category #main, body.single-post #main {
   background: #f4f2df;
   overflow: hidden;
   border-right: 1px solid #e5d7cd;
 }
 /* line 12, ../sass/templates/_stories-pages.scss */
-#content.stories #sidebar, #content.is-standard-page #sidebar, body.category #sidebar, body.single-post #sidebar {
+#content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
   display: none;
 }
 
@@ -3020,7 +3020,7 @@ aside p {
 
 @media (min-width: 980px) {
   /* line 55, ../sass/templates/_stories-pages.scss */
-  #content.stories #sidebar, #content.is-standard-page #sidebar, body.category #sidebar, body.single-post #sidebar {
+  #content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
     display: block;
   }
 
