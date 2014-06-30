@@ -23,6 +23,51 @@ function lam_metaboxes() {
     // Loction
     pods_group_add('locations', 'Location Details', 'address, address_2, city, state, zip_code, phone, latitude, longitude, menu_pricing');
     pods_group_add('locations', 'Store Hours', 'monday_open, monday_close, tuesday_open, tuesday_close, wednesday_open, wednesday_close, thursday_open, thursday_close, friday_open,friday_close,saturday_open, saturday_close, sunday_open, sunday_close');
+
+
+    pods_group_add('menu_item', 
+                   'Description',
+                   'Price-Min',
+                   'Price Max', 
+                   'Menu Key', 
+                   'Story', 
+                   'FMA/Promo', 
+                   'Daypart', 
+                   'Menu Category',
+                   'Featured Item',
+                   'Order Weight'
+                   );
+
+    pods_group_add( 'menu_item',
+                   'First Optional Description', 
+                   'First Optional Min Price',
+                   'First Optional Max Price'
+                   );
+
+    pods_group_add( 'menu_item',
+                   'Second Optional Description', 
+                   'Second Optional Min Price',
+                   'Second Optional Max Price'
+                   );
+
+    pods_group_add( 'menu_item',
+                   'Third Optional Description', 
+                   'Third Optional Min Price',
+                   'Third Optional Max Price'
+                   );
+
+    pods_group_add( 'menu_item',
+                   'Fourth Optional Description', 
+                   'Fourth Optional Min Price',
+                   'Fourth Optional Max Price'
+                   );
+
+    pods_group_add( 'menu_item',
+                   'Fifth Optional Description', 
+                   'Fifth Optional Min Price',
+                   'Fifth Optional Max Price'
+                   );
+
 }
 
 
