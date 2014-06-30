@@ -107,9 +107,7 @@ get_header(); ?>
 						$sidebar = 'sidebar-story';
 						break;
 					default:
-						$pageDetails['title']=$pagename;
-						$sidebar = 'sidebar-story';
-						$defaultTemplate = true;
+						
 				}
 
 				$mypods = isset($mypods) ? $mypods : array();

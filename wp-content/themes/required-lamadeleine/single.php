@@ -74,33 +74,33 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<div class="image-wrapper">
+					<div class="image-wrapper">
+						<?php 
+							if($topImage['ID']) :
+								echo wp_get_attachment_image($topImage['ID'], 'featured-top');
+							else :
+								the_post_thumbnail('featured-top'); 
+							endif;
+						?>
+					</div>
+
+					<div class="text-wrapper shadow">
+
+						<div class="entry-header">
+							<h1><?php the_title(); ?></h1>
+							<h2><?php echo get_the_excerpt(); ?></h2>
+						</div>
+
+						<div class="entry-body">
 							<?php 
-								if($topImage['ID']) :
-									echo wp_get_attachment_image($topImage['ID'], 'featured-top');
-								else :
-									the_post_thumbnail('featured-top'); 
-								endif;
+								the_content(); 
+								echo display_promo($promo, 'mobile');
 							?>
+
+
 						</div>
 
-						<div class="text-wrapper shadow">
-
-							<div class="entry-header">
-								<h1><?php the_title(); ?></h1>
-								<h2><?php echo get_the_excerpt(); ?></h2>
-							</div>
-
-							<div class="entry-body">
-								<?php 
-									the_content(); 
-									echo display_promo($promo, 'mobile');
-								?>
-
-
-							</div>
-
-						</div>
+					</div>
 
 					<?php endwhile; ?>
 
