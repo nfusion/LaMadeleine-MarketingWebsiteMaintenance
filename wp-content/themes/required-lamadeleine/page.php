@@ -21,8 +21,6 @@ get_header(); ?>
 				<?php
 				$pageDetails = array();
 
-
-
 				switch ($pagename){
 					case'':
 
@@ -40,7 +38,6 @@ get_header(); ?>
 					case 'bakery':
 					case 'lunch':
 					case 'dinner':
-
 
 						switch ($pagename){
 
@@ -98,33 +95,28 @@ get_header(); ?>
 						$mypods = array();
 						$sidebar = 'sidebar-store';
 					break;
+
+					case 'thank-you':
+						$pageDetails['title']=$pagename;
+						$mypods = array();
+						$sidebar = 'sidebar-store';
+					break;
 					
 					case 'stories':
 						$mypods = pods('post')->find(array('limit' => 0, 'where'=>'is_featured="1"', 'orderby'=>'date DESC'));
 						$sidebar = 'sidebar-story';
 						break;
 					default:
-
+						$pageDetails['title']=$pagename;
+						$sidebar = 'sidebar-story';
+						$defaultTemplate = true;
 				}
 
-
-
-				// if ( is_front_page() ) {
-				// 	$mypods = pods('home_fma')->find();
-				// 	$pagename = 'home';
-				// } elseif( $pagename == 'stories') {
-				// 	$mypods = get_posts();
-					
-				// } else {
-				// 	$mypods = pods( $pagename )->find(); 
-				// 	if( ! $mypods->total_found() ) {
-				// 		echo "No Content Found";
-				// 		$pagename = false;
-				// 	}
-				// }
-
 				$mypods = isset($mypods) ? $mypods : array();
-				if($pagename){
+				if($defaultTemplate && $pagename){
+					get_template_part( 'content', 'page' );
+				}
+				else if($pagename){
 					pods_view( '/template-parts/content/content-'.$pagename.'.php' , array('mypod' => $mypods, 'pageDetails'=>$pageDetails));
 				}
 

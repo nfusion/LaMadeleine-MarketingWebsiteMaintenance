@@ -76,63 +76,6 @@ function required_starter_after_parent_theme_setup() {
 }
 add_action( 'after_setup_theme', 'required_starter_after_parent_theme_setup', 11 );
 
-/**
- * Add our theme specific js file and some Google Fonts
- * @return void
- */
-function required_starter_scripts() {
-
-	/**
-	 * Adding google fonts
-	 *
-	 * This is the proper code to add google fonts
-	 * as seen in TwentyTwelve
-	 */
-	$protocol = is_ssl() ? 'https' : 'http';
-	$query_args = array( 'family' => 'Open+Sans:300,600' );
-	wp_enqueue_style(
-		'open-sans',
-		add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ),
-		array(),
-		null
-	);
-}
-add_action('wp_enqueue_scripts', 'required_starter_scripts');
-
-/**
- * Overwrite the default continue reading link
- *
- * This function is an example on how to overwrite
- * the parent theme function to create continue reading
- * links.
- *
- * @return string HTML link with text and permalink to the post/page/cpt
- */
-function required_continue_reading_link() {
-	return ' <a class="read-more" href="'. esc_url( get_permalink() ) . '">' . __( ' Read on! &rarr;', 'requiredstarter' ) . '</a>';
-}
-
-/**
- * Overwrite the defaults of the Orbit shortcode script
- *
- * Accepts all the parameters from http://foundation.zurb.com/docs/orbit.php#optCode
- * to customize the options for the orbit shortcode plugin.
- *
- * @param  array $args default args
- * @return array       your args
- */
-function required_orbit_script_args( $defaults ) {
-	$args = array(
-		'animation' 	=> 'fade',
-		'advanceSpeed' 	=> 8000,
-	);
-	return wp_parse_args( $args, $defaults );
-}
-add_filter( 'req_orbit_script_args', 'required_orbit_script_args' );
-
-
-
-
 
 
 

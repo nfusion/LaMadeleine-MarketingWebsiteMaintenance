@@ -4,9 +4,13 @@ var lamCart = {
         totalShipping:0,
         totalItems:0,
         totalOrder:0,
+        nubItems:0,
         shippingBase:0,
 
+
+
         initialize: function(base){
+                this.totalItems = 0;
                 this.shippingBase = parseFloat(base);
                 this.totalShipping = this.shippingBase;
         },
@@ -23,11 +27,6 @@ var lamCart = {
                 cost =storeItem.attr('data-cost');
                 shipping = storeItem.attr('data-shipping');
 
-
-                this.addItemsTotal(cost);
-                this.addShippingTotal(shipping);
-                this.addOrderTotal();
-
                 /** We need to generate a Dom ID **/
                 itemLineDOMtext = itemLine.replace(/ /g,"");
                 itemLineDOMtext = itemLineDOMtext.replace(/-/g,"");
@@ -36,17 +35,33 @@ var lamCart = {
 
                 /*** If this is the fist time the item is added create a line ***/
                 if(!itemLineDOM.get(0)){
-                        $('#items').append( "<div id='"+itemLineDOMtext+"'>"+itemLine+"</div> <input type='number' id='"+itemLineDOMtext+"Quantity' class='quantity' value='1' data-cost='"+cost+"'  data-shipping='"+shipping+"'' ></input> ");
+                        $('#items').append( "<div id='"+itemLineDOMtext+"' class='lineItem' >"+itemLine+"</div> <input type='number' id='"+itemLineDOMtext+"Quantity' class='quantity' value='1' data-name='"+itemLine+"'data-cost='"+cost+"'  data-shipping='"+shipping+"'' ></input> ");
                 } else {
                         $('#'+itemLineDOMtext+'Quantity').val(parseInt($('#'+itemLineDOMtext+'Quantity').val())+parseInt(1));
                 }
 
+                this.addItemsTotal(cost);
+                this.addShippingTotal(shipping);
+                this.addOrderTotal();
                 
         },
 
-        addShippingTotal: function(increment){
-                this.totalShipping += parseFloat(increment);
+        addShippingTotal: function(){
+                //this.totalShipping += parseFloat(increment);
+                this.nubItems = 0;
+                 $.each( $('.quantity'), function(){
+                    lamCart.nubItems += parseInt($(this).val());
+                 });
+
+
+                 multiplyer = Math.ceil(this.nubItems/3);
+
+                 this.totalShipping = 13.45 * multiplyer;
+
                 $('#shippingTotal').html(this.totalShipping.toFixed(2));
+                $('#payPalShipping').val(this.totalShipping.toFixed(2));
+
+
         },
 
         addItemsTotal: function(increment){
@@ -57,7 +72,6 @@ var lamCart = {
 
         addOrderTotal: function(){
                  this.totalOrder = parseFloat(this.totalItems) + parseFloat(this.totalShipping);
-
                 $('#orderTotal').html(this.totalOrder.toFixed(2));
         },
 
@@ -83,6 +97,48 @@ var lamCart = {
                 this.initialize(baseShipping);
             }
             
+        },
+
+        recalculate: function(){
+
+            this.initialize(this.shippingBase);
+
+            //var scope = this;
+
+            $.each($('.quantity'), function(){
+                multiplyer = $(this).val();
+                if(multiplyer > 0 ){
+                   addToShip = $(this).attr('data-shipping') * parseInt(multiplyer);
+                   addToItems = $(this).attr('data-cost') * parseInt(multiplyer);
+                   lamCart.addItemsTotal(addToItems);
+                   lamCart.addShippingTotal();
+                }
+                //console.log(addToShip);
+            });
+            lamCart.addOrderTotal();
+        },
+
+        prepPayment : function(){
+
+            i = 0;
+             $.each($('.quantity'), function(){
+                if($(this).val() > 0){
+                     i++;
+                multiplyer = $(this).val();
+
+                hiddenLineitem = '<input type="hidden" name="item_name_'+i+'" value="'+$(this).attr('data-name')+'">';
+                hiddenLineAmount = '<input type="hidden" name="amount_'+i+'" value="'+$(this).attr('data-cost')+'">';
+                hiddenQuantity = '<input type="hidden" name="quantity_'+i+'" value="'+multiplyer+'">';
+    
+                $('#payPal').append(hiddenLineitem, hiddenLineAmount,hiddenQuantity);
+
+
+                }
+
+             });
+             //$('#payPalShipping').val(this.totalShipping);
+            $('#payPal').submit();
+             
         },
 
 }

@@ -261,7 +261,7 @@ var LaMadLocations = {
         },
 
         geoErr: function(error){
-            alert('Sorry, we were not able to determine your location.\nPlease feel free to continue browsing.\nMerci');   
+            alert('Pardon, we were not able to determine your location.\nPlease feel free to continue browsing.\nMerci');   
             $('body').addClass('location-error');  
         },
 
