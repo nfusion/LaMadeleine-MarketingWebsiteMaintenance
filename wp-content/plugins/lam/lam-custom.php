@@ -156,7 +156,7 @@ function process_stories($mypod){
   );
 
    while( $mypod->fetch() ) {
-            foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'is_featured', 'call_to_action', 'category') as $key => $value) {
+            foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'top_image', 'is_featured', 'call_to_action', 'category') as $key => $value) {
                 $item[$value] = $mypod->field($value);
                 $item['fma_full'] =  get_the_post_thumbnail($item['id'], 'fma-full');
                 $item['featured_top'] =  get_the_post_thumbnail($item['id'], 'featured-top');
