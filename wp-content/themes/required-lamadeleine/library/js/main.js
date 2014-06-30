@@ -172,9 +172,7 @@ $(function(){
 
 	var $carousel = $('#carousel');
 
-	console.log($carousel);
-
-	if($carousel.length){
+	if($carousel.length > 0){
 		var $controls = $carousel.find('.carousel-controls'),
 				$paginate = $carousel.find('.carousel-paginate');
 
