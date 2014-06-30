@@ -28,8 +28,11 @@ get_header(); ?>
 				// Get promo relationship field
 				$promo = $story->field('fma_promo');
 
+				// Get top image field
+				$topImage = $story->field('top_image');
+
 				// echo "<pre>";
-				// print_r($promo);
+				// print_r($topImage);
 				// echo "</pre>";
 
 				// Start the loop
@@ -72,7 +75,10 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 						<div class="image-wrapper">
-							<?php the_post_thumbnail('featured-top'); ?>
+							<?php
+								// Get attachment image with featured-top image style
+								echo wp_get_attachment_image($topImage['ID'], 'featured-top');
+							?>
 						</div>
 
 						<div class="text-wrapper shadow">

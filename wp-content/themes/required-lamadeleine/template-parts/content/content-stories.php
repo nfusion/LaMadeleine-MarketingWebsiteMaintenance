@@ -48,10 +48,6 @@ $pageTitle = strtolower(get_the_title());
 
     echo display_story_carousel($stories);
 
-    // echo '<pre>';
-    // print_r($stories);
-    // echo '</pre>';
-
     foreach($stories as $story){
 
     		// echo '<pre>';
