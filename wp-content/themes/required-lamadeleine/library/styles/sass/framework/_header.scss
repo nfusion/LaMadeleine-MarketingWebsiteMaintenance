@@ -1,0 +1,165 @@
+/**
+* La Madeleine
+* Global header layout
+**/
+
+#header{
+	width: 100%;
+	min-width: 320px;
+	height: 70px;
+	padding: 8px 10px;
+	position: fixed;
+	z-index: 101;
+	text-align: center;
+	background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
+	.header-wrapper{
+		max-width: 1140px;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+	}
+	.logo{
+		width: 180px;
+		height: auto;
+		margin-top: 2px;
+	}
+	.tagline{
+		display: none;
+	}
+	.icon-menu{
+		float: left;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		font-size: 30px;
+		color: $lightCream;
+		&:before{
+			@include lam-text-shadow();
+		}
+		span{
+			visibility: hidden;
+		}
+	}
+	.icon-wrapper{
+		position: absolute;
+		top: 2px;
+		right: -3px;
+		.icon{
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 50px;
+			color: $lightCream;
+			@include lam-text-shadow();
+			&:hover{
+				cursor: pointer;
+			}
+		}
+		.icon-phone{
+			@include rotate(-45deg);
+			a{
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				width: 50px;
+				height: 50px;
+			}
+		}
+		.icon-pin{
+			top: -2px;
+		}
+		.loading{
+			display: none;
+			position: absolute;
+			top: -9px;
+			right: -7px;
+		}
+	}
+}
+
+// Location has not been set
+body.no-location #header{
+	.icon-wrapper{
+		.icon-phone{
+			display: none;
+		}
+		.icon-pin{
+			display: block;
+		}
+	}
+}
+
+// Location has been set
+body.has-location #header{
+	.icon-wrapper{
+		.icon-phone{
+			display: block;
+		}
+		.icon-pin{
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $xsmall-screen-min){
+	#header{
+		height: 80px;
+		padding: 13px 15px;
+		position: relative;
+		background-position: 0 0;
+		.logo{
+			width: 200px;
+			margin-top: 0;
+		}
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#header{
+		.logo-wrapper{
+			float: right;
+		}
+		.logo{
+			float: left;
+		}
+		.tagline{
+			display: block;
+			float: left;
+			position: relative;
+			top: 19px;
+			left: 2px;
+		}
+		.icon-menu{
+			&:hover{
+				cursor: pointer;
+			}
+			span{
+				visibility: visible;
+				font-size: $h3-font-size;
+				color: $darkBrown;
+				font-family: $ostrich;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				position: relative;
+				top: -5px;
+				left: 15px;
+			}
+		}
+		.icon-wrapper{
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $large-screen-min){
+	#header{
+		.logo-wrapper{
+			padding-right: 20px;
+		}
+		.icon-menu{
+			padding-left: 20px;
+		}
+	}
+}
