@@ -1352,17 +1352,18 @@ body.has-location #header .icon-wrapper .icon-pin {
   }
   /* line 127, ../sass/framework/_header.scss */
   #header .tagline {
+    max-width: 177px;
     display: block;
     float: left;
     position: relative;
     top: 19px;
     left: 2px;
   }
-  /* line 135, ../sass/framework/_header.scss */
+  /* line 136, ../sass/framework/_header.scss */
   #header .icon-menu:hover {
     cursor: pointer;
   }
-  /* line 138, ../sass/framework/_header.scss */
+  /* line 139, ../sass/framework/_header.scss */
   #header .icon-menu span {
     visibility: visible;
     font-size: 22px;
@@ -1374,17 +1375,17 @@ body.has-location #header .icon-wrapper .icon-pin {
     top: -5px;
     left: 15px;
   }
-  /* line 150, ../sass/framework/_header.scss */
+  /* line 151, ../sass/framework/_header.scss */
   #header .icon-wrapper {
     display: none;
   }
 }
 @media (min-width: 1140px) {
-  /* line 158, ../sass/framework/_header.scss */
+  /* line 159, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     padding-right: 20px;
   }
-  /* line 161, ../sass/framework/_header.scss */
+  /* line 162, ../sass/framework/_header.scss */
   #header .icon-menu {
     padding-left: 20px;
   }
