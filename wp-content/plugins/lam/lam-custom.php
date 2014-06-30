@@ -38,35 +38,35 @@ function lam_metaboxes() {
                    'Order Weight'
                    );
 
-    pods_group_add( 'menu_item',
-                   'First Optional Description', 
-                   'First Optional Min Price',
-                   'First Optional Max Price'
-                   );
+    // pods_group_add( 'menu_item',
+    //                'First Optional Description', 
+    //                'First Optional Min Price',
+    //                'First Optional Max Price'
+    //                );
 
-    pods_group_add( 'menu_item',
-                   'Second Optional Description', 
-                   'Second Optional Min Price',
-                   'Second Optional Max Price'
-                   );
+    // pods_group_add( 'menu_item',
+    //                'Second Optional Description', 
+    //                'Second Optional Min Price',
+    //                'Second Optional Max Price'
+    //                );
 
-    pods_group_add( 'menu_item',
-                   'Third Optional Description', 
-                   'Third Optional Min Price',
-                   'Third Optional Max Price'
-                   );
+    // pods_group_add( 'menu_item',
+    //                'Third Optional Description', 
+    //                'Third Optional Min Price',
+    //                'Third Optional Max Price'
+    //                );
 
-    pods_group_add( 'menu_item',
-                   'Fourth Optional Description', 
-                   'Fourth Optional Min Price',
-                   'Fourth Optional Max Price'
-                   );
+    // pods_group_add( 'menu_item',
+    //                'Fourth Optional Description', 
+    //                'Fourth Optional Min Price',
+    //                'Fourth Optional Max Price'
+    //                );
 
-    pods_group_add( 'menu_item',
-                   'Fifth Optional Description', 
-                   'Fifth Optional Min Price',
-                   'Fifth Optional Max Price'
-                   );
+    // pods_group_add( 'menu_item',
+    //                'Fifth Optional Description', 
+    //                'Fifth Optional Min Price',
+    //                'Fifth Optional Max Price'
+    //                );
 
 }
 
