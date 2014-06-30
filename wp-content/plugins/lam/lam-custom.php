@@ -26,46 +26,56 @@ function lam_metaboxes() {
 
 
     pods_group_add('menu_item', 
-                   'Description',
-                   'Price Min',
-                   'Price Max', 
-                   'Menu Key', 
-                   'Story', 
-                   'FMA/Promo', 
-                   'Daypart', 
-                   'Menu Category',
-                   'Featured Item',
-                   'Order Weight'
+                    'Menu Details',
+                   'description , price_min, price_max, menu_key_relationship, story, fma_promo, daypart_relationship, menu_category, featured_item, order_weight');
+
+    pods_group_add( 'menu_item',
+                    'First Option',
+                     'description_1, optional_min_price_1, optional_max_price_1'
+                   );
+    pods_group_add( 'menu_item',
+                    'Second Option',
+                     'description_2, optional_min_price_2, optional_max_price_2'
+                   );
+     pods_group_add( 'menu_item',
+                    'Third Option',
+                     'description_3, optional_min_price_3, optional_max_price_3'
+                   );
+      pods_group_add( 'menu_item',
+                    'Fourth Option',
+                     'description_4, optional_min_price_4, optional_max_price_4'
+                   );
+     pods_group_add( 'menu_item',
+                    'Fifth Option',
+                     'description_5, optional_min_price_5, optional_max_price_5'
                    );
 
     // pods_group_add( 'menu_item',
-    //                'First Optional Description', 
-    //                'First Optional Min Price',
-    //                'First Optional Max Price'
+    //                 'Second Option',
+    //                 'description_1', 
+    //                 'optional_min_price_2',
+    //                 'optional_max_price_2'
     //                );
 
     // pods_group_add( 'menu_item',
-    //                'Second Optional Description', 
-    //                'Second Optional Min Price',
-    //                'Second Optional Max Price'
+    //                 'Third Option',
+    //                 'description_3', 
+    //                 'optional_min_price_3',
+    //                 'optional_max_price_3'
     //                );
 
     // pods_group_add( 'menu_item',
-    //                'Third Optional Description', 
-    //                'Third Optional Min Price',
-    //                'Third Optional Max Price'
+    //                 'Fourth Option',
+    //                 'description_4', 
+    //                 'optional_min_price_4',
+    //                 'optional_max_price_4'
     //                );
 
     // pods_group_add( 'menu_item',
-    //                'Fourth Optional Description', 
-    //                'Fourth Optional Min Price',
-    //                'Fourth Optional Max Price'
-    //                );
-
-    // pods_group_add( 'menu_item',
-    //                'Fifth Optional Description', 
-    //                'Fifth Optional Min Price',
-    //                'Fifth Optional Max Price'
+    //                 'Fifth Option',
+    //                 'description_5', 
+    //                 'optional_min_price_5',
+    //                 'optional_max_price_5'
     //                );
 
 }
