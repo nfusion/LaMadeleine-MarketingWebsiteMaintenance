@@ -88,7 +88,9 @@ $(function(){
 		
 
 		// Sticky the sidebar legend
-		$sidebar.find(".menu-legend").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
+		if($sidebar.is(':visible')){
+			$sidebar.find(".menu-legend").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
+		}
 	};
 
 	/********
