@@ -200,4 +200,13 @@ $(function(){
 			mySwipe.slide($(this).data('order'));
 		});
 	}
+
+	/********
+	PROMO
+	********/
+
+	// Sticky the sidebar promo
+	if($sidebar.is(':visible')){
+		$sidebar.find(".fma-promo").sticky({topSpacing: 20, className: 'promo', getWidthFrom: '#sidebar .sidebar-wrapper'});
+	};
 });
