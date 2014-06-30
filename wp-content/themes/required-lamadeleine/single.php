@@ -88,7 +88,11 @@ get_header(); ?>
 
 						<div class="entry-header">
 							<h1><?php the_title(); ?></h1>
-							<h2><?php echo get_the_excerpt(); ?></h2>
+							<?php 
+								if($post->post_excerpt) :
+									echo '<h2>' . get_the_excerpt() . '</h2>';
+								endif;
+							?>
 						</div>
 
 						<div class="entry-body">
