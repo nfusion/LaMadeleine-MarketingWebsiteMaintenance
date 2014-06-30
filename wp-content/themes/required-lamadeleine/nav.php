@@ -40,7 +40,7 @@
 					<p><a target="_blank" href="http://blog.lamadeleine.com/">Blog</a></p>
 				</div>
 				<div class="link-wrapper">
-					<p><a href="/franchises">Franchises</a></p>
+					<p><a href="/franchise">Franchises</a></p>
 					<p><a href="/careers">Careers</a></p>
 				</div>
 			</div>

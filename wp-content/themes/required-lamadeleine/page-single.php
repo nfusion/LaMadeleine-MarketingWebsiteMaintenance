@@ -8,10 +8,13 @@
 get_header(); 
 
 // Get the current story pod object
-$page = pods('page', get_the_id());
+$podPage = pods('page', get_the_id());
 
 // Get promo relationship field
-$promo = $page->field('fma_promo');
+$promo = $podPage->field('fma_promo');
+
+// Get the subtitle
+$subtitle = $podPage->field('subtitle');
 
 ?>
 
@@ -37,7 +40,11 @@ $promo = $page->field('fma_promo');
 
 						<div class="entry-header">
 							<h1><?php the_title(); ?></h1>
-							<h2><?php echo get_the_excerpt(); ?></h2>
+							<?php 
+								if($subtitle) :
+									echo '<h2>' . $subtitle . '</h2>';
+								endif;
+							?>
 						</div>
 
 						<div class="entry-body">
