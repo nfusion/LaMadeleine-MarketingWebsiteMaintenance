@@ -202,7 +202,8 @@ if ( ! function_exists( 'required_continue_reading_link' ) ) :
  * Returns a "Continue Reading" link for excerpts
  */
 function required_continue_reading_link() {
-	return ' <a class="read-more" href="'. esc_url( get_permalink() ) . '">' . __( '&hellip; Continue reading &rarr;', 'requiredfoundation' ) . '</a>';
+	//return ' <a class="read-more" href="'. esc_url( get_permalink() ) . '">' . __( '&hellip; Continue reading &rarr;', 'requiredfoundation' ) . '</a>';
+	return '';
 }
 endif;
 

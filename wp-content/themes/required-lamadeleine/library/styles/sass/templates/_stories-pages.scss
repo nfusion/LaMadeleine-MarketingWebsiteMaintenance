@@ -1,9 +1,9 @@
 /**
 * La Madeleine
-* Stories Styling
+* Stories & Standard (Generic) Pages Styling
 **/
 
-#content.stories, body.category, body.single-post	{
+#content.stories, #content.is-standard-page, body.category, body.single-post	{
 	#main{
 		background: $medCream;
 		overflow: hidden;
@@ -28,6 +28,9 @@
 			@include box-shadow(rgba(0,0,0,0.3) 0 -3px 3px);
 		}
 	}
+	p{
+		color: $darkBrown;
+	}
 	.entry-header{
 		padding: 10px 0;
 		margin-bottom: 20px;
@@ -47,7 +50,7 @@
 }
 
 @media (min-width: $medium-screen-min){
-	#content.stories, body.category, body.single-post	{
+	#content.stories, #content.is-standard-page, body.category, body.single-post	{
 		#sidebar{
 			display: block;
 		}

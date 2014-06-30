@@ -61,9 +61,9 @@
 
 // Higlight current nav item
 #content.stories .widget-story-nav .story-nav-link.stories,
-body.category-food .widget-story-nav .story-nav-link.category-food,
-body.category-culture .widget-story-nav .story-nav-link.category-culture,
-body.category-community .widget-story-nav .story-nav-link.category-community{
+.category-food .widget-story-nav .story-nav-link.category-food,
+.category-culture .widget-story-nav .story-nav-link.category-culture,
+.category-community .widget-story-nav .story-nav-link.category-community{
   .cat-wrapper{
     background: $medCream;
     &:after{

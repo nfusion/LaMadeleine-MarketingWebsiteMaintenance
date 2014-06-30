@@ -501,3 +501,80 @@ function display_story_carousel($stories){
 
 	};
 };
+
+/**
+*
+* Display promo relationship
+* Accept promo relationship object and type ('mobile' or 'widget'), return promo markup
+*
+**/
+function display_promo($promo, $type){
+
+  // If the promo item object is populated
+  if(count($promo) > 0) :
+
+  		// Get promo meta data
+			$promoMeta = get_post_meta($promo['ID']);
+
+			// Add promo meta to promo object
+			$promo['description'] = $promoMeta['description'][0];
+			$promo['url'] = $promoMeta['url'][0];
+			$promo['cta'] = $promoMeta['cta'][0];
+			$promo['new_window'] = $promoMeta['new_window'][0];
+
+  		// Open promo wrapper, include widget class for consistent styling with sidebar widgets
+  		$str = '<div class="fma-promo ' . $type . '">';
+
+  		// Image size based on component type
+  		if($type == 'mobile') :
+  			$imgType = 'medium';
+  		else :
+  			$imgType = 'location-featured';
+  		endif;
+
+  		// Get promo image as medium thumbnail
+  		$imgSrc = wp_get_attachment_image_src( get_post_thumbnail_id($promo['ID']), $imgType);
+
+  		// Add promo img
+  		$str .= '<img src="' . $imgSrc[0] . '">';
+
+  		// Open text wrapper
+  		$str .= '<div class="text-wrapper">';
+
+  		// Add promo title
+  		$str .= '<h4>' . $promo['post_title'] . '</h4>';
+
+  		// Add promo description
+  		if($type == 'mobile') :
+  			$str .= '<p>' . $promo['description'] . ' <span class="cta">' . $promo['cta'] . '<span class="icon icon-arrow-right"></span></span></p>';
+  		else :
+  			$str .= '<p>' . $promo['description'] . '</p>';
+  		endif;
+  		
+
+  		
+
+  		// Set button target
+  		if($promo['new_window']) :
+  			$btnTarget = '_blank';
+  		else :
+  			$btnTarget = '_self';
+  		endif;
+
+  		// Add link
+  		if($type == 'mobile') :
+  			$str .= '<a class="link-cover" target="' . $btnTarget . '" href="' . $promo['url'] .'"></a>';
+  		else :
+  			$str .= '<a class="btn" target="' . $btnTarget . '" href="' . $promo['url'] .'">' . $promo['cta'] . '</a>';
+  		endif;
+
+  		// Close text wrapper
+  		$str .= '</div>';
+
+  		// Close promo wrapper
+  		$str .= '</div>';
+
+      return $str;
+
+  endif;
+}
