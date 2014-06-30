@@ -75,9 +75,12 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 						<div class="image-wrapper">
-							<?php
-								// Get attachment image with featured-top image style
-								echo wp_get_attachment_image($topImage['ID'], 'featured-top');
+							<?php 
+								if($topImage['ID']) :
+									echo wp_get_attachment_image($topImage['ID'], 'featured-top');
+								else :
+									the_post_thumbnail('featured-top'); 
+								endif;
 							?>
 						</div>
 
