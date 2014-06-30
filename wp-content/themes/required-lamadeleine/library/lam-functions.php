@@ -511,7 +511,7 @@ function display_story_carousel($stories){
 function display_promo($promo, $type){
 
   // If the promo item object is populated
-  if(count($promo) > 0) :
+  if($promo['ID']) :
 
   		// Get promo meta data
 			$promoMeta = get_post_meta($promo['ID']);
@@ -550,9 +550,6 @@ function display_promo($promo, $type){
   		else :
   			$str .= '<p>' . $promo['description'] . '</p>';
   		endif;
-  		
-
-  		
 
   		// Set button target
   		if($promo['new_window']) :
