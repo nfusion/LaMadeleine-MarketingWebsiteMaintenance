@@ -3007,8 +3007,9 @@ aside p {
 /* line 39, ../sass/templates/_stories-pages.scss */
 #content article .entry-header h1 {
   font-size: 20px;
+  text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
 }
-/* line 42, ../sass/templates/_stories-pages.scss */
+/* line 43, ../sass/templates/_stories-pages.scss */
 #content article .entry-header h2 {
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -3018,17 +3019,25 @@ aside p {
 }
 
 @media (min-width: 980px) {
-  /* line 54, ../sass/templates/_stories-pages.scss */
+  /* line 55, ../sass/templates/_stories-pages.scss */
   #content.stories #sidebar, #content.is-standard-page #sidebar, body.category #sidebar, body.single-post #sidebar {
     display: block;
   }
 
-  /* line 59, ../sass/templates/_stories-pages.scss */
+  /* line 60, ../sass/templates/_stories-pages.scss */
   #content article .text-wrapper {
     padding: 0 30px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
+  }
+  /* line 65, ../sass/templates/_stories-pages.scss */
+  #content article .entry-header h1 {
+    font-size: 33px;
+  }
+  /* line 68, ../sass/templates/_stories-pages.scss */
+  #content article .entry-header h2 {
+    font-size: 18px;
   }
 }
 /**
