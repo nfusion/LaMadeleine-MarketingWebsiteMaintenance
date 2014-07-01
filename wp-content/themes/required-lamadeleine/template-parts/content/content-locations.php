@@ -195,7 +195,7 @@ LaMadLocations.initializeLargeMap = function() {
 
     $(document).ready(function(){
 
-        //LaMadLocations.initializeLargeMap();
+        LaMadLocations.initializeLargeMap();
         
     });
 });
