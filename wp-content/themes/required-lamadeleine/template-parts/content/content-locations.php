@@ -175,8 +175,11 @@ LaMadLocations.initializeLargeMap = function() {
                 // Set location list HTML to element
                 $('#location-list').html(locationList);
 
+                 // Set location list HTML to mobile element
+                $('#location-list-mobile').html(locationList);
+
                 // Click event for location list items
-                $('#location-list .location-item').on('click', function(){
+                $('#location-list .location-item, #location-list-mobile .location-item').on('click', function(){
 
                     // Update selected destination image
                     var img = LaMadLocations.getImage($(this).attr('data-id'), true);
