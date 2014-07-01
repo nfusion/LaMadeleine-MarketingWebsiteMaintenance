@@ -282,6 +282,24 @@ function display_menu_item($menuItemObj, $featuredItemObj){
 
   $str .= '<p class="desc">' . $menuItemObj['description'] . '<span class="pricing ' . $isPriced . '"><span class="min">$' . $menuItemObj['price_min'] . '</span><span class="max">$' . $menuItemObj['price_max'] . '</span></span></p>';
 
+  $str .='<div class="optional_item">';
+  for($i=1; $i<=5; $i++){
+     if(  (isset($menuItemObj['description_'.$i])) && ( strlen($menuItemObj['description_'.$i]) >1) ){
+        $str .= "<div class='pricing'>".$menuItemObj['description_'.$i];
+        $str .= '<span class="pricing ' . $isPriced . '">
+                    <span class="min">$' . $menuItemObj['price_min'] . '</span>
+                    <span class="max">$' . $menuItemObj['price_max'] . '</span>
+                </span>
+                </div>
+                ';
+     }
+  }
+
+  $str .='</div>';
+  // print_r($menuItemObj);
+
+  // die();
+
   if($hasStory) :
   	// If this menu item is not also the featured item, display the story CTA under the menu item in the category
   	if($menuItemObj['title'] != $featuredItemObj['title']) :
@@ -566,3 +584,196 @@ function display_promo($promo, $type){
 
   endif;
 }
+
+
+function lam_metaboxes() {
+    // Loction
+    pods_group_add('locations', 'Location Details', 'address, address_2, city, state, zip_code, phone, latitude, longitude, menu_pricing');
+    pods_group_add('locations', 'Store Hours', 'days_of_operation, monday_open, monday_close, tuesday_open, tuesday_close, wednesday_open, wednesday_close, thursday_open, thursday_close, friday_open,friday_close,saturday_open, saturday_close, sunday_open, sunday_close');
+
+
+    pods_group_add('menu_item', 
+                    'Menu Details',
+                   'description , price_min, price_max, menu_key_relationship, story, fma_promo, daypart_relationship, menu_category, featured_item, order_weight');
+
+    pods_group_add( 'menu_item',
+                    'First Option',
+                     'description_1, optional_min_price_1, optional_max_price_1'
+                   );
+    pods_group_add( 'menu_item',
+                    'Second Option',
+                     'description_2, optional_min_price_2, optional_max_price_2'
+                   );
+     pods_group_add( 'menu_item',
+                    'Third Option',
+                     'description_3, optional_min_price_3, optional_max_price_3'
+                   );
+      pods_group_add( 'menu_item',
+                    'Fourth Option',
+                     'description_4, optional_min_price_4, optional_max_price_4'
+                   );
+     pods_group_add( 'menu_item',
+                    'Fifth Option',
+                     'description_5, optional_min_price_5, optional_max_price_5'
+                   );
+}
+
+add_action( 'pods_meta_groups', 'lam_metaboxes', 10, 2 );
+
+
+function process_stories($mypod){
+
+  $params = array(
+      'where' => "t.post_title = '".ucfirst($daypart)."'",
+      'orderby' => "date ASC",
+      'limit' => '1'
+  );
+
+   while( $mypod->fetch() ) {
+            foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'top_image', 'is_featured', 'call_to_action', 'category') as $key => $value) {
+                $item[$value] = $mypod->field($value);
+                $item['fma_full'] =  get_the_post_thumbnail($item['id'], 'fma-full');
+                $item['featured_top'] =  get_the_post_thumbnail($item['id'], 'featured-top');
+                $item['permalink'] =  get_post_permalink($item['id']);
+            }
+            
+              $return[]=$item;
+        }
+
+
+        return $return;
+}
+
+
+
+function process_menu($mypod,$daypart){
+
+
+    $params = array(
+                        'where' => "t.post_title = '".ucfirst($daypart)."'",
+                        'orderby' => "date ASC",
+                        'limit' => '1'
+                    );
+    $daypart_pod = pods('daypart')->find($params);
+
+
+    while( $daypart_pod->fetch() ) {
+        $menu_categories = $daypart_pod->field('menu_categories');
+    }
+
+
+    
+    //$menu = explode(',', $menu_categories);
+    //$menu = array_flip(explode(',', $menu_categories));
+
+    //$menu_categories = str_replace(', ', ',', $menu_categories);
+
+    $menu = array_fill_keys(explode(', ', $menu_categories),array());
+    
+
+
+
+
+    if($mypod->total_found()){
+        while( $mypod->fetch() ) {
+            foreach (array('featured_item',
+                           'title',
+                           'description', 
+                           'fma_promo', 
+                           'story', 
+                           'menu_key_relationship', 
+                           'price_max', 
+                           'price_min',
+                           'daypart_relationship',
+                           'menu_category', 
+                           'description_1', 
+                           'optional_min_price_1',
+                           'optional_max_price_1',
+
+                           'description_2', 
+                           'optional_min_price_2',
+                           'optional_max_price_2',
+
+                           'description_3', 
+                           'optional_min_price_3',
+                           'optional_max_price_3',
+
+                           'description_4', 
+                           'optional_min_price_4',
+                           'optional_max_price_4',
+
+                           'description_5', 
+                           'optional_min_price_5',
+                           'optional_max_price_5'
+
+                           ) as $key => $value) {
+                 $item[$value] = $mypod->field($value);
+            }
+
+            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
+            $item['featured_img_story'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured-story' );
+           
+
+            switch ($daypart) {
+              case 'Dinner & Wine':
+                $daySearch = 'Dinner';
+
+                break;
+               case 'Lunch':
+                $daySearch = 'Lunch';
+
+                break;
+               case 'Breakfast':
+                $daySearch = 'Breakfast';
+
+                break;
+              
+              default:
+               $daySearch = 'Bakery';
+                break;
+            }
+            
+
+              if(in_array( $item['menu_category']['slug'],  explode(', ', $menu_categories) )){
+                
+                if(in_array($daySearch , $item['daypart_relationship'])){
+
+                    $menu[$item['menu_category']['slug'] ] ['items'][] = $item;
+
+                    if($item['featured_item'] == 1){
+                        $menu[$item['menu_category']['slug']]['featured'] = $item;
+                    }
+                }
+              }
+        }
+
+        return $menu;
+    }
+}
+
+add_action( 'lam_process_menu', 'process_menu' );
+
+
+
+
+
+
+/**
+* Overwrite the lable 'Posts' with 'Stoies'
+*/
+add_filter(  'gettext',  'change_post_to_story'  );
+add_filter(  'ngettext',  'change_post_to_story'  );
+add_filter( 'esc_html', 'change_post_to_story');
+
+
+function change_post_to_story( $translated ) {
+  if( substr_count($translated, 'post.php')<1){
+    $translated = str_ireplace(  'Post',  'Story',  $translated );  // ireplace is PHP5 only
+    $translated = str_ireplace(  'Storys',  'Stories',  $translated );  // ireplace is PHP5 only
+  }
+  return $translated;
+}
+
+
+
+
