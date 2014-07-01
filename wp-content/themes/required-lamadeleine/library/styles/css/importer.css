@@ -3153,59 +3153,62 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 /* line 7, ../sass/templates/_stories-pages.scss */
 body.single-post #content, body.single-post #main, body.single-post #main .post-box {
   height: 100%;
+}
+/* line 10, ../sass/templates/_stories-pages.scss */
+body.single-post #main .post-box {
   padding-bottom: 30px;
 }
 
-/* line 14, ../sass/templates/_stories-pages.scss */
+/* line 16, ../sass/templates/_stories-pages.scss */
 #content.page-single #main .post-box {
   padding-bottom: 30px;
 }
 
-/* line 20, ../sass/templates/_stories-pages.scss */
+/* line 22, ../sass/templates/_stories-pages.scss */
 #content.stories #main, #content.page-single #main, body.category #main, body.single-post #main {
   background: #f4f2df;
   overflow: hidden;
   border-right: 1px solid #e5d7cd;
 }
-/* line 25, ../sass/templates/_stories-pages.scss */
+/* line 27, ../sass/templates/_stories-pages.scss */
 #content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
   display: none;
 }
 
-/* line 32, ../sass/templates/_stories-pages.scss */
+/* line 34, ../sass/templates/_stories-pages.scss */
 #content article .image-wrapper img {
   width: 100%;
   display: block;
 }
-/* line 36, ../sass/templates/_stories-pages.scss */
+/* line 38, ../sass/templates/_stories-pages.scss */
 #content article .text-wrapper {
   padding: 0 15px;
   position: relative;
   z-index: 2;
 }
-/* line 40, ../sass/templates/_stories-pages.scss */
+/* line 42, ../sass/templates/_stories-pages.scss */
 #content article .text-wrapper.shadow {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
 }
-/* line 44, ../sass/templates/_stories-pages.scss */
+/* line 46, ../sass/templates/_stories-pages.scss */
 #content article p {
   color: #310d00;
 }
-/* line 47, ../sass/templates/_stories-pages.scss */
+/* line 49, ../sass/templates/_stories-pages.scss */
 #content article .entry-header {
   padding: 10px 0;
   margin-bottom: 20px;
   text-align: center;
   border-bottom: 1px dashed #cbaf9a;
 }
-/* line 52, ../sass/templates/_stories-pages.scss */
+/* line 54, ../sass/templates/_stories-pages.scss */
 #content article .entry-header h1 {
   font-size: 20px;
   text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
 }
-/* line 56, ../sass/templates/_stories-pages.scss */
+/* line 58, ../sass/templates/_stories-pages.scss */
 #content article .entry-header h2 {
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -3215,23 +3218,23 @@ body.single-post #content, body.single-post #main, body.single-post #main .post-
 }
 
 @media (min-width: 980px) {
-  /* line 68, ../sass/templates/_stories-pages.scss */
+  /* line 70, ../sass/templates/_stories-pages.scss */
   #content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
     display: block;
   }
 
-  /* line 73, ../sass/templates/_stories-pages.scss */
+  /* line 75, ../sass/templates/_stories-pages.scss */
   #content article .text-wrapper {
     padding: 0 30px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
   }
-  /* line 78, ../sass/templates/_stories-pages.scss */
+  /* line 80, ../sass/templates/_stories-pages.scss */
   #content article .entry-header h1 {
     font-size: 33px;
   }
-  /* line 81, ../sass/templates/_stories-pages.scss */
+  /* line 83, ../sass/templates/_stories-pages.scss */
   #content article .entry-header h2 {
     font-size: 18px;
   }
