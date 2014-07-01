@@ -68,7 +68,7 @@ $(document).ready(function(){
 
             <div class='store_item row'>
                 <div class='store_item_image six columns' >
-                        <img src="/wp-content/uploads/2014/06/fma-3-full-174x90.jpg"><br>
+                        <img src="/wp-content/uploads/2014/06/LM_FMA_HopeByTheJarful.jpg"><br>
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Tomato Basil Soupe Trio</h4>
