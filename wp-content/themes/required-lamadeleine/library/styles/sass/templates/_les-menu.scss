@@ -66,12 +66,25 @@
 			text-align: center;
 			border-top: 1px dashed $fadedBrown;
 			border-bottom: 1px dashed $fadedBrown;
-			a{
+			a.mobile-btn-link{
 				display: block;
 				margin: 5px 0;
 				padding: 10px 0;
 				background: $lightCream;
 				@include border-radius(5px);
+			}
+			.location-name{
+				font-weight: bold;
+				font-style: italic;
+				margin-bottom: 10px;
+			}
+			.change-location{
+				padding: 6px 0;
+				font-size: 9px;
+				font-weight: bold;
+				a{
+					font-size: 9px;
+				}
 			}
 		}
 		.category-wrapper{
@@ -266,6 +279,22 @@
 
 @media (min-width: $medium-screen-min){
 	.breakfast,.lunch,.dinner,.bakery{
+
+		.menu-details{
+			.menu-links{
+				a.mobile-btn-link{
+					padding: 0;
+					background: none;
+				}
+				.location-name{
+					position: absolute;
+					top: -2px;
+					left: 0;
+					right: 0;
+				}
+			}
+		}
+
 		#sidebar{
 			display: block;
 
