@@ -1,0 +1,29 @@
+/**
+* La Madeleine
+* Fonts
+**/
+
+// Import Google Web Fonts
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
+
+// Import generated FontSquirrel fonts
+@font-face {
+    font-family: 'ostrich_sans_roundregular';
+    src: url('../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot');
+    src: url('../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot?#iefix') format('embedded-opentype'),
+    		 url('../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.svg#ostrich_sans_roundregular') format('svg'),
+         url('../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.woff') format('woff'),
+         url('../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Serifs
+$merriweather: 'Merriweather', serif;
+$playfair: 'Playfair Display', serif;
+$georgia: Georgia, serif;
+
+// Sans-serifs
+$lato: 'Lato', sans-serif;
+$ostrich: 'ostrich_sans_roundregular', sans-serif;
