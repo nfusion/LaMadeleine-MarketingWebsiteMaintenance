@@ -163,11 +163,25 @@ var LaMadLocations = {
             var d=new Date();
             dayIndex = d.getDay();
             dayOfWeek = weekday[dayIndex];
+            ucaseDayofWeek = dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1)
+
+            if(location.days_closed.indexOf(ucaseDayofWeek) >=0){
+                var closed_today = 'Closed on '+ucaseDayofWeek;
+            } else {
+                closed_today = false;
+            }
+
+
             var today_open = dayOfWeek+'_open';
             var today_close = dayOfWeek+'_close';
             /*************************************/
 
+
+            
+
+
             var todayHours = {
+                closed_today: closed_today,
                 open: location[today_open],
                 close: location[today_close]
             };
@@ -190,10 +204,19 @@ var LaMadLocations = {
             LaMadLocations.nearestLocationObj = location;
 
             // Full size location widget
-            $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + address + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.open + ' - ' + todayHours.close + '</div>');
-            
+
+            if(todayHours.closed_today == false){
+                $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + address + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.open + ' - ' + todayHours.close + '</div>');
+            } else {
+                $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + address + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.closed_today + '</div>');
+            }
             // Mobile location widget
-            $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn get-directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a><div class="other-locations"><hr class="dashed"><h2>Other Nearby Locations</h2><div id="location-list-mobile"></div></div>');
+            if(todayHours.closed_today == false){
+                $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn get-directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a><div class="other-locations"><hr class="dashed"><h2>Other Nearby Locations</h2><div id="location-list-mobile"></div></div>');
+            } else {
+                $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.closed_today+ '</div><div class="btn-wrapper"><a class="btn get-directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a><div class="other-locations"><hr class="dashed"><h2>Other Nearby Locations</h2><div id="location-list-mobile"></div></div>');
+
+            }
 
             if( (typeof(skipCookie) == 'undefined') || (skipCookie == false) ){
                 LaMadLocations.setLocationCookie(location);

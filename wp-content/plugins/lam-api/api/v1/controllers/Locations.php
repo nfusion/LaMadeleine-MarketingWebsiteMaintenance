@@ -12,8 +12,8 @@
 				
 				$featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'location-featured');
 				$thumbImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'thumbnail');
-				$loc->images->featured = $featuredImg[0];
-				$loc->images->thumbnail = $thumbImg[0];
+				$loc->images['featured'] = $featuredImg[0];
+				$loc->images['thumbnail'] = $thumbImg[0];
 
 			}
 			
