@@ -3152,7 +3152,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 **/
 /* line 7, ../sass/templates/_stories-pages.scss */
 body.single-post #main .post-box, #content.page-single #main .post-box {
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 /* line 13, ../sass/templates/_stories-pages.scss */
