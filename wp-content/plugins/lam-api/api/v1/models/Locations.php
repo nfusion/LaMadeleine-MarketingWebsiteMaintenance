@@ -20,6 +20,8 @@ class Locations {
 		lwp_pods_locations.menu_pricing,
 		lwp_pods_locations.latitude,
 		lwp_pods_locations.longitude,
+
+		lwp_pods_locations.days_closed,
 		 
 		DATE_FORMAT(lwp_pods_locations.sunday_open, '%l:%i %p') as sunday_open, 
 		DATE_FORMAT(lwp_pods_locations.sunday_close, '%l:%i %p') as sunday_close,

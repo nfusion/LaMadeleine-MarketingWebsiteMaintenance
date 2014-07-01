@@ -70,7 +70,6 @@ $(function(){
 			// Show pricing
 			$content.find('.menu-details').addClass(myLocation.menu_pricing.toLowerCase());
 
-			console.log(myLocation);
 			// Update "Choose a location" text
 			$content.find('.set-location').html('<div class="location-name">' + myLocation.title + '<div class="change-location">(<a href="/locations">Change</a>)</div></div>');
 		}
