@@ -222,6 +222,3 @@ LaMadLocations.initializeLargeMap = function() {
 </div>
 <?php
 //print_r($mypod);
-	 
-
-    
