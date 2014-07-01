@@ -22,7 +22,7 @@ add_action( 'pods_meta_groups', 'lam_metaboxes', 10, 2 );
 function lam_metaboxes() {
     // Loction
     pods_group_add('locations', 'Location Details', 'address, address_2, city, state, zip_code, phone, latitude, longitude, menu_pricing');
-    pods_group_add('locations', 'Store Hours', 'days_of_operation', 'monday_open, monday_close, tuesday_open, tuesday_close, wednesday_open, wednesday_close, thursday_open, thursday_close, friday_open,friday_close,saturday_open, saturday_close, sunday_open, sunday_close');
+    pods_group_add('locations', 'Store Hours', 'days_of_operation, monday_open, monday_close, tuesday_open, tuesday_close, wednesday_open, wednesday_close, thursday_open, thursday_close, friday_open,friday_close,saturday_open, saturday_close, sunday_open, sunday_close');
 
 
     pods_group_add('menu_item', 
