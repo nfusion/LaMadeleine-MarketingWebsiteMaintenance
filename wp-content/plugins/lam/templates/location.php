@@ -97,16 +97,20 @@
                 $loading = '<div class="loading"><div class="floatingCirclesG"><div class="f_circleG frotateG_01"></div><div class="f_circleG frotateG_02"></div><div class="f_circleG frotateG_03"></div><div class="f_circleG frotateG_04"></div><div class="f_circleG frotateG_05"></div><div class="f_circleG frotateG_06"></div><div class="f_circleG frotateG_07"></div><div class="f_circleG frotateG_08"></div></div></div>';
 
                 if($onLocationPage == 'true') { 
-                    $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div></div>' . $loading . '</div><div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div></div>';
+                    //$locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div></div>' . $loading . '</div><div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div></div>';
                 } else {
                     $locationMarkup = '<div class="back map-view"><a class="map-link" href="/locations"></a><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>' . $loading;
                 }
 
-                echo $locationMarkup;
+                //echo $locationMarkup;
 
                 ?>
 
             </div>
+
         </div>
+
     </div>
+
 </div>
+
