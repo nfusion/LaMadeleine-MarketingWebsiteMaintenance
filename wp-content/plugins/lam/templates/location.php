@@ -86,20 +86,63 @@
                     </div>
                 </div>
 
-                <?php 
+                <?php
 
+                /** Home view only **/
+
+                // Home view - Small map container
                 $map = '<div id="map"></div>';
-                $locationImage = '<div id="location-image"></div>';
-                $locationInfo = '<div id="location-info"></div>';
-                $locationsList = '<div id="location-list"></div>';
-                $btnWrapper = '<div class="btn-wrapper"><a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a><a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a></div>';
-                $btnWrapperLocations = '<div class="btn-wrapper"><a class="btn-light daypart-menu" href="#">Menu</a><a class="btn-light get-directions" href="#">Directions</a><a class="btn-light" target="_blank" href="https://online.lamadeleine.com">Order</a></div>';
-                $loading = '<div class="loading"><div class="floatingCirclesG"><div class="f_circleG frotateG_01"></div><div class="f_circleG frotateG_02"></div><div class="f_circleG frotateG_03"></div><div class="f_circleG frotateG_04"></div><div class="f_circleG frotateG_05"></div><div class="f_circleG frotateG_06"></div><div class="f_circleG frotateG_07"></div><div class="f_circleG frotateG_08"></div></div></div>';
 
+                // Home view - Button wrapper and buttons
+                $btnWrapper = '
+                <div class="btn-wrapper">
+                    <a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a>
+                    <a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a>
+                </div>';
+
+                /** Location view only **/
+
+                // Locations view - Button wrapper and buttons
+                $btnWrapperLocations = '
+                <div class="btn-wrapper">
+                    <a class="btn-light daypart-menu" href="#">Menu</a>
+                    <a class="btn-light get-directions" href="#">Directions</a>
+                    <a class="btn-light" target="_blank" href="https://online.lamadeleine.com">Order</a>
+                </div>';
+
+                // Locations view - Locations list container
+                $locationsList = '<div id="location-list"></div>';
+
+                /** Both home and location views **/
+
+                // Selected location image container
+                $locationImage = '<div id="location-image"></div>';
+
+                // Selected location info container
+                $locationInfo = '<div id="location-info"></div>';
+
+                // Loading indicator
+                $loading = '
+                <div class="loading">
+                    <div class="floatingCirclesG">
+                        <div class="f_circleG frotateG_01"></div>
+                        <div class="f_circleG frotateG_02"></div>
+                        <div class="f_circleG frotateG_03"></div>
+                        <div class="f_circleG frotateG_04"></div>
+                        <div class="f_circleG frotateG_05"></div>
+                        <div class="f_circleG frotateG_06"></div>
+                        <div class="f_circleG frotateG_07"></div>
+                        <div class="f_circleG frotateG_08"></div>
+                    </div>
+                </div>';
+
+                // If this is the location view
                 if($onLocationPage == 'true') { 
-                    //$locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div></div>' . $loading . '</div><div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div></div>';
-                } else {
-                    $locationMarkup = '<div class="back map-view"><a class="map-link" href="/locations"></a><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>' . $loading;
+                    $locationMarkup = '<div class="back location-view">' . $locationImage . $locationInfo . $btnWrapperLocations . '</div>' . $loading . '<div class="other-locations"><hr class="dashed"><h3>Other Nearby Locations</h3>' . $locationsList . '</div>';
+                } 
+                // Else home view
+                else {
+                    $locationMarkup = '<div class="back map-view"><a class="map-link" href="/locations"></a><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div>' . $loading;
                 }
 
                 //echo $locationMarkup;
