@@ -166,12 +166,13 @@ var LaMadLocations = {
             ucaseDayofWeek = dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1)
 
 
-            if((typeof(location.days_closed)!='undefined')&&(location.days_closed.indexOf(ucaseDayofWeek) >=0)){
-                var closed_today = 'Closed on '+ucaseDayofWeek;
-            } else {
-                closed_today = false;
-            }
-
+            closed_today = false;
+           
+            if(( location.days_closed !=null )){
+                if(location.days_closed.indexOf(ucaseDayofWeek) >=0){
+                        var closed_today = 'Closed on '+ucaseDayofWeek;
+                    }   
+             }
 
             var today_open = dayOfWeek+'_open';
             var today_close = dayOfWeek+'_close';
