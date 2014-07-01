@@ -26,14 +26,13 @@
 		}
 
 
-		public static function findImage( $app, $postID ) {
+		public static function findImage( $app, $postID, $sized = 'location-featured' ) {
 
-			
 			header("Content-Type: application/json");
-			$return = wp_get_attachment_url( get_post_thumbnail_id( $postID ) );
+			$return = wp_get_attachment_image_src( get_post_thumbnail_id($postID), $sized);
 			if($return){
 				
-				echo  json_encode($return );
+				echo  json_encode($return[0] );
 			} 
 			return;
 			
