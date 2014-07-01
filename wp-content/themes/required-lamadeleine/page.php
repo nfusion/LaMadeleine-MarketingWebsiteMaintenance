@@ -93,13 +93,13 @@ get_header(); ?>
 					case 'store':
 						$pageDetails['title']=$pagename;
 						$mypods = array();
-						$sidebar = 'sidebar-store';
+						$sidebar = 'sidebar-story';
 					break;
 
 					case 'thank-you':
 						$pageDetails['title']=$pagename;
 						$mypods = array();
-						$sidebar = 'sidebar-store';
+						$sidebar = 'sidebar-story';
 					break;
 					
 					case 'stories':
