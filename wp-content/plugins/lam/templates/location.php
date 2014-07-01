@@ -102,7 +102,7 @@
                     $locationMarkup = '<div class="back map-view"><a class="map-link" href="/locations"></a><div id="returned_map">' . $map . $locationInfo . $btnWrapper . '</div></div></div>' . $loading;
                 }
 
-                echo $locationMarkup;
+                //echo $locationMarkup;
 
                 ?>
 
