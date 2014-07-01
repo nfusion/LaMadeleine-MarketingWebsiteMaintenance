@@ -25,7 +25,7 @@ LaMadLocations.initializeLargeMap = function() {
                 mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
             },
             streetViewControl: false,
-            scrollwheel: false,
+            scrollwheel: true,
             panControl:false,
             zoomControl: true,
             zoomControlOptions: {
