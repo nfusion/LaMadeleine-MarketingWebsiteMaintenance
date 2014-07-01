@@ -21,8 +21,6 @@
                         categoryList += '<li data-cat-name="' + slug + '"><span>' + category + '</span></li>';
                     });
 
-                    console.log(obj);
-
                     if(index == 0){
                         setDaypartCookie(obj);
                         str += '<a class="daypart-link ' + obj.link.post_name + '" href="'+obj.link.guid+'"><div class="daypart featured"><div class="daypart-image"><img src="' + obj.featured_img + '" alt="La Madeleine ' + obj.daypart + '"></div><div class="daypart-text"><div class="title">' + obj.daypart + '</div><div class="desc">' + obj.descriptor + '</div><ul class="categories">' + categoryList + '</ul></div></div></a>';

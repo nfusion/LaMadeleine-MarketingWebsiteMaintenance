@@ -10,7 +10,6 @@ $(function(){
 			$main = $content.find('#main'),
 			$sidebar = $content.find('#sidebar');
 
-
 	/********
 	COOKIES
 	********/
@@ -211,4 +210,22 @@ $(function(){
 	if($sidebar.is(':visible')){
 		$sidebar.find(".fma-promo").sticky({topSpacing: 20, className: 'promo', getWidthFrom: '#sidebar .sidebar-wrapper'});
 	};
+
+	/*********
+	IE SUPPORT
+	*********/
+
+	function msieCheck() {
+
+		var ua = window.navigator.userAgent;
+	  var msie = ua.indexOf("MSIE ");
+
+	  // If Internet Explorer, add class to <html> with version
+		if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+			$('html').addClass('ie');
+		};
+	};
+
+  msieCheck();
+
 });

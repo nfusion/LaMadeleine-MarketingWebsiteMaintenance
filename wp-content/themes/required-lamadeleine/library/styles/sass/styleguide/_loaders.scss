@@ -6,7 +6,7 @@
 
 /** Loader 1 Start **/
 
-#floatingCirclesG{
+.floatingCirclesG{
 position:relative;
 width:65px;
 height:65px;
@@ -49,7 +49,7 @@ animation-iteration-count:infinite;
 animation-direction:linear;
 }
 
-#frotateG_01{
+.frotateG_01{
 left:0;
 top:27px;
 -moz-animation-delay:0.36s;
@@ -59,7 +59,7 @@ top:27px;
 animation-delay:0.36s;
 }
 
-#frotateG_02{
+.frotateG_02{
 left:8px;
 top:8px;
 -moz-animation-delay:0.48s;
@@ -69,7 +69,7 @@ top:8px;
 animation-delay:0.48s;
 }
 
-#frotateG_03{
+.frotateG_03{
 left:27px;
 top:0;
 -moz-animation-delay:0.6s;
@@ -79,7 +79,7 @@ top:0;
 animation-delay:0.6s;
 }
 
-#frotateG_04{
+.frotateG_04{
 right:8px;
 top:8px;
 -moz-animation-delay:0.72s;
@@ -89,7 +89,7 @@ top:8px;
 animation-delay:0.72s;
 }
 
-#frotateG_05{
+.frotateG_05{
 right:0;
 top:27px;
 -moz-animation-delay:0.84s;
@@ -99,7 +99,7 @@ top:27px;
 animation-delay:0.84s;
 }
 
-#frotateG_06{
+.frotateG_06{
 right:8px;
 bottom:8px;
 -moz-animation-delay:0.96s;
@@ -109,7 +109,7 @@ bottom:8px;
 animation-delay:0.96s;
 }
 
-#frotateG_07{
+.frotateG_07{
 left:27px;
 bottom:0;
 -moz-animation-delay:1.08s;
@@ -119,7 +119,7 @@ bottom:0;
 animation-delay:1.08s;
 }
 
-#frotateG_08{
+.frotateG_08{
 left:8px;
 bottom:8px;
 -moz-animation-delay:1.2s;

@@ -524,7 +524,7 @@ a.btn-light:hover {
 **/
 /** Loader 1 Start **/
 /* line 9, ../sass/styleguide/_loaders.scss */
-#floatingCirclesG {
+.floatingCirclesG {
   position: relative;
   width: 65px;
   height: 65px;
@@ -569,7 +569,7 @@ a.btn-light:hover {
 }
 
 /* line 52, ../sass/styleguide/_loaders.scss */
-#frotateG_01 {
+.frotateG_01 {
   left: 0;
   top: 27px;
   -moz-animation-delay: 0.36s;
@@ -580,7 +580,7 @@ a.btn-light:hover {
 }
 
 /* line 62, ../sass/styleguide/_loaders.scss */
-#frotateG_02 {
+.frotateG_02 {
   left: 8px;
   top: 8px;
   -moz-animation-delay: 0.48s;
@@ -591,7 +591,7 @@ a.btn-light:hover {
 }
 
 /* line 72, ../sass/styleguide/_loaders.scss */
-#frotateG_03 {
+.frotateG_03 {
   left: 27px;
   top: 0;
   -moz-animation-delay: 0.6s;
@@ -602,7 +602,7 @@ a.btn-light:hover {
 }
 
 /* line 82, ../sass/styleguide/_loaders.scss */
-#frotateG_04 {
+.frotateG_04 {
   right: 8px;
   top: 8px;
   -moz-animation-delay: 0.72s;
@@ -613,7 +613,7 @@ a.btn-light:hover {
 }
 
 /* line 92, ../sass/styleguide/_loaders.scss */
-#frotateG_05 {
+.frotateG_05 {
   right: 0;
   top: 27px;
   -moz-animation-delay: 0.84s;
@@ -624,7 +624,7 @@ a.btn-light:hover {
 }
 
 /* line 102, ../sass/styleguide/_loaders.scss */
-#frotateG_06 {
+.frotateG_06 {
   right: 8px;
   bottom: 8px;
   -moz-animation-delay: 0.96s;
@@ -635,7 +635,7 @@ a.btn-light:hover {
 }
 
 /* line 112, ../sass/styleguide/_loaders.scss */
-#frotateG_07 {
+.frotateG_07 {
   left: 27px;
   bottom: 0;
   -moz-animation-delay: 1.08s;
@@ -646,7 +646,7 @@ a.btn-light:hover {
 }
 
 /* line 122, ../sass/styleguide/_loaders.scss */
-#frotateG_08 {
+.frotateG_08 {
   left: 8px;
   bottom: 8px;
   -moz-animation-delay: 1.2s;
@@ -2476,6 +2476,75 @@ aside p {
     opacity: 0;
   }
 }
+/*******
+IE SUPPORT FOR FLIPPING TRANSITION
+*******/
+/* line 452, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 454, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta .front, html.ie #sidebar .widget-location #location-cta .back {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+/* line 458, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta .front {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+/* line 461, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta .back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+/* line 465, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 468, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 471, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
 /**
 * La Madeleine
 * Story Navigation widget
