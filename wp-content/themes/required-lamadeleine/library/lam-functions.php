@@ -276,7 +276,7 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   $str .= '</div>';
 
   // Echo menu item description
-  if($menuItemObj['price_min'] == '0.00') :
+  if(($menuItemObj['price_min'] == '0.00') && ($menuItemObj['optional_min_price_'.$i] == 0)):
   	$isPriced = "ispriced-false";
   endif;
 
@@ -287,8 +287,8 @@ function display_menu_item($menuItemObj, $featuredItemObj){
      if(  (isset($menuItemObj['description_'.$i])) && ( strlen($menuItemObj['description_'.$i]) >1) ){
         $str .= "<div class='pricing'>".$menuItemObj['description_'.$i];
         $str .= '<span class="pricing ' . $isPriced . '">
-                    <span class="min">$' . $menuItemObj['price_min'] . '</span>
-                    <span class="max">$' . $menuItemObj['price_max'] . '</span>
+                    <span class="min">$' . $menuItemObj['optional_min_price_'.$i] . '</span>
+                    <span class="max">$' . $menuItemObj['optional_max_price_'.$i] . '</span>
                 </span>
                 </div>
                 ';
