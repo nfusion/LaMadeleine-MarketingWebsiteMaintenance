@@ -3151,50 +3151,55 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 * Stories & Standard (Generic) Pages Styling
 **/
 /* line 7, ../sass/templates/_stories-pages.scss */
+body.single-post #content, body.single-post #main, body.single-post #main .post-box {
+  height: 100%;
+}
+
+/* line 13, ../sass/templates/_stories-pages.scss */
 #content.stories #main, #content.page-single #main, body.category #main, body.single-post #main {
   background: #f4f2df;
   overflow: hidden;
   border-right: 1px solid #e5d7cd;
 }
-/* line 12, ../sass/templates/_stories-pages.scss */
+/* line 18, ../sass/templates/_stories-pages.scss */
 #content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
   display: none;
 }
 
-/* line 19, ../sass/templates/_stories-pages.scss */
+/* line 25, ../sass/templates/_stories-pages.scss */
 #content article .image-wrapper img {
   width: 100%;
   display: block;
 }
-/* line 23, ../sass/templates/_stories-pages.scss */
+/* line 29, ../sass/templates/_stories-pages.scss */
 #content article .text-wrapper {
   padding: 0 15px;
   position: relative;
   z-index: 2;
 }
-/* line 27, ../sass/templates/_stories-pages.scss */
+/* line 33, ../sass/templates/_stories-pages.scss */
 #content article .text-wrapper.shadow {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
 }
-/* line 31, ../sass/templates/_stories-pages.scss */
+/* line 37, ../sass/templates/_stories-pages.scss */
 #content article p {
   color: #310d00;
 }
-/* line 34, ../sass/templates/_stories-pages.scss */
+/* line 40, ../sass/templates/_stories-pages.scss */
 #content article .entry-header {
   padding: 10px 0;
   margin-bottom: 20px;
   text-align: center;
   border-bottom: 1px dashed #cbaf9a;
 }
-/* line 39, ../sass/templates/_stories-pages.scss */
+/* line 45, ../sass/templates/_stories-pages.scss */
 #content article .entry-header h1 {
   font-size: 20px;
   text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
 }
-/* line 43, ../sass/templates/_stories-pages.scss */
+/* line 49, ../sass/templates/_stories-pages.scss */
 #content article .entry-header h2 {
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -3204,23 +3209,23 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 }
 
 @media (min-width: 980px) {
-  /* line 55, ../sass/templates/_stories-pages.scss */
+  /* line 61, ../sass/templates/_stories-pages.scss */
   #content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
     display: block;
   }
 
-  /* line 60, ../sass/templates/_stories-pages.scss */
+  /* line 66, ../sass/templates/_stories-pages.scss */
   #content article .text-wrapper {
     padding: 0 30px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
   }
-  /* line 65, ../sass/templates/_stories-pages.scss */
+  /* line 71, ../sass/templates/_stories-pages.scss */
   #content article .entry-header h1 {
     font-size: 33px;
   }
-  /* line 68, ../sass/templates/_stories-pages.scss */
+  /* line 74, ../sass/templates/_stories-pages.scss */
   #content article .entry-header h2 {
     font-size: 18px;
   }
