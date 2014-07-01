@@ -109,22 +109,106 @@
       }
     }
   }
+  .other-locations{
+    margin-top: 60px;
+    @include opacity(1);
+    @include transition-duration(0.5s);
+  }
+  #location-list-mobile{
+    height: 260px;
+    .location-item{
+      width: 100%;
+      margin-bottom: 15px;
+      overflow: hidden;
+      list-style: none;
+      position: relative;
+      text-align: left;
+      @include transition-duration(0.25s);
+      &:after{
+        color: $lightBrown;
+        font-family: 'icomoon';
+        font-size: 24px;
+        content: "\e620";
+        position: absolute;
+        top: 35%;
+        right: 10px;
+        @include transition-duration(0.25s);
+      }
+      &:hover{
+        background: $medCream;
+        cursor: pointer;
+        &:after{
+          right: 0px;
+        }
+      }
+    }
+    .location-thumb{
+      width: 75px;
+      height: 75px;
+      float: left;
+    }
+    .location-info{
+      padding: 20px 25px 5px 15px;
+      float: left;
+    }
+    .location-name{
+      font-family: $merriweather;
+      margin-bottom: 2px;
+    }
+    .location-city{
+      font-size: 11px;
+      font-style: italic;
+    }
+  }
 }
 
-// Hide full size sidebar location widget from mobile
-// Except for location list
-#sidebar {
+// No location selected
+.no-location{
+  #sidebar #widget-location-mobile{
+    @include opacity(0);
+  }
+}
+
+#sidebar{
   .zip-wrapper{
     display: none;
   }
   #widget-location-full{
-    .widget-title, #location-cta, .loading{
+    display: none;
+  }
+}
+
+// Sidebar location widget
+@media (min-width: $medium-screen-min){
+
+  #sidebar {
+    .zip-wrapper{
+      display: block;
+    }
+    #widget-location-mobile{
       display: none;
     }
-    #location-list{
+    #widget-location-full{
+      display: block;
+    }
+  }
+
+  #mobile-location{
+    display: none;
+  }
+
+  #sidebar .widget-location{
+    display: block;
+    border-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    #widget-location-mobile{
+      display: none;
+    }
+    #widget-location-full{
+      position: relative;
+      #location-list{
       height: 260px;
-      // overflow-y: auto;
-      // -webkit-overflow-scrolling: touch;
     }
     .other-locations{
       @include opacity(1);
@@ -135,6 +219,7 @@
         overflow: hidden;
         list-style: none;
         position: relative;
+        text-align: left;
         @include transition-duration(0.25s);
         &:after{
           color: $lightBrown;
@@ -172,30 +257,6 @@
         font-style: italic;
       }
     }
-  }
-}
-
-// Sidebar location widget
-@media (min-width: $medium-screen-min){
-
-  #mobile-location{
-    display: none;
-  }
-
-  #sidebar .widget-location{
-    display: block;
-    border-bottom: 0;
-    width: 100%;
-    overflow: hidden;
-    #widget-location-mobile{
-      display: none;
-    }
-    #widget-location-full{
-      position: relative;
-      display: block;
-      .widget-title, #location-cta, .loading{
-        display: block;
-      }
       .other-locations{
         .location-item:after{
           top: 17px;
@@ -243,6 +304,10 @@
       }
       &.map-loaded .flipper{
         @include rotateY(180deg);
+        .other-locations{
+          @include transition-duration(0);
+          @include rotateY(180deg);
+        }
       }
       &.no-cta{
         .front{
@@ -285,6 +350,7 @@
     .loading{
       display: none;
       position: absolute;
+      z-index: 3;
       top: 105px;
       left: 38%;
       @include opacity(0);
@@ -425,11 +491,9 @@
     }
     .btn-wrapper{
       width: 100%;
-      margin-top: 2px;
-      overflow: hidden;
+      margin: 15px 0 -7px;
       text-align: center;
       a{
-        display: inline-block;
         min-width: 65px;
       }
       a.get-directions{

@@ -193,7 +193,7 @@ var LaMadLocations = {
             $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + address + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.open + ' - ' + todayHours.close + '</div>');
             
             // Mobile location widget
-            $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn get-directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a>');
+            $('#widget-location-mobile').html('<h4 class="location-title">' + location.title + '</h4><hr class="dashed">' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + location.address + ' ' + location.address_2 + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="hours"><div><strong>Today\'s Hours:</strong></div> ' + todayHours.open + ' - ' + todayHours.close + '</div><div class="btn-wrapper"><a class="btn get-directions" href="#">Directions</a><a class="btn call" href="tel:' + location.phone + '"><span class="icon icon-phone"></span> Call</a><div class="other-locations"><hr class="dashed"><h2>Other Nearby Locations</h2><div id="location-list-mobile"></div></div>');
 
             if( (typeof(skipCookie) == 'undefined') || (skipCookie == false) ){
                 LaMadLocations.setLocationCookie(location);
@@ -206,6 +206,29 @@ var LaMadLocations = {
             // Update body classes
             $('body').removeClass('no-location');
             $('body').addClass('has-location');
+
+            // If any .get-directions links exist, fire getDirections() method when clicked.
+            $('#content').find('a.get-directions').on('click touchend', function(e){
+                e.preventDefault();
+                LaMadLocations.getDirections();
+            });
+
+            // Find any .lam-call links and set href attribute to current location phone number
+            $('#content').find('.lam-call a').attr('href', 'tel:' + location.phone);
+
+            // Get daypart cookie
+            var cookieDaypart = $.cookie('LAM-daypart');
+
+            // Parse as JSON
+            if(typeof(cookieDaypart) != 'undefined'){
+                var myDaypart = $.parseJSON(cookieDaypart),
+                    hasDaypart = true;
+            };
+
+            // If we have a daypart, find any .daypart-menu links and set href to current daypart menu
+            if(hasDaypart){
+                $content.find('a.daypart-menu').attr('href', myDaypart.link.guid);
+            };
         },
 
         setLocationCookie: function (location){
