@@ -129,7 +129,7 @@ get_header(); ?>
 					if($sidebar == 'sidebar-menu') :
 						get_sidebar('menu');
 					elseif($sidebar == 'sidebar-location') :
-						get_sidebar('locations');
+						//get_sidebar('locations');
 					else :
 						dynamic_sidebar($sidebar);
 					endif;
