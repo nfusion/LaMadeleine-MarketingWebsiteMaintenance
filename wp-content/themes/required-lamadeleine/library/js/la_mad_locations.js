@@ -227,7 +227,7 @@ var LaMadLocations = {
 
             // If we have a daypart, find any .daypart-menu links and set href to current daypart menu
             if(hasDaypart){
-                $content.find('a.daypart-menu').attr('href', myDaypart.link.guid);
+                $('#content').find('a.daypart-menu').attr('href', myDaypart.link.guid);
             };
         },
 
