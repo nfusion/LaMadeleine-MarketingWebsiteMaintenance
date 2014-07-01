@@ -205,6 +205,18 @@
 		.pricing.ispriced-false{
 			display: none;
 		}
+
+
+		.optional_item{
+			position:realtive;
+			margin-top: -10px;
+		}
+
+		.optional_item > div{
+			margin-bottom:5px;
+		}
+
+
 		.story-teaser{
 			width: 100%;
 			padding: 15px;
