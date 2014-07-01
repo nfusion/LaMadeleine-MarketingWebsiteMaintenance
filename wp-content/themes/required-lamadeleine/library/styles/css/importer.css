@@ -1352,17 +1352,18 @@ body.has-location #header .icon-wrapper .icon-pin {
   }
   /* line 127, ../sass/framework/_header.scss */
   #header .tagline {
+    max-width: 177px;
     display: block;
     float: left;
     position: relative;
     top: 19px;
     left: 2px;
   }
-  /* line 135, ../sass/framework/_header.scss */
+  /* line 136, ../sass/framework/_header.scss */
   #header .icon-menu:hover {
     cursor: pointer;
   }
-  /* line 138, ../sass/framework/_header.scss */
+  /* line 139, ../sass/framework/_header.scss */
   #header .icon-menu span {
     visibility: visible;
     font-size: 22px;
@@ -1374,17 +1375,17 @@ body.has-location #header .icon-wrapper .icon-pin {
     top: -5px;
     left: 15px;
   }
-  /* line 150, ../sass/framework/_header.scss */
+  /* line 151, ../sass/framework/_header.scss */
   #header .icon-wrapper {
     display: none;
   }
 }
 @media (min-width: 1140px) {
-  /* line 158, ../sass/framework/_header.scss */
+  /* line 159, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     padding-right: 20px;
   }
-  /* line 161, ../sass/framework/_header.scss */
+  /* line 162, ../sass/framework/_header.scss */
   #header .icon-menu {
     padding-left: 20px;
   }
@@ -2166,38 +2167,46 @@ aside p {
     display: block;
   }
   /* line 196, ../sass/widgets/_widget-location.scss */
-  #sidebar .widget-location #widget-location-full #location-list {
-    height: 195px;
-  }
-  /* line 199, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .widget-title, #sidebar .widget-location #widget-location-full #location-cta, #sidebar .widget-location #widget-location-full .loading {
     display: block;
   }
-  /* line 203, ../sass/widgets/_widget-location.scss */
+  /* line 200, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-item:after {
     top: 17px;
   }
-  /* line 206, ../sass/widgets/_widget-location.scss */
+  /* line 203, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-thumb {
     width: 20%;
     height: auto;
   }
-  /* line 210, ../sass/widgets/_widget-location.scss */
+  /* line 207, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-info {
     width: 80%;
-    padding-top: 5px;
+    padding-top: 15px;
+  }
+  /* line 213, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .widget-title {
+    width: 100%;
+    overflow: hidden;
+    *zoom: 1;
   }
   /* line 216, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title h3 {
     text-align: left;
     margin: 4px 0 5px;
+    float: left;
   }
-  /* line 220, ../sass/widgets/_widget-location.scss */
+  /* line 221, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .widget-title a {
+    float: right;
+    padding-top: 14px;
+  }
+  /* line 226, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #map {
     height: 95px;
     width: 100%;
   }
-  /* line 224, ../sass/widgets/_widget-location.scss */
+  /* line 230, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta {
     display: block;
     width: 100%;
@@ -2211,13 +2220,13 @@ aside p {
     -o-perspective: 1000;
     perspective: 1000;
   }
-  /* line 233, ../sass/widgets/_widget-location.scss */
+  /* line 239, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loading .loading {
     display: block;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
-  /* line 238, ../sass/widgets/_widget-location.scss */
+  /* line 244, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loaded .flipper {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -2225,11 +2234,11 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 242, ../sass/widgets/_widget-location.scss */
+  /* line 248, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.no-cta .front {
     display: none;
   }
-  /* line 247, ../sass/widgets/_widget-location.scss */
+  /* line 253, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper {
     position: relative;
     -webkit-transform-style: preserve-3d;
@@ -2238,18 +2247,16 @@ aside p {
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  /* line 251, ../sass/widgets/_widget-location.scss */
+  /* line 257, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper.transition {
     -webkit-transition-duration: 0.6s;
     -moz-transition-duration: 0.6s;
     -o-transition-duration: 0.6s;
     transition-duration: 0.6s;
   }
-  /* line 254, ../sass/widgets/_widget-location.scss */
+  /* line 260, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front, #sidebar .widget-location #location-cta .back {
     width: 100%;
-    height: 270px;
-    position: absolute;
     top: 0;
     left: 0;
     -webkit-backface-visibility: hidden;
@@ -2258,12 +2265,14 @@ aside p {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  /* line 262, ../sass/widgets/_widget-location.scss */
+  /* line 266, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front {
+    height: 270px;
+    position: absolute;
     z-index: 2;
     background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
   }
-  /* line 266, ../sass/widgets/_widget-location.scss */
+  /* line 272, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .back {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -2271,7 +2280,7 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 270, ../sass/widgets/_widget-location.scss */
+  /* line 276, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .location-cta-divider {
     display: block;
     width: 230px;
@@ -2281,7 +2290,7 @@ aside p {
     left: 20px;
     background: url(../../../img/map/location-cta-divider.png) no-repeat;
   }
-  /* line 279, ../sass/widgets/_widget-location.scss */
+  /* line 285, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .loading {
     display: none;
     position: absolute;
@@ -2294,7 +2303,7 @@ aside p {
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
   }
-  /* line 287, ../sass/widgets/_widget-location.scss */
+  /* line 293, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .geo {
     width: 100%;
     position: absolute;
@@ -2302,7 +2311,7 @@ aside p {
     left: 0;
     right: 0;
   }
-  /* line 294, ../sass/widgets/_widget-location.scss */
+  /* line 300, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .zip {
     width: 100%;
     position: absolute;
@@ -2310,37 +2319,37 @@ aside p {
     left: 0;
     right: 0;
   }
-  /* line 301, ../sass/widgets/_widget-location.scss */
+  /* line 307, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .icon {
     color: #fffdf0;
     font-size: 30px;
     margin-bottom: 5px;
   }
-  /* line 306, ../sass/widgets/_widget-location.scss */
+  /* line 312, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #use-location {
     position: relative;
     top: 10px;
   }
-  /* line 310, ../sass/widgets/_widget-location.scss */
+  /* line 316, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info {
     width: 100%;
     overflow: hidden;
   }
-  /* line 313, ../sass/widgets/_widget-location.scss */
+  /* line 319, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .location-title {
     font-family: "Merriweather", serif;
     font-size: 15px;
     color: #7a3910;
     margin: 10px 0 5px;
   }
-  /* line 319, ../sass/widgets/_widget-location.scss */
+  /* line 325, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .info-wrapper {
     width: 100%;
     padding: 5px 5px 0;
     overflow: hidden;
     border-bottom: 1px solid #e5d7cd;
   }
-  /* line 325, ../sass/widgets/_widget-location.scss */
+  /* line 331, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address, #sidebar .widget-location #location-info .phone {
     float: left;
     text-align: left;
@@ -2349,26 +2358,28 @@ aside p {
     padding: 0 10px 10px;
     color: #310d00;
   }
-  /* line 333, ../sass/widgets/_widget-location.scss */
+  /* line 339, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address {
-    width: 65%;
+    width: 60%;
     border-right: 1px solid #e5d7cd;
   }
-  /* line 337, ../sass/widgets/_widget-location.scss */
+  /* line 343, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .phone {
-    width: 35%;
+    width: 40%;
   }
-  /* line 340, ../sass/widgets/_widget-location.scss */
+  /* line 346, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .hours {
     font-size: 12px;
     margin: 10px 0;
     color: #310d00;
   }
-  /* line 346, ../sass/widgets/_widget-location.scss */
+  /* line 352, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper {
     width: 100%;
+    min-height: 35px;
+    overflow: visible;
   }
-  /* line 349, ../sass/widgets/_widget-location.scss */
+  /* line 357, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper .btn {
     width: 46%;
     display: block;
@@ -2376,7 +2387,7 @@ aside p {
     margin: 0 2%;
   }
 
-  /* line 357, ../sass/widgets/_widget-location.scss */
+  /* line 365, ../sass/widgets/_widget-location.scss */
   #zip-input, #zip-input-secondary {
     width: 50%;
     height: 29px;
@@ -2397,7 +2408,7 @@ aside p {
     border-radius: 5px;
   }
 
-  /* line 373, ../sass/widgets/_widget-location.scss */
+  /* line 381, ../sass/widgets/_widget-location.scss */
   #sidebar .zip-wrapper {
     display: block;
     width: 320px;
@@ -2415,17 +2426,17 @@ aside p {
     transition-duration: 0.5s;
   }
 
-  /* line 388, ../sass/widgets/_widget-location.scss */
+  /* line 396, ../sass/widgets/_widget-location.scss */
   body.no-location #sidebar .zip-wrapper {
     height: 0;
     padding-top: 0;
   }
 
-  /* line 395, ../sass/widgets/_widget-location.scss */
+  /* line 403, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.map-view {
     position: relative;
   }
-  /* line 397, ../sass/widgets/_widget-location.scss */
+  /* line 405, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.map-view .map-link {
     display: block;
     width: 100%;
@@ -2435,54 +2446,33 @@ aside p {
     z-index: 101;
   }
 
-  /* line 409, ../sass/widgets/_widget-location.scss */
-  #sidebar .widget-location.location-view #location-cta {
-    height: 330px;
-  }
-  /* line 412, ../sass/widgets/_widget-location.scss */
+  /* line 420, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view #location-image {
     height: 150px;
     overflow: hidden;
     background-color: #f4f2df;
   }
-  /* line 417, ../sass/widgets/_widget-location.scss */
+  /* line 425, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper {
     width: 100%;
     margin-top: 2px;
     overflow: hidden;
     text-align: center;
   }
-  /* line 422, ../sass/widgets/_widget-location.scss */
+  /* line 430, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a {
     display: inline-block;
     min-width: 65px;
   }
-  /* line 426, ../sass/widgets/_widget-location.scss */
+  /* line 434, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a.get-directions {
     margin: 0 4%;
   }
 
-  /* line 432, ../sass/widgets/_widget-location.scss */
+  /* line 440, ../sass/widgets/_widget-location.scss */
   body.no-location #sidebar #widget-location-full .other-locations {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
-  }
-}
-@media (min-width: 1140px) {
-  /* line 439, ../sass/widgets/_widget-location.scss */
-  #sidebar .widget-location .widget-title {
-    width: 100%;
-    overflow: hidden;
-    *zoom: 1;
-  }
-  /* line 442, ../sass/widgets/_widget-location.scss */
-  #sidebar .widget-location .widget-title h3 {
-    float: left;
-  }
-  /* line 445, ../sass/widgets/_widget-location.scss */
-  #sidebar .widget-location .widget-title a {
-    float: right;
-    padding-top: 14px;
   }
 }
 /**
