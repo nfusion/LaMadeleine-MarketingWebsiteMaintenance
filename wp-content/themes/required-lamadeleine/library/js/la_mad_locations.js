@@ -165,7 +165,8 @@ var LaMadLocations = {
             dayOfWeek = weekday[dayIndex];
             ucaseDayofWeek = dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1)
 
-            if(location.days_closed.indexOf(ucaseDayofWeek) >=0){
+
+            if((typeof(location.days_closed)!='undefined')&&(location.days_closed.indexOf(ucaseDayofWeek) >=0)){
                 var closed_today = 'Closed on '+ucaseDayofWeek;
             } else {
                 closed_today = false;
