@@ -63,9 +63,16 @@ $(function(){
 
 	// If on a menu 
 	if($content.hasClass('breakfast') || $content.hasClass('lunch') || $content.hasClass('dinner') || $content.hasClass('bakery')){
-		// If user has selected a location, show pricing
+		
+		// If user has selected a location
 		if(myLocation){
+
+			// Show pricing
 			$content.find('.menu-details').addClass(myLocation.menu_pricing.toLowerCase());
+
+			console.log(myLocation);
+			// Update "Choose a location" text
+			$content.find('.set-location').html('<div class="location-name">' + myLocation.title + '<div class="change-location">(<a href="/locations">Change</a>)</div></div>');
 		}
 
 		// Wait for dayparts API to populate widget
@@ -88,7 +95,7 @@ $(function(){
 
 		// Sticky the sidebar legend
 		if($sidebar.is(':visible')){
-			$sidebar.find(".menu-legend").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
+			$sidebar.find("#sticky-widgets").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
 		}
 	};
 

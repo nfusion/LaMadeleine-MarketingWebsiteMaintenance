@@ -8,9 +8,6 @@
     
 $menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
 
-
-
-
 ?>
 
 <div id="mobile-nav">
@@ -58,14 +55,14 @@ $menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
 <div class="menu-details">
 
     <div class="row menu-links">
-        <div class="four columns">
-            <a href="/locations" class="get-location">Choose a Location for Menu Pricing</a>
+        <div class="four columns set-location">
+            <a class="mobile-btn-link get-location" href="/locations">Choose a Location for Menu Pricing</a>
         </div>
         <div class="four columns">
-            <a target="_blank" href="http://www.nutritionix.com/la-madeleine/portal">Get Nutritional Information</a>
+            <a target="_blank" class="mobile-btn-link" href="http://www.nutritionix.com/la-madeleine/portal">Get Nutritional Information</a>
         </div>
         <div class="four columns">
-            <a target="_blank" href="https://online.lamadeleine.com/">Place an Order Online, S'il Vous Pla&icirc;t</a>
+            <a target="_blank" class="mobile-btn-link" href="https://online.lamadeleine.com/">Place an Order Online, S'il Vous Pla&icirc;t</a>
         </div>
     </div>
 
