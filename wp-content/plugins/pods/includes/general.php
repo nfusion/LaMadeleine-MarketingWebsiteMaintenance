@@ -570,6 +570,11 @@ function pods_access ( $privs, $method = 'OR' ) {
  * @since 1.6.7
  */
 function pods_shortcode ( $tags, $content = null ) {
+
+	if ( defined( 'PODS_DISABLE_SHORTCODE' ) && PODS_DISABLE_SHORTCODE ) {
+		return '';
+	}
+
     $defaults = array(
         'name' => null,
         'id' => null,
@@ -618,11 +623,16 @@ function pods_shortcode ( $tags, $content = null ) {
     if ( empty( $content ) )
         $content = null;
 
+	// Allow views only if not targeting a file path (must be within theme)
     if ( 0 < strlen( $tags[ 'view' ] ) ) {
-        $return = pods_view( $tags[ 'view' ], null, (int) $tags[ 'expires' ], $tags[ 'cache_mode' ] );
+		$return = '';
 
-		if ( $tags[ 'shortcodes' ] ) {
-			$return = do_shortcode( $return );
+		if ( !file_exists( $tags[ 'view' ] ) ) {
+			$return = pods_view( $tags[ 'view' ], null, (int) $tags[ 'expires' ], $tags[ 'cache_mode' ] );
+
+			if ( $tags[ 'shortcodes' ] && defined( 'PODS_SHORTCODE_ALLOW_SUB_SHORTCODES' ) && PODS_SHORTCODE_ALLOW_SUB_SHORTCODES ) {
+				$return = do_shortcode( $return );
+			}
 		}
 
 		return $return;
@@ -660,7 +670,15 @@ function pods_shortcode ( $tags, $content = null ) {
 
     if ( !isset( $id ) ) {
         // id > slug (if both exist)
-        $id = empty( $tags[ 'slug' ] ) ? null : pods_evaluate_tags( $tags[ 'slug' ] );
+		$id = null;
+
+		if ( !empty( $tags[ 'slug' ] ) ) {
+			$id = $tags[ 'slug' ];
+
+			if ( defined( 'PODS_SHORTCODE_ALLOW_EVALUATE_TAGS' ) && PODS_SHORTCODE_ALLOW_EVALUATE_TAGS ) {
+				$id = pods_evaluate_tags( $id );
+			}
+		}
 
         if ( !empty( $tags[ 'id' ] ) ) {
             $id = $tags[ 'id' ];
@@ -678,8 +696,20 @@ function pods_shortcode ( $tags, $content = null ) {
 
     $found = 0;
 
-    if ( !empty( $tags[ 'form' ] ) )
+    if ( !empty( $tags[ 'form' ] ) ) {
+		if ( 'user' == $pod->pod ) {
+			// Further hardening of User-based forms
+			if ( false !== strpos( $tags[ 'fields' ], '_capabilities' ) || false !== strpos( $tags[ 'fields' ], '_user_level' ) ) {
+				return '';
+			}
+			// Only explicitly allow user edit forms
+			elseif ( !empty( $id ) && ( !defined( 'PODS_SHORTCODE_ALLOW_USER_EDIT' ) || !PODS_SHORTCODE_ALLOW_USER_EDIT ) ) {
+				return '';
+			}
+		}
+
         return $pod->form( $tags[ 'fields' ], $tags[ 'label' ], $tags[ 'thank_you' ] );
+	}
     elseif ( empty( $id ) ) {
         $params = array();
 
@@ -689,11 +719,19 @@ function pods_shortcode ( $tags, $content = null ) {
 			}
 
 			if ( 0 < strlen( $tags[ 'where' ] ) ) {
-				$params[ 'where' ] = pods_evaluate_tags( $tags[ 'where' ] );
+				$params[ 'where' ] = $tags[ 'where' ];
+
+				if ( defined( 'PODS_SHORTCODE_ALLOW_EVALUATE_TAGS' ) && PODS_SHORTCODE_ALLOW_EVALUATE_TAGS ) {
+					$params[ 'where' ] = pods_evaluate_tags( $params[ 'where' ] );
+				}
 			}
 
 			if ( 0 < strlen( $tags[ 'having' ] ) ) {
-				$params[ 'having' ] = pods_evaluate_tags( $tags[ 'having' ] );
+				$params[ 'having' ] = $tags[ 'having' ];
+
+				if ( defined( 'PODS_SHORTCODE_ALLOW_EVALUATE_TAGS' ) && PODS_SHORTCODE_ALLOW_EVALUATE_TAGS ) {
+					$params[ 'having' ] = pods_evaluate_tags( $id );
+				}
 			}
 
 			if ( 0 < strlen( $tags[ 'groupby' ] ) ) {
@@ -738,7 +776,7 @@ function pods_shortcode ( $tags, $content = null ) {
         else
             $return = $pod->helper( $tags[ 'helper' ], $pod->field( $tags[ 'field' ] ), $tags[ 'field' ] );
 
-		if ( $tags[ 'shortcodes' ] ) {
+		if ( $tags[ 'shortcodes' ] && defined( 'PODS_SHORTCODE_ALLOW_SUB_SHORTCODES' ) && PODS_SHORTCODE_ALLOW_SUB_SHORTCODES ) {
 			$return = do_shortcode( $return );
 		}
 
@@ -752,7 +790,7 @@ function pods_shortcode ( $tags, $content = null ) {
 
         $return = Pods_Pages::content( true, $pods_page );
 
-		if ( $tags[ 'shortcodes' ] ) {
+		if ( $tags[ 'shortcodes' ] && defined( 'PODS_SHORTCODE_ALLOW_SUB_SHORTCODES' ) && PODS_SHORTCODE_ALLOW_SUB_SHORTCODES ) {
 			$return = do_shortcode( $return );
 		}
 
@@ -777,7 +815,7 @@ function pods_shortcode ( $tags, $content = null ) {
 
 	$return = ob_get_clean();
 
-	if ( $tags[ 'shortcodes' ] ) {
+	if ( $tags[ 'shortcodes' ] && defined( 'PODS_SHORTCODE_ALLOW_SUB_SHORTCODES' ) && PODS_SHORTCODE_ALLOW_SUB_SHORTCODES ) {
 		$return = do_shortcode( $return );
 	}
 
@@ -797,6 +835,61 @@ function pods_shortcode_form ( $tags, $content = null ) {
     $tags[ 'form' ] = 1;
 
     return pods_shortcode( $tags );
+}
+
+/**
+ * Fork of WordPress do_shortcode that allows specifying which shortcodes are ran.
+ *
+ * Search content for shortcodes and filter shortcodes through their hooks.
+ *
+ * If there are no shortcode tags defined, then the content will be returned
+ * without any filtering. This might cause issues when plugins are disabled but
+ * the shortcode will still show up in the post or content.
+ *
+ * @since 2.4.3
+ *
+ * @uses $shortcode_tags
+ * @uses get_shortcode_regex() Gets the search pattern for searching shortcodes.
+ *
+ * @param string $content Content to search for shortcodes
+ * @param array $shortcodes Array of shortcodes to run
+ * @return string Content with shortcodes filtered out.
+ */
+function pods_do_shortcode( $content, $shortcodes ) {
+
+	global $shortcode_tags;
+
+	// No shortcodes in content
+	if ( false === strpos( $content, '[' ) ) {
+		return $content;
+	}
+
+	// No shortcodes registered
+	if ( empty( $shortcode_tags ) || !is_array( $shortcode_tags ) ) {
+		return $content;
+	}
+
+	// Store all shortcodes, to restore later
+	$temp_shortcode_tags = $shortcode_tags;
+
+	// Loop through all shortcodes and remove those not being used right now
+	foreach ( $shortcode_tags as $tag => $callback ) {
+		if ( ! in_array( $tag, $shortcodes ) ) {
+			unset( $shortcode_tags[ $tag ] );
+		}
+	}
+
+	// Build Shortcode regex pattern just for the shortcodes we want
+	$pattern = get_shortcode_regex();
+
+	// Call shortcode callbacks just for the shortcodes we want
+	$content = preg_replace_callback( "/$pattern/s", 'do_shortcode_tag', $content );
+
+	// Restore all shortcode tags
+	$shortcode_tags = $temp_shortcode_tags;
+
+	return $content;
+
 }
 
 /**
@@ -842,7 +935,7 @@ function pods_version_notice_wp () {
 ?>
     <div class="error fade">
         <p>
-            <strong><?php _e( 'NOTICE', 'pods' ); ?>:</strong> Pods <?php echo PODS_VERSION_FULL; ?> <?php _e( 'requires a minimum of', 'pods' ); ?>
+            <strong><?php _e( 'NOTICE', 'pods' ); ?>:</strong> Pods <?php echo PODS_VERSION; ?> <?php _e( 'requires a minimum of', 'pods' ); ?>
             <strong>WordPress <?php echo PODS_WP_VERSION_MINIMUM; ?>+</strong> <?php _e( 'to function. You are currently running', 'pods' ); ?>
             <strong>WordPress <?php echo $wp_version; ?></strong> - <?php _e( 'Please upgrade your WordPress to continue.', 'pods' ); ?>
         </p>
@@ -861,7 +954,7 @@ function pods_version_notice_php () {
 ?>
     <div class="error fade">
         <p>
-            <strong><?php _e( 'NOTICE', 'pods' ); ?>:</strong> Pods <?php echo PODS_VERSION_FULL; ?> <?php _e( 'requires a minimum of', 'pods' ); ?>
+            <strong><?php _e( 'NOTICE', 'pods' ); ?>:</strong> Pods <?php echo PODS_VERSION; ?> <?php _e( 'requires a minimum of', 'pods' ); ?>
             <strong>PHP <?php echo PODS_PHP_VERSION_MINIMUM; ?>+</strong> <?php _e( 'to function. You are currently running', 'pods' ); ?>
             <strong>PHP <?php echo phpversion(); ?></strong> - <?php _e( 'Please upgrade (or have your Hosting Provider upgrade it for you) your PHP version to continue.', 'pods' ); ?>
         </p>
@@ -881,7 +974,7 @@ function pods_version_notice_mysql () {
     $mysql = $wpdb->db_version();
 ?>
     <div class="error fade">
-        <p><strong><?php _e( 'NOTICE', 'pods' ); ?>:</strong> Pods <?php echo PODS_VERSION_FULL; ?> <?php _e( 'requires a minimum of', 'pods' ); ?>
+        <p><strong><?php _e( 'NOTICE', 'pods' ); ?>:</strong> Pods <?php echo PODS_VERSION; ?> <?php _e( 'requires a minimum of', 'pods' ); ?>
             <strong>MySQL <?php echo PODS_MYSQL_VERSION_MINIMUM; ?>+</strong> <?php _e( 'to function. You are currently running', 'pods' ); ?>
             <strong>MySQL <?php echo $mysql; ?></strong> - <?php _e( 'Please upgrade (or have your Hosting Provider upgrade it for you) your MySQL version to continue.', 'pods' ); ?>
         </p>
@@ -1887,7 +1980,7 @@ function pods_session_start() {
 		// This is OK, but we don't want to check if file_exists on next statement
 	}
 	// Check if session path exists and can be written to, avoiding PHP fatal errors
-	elseif ( empty( $save_path ) || !file_exists( $save_path ) || !is_writable( $save_path ) ) {
+	elseif ( empty( $save_path ) || !@file_exists( $save_path ) || !is_writable( $save_path ) ) {
 		return false;
 	}
 	// Check if session ID is already set

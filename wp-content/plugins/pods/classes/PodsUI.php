@@ -1896,7 +1896,7 @@ class PodsUI {
         if ( is_object( $this->pod ) )
             $check = $this->pod->delete( $id );
         else
-            $check = $this->pods_data->delete( $this->table, array( $this->data->field_id => $id ) );
+            $check = $this->pods_data->delete( $this->sql[ 'table' ], array( $this->sql[ 'field_id' ] => $id ) );
 
         if ( $check )
             $this->message( sprintf( __( "<strong>Deleted:</strong> %s has been deleted.", 'pods' ), $this->item ) );
@@ -1934,7 +1934,7 @@ class PodsUI {
                     elseif ( is_object( $this->pod ) )
                         $check = $this->pod->delete( $id );
                     else
-                        $check = $this->pods_data->delete( $this->table, array( $this->data->field_id => $id ) );
+                        $check = $this->pods_data->delete( $this->sql[ 'table' ], array( $this->sql[ 'field_id' ] => $id ) );
 
                     if ( $check )
                         $success = true;
@@ -2164,14 +2164,80 @@ class PodsUI {
             if ( empty( $this->sql[ 'table' ] ) )
                 return $this->data;
 
-            $orderby = '';
+            $orderby = array();
 
-            if ( !empty( $this->orderby ) )
-                $orderby = '`' . $this->orderby . '` '
-                       . ( false === strpos( $this->orderby, ' ' ) ? strtoupper( $this->orderby_dir ) : '' );
+            if ( !empty( $this->orderby ) ) {
+                $this->orderby = (array) $this->orderby;
+
+                foreach ( $this->orderby as $k => $order ) {
+                    if ( false === strpos( $order, ' ' ) ) {
+						if ( in_array( strtoupper( $order ), array( 'ASC', 'DESC' ) ) ) {
+							$orderby[ $k ] = $order;
+						}
+						elseif ( !isset( $orderby[ $order ] ) ) {
+                        	$orderby[ $order ] = $this->orderby_dir;
+						}
+					}
+					else {
+						$orderby[] = $order;
+					}
+                }
+            }
+
+			// Allow orderby array ( 'field' => 'asc|desc' )
+			if ( !empty( $orderby ) && is_array( $orderby ) ) {
+				foreach ( $orderby as $k => &$orderby_value ) {
+					if ( !is_numeric( $k ) ) {
+						$order = 'ASC';
+
+						if ( 'DESC' == strtoupper( $orderby_value ) )
+							$order = 'DESC';
+
+						if ( false !== strpos( $k, '.' ) ) {
+							$key = $k;
+
+							if ( false === strpos( $key, ' ' ) && false === strpos( $key, '`' ) )
+								$key = '`' . str_replace( '.', '`.`', $key ) . '`';
+						}
+						else {
+							$key = "`t`.`{$k}`";
+						}
+
+						$orderby_value = $key;
+
+						if ( false === strpos( $orderby_value, ' ' ) )
+							$orderby_value .= ' ' . $order;
+					}
+				}
+			}
+
+			// Add prefix to $orderby if needed
+			if ( !empty( $orderby ) ) {
+				if ( !is_array( $orderby ) )
+					$orderby = array( $orderby );
+
+				foreach ( $orderby as &$prefix_orderby ) {
+					if ( false === strpos( $prefix_orderby, ',' ) && false === strpos( $prefix_orderby, '(' ) && false === stripos( $prefix_orderby, ' AS ' ) && false === strpos( $prefix_orderby, '`' ) && false === strpos( $prefix_orderby, '.' ) ) {
+						if ( false !== stripos( $prefix_orderby, ' DESC' ) ) {
+							$k = trim( str_ireplace( array( '`', ' DESC' ), '', $prefix_orderby ) );
+							$dir = 'DESC';
+						}
+						else {
+							$k = trim( str_ireplace( array( '`', ' ASC' ), '', $prefix_orderby ) );
+							$dir = 'ASC';
+						}
+
+						$key = "`t`.`{$k}`";
+
+						$prefix_orderby = "{$key} {$dir}";
+					}
+				}
+			}
 
             $find_params = array(
                 'table' => $this->sql[ 'table' ],
+                'id' => $this->sql[ 'field_id' ],
+                'index' => $this->sql[ 'field_index' ],
                 'where' => pods_var_raw( $action, $this->where, null, null, true ),
                 'orderby' => $orderby,
                 'page' => (int) $this->page,
@@ -2197,14 +2263,19 @@ class PodsUI {
             if ( !$params->full ) {
                 $this->data = $this->pods_data->data;
 
-                if ( !empty( $this->data ) )
-                    $this->data_keys = array_keys( $this->data );
+                if ( !empty( $this->data ) ) {
+					$this->data_keys = array_keys( $this->data );
+				}
 
                 $this->total = $this->pods_data->total();
                 $this->total_found = $this->pods_data->total_found();
             }
             else {
                 $this->data_full = $this->pods_data->data;
+
+                if ( !empty( $this->data_full ) ) {
+					$this->data_keys = array_keys( $this->data_full );
+				}
 
                 return $this->data_full;
             }
@@ -2250,10 +2321,11 @@ class PodsUI {
             $this->row = false;
 
             if ( !empty( $this->data ) ) {
-                if ( empty( $this->data_keys ) || count( $this->data ) != count( $this->data_keys ) )
+                if ( empty( $this->data_keys ) || count( $this->data ) != count( $this->data_keys ) ) {
                     $this->data_keys = array_keys( $this->data );
+				}
 
-                if ( count( $this->data ) == $this->total_found && isset( $this->data_keys[ $counter ] ) && isset( $this->data[ $this->data_keys[ $counter ] ] ) ) {
+                if ( count( $this->data ) == $this->total && isset( $this->data_keys[ $counter ] ) && isset( $this->data[ $this->data_keys[ $counter ] ] ) ) {
                     $this->row = $this->data[ $this->data_keys[ $counter ] ];
 
                     $counter++;
@@ -2613,7 +2685,8 @@ class PodsUI {
                         ?>
                         <input type="button" value="<?php _e( 'Update Order', 'pods' ); ?>" class="button" onclick="jQuery('form.admin_ui_reorder_form').submit();" />
                         <input type="button" value="<?php _e( 'Cancel', 'pods' ); ?>" class="button" onclick="document.location='<?php echo esc_attr( $link ); ?>';" />
-                        <?php
+                    </form>
+				<?php
                     }
                     /*
                     elseif (!in_array('delete', $this->actions_disabled) && !in_array('delete', $this->actions_hidden) && is_developer() ) {
