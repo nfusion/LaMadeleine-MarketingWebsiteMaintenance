@@ -43,10 +43,13 @@
     }
 </script>
 
+<?php
+if($onLocationPage != 'true') { ?>
+
 <div class='widget widget-daypart home-daypart'>
     <h3 class="hide-for-small"><?php echo $title; ?> </h3>
     <h3 class="show-for-small">Current Menu</h3>
     <div class="daypart-wrapper"></div>
 </div>
 
-
+<?php } ?>

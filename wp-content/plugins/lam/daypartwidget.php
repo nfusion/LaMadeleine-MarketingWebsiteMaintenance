@@ -43,12 +43,18 @@ class dayparts_widget extends WP_Widget
             <input type="text" name="<?php echo $this->get_field_name('title') ?>" id="<?php echo $this->get_field_id('title') ?> " value="<?php echo $instance['title'] ?>" size="20"> </p>
 
         </fieldset>
+         <fieldset>
+            <label for="<?php echo $this->get_field_id('onLocationPage'); ?>">Used on Location Page?:</label>
+            <input type="radio" name="<?php echo $this->get_field_name('onLocationPage') ?>" id="<?php echo $this->get_field_id('onLocationPage') ?> " value="true"  <?php echo $instance['onLocationPage'] == 'true' ? 'checked=checked': '' ?> >Yes 
+            <input type="radio" name="<?php echo $this->get_field_name('onLocationPage') ?>" id="<?php echo $this->get_field_id('onLocationPage') ?> " value="false" <?php echo $instance['onLocationPage'] == 'false' ? 'checked=checked': '' ?> >No
+        </fieldset>
         <?php
     }
 
     function update ($new_instance, $old_instance) {
       $instance = $old_instance;
       $instance['title'] = $new_instance['title'];
+      $instance['onLocationPage'] = $new_instance['onLocationPage'];
       return $instance;
     }
 
