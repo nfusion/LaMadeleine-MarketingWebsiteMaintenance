@@ -366,6 +366,9 @@ function display_menu_category($menuObj,$layout){
 	  $uniqueID = strtolower($menuCategory['name']);
 	  $uniqueID = str_replace(' ', '-', $uniqueID);
 
+      /** this is hacky but aparently strtolower fails on accented letters **/
+      $uniqueID = str_replace('Á', 'á', $uniqueID);
+
 	  $str .= '<div class="row menu-category" id="category-' . $uniqueID . '">';
 
 	  // Wrap in category title & description

@@ -88,11 +88,31 @@ class Dayparts {
             $daypart_pod = pods('daypart')->find($params);
 
 
-            while( $daypart_pod->fetch() ) {
-                $menu_categories = $daypart_pod->field('menu_categories');
+            /** Due to accent Mark issues we need a caticory translation dictionary **/
 
+            $params = array(
+                        'limit' => '0'
+                    );
+
+
+            $cat_pod =  pods('menu_categories')->find($params);
+             while( $cat_pod->fetch() ) {
+
+               $catDict[$cat_pod->field('slug')] = $cat_pod->field('title');
+               
             }
-            $menu_categories = ucwords(str_replace('-', ' ', $menu_categories));
+
+            $menu_categories='';
+            while( $daypart_pod->fetch() ) {
+                $menu_categories_arr = explode(', ',$daypart_pod->field('menu_categories'));
+                foreach( $menu_categories_arr  as $slug){
+                    $i++;
+                    $comma = $i< count($menu_categories_arr )? ',':'';
+                    $menu_categories .= $catDict[$slug] .$comma;
+                }
+            }
+            
+            //$menu_categories = ucwords(str_replace('-', ' ', $menu_categories));
         return json_encode( explode(",", $menu_categories));
 
     }
