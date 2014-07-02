@@ -348,7 +348,11 @@ final class ITSEC_Files {
 
 			}
 
-			$htaccess_contents = implode( PHP_EOL, $lines );
+			$htaccess_contents = trim( implode( PHP_EOL, $lines ) );
+
+			if ( strlen( $htaccess_contents ) < 1 ) {
+				$htaccess_contents = PHP_EOL;
+			}
 
 			if ( ! @file_put_contents( $htaccess_file, $htaccess_contents, LOCK_EX ) ) {
 				return false;
@@ -549,12 +553,13 @@ final class ITSEC_Files {
 
 					$dhost = str_replace( '.', '\\.', trim( $host ) ); //re-define $dhost to match required output for SetEnvIf-RegEX
 
-					$host_rule .= 'Order allow,deny' . PHP_EOL;
 					$host_rule .= "SetEnvIF REMOTE_ADDR \"^" . $dhost . "$\" DenyAccess" . PHP_EOL; //Ban IP
 					$host_rule .= "SetEnvIF X-FORWARDED-FOR \"^" . $dhost . "$\" DenyAccess" . PHP_EOL; //Ban IP from Proxy-User
 					$host_rule .= "SetEnvIF X-CLUSTER-CLIENT-IP \"^" . $dhost . "$\" DenyAccess" . PHP_EOL; //Ban IP for Cluster/Cloud-hosted WP-Installs
-					$host_rule .= 'Deny from env=DenyAccess' . PHP_EOL;
-					$host_rule .= 'Allow from all' . PHP_EOL;
+					$host_rule .= 'order allow,deny' . PHP_EOL;
+					$host_rule .= 'deny from env=DenyAccess' . PHP_EOL;
+					$host_rule .= 'deny from ' . trim( $host ) . PHP_EOL;
+					$host_rule .= 'allow from all' . PHP_EOL;
 
 				}
 
@@ -1036,7 +1041,7 @@ final class ITSEC_Files {
 
 		$htaccess_contents = @file_get_contents( $htaccess_file ); //get the contents of the htaccess or nginx file
 
-		$htaccess_contents = preg_replace( "/(\\r\\n|\\n|\\r)+/", PHP_EOL, $htaccess_contents );
+		$htaccess_contents = preg_replace( "/(\\r\\n|\\n|\\r)/", PHP_EOL, $htaccess_contents );
 
 		if ( $htaccess_contents === false ) { //we couldn't get the file contents
 
