@@ -7,7 +7,7 @@
 <nav id="nav">
 	<div class="nav-wrapper">
 		<div class="nav-group">
-			<h4>Les Menu</h4>
+			<h4>Les Menus</h4>
 			<a class="nav-item" href="/breakfast/"><span class="icon icon-breakfast"><span class="item-title">Breakfast</span></span></a>
 			<a class="nav-item" href="/lunch/"><span class="icon icon-lunch"><span class="item-title">Lunch</span></span></a>
 			<a class="nav-item" href="/dinner/"><span class="icon icon-dinner"><span class="item-title">Dinner &amp; Wine</span></span></a>
@@ -31,7 +31,7 @@
 		<hr>
 		<div class="eclub">
 			<p>Get the latest news and offers.</p>
-			<p><a target="_blank" href="http://lamadeleinecafe.fbmta.com/members/UpdateProfile.aspx" class="btn">Join Our E-Club</a></p>
+			<p><a target="_blank" href="http://lamadeleinecafe.fbmta.com/members/UpdateProfile.aspx" class="btn">Join Our eClub</a></p>
 		</div>
 			<hr>
 			<div class="bottom-links">
