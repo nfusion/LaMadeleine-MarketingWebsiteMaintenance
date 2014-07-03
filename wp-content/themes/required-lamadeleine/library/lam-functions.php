@@ -354,7 +354,8 @@ function display_menu_category($menuObj,$layout){
 	  	endif;
 	  else : 
 	  	// Less than two items or no featured item, split evenly in half
-	  	$splitItems = $totalMenuItems / 2;
+        //Serna: This needs to be a whole number
+	  	$splitItems = ceil($totalMenuItems / 2);
 	  endif; 
 
 	  // String to return containing markup
