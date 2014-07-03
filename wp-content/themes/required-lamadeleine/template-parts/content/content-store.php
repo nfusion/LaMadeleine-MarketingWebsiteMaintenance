@@ -24,6 +24,8 @@
 $(document).ready(function(){
         lamCart.getCartCookie(<?php echo $shippingBase ?>);
         $('.product-button').click(function(){
+
+                console.log('ddd');
                 lamCart.addItem($(this));
                 $('.cart').show();
                 
@@ -62,9 +64,28 @@ $(document).ready(function(){
     
             <div class='store-text row'>
                 <h1>Perfect Gifts</h1>
+            </div>   
+                <div class='store_item row'>
+                    <div class='store_item_image six columns' >
+                            <img src="/wp-content/uploads/2014/07/card.jpg"><br>
+                    </div>
+                    <div class='store_item_info six columns'>
+                        <h4>Gift Cards</h4>
+                    <p class='subhead'> 
+                        La Madeleine gift cards are perfect for anyone who likes French country inspired cuisine. The cards can currently be purchased in-store, reloaded at any la Madeleine location, and checking your balance is as easy as calling 1-877-893-0012. Share la Madeleine with someone you love and give a gift card today.
+                    </p>
+
+                     <p><a href='https://lamadeleine.myguestaccount.com/login/web_card_sale/selectcards.srv?m_id=64&pid=26' target='new' class='btn '> Purchase a Gift Card </a></p>
+                        <br>
+                     <p><a href='https://lamadeleine.myguestaccount.com/login/accountbalance.srv?id=vKVo8rXxlhE%3d' target='new' class='btn '> Check your Gift Card Balance </a></p>
+
+                    </div>
                 
-                <p class='subhead'> Now our signature Tomato Basil soupe and salade dressings are available for purchase online. Whether you’re giving gifts to someone special, or just to yourself, getting the taste of la Madeleine has never been easier.</p>
-            </div>
+                </div>
+    
+
+
+            
 
             <div class='store_item row'>
                 <div class='store_item_image six columns' >
@@ -72,7 +93,8 @@ $(document).ready(function(){
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Tomato Basil Soupe Trio</h4>
-                        <p class='subhead' >Enjoy la Madeleine’s signature Tomato Basil Soupe. Three 15.5 fl. Oz jars.
+                        <p class='subhead' >Now our signature Tomato Basil soupe and salade dressings are available for purchase online. Whether you’re giving gifts to someone special, or just to yourself, getting the taste of la Madeleine has never been easier.</p>
+                        <p>Enjoy la Madeleine’s signature Tomato Basil Soupe. Three 15.5 fl. Oz jars.
                         <br>$<?php echo $soupCost ?>
                         </p>
                         <p><a class='btn  product-button' data-product='Tomato Basil Soupe Trio' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
