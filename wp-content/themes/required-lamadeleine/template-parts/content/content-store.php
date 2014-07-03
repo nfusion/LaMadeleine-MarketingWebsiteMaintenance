@@ -84,17 +84,21 @@ $(document).ready(function(){
                 </div>
     
 
-
-            
+               <div class='store-text row'>
+                 
+            <p class='subhead' >Now our signature Tomato Basil soupe and salade dressings are available for purchase online. Whether you’re giving gifts to someone special, or just to yourself, getting the taste of la Madeleine has never been easier.</p>
+          
+            </div>   
+                <div 
 
             <div class='store_item row'>
+
                 <div class='store_item_image six columns' >
                         <img src="/wp-content/uploads/2014/06/LM_FMA_HopeByTheJarful.jpg"><br>
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Tomato Basil Soupe Trio</h4>
-                        <p class='subhead' >Now our signature Tomato Basil soupe and salade dressings are available for purchase online. Whether you’re giving gifts to someone special, or just to yourself, getting the taste of la Madeleine has never been easier.</p>
-                        <p>Enjoy la Madeleine’s signature Tomato Basil Soupe. Three 15.5 fl. Oz jars.
+                        <p class='subhead'>Enjoy la Madeleine’s signature Tomato Basil Soupe. Three 15.5 fl. Oz jars.
                         <br>$<?php echo $soupCost ?>
                         </p>
                         <p><a class='btn  product-button' data-product='Tomato Basil Soupe Trio' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
