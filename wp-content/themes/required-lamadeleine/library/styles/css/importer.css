@@ -20,7 +20,38 @@ Author: nFusion (http://nfusion.com)
 * La Madeleine
 * Fonts
 **/
-@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
+@font-face {
+  font-family: 'latobold';
+  src: url("../../../library/fonts/lato/lato-bold-webfont.eot");
+  src: url("../../../library/fonts/lato/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../library/fonts/lato/lato-bold-webfont.woff") format("woff"), url("../../../library/fonts/lato/lato-bold-webfont.ttf") format("truetype"), url("../../../library/fonts/lato/lato-bold-webfont.svg#latobold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweatherregular';
+  src: url("../../../library/fonts/merriweather/merriweather-regular-webfont.eot");
+  src: url("../../../library/fonts/merriweather/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../../library/fonts/merriweather/merriweather-regular-webfont.woff") format("woff"), url("../../../library/fonts/merriweather/merriweather-regular-webfont.ttf") format("truetype"), url("../../../library/fonts/merriweather/merriweather-regular-webfont.svg#merriweatherregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweatherbold';
+  src: url("../../../library/fonts/merriweather/merriweather-bold-webfont.eot");
+  src: url("../../../library/fonts/merriweather/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../library/fonts/merriweather/merriweather-bold-webfont.woff") format("woff"), url("../../../library/fonts/merriweather/merriweather-bold-webfont.ttf") format("truetype"), url("../../../library/fonts/merriweather/merriweather-bold-webfont.svg#merriweatherbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'playfair_displayitalic';
+  src: url("../../../library/fonts/playfair/playfairdisplay-italic-webfont.eot");
+  src: url("../../../library/fonts/playfair/playfairdisplay-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../../library/fonts/playfair/playfairdisplay-italic-webfont.woff") format("woff"), url("../../../library/fonts/playfair/playfairdisplay-italic-webfont.ttf") format("truetype"), url("../../../library/fonts/playfair/playfairdisplay-italic-webfont.svg#playfair_displayitalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'ostrich_sans_roundregular';
   src: url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot");
@@ -35,7 +66,7 @@ Author: nFusion (http://nfusion.com)
 **/
 /* line 12, ../sass/styleguide/_text.scss */
 h1, h2, h3, h4 {
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   line-height: 1.2;
   color: #310d00;
 }
@@ -94,7 +125,7 @@ a:hover {
 /* line 6, ../sass/styleguide/_buttons.scss */
 a.btn {
   color: #fffdf0;
-  font-family: "Lato", sans-serif;
+  font-family: "latobold", sans-serif;
   font-style: none;
   font-size: 12px;
   line-height: 16px;
@@ -170,7 +201,7 @@ a.btn.call span.icon-phone {
 /* line 55, ../sass/styleguide/_buttons.scss */
 a.btn-light {
   color: #310d00;
-  font-family: "Lato", sans-serif;
+  font-family: "latobold", sans-serif;
   font-size: 11px;
   line-height: 14px;
   text-transform: uppercase;
@@ -1467,7 +1498,7 @@ aside p {
 }
 /* line 50, ../sass/components/_carousel.scss */
 #carousel p.subhead {
-  font-family: "Playfair Display", serif;
+  font-family: "playfair_displayitalic", serif;
   font-style: italic;
   color: #310d00;
   line-height: 1.4;
@@ -1676,7 +1707,7 @@ aside p {
   /* line 72, ../sass/components/_promo.scss */
   #container #content #sidebar .fma-promo h4 {
     margin: 5px 0;
-    font-family: "Merriweather", serif;
+    font-family: "merriweatherregular", serif;
     font-weight: normal;
   }
 }
@@ -1724,12 +1755,12 @@ aside p {
   width: 50%;
   padding: 0 15px;
   float: left;
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   color: #310d00;
 }
 /* line 41, ../sass/widgets/_widget-daypart.scss */
 .widget-daypart .title {
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -1793,7 +1824,7 @@ aside p {
 #content.lunch .widget-daypart .lunch .categories span,
 #content.dinner .widget-daypart .dinner .categories span,
 #content.bakery .widget-daypart .bakery .categories span {
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   font-weight: bold;
   color: #6c2904;
   -webkit-transition-duration: 0.3s;
@@ -1921,7 +1952,7 @@ aside p {
   }
   /* line 171, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .desc {
-    font-family: "Merriweather", serif;
+    font-family: "merriweatherregular", serif;
     font-size: 10px;
   }
 }
@@ -2032,7 +2063,7 @@ aside p {
 /* line 80, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .location-title {
   margin: 10px 0 -10px;
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   color: #6c2904;
 }
 /* line 85, ../sass/widgets/_widget-location.scss */
@@ -2128,7 +2159,7 @@ aside p {
 }
 /* line 154, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-name {
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   margin-bottom: 2px;
 }
 /* line 158, ../sass/widgets/_widget-location.scss */
@@ -2248,7 +2279,7 @@ aside p {
   }
   /* line 251, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-name {
-    font-family: "Merriweather", serif;
+    font-family: "merriweatherregular", serif;
     margin-bottom: 2px;
   }
   /* line 255, ../sass/widgets/_widget-location.scss */
@@ -2436,14 +2467,14 @@ aside p {
   }
   /* line 385, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .location-title {
-    font-family: "Merriweather", serif;
+    font-family: "merriweatherregular", serif;
     font-size: 15px;
     color: #7a3910;
     margin: 10px 0 5px;
   }
   /* line 391, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .info-wrapper {
-    font-family: "Merriweather", serif;
+    font-family: "merriweatherregular", serif;
     width: 100%;
     padding: 5px 5px 0;
     overflow: hidden;
@@ -2495,7 +2526,7 @@ aside p {
     padding: 1px 5px 0;
     position: relative;
     font-size: 15px;
-    font-family: "Merriweather", serif;
+    font-family: "merriweatherregular", serif;
     font-style: italic;
     text-align: center;
     border: 0;
@@ -2708,7 +2739,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 /* line 51, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-name {
   padding: 3px 0;
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
 }
 /* line 55, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-desc {
@@ -2852,7 +2883,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 .breakfast .menu-details .category-title, .lunch .menu-details .category-title, .dinner .menu-details .category-title, .bakery .menu-details .category-title {
   margin: 0;
   text-transform: uppercase;
-  font-family: "Playfair Display", serif;
+  font-family: "playfair_displayitalic", serif;
   font-size: 20px;
   letter-spacing: 1px;
   color: #310d00;
@@ -2893,7 +2924,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 .breakfast .featured-menu-item .title, .lunch .featured-menu-item .title, .dinner .featured-menu-item .title, .bakery .featured-menu-item .title {
   margin-bottom: 10px;
   text-align: center;
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   font-style: italic;
 }
 /* line 139, ../sass/templates/_les-menu.scss */
@@ -2951,7 +2982,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 /* line 184, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .title-wrapper .title, .lunch .menu-item .title-wrapper .title, .dinner .menu-item .title-wrapper .title, .bakery .menu-item .title-wrapper .title {
   margin-bottom: 2px;
-  font-family: "Merriweather", serif;
+  font-family: "merriweatherregular", serif;
   font-weight: bold;
   float: left;
 }
@@ -3210,7 +3241,7 @@ body.single-post #main .post-box, #content.page-single #main .post-box {
 }
 /* line 49, ../sass/templates/_stories-pages.scss */
 #content article .entry-header h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "playfair_displayitalic", serif;
   font-style: italic;
   font-weight: normal;
   font-size: 16px;
@@ -3254,7 +3285,7 @@ body.single-post #main .post-box, #content.page-single #main .post-box {
 /* line 14, ../sass/templates/_store.scss */
 p.subhead {
   /*$playfair*/
-  font-family: "Playfair Display", serif;
+  font-family: "playfair_displayitalic", serif;
   /*"Playfair Display", serif; */
   font-style: italic;
   color: #310d00;
