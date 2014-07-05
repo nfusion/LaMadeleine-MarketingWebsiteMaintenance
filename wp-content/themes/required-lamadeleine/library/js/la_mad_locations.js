@@ -115,7 +115,8 @@ var LaMadLocations = {
                     mapTypeControl: false,
                     scaleControl: false,
                     streetViewControl: false,
-                    overviewMapControl: false,  
+                    overviewMapControl: false,
+                    optimized: false,
                     center: myCenter,
                     zoom: 12,
                     mapTypeControlOptions: {
