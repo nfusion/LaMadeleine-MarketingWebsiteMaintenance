@@ -12,7 +12,7 @@
         //Shippig
         $shippingBase = 5.99;
 
-        $paypalLink = "https://PayPal.com/cgi-bin/webscr";
+        $paypalLink = "https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/cps/general/OptionalAccount-outside";
         /*** https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/cps/general/OptionalAccount-outside **/
         $paypalUser = "guestrelations@lamadeleine.com"; 
         $returnURL = get_site_url().'/thank-you';
