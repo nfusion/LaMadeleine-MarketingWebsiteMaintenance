@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 /*
 SCSS custom theme styling importer
 Author: nFusion (http://nfusion.com)
@@ -1917,7 +1917,7 @@ aside p {
   /* line 167, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .daypart-text {
     width: 72%;
-    padding: 0 0 0 10px;
+    padding: 0 5px 0 10px;
   }
   /* line 171, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper .desc {
@@ -2641,6 +2641,18 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
+/* line 538, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locations {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transition-duration: 0;
+  -moz-transition-duration: 0;
+  -o-transition-duration: 0;
+  transition-duration: 0;
+}
 
 /**
 * La Madeleine
@@ -2650,8 +2662,8 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 .widget.widget-story-nav a.story-nav-link {
   display: block;
   width: 100%;
-  height: 45px;
-  overflow: hidden;
+  min-height: 45px;
+  overflow: visible;
   margin: 10px 0;
   position: relative;
   color: #7a3910;
@@ -2659,8 +2671,9 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
 /* line 15, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link:hover {
   color: #7a3910;
+  background: #f4f2df;
 }
-/* line 18, ../sass/widgets/_widget-story-nav.scss */
+/* line 19, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-wrapper {
   width: 100%;
   height: 100%;
@@ -2669,7 +2682,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 22, ../sass/widgets/_widget-story-nav.scss */
+/* line 23, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-wrapper:after {
   color: #b55a0f;
   font-family: 'icomoon';
@@ -2683,19 +2696,17 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 32, ../sass/widgets/_widget-story-nav.scss */
-.widget.widget-story-nav a.story-nav-link .cat-wrapper:hover {
-  background: #f4f2df;
-}
-/* line 34, ../sass/widgets/_widget-story-nav.scss */
+/* line 35, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-wrapper:hover:after {
   right: 0px;
 }
-/* line 39, ../sass/widgets/_widget-story-nav.scss */
+/* line 40, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .text-wrapper {
-  padding-top: 7px;
+  width: 100%;
+  padding: 5px 30px 0 0;
+  overflow: visible;
 }
-/* line 42, ../sass/widgets/_widget-story-nav.scss */
+/* line 45, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .icon {
   width: 45px;
   height: 45px;
@@ -2705,25 +2716,26 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
   background: #edeacc;
   float: left;
 }
-/* line 51, ../sass/widgets/_widget-story-nav.scss */
+/* line 54, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-name {
   padding: 3px 0;
   font-family: "Merriweather", serif;
 }
-/* line 55, ../sass/widgets/_widget-story-nav.scss */
+/* line 58, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-desc {
   font-size: 10px;
   font-style: italic;
+  line-height: 1.3;
 }
 
-/* line 67, ../sass/widgets/_widget-story-nav.scss */
-#content.stories .widget-story-nav .story-nav-link.stories .cat-wrapper,
-.category-food .widget-story-nav .story-nav-link.category-food .cat-wrapper,
-.category-culture .widget-story-nav .story-nav-link.category-culture .cat-wrapper,
-.category-community .widget-story-nav .story-nav-link.category-community .cat-wrapper {
+/* line 70, ../sass/widgets/_widget-story-nav.scss */
+#content.stories .widget-story-nav .story-nav-link.stories,
+.category-food .widget-story-nav .story-nav-link.category-food,
+.category-culture .widget-story-nav .story-nav-link.category-culture,
+.category-community .widget-story-nav .story-nav-link.category-community {
   background: #f4f2df;
 }
-/* line 69, ../sass/widgets/_widget-story-nav.scss */
+/* line 72, ../sass/widgets/_widget-story-nav.scss */
 #content.stories .widget-story-nav .story-nav-link.stories .cat-wrapper:after,
 .category-food .widget-story-nav .story-nav-link.category-food .cat-wrapper:after,
 .category-culture .widget-story-nav .story-nav-link.category-culture .cat-wrapper:after,

@@ -535,6 +535,10 @@ html.ie{
           .back{
             @include rotateY(0deg);
           }
+          .other-locations{
+            @include rotateY(0deg);
+            @include transition-duration(0);
+          }
         }
       }
     }
