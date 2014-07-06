@@ -1,0 +1,119 @@
+/**
+* La Madeleine
+* Store Styling
+**/
+
+/*.store h1{
+        font-size: 14px;
+        margin: 10px 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #310d00;
+    }
+*/
+     p.subhead{
+        /*$playfair*/
+        font-family: $playfair; /*"Playfair Display", serif; */
+        font-style: italic;
+        color: #310d00;
+        line-height: 1.4;
+    }
+    
+    .store-text{
+        text-align: center;
+    }
+
+    .store_item{
+        margin-bottom: 20px;
+    }
+
+    
+    .store_item_image img{
+        width:100%;
+    }
+
+    .item_added{
+        margin-top:15px;
+    }
+
+    .btn  {
+        color: #fffdf0;
+        font-family: "Lato", sans-serif;
+        font-style: none;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        padding: 7px 30px 7px 20px;
+        font-weight: bold;
+        position: relative;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        text-shadow: #310d00 0 -1px 0;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b64507), color-stop(100%, #6c2904));
+        background-image: -webkit-linear-gradient(#b64507, #6c2904);
+        background-image: -moz-linear-gradient(#b64507, #6c2904);
+        background-image: -o-linear-gradient(#b64507, #6c2904);
+        background-image: linear-gradient(#b64507, #6c2904);
+        -webkit-transition-property: background-image;
+        -moz-transition-property: background-image;
+        -o-transition-property: background-image;
+        transition-property: background-image;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+}
+
+ select{
+    width: 70%;
+    height:30px;
+
+    margin-bottom: 20px;
+}
+
+ div.cart{
+    display: none;
+    text-align: left;
+    padding-left: 5%;
+    background-color: #fff;
+    border:1px solid #ccc;
+    margin: 5px;
+    /*max-width: 350px;*/
+    height: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+ }
+ div.cart .title{
+    float: left;
+    padding-right: 5%;
+
+ }
+ div.cart .info{
+    float: right;
+    padding-right: 25%;
+ }
+
+div.cart .info:before {
+  content: "$";
+}
+
+div.cart input {
+    width: 60px;
+    /*text-align: center;*/
+}
+.lineItem{
+    width: 75%;
+    overflow: visible;
+    float: left;
+    padding-right: 10px;
+}
+ .tallies{
+    clear: both;
+    padding: 10px;
+ }
