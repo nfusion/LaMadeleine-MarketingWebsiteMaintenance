@@ -288,8 +288,8 @@ function display_menu_item($menuItemObj, $featuredItemObj){
         $isPriced = '';
         $str .= "<div class='pricing'>".$menuItemObj['description_'.$i];
         $str .= '<span class="pricing ' . $isPriced . '">
-                    <span class="min">$' . $menuItemObj['optional_min_price_'.$i] . '</span>
-                    <span class="max">$' . $menuItemObj['optional_max_price_'.$i] . '</span>
+              	<span class="min">$' . $menuItemObj['optional_min_price_'.$i] . '</span>
+                <span class="max">$' . $menuItemObj['optional_max_price_'.$i] . '</span>
                 </span>
                 </div>
                 ';
@@ -297,9 +297,6 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   }
 
   $str .='</div>';
-  // print_r($menuItemObj);
-
-  // die();
 
   if($hasStory) :
   	// If this menu item is not also the featured item, display the story CTA under the menu item in the category
@@ -312,6 +309,7 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   // Closing .menu-item
   $str .= '</div>';
 
+  // Return menu item markup
   return $str;
 
 }
@@ -457,7 +455,7 @@ function display_story_carousel($stories){
 
 		foreach ($stories as $key => $story){
 			// Open carousel item wrapper
-			$str .= '<div class="carousel-item">';
+			$str .= '<div class="carousel-item has-gradient-' . $story['has_gradient'] . '">';
 			// Include image
 			$str .= '<div>' . $story['fma_full'] . '</div>';
 			// Open carousel text wrapper
@@ -494,6 +492,7 @@ function display_story_carousel($stories){
     // Open carousel pagination wrapper
     $str .= '<div class="carousel-paginate">';
 
+    // If more than two slides, add carousel pagination
     if($storyCount > 2) :
 	    for($i = 0; $i < $storyCount; $i++){
 	    	if($i == 0) :
@@ -635,7 +634,7 @@ function process_stories($mypod){
   );
 
    while( $mypod->fetch() ) {
-            foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'top_image', 'is_featured', 'call_to_action', 'category') as $key => $value) {
+            foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'top_image', 'is_featured', 'call_to_action', 'category', 'has_gradient') as $key => $value) {
                 $item[$value] = $mypod->field($value);
                 $item['fma_full'] =  get_the_post_thumbnail($item['id'], 'fma-full');
                 $item['featured_top'] =  get_the_post_thumbnail($item['id'], 'featured-top');
