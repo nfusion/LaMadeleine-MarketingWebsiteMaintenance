@@ -21,19 +21,29 @@
 			if(count($return)){
 				header("Content-Type: application/json");
 				echo  json_encode($return );
-			} 
+				die();
+			} else{
+				//http_response_code(400);
+				header("Content-Type: application/json",true,400);
+				echo  json_encode(array('error' =>'Failed to find locations in API') );
+				die();
+			}
 			return;
 		}
 
 
 		public static function findImage( $app, $postID, $sized = 'location-featured' ) {
 
-			header("Content-Type: application/json");
+			
 			$return = wp_get_attachment_image_src( get_post_thumbnail_id($postID), $sized);
 			if($return){
-				
+				header("Content-Type: application/json");
 				echo  json_encode($return[0] );
-			} 
+			}  else{
+				header("Content-Type: application/json",true,400);
+				echo  json_encode(array('error' =>'Failed to find locations image in API') );
+			}
+			die(0);
 			return;
 			
 
