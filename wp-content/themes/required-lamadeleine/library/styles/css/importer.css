@@ -1305,7 +1305,7 @@ body.has-location #header .icon-wrapper .icon-pin {
 /* line 14, ../sass/framework/_footer.scss */
 #container #footer .footer-wrapper .footer-links {
   width: 100%;
-  max-width: 530px;
+  max-width: 550px;
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
