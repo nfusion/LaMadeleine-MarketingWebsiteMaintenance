@@ -24,7 +24,7 @@
 			<h4>Connect</h4>
 			<a target="_blank" href="https://www.facebook.com/laMadeleineCafe"><span class="icon icon-facebook"></span></a>
 			<a target="_blank" href="https://twitter.com/lamadeleine"><span class="icon icon-twitter"></span></a>
-			<a target="_blank" href="#"><span class="icon icon-instagram"></span></a>
+			<a target="_blank" href="http://www.instawebgram.com/tag/lamadeleine"><span class="icon icon-instagram"></span></a>
 			<a target="_blank" href="http://www.pinterest.com/lamadeleinecafe/"><span class="icon icon-pinterest"></span></a>
 			<a target="_blank" href="https://www.youtube.com/user/laMadeleineCafe"><span class="icon icon-youtube"></span></a>
 		</div>
