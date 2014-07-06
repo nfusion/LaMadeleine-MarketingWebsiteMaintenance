@@ -25,8 +25,7 @@
 $(document).ready(function(){
         lamCart.getCartCookie(<?php echo $shippingBase ?>);
         $('.product-button').click(function(){
-
-                console.log('ddd');
+                $(this).parent().append('<div class = "item_added">Item added to cart</div>');
                 lamCart.addItem($(this));
                 $('.cart').show();
                 
