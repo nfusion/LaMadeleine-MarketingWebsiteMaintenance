@@ -116,7 +116,6 @@ var LaMadLocations = {
                     scaleControl: false,
                     streetViewControl: false,
                     overviewMapControl: false,
-                    optimized: false,
                     center: myCenter,
                     zoom: 12,
                     mapTypeControlOptions: {
@@ -134,12 +133,16 @@ var LaMadLocations = {
                 if(typeof(icon)!='undefined'){
                     displayIcon = '/wp-content/themes/required-lamadeleine/img/map/blue-dot.png';
                 } else {
-                    displayIcon = '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png';
+                    displayIcon = {
+                        url: '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png',
+                        size: new google.maps.Size(96, 104), // Actual size, @2x for retina
+                        scaledSize: new google.maps.Size(48, 52) // Size on map
+                    }
                 }
                 var marker = new google.maps.Marker({ 
                                                     position: myLatlng, 
                                                     map: map, 
-                                                    title: 'Nearest Location', 
+                                                    title: 'La Madeleine Location', 
                                                     icon: displayIcon
                                                     });
                 this.sideMap = map;

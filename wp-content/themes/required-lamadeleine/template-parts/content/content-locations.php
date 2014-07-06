@@ -79,11 +79,18 @@ LaMadLocations.initializeLargeMap = function() {
                 $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'location-featured');
                 ?>
                 var Latlng = new google.maps.LatLng( <?php echo $item['latitude'] .','.  $item['longitude'] ?>);
+
+                var displayIcon = {
+                    url: '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png',
+                    size: new google.maps.Size(96, 104), // Actual size, @2x for retina
+                    scaledSize: new google.maps.Size(48, 52) // Size on map
+                }
+
                 var marker_<?php echo $item['id'] ?> = new google.maps.Marker({
                         position: Latlng,
                         map: largeMap,
                         title: 'Closest Location',
-                        icon: '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png',
+                        icon: displayIcon,
                     });
                     marker_<?php echo $item['id'] ?>.info = new google.maps.InfoWindow({ content: '<b>'+ <?php echo $items['title']; ?>+':</b>' });
                     
