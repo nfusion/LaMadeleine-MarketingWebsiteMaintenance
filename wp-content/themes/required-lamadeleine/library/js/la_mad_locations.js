@@ -16,6 +16,19 @@ var LaMadLocations = {
                     ]
                   },
                   {
+                    "featureType": "poi",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#ddc692" }
+                    ]
+                  },{
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      { "color": "#9fc8b1" }
+                    ]
+                  },
+                  {
                     "featureType": "road",
                     "elementType": "geometry.fill",
                     "stylers": [
@@ -28,54 +41,8 @@ var LaMadLocations = {
                     "stylers": [
                       { "color": "#e4dbb9" }
                     ]
-                  },{
-                    "featureType": "poi.business",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                      { "color": "#eee4c6" }
-                    ]
-                  },{
-                    "featureType": "poi.attraction",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                      { "color": "#eee4c6" }
-                    ]
-                  },{
-                    "featureType": "poi.government",
-                    "stylers": [
-                      { "color": "#eee4c6" }
-                    ]
-                  },{
-                    "featureType": "poi.medical",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                      { "color": "#eee4c6" }
-                    ]
-                  },{
-                    "featureType": "poi.park",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                      { "color": "#c0e4ba" }
-                    ]
-                  },{
-                    "featureType": "poi.place_of_worship",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                      { "color": "#efe5c6" }
-                    ]
-                  },{
-                    "featureType": "poi.school",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                      { "color": "#efe5c6" }
-                    ]
-                  },{
-                    "featureType": "poi.sports_complex",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                      { "color": "#efe5c6" }
-                    ]
-                  },{
+                  },
+                  {
                     "featureType": "road.highway.controlled_access",
                     "elementType": "geometry.fill",
                     "stylers": [
