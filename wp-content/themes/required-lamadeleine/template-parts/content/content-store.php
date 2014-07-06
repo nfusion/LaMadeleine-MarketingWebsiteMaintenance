@@ -25,7 +25,7 @@
 $(document).ready(function(){
         lamCart.getCartCookie(<?php echo $shippingBase ?>);
         $('.product-button').click(function(){
-                $(this).parent().append('<div class = "item_added">Item added to cart</div>');
+                $(this).parent().append('<div class = "item_added"> <a href="#cart"> Item added to cart</a></div>');
                 lamCart.addItem($(this));
                 $('.cart').show();
                 
@@ -33,6 +33,7 @@ $(document).ready(function(){
                     lamCart.recalculate(this);
                 });
 
+                $('.item_added').delay(2500).fadeOut();
         });
 
         
@@ -48,7 +49,9 @@ $(document).ready(function(){
         $('#paypal').click(function(e){
             lamCart.prepPayment();
             event.preventDefault();
-        })
+        });
+
+        
 })
 
 
@@ -149,7 +152,7 @@ $(document).ready(function(){
 
                 </div> -->
 
-
+        <a name="cart"></a>
         <div class='cart row'>
 
                 <div id='items'></div>
