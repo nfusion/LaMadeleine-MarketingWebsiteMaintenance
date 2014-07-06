@@ -27,9 +27,9 @@
     }
     .daypart-image-thumb{
       width: 100%;
+      padding-bottom: 3px;
       float: left;
     }
-
     a.daypart-link{
       position: relative;
       display: block;
@@ -37,7 +37,6 @@
       padding: 0 15px;
       float: left;
     }
-
     a.daypart-link:first-child{
       display: block;
       width: 100%;
@@ -115,6 +114,14 @@
   }
 }
 
+@media (min-width: $xsmall-screen-min){
+  .widget-daypart .daypart-wrapper{
+    .title{
+      font-size: 12px;
+    }
+  }
+}
+
 @media (max-width: $medium-screen-min){
   #content #sidebar .widget.home-daypart{
     border-bottom: 0;
@@ -135,6 +142,7 @@
       .daypart-image-thumb{
         width: 45px;
         height: 45px;
+        padding-bottom: 0;
         float: left;
       }
       .daypart-text{

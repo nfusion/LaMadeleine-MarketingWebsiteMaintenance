@@ -29,7 +29,7 @@
             e.preventDefault();
 
             // Fade out UI elements and hide
-             LaMadLocations.$frontWrapper().fadeOut('fast');
+            LaMadLocations.$frontWrapper().fadeOut('fast');
 
             // Show loading indicator
             LaMadLocations.$locationCta.addClass('map-loading');

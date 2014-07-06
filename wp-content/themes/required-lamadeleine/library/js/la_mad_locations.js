@@ -318,6 +318,9 @@ var LaMadLocations = {
         },
 
         showPosition: function(lat, lng){
+
+            console.log(lat);
+            console.log(lng);
             
             markers = [];
             $.ajax({
@@ -356,7 +359,9 @@ var LaMadLocations = {
                     LaMadLocations.$locationCta.removeClass('map-loading').addClass('map-loaded');
                     return data;
                 },
-                error : function(data){
+                error : function(data, error){
+                    console.log(data);
+                    console.log(error);
                     $('#map').html('No Locations Found');
                 }
             });
