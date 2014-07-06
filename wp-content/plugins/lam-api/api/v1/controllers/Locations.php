@@ -4,12 +4,12 @@
 		public static function find( $app ) {
 			$location = new \Voce\Thermal\v1\Models\Locations;
 			$return = $location->findbyCord($app->request()->get('lat'), $app->request()->get('lng'));
-
 			
 			/* get the imaages */
 			foreach ($return as  $loc) {
 
-				
+				print_r($return);
+
 				$featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'location-featured');
 				$thumbImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'thumbnail');
 				$loc->images['featured'] = $featuredImg[0];

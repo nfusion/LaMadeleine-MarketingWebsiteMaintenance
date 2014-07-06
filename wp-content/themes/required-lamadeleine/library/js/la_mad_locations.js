@@ -318,13 +318,10 @@ var LaMadLocations = {
         },
 
         showPosition: function(lat, lng){
-
-            console.log(lat);
-            console.log(lng);
             
             markers = [];
             $.ajax({
-                url:'/wp_api/v1/locations/?lat='+lat+'&lng='+lng,
+                url:'http://test.lamadeleine.nfusion.com/wp_api/v1/locations/?lat='+lat+'&lng='+lng,
                     
                 success: function(data){
 
@@ -360,8 +357,6 @@ var LaMadLocations = {
                     return data;
                 },
                 error : function(data, error){
-                    console.log(data);
-                    console.log(error);
                     $('#map').html('No Locations Found');
                 }
             });

@@ -44,9 +44,9 @@
 					<p><a href="/careers">Careers</a></p>
 				</div>
 			</div>
-			<div class="copyright">
-					<p>&copy; <?php echo date('Y'); ?> La Madeleine de Corps, Inc.</p>
-			</div>
+			<!-- <div class="copyright">
+					<p>&copy; <?php //echo date('Y'); ?> La Madeleine de Corps, Inc.</p>
+			</div> -->
  	</div>
 </nav>
 

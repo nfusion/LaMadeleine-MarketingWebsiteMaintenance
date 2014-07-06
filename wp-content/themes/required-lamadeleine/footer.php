@@ -8,6 +8,16 @@
  * @since required+ Foundation 0.1.0
  */
 ?>
+
+	<div id="footer">
+		<div class="footer-wrapper">
+			<div class="footer-links">
+					<p>&copy; <?php echo date('Y'); ?> La Madeleine de Corps, Inc</p>
+					<p><a href="#">Privacy Policy</a></p>
+					<p><a href="#">Terms &amp; Conditions</a></p>
+			</div>
+		</div>
+	</div>
 			
 	</div><!-- Container End -->
 
