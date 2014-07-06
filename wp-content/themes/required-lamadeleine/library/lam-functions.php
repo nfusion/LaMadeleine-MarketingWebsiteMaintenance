@@ -346,9 +346,9 @@ function display_menu_category($menuObj,$layout){
 	  if($isFeatured && $totalMenuItems > 2) :
 	  	// Featured item and more than two items, stop one item short to better balance column against featured item image
 			if($layout === 'left') :
-	  		$splitItems = (($totalMenuItems / 2) - 1);
+	  		$splitItems = ceil(($totalMenuItems / 2) - 1);
 	  	else :
-	  		$splitItems = (($totalMenuItems / 2) + 1);
+	  		$splitItems = ceil(($totalMenuItems / 2) + 1);
 	  	endif;
 	  else : 
 	  	// Less than two items or no featured item, split evenly in half
