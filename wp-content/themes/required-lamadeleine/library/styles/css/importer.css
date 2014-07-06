@@ -1450,11 +1450,11 @@ aside p {
   z-index: 2;
   width: 100%;
   height: 200px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8d7bb), color-stop(60%, rgba(232, 215, 187, 0.5)), color-stop(100%, rgba(232, 215, 187, 0)));
-  background-image: -webkit-linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 60%, rgba(232, 215, 187, 0));
-  background-image: -moz-linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 60%, rgba(232, 215, 187, 0));
-  background-image: -o-linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 60%, rgba(232, 215, 187, 0));
-  background-image: linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 60%, rgba(232, 215, 187, 0));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8d7bb), color-stop(50%, rgba(232, 215, 187, 0.6)), color-stop(100%, rgba(232, 215, 187, 0)));
+  background-image: -webkit-linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
+  background-image: -moz-linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
+  background-image: -o-linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
+  background-image: linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
 }
 /* line 39, ../sass/components/_carousel.scss */
 #carousel .carousel-text {
@@ -1595,12 +1595,12 @@ aside p {
     position: absolute;
     z-index: 2;
     width: 100%;
-    height: 200px;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8d7bb), color-stop(40%, rgba(232, 215, 187, 0.5)), color-stop(100%, rgba(232, 215, 187, 0)));
-    background-image: -webkit-linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 40%, rgba(232, 215, 187, 0));
-    background-image: -moz-linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 40%, rgba(232, 215, 187, 0));
-    background-image: -o-linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 40%, rgba(232, 215, 187, 0));
-    background-image: linear-gradient(#e8d7bb, rgba(232, 215, 187, 0.5) 40%, rgba(232, 215, 187, 0));
+    height: 250px;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e8d7bb), color-stop(50%, rgba(232, 215, 187, 0.5)), color-stop(100%, rgba(232, 215, 187, 0)));
+    background-image: -webkit-linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
+    background-image: -moz-linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
+    background-image: -o-linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
+    background-image: linear-gradient(#e8d7bb 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
   }
 }
 @media (min-width: 1140px) {
