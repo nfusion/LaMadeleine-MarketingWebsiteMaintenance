@@ -14,8 +14,8 @@ body.nav-active{
 #nav{
 	width: 100%;
 	max-width: 1140px;
-	height: 830px;
-	max-height: 830px;
+	height: $navHeight;
+	max-height: $navHeight;
 	margin: 0 auto;
 	position: absolute;
 	left: 0;
@@ -24,9 +24,9 @@ body.nav-active{
 	overflow: hidden;
 	.nav-wrapper{
 		width: 320px;
-		height: 830px;
+		height: $navWrapHeight;
 		max-width: 320px;
-		max-height: 830px;
+		max-height: $navWrapHeight;
 		padding-top: 96px;
 		position: absolute;
 		top: 0;
@@ -35,7 +35,7 @@ body.nav-active{
 		background: url(../../../img/nav/nav-bg.jpg) no-repeat;
 		@include transition-property(left);
 		@include transition-duration(0.35s);
-		@include box-shadow(rgba(0,0,0,0.5) 8px -8px 18px);
+		@include box-shadow(rgba(0,0,0,0.6) 8px 8px 18px);
 	}
 	h4{
 		margin: 2px 0 10px;

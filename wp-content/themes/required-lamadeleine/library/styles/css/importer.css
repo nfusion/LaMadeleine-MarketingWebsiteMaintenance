@@ -5,6 +5,10 @@ Author: nFusion (http://nfusion.com)
 */
 /**
 * La Madeleine
+* Variables
+**/
+/**
+* La Madeleine
 * Media Query Sizes
 **/
 /**
@@ -721,7 +725,7 @@ body {
   width: 100%;
   max-width: 1140px;
   min-width: 320px;
-  min-height: 830px;
+  min-height: 860px;
   padding-top: 70px;
   background: #fffdf0;
 }
@@ -819,8 +823,8 @@ body.nav-active #nav .nav-wrapper {
 #nav {
   width: 100%;
   max-width: 1140px;
-  height: 830px;
-  max-height: 830px;
+  height: 860px;
+  max-height: 860px;
   margin: 0 auto;
   position: absolute;
   left: 0;
@@ -848,9 +852,9 @@ body.nav-active #nav .nav-wrapper {
   -moz-transition-duration: 0.35s;
   -o-transition-duration: 0.35s;
   transition-duration: 0.35s;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
-  box-shadow: rgba(0, 0, 0, 0.5) 8px -8px 18px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 8px 8px 18px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 8px 8px 18px;
+  box-shadow: rgba(0, 0, 0, 0.6) 8px 8px 18px;
 }
 /* line 40, ../sass/framework/_nav.scss */
 #nav h4 {
@@ -1121,25 +1125,28 @@ body.nav-active #nav .nav-wrapper {
   z-index: 101;
   text-align: center;
   background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
 }
-/* line 15, ../sass/framework/_header.scss */
+/* line 16, ../sass/framework/_header.scss */
 #header .header-wrapper {
   max-width: 1140px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
-/* line 21, ../sass/framework/_header.scss */
+/* line 22, ../sass/framework/_header.scss */
 #header .logo {
   width: 180px;
   height: auto;
   margin-top: 2px;
 }
-/* line 26, ../sass/framework/_header.scss */
+/* line 27, ../sass/framework/_header.scss */
 #header .tagline {
   display: none;
 }
-/* line 29, ../sass/framework/_header.scss */
+/* line 30, ../sass/framework/_header.scss */
 #header .icon-menu {
   float: left;
   position: absolute;
@@ -1148,21 +1155,21 @@ body.nav-active #nav .nav-wrapper {
   font-size: 30px;
   color: #fffdf0;
 }
-/* line 36, ../sass/framework/_header.scss */
+/* line 37, ../sass/framework/_header.scss */
 #header .icon-menu:before {
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 39, ../sass/framework/_header.scss */
+/* line 40, ../sass/framework/_header.scss */
 #header .icon-menu span {
   visibility: hidden;
 }
-/* line 43, ../sass/framework/_header.scss */
+/* line 44, ../sass/framework/_header.scss */
 #header .icon-wrapper {
   position: absolute;
   top: 2px;
   right: -3px;
 }
-/* line 47, ../sass/framework/_header.scss */
+/* line 48, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon {
   display: none;
   position: absolute;
@@ -1172,11 +1179,11 @@ body.nav-active #nav .nav-wrapper {
   color: #fffdf0;
   text-shadow: #310d00 0 -1px 0;
 }
-/* line 55, ../sass/framework/_header.scss */
+/* line 56, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon:hover {
   cursor: pointer;
 }
-/* line 59, ../sass/framework/_header.scss */
+/* line 60, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon-phone {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1184,7 +1191,7 @@ body.nav-active #nav .nav-wrapper {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 61, ../sass/framework/_header.scss */
+/* line 62, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon-phone a {
   position: absolute;
   top: 0;
@@ -1193,11 +1200,11 @@ body.nav-active #nav .nav-wrapper {
   width: 50px;
   height: 50px;
 }
-/* line 70, ../sass/framework/_header.scss */
+/* line 71, ../sass/framework/_header.scss */
 #header .icon-wrapper .icon-pin {
   top: -2px;
 }
-/* line 73, ../sass/framework/_header.scss */
+/* line 74, ../sass/framework/_header.scss */
 #header .icon-wrapper .loading {
   display: none;
   position: absolute;
@@ -1205,48 +1212,48 @@ body.nav-active #nav .nav-wrapper {
   right: -7px;
 }
 
-/* line 85, ../sass/framework/_header.scss */
+/* line 86, ../sass/framework/_header.scss */
 body.no-location #header .icon-wrapper .icon-phone {
   display: none;
 }
-/* line 88, ../sass/framework/_header.scss */
+/* line 89, ../sass/framework/_header.scss */
 body.no-location #header .icon-wrapper .icon-pin {
   display: block;
 }
 
-/* line 97, ../sass/framework/_header.scss */
+/* line 98, ../sass/framework/_header.scss */
 body.has-location #header .icon-wrapper .icon-phone {
   display: block;
 }
-/* line 100, ../sass/framework/_header.scss */
+/* line 101, ../sass/framework/_header.scss */
 body.has-location #header .icon-wrapper .icon-pin {
   display: none;
 }
 
 @media (min-width: 480px) {
-  /* line 107, ../sass/framework/_header.scss */
+  /* line 108, ../sass/framework/_header.scss */
   #header {
     height: 80px;
     padding: 13px 15px;
     position: relative;
     background-position: 0 0;
   }
-  /* line 112, ../sass/framework/_header.scss */
+  /* line 113, ../sass/framework/_header.scss */
   #header .logo {
     width: 200px;
     margin-top: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 121, ../sass/framework/_header.scss */
+  /* line 122, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     float: right;
   }
-  /* line 124, ../sass/framework/_header.scss */
+  /* line 125, ../sass/framework/_header.scss */
   #header .logo {
     float: left;
   }
-  /* line 127, ../sass/framework/_header.scss */
+  /* line 128, ../sass/framework/_header.scss */
   #header .tagline {
     max-width: 177px;
     display: block;
@@ -1255,11 +1262,11 @@ body.has-location #header .icon-wrapper .icon-pin {
     top: 19px;
     left: 2px;
   }
-  /* line 136, ../sass/framework/_header.scss */
+  /* line 137, ../sass/framework/_header.scss */
   #header .icon-menu:hover {
     cursor: pointer;
   }
-  /* line 139, ../sass/framework/_header.scss */
+  /* line 140, ../sass/framework/_header.scss */
   #header .icon-menu span {
     visibility: visible;
     font-size: 22px;
@@ -1271,17 +1278,17 @@ body.has-location #header .icon-wrapper .icon-pin {
     top: -5px;
     left: 15px;
   }
-  /* line 151, ../sass/framework/_header.scss */
+  /* line 152, ../sass/framework/_header.scss */
   #header .icon-wrapper {
     display: none;
   }
 }
 @media (min-width: 1140px) {
-  /* line 159, ../sass/framework/_header.scss */
+  /* line 160, ../sass/framework/_header.scss */
   #header .logo-wrapper {
     padding-right: 20px;
   }
-  /* line 162, ../sass/framework/_header.scss */
+  /* line 163, ../sass/framework/_header.scss */
   #header .icon-menu {
     padding-left: 20px;
   }

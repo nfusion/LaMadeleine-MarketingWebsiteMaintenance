@@ -12,6 +12,7 @@
 	z-index: 101;
 	text-align: center;
 	background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
+	@include box-shadow(rgba(0,0,0,0.6) 0 2px 2px);
 	.header-wrapper{
 		max-width: 1140px;
 		margin: 0 auto;
