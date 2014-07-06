@@ -183,6 +183,7 @@ $(function(){
 		var $controls = $carousel.find('.carousel-controls'),
 				$paginate = $carousel.find('.carousel-paginate');
 
+		// Instantiate swipe.js on #carousel
 		window.mySwipe = new Swipe(document.getElementById('carousel'), {
 			startSlide: 0,
 			speed: 500,
@@ -192,17 +193,35 @@ $(function(){
 		  	// Set navigation-marker active class
 		  	$paginate.find('.active').removeClass('active');
 		  	$paginate.find('.dot:nth-child(' + (index + 1) + ')').addClass('active');
+
 		  }
 		});
 
+		// Check if swipe.js has loaded
+		var swipeOnload = function(){
+			if(window.mySwipe.getNumSlides() > 0){
+				$carousel.find('.carousel-item.has-gradient-1').prepend('<div class="carousel-gradient"></div>');
+				clearInterval(swipeInt);
+			}
+		}
+
+		// Check every 100ms until loaded
+		var swipeInt = setInterval(swipeOnload, 100);
+
+		// Run immediately rather than waiting for first interval
+		swipeOnload();
+
+		// Previous arrow click event
 		$controls.find('.prev').on('click', function(){
 			mySwipe.prev();
 		});
 
+		// Next arrow click event
 		$controls.find('.next').on('click', function(){
 			mySwipe.next();
 		});
 
+		// Pagination dot click event
 		$paginate.find('.dot').on('click', function(){
 			mySwipe.slide($(this).data('order'));
 		});

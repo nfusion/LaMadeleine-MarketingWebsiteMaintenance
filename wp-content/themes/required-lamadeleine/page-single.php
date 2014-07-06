@@ -68,7 +68,7 @@ $subtitle = $podPage->field('subtitle');
 			<div class="sidebar-wrapper">
 
 				<?php 
-					dynamic_sidebar('sidebar-story'); 
+					dynamic_sidebar('sidebar-home'); 
 
 					echo display_promo($promo, 'widget');
 				?>
