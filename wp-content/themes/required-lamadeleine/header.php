@@ -25,6 +25,11 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
+	<!-- SHARETHIS  - REPLACE WITH ACTUAL ACCOUNT BEFORE LAUNCH -->
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "42ef3a71-5884-478e-a992-145b8a54c3c7", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
 <?php
 	wp_head();
 ?>

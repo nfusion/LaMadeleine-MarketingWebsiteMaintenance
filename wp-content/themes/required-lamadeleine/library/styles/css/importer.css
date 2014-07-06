@@ -3268,24 +3268,47 @@ body.single-post #main .post-box, #content.page-single #main .post-box {
   line-height: 1.4;
 }
 
+/* line 60, ../sass/templates/_stories-pages.scss */
+.social-share {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 10px 0 20px;
+  overflow: hidden;
+  border-bottom: 1px solid #dccabc;
+}
+/* line 66, ../sass/templates/_stories-pages.scss */
+.social-share * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 69, ../sass/templates/_stories-pages.scss */
+.social-share .stButton {
+  padding: 3px;
+}
+/* line 71, ../sass/templates/_stories-pages.scss */
+.social-share .stButton .stArrow {
+  display: none;
+}
+
 @media (min-width: 980px) {
-  /* line 61, ../sass/templates/_stories-pages.scss */
+  /* line 80, ../sass/templates/_stories-pages.scss */
   #content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
     display: block;
   }
 
-  /* line 66, ../sass/templates/_stories-pages.scss */
+  /* line 85, ../sass/templates/_stories-pages.scss */
   #content article .text-wrapper {
     padding: 0 30px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
   }
-  /* line 71, ../sass/templates/_stories-pages.scss */
+  /* line 90, ../sass/templates/_stories-pages.scss */
   #content article .entry-header h1 {
     font-size: 33px;
   }
-  /* line 74, ../sass/templates/_stories-pages.scss */
+  /* line 93, ../sass/templates/_stories-pages.scss */
   #content article .entry-header h2 {
     font-size: 18px;
   }
