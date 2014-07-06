@@ -10,9 +10,42 @@
     position: relative; 
     max-width: 500px;
     margin: 0 auto;
-    a.daypart-link{
+    .categories{
       display: none;
+    }
+    .title{
+      font-size: 10px;
+      line-height: 1.2;
+      text-align: center;
+      font-family: $merriweather;
+    }
+    .desc{
+      display: none;
+      font-size: 12px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .daypart-image-thumb{
+      width: 100%;
+      float: left;
+    }
+
+    a.daypart-link{
       position: relative;
+      display: block;
+      width: 33%;
+      padding: 0 15px;
+      float: left;
+    }
+
+    a.daypart-link:first-child{
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      padding: 0;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed $fadedBrown;
       &:after{
         color: $lightBrown;
         font-family: 'icomoon';
@@ -22,34 +55,26 @@
         top: 20px;
         right: 0;
       }
+      .daypart-image{
+        width: 50%;
+        float: left;
+      }
+      .daypart-text{
+        width: 50%;
+        padding: 0 15px;
+        float: left;
+        font-family: $merriweather;
+        color: $darkBrown;
+      }
+      .title{
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
+      }
+      .desc{
+        display: block;
+      }
     }
-    a.daypart-link:first-child{
-      display: block;
-    }
-  }
-  .daypart-image{
-    width: 50%;
-    float: left;
-  }
-  .daypart-text{
-    width: 50%;
-    padding: 0 15px;
-    float: left;
-    font-family: $merriweather;
-    color: $darkBrown;
-  }
-  .title{
-    font-family: $merriweather;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  .desc{
-    font-size: 12px;
-    font-style: italic;
-    line-height: 1.4;
-  }
-  .categories{
-    display: none;
   }
 }
 
@@ -100,15 +125,51 @@
 @media (min-width: $medium-screen-min){
   .widget-daypart{
     .daypart-wrapper{
+      .daypart{
+        width: 100%;
+        margin: 6px 0;
+        overflow: hidden;
+        @include transition-property(background-color);
+        @include transition-duration(0.25s);
+      }
+      .daypart-image-thumb{
+        width: 45px;
+        height: 45px;
+        float: left;
+      }
+      .daypart-text{
+        width: 72%;
+        padding: 0 5px 0 10px;
+        float: left;
+        font-family: $merriweather;
+        color: $darkBrown;
+      }
+      .title{
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
+      }
+      .desc{
+        display: block;
+        font-family: $merriweather;
+        font-size: 10px;
+      }
       a.daypart-link{
         display: block;
         width: 100%;
         overflow: hidden;
+        padding: 0;
         &:after{
+          color: $lightBrown;
+          font-family: 'icomoon';
+          font-size: 24px;
+          content: "\e624";
+          position: absolute;
           top: 18px;
           right: 10px;
           @include transition-duration(0.25s);
         }
+        
         &:hover{
           &:after{
             right: 0;
@@ -119,6 +180,9 @@
         }
       }
       a.daypart-link:first-child{
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
         &:after{
           content: "";
         }
@@ -151,26 +215,6 @@
             }
           }
         }
-      }
-      .daypart{
-        width: 100%;
-        margin: 6px 0;
-        overflow: hidden;
-        @include transition-property(background-color);
-        @include transition-duration(0.25s);
-      }
-      .daypart-image-thumb{
-        width: 45px;
-        height: 45px;
-        float: left;
-      }
-      .daypart-text{
-        width: 72%;
-        padding: 0 5px 0 10px;
-      }
-      .desc{
-        font-family: $merriweather;
-        font-size: 10px;
       }
     }
   }
