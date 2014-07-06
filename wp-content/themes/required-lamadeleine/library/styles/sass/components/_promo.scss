@@ -7,6 +7,7 @@
   width: 100%;
   max-width: 400px;
   margin: 30px auto;
+  padding: 10px;
   position: relative;
   overflow: hidden;
   border: 1px solid $fadedBrown;
@@ -19,7 +20,6 @@
   .text-wrapper{
     width: 75%;
     float: right;
-    padding: 10px;
   }
   h4, p{
     color: $medBrown;
@@ -29,7 +29,7 @@
     margin: 3px 0;
   }
   p{
-    font-size: 13px;
+    font-size: 12px;
     font-style: italic;
     margin: 0;
   }
@@ -59,9 +59,12 @@
   #container #content #sidebar .fma-promo{
     width: 100%;
     background: $medCream;
-    padding-bottom: 15px;
+    padding: 0 0 15px 0;
     border: 1px solid;
     border-color: $fadedBrown $fadedBrown $medBrown $fadedBrown;
+    img{
+      width: 100%;
+    }
     .text-wrapper{
       padding: 5px 15px;
       text-align: center;

@@ -1522,22 +1522,22 @@ aside p {
   width: 100%;
   max-width: 400px;
   margin: 30px auto;
+  padding: 10px;
   position: relative;
   overflow: hidden;
   border: 1px solid #cbaf9a;
   background: #fffdf0;
 }
-/* line 14, ../sass/components/_promo.scss */
+/* line 15, ../sass/components/_promo.scss */
 #main .fma-promo.mobile img {
   display: block;
   width: 25%;
   float: left;
 }
-/* line 19, ../sass/components/_promo.scss */
+/* line 20, ../sass/components/_promo.scss */
 #main .fma-promo.mobile .text-wrapper {
   width: 75%;
   float: right;
-  padding: 10px;
 }
 /* line 24, ../sass/components/_promo.scss */
 #main .fma-promo.mobile h4, #main .fma-promo.mobile p {
@@ -1550,7 +1550,7 @@ aside p {
 }
 /* line 31, ../sass/components/_promo.scss */
 #main .fma-promo.mobile p {
-  font-size: 13px;
+  font-size: 12px;
   font-style: italic;
   margin: 0;
 }
@@ -1581,20 +1581,24 @@ aside p {
   #container #content #sidebar .fma-promo {
     width: 100%;
     background: #f4f2df;
-    padding-bottom: 15px;
+    padding: 0 0 15px 0;
     border: 1px solid;
     border-color: #cbaf9a #cbaf9a #7a3910 #cbaf9a;
   }
   /* line 65, ../sass/components/_promo.scss */
+  #container #content #sidebar .fma-promo img {
+    width: 100%;
+  }
+  /* line 68, ../sass/components/_promo.scss */
   #container #content #sidebar .fma-promo .text-wrapper {
     padding: 5px 15px;
     text-align: center;
   }
-  /* line 69, ../sass/components/_promo.scss */
+  /* line 72, ../sass/components/_promo.scss */
   #container #content #sidebar .fma-promo h4, #container #content #sidebar .fma-promo p {
     color: #7a3910;
   }
-  /* line 72, ../sass/components/_promo.scss */
+  /* line 75, ../sass/components/_promo.scss */
   #container #content #sidebar .fma-promo h4 {
     margin: 5px 0;
     font-family: "Merriweather", serif;
