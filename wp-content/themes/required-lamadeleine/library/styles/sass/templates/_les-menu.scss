@@ -189,7 +189,10 @@
 			}
 			.menu-keys{
 				float: left;
-				padding: 4px 0 0 5px;
+				padding: 2px 0 0 5px;
+				.icon{
+					padding: 0 2px;
+				}
 			}
 		}
 		.desc{
