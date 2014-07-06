@@ -43,6 +43,9 @@
             <div class="legend-item">
                 <span class="icon icon-legend-egg-whites"></span> Substitute egg whites free of charge
             </div>
+            <div class="legend-item">
+                <span class="icon icon-legend-gluten-free"></span> Gluten free
+            </div>
         </div>
         <p class="disclaimer"><strong>Please note:</strong> The consumption of raw or undercooked eggs may increase your risk of foodborne illness.</p>
         <p class="disclaimer">Some menu items may not be available at all locations.</p>
