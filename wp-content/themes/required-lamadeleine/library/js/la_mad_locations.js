@@ -68,8 +68,9 @@ var LaMadLocations = {
                 /** due to map size (too small) we actually need to offset the center toward the bottom of the map 
                 to allow marker to fit
                 */
-                newLat=parseFloat(lat)+0.007;
-                myCenter = new google.maps.LatLng(newLat,lng);
+                newLat=parseFloat(lat)+0.02;
+                newLng=parseFloat(lng)-0.01;
+                myCenter = new google.maps.LatLng(newLat,newLng);
 
                 var styledMap = new google.maps.StyledMapType(LaMadLocations.mapStyles, {name: "La Madeleine"});
 
