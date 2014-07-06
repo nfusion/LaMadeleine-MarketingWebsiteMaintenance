@@ -82,8 +82,8 @@ LaMadLocations.initializeLargeMap = function() {
 
                 var displayIcon = {
                     url: '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png',
-                    size: new google.maps.Size(96, 104), // Actual size, @2x for retina
-                    scaledSize: new google.maps.Size(48, 52) // Size on map
+                    size: new google.maps.Size(48, 52),
+                    scaledSize: new google.maps.Size(48, 52)
                 }
 
                 var marker_<?php echo $item['id'] ?> = new google.maps.Marker({
