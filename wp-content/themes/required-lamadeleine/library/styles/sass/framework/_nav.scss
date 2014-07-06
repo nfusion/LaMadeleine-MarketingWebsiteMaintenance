@@ -67,7 +67,7 @@ body.nav-active{
 		background: rgba(0,0,0,0.35);
 		@include transition-duration(0.3s);
 		&:after{
-			content: "\e620";
+			content: "\e624";
 			font-family: 'icomoon';
 			color: $lightCream;
 			font-size: 16px;
