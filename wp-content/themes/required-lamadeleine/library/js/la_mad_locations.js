@@ -360,7 +360,7 @@ var LaMadLocations = {
                     return data;
                 },
                 error : function(data, error){
-                    console.log(data);
+                    console.log('******');
                     console.log(error);
                     $('#map').html('No Locations Found');
                 }

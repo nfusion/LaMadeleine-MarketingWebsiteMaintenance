@@ -17,11 +17,14 @@
 
 			}
 			
-			
 			if(count($return)){
+			if(false){
 				header("Content-Type: application/json");
 				echo  json_encode($return );
-			} 
+			} else {
+				header("Content-Type: application/json");
+				echo  json_encode( array('error'=>'failed to find locations') );
+			}
 			return;
 		}
 
