@@ -87,6 +87,16 @@ get_header(); ?>
 					<div class="text-wrapper shadow">
 
 						<div class="entry-header">
+
+							<div class="social-share">
+								<span class='st_facebook_hcount' displayText='Facebook'></span>
+								<span class='st_twitter_hcount' displayText='Tweet'></span>
+								<span class='st_googleplus_hcount' displayText='Google +'></span>
+								<span class='st_pinterest_hcount' displayText='Pinterest'></span>
+								<span class='st_reddit_hcount' displayText='Reddit'></span>
+								<span class='st_email_hcount' displayText='Email'></span>
+							</div>
+
 							<h1><?php the_title(); ?></h1>
 							<?php 
 								if($post->post_excerpt) :
