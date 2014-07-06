@@ -321,7 +321,7 @@ var LaMadLocations = {
             
             markers = [];
             $.ajax({
-                url:'http://test.lamadeleine.nfusion.com/wp_api/v1/locations/?lat='+lat+'&lng='+lng,
+                url:'/wp_api/v1/locations/?lat='+lat+'&lng='+lng,
                     
                 success: function(data){
 

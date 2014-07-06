@@ -52,12 +52,11 @@ $stories = process_stories($mypods);
 
 <?php
 
-			echo display_story_carousel($stories);
+		echo display_story_carousel($stories);
 
-			// foreach($stories as $story){
-			//     echo '<pre>';
-			//     print_r(expression)r($story); 
-			// }
+		// foreach($stories as $key => $story){
+		    
+		// }
 
 ?>
 

@@ -8,8 +8,6 @@
 			/* get the imaages */
 			foreach ($return as  $loc) {
 
-				print_r($return);
-
 				$featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'location-featured');
 				$thumbImg = wp_get_attachment_image_src( get_post_thumbnail_id($loc->id), 'thumbnail');
 				$loc->images['featured'] = $featuredImg[0];
