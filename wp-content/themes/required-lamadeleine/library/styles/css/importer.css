@@ -1617,12 +1617,48 @@ aside p {
   margin: 0 auto;
 }
 /* line 13, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .daypart-wrapper a.daypart-link {
+.widget-daypart .daypart-wrapper .categories {
   display: none;
-  position: relative;
 }
 /* line 16, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .daypart-wrapper a.daypart-link:after {
+.widget-daypart .daypart-wrapper .title {
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+/* line 22, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper .desc {
+  display: none;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+}
+/* line 28, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper .daypart-image-thumb {
+  width: 100%;
+  float: left;
+}
+/* line 33, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link {
+  position: relative;
+  display: block;
+  width: 33%;
+  padding: 0 15px;
+  float: left;
+}
+/* line 41, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #cbaf9a;
+}
+/* line 49, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child:after {
   color: #b55a0f;
   font-family: 'icomoon';
   font-size: 24px;
@@ -1631,69 +1667,59 @@ aside p {
   top: 20px;
   right: 0;
 }
-/* line 26, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .daypart-wrapper a.daypart-link:first-child {
-  display: block;
-}
-/* line 30, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .daypart-image {
+/* line 58, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart-image {
   width: 50%;
   float: left;
 }
-/* line 34, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .daypart-text {
+/* line 62, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart-text {
   width: 50%;
   padding: 0 15px;
   float: left;
   font-family: "Merriweather", serif;
   color: #310d00;
 }
-/* line 41, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .title {
-  font-family: "Merriweather", serif;
+/* line 69, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .title {
   font-size: 16px;
   line-height: 1.6;
+  text-align: left;
 }
-/* line 46, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .desc {
-  font-size: 12px;
-  font-style: italic;
-  line-height: 1.4;
-}
-/* line 51, ../sass/widgets/_widget-daypart.scss */
-.widget-daypart .categories {
-  display: none;
+/* line 74, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .desc {
+  display: block;
 }
 
-/* line 60, ../sass/widgets/_widget-daypart.scss */
+/* line 85, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast,
 #content.lunch .widget-daypart .lunch,
 #content.dinner .widget-daypart .dinner,
 #content.bakery .widget-daypart .bakery {
   cursor: default;
 }
-/* line 62, ../sass/widgets/_widget-daypart.scss */
+/* line 87, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast:hover .daypart,
 #content.lunch .widget-daypart .lunch:hover .daypart,
 #content.dinner .widget-daypart .dinner:hover .daypart,
 #content.bakery .widget-daypart .bakery:hover .daypart {
   background: none;
 }
-/* line 65, ../sass/widgets/_widget-daypart.scss */
+/* line 90, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast:hover .daypart.featured,
 #content.lunch .widget-daypart .lunch:hover .daypart.featured,
 #content.dinner .widget-daypart .dinner:hover .daypart.featured,
 #content.bakery .widget-daypart .bakery:hover .daypart.featured {
   background: #f4f2df;
 }
-/* line 68, ../sass/widgets/_widget-daypart.scss */
+/* line 93, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast:after,
 #content.lunch .widget-daypart .lunch:after,
 #content.dinner .widget-daypart .dinner:after,
 #content.bakery .widget-daypart .bakery:after {
   display: none;
 }
-/* line 71, ../sass/widgets/_widget-daypart.scss */
+/* line 96, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast .categories,
 #content.lunch .widget-daypart .lunch .categories,
 #content.dinner .widget-daypart .dinner .categories,
@@ -1701,7 +1727,7 @@ aside p {
   display: block;
   margin: 15px 15px 10px 15px;
 }
-/* line 74, ../sass/widgets/_widget-daypart.scss */
+/* line 99, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast .categories li,
 #content.lunch .widget-daypart .lunch .categories li,
 #content.dinner .widget-daypart .dinner .categories li,
@@ -1709,7 +1735,7 @@ aside p {
   font-size: 12px;
   list-style: circle;
 }
-/* line 78, ../sass/widgets/_widget-daypart.scss */
+/* line 103, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast .categories span,
 #content.lunch .widget-daypart .lunch .categories span,
 #content.dinner .widget-daypart .dinner .categories span,
@@ -1722,7 +1748,7 @@ aside p {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 83, ../sass/widgets/_widget-daypart.scss */
+/* line 108, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast .categories span:hover, #content.breakfast .widget-daypart .breakfast .categories span.active,
 #content.lunch .widget-daypart .lunch .categories span:hover,
 #content.lunch .widget-daypart .lunch .categories span.active,
@@ -1732,7 +1758,7 @@ aside p {
 #content.bakery .widget-daypart .bakery .categories span.active {
   color: #e5730e;
 }
-/* line 86, ../sass/widgets/_widget-daypart.scss */
+/* line 111, ../sass/widgets/_widget-daypart.scss */
 #content.breakfast .widget-daypart .breakfast .categories span:hover,
 #content.lunch .widget-daypart .lunch .categories span:hover,
 #content.dinner .widget-daypart .dinner .categories span:hover,
@@ -1741,21 +1767,67 @@ aside p {
 }
 
 @media (max-width: 980px) {
-  /* line 94, ../sass/widgets/_widget-daypart.scss */
+  /* line 119, ../sass/widgets/_widget-daypart.scss */
   #content #sidebar .widget.home-daypart {
     border-bottom: 0;
     margin-bottom: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 103, ../sass/widgets/_widget-daypart.scss */
+  /* line 128, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .daypart {
+    width: 100%;
+    margin: 6px 0;
+    overflow: hidden;
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 135, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .daypart-image-thumb {
+    width: 45px;
+    height: 45px;
+    float: left;
+  }
+  /* line 140, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .daypart-text {
+    width: 72%;
+    padding: 0 5px 0 10px;
+    float: left;
+    font-family: "Merriweather", serif;
+    color: #310d00;
+  }
+  /* line 147, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .title {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+  /* line 152, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .desc {
+    display: block;
+    font-family: "Merriweather", serif;
+    font-size: 10px;
+  }
+  /* line 157, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link {
     display: block;
     width: 100%;
     overflow: hidden;
+    padding: 0;
   }
-  /* line 107, ../sass/widgets/_widget-daypart.scss */
+  /* line 162, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:after {
+    color: #b55a0f;
+    font-family: 'icomoon';
+    font-size: 24px;
+    content: "\e624";
+    position: absolute;
     top: 18px;
     right: 10px;
     -webkit-transition-duration: 0.25s;
@@ -1763,19 +1835,25 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 113, ../sass/widgets/_widget-daypart.scss */
+  /* line 174, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:hover:after {
     right: 0;
   }
-  /* line 116, ../sass/widgets/_widget-daypart.scss */
+  /* line 177, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:hover .daypart {
     background-color: #f4f2df;
   }
-  /* line 122, ../sass/widgets/_widget-daypart.scss */
+  /* line 182, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  /* line 186, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:first-child:after {
     content: "";
   }
-  /* line 125, ../sass/widgets/_widget-daypart.scss */
+  /* line 189, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart {
     padding: 5px 5px 10px;
     margin: 0 0 10px;
@@ -1791,22 +1869,22 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 133, ../sass/widgets/_widget-daypart.scss */
+  /* line 197, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart:hover {
     background-color: #edeacc;
   }
-  /* line 136, ../sass/widgets/_widget-daypart.scss */
+  /* line 200, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart .daypart-image {
     width: 100%;
   }
-  /* line 139, ../sass/widgets/_widget-daypart.scss */
+  /* line 203, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart .daypart-text {
     width: 100%;
     padding-top: 5px;
     padding-left: 49px;
     position: relative;
   }
-  /* line 144, ../sass/widgets/_widget-daypart.scss */
+  /* line 208, ../sass/widgets/_widget-daypart.scss */
   .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart .daypart-text:before {
     content: url(../../../img/menu/now.png);
     width: 50px;
@@ -1814,36 +1892,6 @@ aside p {
     position: absolute;
     top: 10px;
     left: 7px;
-  }
-  /* line 155, ../sass/widgets/_widget-daypart.scss */
-  .widget-daypart .daypart-wrapper .daypart {
-    width: 100%;
-    margin: 6px 0;
-    overflow: hidden;
-    -webkit-transition-property: background-color;
-    -moz-transition-property: background-color;
-    -o-transition-property: background-color;
-    transition-property: background-color;
-    -webkit-transition-duration: 0.25s;
-    -moz-transition-duration: 0.25s;
-    -o-transition-duration: 0.25s;
-    transition-duration: 0.25s;
-  }
-  /* line 162, ../sass/widgets/_widget-daypart.scss */
-  .widget-daypart .daypart-wrapper .daypart-image-thumb {
-    width: 45px;
-    height: 45px;
-    float: left;
-  }
-  /* line 167, ../sass/widgets/_widget-daypart.scss */
-  .widget-daypart .daypart-wrapper .daypart-text {
-    width: 72%;
-    padding: 0 5px 0 10px;
-  }
-  /* line 171, ../sass/widgets/_widget-daypart.scss */
-  .widget-daypart .daypart-wrapper .desc {
-    font-family: "Merriweather", serif;
-    font-size: 10px;
   }
 }
 /**
