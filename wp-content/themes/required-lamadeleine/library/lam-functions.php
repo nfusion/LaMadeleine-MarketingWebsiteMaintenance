@@ -443,6 +443,14 @@ function display_menu_category($menuObj,$layout){
 **/
 function display_story_carousel($stories){
 
+	// Iterate through array and remove any stories without a featured image
+	foreach ($stories as $key => $story){
+		if(strlen($story['fma_full']) == 0) :
+			unset($stories[$key]);
+		endif;
+	}
+
+	// Get story count
 	$storyCount = count($stories);
 	
 	// If stories object contains data
@@ -453,7 +461,9 @@ function display_story_carousel($stories){
 		// Open carousel swipe wrapper
 		$str .= '<div class="swipe-wrap">';
 
+		// Iterate through updated stories array
 		foreach ($stories as $key => $story){
+
 			// Open carousel item wrapper
 			$str .= '<div class="carousel-item has-gradient-' . $story['has_gradient'] . '">';
 			// Include image
