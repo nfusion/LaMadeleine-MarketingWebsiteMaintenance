@@ -17,7 +17,7 @@ body{
 	width: 100%;
 	max-width: $large-screen-min;
 	min-width: 320px;
-	min-height: 830px;
+	min-height: $navHeight;
 	padding-top: 70px; // Compenate for fixed header at mobile
 	background: $lightCream;
 }
