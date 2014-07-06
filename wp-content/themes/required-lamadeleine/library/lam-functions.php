@@ -540,12 +540,12 @@ function display_promo($promo, $type){
 
   		// Image size based on component type
   		if($type == 'mobile') :
-  			$imgType = 'medium';
+  			$imgType = 'thumbnail';
   		else :
   			$imgType = 'location-featured';
   		endif;
 
-  		// Get promo image as medium thumbnail
+  		// Get promo image as image style
   		$imgSrc = wp_get_attachment_image_src( get_post_thumbnail_id($promo['ID']), $imgType);
 
   		// Add promo img
