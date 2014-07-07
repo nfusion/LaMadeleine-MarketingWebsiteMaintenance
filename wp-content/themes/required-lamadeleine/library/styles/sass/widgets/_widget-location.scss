@@ -76,6 +76,11 @@
 
 // Mobile sidebar location widget
 
+// Hide for map view on mobile
+#sidebar .widget-location.map-view{
+  display: none;
+}
+
 // Style for other views
 #sidebar #widget-location-mobile{
   display: block;
@@ -474,6 +479,7 @@
 
   // Map view styling (homepage)
   #sidebar .widget-location.map-view{
+    display: block;
     position: relative;
     .map-link{
       display: block;
