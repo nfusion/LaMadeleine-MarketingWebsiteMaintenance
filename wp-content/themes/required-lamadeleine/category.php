@@ -67,6 +67,15 @@ $stories = process_stories($mypods);
 			<div class="sidebar-wrapper">
 				<?php 
 					dynamic_sidebar('sidebar-story');
+
+					// Get the pods content for page ID 201 (stories index)
+					$podPage = pods('page', 201);
+
+					// Get promo relationship field
+					$promo = $podPage->field('fma_promo');
+
+					// Display promo markup
+					echo display_promo($promo, 'widget');
 				?>
 			</div>
 		</aside><!-- /#sidebar -->
