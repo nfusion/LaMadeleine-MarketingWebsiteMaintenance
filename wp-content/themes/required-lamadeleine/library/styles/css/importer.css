@@ -2356,7 +2356,7 @@ aside p {
     display: block;
     width: 100%;
     min-height: 270px;
-    margin-top: 12px;
+    margin-top: 13px;
     text-align: center;
     position: relative;
     -webkit-perspective: 1000;
@@ -3377,133 +3377,95 @@ body.single-post #main .post-box, #content.page-single #main .post-box {
 * La Madeleine
 * Store Styling
 **/
-/*.store h1{
-        font-size: 14px;
-        margin: 10px 0;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: #310d00;
-    }
-*/
-/* line 14, ../sass/templates/_store.scss */
-p.subhead {
-  /*$playfair*/
+/* line 6, ../sass/templates/_store.scss */
+.store {
+  padding-top: 10px;
+}
+/* line 10, ../sass/templates/_store.scss */
+.store p.subhead {
   font-family: "Playfair Display", serif;
-  /*"Playfair Display", serif; */
   font-style: italic;
   color: #310d00;
   line-height: 1.4;
 }
-
-/* line 22, ../sass/templates/_store.scss */
-.store-text {
+/* line 17, ../sass/templates/_store.scss */
+.store .btn:hover {
+  cursor: pointer;
+}
+/* line 21, ../sass/templates/_store.scss */
+.store .store-text {
   text-align: center;
 }
-
-/* line 26, ../sass/templates/_store.scss */
-.store_item {
+/* line 25, ../sass/templates/_store.scss */
+.store .store-items {
+  text-align: center;
+  margin: 30px 20px 10px;
+  border-top: 1px dashed #cbaf9a;
+}
+/* line 29, ../sass/templates/_store.scss */
+.store .store-items p {
+  padding-top: 30px;
+  font-size: 14px;
+  font-family: "Merriweather", serif;
+}
+/* line 36, ../sass/templates/_store.scss */
+.store .store_item {
   margin-bottom: 20px;
 }
-
-/* line 31, ../sass/templates/_store.scss */
-.store_item_image img {
+/* line 40, ../sass/templates/_store.scss */
+.store .store_item_image img {
   width: 100%;
 }
-
-/* line 35, ../sass/templates/_store.scss */
-.item_added {
+/* line 44, ../sass/templates/_store.scss */
+.store .item_added {
   margin-top: 15px;
 }
-
-/* line 39, ../sass/templates/_store.scss */
-.btn {
-  color: #fffdf0;
-  font-family: "Lato", sans-serif;
-  font-style: none;
-  font-size: 12px;
-  line-height: 16px;
-  text-transform: uppercase;
-  padding: 7px 30px 7px 20px;
-  font-weight: bold;
-  position: relative;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  text-shadow: #310d00 0 -1px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b64507), color-stop(100%, #6c2904));
-  background-image: -webkit-linear-gradient(#b64507, #6c2904);
-  background-image: -moz-linear-gradient(#b64507, #6c2904);
-  background-image: -o-linear-gradient(#b64507, #6c2904);
-  background-image: linear-gradient(#b64507, #6c2904);
-  -webkit-transition-property: background-image;
-  -moz-transition-property: background-image;
-  -o-transition-property: background-image;
-  transition-property: background-image;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-/* line 73, ../sass/templates/_store.scss */
-select {
+/* line 48, ../sass/templates/_store.scss */
+.store select {
   width: 70%;
   height: 30px;
   margin-bottom: 20px;
 }
-
-/* line 80, ../sass/templates/_store.scss */
-div.cart {
+/* line 54, ../sass/templates/_store.scss */
+.store div.cart {
   display: none;
   text-align: left;
   padding-left: 5%;
   background-color: #fff;
   border: 1px solid #ccc;
-  margin: 5px;
+  margin: 5px 15px 15px;
   /*max-width: 350px;*/
   height: 100%;
   padding: 7px;
   margin-bottom: 10px;
 }
-
-/* line 92, ../sass/templates/_store.scss */
-div.cart .title {
+/* line 67, ../sass/templates/_store.scss */
+.store div.cart .title {
   float: left;
   padding-right: 5%;
 }
-
-/* line 97, ../sass/templates/_store.scss */
-div.cart .info {
+/* line 72, ../sass/templates/_store.scss */
+.store div.cart .info {
   float: right;
   padding-right: 25%;
 }
-
-/* line 102, ../sass/templates/_store.scss */
-div.cart .info:before {
+/* line 77, ../sass/templates/_store.scss */
+.store div.cart .info:before {
   content: "$";
 }
-
-/* line 106, ../sass/templates/_store.scss */
-div.cart input {
+/* line 81, ../sass/templates/_store.scss */
+.store div.cart input {
   width: 60px;
-  /*text-align: center;*/
 }
-
-/* line 110, ../sass/templates/_store.scss */
-.lineItem {
+/* line 85, ../sass/templates/_store.scss */
+.store .lineItem {
   width: 75%;
   overflow: visible;
   float: left;
   padding-right: 10px;
 }
-
-/* line 116, ../sass/templates/_store.scss */
-.tallies {
+/* line 92, ../sass/templates/_store.scss */
+.store .tallies {
   clear: both;
   padding: 10px;
 }

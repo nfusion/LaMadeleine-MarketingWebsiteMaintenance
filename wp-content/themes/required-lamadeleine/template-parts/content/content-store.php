@@ -63,7 +63,6 @@ $(document).ready(function(){
     
 </style>
     <div class='store'>
-
     
             <div class='store-text row'>
                 <h1>Perfect Gifts</h1>
@@ -74,7 +73,7 @@ $(document).ready(function(){
                     </div>
                     <div class='store_item_info six columns'>
                         <h4>Gift Cards</h4>
-                    <p class='subhead'> 
+                    <p> 
                         La Madeleine gift cards are perfect for anyone who likes French country inspired cuisine. The cards can currently be purchased in-store, reloaded at any la Madeleine location, and checking your balance is as easy as calling 1-877-893-0012. Share la Madeleine with someone you love and give a gift card today.
                     </p>
 
@@ -87,9 +86,9 @@ $(document).ready(function(){
                 </div>
     
 
-               <div class='store-text row'>
+            <div class='store-items row'>
                  
-            <p class='subhead' >Now our signature Tomato Basil soupe and salade dressings are available for purchase online. Whether you’re giving gifts to someone special, or just to yourself, getting the taste of la Madeleine has never been easier.</p>
+                <p>Now our signature Tomato Basil soupe and salade dressings are available for purchase online. Whether you’re giving gifts to someone special, or just to yourself, getting the taste of la Madeleine has never been easier.</p>
           
             </div>   
                 <div 
@@ -101,10 +100,10 @@ $(document).ready(function(){
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Tomato Basil Soupe Trio</h4>
-                        <p class='subhead'>Enjoy la Madeleine’s signature Tomato Basil Soupe. Three 15.5 fl. Oz jars.
+                        <p>Enjoy la Madeleine’s signature Tomato Basil Soupe. Three 15.5 fl. Oz jars.
                         <br>$<?php echo $soupCost ?>
                         </p>
-                        <p><a class='btn  product-button' data-product='Tomato Basil Soupe Trio' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
+                        <p><a class='btn product-button' data-product='Tomato Basil Soupe Trio' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
                 </div>
                 
             </div>
@@ -116,9 +115,9 @@ $(document).ready(function(){
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Salade Dressing Duet</h4>
-                        <p class='subhead'>Make the perfect gift with two of your favorite la Madeleine salade dressings. 
+                        <p>Make the perfect gift with two of your favorite la Madeleine salade dressings. 
                          Choose from our signature Caesar or fat-free Caesar. The Caesar and Balsamic dressings 
-                         are “all natural” and “gluten free”.</p>
+                         are “all natural” and “gluten free”.
                         <br>$<?php echo $dressingCost ?>
                         </p>
                         <select id='dressingOptions'>
@@ -155,15 +154,15 @@ $(document).ready(function(){
         <a name="cart"></a>
         <div class='cart row'>
 
-                <div id='items'></div>
-                
-                <div class='tallies'> <div class='title'> Subtotal: </div> <div id='itemsTotal' class='info'></div></div>
-                
-               <div class='tallies'> <div class='title'> Shipping: </div> <div id='shippingTotal' class='info'></div></div>
-               
-               <div class='tallies'> <div class='title'> Total<sup></sup>: </div> <div id='orderTotal' class='info'></div></div>
-              
-              <br>
+            <div id='items'></div>
+
+            <div class='tallies'> <div class='title'> Subtotal: </div> <div id='itemsTotal' class='info'></div></div>
+
+            <div class='tallies'> <div class='title'> Shipping: </div> <div id='shippingTotal' class='info'></div></div>
+
+            <div class='tallies'> <div class='title'> Total<sup></sup>: </div> <div id='orderTotal' class='info'></div></div>
+
+            <br>
            
             <form id='payPal' method="post" action="<?php echo $paypalLink ?>">
                 <input type="hidden" name="cmd" value="_cart">
