@@ -133,6 +133,19 @@ get_header(); ?>
 					else :
 						dynamic_sidebar($sidebar);
 					endif;
+
+					// If this is stories index page, get associated promo
+					if($pagename == 'stories'){
+						// Get the current story pod object
+						$podPage = pods('page', get_the_id());
+
+						// Get promo relationship field
+						$promo = $podPage->field('fma_promo');
+
+						// Display promo markup
+						echo display_promo($promo, 'widget');
+					}
+
 				?>
 			</div>
 		</aside><!-- /#sidebar -->
