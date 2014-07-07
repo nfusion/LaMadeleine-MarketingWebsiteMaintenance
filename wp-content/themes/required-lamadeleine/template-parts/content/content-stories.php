@@ -40,8 +40,6 @@ $pageTitle = strtolower(get_the_title());
     </a>
 </div>
 
-<div class="post-box">
-
 <?php
 
     $stories = process_stories($mypod);
@@ -56,6 +54,3 @@ $pageTitle = strtolower(get_the_title());
     }
 
 ?>
-
-</div>
-
