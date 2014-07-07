@@ -276,7 +276,7 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   $str .= '</div>';
 
   // Echo menu item description
-  if($menuItemObj['price_min'] == '0.00'):
+  if($menuItemObj['price_min'] == '0.00' || $menuItemObj['price_max'] == '0.00'):
   	$isPriced = "ispriced-false";
   endif;
 
