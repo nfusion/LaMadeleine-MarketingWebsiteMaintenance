@@ -103,7 +103,7 @@ var LaMadLocations = {
                 } else {
                     displayIcon = {
                         url: '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png',
-                        size: new google.maps.Size(96, 104), // Actual size, @2x for retina
+                        // size: new google.maps.Size(96, 104), // Actual size, @2x for retina
                         scaledSize: new google.maps.Size(48, 52) // Size on map
                     }
                 }
