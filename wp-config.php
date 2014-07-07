@@ -67,6 +67,7 @@ switch($env){
         define('WP_DEBUG_LOG', true);
         define('WP_DEBUG_DISPLAY', false);
         @ini_set('display_errors', 0);
+        break;
     case "remote":
         /** MySQL database username */
         define('DB_USER', 'nfusion');
