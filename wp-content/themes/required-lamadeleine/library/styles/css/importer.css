@@ -2964,7 +2964,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
   position: absolute;
   bottom: 0;
   color: white;
-  background: rgba(49, 13, 0, 0.6);
+  background: rgba(39, 23, 13, 0.75);
 }
 /* line 143, ../sass/templates/_les-menu.scss */
 .breakfast .featured-menu-item .text-wrapper.no-story .title, .lunch .featured-menu-item .text-wrapper.no-story .title, .dinner .featured-menu-item .text-wrapper.no-story .title, .bakery .featured-menu-item .text-wrapper.no-story .title {
