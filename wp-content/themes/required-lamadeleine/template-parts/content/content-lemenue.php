@@ -96,10 +96,10 @@ $menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
                 // Display menu category, pass menu object and layout identifier
                 echo display_menu_category($menu,$layout);
 
-                // If menu object is populated, add divider
-                if(count($menu) > 0) :
-                    echo '<hr class="dashed">';
-                endif;
+                // // If menu object is populated, add divider
+                // if(count($menu) > 0) :
+                //     echo '<hr class="dashed">';
+                // endif;
 
                 // Increment category count
                 $categoryCount++;
