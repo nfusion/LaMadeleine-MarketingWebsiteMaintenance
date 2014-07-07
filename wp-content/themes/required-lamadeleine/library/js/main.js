@@ -117,10 +117,10 @@ $(function(){
 		$('.lam-call a').attr('href', 'tel:' + myLocation.phone);
 
 		// If any .get-directions links and fire getDirections() method when clicked.
-		$content.find('a.get-directions').on('click touchend', function(e){
-				e.preventDefault();
-	      LaMadLocations.getDirections();
-	  });
+		// $content.find('a.get-directions').on('click touchend', function(e){
+		// 		e.preventDefault();
+	 //      LaMadLocations.getDirections();
+	  // });
 	}
 	// Else add .no-location class to body
 	else{

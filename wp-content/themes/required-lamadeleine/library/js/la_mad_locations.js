@@ -265,8 +265,12 @@ var LaMadLocations = {
         },
 
         getLocation: function(objOnly){
-          if(typeof(cookieLoc) == 'undefined'){
-                if(navigator.geolocation){
+         
+                if(objOnly == 'linkOut'){
+                    console.log('getLocation linkOut');
+                    console.log(objOnly);
+                    navigator.geolocation.getCurrentPosition(this.geoLinkDir, this.geoErr);
+                }else if(navigator.geolocation){
                     if(typeof(objOnly) != 'undefined'){
                         navigator.geolocation.getCurrentPosition(this.geoFoundObjOnly, this.geoErr);
                     } else {
@@ -276,7 +280,7 @@ var LaMadLocations = {
                 else {
                     $('#map').innerHTML = "Geolocation is not supported by this browser.";
                 }
-            } 
+             
         },
 
         geoErr: function(error){
@@ -299,6 +303,16 @@ var LaMadLocations = {
 
             LaMadLocations.showPosition(position.coords.latitude, position.coords.longitude)
         },
+
+        geoLinkDir: function(position){
+
+            LaMadLocations.currentLocationObj.latitude = position.coords.latitude;
+            LaMadLocations.currentLocationObj.longitude = position.coords.longitude;
+            directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
+           window.open(directionsLink);
+
+        },
+
 
         /*Get User Current location via zipcode geocode*/
         geoCodeZip: function(zipcode){
@@ -364,8 +378,15 @@ var LaMadLocations = {
         },
 
         getDirections: function(){
-            directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-            window.open(directionsLink);
+            
+            if(LaMadLocations.currentLocationObj.latitude == null){
+                this.getLocation('linkOut');
+                
+            } else {
+                directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
+                window.open(directionsLink);
+            }
+    
         },
 
         changeSideImage: function(url){
