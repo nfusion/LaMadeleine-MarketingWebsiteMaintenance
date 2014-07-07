@@ -116,6 +116,7 @@ var LaMadLocations = {
                 this.sideMap = map;
                 $('#directionsLinkButton').show();
             } 
+            
         },
 
         // Accepts location object, returns current day open/close hours as object
@@ -149,10 +150,6 @@ var LaMadLocations = {
             var today_open = dayOfWeek+'_open';
             var today_close = dayOfWeek+'_close';
             /*************************************/
-
-
-            
-
 
             var todayHours = {
                 closed_today: closed_today,
@@ -252,7 +249,7 @@ var LaMadLocations = {
             if(typeof(cookieLoc) != 'undefined'){
               
                 jsonCookie = $.parseJSON(cookieLoc);
-                LaMadLocations.getLocation(true);
+                //LaMadLocations.getLocation(true);
                 LaMadLocations.nearestLocationObj.latitude = jsonCookie.latitude;
                 LaMadLocations.nearestLocationObj.longitude = jsonCookie.longitude;
                 LaMadLocations.setLocation(jsonCookie, true, true);
@@ -268,16 +265,18 @@ var LaMadLocations = {
         },
 
         getLocation: function(objOnly){
-            if(navigator.geolocation){
-                if(typeof(objOnly) != 'undefined'){
-                    navigator.geolocation.getCurrentPosition(this.geoFoundObjOnly, this.geoErr);
-                } else {
-                    navigator.geolocation.getCurrentPosition(this.geoFound, this.geoErr);
+          if(typeof(cookieLoc) == 'undefined'){
+                if(navigator.geolocation){
+                    if(typeof(objOnly) != 'undefined'){
+                        navigator.geolocation.getCurrentPosition(this.geoFoundObjOnly, this.geoErr);
+                    } else {
+                        navigator.geolocation.getCurrentPosition(this.geoFound, this.geoErr);
+                    }
                 }
-            }
-            else {
-                $('#map').innerHTML = "Geolocation is not supported by this browser.";
-            }
+                else {
+                    $('#map').innerHTML = "Geolocation is not supported by this browser.";
+                }
+            } 
         },
 
         geoErr: function(error){
