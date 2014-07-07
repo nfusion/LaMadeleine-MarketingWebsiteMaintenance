@@ -16,7 +16,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'lam_wp');
+//define('DB_NAME', 'lam_wp');
 
 /*** We are going to use up Environments Vars to identify Configurations **/
 $env = isset($_SERVER['APPLICATION_ENVIRONMENT'])?$_SERVER['APPLICATION_ENVIRONMENT']:'production';
@@ -43,6 +43,7 @@ switch($env){
 
             break;
     case "heath":
+        define('DB_NAME', 'lam_wp');
         /** MySQL database username */
         define('DB_USER', 'root');
         /** MySQL database password */
@@ -59,7 +60,6 @@ switch($env){
         define('DB_NAME', 'lam_wp_staging');
         /** MySQL database username */
         define('DB_USER', 'LAM-14');
-
         /** MySQL database password */
         define('DB_PASSWORD', 'Bagu3tt314');
 
@@ -70,9 +70,9 @@ switch($env){
         define('WP_DEBUG_LOG', true);
         define('WP_DEBUG_DISPLAY', false);
         @ini_set('display_errors', 0);
-        die($env);
         break;
     case "remote":
+        define('DB_NAME', 'lam_wp');
         /** MySQL database username */
         define('DB_USER', 'nfusion');
         /** MySQL database password */
