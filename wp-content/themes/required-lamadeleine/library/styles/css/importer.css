@@ -852,9 +852,9 @@ body.nav-active #nav .nav-wrapper {
   -moz-transition-duration: 0.35s;
   -o-transition-duration: 0.35s;
   transition-duration: 0.35s;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 8px 8px 18px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.6) 8px 8px 18px;
-  box-shadow: rgba(0, 0, 0, 0.6) 8px 8px 18px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 18px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 18px;
+  box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 18px;
 }
 /* line 40, ../sass/framework/_nav.scss */
 #nav h4 {
