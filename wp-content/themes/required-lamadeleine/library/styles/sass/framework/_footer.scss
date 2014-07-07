@@ -33,7 +33,8 @@
 }
 
 @media (min-width: $medium-screen-min){
-	.home, .stories, .category{
+	// .page-id-201 = "Stories"
+	.home, .page-id-201, .category{
 		#container #footer{
 			padding: 30px 20px 10px;
 		}
