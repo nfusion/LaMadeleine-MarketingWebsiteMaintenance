@@ -22,7 +22,7 @@ define('DB_NAME', 'lam_wp');
 $env = isset($_SERVER['APPLICATION_ENVIRONMENT'])?$_SERVER['APPLICATION_ENVIRONMENT']:'production';
 define('ENV',$env);
 
-
+die($env);
 switch($env){
     case "serna":
         define('DB_NAME', 'lam_wp');
