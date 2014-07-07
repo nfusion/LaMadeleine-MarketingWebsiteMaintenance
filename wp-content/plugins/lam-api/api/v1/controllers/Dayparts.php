@@ -105,6 +105,7 @@ class Dayparts {
             $menu_categories='';
             while( $daypart_pod->fetch() ) {
                 $menu_categories_arr = explode(', ',$daypart_pod->field('menu_categories'));
+                $i = 0;
                 foreach( $menu_categories_arr  as $slug){
                     $i++;
                     $comma = $i< count($menu_categories_arr )? ',':'';
