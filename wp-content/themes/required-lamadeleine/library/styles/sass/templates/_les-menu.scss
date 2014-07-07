@@ -87,6 +87,13 @@
 				}
 			}
 		}
+		.menu-category{
+			padding: 20px 0 30px;
+			border-bottom: 1px dashed $fadedBrown;
+			&:last-of-type{
+				border-bottom: 0;
+			}
+		}
 		.category-wrapper{
 			padding: 0 15px;
 			margin: 15px 0 30px;
