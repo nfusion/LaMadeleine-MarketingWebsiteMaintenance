@@ -1,0 +1,93 @@
+/**
+* La Madeleine
+* Global framework layout
+**/
+
+html,body, #container{
+	height: 100%;
+}
+
+body{
+	background: url(../../../img/layout/LM_Cloth_Tile.png);
+	font-family: $georgia;
+	color: $darkBrown;
+}
+
+#container{
+	width: 100%;
+	max-width: $large-screen-min;
+	min-width: 320px;
+	min-height: $navHeight;
+	padding-top: 70px; // Compenate for fixed header at mobile
+	background: $lightCream;
+}
+
+@media (max-width: 767px){
+	html.touch #container{
+		min-height: 0;
+	}
+}
+
+#content{
+	position: relative;
+	background: $lightCream;
+	#main{
+		width: 100%;
+		padding: 0;
+	}
+	#sidebar{
+		width: 100%;
+		padding: 0;
+		.widget{
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px dashed $fadedBrown;
+			&:last-of-type{
+				border-bottom: 0;
+			}
+		}
+	}
+	.sidebar-wrapper{
+		padding: 10px;
+	}
+}
+
+@media (min-width: $xsmall-screen-min){
+	#container{
+		margin: -80px auto 0;
+		padding-top: 80px;
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#content{
+		width: 100%;
+		@include clearfix();
+		#main{
+			width: 70%;
+			float: left;
+		}
+		#sidebar{
+			width: 30%;
+			float: right;
+			.sidebar-wrapper{
+				padding: 15px 25px 0;
+				.widget:last-child{
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $large-screen-min){
+	#content {
+		#main{
+			width: 72%;
+		}
+		#sidebar {
+			width: 28%;
+		}
+	}
+}

@@ -1,0 +1,102 @@
+/**
+* La Madeleine
+* Stories & Standard (Generic) Pages Styling
+**/
+
+body.single-post, #content.page-single{
+	#main .post-box{
+		padding-bottom: 50px;
+	}
+}
+
+#content.stories, #content.page-single, body.category, body.single-post	{
+	#main{
+		background: $medCream;
+		overflow: hidden;
+	}
+	#sidebar{
+		display: none;
+	}
+}
+
+// Single story view
+#content article{
+	.image-wrapper img{
+		width: 100%;
+		display: block;
+	}
+	.text-wrapper{
+		padding: 0 15px;
+		position: relative;
+		z-index: 2;
+		&.shadow{
+			@include box-shadow(rgba(0,0,0,0.3) 0 -3px 3px);
+		}
+	}
+	p{
+		color: $darkBrown;
+	}
+	.entry-header{
+		padding: 10px 0;
+		margin-bottom: 20px;
+		text-align: center;
+		border-bottom: 1px dashed $fadedBrown;
+		h1{
+			font-size: 20px;
+			@include text-shadow(rgba(0,0,0,0.3) 1px 1px 1px);
+		}
+		h2{
+			font-family: $playfair;
+			font-style: italic;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 1.4;
+		}
+	}
+}
+
+// Social Share
+.social-share{
+	width: 100%;
+	margin-bottom: 25px;
+	padding: 10px 0 20px;
+	overflow: hidden;
+	border-bottom: 1px solid lighten($fadedBrown, 10%);
+	*{
+		@include box-sizing('content-box');
+	}
+	.stButton {
+		padding: 3px;
+		.stArrow{
+			display: none;
+		}
+	}
+
+}
+
+@media (min-width: $medium-screen-min){
+	#content.stories, #content.page-single, body.category, body.single-post	{
+		#sidebar{
+			display: block;
+		}
+	}
+	#content.page-single, body.single-post{
+		#main{
+			border-right: 1px solid $lightFadedBrown;
+		}
+	}
+	#content article{
+		.text-wrapper{
+			padding: 0 30px;
+			@include box-shadow(rgba(0,0,0,0.3) 0 -3px 10px);
+		}
+		.entry-header{
+			h1{
+				font-size: 33px;
+			}
+			h2{
+				font-size: 18px;
+			}
+		}
+	}
+}
