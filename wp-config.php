@@ -58,9 +58,11 @@ switch($env){
     case "staging":
         define('DB_NAME', 'lam_wp_staging');
         /** MySQL database username */
-        define('DB_USER', 'nfusion');
+        define('DB_USER', 'LAM-14');
+
         /** MySQL database password */
-        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
+        define('DB_PASSWORD', 'Bagu3tt314');
+
         /** MySQL hostname */
         define('DB_HOST', '127.0.0.1:7878');
 
