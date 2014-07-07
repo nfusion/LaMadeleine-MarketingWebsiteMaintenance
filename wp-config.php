@@ -78,7 +78,7 @@ switch($env){
         /** MySQL database password */
         define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
         /** MySQL hostname */
-        define('DB_HOST', '127.0.0.1:7878');
+        define('DB_HOST', 'localhost');
 
         define('WP_DEBUG', true);
         define('WP_DEBUG_LOG', true);
