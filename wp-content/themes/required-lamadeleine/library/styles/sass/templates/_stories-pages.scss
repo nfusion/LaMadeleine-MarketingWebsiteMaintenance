@@ -13,7 +13,6 @@ body.single-post, #content.page-single{
 	#main{
 		background: $medCream;
 		overflow: hidden;
-		border-right: 1px solid $lightFadedBrown;
 	}
 	#sidebar{
 		display: none;
@@ -79,6 +78,11 @@ body.single-post, #content.page-single{
 	#content.stories, #content.page-single, body.category, body.single-post	{
 		#sidebar{
 			display: block;
+		}
+	}
+	#content.page-single, body.single-post{
+		#main{
+			border-right: 1px solid $lightFadedBrown;
 		}
 	}
 	#content article{
