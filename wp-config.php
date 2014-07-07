@@ -54,6 +54,19 @@ switch($env){
         // define('WP_DEBUG_DISPLAY', true);
         // @ini_set('display_errors', 0);
             break;
+    case "staging":
+        define('DB_NAME', 'lam_wp_staging');
+        /** MySQL database username */
+        define('DB_USER', 'nfusion');
+        /** MySQL database password */
+        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
+        /** MySQL hostname */
+        define('DB_HOST', '127.0.0.1:7878');
+
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        @ini_set('display_errors', 0);
     case "remote":
         /** MySQL database username */
         define('DB_USER', 'nfusion');
