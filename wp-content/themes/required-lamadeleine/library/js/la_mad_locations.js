@@ -402,7 +402,6 @@ var LaMadLocations = {
             
             if(LaMadLocations.currentLocationObj.latitude == null){
                 this.getLocation('linkOut', el);
-                
             } else {
                 directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
                 window.open(directionsLink);
