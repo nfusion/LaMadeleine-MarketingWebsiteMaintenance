@@ -2087,32 +2087,29 @@ aside p {
 /* line 85, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile {
   display: block;
+  max-width: 480px;
+  margin: 0 auto;
 }
-/* line 87, ../sass/widgets/_widget-location.scss */
+/* line 89, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .location-title {
   margin: 10px 0 -10px;
   font-family: "Merriweather", serif;
   color: #6c2904;
 }
-/* line 92, ../sass/widgets/_widget-location.scss */
-#sidebar #widget-location-mobile .address {
+/* line 94, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .address, #sidebar #widget-location-mobile .hours {
   width: 50%;
   float: left;
   padding: 0 5px;
+  line-height: 1.3;
 }
-/* line 97, ../sass/widgets/_widget-location.scss */
-#sidebar #widget-location-mobile .hours {
-  width: 50%;
-  float: left;
-  padding: 0 5px;
-}
-/* line 102, ../sass/widgets/_widget-location.scss */
+/* line 100, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper {
   width: 100%;
-  overflow: hidden;
   padding: 20px 0;
+  overflow: hidden;
 }
-/* line 106, ../sass/widgets/_widget-location.scss */
+/* line 104, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper .btn {
   display: block;
   width: 48%;
@@ -2120,18 +2117,23 @@ aside p {
   float: left;
   text-align: center;
 }
-/* line 113, ../sass/widgets/_widget-location.scss */
+/* line 111, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper .btn.call {
+  width: 98%;
+  margin: 15px 1%;
+}
+/* line 115, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper a.get-directions {
   position: relative;
 }
-/* line 115, ../sass/widgets/_widget-location.scss */
+/* line 117, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper a.get-directions span {
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 118, ../sass/widgets/_widget-location.scss */
+/* line 120, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper a.get-directions .loading {
   position: absolute;
   top: -18px;
@@ -2147,22 +2149,22 @@ aside p {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 129, ../sass/widgets/_widget-location.scss */
+/* line 131, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper a.get-directions.loading-directions span {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 132, ../sass/widgets/_widget-location.scss */
+/* line 134, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper a.get-directions.loading-directions .loading {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 139, ../sass/widgets/_widget-location.scss */
+/* line 141, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .btn-wrapper .icon.call span {
   font-size: 30px;
 }
-/* line 144, ../sass/widgets/_widget-location.scss */
+/* line 146, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile .other-locations {
   margin-top: 60px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -2172,11 +2174,11 @@ aside p {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 149, ../sass/widgets/_widget-location.scss */
+/* line 151, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile {
   height: 260px;
 }
-/* line 151, ../sass/widgets/_widget-location.scss */
+/* line 153, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-item {
   width: 100%;
   margin-bottom: 15px;
@@ -2189,7 +2191,7 @@ aside p {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 159, ../sass/widgets/_widget-location.scss */
+/* line 161, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-item:after {
   color: #b55a0f;
   font-family: 'icomoon';
@@ -2203,91 +2205,91 @@ aside p {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 169, ../sass/widgets/_widget-location.scss */
+/* line 171, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-item:hover {
   background: #f4f2df;
   cursor: pointer;
 }
-/* line 172, ../sass/widgets/_widget-location.scss */
+/* line 174, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-item:hover:after {
   right: 0px;
 }
-/* line 177, ../sass/widgets/_widget-location.scss */
+/* line 179, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-thumb {
   width: 75px;
   height: 75px;
   float: left;
 }
-/* line 182, ../sass/widgets/_widget-location.scss */
+/* line 184, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-info {
   padding: 20px 25px 5px 15px;
   float: left;
 }
-/* line 186, ../sass/widgets/_widget-location.scss */
+/* line 188, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-name {
   font-family: "Merriweather", serif;
   margin-bottom: 2px;
 }
-/* line 190, ../sass/widgets/_widget-location.scss */
+/* line 192, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-mobile #location-list-mobile .location-city {
   font-size: 11px;
   font-style: italic;
 }
 
-/* line 199, ../sass/widgets/_widget-location.scss */
+/* line 201, ../sass/widgets/_widget-location.scss */
 .no-location #sidebar #widget-location-mobile {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 205, ../sass/widgets/_widget-location.scss */
+/* line 207, ../sass/widgets/_widget-location.scss */
 #sidebar .zip-wrapper {
   display: none;
 }
-/* line 208, ../sass/widgets/_widget-location.scss */
+/* line 210, ../sass/widgets/_widget-location.scss */
 #sidebar #widget-location-full {
   display: none;
 }
 
 @media (min-width: 980px) {
-  /* line 217, ../sass/widgets/_widget-location.scss */
+  /* line 219, ../sass/widgets/_widget-location.scss */
   #sidebar .zip-wrapper {
     display: block;
   }
-  /* line 220, ../sass/widgets/_widget-location.scss */
+  /* line 222, ../sass/widgets/_widget-location.scss */
   #sidebar #widget-location-mobile {
     display: none;
   }
-  /* line 223, ../sass/widgets/_widget-location.scss */
+  /* line 225, ../sass/widgets/_widget-location.scss */
   #sidebar #widget-location-full {
     display: block;
   }
 
-  /* line 228, ../sass/widgets/_widget-location.scss */
+  /* line 230, ../sass/widgets/_widget-location.scss */
   #mobile-location {
     display: none;
   }
 
-  /* line 232, ../sass/widgets/_widget-location.scss */
+  /* line 234, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location {
     display: block;
     border-bottom: 0;
     width: 100%;
     overflow: hidden;
   }
-  /* line 237, ../sass/widgets/_widget-location.scss */
+  /* line 239, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-mobile {
     display: none;
   }
-  /* line 240, ../sass/widgets/_widget-location.scss */
+  /* line 242, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full {
     position: relative;
   }
-  /* line 242, ../sass/widgets/_widget-location.scss */
+  /* line 244, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full #location-list {
     height: 260px;
   }
-  /* line 245, ../sass/widgets/_widget-location.scss */
+  /* line 247, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
@@ -2296,7 +2298,7 @@ aside p {
     -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
   }
-  /* line 248, ../sass/widgets/_widget-location.scss */
+  /* line 250, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-item {
     width: 100%;
     margin-bottom: 15px;
@@ -2309,7 +2311,7 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 256, ../sass/widgets/_widget-location.scss */
+  /* line 258, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-item:after {
     color: #b55a0f;
     font-family: 'icomoon';
@@ -2323,73 +2325,73 @@ aside p {
     -o-transition-duration: 0.25s;
     transition-duration: 0.25s;
   }
-  /* line 266, ../sass/widgets/_widget-location.scss */
+  /* line 268, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-item:hover {
     background: #f4f2df;
     cursor: pointer;
   }
-  /* line 269, ../sass/widgets/_widget-location.scss */
+  /* line 271, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-item:hover:after {
     right: 0px;
   }
-  /* line 274, ../sass/widgets/_widget-location.scss */
+  /* line 276, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-thumb {
     width: 75px;
     height: 75px;
     float: left;
   }
-  /* line 279, ../sass/widgets/_widget-location.scss */
+  /* line 281, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-info {
     padding: 20px 25px 5px 15px;
     float: left;
   }
-  /* line 283, ../sass/widgets/_widget-location.scss */
+  /* line 285, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-name {
     font-family: "Merriweather", serif;
     margin-bottom: 2px;
   }
-  /* line 287, ../sass/widgets/_widget-location.scss */
+  /* line 289, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-city {
     font-size: 11px;
     font-style: italic;
   }
-  /* line 293, ../sass/widgets/_widget-location.scss */
+  /* line 295, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-item:after {
     top: 17px;
   }
-  /* line 296, ../sass/widgets/_widget-location.scss */
+  /* line 298, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-thumb {
     width: 20%;
     height: auto;
   }
-  /* line 300, ../sass/widgets/_widget-location.scss */
+  /* line 302, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #widget-location-full .other-locations .location-info {
     width: 80%;
     padding-top: 15px;
   }
-  /* line 306, ../sass/widgets/_widget-location.scss */
+  /* line 308, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title {
     width: 100%;
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 309, ../sass/widgets/_widget-location.scss */
+  /* line 311, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title h3 {
     text-align: left;
     margin: 4px 0 5px;
     float: left;
   }
-  /* line 314, ../sass/widgets/_widget-location.scss */
+  /* line 316, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title a {
     float: right;
     padding-top: 14px;
   }
-  /* line 319, ../sass/widgets/_widget-location.scss */
+  /* line 321, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #map {
     height: 95px;
     width: 100%;
   }
-  /* line 323, ../sass/widgets/_widget-location.scss */
+  /* line 325, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta {
     display: block;
     width: 100%;
@@ -2403,13 +2405,13 @@ aside p {
     -o-perspective: 1000;
     perspective: 1000;
   }
-  /* line 332, ../sass/widgets/_widget-location.scss */
+  /* line 334, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loading .loading {
     display: block;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
-  /* line 337, ../sass/widgets/_widget-location.scss */
+  /* line 339, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loaded .flipper {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -2417,7 +2419,7 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 339, ../sass/widgets/_widget-location.scss */
+  /* line 341, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.map-loaded .flipper .other-locations {
     -webkit-transition-duration: 0;
     -moz-transition-duration: 0;
@@ -2429,11 +2431,11 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 345, ../sass/widgets/_widget-location.scss */
+  /* line 347, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta.no-cta .front {
     display: none;
   }
-  /* line 350, ../sass/widgets/_widget-location.scss */
+  /* line 352, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper {
     position: relative;
     -webkit-transform-style: preserve-3d;
@@ -2442,14 +2444,14 @@ aside p {
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  /* line 354, ../sass/widgets/_widget-location.scss */
+  /* line 356, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .flipper.transition {
     -webkit-transition-duration: 0.6s;
     -moz-transition-duration: 0.6s;
     -o-transition-duration: 0.6s;
     transition-duration: 0.6s;
   }
-  /* line 357, ../sass/widgets/_widget-location.scss */
+  /* line 359, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front, #sidebar .widget-location #location-cta .back {
     width: 100%;
     top: 0;
@@ -2460,14 +2462,14 @@ aside p {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  /* line 363, ../sass/widgets/_widget-location.scss */
+  /* line 365, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front {
     height: 270px;
     position: absolute;
     z-index: 2;
     background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
   }
-  /* line 369, ../sass/widgets/_widget-location.scss */
+  /* line 371, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .back {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -2475,7 +2477,7 @@ aside p {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
-  /* line 373, ../sass/widgets/_widget-location.scss */
+  /* line 375, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .location-cta-divider {
     display: block;
     width: 230px;
@@ -2485,7 +2487,7 @@ aside p {
     left: 20px;
     background: url(../../../img/map/location-cta-divider.png) no-repeat;
   }
-  /* line 382, ../sass/widgets/_widget-location.scss */
+  /* line 384, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .loading {
     display: none;
     position: absolute;
@@ -2499,7 +2501,7 @@ aside p {
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
   }
-  /* line 391, ../sass/widgets/_widget-location.scss */
+  /* line 393, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .geo {
     width: 100%;
     position: absolute;
@@ -2507,7 +2509,7 @@ aside p {
     left: 0;
     right: 0;
   }
-  /* line 398, ../sass/widgets/_widget-location.scss */
+  /* line 400, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .zip {
     width: 100%;
     position: absolute;
@@ -2515,30 +2517,30 @@ aside p {
     left: 0;
     right: 0;
   }
-  /* line 405, ../sass/widgets/_widget-location.scss */
+  /* line 407, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .icon {
     color: #fffdf0;
     font-size: 30px;
     margin-bottom: 5px;
   }
-  /* line 410, ../sass/widgets/_widget-location.scss */
+  /* line 412, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #use-location {
     position: relative;
     top: 10px;
   }
-  /* line 414, ../sass/widgets/_widget-location.scss */
+  /* line 416, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info {
     width: 100%;
     overflow: hidden;
   }
-  /* line 417, ../sass/widgets/_widget-location.scss */
+  /* line 419, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .location-title {
     font-family: "Merriweather", serif;
     font-size: 15px;
     color: #7a3910;
     margin: 10px 0 5px;
   }
-  /* line 423, ../sass/widgets/_widget-location.scss */
+  /* line 425, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .info-wrapper {
     font-family: "Merriweather", serif;
     width: 100%;
@@ -2546,7 +2548,7 @@ aside p {
     overflow: hidden;
     border-bottom: 1px solid #e5d7cd;
   }
-  /* line 430, ../sass/widgets/_widget-location.scss */
+  /* line 432, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address, #sidebar .widget-location #location-info .phone {
     float: left;
     text-align: left;
@@ -2555,28 +2557,28 @@ aside p {
     padding: 0 10px 10px;
     color: #310d00;
   }
-  /* line 438, ../sass/widgets/_widget-location.scss */
+  /* line 440, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .address {
     width: 60%;
     border-right: 1px solid #e5d7cd;
   }
-  /* line 442, ../sass/widgets/_widget-location.scss */
+  /* line 444, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .phone {
     width: 40%;
   }
-  /* line 445, ../sass/widgets/_widget-location.scss */
+  /* line 447, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-info .hours {
     font-size: 12px;
     margin: 10px 0;
     color: #310d00;
   }
-  /* line 451, ../sass/widgets/_widget-location.scss */
+  /* line 453, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper {
     width: 100%;
     min-height: 35px;
     overflow: visible;
   }
-  /* line 456, ../sass/widgets/_widget-location.scss */
+  /* line 458, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .btn-wrapper .btn {
     width: 46%;
     display: block;
@@ -2584,7 +2586,7 @@ aside p {
     margin: 0 2%;
   }
 
-  /* line 464, ../sass/widgets/_widget-location.scss */
+  /* line 466, ../sass/widgets/_widget-location.scss */
   #zip-input, #zip-input-secondary {
     width: 50%;
     height: 29px;
@@ -2605,12 +2607,12 @@ aside p {
     border-radius: 5px;
   }
 
-  /* line 480, ../sass/widgets/_widget-location.scss */
+  /* line 482, ../sass/widgets/_widget-location.scss */
   #zip-input-secondary {
     font-size: 13px;
   }
 
-  /* line 484, ../sass/widgets/_widget-location.scss */
+  /* line 486, ../sass/widgets/_widget-location.scss */
   #sidebar .zip-wrapper {
     display: block;
     width: 320px;
@@ -2628,18 +2630,18 @@ aside p {
     transition-duration: 0.5s;
   }
 
-  /* line 499, ../sass/widgets/_widget-location.scss */
+  /* line 501, ../sass/widgets/_widget-location.scss */
   body.no-location #sidebar .zip-wrapper {
     height: 0;
     padding-top: 0;
   }
 
-  /* line 506, ../sass/widgets/_widget-location.scss */
+  /* line 508, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.map-view {
     display: block;
     position: relative;
   }
-  /* line 509, ../sass/widgets/_widget-location.scss */
+  /* line 511, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.map-view .map-link {
     display: block;
     width: 100%;
@@ -2649,40 +2651,40 @@ aside p {
     z-index: 101;
   }
 
-  /* line 524, ../sass/widgets/_widget-location.scss */
+  /* line 526, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view #location-image {
     height: 150px;
     overflow: hidden;
     background-color: #f4f2df;
   }
-  /* line 529, ../sass/widgets/_widget-location.scss */
+  /* line 531, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper {
     width: 100%;
     margin: 15px 0 -7px;
     text-align: center;
   }
-  /* line 533, ../sass/widgets/_widget-location.scss */
+  /* line 535, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a {
     min-width: 65px;
   }
-  /* line 536, ../sass/widgets/_widget-location.scss */
+  /* line 538, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a.get-directions {
     margin: 0 4%;
     position: relative;
   }
-  /* line 539, ../sass/widgets/_widget-location.scss */
+  /* line 541, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a.get-directions span {
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
   }
-  /* line 543, ../sass/widgets/_widget-location.scss */
+  /* line 545, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a.get-directions.loading-directions span {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
-  /* line 546, ../sass/widgets/_widget-location.scss */
+  /* line 548, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location.location-view .btn-wrapper a.get-directions.loading-directions .loading {
     display: block;
     top: -16px;
@@ -2696,7 +2698,7 @@ aside p {
     opacity: 1;
   }
 
-  /* line 558, ../sass/widgets/_widget-location.scss */
+  /* line 560, ../sass/widgets/_widget-location.scss */
   body.no-location #sidebar #widget-location-full .other-locations {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
@@ -2705,7 +2707,7 @@ aside p {
 /*******
 IE SUPPORT FOR FLIPPING TRANSITION
 *******/
-/* line 569, ../sass/widgets/_widget-location.scss */
+/* line 571, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -2713,7 +2715,7 @@ html.ie #sidebar .widget-location #location-cta {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 571, ../sass/widgets/_widget-location.scss */
+/* line 573, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta .front, html.ie #sidebar .widget-location #location-cta .back {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -2725,7 +2727,7 @@ html.ie #sidebar .widget-location #location-cta .front, html.ie #sidebar .widget
   -o-transition-duration: 0.6s;
   transition-duration: 0.6s;
 }
-/* line 575, ../sass/widgets/_widget-location.scss */
+/* line 577, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta .front {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
@@ -2733,7 +2735,7 @@ html.ie #sidebar .widget-location #location-cta .front {
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
-/* line 578, ../sass/widgets/_widget-location.scss */
+/* line 580, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta .back {
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
@@ -2741,7 +2743,7 @@ html.ie #sidebar .widget-location #location-cta .back {
   -o-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
-/* line 582, ../sass/widgets/_widget-location.scss */
+/* line 584, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta.map-loaded .flipper {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
@@ -2754,7 +2756,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 585, ../sass/widgets/_widget-location.scss */
+/* line 587, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -2762,7 +2764,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .front {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-/* line 588, ../sass/widgets/_widget-location.scss */
+/* line 590, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
@@ -2770,7 +2772,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
-/* line 591, ../sass/widgets/_widget-location.scss */
+/* line 593, ../sass/widgets/_widget-location.scss */
 html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locations {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
