@@ -66,6 +66,32 @@ $menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
         </div>
     </div>
 
+    <div class="row mobile-menu-legend">
+        <h3>LA L&Eacute;GENDE</h3>
+        <div class="legend-wrapper">
+            <div class="legend-item">
+                <span class="icon icon-legend-signature"></span> La Madeleine Signature
+            </div>
+            <div class="legend-item">
+                <span class="icon icon-legend-low-calorie"></span> Under 600 calories
+            </div>
+            <div class="legend-item">
+                <span class="icon icon-legend-nuts"></span> Contains nuts
+            </div>
+            <div class="legend-item">
+                <span class="icon icon-legend-alcohol"></span> Contains alcohol
+            </div>
+            <div class="legend-item">
+                <span class="icon icon-legend-egg-whites"></span> Substitute egg whites free of charge
+            </div>
+            <div class="legend-item">
+                <span class="icon icon-legend-gluten-free"></span> Gluten free
+            </div>
+        </div>
+        <p class="disclaimer"><strong>Please note:</strong> The consumption of raw or undercooked eggs may increase your risk of foodborne illness.</p>
+        <p class="disclaimer">Some menu items may not be available at all locations.</p>
+    </div>
+
     <?php
 
         // Used to track odd/even category in iteration and adjust layout accordingly
@@ -103,4 +129,8 @@ $menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
 
         } // End of the $menuArray (full menu object) for each
     ?>
+
+    <a href="#" class="back-top">
+        <span class="icon icon-arrow-up-large"></span> Back to Top
+    </a>
 </div>

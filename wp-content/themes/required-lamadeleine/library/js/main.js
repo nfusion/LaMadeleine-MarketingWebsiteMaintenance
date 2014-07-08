@@ -64,6 +64,12 @@ $(function(){
 	// If on a menu 
 	if($content.hasClass('breakfast') || $content.hasClass('lunch') || $content.hasClass('dinner') || $content.hasClass('bakery')){
 		
+		// Back to top click event
+		$content.find('.back-top').on('click touchend', function(e){
+			e.preventDefault();
+			$("html, body").animate({ scrollTop: 0 }, 1000);
+		});
+
 		// If user has selected a location
 		if(myLocation){
 
@@ -93,9 +99,23 @@ $(function(){
 		
 
 		// Sticky the sidebar legend
-		if($sidebar.is(':visible')){
-			$sidebar.find("#sticky-widgets").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
-		}
+		var setSticky = function(){
+			if($sidebar.is(':visible')){
+				$sidebar.find("#sticky-widgets").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
+			}
+		};
+
+		setSticky();
+
+		// Debounce reset sticky 
+		var resetSticky = debounce(function() {
+			$sidebar.find("#sticky-widgets").unstick();
+			setSticky();
+		}, 250);
+
+		// Listen for window resize to reset sticky
+		window.addEventListener('resize', resetSticky);
+
 	};
 
 	/********

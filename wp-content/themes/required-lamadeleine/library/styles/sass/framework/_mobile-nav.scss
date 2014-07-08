@@ -20,14 +20,14 @@
 		&.active{
 			@include background-image(linear-gradient($lightCream, $tan));
 		}
+		&:first-child{
+			border-left: 0;
+		}
 	}
 	.nav-item{
 		font-size: 9px;
 		text-align: center;
 		color: $darkBrown;
-		&:first-child{
-			border: 0;
-		}
 	}
 	.icon{
 		font-size: 40px;
