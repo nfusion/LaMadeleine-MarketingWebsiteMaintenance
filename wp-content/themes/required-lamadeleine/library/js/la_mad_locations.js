@@ -205,7 +205,7 @@ var LaMadLocations = {
             $('body').addClass('has-location');
 
             // If any .get-directions links exist, fire getDirections() method when clicked.
-            $('#content').find('a.get-directions').on('click touchend', function(e){
+            $('#content').find('a.get-directions').on('click', function(e){
                 e.preventDefault();
                 LaMadLocations.getDirections(this);
             });
