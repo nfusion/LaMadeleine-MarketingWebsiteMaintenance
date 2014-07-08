@@ -6,6 +6,15 @@ var LaMadLocations = {
        
         $locationCta: $('#location-cta'),
         $directionsLink: "",
+        clickEvent: "",
+        setClickEvent: function(Modernizr){
+            if($('html').hasClass('touch')){
+                this.clickEvent = 'touchend';
+            }
+            else{
+                this.clickEvent = 'click';
+            }
+        },
         $frontWrapper: function(){
             return this.$locationCta.find('.front-wrapper');
         },
@@ -205,7 +214,7 @@ var LaMadLocations = {
             $('body').addClass('has-location');
 
             // If any .get-directions links exist, fire getDirections() method when clicked.
-            $('#content').find('a.get-directions').on('click', function(e){
+            $('#content').find('a.get-directions').on(this.clickEvent, function(e){
                 e.preventDefault();
                 LaMadLocations.getDirections(this);
             });
@@ -422,3 +431,5 @@ var LaMadLocations = {
         
         }
 };
+
+LaMadLocations.setClickEvent();
