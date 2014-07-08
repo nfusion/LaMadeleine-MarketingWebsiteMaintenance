@@ -102,25 +102,6 @@
 
                 /** Location view only **/
 
-                // Locations view - Button wrapper and buttons
-                $btnWrapperLocations = '
-                <div class="btn-wrapper">
-                    <a class="btn-light daypart-menu" href="#">Menu</a>
-                    <a class="btn-light get-directions" href="#">Directions</a>
-                    <a class="btn-light" target="_blank" href="https://online.lamadeleine.com">Order</a>
-                </div>';
-
-                // Locations view - Locations list container
-                $locationsList = '<div id="location-list"></div>';
-
-                /** Both home and location views **/
-
-                // Selected location image container
-                $locationImage = '<div id="location-image"></div>';
-
-                // Selected location info container
-                $locationInfo = '<div id="location-info"></div>';
-
                 // Loading indicator
                 $loading = '
                 <div class="loading">
@@ -135,6 +116,25 @@
                         <div class="f_circleG frotateG_08"></div>
                     </div>
                 </div>';
+
+                // Locations view - Button wrapper and buttons
+                $btnWrapperLocations = '
+                <div class="btn-wrapper">
+                    <a class="btn-light daypart-menu" href="#">Menu</a>
+                    <a class="btn-light get-directions" href="#"><span class="text">Directions</span>' . $loading . '</a>
+                    <a class="btn-light" target="_blank" href="https://online.lamadeleine.com">Order</a>
+                </div>';
+
+                // Locations view - Locations list container
+                $locationsList = '<div id="location-list"></div>';
+
+                /** Both home and location views **/
+
+                // Selected location image container
+                $locationImage = '<div id="location-image"></div>';
+
+                // Selected location info container
+                $locationInfo = '<div id="location-info"></div>';
 
                 // If this is the location view
                 if($onLocationPage == 'true') { 
