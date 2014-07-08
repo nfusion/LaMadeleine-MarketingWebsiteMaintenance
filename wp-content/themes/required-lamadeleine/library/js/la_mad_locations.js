@@ -5,6 +5,7 @@ var LaMadLocations = {
         nearestLocationObj: {'latitude':null,'longitude':null},
        
         $locationCta: $('#location-cta'),
+        $directionsLink: "",
         $frontWrapper: function(){
             return this.$locationCta.find('.front-wrapper');
         },
@@ -204,7 +205,7 @@ var LaMadLocations = {
             // If any .get-directions links exist, fire getDirections() method when clicked.
             $('#content').find('a.get-directions').on('click touchend', function(e){
                 e.preventDefault();
-                LaMadLocations.getDirections();
+                LaMadLocations.getDirections(this);
             });
 
             // Find any .lam-call links and set href attribute to current location phone number
@@ -264,11 +265,16 @@ var LaMadLocations = {
             };
         },
 
-        getLocation: function(objOnly){
+        getLocation: function(objOnly, el){
          
                 if(objOnly == 'linkOut'){
-                    console.log('getLocation linkOut');
-                    console.log(objOnly);
+
+                    // Set to passed in link element
+                    $directionsLink = $(el);
+
+                    // Add temporary .loading-directions class for loading indicator purposes
+                    $directionsLink.addClass('loading-directions');
+
                     navigator.geolocation.getCurrentPosition(this.geoLinkDir, this.geoErr);
                 }else if(navigator.geolocation){
                     if(typeof(objOnly) != 'undefined'){
@@ -306,10 +312,14 @@ var LaMadLocations = {
 
         geoLinkDir: function(position){
 
+            $directionsLink.removeClass('loading-directions');
+
+            $directionsLink = "";
+
             LaMadLocations.currentLocationObj.latitude = position.coords.latitude;
             LaMadLocations.currentLocationObj.longitude = position.coords.longitude;
             directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-           window.open(directionsLink);
+            window.open(directionsLink);
 
         },
 
@@ -377,10 +387,10 @@ var LaMadLocations = {
             });
         },
 
-        getDirections: function(){
+        getDirections: function(el){
             
             if(LaMadLocations.currentLocationObj.latitude == null){
-                this.getLocation('linkOut');
+                this.getLocation('linkOut', el);
                 
             } else {
                 directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          

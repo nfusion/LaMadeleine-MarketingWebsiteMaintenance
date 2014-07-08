@@ -510,6 +510,22 @@
       }
       a.get-directions{
         margin: 0 4%;
+        position: relative;
+        span{
+          @include transition-duration(0.3s);
+        }
+        &.loading-directions{
+          span{
+            @include opacity(0);
+          }
+          .loading{
+            display: block;
+            top: -16px;
+            left: 12px;
+            @include scale(0.7);
+            @include opacity(1);
+          }
+        }
       }
     }
   }
