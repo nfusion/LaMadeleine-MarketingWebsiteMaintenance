@@ -321,7 +321,7 @@ var LaMadLocations = {
             LaMadLocations.currentLocationObj.latitude = position.coords.latitude;
             LaMadLocations.currentLocationObj.longitude = position.coords.longitude;
             directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-            window.open(directionsLink);
+            window.open(directionsLink, '_blank');
 
         },
 
