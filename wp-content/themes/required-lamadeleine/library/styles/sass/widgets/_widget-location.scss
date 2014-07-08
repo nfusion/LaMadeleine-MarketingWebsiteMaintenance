@@ -110,6 +110,31 @@
       float: left;
       text-align: center;
     }
+    a.get-directions{
+      position: relative;
+      span{
+        @include transition-duration(0.3s);
+      }
+      .loading{
+        position: absolute;
+        top: -18px;
+        left: 0;
+        right: 0;
+        width: 65px;
+        margin: 0 auto;
+        @include scale(0.5);
+        @include opacity(0);
+      }
+      &.loading-directions{
+        span{
+          @include opacity(0);
+        }
+        .loading{
+          display: block;
+          @include opacity(1);
+        }
+      }
+    }
     .icon.call{
       span{
         font-size: 30px;
