@@ -10,3 +10,12 @@
 		}
 	}
 }
+
+@media (min-width: $medium-screen-min){
+	#content #sidebar{
+		.widget{
+			padding-bottom: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}

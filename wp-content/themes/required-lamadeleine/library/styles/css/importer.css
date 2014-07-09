@@ -758,54 +758,58 @@ body {
   border-bottom: 1px dashed #cbaf9a;
 }
 /* line 45, ../sass/framework/_layout.scss */
-#content #sidebar .widget:last-of-type {
+#content #sidebar .widget:last-child {
   border-bottom: 0;
 }
-/* line 50, ../sass/framework/_layout.scss */
+/* line 49, ../sass/framework/_layout.scss */
+#content #sidebar div.widget:last-of-type {
+  border-bottom: 0;
+}
+/* line 53, ../sass/framework/_layout.scss */
 #content .sidebar-wrapper {
   padding: 10px;
 }
 
 @media (min-width: 480px) {
-  /* line 56, ../sass/framework/_layout.scss */
+  /* line 59, ../sass/framework/_layout.scss */
   #container {
     margin: -80px auto 0;
     padding-top: 80px;
   }
 }
 @media (min-width: 980px) {
-  /* line 63, ../sass/framework/_layout.scss */
+  /* line 66, ../sass/framework/_layout.scss */
   #content {
     width: 100%;
     overflow: hidden;
     *zoom: 1;
   }
-  /* line 66, ../sass/framework/_layout.scss */
+  /* line 69, ../sass/framework/_layout.scss */
   #content #main {
     width: 70%;
     float: left;
   }
-  /* line 70, ../sass/framework/_layout.scss */
+  /* line 73, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 30%;
     float: right;
   }
-  /* line 73, ../sass/framework/_layout.scss */
+  /* line 76, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper {
     padding: 15px 25px 0;
   }
-  /* line 75, ../sass/framework/_layout.scss */
+  /* line 78, ../sass/framework/_layout.scss */
   #content #sidebar .sidebar-wrapper .widget:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
   }
 }
 @media (min-width: 1140px) {
-  /* line 86, ../sass/framework/_layout.scss */
+  /* line 89, ../sass/framework/_layout.scss */
   #content #main {
     width: 72%;
   }
-  /* line 89, ../sass/framework/_layout.scss */
+  /* line 92, ../sass/framework/_layout.scss */
   #content #sidebar {
     width: 28%;
   }
@@ -2395,8 +2399,8 @@ aside p {
   #sidebar .widget-location #location-cta {
     display: block;
     width: 100%;
-    min-height: 270px;
-    margin-top: 13px;
+    min-height: 230px;
+    margin-top: 2px;
     text-align: center;
     position: relative;
     -webkit-perspective: 1000;
@@ -2464,7 +2468,7 @@ aside p {
   }
   /* line 365, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location #location-cta .front {
-    height: 270px;
+    height: 230px;
     position: absolute;
     z-index: 2;
     background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
@@ -2483,7 +2487,7 @@ aside p {
     width: 230px;
     height: 16px;
     position: absolute;
-    top: 130px;
+    top: 111px;
     left: 20px;
     background: url(../../../img/map/location-cta-divider.png) no-repeat;
   }
@@ -2492,7 +2496,7 @@ aside p {
     display: none;
     position: absolute;
     z-index: 3;
-    top: 105px;
+    top: 85px;
     left: 38%;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
@@ -2505,7 +2509,7 @@ aside p {
   #sidebar .widget-location .geo {
     width: 100%;
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 0;
     right: 0;
   }
@@ -2513,7 +2517,7 @@ aside p {
   #sidebar .widget-location .zip {
     width: 100%;
     position: absolute;
-    bottom: 40px;
+    bottom: 25px;
     left: 0;
     right: 0;
   }
@@ -2876,12 +2880,41 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
 
 /**
 * La Madeleine
+* Text widget
+**/
+/* line 6, ../sass/widgets/_widget-text.scss */
+.widget.widget_text {
+  width: 100%;
+  position: relative;
+}
+/* line 9, ../sass/widgets/_widget-text.scss */
+.widget.widget_text .btn-wrapper {
+  text-align: center;
+  height: 30px;
+}
+/* line 12, ../sass/widgets/_widget-text.scss */
+.widget.widget_text .btn-wrapper .btn {
+  display: block;
+  width: 46%;
+  margin: 0 2%;
+  float: left;
+}
+
+/**
+* La Madeleine
 * Homepage Styling
 **/
 @media (max-width: 767px) {
   /* line 8, ../sass/templates/_home.scss */
   body.home .widget-location {
     display: none;
+  }
+}
+@media (min-width: 980px) {
+  /* line 16, ../sass/templates/_home.scss */
+  #content #sidebar .widget {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
 }
 /**
