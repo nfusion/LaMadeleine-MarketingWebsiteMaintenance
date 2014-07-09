@@ -3,6 +3,22 @@
 * Stories & Standard (Generic) Pages Styling
 **/
 
+body.single-post{
+	#content{
+		height: 100%;
+	}
+	#main{
+		height: 100%;
+	}
+}
+
+#content.page-single{
+	height: 100%;
+	#main{
+		height: 100%;
+	}
+}
+
 body.single-post, #content.page-single{
 	#main .post-box{
 		padding-bottom: 50px;
