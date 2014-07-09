@@ -252,9 +252,22 @@ $(function(){
 	********/
 
 	// Sticky the sidebar promo
-	if($sidebar.is(':visible')){
-		$sidebar.find(".fma-promo").sticky({topSpacing: 20, className: 'promo', getWidthFrom: '#sidebar .sidebar-wrapper'});
+	var setStickyPromo = function(){
+		if($sidebar.is(':visible') && $sidebar.find('.fma-promo').length > 0){
+			$sidebar.find(".fma-promo").sticky({topSpacing: 20, className: 'promo', getWidthFrom: '#sidebar .sidebar-wrapper'});
+		}
 	};
+
+	setStickyPromo();
+
+	// Debounce reset sticky 
+	var resetStickyPromo = debounce(function() {
+			$sidebar.find(".fma-promo").unstick();
+			setStickyPromo();
+	}, 250);
+
+	// Listen for window resize to reset sticky
+	window.addEventListener('resize', resetStickyPromo);
 
 	/*********
 	IE SUPPORT
