@@ -110,8 +110,12 @@ LaMadLocations.initializeLargeMap = function() {
                         LaMadLocations.loadNearest();
    
                     });
-
-
+                    
+                    // if((setCenterToFirst)&&(markers.length <1 )){
+                    //     largeMap.setZoom(12);
+                    //     largeMap.setCenter(marker_<?php echo $item['id'] ?>.getPosition());
+                    //     LaMadLocations.loadNearest();
+                    // }
                     markers.push(marker_<?php echo $item['id'] ?>);
                    
         <?php } ?>
@@ -173,6 +177,13 @@ LaMadLocations.initializeLargeMap = function() {
 
                     if(key == 0){
                         LaMadLocations.getImage(location.id, false);
+
+                        var Latlng = new google.maps.LatLng( location.latitude, location.longitude);
+                         largeMap.setZoom(12);
+                         largeMap.setCenter(Latlng);
+                       
+
+
                     }  else if ((key > 0)&&(key<4)){
                         locationItem = "<li class='location-item'  data-id='"+location.id+"' data-latitude='"+location.latitude+"' data-longitude='"+location.longitude+"'><div class='location-thumb'><img alt='Photo of La Madeleine Location' src='" + location.images.thumbnail + "'></div><div class='location-info'><div class='location-name'>" + location.title + "</div><div class='location-city'>" + location.city + ", " + location.state + "</div></div></li>";
                         locationList += locationItem;

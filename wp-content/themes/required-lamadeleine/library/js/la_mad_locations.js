@@ -315,7 +315,9 @@ var LaMadLocations = {
             LaMadLocations.currentLocationObj.latitude = position.coords.latitude;
             LaMadLocations.currentLocationObj.longitude = position.coords.longitude;
             if(typeof(LaMadLocations.setLargLocation) != 'undefined'){
-                LaMadLocations.setLargLocation(position.coords.latitude, position.coords.longitude);
+               // LaMadLocations.setLargLocation(position.coords.latitude, position.coords.longitude);
+                LaMadLocations.loadNearest();
+                
             }
 
             LaMadLocations.showPosition(position.coords.latitude, position.coords.longitude)
@@ -405,15 +407,7 @@ var LaMadLocations = {
             
             var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
                 if(isSafari){
-
                     link = '<a href="'+directionsLink+'" target="_new" class="mapit" onClick="">';
-
-                    // $('body').append(link);
-
-                    // $('.mapit').trigger("click");
-
-                    // console.log('send '+directionsLink);
-
                     window.location = directionsLink;
                 } else {
                     window.open(directionsLink);
@@ -426,7 +420,6 @@ var LaMadLocations = {
                 this.getLocation('linkOut', el);
             } else {
                 directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-               
                 this.sendWindow(directionsLink);
             }
     
