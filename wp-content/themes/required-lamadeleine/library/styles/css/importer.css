@@ -2057,7 +2057,7 @@ aside p {
 /* line 56, ../sass/widgets/_widget-location.scss */
 #mobile-location .location-text {
   width: 80%;
-  float: left;
+  margin: 0 auto;
   text-align: center;
 }
 /* line 60, ../sass/widgets/_widget-location.scss */
