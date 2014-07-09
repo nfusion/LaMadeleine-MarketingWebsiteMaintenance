@@ -3,9 +3,11 @@
 * Text widget
 **/
 
-.widget.widget_text{
+#content #sidebar .widget.widget_text{
   width: 100%;
+  max-width: 500px;
   position: relative;
+  border-bottom: 0;
   .btn-wrapper{
     text-align: center;
     height: 30px;
@@ -15,5 +17,12 @@
       margin: 0 2%;
       float: left;
     }
+  }
+}
+
+@media (min-width: $medium-screen-min){
+  #content #sidebar .widget.widget_text{
+    max-width: 100%;
+    border-bottom: 1px dashed $fadedBrown;
   }
 }

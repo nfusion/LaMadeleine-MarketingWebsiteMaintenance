@@ -2883,23 +2883,32 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
 * Text widget
 **/
 /* line 6, ../sass/widgets/_widget-text.scss */
-.widget.widget_text {
+#content #sidebar .widget.widget_text {
   width: 100%;
+  max-width: 500px;
   position: relative;
+  border-bottom: 0;
 }
-/* line 9, ../sass/widgets/_widget-text.scss */
-.widget.widget_text .btn-wrapper {
+/* line 11, ../sass/widgets/_widget-text.scss */
+#content #sidebar .widget.widget_text .btn-wrapper {
   text-align: center;
   height: 30px;
 }
-/* line 12, ../sass/widgets/_widget-text.scss */
-.widget.widget_text .btn-wrapper .btn {
+/* line 14, ../sass/widgets/_widget-text.scss */
+#content #sidebar .widget.widget_text .btn-wrapper .btn {
   display: block;
   width: 46%;
   margin: 0 2%;
   float: left;
 }
 
+@media (min-width: 980px) {
+  /* line 24, ../sass/widgets/_widget-text.scss */
+  #content #sidebar .widget.widget_text {
+    max-width: 100%;
+    border-bottom: 1px dashed #cbaf9a;
+  }
+}
 /**
 * La Madeleine
 * Homepage Styling
@@ -2909,12 +2918,20 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
   body.home .widget-location {
     display: none;
   }
+  /* line 11, ../sass/templates/_home.scss */
+  body.home #content #sidebar .widget.widget_text {
+    margin: 10px auto -10px;
+  }
 }
 @media (min-width: 980px) {
-  /* line 16, ../sass/templates/_home.scss */
-  #content #sidebar .widget {
+  /* line 19, ../sass/templates/_home.scss */
+  body.home #content #sidebar .widget {
     padding-bottom: 15px;
     margin-bottom: 15px;
+  }
+  /* line 23, ../sass/templates/_home.scss */
+  body.home #content #sidebar .widget.widget_text {
+    margin: 0 0 15px;
   }
 }
 /**
