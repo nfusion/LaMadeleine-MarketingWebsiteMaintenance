@@ -1,0 +1,76 @@
+/**
+* La Madeleine
+* Buttons
+**/
+
+@mixin btn(){
+	color: $lightCream;
+	font-family: $lato;
+	font-style: none;
+	font-size: 12px;
+	line-height: 16px;
+	text-transform: uppercase;
+	padding: 7px 30px 7px 20px;
+	font-weight: bold;
+	position: relative;
+	@include border-radius(5px);
+	@include lam-text-shadow();
+	@include box-shadow(rgba(0,0,0,0.5) 0 2px 1px);
+	@include background-image(linear-gradient(lighten($redBrown, 15%), $redBrown));
+	@include transition-property(background-image);
+	@include transition-duration(0.3s);
+	&:hover{
+		color: darken($lightCream, 5%);
+		@include background-image(linear-gradient(lighten($redBrown, 20%), lighten($redBrown, 5%)));
+		&:after{
+			color: darken($lightCream, 5%);
+			right: 5px;
+		}
+	}
+	&:after{
+		content: "\e624";
+		font-family: 'icomoon';
+		color: $lightCream;
+		font-size: 13px;
+		line-height: 16px;
+		position: absolute;
+		top: 7px;
+		right: 10px;
+		@include transition-duration(0.3s);
+	}
+}
+
+a.btn{
+	@include btn();
+}
+
+a.btn.call{
+	&:after{
+		content: "";
+	}
+	span.icon-phone{
+		font-size: 20px;
+		line-height: 0;
+		position: relative;
+		top: 5px;
+	}
+}
+
+a.btn-light{
+	color: $darkBrown;
+	font-family: $lato;
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 10px;
+	border: 1px solid $darkBrown;
+	@include background-image(linear-gradient($lightCream, lighten($fadedBrown,15%)));
+	@include box-shadow(rgba(0,0,0,0.3) 0 1px 1px);
+	@include border-radius(5px);
+	@include transition-duration(0.25s);
+	&:hover{
+		color: $lightBrown;
+		border-color: $lightBrown;
+	}
+}
