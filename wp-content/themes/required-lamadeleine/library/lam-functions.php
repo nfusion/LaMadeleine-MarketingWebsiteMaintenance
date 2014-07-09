@@ -372,7 +372,14 @@ function display_menu_category($menuObj,$layout){
 
 	  // Start new menu category row
 
-	  $str .= '<div class="row menu-category" id="category-' . $menuCategory['slug'] . '">';
+	  // Set a unqiue ID based on the category name
+	  $uniqueID = strtolower($menuCategory['name']);
+	  $uniqueID = str_replace(' ', '-', $uniqueID);
+
+    /** this is hacky but aparently strtolower fails on accented letters **/
+    $uniqueID = str_replace('Á', 'á', $uniqueID);
+
+	  $str .= '<div class="row menu-category" id="category-' . $uniqueID . '">';
 
 	  // Wrap in category title & description
 	  $str .= '<div class="category-wrapper">';
