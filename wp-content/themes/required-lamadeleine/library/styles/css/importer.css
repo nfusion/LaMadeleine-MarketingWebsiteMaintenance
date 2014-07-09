@@ -2994,7 +2994,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
 /* line 93, ../sass/templates/_les-menu.scss */
 .breakfast .menu-details .mobile-menu-legend h3, .lunch .menu-details .mobile-menu-legend h3, .dinner .menu-details .mobile-menu-legend h3, .bakery .menu-details .mobile-menu-legend h3 {
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 18px;
 }
 /* line 97, ../sass/templates/_les-menu.scss */
 .breakfast .menu-details .mobile-menu-legend .legend-item, .lunch .menu-details .mobile-menu-legend .legend-item, .dinner .menu-details .mobile-menu-legend .legend-item, .bakery .menu-details .mobile-menu-legend .legend-item {
@@ -3540,10 +3540,9 @@ body.single-post #main .post-box, #content.page-single #main .post-box {
 /* line 48, ../sass/templates/_store.scss */
 .store select {
   width: 70%;
-  height: 30px;
   margin-bottom: 20px;
 }
-/* line 54, ../sass/templates/_store.scss */
+/* line 53, ../sass/templates/_store.scss */
 .store div.cart {
   display: none;
   text-align: left;
@@ -3556,32 +3555,32 @@ body.single-post #main .post-box, #content.page-single #main .post-box {
   padding: 7px;
   margin-bottom: 10px;
 }
-/* line 67, ../sass/templates/_store.scss */
+/* line 66, ../sass/templates/_store.scss */
 .store div.cart .title {
   float: left;
   padding-right: 5%;
 }
-/* line 72, ../sass/templates/_store.scss */
+/* line 71, ../sass/templates/_store.scss */
 .store div.cart .info {
   float: right;
   padding-right: 25%;
 }
-/* line 77, ../sass/templates/_store.scss */
+/* line 76, ../sass/templates/_store.scss */
 .store div.cart .info:before {
   content: "$";
 }
-/* line 81, ../sass/templates/_store.scss */
+/* line 80, ../sass/templates/_store.scss */
 .store div.cart input {
   width: 60px;
 }
-/* line 85, ../sass/templates/_store.scss */
+/* line 84, ../sass/templates/_store.scss */
 .store .lineItem {
   width: 75%;
   overflow: visible;
   float: left;
   padding-right: 10px;
 }
-/* line 92, ../sass/templates/_store.scss */
+/* line 91, ../sass/templates/_store.scss */
 .store .tallies {
   clear: both;
   padding: 10px;
