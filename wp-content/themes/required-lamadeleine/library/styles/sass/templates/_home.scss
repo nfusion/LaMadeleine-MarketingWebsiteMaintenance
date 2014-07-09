@@ -8,14 +8,20 @@
 		.widget-location{
 			display: none;
 		}
+		#content #sidebar .widget.widget_text{
+			margin: 10px auto -10px;
+		}
 	}
 }
 
 @media (min-width: $medium-screen-min){
-	#content #sidebar{
+	body.home #content #sidebar{
 		.widget{
 			padding-bottom: 15px;
 			margin-bottom: 15px;
+		}
+		.widget.widget_text{
+			margin: 0 0 15px;
 		}
 	}
 }
