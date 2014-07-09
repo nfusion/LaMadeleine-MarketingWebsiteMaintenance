@@ -21,7 +21,7 @@ class Dayparts {
         $dayPartPods = pods('daypart')->find(); 
         $return = array();
             while( $dayPartPods->fetch() ) {
-                    foreach (array('title','descriptor', 'daypart', 'start_display_time', 'end_display_time','link') as $key => $value) {
+                    foreach (array('title','descriptor', 'daypart', 'start_display_time', 'end_display_time','link', 'slug') as $key => $value) {
                         $item[$value] = $dayPartPods->field($value);
                     }
                     $imgSrc =  wp_get_attachment_image_src( get_post_thumbnail_id($dayPartPods->id()), 'daypart');
