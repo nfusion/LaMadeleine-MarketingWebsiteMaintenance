@@ -57,9 +57,10 @@ class REQ_Editor_Styles {
             array(
                 'title'    => __( 'Button', 'requiredfoundation' ),
                 'selector' => 'a',
-                'classes'  => 'button',
+                'classes'  => 'btn',
                 'exact'    => true
-            ),
+            )
+            /*
             array(
                 'title' => __( 'Lead Paragraph', 'requiredfoundation' ),
                 'selector' => 'p',
@@ -123,6 +124,7 @@ class REQ_Editor_Styles {
                 'title'  => __( 'Cite', 'requiredfoundation' ),
                 'inline' => 'cite'
             )
+            */
         );
 
         // Let devs get a chance to remove and change that stuff.
