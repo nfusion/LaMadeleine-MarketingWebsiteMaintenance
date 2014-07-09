@@ -37,7 +37,7 @@
 			<div class="bottom-links">
 				<div class="link-wrapper">
 					<p><a href="/about">About Us</a></p>
-					<p><a target="_blank" href="http://blog.lamadeleine.com/">Blog</a></p>
+					<p><a href="/stories">Stories</a></p>
 				</div>
 				<div class="link-wrapper">
 					<p><a href="/franchise">Franchises</a></p>
