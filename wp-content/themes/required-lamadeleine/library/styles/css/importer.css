@@ -3275,7 +3275,6 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
 /* line 290, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser a, .lunch .menu-item .story-teaser a, .dinner .menu-item .story-teaser a, .bakery .menu-item .story-teaser a {
   font-weight: bold;
-  white-space: nowrap;
 }
 /* line 295, ../sass/templates/_les-menu.scss */
 .breakfast .menu-item .story-teaser a:hover .icon-arrow-right, .lunch .menu-item .story-teaser a:hover .icon-arrow-right, .dinner .menu-item .story-teaser a:hover .icon-arrow-right, .bakery .menu-item .story-teaser a:hover .icon-arrow-right {
