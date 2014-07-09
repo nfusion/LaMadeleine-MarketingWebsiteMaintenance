@@ -220,7 +220,7 @@ function display_featured_item($featuredObj){
           $str .= '<div class="icon icon-stories"></div>';
 
           // Generate and include story teaser
-          $str .= '<div class="story-teaser">' . create_teaser($story['post_content'], 75) . ' <a href="' . $story['guid'] . '">' . $story['call_to_action'] . ' <span class="icon icon-arrow-right"></span></a></div>';
+          $str .= '<div class="story-teaser">' . create_teaser($story['post_content'], 75) . ' <a href="' . $story['guid'] . '">' . $story['call_to_action'] . '&nbsp;<span class="icon icon-arrow-right"></span></a></div>';
 
           // Close .story-wrapper
           $str .= '</div>';

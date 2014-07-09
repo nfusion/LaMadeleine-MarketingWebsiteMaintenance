@@ -69,7 +69,7 @@
 			a.mobile-btn-link{
 				display: block;
 				margin: 5px 0;
-				padding: 10px 0;
+				padding: 10px 5px;
 				background: $lightCream;
 				@include border-radius(5px);
 			}
@@ -203,7 +203,6 @@
 				font-size: 13px;
 				font-weight: bold;
 				color: $deepOrange;
-				white-space: nowrap;
 				&:hover{
 					color: lighten($deepOrange, 10%);
 					.icon{
