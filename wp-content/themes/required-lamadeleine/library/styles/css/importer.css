@@ -3321,10 +3321,6 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
   .breakfast .menu-details .menu-links .location-name, .lunch .menu-details .menu-links .location-name, .dinner .menu-details .menu-links .location-name, .bakery .menu-details .menu-links .location-name {
     margin: 10px 0;
   }
-  /* line 354, ../sass/templates/_les-menu.scss */
-  .breakfast .featured-menu-item .story-teaser a, .lunch .featured-menu-item .story-teaser a, .dinner .featured-menu-item .story-teaser a, .bakery .featured-menu-item .story-teaser a {
-    white-space: nowrap;
-  }
 }
 @media (min-width: 980px) {
   /* line 363, ../sass/templates/_les-menu.scss */
