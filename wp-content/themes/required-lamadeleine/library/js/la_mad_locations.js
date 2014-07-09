@@ -412,7 +412,16 @@ var LaMadLocations = {
                 this.getLocation('linkOut', el);
             } else {
                 directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-                window.open(directionsLink);
+               
+
+                var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+                if(isSafari){
+                    window.location = directionsLink;
+                } else {
+                    window.open(directionsLink);
+                }
+
+                
             }
     
         },
