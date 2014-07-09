@@ -353,6 +353,9 @@
 				text-align: left;
 			}
 		}
+		.featured-menu-item .story-teaser a{
+			white-space: nowrap;
+		}
 	}
 }
 
@@ -383,9 +386,6 @@
 					}
 				}
 			}
-		}
-		.featured-menu-item .story-teaser a{
-			white-space: nowrap;
 		}
 
 		#sidebar{

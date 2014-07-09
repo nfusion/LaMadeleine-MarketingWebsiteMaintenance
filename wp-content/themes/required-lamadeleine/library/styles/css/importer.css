@@ -3319,31 +3319,31 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
   .breakfast .menu-details .category-title, .breakfast .menu-details .category-desc, .lunch .menu-details .category-title, .lunch .menu-details .category-desc, .dinner .menu-details .category-title, .dinner .menu-details .category-desc, .bakery .menu-details .category-title, .bakery .menu-details .category-desc {
     text-align: left;
   }
+  /* line 356, ../sass/templates/_les-menu.scss */
+  .breakfast .featured-menu-item .story-teaser a, .lunch .featured-menu-item .story-teaser a, .dinner .featured-menu-item .story-teaser a, .bakery .featured-menu-item .story-teaser a {
+    white-space: nowrap;
+  }
 }
 @media (min-width: 980px) {
-  /* line 362, ../sass/templates/_les-menu.scss */
+  /* line 365, ../sass/templates/_les-menu.scss */
   .breakfast .mobile-menu-legend, .lunch .mobile-menu-legend, .dinner .mobile-menu-legend, .bakery .mobile-menu-legend {
     display: none;
   }
-  /* line 368, ../sass/templates/_les-menu.scss */
+  /* line 371, ../sass/templates/_les-menu.scss */
   .breakfast .menu-details .menu-links a.mobile-btn-link, .lunch .menu-details .menu-links a.mobile-btn-link, .dinner .menu-details .menu-links a.mobile-btn-link, .bakery .menu-details .menu-links a.mobile-btn-link {
     padding: 0;
     background: none;
   }
-  /* line 372, ../sass/templates/_les-menu.scss */
+  /* line 375, ../sass/templates/_les-menu.scss */
   .breakfast .menu-details .menu-links .location-name, .lunch .menu-details .menu-links .location-name, .dinner .menu-details .menu-links .location-name, .bakery .menu-details .menu-links .location-name {
     position: absolute;
     top: -2px;
     left: 0;
     right: 0;
   }
-  /* line 381, ../sass/templates/_les-menu.scss */
+  /* line 384, ../sass/templates/_les-menu.scss */
   .breakfast .menu-details .menu-category .columns .menu-item:last-child, .lunch .menu-details .menu-category .columns .menu-item:last-child, .dinner .menu-details .menu-category .columns .menu-item:last-child, .bakery .menu-details .menu-category .columns .menu-item:last-child {
     margin-bottom: 0;
-  }
-  /* line 387, ../sass/templates/_les-menu.scss */
-  .breakfast .featured-menu-item .story-teaser a, .lunch .featured-menu-item .story-teaser a, .dinner .featured-menu-item .story-teaser a, .bakery .featured-menu-item .story-teaser a {
-    white-space: nowrap;
   }
   /* line 391, ../sass/templates/_les-menu.scss */
   .breakfast #sidebar, .lunch #sidebar, .dinner #sidebar, .bakery #sidebar {
