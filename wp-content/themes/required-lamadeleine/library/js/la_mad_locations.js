@@ -323,6 +323,7 @@ var LaMadLocations = {
 
         geoLinkDir: function(position){
 
+
             $directionsLink.removeClass('loading-directions');
 
             $directionsLink = "";
@@ -330,8 +331,9 @@ var LaMadLocations = {
             LaMadLocations.currentLocationObj.latitude = position.coords.latitude;
             LaMadLocations.currentLocationObj.longitude = position.coords.longitude;
             directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-            window.open(directionsLink, '_blank');
-
+            
+            LaMadLocations.sendWindow(directionsLink);
+            return true;
         },
 
 
@@ -398,13 +400,34 @@ var LaMadLocations = {
             });
         },
 
-        getDirections: function(el){
+
+        sendWindow: function(directionsLink){
             
+            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+                if(isSafari){
+
+                    link = '<a href="'+directionsLink+'" target="_new" class="mapit" onClick="">';
+
+                    // $('body').append(link);
+
+                    // $('.mapit').trigger("click");
+
+                    // console.log('send '+directionsLink);
+
+                    window.location = directionsLink;
+                } else {
+                    window.open(directionsLink);
+                }
+
+        },
+
+        getDirections: function(el){
             if(LaMadLocations.currentLocationObj.latitude == null){
                 this.getLocation('linkOut', el);
             } else {
                 directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-                window.open(directionsLink);
+               
+                this.sendWindow(directionsLink);
             }
     
         },
