@@ -18,3 +18,53 @@
 :-ms-input-placeholder {  
 	color: $fadedBrown;
 }
+
+// Gravity Forms
+#container #content .gform_wrapper{
+	.gfield{
+		margin-bottom: 10px;
+	}
+	.ginput_full, .ginput_left, .ginput_right{
+		margin-bottom: 10px;
+	}
+	.ginput_left, .ginput_right, input.medium, select.medium{
+		width: 100%;
+	}
+	.gform_footer{
+		text-align: center;
+	}
+	input{
+		margin-bottom: 5px;
+		font-size: 14px;
+		margin-right: 5px;
+	}
+	input[type=submit]{
+		@include btn();
+		border: 0;
+		padding: 7px 20px;
+		width: 100%;
+	}
+	input, select, textarea{
+		width: 100% !important;
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#container #content .gform_wrapper{
+		.ginput_left, .ginput_right, input.medium, select.medium{
+			width: 50%;
+		}
+		.ginput_left{
+			padding-right: 10px;
+		}
+		.ginput_right{
+			padding-left: 10px;
+		}
+		input.medium, select.medium, textarea.medium{
+			width: 75% !important;
+		}
+		input[type=submit]{
+			max-width: 200px;
+		}
+	}
+}

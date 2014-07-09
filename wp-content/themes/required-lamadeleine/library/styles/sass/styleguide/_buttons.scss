@@ -3,7 +3,7 @@
 * Buttons
 **/
 
-a.btn{
+@mixin btn(){
 	color: $lightCream;
 	font-family: $lato;
 	font-style: none;
@@ -38,6 +38,10 @@ a.btn{
 		right: 10px;
 		@include transition-duration(0.3s);
 	}
+}
+
+a.btn{
+	@include btn();
 }
 
 a.btn.call{
