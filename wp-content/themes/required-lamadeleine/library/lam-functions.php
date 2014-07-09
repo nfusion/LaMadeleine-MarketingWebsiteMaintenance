@@ -344,15 +344,26 @@ function display_menu_category($menuObj,$layout){
 
 	  // Determine where to split columns
 	  if($isFeatured && $totalMenuItems > 2) :
+
 	  	// Featured item and more than two items, stop one item short to better balance column against featured item image
+
+	  	// Special rules for VIENNOISERIE and PÂTISSERIE - Split difference is higher for better balance
+			if($menuCategory['term_id'] == 23 || $menuCategory['term_id'] == 24) :
+				$splitDifference = 3;
+			else :
+				// Else use standard 1 split difference
+				$splitDifference = 1;
+  		endif;
+
 			if($layout === 'left') :
-	  		$splitItems = ceil(($totalMenuItems / 2) - 1);
+	  		$splitItems = ceil(($totalMenuItems / 2) - $splitDifference);
+
 	  	else :
-	  		$splitItems = ceil(($totalMenuItems / 2) + 1);
+	  		$splitItems = ceil(($totalMenuItems / 2) + $splitDifference);
 	  	endif;
 	  else : 
 	  	// Less than two items or no featured item, split evenly in half
-        //Serna: This needs to be a whole number
+      // Serna: This needs to be a whole number
 	  	$splitItems = ceil($totalMenuItems / 2);
 	  endif; 
 
@@ -361,14 +372,7 @@ function display_menu_category($menuObj,$layout){
 
 	  // Start new menu category row
 
-	  // Set a unqiue ID based on the category name
-	  $uniqueID = strtolower($menuCategory['name']);
-	  $uniqueID = str_replace(' ', '-', $uniqueID);
-
-      /** this is hacky but aparently strtolower fails on accented letters **/
-      $uniqueID = str_replace('Á', 'á', $uniqueID);
-
-	  $str .= '<div class="row menu-category" id="category-' . $uniqueID . '">';
+	  $str .= '<div class="row menu-category" id="category-' . $menuCategory['slug'] . '">';
 
 	  // Wrap in category title & description
 	  $str .= '<div class="category-wrapper">';
