@@ -325,8 +325,8 @@
   	#location-cta{
       display: block;
   		width: 100%;
-  		min-height: 270px;
-      margin-top: 13px;
+  		min-height: 230px;
+      margin-top: 2px;
   		text-align: center;
   		position: relative;
       @include perspective(1000);
@@ -363,7 +363,7 @@
         @include backface-visibility(hidden);
       }
       .front{
-        height: 270px;
+        height: 230px;
         position: absolute;
         z-index: 2;
         background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
@@ -377,7 +377,7 @@
       width: 230px;
       height: 16px;
       position: absolute;
-      top: 130px;
+      top: 111px;
       left: 20px;
       background: url(../../../img/map/location-cta-divider.png) no-repeat;
     }
@@ -385,7 +385,7 @@
       display: none;
       position: absolute;
       z-index: 3;
-      top: 105px;
+      top: 85px;
       left: 38%;
       @include opacity(0);
       @include transition-duration(0.3s);
@@ -393,14 +393,14 @@
   	.geo{
   		width: 100%;
   		position: absolute;
-  		top: 30px;
+  		top: 20px;
   		left: 0;
   		right: 0;
   	}
   	.zip{
   		width: 100%;
   		position: absolute;
-  		bottom: 40px;
+  		bottom: 25px;
   		left: 0;
   		right: 0;
   	}
