@@ -40,7 +40,7 @@
 					<p><a href="/stories/">Stories</a></p>
 				</div>
 				<div class="link-wrapper">
-					<p><a href="/franchise/">Franchises</a></p>
+					<p><a href="/franchise/">Franchise</a></p>
 					<p><a href="/careers/">Careers</a></p>
 				</div>
 			</div>
