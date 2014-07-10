@@ -1,0 +1,18 @@
+/**
+* La Madeleine
+* IE 8 & 9 fixes
+**/
+
+.ie8, .ie9{
+	#sidebar{
+		.widget-location{
+			#location-cta{
+				&.map-loaded{
+					.front{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
