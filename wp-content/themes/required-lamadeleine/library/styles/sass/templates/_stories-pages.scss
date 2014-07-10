@@ -3,26 +3,25 @@
 * Stories & Standard (Generic) Pages Styling
 **/
 
-// Ensure tan background extends to bottom of page
+// Force content area background to extend to bottom of screen
 body.single-post{
-	#content{
-		min-height: 100%;
-	}
-	#main{
-		min-height: 100%;
+	#content #main{
+		padding-bottom: 5000px;
+		margin-bottom: -4950px;
 	}
 }
 
 #content.page-single{
-	min-height: 100%;
 	#main{
-		min-height: 100%;
+		padding-bottom: 5000px;
+		margin-bottom: -4950px;
 	}
 }
 
+// Single post / Single page styling
 body.single-post, #content.page-single{
 	#main .post-box{
-		padding-bottom: 50px;
+		//padding-bottom: 50px;
 	}
 }
 
