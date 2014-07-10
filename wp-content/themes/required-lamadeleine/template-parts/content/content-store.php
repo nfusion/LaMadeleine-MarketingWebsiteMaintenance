@@ -121,7 +121,10 @@ $(document).ready(function(){
                         <select id='dressingOptions'>
                             <option value="Two Bottles Original Caesar Dressing">Two Bottles Original Caesar</option>
                             <option value="Two Bottles Fat Free Caesar Dressing">Two Bottles Fat Free Caesar</option>
-                            <option value="One Bottle Original Caesar Dressing and One Bottle Fat Free Caesar Dressing">One Original Caesar Dressing and One Fat Free Caesar </option>
+                            <option value="Two Bottles Balsamic Vinaigrette">Two Bottles Balsamic Vinaigrette</option>
+                            <option value="One Bottle Original Caesar Dressing and One Fat Free Caesar Dressing">One Original Caesar Dressing and One Fat Free Caesar </option>
+                            <option value="One Bottle Original Caesar Dressing and One Balsamic Vinaigrette Dressing">One Original Caesar Dressing and Balsamic Vinaigrette Dressing </option>
+                            <option value="One Bottle Fat Free Caesar Dressing and One Balsamic Vinaigrette Dressing">One Fat Free Caesar Dressing and Balsamic Vinaigrette Dressing </option>
                         </select>
                          <p><a class='btn  product-button' data-product='Salade Dressing Duet' data-relate='dressingOptions' data-cost='<?php echo $dressingCost; ?>'  data-shipping='<?php echo $dressingShippingIncremental; ?>'> Add To Cart </a></p>
                 </div>
