@@ -114,6 +114,7 @@ class Dayparts {
             }
             
             //$menu_categories = ucwords(str_replace('-', ' ', $menu_categories));
+
         return json_encode( explode(",", $menu_categories));
 
     }

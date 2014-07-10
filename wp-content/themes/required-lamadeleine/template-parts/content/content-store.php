@@ -65,7 +65,7 @@ $(document).ready(function(){
     <div class='store'>
     
             <div class='store-text row'>
-                <h1>Perfect Gifts</h1>
+                <h1>Share the Joie & Give the Gift of la Madeleine</h1>
             </div>   
                 <div class='store_item row'>
                     <div class='store_item_image six columns' >
@@ -100,7 +100,7 @@ $(document).ready(function(){
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Tomato Basil Soupe Trio</h4>
-                        <p>Enjoy la Madeleine’s signature Tomato Basil Soupe. Three 15.5 fl. Oz jars.
+                        <p>Enjoy la Madeleine’s famous Tomato Basil Soupe or Reduced Fat Tomato Basil Soupe at home! Three 15.5 fl. Oz jars.
                         <br>$<?php echo $soupCost ?>
                         </p>
                         <p><a class='btn product-button' data-product='Tomato Basil Soupe Trio' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
