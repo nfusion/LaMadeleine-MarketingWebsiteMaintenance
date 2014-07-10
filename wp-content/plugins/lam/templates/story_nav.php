@@ -20,16 +20,6 @@
      // die();
 ?>
 
-    <style>
-    .cat-wrapper ul{
-        padding-left: 45px;
-        font-size: 12px;
-        list-style: circle;
-    }
-    </style>
-
-
-
 	<h2>La Madeleine Stories</h2>
   
   	<div class="cat-wrapper">
