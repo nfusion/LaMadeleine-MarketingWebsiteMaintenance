@@ -5,7 +5,7 @@
 
     foreach(array('food','culture','community') as $cat){
          //$cat = 'food';//strtolower(get_cat_name($cat));
-        $mypods = pods('post')->find(array('limit' => 1, 'where'=>"category.name='".$cat."'"));
+        $mypods = pods('post')->find(array('limit' => 3, 'where'=>"category.name='".$cat."'"));
         $stories = process_stories($mypods);
 
         foreach($stories as $story){
