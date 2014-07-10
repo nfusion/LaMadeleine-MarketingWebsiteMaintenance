@@ -103,7 +103,13 @@ $(document).ready(function(){
                         <p>Enjoy la Madeleine’s famous Tomato Basil Soupe or Reduced Fat Tomato Basil Soupe at home! Three 15.5 fl. Oz jars.
                         <br>$<?php echo $soupCost ?>
                         </p>
-                        <p><a class='btn product-button' data-product='Tomato Basil Soupe Trio' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
+                        <select id='soupOptions'>
+                            <option value="Original Tomato Basil Soupe">Original Tomato Basil Soupe</option>
+                            <option value="Reduced Fat Tomato Basil Soupe">Reduced Fat Tomato Basil Soupe</option>
+                            <option value="TBD">TBD</option>
+                        </select>
+
+                        <p><a class='btn product-button' data-product='La Madeleine Soupe Trio' data-relate='soupOptions' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
                 </div>
                 
             </div>
