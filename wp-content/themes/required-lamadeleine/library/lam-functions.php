@@ -348,7 +348,7 @@ function display_menu_category($menuObj,$layout){
 	  	// Featured item and more than two items, stop one item short to better balance column against featured item image
 
 	  	// Special rules for VIENNOISERIE and PÂTISSERIE and SPECIALTIES - Split difference is higher for better balance
-			if($menuCategory['term_id'] == 23 || $menuCategory['term_id'] == 24 || || $menuCategory['term_id'] == 26) :
+			if($menuCategory['term_id'] == 23 || $menuCategory['term_id'] == 24 || $menuCategory['term_id'] == 26) :
 				$splitDifference = 3;
 			else :
 				// Else use standard 1 split difference
