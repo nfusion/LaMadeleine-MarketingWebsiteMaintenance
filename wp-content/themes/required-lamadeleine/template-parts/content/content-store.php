@@ -115,9 +115,7 @@ $(document).ready(function(){
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Salade Dressing Duet</h4>
-                        <p>Make the perfect gift with two of your favorite la Madeleine salade dressings. 
-                         Choose from our signature Caesar or fat-free Caesar. The Caesar and Balsamic dressings 
-                         are “all natural” and “gluten free”.
+                        <p>Make the perfect gift with two of your favorite la Madeleine salade dressings. Choose from our signature Caesar, fat-free Caesar or Balsamic Vinaigrette.  La Madeleine dressings are all-natural and gluten-free.
                         <br>$<?php echo $dressingCost ?>
                         </p>
                         <select id='dressingOptions'>
