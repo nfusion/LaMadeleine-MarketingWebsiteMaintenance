@@ -17,7 +17,7 @@
 			<h4>More La Madeleine</h4>
 			<a class="nav-item" href="/locations/"><span class="icon icon-pin"><span class="item-title">Locations</span></span></a>
 			<a class="nav-item" target="_blank" href="http://cateringbylamadeleine.com"><span class="icon icon-catering"><span class="item-title">Catering</span></span></a>
-			<a class="nav-item" href="/store/"><span class="icon icon-store"><span class="item-title">Online Store</span></span></a>
+			<a class="nav-item" href="/store/"><span class="icon icon-store"><span class="item-title">Retail &amp; Gift Cards</span></span></a>
 			<a class="nav-item" href="/stories/"><span class="icon icon-stories"><span class="item-title">La Madeleine Stories</span></span></a>
 		</div>
 		<div class="social-group">
