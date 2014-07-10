@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 /*
 SCSS custom theme styling importer
 Author: nFusion (http://nfusion.com)
@@ -25,6 +24,7 @@ Author: nFusion (http://nfusion.com)
 * La Madeleine
 * Fonts
 **/
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 @font-face {
   font-family: 'ostrich_sans_roundregular';
   src: url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot");
