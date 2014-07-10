@@ -650,7 +650,7 @@ a.btn-light:hover {
 /* line 27, ../sass/styleguide/_forms.scss */
 #container #content .gform_wrapper .ginput_full, #container #content .gform_wrapper .ginput_left, #container #content .gform_wrapper .ginput_right {
   margin-bottom: 10px;
-  min-height: 57px;
+  min-height: 60px;
 }
 /* line 31, ../sass/styleguide/_forms.scss */
 #container #content .gform_wrapper .ginput_left, #container #content .gform_wrapper .ginput_right, #container #content .gform_wrapper input.medium, #container #content .gform_wrapper select.medium {
@@ -3023,6 +3023,7 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
   #content #sidebar .widget.widget_text {
     max-width: 100%;
     border-bottom: 1px dashed #cbaf9a;
+    margin: 0 auto 20px;
   }
 }
 /**
