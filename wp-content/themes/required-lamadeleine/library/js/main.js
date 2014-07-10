@@ -207,7 +207,7 @@ $(function(){
 		window.mySwipe = new Swipe(document.getElementById('carousel'), {
 			startSlide: 0,
 			speed: 500,
-			auto: 0,
+			auto: 8000,
 			callback: function(index, elem) {
 
 		  	// Set navigation-marker active class
