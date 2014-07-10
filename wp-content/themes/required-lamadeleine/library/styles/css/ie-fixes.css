@@ -1,0 +1,8 @@
+/**
+* La Madeleine
+* IE 8 & 9 fixes
+**/
+/* line 11, ../sass/importer/ie-fixes.scss */
+.ie8 #sidebar .widget-location #location-cta.map-loaded .front, .ie9 #sidebar .widget-location #location-cta.map-loaded .front {
+  display: none;
+}

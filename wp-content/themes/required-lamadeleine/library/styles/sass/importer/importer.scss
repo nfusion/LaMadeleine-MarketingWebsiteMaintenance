@@ -6,6 +6,10 @@ Author: nFusion (http://nfusion.com)
 // COMPASS MIXINS
 @import "compass/css3";
 @import "compass/utilities/general/clearfix";
+// Legacy browser support
+@import "compass/support";
+// Disable IE 6/7 legacy hacks
+$legacy-support-for-ie: false;
 
 // STYLE GUIDE
 @import '../styleguide/variables';

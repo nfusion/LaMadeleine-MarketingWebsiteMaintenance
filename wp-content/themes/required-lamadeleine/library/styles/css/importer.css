@@ -95,7 +95,7 @@ a:hover {
 * La Madeleine
 * Buttons
 **/
-/* line 43, ../sass/styleguide/_buttons.scss */
+/* line 45, ../sass/styleguide/_buttons.scss */
 a.btn {
   color: #fffdf0;
   font-family: "Lato", sans-serif;
@@ -106,6 +106,7 @@ a.btn {
   padding: 7px 30px 7px 20px;
   font-weight: bold;
   position: relative;
+  background: #6c2904;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -129,21 +130,22 @@ a.btn {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 22, ../sass/styleguide/_buttons.scss */
+/* line 23, ../sass/styleguide/_buttons.scss */
 a.btn:hover {
   color: #fffad7;
+  background: #853205;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ce4e08), color-stop(100%, #853205));
   background-image: -webkit-linear-gradient(#ce4e08, #853205);
   background-image: -moz-linear-gradient(#ce4e08, #853205);
   background-image: -o-linear-gradient(#ce4e08, #853205);
   background-image: linear-gradient(#ce4e08, #853205);
 }
-/* line 25, ../sass/styleguide/_buttons.scss */
+/* line 27, ../sass/styleguide/_buttons.scss */
 a.btn:hover:after {
   color: #fffad7;
   right: 5px;
 }
-/* line 30, ../sass/styleguide/_buttons.scss */
+/* line 32, ../sass/styleguide/_buttons.scss */
 a.btn:after {
   content: "\e624";
   font-family: 'icomoon';
@@ -159,11 +161,11 @@ a.btn:after {
   transition-duration: 0.3s;
 }
 
-/* line 48, ../sass/styleguide/_buttons.scss */
+/* line 50, ../sass/styleguide/_buttons.scss */
 a.btn.call:after {
   content: "";
 }
-/* line 51, ../sass/styleguide/_buttons.scss */
+/* line 53, ../sass/styleguide/_buttons.scss */
 a.btn.call span.icon-phone {
   font-size: 20px;
   line-height: 0;
@@ -171,7 +173,7 @@ a.btn.call span.icon-phone {
   top: 5px;
 }
 
-/* line 59, ../sass/styleguide/_buttons.scss */
+/* line 61, ../sass/styleguide/_buttons.scss */
 a.btn-light {
   color: #310d00;
   font-family: "Lato", sans-serif;
@@ -181,6 +183,7 @@ a.btn-light {
   font-weight: bold;
   padding: 10px;
   border: 1px solid #310d00;
+  background: #f6f2ee;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffdf0), color-stop(100%, #e5d7cd));
   background-image: -webkit-linear-gradient(#fffdf0, #e5d7cd);
   background-image: -moz-linear-gradient(#fffdf0, #e5d7cd);
@@ -199,7 +202,7 @@ a.btn-light {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 72, ../sass/styleguide/_buttons.scss */
+/* line 75, ../sass/styleguide/_buttons.scss */
 a.btn-light:hover {
   color: #b55a0f;
   border-color: #b55a0f;
@@ -677,6 +680,7 @@ a.btn-light:hover {
   padding: 7px 30px 7px 20px;
   font-weight: bold;
   position: relative;
+  background: #6c2904;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -703,21 +707,22 @@ a.btn-light:hover {
   padding: 7px 20px;
   width: 100%;
 }
-/* line 22, ../sass/styleguide/_buttons.scss */
+/* line 23, ../sass/styleguide/_buttons.scss */
 #container #content .gform_wrapper input[type=submit]:hover {
   color: #fffad7;
+  background: #853205;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ce4e08), color-stop(100%, #853205));
   background-image: -webkit-linear-gradient(#ce4e08, #853205);
   background-image: -moz-linear-gradient(#ce4e08, #853205);
   background-image: -o-linear-gradient(#ce4e08, #853205);
   background-image: linear-gradient(#ce4e08, #853205);
 }
-/* line 25, ../sass/styleguide/_buttons.scss */
+/* line 27, ../sass/styleguide/_buttons.scss */
 #container #content .gform_wrapper input[type=submit]:hover:after {
   color: #fffad7;
   right: 5px;
 }
-/* line 30, ../sass/styleguide/_buttons.scss */
+/* line 32, ../sass/styleguide/_buttons.scss */
 #container #content .gform_wrapper input[type=submit]:after {
   content: "\e624";
   font-family: 'icomoon';
@@ -898,7 +903,6 @@ body {
   #content {
     width: 100%;
     overflow: hidden;
-    *zoom: 1;
   }
   /* line 69, ../sass/framework/_layout.scss */
   #content #main {
@@ -2114,7 +2118,6 @@ aside p {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
   overflow: hidden;
-  *zoom: 1;
 }
 /* line 14, ../sass/widgets/_widget-location.scss */
 #mobile-location.loaded {
@@ -2493,7 +2496,6 @@ aside p {
   #sidebar .widget-location .widget-title {
     width: 100%;
     overflow: hidden;
-    *zoom: 1;
   }
   /* line 311, ../sass/widgets/_widget-location.scss */
   #sidebar .widget-location .widget-title h3 {
@@ -2951,13 +2953,19 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
 .widget.widget-story-nav a.story-nav-link .cat-wrapper:hover:after {
   right: 0px;
 }
-/* line 40, ../sass/widgets/_widget-story-nav.scss */
+/* line 41, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .cat-wrapper ul {
+  padding-left: 45px;
+  font-size: 12px;
+  list-style: circle;
+}
+/* line 47, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .text-wrapper {
   width: 100%;
   padding: 5px 30px 0 0;
   overflow: visible;
 }
-/* line 45, ../sass/widgets/_widget-story-nav.scss */
+/* line 52, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .icon {
   width: 45px;
   height: 45px;
@@ -2967,26 +2975,26 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
   background: #edeacc;
   float: left;
 }
-/* line 54, ../sass/widgets/_widget-story-nav.scss */
+/* line 61, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-name {
   padding: 3px 0;
   font-family: "Merriweather", serif;
 }
-/* line 58, ../sass/widgets/_widget-story-nav.scss */
+/* line 65, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-desc {
   font-size: 10px;
   font-style: italic;
   line-height: 1.3;
 }
 
-/* line 70, ../sass/widgets/_widget-story-nav.scss */
+/* line 77, ../sass/widgets/_widget-story-nav.scss */
 #content.stories .widget-story-nav .story-nav-link.stories,
 .category-food .widget-story-nav .story-nav-link.category-food,
 .category-culture .widget-story-nav .story-nav-link.category-culture,
 .category-community .widget-story-nav .story-nav-link.category-community {
   background: #f4f2df;
 }
-/* line 72, ../sass/widgets/_widget-story-nav.scss */
+/* line 79, ../sass/widgets/_widget-story-nav.scss */
 #content.stories .widget-story-nav .story-nav-link.stories .cat-wrapper:after,
 .category-food .widget-story-nav .story-nav-link.category-food .cat-wrapper:after,
 .category-culture .widget-story-nav .story-nav-link.category-culture .cat-wrapper:after,
