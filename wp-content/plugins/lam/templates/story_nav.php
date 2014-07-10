@@ -5,7 +5,7 @@
 
     foreach(array('food','culture','community') as $cat){
          //$cat = 'food';//strtolower(get_cat_name($cat));
-        $mypods = pods('post')->find(array('limit' => 3, 'where'=>"category.name='".$cat."'"));
+        $mypods = pods('post')->find(array('limit' => 3, 'orderby' => 'date desc', 'where'=>"category.name='".$cat."'"));
         $stories = process_stories($mypods);
 
         foreach($stories as $story){
@@ -20,6 +20,13 @@
      // die();
 ?>
 
+    <style>
+    .cat-wrapper ul{
+        padding-left: 45px;
+        font-size: 12px;
+        list-style: circle;
+    }
+    </style>
 
 
 
@@ -33,15 +40,15 @@
 	  		<div class="cat-desc">Behind the scenes of delicious dishes.</div>
 	  	</div>
         </a>
-            <ul>
-            <?php 
-                foreach($stories_by_cat['food'] as $story){
-                    ?>
-                        <li><a href="<?php echo $story['permalink'] ?>"><?php echo   $story['title'] ?></a> </li>
-                    <?php
-                }
-            ?>
-            </ul>
+        <ul class='categories'> 
+        <?php 
+            foreach($stories_by_cat['food'] as $story){
+                ?>
+                    <li><a href="<?php echo $story['permalink'] ?>"><?php echo   $story['title'] ?></a> </li>
+                <?php
+            }
+        ?>
+        </ul>
 	  </div>
   
   
