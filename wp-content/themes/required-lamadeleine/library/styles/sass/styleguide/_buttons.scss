@@ -13,6 +13,7 @@
 	padding: 7px 30px 7px 20px;
 	font-weight: bold;
 	position: relative;
+	background: $redBrown; // Legacy support
 	@include border-radius(5px);
 	@include lam-text-shadow();
 	@include box-shadow(rgba(0,0,0,0.5) 0 2px 1px);
@@ -21,6 +22,7 @@
 	@include transition-duration(0.3s);
 	&:hover{
 		color: darken($lightCream, 5%);
+		background: lighten($redBrown, 5%); // Legacy support
 		@include background-image(linear-gradient(lighten($redBrown, 20%), lighten($redBrown, 5%)));
 		&:after{
 			color: darken($lightCream, 5%);
@@ -65,6 +67,7 @@ a.btn-light{
 	font-weight: bold;
 	padding: 10px;
 	border: 1px solid $darkBrown;
+	background: lighten($fadedBrown,25%); // Legacy browsers
 	@include background-image(linear-gradient($lightCream, lighten($fadedBrown,15%)));
 	@include box-shadow(rgba(0,0,0,0.3) 0 1px 1px);
 	@include border-radius(5px);
