@@ -19,6 +19,8 @@
 //define('DB_NAME', 'lam_wp');
 
 /*** We are going to use up Environments Vars to identify Configurations **/
+//define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/private/var/www/nfusion/lam/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 $env = isset($_SERVER['APPLICATION_ENVIRONMENT'])?$_SERVER['APPLICATION_ENVIRONMENT']:'production';
 define('ENV',$env);
 
