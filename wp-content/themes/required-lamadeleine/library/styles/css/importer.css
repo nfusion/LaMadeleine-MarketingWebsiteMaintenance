@@ -1,0 +1,3776 @@
+/*
+SCSS custom theme styling importer
+Author: nFusion (http://nfusion.com)
+*/
+/**
+* La Madeleine
+* Variables
+**/
+/**
+* La Madeleine
+* Media Query Sizes
+**/
+/**
+* La Madeleine
+* Custom mixins
+**/
+/**
+* La Madeleine
+* Color Variables
+**/
+/* Standard */
+/* La Madeleine Colors */
+/**
+* La Madeleine
+* Fonts
+**/
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
+@font-face {
+  font-family: 'ostrich_sans_roundregular';
+  src: url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot");
+  src: url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.svg#ostrich_sans_roundregular") format("svg"), url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.woff") format("woff"), url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+* La Madeleine
+* Text styling
+**/
+/* line 12, ../sass/styleguide/_text.scss */
+h1, h2, h3, h4 {
+  font-family: "Merriweather", serif;
+  line-height: 1.2;
+  color: #310d00;
+}
+
+/* line 18, ../sass/styleguide/_text.scss */
+h1 {
+  font-size: 32px;
+}
+
+/* line 22, ../sass/styleguide/_text.scss */
+h2 {
+  font-size: 26px;
+}
+
+/* line 26, ../sass/styleguide/_text.scss */
+h3 {
+  font-size: 22px;
+}
+
+/* line 30, ../sass/styleguide/_text.scss */
+h4 {
+  font-size: 18px;
+}
+
+/* line 34, ../sass/styleguide/_text.scss */
+p, a {
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+
+/* line 39, ../sass/styleguide/_text.scss */
+a {
+  color: #6c2904;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 42, ../sass/styleguide/_text.scss */
+a:hover {
+  color: #e5730e;
+}
+
+/* line 48, ../sass/styleguide/_text.scss */
+#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
+  font-family: "ostrich_sans_roundregular", sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+
+/**
+* La Madeleine
+* Buttons
+**/
+/* line 45, ../sass/styleguide/_buttons.scss */
+a.btn {
+  color: #fffdf0;
+  font-family: "Lato", sans-serif;
+  font-style: none;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding: 7px 30px 7px 20px;
+  font-weight: bold;
+  position: relative;
+  background: #6c2904;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: #310d00 0 -1px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b64507), color-stop(100%, #6c2904));
+  background-image: -webkit-linear-gradient(#b64507, #6c2904);
+  background-image: -moz-linear-gradient(#b64507, #6c2904);
+  background-image: -o-linear-gradient(#b64507, #6c2904);
+  background-image: linear-gradient(#b64507, #6c2904);
+  -webkit-transition-property: background-image;
+  -moz-transition-property: background-image;
+  -o-transition-property: background-image;
+  transition-property: background-image;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 23, ../sass/styleguide/_buttons.scss */
+a.btn:hover {
+  color: #fffad7;
+  background: #853205;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ce4e08), color-stop(100%, #853205));
+  background-image: -webkit-linear-gradient(#ce4e08, #853205);
+  background-image: -moz-linear-gradient(#ce4e08, #853205);
+  background-image: -o-linear-gradient(#ce4e08, #853205);
+  background-image: linear-gradient(#ce4e08, #853205);
+}
+/* line 27, ../sass/styleguide/_buttons.scss */
+a.btn:hover:after {
+  color: #fffad7;
+  right: 5px;
+}
+/* line 32, ../sass/styleguide/_buttons.scss */
+a.btn:after {
+  content: "\e624";
+  font-family: 'icomoon';
+  color: #fffdf0;
+  font-size: 13px;
+  line-height: 16px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+/* line 50, ../sass/styleguide/_buttons.scss */
+a.btn.call:after {
+  content: "";
+}
+/* line 53, ../sass/styleguide/_buttons.scss */
+a.btn.call span.icon-phone {
+  font-size: 20px;
+  line-height: 0;
+  position: relative;
+  top: 5px;
+}
+
+/* line 61, ../sass/styleguide/_buttons.scss */
+a.btn-light {
+  color: #310d00;
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #310d00;
+  background: #f6f2ee;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffdf0), color-stop(100%, #e5d7cd));
+  background-image: -webkit-linear-gradient(#fffdf0, #e5d7cd);
+  background-image: -moz-linear-gradient(#fffdf0, #e5d7cd);
+  background-image: -o-linear-gradient(#fffdf0, #e5d7cd);
+  background-image: linear-gradient(#fffdf0, #e5d7cd);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 75, ../sass/styleguide/_buttons.scss */
+a.btn-light:hover {
+  color: #b55a0f;
+  border-color: #b55a0f;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../../../library/fonts/icomoon/icomoon.eot?-bwndc5");
+  src: url("../../../library/fonts/icomoon/icomoon.eot?#iefix-bwndc5") format("embedded-opentype"), url("../../../library/fonts/icomoon/icomoon.woff?-bwndc5") format("woff"), url("../../../library/fonts/icomoon/icomoon.ttf?-bwndc5") format("truetype"), url("../../../library/fonts/icomoon/icomoon.svg?-bwndc5#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 12, ../sass/styleguide/_icons.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 26, ../sass/styleguide/_icons.scss */
+.icon-bakery:before {
+  content: "\e601";
+}
+
+/* line 29, ../sass/styleguide/_icons.scss */
+.icon-breakfast:before {
+  content: "\e602";
+}
+
+/* line 32, ../sass/styleguide/_icons.scss */
+.icon-catering:before {
+  content: "\e603";
+}
+
+/* line 35, ../sass/styleguide/_icons.scss */
+.icon-community:before {
+  content: "\e604";
+}
+
+/* line 38, ../sass/styleguide/_icons.scss */
+.icon-culture:before {
+  content: "\e605";
+}
+
+/* line 41, ../sass/styleguide/_icons.scss */
+.icon-dinner:before {
+  content: "\e606";
+}
+
+/* line 44, ../sass/styleguide/_icons.scss */
+.icon-food:before {
+  content: "\e607";
+}
+
+/* line 47, ../sass/styleguide/_icons.scss */
+.icon-legend-alcohol:before {
+  content: "\e608";
+  color: #9c2f21;
+}
+
+/* line 51, ../sass/styleguide/_icons.scss */
+.icon-legend-egg-whites:before {
+  content: "\e609";
+  color: #dedab9;
+}
+
+/* line 55, ../sass/styleguide/_icons.scss */
+.icon-legend-gluten-free:before {
+  content: "\e60a";
+  color: #ffa200;
+}
+
+/* line 59, ../sass/styleguide/_icons.scss */
+.icon-legend-low-calorie:before {
+  content: "\e60b";
+  color: #95ac00;
+}
+
+/* line 63, ../sass/styleguide/_icons.scss */
+.icon-legend-nuts:before {
+  content: "\e60c";
+  color: #bb922c;
+}
+
+/* line 67, ../sass/styleguide/_icons.scss */
+.icon-legend-signature:before {
+  content: "\e60d";
+  color: #5b2a06;
+}
+
+/* line 71, ../sass/styleguide/_icons.scss */
+.icon-lunch:before {
+  content: "\e60e";
+}
+
+/* line 74, ../sass/styleguide/_icons.scss */
+.icon-magnify:before {
+  content: "\e60f";
+}
+
+/* line 77, ../sass/styleguide/_icons.scss */
+.icon-map:before {
+  content: "\e610";
+}
+
+/* line 80, ../sass/styleguide/_icons.scss */
+.icon-menu:before {
+  content: "\e611";
+}
+
+/* line 83, ../sass/styleguide/_icons.scss */
+.icon-nearby:before {
+  content: "\e612";
+}
+
+/* line 86, ../sass/styleguide/_icons.scss */
+.icon-dots:before {
+  content: "\e613";
+}
+
+/* line 89, ../sass/styleguide/_icons.scss */
+.icon-phone:before {
+  content: "\e614";
+}
+
+/* line 92, ../sass/styleguide/_icons.scss */
+.icon-pin:before {
+  content: "\e615";
+}
+
+/* line 95, ../sass/styleguide/_icons.scss */
+.icon-shopping:before {
+  content: "\e616";
+}
+
+/* line 98, ../sass/styleguide/_icons.scss */
+.icon-store:before {
+  content: "\e617";
+}
+
+/* line 101, ../sass/styleguide/_icons.scss */
+.icon-stories:before {
+  content: "\e618";
+}
+
+/* line 104, ../sass/styleguide/_icons.scss */
+.icon-facebook:before {
+  content: "\e619";
+}
+
+/* line 107, ../sass/styleguide/_icons.scss */
+.icon-instagram:before {
+  content: "\e61a";
+}
+
+/* line 110, ../sass/styleguide/_icons.scss */
+.icon-twitter:before {
+  content: "\e61b";
+}
+
+/* line 113, ../sass/styleguide/_icons.scss */
+.icon-pinterest:before {
+  content: "\e61c";
+}
+
+/* line 116, ../sass/styleguide/_icons.scss */
+.icon-youtube:before {
+  content: "\f167";
+}
+
+/* line 119, ../sass/styleguide/_icons.scss */
+.icon-arrow-left:before {
+  content: "\e61d";
+}
+
+/* line 122, ../sass/styleguide/_icons.scss */
+.icon-arrow-down:before {
+  content: "\e61e";
+}
+
+/* line 125, ../sass/styleguide/_icons.scss */
+.icon-arrow-up:before {
+  content: "\e61f";
+}
+
+/* line 128, ../sass/styleguide/_icons.scss */
+.icon-arrow-right:before {
+  content: "\e620";
+}
+
+/* line 131, ../sass/styleguide/_icons.scss */
+.icon-arrow-left-large:before {
+  content: "\e621";
+}
+
+/* line 134, ../sass/styleguide/_icons.scss */
+.icon-arrow-down-large:before {
+  content: "\e622";
+}
+
+/* line 137, ../sass/styleguide/_icons.scss */
+.icon-arrow-up-large:before {
+  content: "\e623";
+}
+
+/* line 140, ../sass/styleguide/_icons.scss */
+.icon-arrow-right-large:before {
+  content: "\e624";
+}
+
+/**
+* La Madeleine
+* Loading indicators
+**/
+/** Loader 1 Start **/
+/* line 9, ../sass/styleguide/_loaders.scss */
+.floatingCirclesG {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  -moz-transform: scale(0.6);
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+/* line 20, ../sass/styleguide/_loaders.scss */
+.f_circleG {
+  position: absolute;
+  background-color: #310d00;
+  height: 12px;
+  width: 12px;
+  -moz-border-radius: 6px;
+  -moz-animation-name: f_fadeG;
+  -moz-animation-duration: 0.96s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: linear;
+  -webkit-border-radius: 6px;
+  -webkit-animation-name: f_fadeG;
+  -webkit-animation-duration: 0.96s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+  -ms-border-radius: 6px;
+  -ms-animation-name: f_fadeG;
+  -ms-animation-duration: 0.96s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-direction: linear;
+  -o-border-radius: 6px;
+  -o-animation-name: f_fadeG;
+  -o-animation-duration: 0.96s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-direction: linear;
+  border-radius: 6px;
+  animation-name: f_fadeG;
+  animation-duration: 0.96s;
+  animation-iteration-count: infinite;
+  animation-direction: linear;
+}
+
+/* line 52, ../sass/styleguide/_loaders.scss */
+.frotateG_01 {
+  left: 0;
+  top: 27px;
+  -moz-animation-delay: 0.36s;
+  -webkit-animation-delay: 0.36s;
+  -ms-animation-delay: 0.36s;
+  -o-animation-delay: 0.36s;
+  animation-delay: 0.36s;
+}
+
+/* line 62, ../sass/styleguide/_loaders.scss */
+.frotateG_02 {
+  left: 8px;
+  top: 8px;
+  -moz-animation-delay: 0.48s;
+  -webkit-animation-delay: 0.48s;
+  -ms-animation-delay: 0.48s;
+  -o-animation-delay: 0.48s;
+  animation-delay: 0.48s;
+}
+
+/* line 72, ../sass/styleguide/_loaders.scss */
+.frotateG_03 {
+  left: 27px;
+  top: 0;
+  -moz-animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  -ms-animation-delay: 0.6s;
+  -o-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+/* line 82, ../sass/styleguide/_loaders.scss */
+.frotateG_04 {
+  right: 8px;
+  top: 8px;
+  -moz-animation-delay: 0.72s;
+  -webkit-animation-delay: 0.72s;
+  -ms-animation-delay: 0.72s;
+  -o-animation-delay: 0.72s;
+  animation-delay: 0.72s;
+}
+
+/* line 92, ../sass/styleguide/_loaders.scss */
+.frotateG_05 {
+  right: 0;
+  top: 27px;
+  -moz-animation-delay: 0.84s;
+  -webkit-animation-delay: 0.84s;
+  -ms-animation-delay: 0.84s;
+  -o-animation-delay: 0.84s;
+  animation-delay: 0.84s;
+}
+
+/* line 102, ../sass/styleguide/_loaders.scss */
+.frotateG_06 {
+  right: 8px;
+  bottom: 8px;
+  -moz-animation-delay: 0.96s;
+  -webkit-animation-delay: 0.96s;
+  -ms-animation-delay: 0.96s;
+  -o-animation-delay: 0.96s;
+  animation-delay: 0.96s;
+}
+
+/* line 112, ../sass/styleguide/_loaders.scss */
+.frotateG_07 {
+  left: 27px;
+  bottom: 0;
+  -moz-animation-delay: 1.08s;
+  -webkit-animation-delay: 1.08s;
+  -ms-animation-delay: 1.08s;
+  -o-animation-delay: 1.08s;
+  animation-delay: 1.08s;
+}
+
+/* line 122, ../sass/styleguide/_loaders.scss */
+.frotateG_08 {
+  left: 8px;
+  bottom: 8px;
+  -moz-animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  -ms-animation-delay: 1.2s;
+  -o-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+@-moz-keyframes f_fadeG {
+  /* line 133, ../sass/styleguide/_loaders.scss */
+  0% {
+    background-color: #b55a0f;
+  }
+
+  /* line 136, ../sass/styleguide/_loaders.scss */
+  100% {
+    background-color: #310d00;
+  }
+}
+
+@-webkit-keyframes f_fadeG {
+  /* line 142, ../sass/styleguide/_loaders.scss */
+  0% {
+    background-color: #b55a0f;
+  }
+
+  /* line 145, ../sass/styleguide/_loaders.scss */
+  100% {
+    background-color: #310d00;
+  }
+}
+
+@-ms-keyframes f_fadeG {
+  /* line 151, ../sass/styleguide/_loaders.scss */
+  0% {
+    background-color: #b55a0f;
+  }
+
+  /* line 154, ../sass/styleguide/_loaders.scss */
+  100% {
+    background-color: #310d00;
+  }
+}
+
+@-o-keyframes f_fadeG {
+  /* line 160, ../sass/styleguide/_loaders.scss */
+  0% {
+    background-color: #b55a0f;
+  }
+
+  /* line 163, ../sass/styleguide/_loaders.scss */
+  100% {
+    background-color: #310d00;
+  }
+}
+
+@keyframes f_fadeG {
+  /* line 169, ../sass/styleguide/_loaders.scss */
+  0% {
+    background-color: #b55a0f;
+  }
+
+  /* line 172, ../sass/styleguide/_loaders.scss */
+  100% {
+    background-color: #310d00;
+  }
+}
+
+/** Loader 1 End **/
+/**
+* La Madeleine
+* Custom form styling
+**/
+/* line 6, ../sass/styleguide/_forms.scss */
+::-webkit-input-placeholder {
+  color: #cbaf9a;
+}
+
+/* line 10, ../sass/styleguide/_forms.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #cbaf9a;
+}
+
+/* line 14, ../sass/styleguide/_forms.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #cbaf9a;
+}
+
+/* line 18, ../sass/styleguide/_forms.scss */
+:-ms-input-placeholder {
+  color: #cbaf9a;
+}
+
+/* line 24, ../sass/styleguide/_forms.scss */
+#container #content .gform_wrapper .gfield {
+  margin-bottom: 10px;
+}
+/* line 27, ../sass/styleguide/_forms.scss */
+#container #content .gform_wrapper .ginput_full, #container #content .gform_wrapper .ginput_left, #container #content .gform_wrapper .ginput_right {
+  margin-bottom: 10px;
+  min-height: 60px;
+}
+/* line 31, ../sass/styleguide/_forms.scss */
+#container #content .gform_wrapper .ginput_left, #container #content .gform_wrapper .ginput_right, #container #content .gform_wrapper input.medium, #container #content .gform_wrapper select.medium {
+  width: 100%;
+}
+/* line 34, ../sass/styleguide/_forms.scss */
+#container #content .gform_wrapper .gform_footer {
+  text-align: center;
+}
+/* line 37, ../sass/styleguide/_forms.scss */
+#container #content .gform_wrapper input {
+  margin-bottom: 5px;
+  font-size: 14px;
+  margin-right: 5px;
+}
+/* line 42, ../sass/styleguide/_forms.scss */
+#container #content .gform_wrapper input[type=submit] {
+  color: #fffdf0;
+  font-family: "Lato", sans-serif;
+  font-style: none;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding: 7px 30px 7px 20px;
+  font-weight: bold;
+  position: relative;
+  background: #6c2904;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: #310d00 0 -1px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b64507), color-stop(100%, #6c2904));
+  background-image: -webkit-linear-gradient(#b64507, #6c2904);
+  background-image: -moz-linear-gradient(#b64507, #6c2904);
+  background-image: -o-linear-gradient(#b64507, #6c2904);
+  background-image: linear-gradient(#b64507, #6c2904);
+  -webkit-transition-property: background-image;
+  -moz-transition-property: background-image;
+  -o-transition-property: background-image;
+  transition-property: background-image;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  border: 0;
+  padding: 7px 20px;
+  width: 100%;
+}
+/* line 23, ../sass/styleguide/_buttons.scss */
+#container #content .gform_wrapper input[type=submit]:hover {
+  color: #fffad7;
+  background: #853205;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ce4e08), color-stop(100%, #853205));
+  background-image: -webkit-linear-gradient(#ce4e08, #853205);
+  background-image: -moz-linear-gradient(#ce4e08, #853205);
+  background-image: -o-linear-gradient(#ce4e08, #853205);
+  background-image: linear-gradient(#ce4e08, #853205);
+}
+/* line 27, ../sass/styleguide/_buttons.scss */
+#container #content .gform_wrapper input[type=submit]:hover:after {
+  color: #fffad7;
+  right: 5px;
+}
+/* line 32, ../sass/styleguide/_buttons.scss */
+#container #content .gform_wrapper input[type=submit]:after {
+  content: "\e624";
+  font-family: 'icomoon';
+  color: #fffdf0;
+  font-size: 13px;
+  line-height: 16px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 48, ../sass/styleguide/_forms.scss */
+#container #content .gform_wrapper input, #container #content .gform_wrapper select, #container #content .gform_wrapper textarea {
+  width: 100% !important;
+}
+
+@media (min-width: 980px) {
+  /* line 55, ../sass/styleguide/_forms.scss */
+  #container #content .gform_wrapper .ginput_left, #container #content .gform_wrapper .ginput_right, #container #content .gform_wrapper input.medium, #container #content .gform_wrapper select.medium {
+    width: 50%;
+  }
+  /* line 58, ../sass/styleguide/_forms.scss */
+  #container #content .gform_wrapper .ginput_left {
+    padding-right: 10px;
+  }
+  /* line 61, ../sass/styleguide/_forms.scss */
+  #container #content .gform_wrapper .ginput_right {
+    padding-left: 10px;
+  }
+  /* line 64, ../sass/styleguide/_forms.scss */
+  #container #content .gform_wrapper input.medium, #container #content .gform_wrapper select.medium, #container #content .gform_wrapper textarea.medium {
+    width: 75% !important;
+  }
+  /* line 67, ../sass/styleguide/_forms.scss */
+  #container #content .gform_wrapper input[type=submit] {
+    max-width: 200px;
+  }
+}
+/**
+* La Madeleine
+* Dividers
+**/
+/* line 6, ../sass/styleguide/_dividers.scss */
+hr.dashed {
+  border: 0;
+  border-bottom: 1px dashed #cbaf9a;
+}
+
+/**
+* La Madeleine
+* Utility classes
+**/
+/* line 6, ../sass/framework/_utilities.scss */
+.block {
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+}
+/* line 10, ../sass/framework/_utilities.scss */
+.block p {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 15, ../sass/framework/_utilities.scss */
+.block.gray {
+  background-color: #cccccc;
+}
+/* line 18, ../sass/framework/_utilities.scss */
+.block.light-gray {
+  background-color: #e6e6e6;
+}
+
+/* line 24, ../sass/framework/_utilities.scss */
+.row.no-gutter .column, .row.no-gutter .columns {
+  padding: 0;
+}
+
+/* line 29, ../sass/framework/_utilities.scss */
+.show-small {
+  display: block;
+}
+
+/* line 33, ../sass/framework/_utilities.scss */
+.hide-small {
+  display: none;
+}
+
+@media (min-width: 980px) {
+  /* line 38, ../sass/framework/_utilities.scss */
+  .show-small {
+    display: none;
+  }
+
+  /* line 41, ../sass/framework/_utilities.scss */
+  .hide-small {
+    display: block;
+  }
+}
+/**
+* La Madeleine
+* Global framework layout
+**/
+/* line 6, ../sass/framework/_layout.scss */
+html, body, #container {
+  height: 100%;
+}
+
+/* line 10, ../sass/framework/_layout.scss */
+body {
+  background: url(../../../img/layout/LM_Cloth_Tile.png);
+  font-family: Georgia, serif;
+  color: #310d00;
+}
+
+/* line 16, ../sass/framework/_layout.scss */
+#container {
+  width: 100%;
+  max-width: 1140px;
+  min-width: 320px;
+  min-height: 860px;
+  padding-top: 70px;
+  background: #fffdf0;
+}
+
+@media (max-width: 767px) {
+  /* line 26, ../sass/framework/_layout.scss */
+  html.touch #container {
+    min-height: 0;
+  }
+}
+/* line 31, ../sass/framework/_layout.scss */
+#content {
+  position: relative;
+  background: #fffdf0;
+}
+/* line 34, ../sass/framework/_layout.scss */
+#content #main {
+  width: 100%;
+  padding: 0;
+}
+/* line 38, ../sass/framework/_layout.scss */
+#content #sidebar {
+  width: 100%;
+  padding: 0;
+}
+/* line 41, ../sass/framework/_layout.scss */
+#content #sidebar .widget {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #cbaf9a;
+}
+/* line 45, ../sass/framework/_layout.scss */
+#content #sidebar .widget:last-child {
+  border-bottom: 0;
+}
+/* line 49, ../sass/framework/_layout.scss */
+#content #sidebar div.widget:last-of-type {
+  border-bottom: 0;
+}
+/* line 53, ../sass/framework/_layout.scss */
+#content .sidebar-wrapper {
+  padding: 10px;
+}
+
+@media (min-width: 480px) {
+  /* line 59, ../sass/framework/_layout.scss */
+  #container {
+    margin: -80px auto 0;
+    padding-top: 80px;
+  }
+}
+@media (min-width: 980px) {
+  /* line 66, ../sass/framework/_layout.scss */
+  #content {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* line 69, ../sass/framework/_layout.scss */
+  #content #main {
+    width: 70%;
+    float: left;
+  }
+  /* line 73, ../sass/framework/_layout.scss */
+  #content #sidebar {
+    width: 30%;
+    float: right;
+  }
+  /* line 76, ../sass/framework/_layout.scss */
+  #content #sidebar .sidebar-wrapper {
+    padding: 15px 25px 0;
+  }
+  /* line 78, ../sass/framework/_layout.scss */
+  #content #sidebar .sidebar-wrapper .widget:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 1140px) {
+  /* line 89, ../sass/framework/_layout.scss */
+  #content #main {
+    width: 72%;
+  }
+  /* line 92, ../sass/framework/_layout.scss */
+  #content #sidebar {
+    width: 28%;
+  }
+}
+/**
+* La Madeleine
+* Primary navigation
+**/
+/* line 8, ../sass/framework/_nav.scss */
+body.nav-active #nav .nav-wrapper {
+  left: 0;
+}
+
+/* line 14, ../sass/framework/_nav.scss */
+#nav {
+  width: 100%;
+  max-width: 1140px;
+  height: 860px;
+  max-height: 860px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #fffdf0;
+  overflow: hidden;
+}
+/* line 25, ../sass/framework/_nav.scss */
+#nav .nav-wrapper {
+  width: 320px;
+  height: 830px;
+  max-width: 320px;
+  max-height: 830px;
+  padding-top: 96px;
+  position: absolute;
+  top: 0;
+  left: -340px;
+  z-index: 100;
+  background: url(../../../img/nav/nav-bg.jpg) no-repeat;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  transition-property: left;
+  -webkit-transition-duration: 0.35s;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 18px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 18px;
+  box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 18px;
+}
+/* line 40, ../sass/framework/_nav.scss */
+#nav h4 {
+  margin: 2px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: #e5730e;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px;
+}
+/* line 49, ../sass/framework/_nav.scss */
+#nav hr {
+  width: 80%;
+  margin: 10px auto;
+  border: 0;
+  border-bottom: 1px dashed #6c2904;
+}
+/* line 55, ../sass/framework/_nav.scss */
+#nav .nav-group {
+  padding-bottom: 15px;
+}
+/* line 57, ../sass/framework/_nav.scss */
+#nav .nav-group a:first-of-type {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px inset;
+}
+/* line 61, ../sass/framework/_nav.scss */
+#nav .nav-item {
+  display: block;
+  padding: 6px 25px;
+  margin: 2px 0;
+  position: relative;
+  color: #fffdf0;
+  background: rgba(0, 0, 0, 0.35);
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 69, ../sass/framework/_nav.scss */
+#nav .nav-item:after {
+  content: "\e624";
+  font-family: 'icomoon';
+  color: #fffdf0;
+  font-size: 16px;
+  position: absolute;
+  top: 14px;
+  right: 25px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 79, ../sass/framework/_nav.scss */
+#nav .nav-item:hover {
+  color: #e5730e;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 82, ../sass/framework/_nav.scss */
+#nav .nav-item:hover:after {
+  color: #e5730e;
+  right: 15px;
+}
+/* line 87, ../sass/framework/_nav.scss */
+#nav .nav-item .icon {
+  font-size: 30px;
+}
+/* line 90, ../sass/framework/_nav.scss */
+#nav .nav-item .item-title {
+  position: relative;
+  top: -5px;
+  left: 20px;
+  font-size: 21px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "ostrich_sans_roundregular", sans-serif;
+}
+/* line 100, ../sass/framework/_nav.scss */
+#nav .social-group {
+  text-align: center;
+}
+/* line 102, ../sass/framework/_nav.scss */
+#nav .social-group a {
+  display: inline-block;
+  margin: 5px 7px;
+  padding: 8px;
+  font-size: 20px;
+  color: #fffdf0;
+  border: 1px solid #e5730e;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  text-shadow: #310d00 0 -1px 0;
+}
+/* line 112, ../sass/framework/_nav.scss */
+#nav .social-group a:hover {
+  color: #e5730e;
+}
+/* line 115, ../sass/framework/_nav.scss */
+#nav .social-group a .icon {
+  position: relative;
+  top: 1px;
+}
+/* line 121, ../sass/framework/_nav.scss */
+#nav .eclub {
+  text-align: center;
+  padding-bottom: 3px;
+}
+/* line 124, ../sass/framework/_nav.scss */
+#nav .eclub p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+/* line 129, ../sass/framework/_nav.scss */
+#nav .bottom-links {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 132, ../sass/framework/_nav.scss */
+#nav .bottom-links .link-wrapper {
+  width: 50%;
+  float: left;
+  padding-left: 20px;
+}
+/* line 137, ../sass/framework/_nav.scss */
+#nav .bottom-links .link-wrapper:first-child {
+  padding-left: 50px;
+}
+/* line 140, ../sass/framework/_nav.scss */
+#nav .bottom-links p {
+  margin-bottom: 5px;
+}
+/* line 143, ../sass/framework/_nav.scss */
+#nav .bottom-links a {
+  font-size: 16px;
+  color: #fffdf0;
+}
+/* line 146, ../sass/framework/_nav.scss */
+#nav .bottom-links a:hover {
+  color: #e5730e;
+}
+/* line 151, ../sass/framework/_nav.scss */
+#nav .copyright {
+  margin-top: 7px;
+  text-align: center;
+}
+/* line 154, ../sass/framework/_nav.scss */
+#nav .copyright p {
+  font-size: 10px;
+  color: black;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  /* line 164, ../sass/framework/_nav.scss */
+  html.touch #nav {
+    pointer-events: none;
+    height: 100%;
+    position: fixed;
+    z-index: 101;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* line 172, ../sass/framework/_nav.scss */
+  html.touch body.nav-active {
+    overflow: hidden;
+  }
+  /* line 174, ../sass/framework/_nav.scss */
+  html.touch body.nav-active #content {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition-duration: 0;
+    -moz-transition-duration: 0;
+    -o-transition-duration: 0;
+    transition-duration: 0;
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+  }
+  /* line 179, ../sass/framework/_nav.scss */
+  html.touch body.nav-active #nav {
+    pointer-events: auto;
+  }
+}
+/**
+* La Madeleine
+* Mobile secondary navigation
+**/
+/* line 6, ../sass/framework/_mobile-nav.scss */
+#mobile-nav {
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+}
+/* line 14, ../sass/framework/_mobile-nav.scss */
+#mobile-nav a {
+  display: block;
+  float: left;
+  width: 25%;
+  padding: 5px 2% 6px;
+  border-left: 1px solid #cbaf9a;
+}
+/* line 20, ../sass/framework/_mobile-nav.scss */
+#mobile-nav a.active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffdf0), color-stop(100%, #e7d5b8));
+  background-image: -webkit-linear-gradient(#fffdf0, #e7d5b8);
+  background-image: -moz-linear-gradient(#fffdf0, #e7d5b8);
+  background-image: -o-linear-gradient(#fffdf0, #e7d5b8);
+  background-image: linear-gradient(#fffdf0, #e7d5b8);
+}
+/* line 23, ../sass/framework/_mobile-nav.scss */
+#mobile-nav a:first-child {
+  border-left: 0;
+}
+/* line 27, ../sass/framework/_mobile-nav.scss */
+#mobile-nav .nav-item {
+  font-size: 9px;
+  text-align: center;
+  color: #310d00;
+}
+/* line 32, ../sass/framework/_mobile-nav.scss */
+#mobile-nav .icon {
+  font-size: 40px;
+  color: #7a3910;
+}
+
+/* line 39, ../sass/framework/_mobile-nav.scss */
+#mobile-nav.two a {
+  width: 50%;
+}
+
+/* line 45, ../sass/framework/_mobile-nav.scss */
+#mobile-nav.three a {
+  width: 33%;
+}
+/* line 48, ../sass/framework/_mobile-nav.scss */
+#mobile-nav.three:first-child {
+  width: 34%;
+}
+
+@media (min-width: 980px) {
+  /* line 54, ../sass/framework/_mobile-nav.scss */
+  #mobile-nav {
+    display: none;
+  }
+}
+/**
+* La Madeleine
+* Global header layout
+**/
+/* line 6, ../sass/framework/_header.scss */
+#header {
+  width: 100%;
+  min-width: 320px;
+  height: 70px;
+  padding: 8px 10px;
+  position: fixed;
+  z-index: 101;
+  text-align: center;
+  background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
+}
+/* line 16, ../sass/framework/_header.scss */
+#header .header-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+/* line 22, ../sass/framework/_header.scss */
+#header .logo {
+  width: 180px;
+  height: auto;
+  margin-top: 2px;
+}
+/* line 27, ../sass/framework/_header.scss */
+#header .tagline {
+  display: none;
+}
+/* line 30, ../sass/framework/_header.scss */
+#header .icon-menu {
+  float: left;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 30px;
+  color: #fffdf0;
+}
+/* line 37, ../sass/framework/_header.scss */
+#header .icon-menu:before {
+  text-shadow: #310d00 0 -1px 0;
+}
+/* line 40, ../sass/framework/_header.scss */
+#header .icon-menu span {
+  visibility: hidden;
+}
+/* line 44, ../sass/framework/_header.scss */
+#header .icon-wrapper {
+  position: absolute;
+  top: 2px;
+  right: -3px;
+}
+/* line 48, ../sass/framework/_header.scss */
+#header .icon-wrapper .icon {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 50px;
+  color: #fffdf0;
+  text-shadow: #310d00 0 -1px 0;
+}
+/* line 56, ../sass/framework/_header.scss */
+#header .icon-wrapper .icon:hover {
+  cursor: pointer;
+}
+/* line 60, ../sass/framework/_header.scss */
+#header .icon-wrapper .icon-phone {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* line 62, ../sass/framework/_header.scss */
+#header .icon-wrapper .icon-phone a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+/* line 71, ../sass/framework/_header.scss */
+#header .icon-wrapper .icon-pin {
+  top: -2px;
+}
+/* line 74, ../sass/framework/_header.scss */
+#header .icon-wrapper .loading {
+  display: none;
+  position: absolute;
+  top: -9px;
+  right: -7px;
+}
+
+/* line 86, ../sass/framework/_header.scss */
+body.no-location #header .icon-wrapper .icon-phone {
+  display: none;
+}
+/* line 89, ../sass/framework/_header.scss */
+body.no-location #header .icon-wrapper .icon-pin {
+  display: block;
+}
+
+/* line 98, ../sass/framework/_header.scss */
+body.has-location #header .icon-wrapper .icon-phone {
+  display: block;
+}
+/* line 101, ../sass/framework/_header.scss */
+body.has-location #header .icon-wrapper .icon-pin {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  /* line 108, ../sass/framework/_header.scss */
+  #header {
+    height: 80px;
+    padding: 13px 15px;
+    position: relative;
+    background-position: 0 0;
+  }
+  /* line 113, ../sass/framework/_header.scss */
+  #header .logo {
+    width: 200px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 980px) {
+  /* line 122, ../sass/framework/_header.scss */
+  #header .logo-wrapper {
+    float: right;
+  }
+  /* line 125, ../sass/framework/_header.scss */
+  #header .logo {
+    float: left;
+  }
+  /* line 128, ../sass/framework/_header.scss */
+  #header .tagline {
+    max-width: 177px;
+    display: block;
+    float: left;
+    position: relative;
+    top: 19px;
+    left: 2px;
+  }
+  /* line 137, ../sass/framework/_header.scss */
+  #header .icon-menu:hover {
+    cursor: pointer;
+  }
+  /* line 140, ../sass/framework/_header.scss */
+  #header .icon-menu span {
+    visibility: visible;
+    font-size: 22px;
+    color: #310d00;
+    font-family: "ostrich_sans_roundregular", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    top: -5px;
+    left: 15px;
+  }
+  /* line 152, ../sass/framework/_header.scss */
+  #header .icon-wrapper {
+    display: none;
+  }
+}
+@media (min-width: 1140px) {
+  /* line 160, ../sass/framework/_header.scss */
+  #header .logo-wrapper {
+    padding-right: 20px;
+  }
+  /* line 163, ../sass/framework/_header.scss */
+  #header .icon-menu {
+    padding-left: 20px;
+  }
+}
+/**
+* La Madeleine
+* Global footer layout
+**/
+/* line 6, ../sass/framework/_footer.scss */
+#container #footer {
+  padding: 20px 10px 10px;
+  background-color: #fffdf0;
+}
+/* line 9, ../sass/framework/_footer.scss */
+#container #footer .footer-wrapper {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px dashed #cbaf9a;
+  text-align: center;
+}
+/* line 14, ../sass/framework/_footer.scss */
+#container #footer .footer-wrapper .footer-links {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 21, ../sass/framework/_footer.scss */
+#container #footer .footer-wrapper p, #container #footer .footer-wrapper a {
+  margin-bottom: 5px;
+  font-size: 9px;
+  color: #cbaf9a;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+/* line 29, ../sass/framework/_footer.scss */
+#container #footer .footer-wrapper a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 980px) {
+  /* line 38, ../sass/framework/_footer.scss */
+  .home #container #footer, .page-id-201 #container #footer, .category #container #footer {
+    padding: 30px 20px 10px;
+  }
+
+  /* line 42, ../sass/framework/_footer.scss */
+  #container #footer {
+    padding: 0 0 10px;
+  }
+  /* line 44, ../sass/framework/_footer.scss */
+  #container #footer p {
+    float: left;
+    padding: 0 30px;
+  }
+}
+/**
+* La Madeleine
+* Foundation overrides
+**/
+/* line 6, ../sass/framework/_override.scss */
+.row {
+  min-width: 0;
+}
+
+/* line 10, ../sass/framework/_override.scss */
+aside p {
+  font-style: normal;
+}
+
+@media screen and (max-width: 600px) {
+  /* line 17, ../sass/framework/_override.scss */
+  #wpadminbar {
+    position: fixed !important;
+  }
+}
+/**
+* La Madeleine
+* Carousel component
+**/
+/* Swipe.js styles */
+/* line 8, ../sass/components/_carousel.scss */
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+/* line 15, ../sass/components/_carousel.scss */
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+}
+
+/* line 20, ../sass/components/_carousel.scss */
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+/* line 24, ../sass/components/_carousel.scss */
+.swipe-wrap > div img {
+  width: 100%;
+  height: auto;
+}
+
+/* Custom carousel styles */
+/* line 32, ../sass/components/_carousel.scss */
+#carousel .carousel-gradient {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 200px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(232, 215, 187, 0.8)), color-stop(50%, rgba(232, 215, 187, 0.6)), color-stop(100%, rgba(232, 215, 187, 0)));
+  background-image: -webkit-linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
+  background-image: -moz-linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
+  background-image: -o-linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
+  background-image: linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.6) 50%, rgba(232, 215, 187, 0) 100%);
+}
+/* line 39, ../sass/components/_carousel.scss */
+#carousel .carousel-text {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  pointer-events: none;
+}
+/* line 48, ../sass/components/_carousel.scss */
+#carousel .btn {
+  pointer-events: auto;
+}
+/* line 51, ../sass/components/_carousel.scss */
+#carousel h1 {
+  font-size: 14px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #310d00;
+}
+/* line 58, ../sass/components/_carousel.scss */
+#carousel p.subhead {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: #310d00;
+  line-height: 1.4;
+}
+/* line 64, ../sass/components/_carousel.scss */
+#carousel .carousel-controls {
+  display: none;
+}
+/* line 67, ../sass/components/_carousel.scss */
+#carousel .carousel-paginate {
+  width: 100%;
+  height: 60px;
+  padding-top: 30px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+/* line 75, ../sass/components/_carousel.scss */
+#carousel .carousel-paginate .dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin: 0 5px;
+  background: white;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  -ms-border-radius: 11px;
+  -o-border-radius: 11px;
+  border-radius: 11px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 83, ../sass/components/_carousel.scss */
+#carousel .carousel-paginate .dot:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+}
+/* line 87, ../sass/components/_carousel.scss */
+#carousel .carousel-paginate .dot.active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  /* line 96, ../sass/components/_carousel.scss */
+  #carousel h1 {
+    font-size: 22px;
+  }
+  /* line 99, ../sass/components/_carousel.scss */
+  #carousel p {
+    font-size: 16px;
+  }
+  /* line 102, ../sass/components/_carousel.scss */
+  #carousel .carousel-paginate {
+    height: 70px;
+    padding-top: 35px;
+  }
+  /* line 106, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    position: absolute;
+    top: 45%;
+  }
+  /* line 112, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control {
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: #310d00;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    border-radius: 40px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 120, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    cursor: pointer;
+  }
+  /* line 125, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .icon {
+    font-size: 24px;
+  }
+  /* line 128, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control.prev {
+    padding: 8px 6px;
+    float: left;
+  }
+  /* line 132, ../sass/components/_carousel.scss */
+  #carousel .carousel-controls .control.next {
+    padding: 8px 10px;
+    float: right;
+  }
+}
+@media (min-width: 980px) {
+  /* line 141, ../sass/components/_carousel.scss */
+  #carousel {
+    max-width: 820px;
+    max-height: 750px;
+  }
+  /* line 144, ../sass/components/_carousel.scss */
+  #carousel .carousel-gradient {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 250px;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(232, 215, 187, 0.8)), color-stop(50%, rgba(232, 215, 187, 0.5)), color-stop(100%, rgba(232, 215, 187, 0)));
+    background-image: -webkit-linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
+    background-image: -moz-linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
+    background-image: -o-linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
+    background-image: linear-gradient(rgba(232, 215, 187, 0.8) 0%, rgba(232, 215, 187, 0.5) 50%, rgba(232, 215, 187, 0) 100%);
+  }
+}
+@media (min-width: 1140px) {
+  /* line 156, ../sass/components/_carousel.scss */
+  #carousel .carousel-text {
+    padding: 20px;
+  }
+  /* line 159, ../sass/components/_carousel.scss */
+  #carousel h1 {
+    font-size: 32px;
+  }
+  /* line 162, ../sass/components/_carousel.scss */
+  #carousel p {
+    font-size: 20px;
+  }
+}
+/**
+* La Madeleine
+* FMA/Promo component
+**/
+/* line 6, ../sass/components/_promo.scss */
+#main .fma-promo.mobile {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #cbaf9a;
+  background: #fffdf0;
+}
+/* line 15, ../sass/components/_promo.scss */
+#main .fma-promo.mobile img {
+  display: block;
+  width: 25%;
+  float: left;
+}
+/* line 20, ../sass/components/_promo.scss */
+#main .fma-promo.mobile .text-wrapper {
+  width: 75%;
+  float: right;
+}
+/* line 24, ../sass/components/_promo.scss */
+#main .fma-promo.mobile h4, #main .fma-promo.mobile p {
+  color: #7a3910;
+}
+/* line 27, ../sass/components/_promo.scss */
+#main .fma-promo.mobile h4 {
+  font-size: 15px;
+  margin: 3px 0;
+}
+/* line 31, ../sass/components/_promo.scss */
+#main .fma-promo.mobile p {
+  font-size: 12px;
+  font-style: italic;
+  margin: 0;
+}
+/* line 36, ../sass/components/_promo.scss */
+#main .fma-promo.mobile .cta {
+  white-space: nowrap;
+}
+/* line 39, ../sass/components/_promo.scss */
+#main .fma-promo.mobile .icon {
+  position: relative;
+  top: 2px;
+}
+/* line 43, ../sass/components/_promo.scss */
+#main .fma-promo.mobile .link-cover {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+}
+
+@media (min-width: 980px) {
+  /* line 54, ../sass/components/_promo.scss */
+  #container #content #main .fma-promo.mobile {
+    display: none;
+  }
+
+  /* line 59, ../sass/components/_promo.scss */
+  #container #content #sidebar .fma-promo {
+    width: 100%;
+    background: #f4f2df;
+    padding: 0 0 15px 0;
+    border: 1px solid;
+    border-color: #cbaf9a #cbaf9a #7a3910 #cbaf9a;
+  }
+  /* line 65, ../sass/components/_promo.scss */
+  #container #content #sidebar .fma-promo img {
+    width: 100%;
+  }
+  /* line 68, ../sass/components/_promo.scss */
+  #container #content #sidebar .fma-promo .text-wrapper {
+    padding: 5px 15px;
+    text-align: center;
+  }
+  /* line 72, ../sass/components/_promo.scss */
+  #container #content #sidebar .fma-promo h4, #container #content #sidebar .fma-promo p {
+    color: #7a3910;
+  }
+  /* line 75, ../sass/components/_promo.scss */
+  #container #content #sidebar .fma-promo h4 {
+    margin: 5px 0;
+    font-family: "Merriweather", serif;
+    font-weight: normal;
+  }
+}
+/**
+* La Madeleine
+* Daypart widget
+**/
+/* line 6, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 9, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+/* line 13, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper .categories {
+  display: none;
+}
+/* line 16, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper .title {
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+/* line 22, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper .desc {
+  display: none;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+}
+/* line 28, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper .daypart-image-thumb {
+  width: 100%;
+  padding-bottom: 3px;
+  float: left;
+}
+/* line 33, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link {
+  position: relative;
+  display: block;
+  width: 33%;
+  padding: 0 15px;
+  float: left;
+}
+/* line 40, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #cbaf9a;
+}
+/* line 48, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child:after {
+  color: #b55a0f;
+  font-family: 'icomoon';
+  font-size: 24px;
+  content: "\e624";
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+/* line 57, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart-image {
+  width: 50%;
+  float: left;
+}
+/* line 61, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart-text {
+  width: 50%;
+  padding: 0 15px;
+  float: left;
+  font-family: "Merriweather", serif;
+  color: #310d00;
+}
+/* line 68, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .title {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+}
+/* line 73, ../sass/widgets/_widget-daypart.scss */
+.widget-daypart .daypart-wrapper a.daypart-link:first-child .desc {
+  display: block;
+}
+
+/* line 84, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast,
+#content.lunch .widget-daypart .lunch,
+#content.dinner .widget-daypart .dinner,
+#content.bakery .widget-daypart .bakery {
+  cursor: default;
+}
+/* line 86, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast:hover .daypart,
+#content.lunch .widget-daypart .lunch:hover .daypart,
+#content.dinner .widget-daypart .dinner:hover .daypart,
+#content.bakery .widget-daypart .bakery:hover .daypart {
+  background: none;
+}
+/* line 89, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast:hover .daypart.featured,
+#content.lunch .widget-daypart .lunch:hover .daypart.featured,
+#content.dinner .widget-daypart .dinner:hover .daypart.featured,
+#content.bakery .widget-daypart .bakery:hover .daypart.featured {
+  background: #f4f2df;
+}
+/* line 92, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast:after,
+#content.lunch .widget-daypart .lunch:after,
+#content.dinner .widget-daypart .dinner:after,
+#content.bakery .widget-daypart .bakery:after {
+  display: none;
+}
+/* line 95, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast .categories,
+#content.lunch .widget-daypart .lunch .categories,
+#content.dinner .widget-daypart .dinner .categories,
+#content.bakery .widget-daypart .bakery .categories {
+  display: block;
+  margin: 15px 15px 10px 15px;
+}
+/* line 98, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast .categories li,
+#content.lunch .widget-daypart .lunch .categories li,
+#content.dinner .widget-daypart .dinner .categories li,
+#content.bakery .widget-daypart .bakery .categories li {
+  font-size: 12px;
+  list-style: circle;
+}
+/* line 102, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast .categories span,
+#content.lunch .widget-daypart .lunch .categories span,
+#content.dinner .widget-daypart .dinner .categories span,
+#content.bakery .widget-daypart .bakery .categories span {
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  color: #6c2904;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 107, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast .categories span:hover, #content.breakfast .widget-daypart .breakfast .categories span.active,
+#content.lunch .widget-daypart .lunch .categories span:hover,
+#content.lunch .widget-daypart .lunch .categories span.active,
+#content.dinner .widget-daypart .dinner .categories span:hover,
+#content.dinner .widget-daypart .dinner .categories span.active,
+#content.bakery .widget-daypart .bakery .categories span:hover,
+#content.bakery .widget-daypart .bakery .categories span.active {
+  color: #e5730e;
+}
+/* line 110, ../sass/widgets/_widget-daypart.scss */
+#content.breakfast .widget-daypart .breakfast .categories span:hover,
+#content.lunch .widget-daypart .lunch .categories span:hover,
+#content.dinner .widget-daypart .dinner .categories span:hover,
+#content.bakery .widget-daypart .bakery .categories span:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 480px) {
+  /* line 119, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .title {
+    font-size: 12px;
+  }
+}
+@media (max-width: 980px) {
+  /* line 126, ../sass/widgets/_widget-daypart.scss */
+  #content #sidebar .widget.home-daypart {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 980px) {
+  /* line 135, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .daypart {
+    width: 100%;
+    margin: 6px 0;
+    overflow: hidden;
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 142, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .daypart-image-thumb {
+    width: 45px;
+    height: 45px;
+    padding-bottom: 0;
+    float: left;
+  }
+  /* line 148, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .daypart-text {
+    width: 72%;
+    padding: 0 5px 0 10px;
+    float: left;
+    font-family: "Merriweather", serif;
+    color: #310d00;
+  }
+  /* line 155, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .title {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+  /* line 160, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper .desc {
+    display: block;
+    font-family: "Merriweather", serif;
+    font-size: 10px;
+  }
+  /* line 165, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+  }
+  /* line 170, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:after {
+    color: #b55a0f;
+    font-family: 'icomoon';
+    font-size: 24px;
+    content: "\e624";
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 182, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:hover:after {
+    right: 0;
+  }
+  /* line 185, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:hover .daypart {
+    background-color: #f4f2df;
+  }
+  /* line 190, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  /* line 194, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child:after {
+    content: "";
+  }
+  /* line 197, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart {
+    padding: 5px 5px 10px;
+    margin: 0 0 10px;
+    border: 1px solid;
+    border-color: #cbaf9a #cbaf9a #7a3910 #cbaf9a;
+    background-color: #f4f2df;
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 205, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart:hover {
+    background-color: #edeacc;
+  }
+  /* line 208, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart .daypart-image {
+    width: 100%;
+  }
+  /* line 211, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart .daypart-text {
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 49px;
+    position: relative;
+  }
+  /* line 216, ../sass/widgets/_widget-daypart.scss */
+  .widget-daypart .daypart-wrapper a.daypart-link:first-child .daypart .daypart-text:before {
+    content: url(../../../img/menu/now.png);
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 7px;
+  }
+}
+/**
+* La Madeleine
+* Location widget
+**/
+/* line 7, ../sass/widgets/_widget-location.scss */
+#mobile-location {
+  width: 100%;
+  height: 0;
+  padding: 0 6px;
+  background: #fffdf0;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  overflow: hidden;
+}
+/* line 14, ../sass/widgets/_widget-location.scss */
+#mobile-location.loaded {
+  height: 50px;
+  padding: 6px;
+  position: relative;
+  z-index: 2;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2px 2px;
+}
+/* line 20, ../sass/widgets/_widget-location.scss */
+#mobile-location.loaded:hover {
+  cursor: pointer;
+}
+/* line 23, ../sass/widgets/_widget-location.scss */
+#mobile-location.loaded:after {
+  color: #b55a0f;
+  font-family: 'icomoon';
+  font-size: 24px;
+  content: "\e624";
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+/* line 33, ../sass/widgets/_widget-location.scss */
+#mobile-location .icon-phone {
+  font-size: 35px;
+  border: 1px solid #310d00;
+  float: left;
+  position: relative;
+  z-index: 3;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fffdf0), color-stop(100%, #e5d7cd));
+  background-image: -webkit-linear-gradient(#fffdf0, #e5d7cd);
+  background-image: -moz-linear-gradient(#fffdf0, #e5d7cd);
+  background-image: -o-linear-gradient(#fffdf0, #e5d7cd);
+  background-image: linear-gradient(#fffdf0, #e5d7cd);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 41, ../sass/widgets/_widget-location.scss */
+#mobile-location .icon-phone a {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 45px;
+  height: 45px;
+}
+/* line 49, ../sass/widgets/_widget-location.scss */
+#mobile-location a.location-link {
+  display: block;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  z-index: 2;
+}
+/* line 56, ../sass/widgets/_widget-location.scss */
+#mobile-location .location-text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 60, ../sass/widgets/_widget-location.scss */
+#mobile-location .location-text p {
+  margin: 0;
+}
+/* line 64, ../sass/widgets/_widget-location.scss */
+#mobile-location .title {
+  font-size: 18px;
+  line-height: 1.2;
+  color: #7a3910;
+}
+/* line 69, ../sass/widgets/_widget-location.scss */
+#mobile-location .hours {
+  font-size: 12px;
+}
+/* line 72, ../sass/widgets/_widget-location.scss */
+#mobile-location .location-cta {
+  display: none;
+}
+
+/* line 80, ../sass/widgets/_widget-location.scss */
+#sidebar .widget-location.map-view {
+  display: none;
+}
+
+/* line 85, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile {
+  display: block;
+  max-width: 480px;
+  margin: 0 auto;
+}
+/* line 89, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .location-title {
+  margin: 10px 0 -10px;
+  font-family: "Merriweather", serif;
+  color: #6c2904;
+}
+/* line 94, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .address, #sidebar #widget-location-mobile .hours {
+  width: 50%;
+  float: left;
+  padding: 0 5px;
+  line-height: 1.3;
+}
+/* line 100, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+}
+/* line 104, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper .btn {
+  display: block;
+  width: 48%;
+  margin: 0 1%;
+  float: left;
+  text-align: center;
+}
+/* line 111, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper .btn.call {
+  width: 98%;
+  margin: 20px 1%;
+}
+/* line 115, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper a.get-directions {
+  position: relative;
+}
+/* line 117, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper a.get-directions span {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 120, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper a.get-directions .loading {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+  width: 65px;
+  margin: 0 auto;
+  -webkit-transform: scale(0.5, 0.5);
+  -moz-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 131, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper a.get-directions.loading-directions span {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 134, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper a.get-directions.loading-directions .loading {
+  display: block;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 141, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .btn-wrapper .icon.call span {
+  font-size: 30px;
+}
+/* line 146, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile .other-locations {
+  margin-top: 60px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+/* line 151, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile {
+  height: 260px;
+}
+/* line 153, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-item {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+  list-style: none;
+  position: relative;
+  text-align: left;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 161, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-item:after {
+  color: #b55a0f;
+  font-family: 'icomoon';
+  font-size: 24px;
+  content: "\e624";
+  position: absolute;
+  top: 35%;
+  right: 10px;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 171, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-item:hover {
+  background: #f4f2df;
+  cursor: pointer;
+}
+/* line 174, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-item:hover:after {
+  right: 0px;
+}
+/* line 179, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-thumb {
+  width: 75px;
+  height: 75px;
+  float: left;
+}
+/* line 184, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-info {
+  padding: 20px 25px 5px 15px;
+  float: left;
+}
+/* line 188, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-name {
+  font-family: "Merriweather", serif;
+  margin-bottom: 2px;
+}
+/* line 192, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-mobile #location-list-mobile .location-city {
+  font-size: 11px;
+  font-style: italic;
+}
+
+/* line 201, ../sass/widgets/_widget-location.scss */
+.no-location #sidebar #widget-location-mobile {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 207, ../sass/widgets/_widget-location.scss */
+#sidebar .zip-wrapper {
+  display: none;
+}
+/* line 210, ../sass/widgets/_widget-location.scss */
+#sidebar #widget-location-full {
+  display: none;
+}
+
+@media (min-width: 980px) {
+  /* line 219, ../sass/widgets/_widget-location.scss */
+  #sidebar .zip-wrapper {
+    display: block;
+  }
+  /* line 222, ../sass/widgets/_widget-location.scss */
+  #sidebar #widget-location-mobile {
+    display: none;
+  }
+  /* line 225, ../sass/widgets/_widget-location.scss */
+  #sidebar #widget-location-full {
+    display: block;
+  }
+
+  /* line 230, ../sass/widgets/_widget-location.scss */
+  #mobile-location {
+    display: none;
+  }
+
+  /* line 234, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location {
+    display: block;
+    border-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  /* line 239, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-mobile {
+    display: none;
+  }
+  /* line 242, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full {
+    position: relative;
+  }
+  /* line 244, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full #location-list {
+    height: 260px;
+  }
+  /* line 247, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  /* line 250, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-item {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    list-style: none;
+    position: relative;
+    text-align: left;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 258, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-item:after {
+    color: #b55a0f;
+    font-family: 'icomoon';
+    font-size: 24px;
+    content: "\e624";
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+  }
+  /* line 268, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-item:hover {
+    background: #f4f2df;
+    cursor: pointer;
+  }
+  /* line 271, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-item:hover:after {
+    right: 0px;
+  }
+  /* line 276, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-thumb {
+    width: 75px;
+    height: 75px;
+    float: left;
+  }
+  /* line 281, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-info {
+    padding: 20px 25px 5px 15px;
+    float: left;
+  }
+  /* line 285, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-name {
+    font-family: "Merriweather", serif;
+    margin-bottom: 2px;
+  }
+  /* line 289, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-city {
+    font-size: 11px;
+    font-style: italic;
+  }
+  /* line 295, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-item:after {
+    top: 17px;
+  }
+  /* line 298, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-thumb {
+    width: 20%;
+    height: auto;
+  }
+  /* line 302, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #widget-location-full .other-locations .location-info {
+    width: 80%;
+    padding-top: 15px;
+  }
+  /* line 308, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .widget-title {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* line 311, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .widget-title h3 {
+    text-align: left;
+    margin: 4px 0 5px;
+    float: left;
+  }
+  /* line 316, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .widget-title a {
+    float: right;
+    padding-top: 14px;
+  }
+  /* line 321, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #map {
+    height: 95px;
+    width: 100%;
+  }
+  /* line 325, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta {
+    display: block;
+    width: 100%;
+    min-height: 230px;
+    margin-top: 2px;
+    text-align: center;
+    position: relative;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+  }
+  /* line 334, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta.map-loading .loading {
+    display: block;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+  }
+  /* line 339, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta.map-loaded .flipper {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  /* line 341, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta.map-loaded .flipper .other-locations {
+    -webkit-transition-duration: 0;
+    -moz-transition-duration: 0;
+    -o-transition-duration: 0;
+    transition-duration: 0;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  /* line 347, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta.no-cta .front {
+    display: none;
+  }
+  /* line 352, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta .flipper {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  /* line 356, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta .flipper.transition {
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    -o-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+  }
+  /* line 359, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta .front, #sidebar .widget-location #location-cta .back {
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  /* line 365, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta .front {
+    height: 230px;
+    position: absolute;
+    z-index: 2;
+    background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
+  }
+  /* line 371, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-cta .back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  /* line 375, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .location-cta-divider {
+    display: block;
+    width: 230px;
+    height: 16px;
+    position: absolute;
+    top: 111px;
+    left: 20px;
+    background: url(../../../img/map/location-cta-divider.png) no-repeat;
+  }
+  /* line 384, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .loading {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 85px;
+    left: 38%;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  /* line 393, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .geo {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+  }
+  /* line 400, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .zip {
+    width: 100%;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+  }
+  /* line 407, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .icon {
+    color: #fffdf0;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+  /* line 412, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #use-location {
+    position: relative;
+    top: 10px;
+  }
+  /* line 416, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-info {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* line 419, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-info .location-title {
+    font-family: "Merriweather", serif;
+    font-size: 15px;
+    color: #7a3910;
+    margin: 10px 0 5px;
+  }
+  /* line 425, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-info .info-wrapper {
+    font-family: "Merriweather", serif;
+    width: 100%;
+    padding: 5px 5px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #e5d7cd;
+  }
+  /* line 432, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-info .address, #sidebar .widget-location #location-info .phone {
+    float: left;
+    text-align: left;
+    font-size: 10px;
+    line-height: 1.3;
+    padding: 0 10px 10px;
+    color: #310d00;
+  }
+  /* line 440, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-info .address {
+    width: 60%;
+    border-right: 1px solid #e5d7cd;
+  }
+  /* line 444, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-info .phone {
+    width: 40%;
+  }
+  /* line 447, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location #location-info .hours {
+    font-size: 12px;
+    margin: 10px 0;
+    color: #310d00;
+  }
+  /* line 453, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .btn-wrapper {
+    width: 100%;
+    min-height: 35px;
+    overflow: visible;
+  }
+  /* line 458, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location .btn-wrapper .btn {
+    width: 46%;
+    display: block;
+    float: left;
+    margin: 0 2%;
+  }
+
+  /* line 466, ../sass/widgets/_widget-location.scss */
+  #zip-input, #zip-input-secondary {
+    width: 50%;
+    height: 29px;
+    margin-right: 3%;
+    padding: 1px 5px 0;
+    position: relative;
+    font-size: 15px;
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    text-align: center;
+    border: 0;
+    color: #b55a0f;
+    background-color: #fffdf0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  /* line 482, ../sass/widgets/_widget-location.scss */
+  #zip-input-secondary {
+    font-size: 13px;
+  }
+
+  /* line 486, ../sass/widgets/_widget-location.scss */
+  #sidebar .zip-wrapper {
+    display: block;
+    width: 320px;
+    height: 65px;
+    padding-top: 17px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    top: -15px;
+    left: -25px;
+    background: url(../../../img/map/location-zip-bg.jpg) no-repeat;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+
+  /* line 501, ../sass/widgets/_widget-location.scss */
+  body.no-location #sidebar .zip-wrapper {
+    height: 0;
+    padding-top: 0;
+  }
+
+  /* line 508, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.map-view {
+    display: block;
+    position: relative;
+  }
+  /* line 511, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.map-view .map-link {
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    z-index: 101;
+  }
+
+  /* line 526, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.location-view #location-image {
+    height: 150px;
+    overflow: hidden;
+    background-color: #f4f2df;
+  }
+  /* line 531, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.location-view .btn-wrapper {
+    width: 100%;
+    margin: 15px 0 -7px;
+    text-align: center;
+  }
+  /* line 535, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.location-view .btn-wrapper a {
+    min-width: 65px;
+  }
+  /* line 538, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.location-view .btn-wrapper a.get-directions {
+    margin: 0 4%;
+    position: relative;
+  }
+  /* line 541, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.location-view .btn-wrapper a.get-directions span {
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  /* line 545, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.location-view .btn-wrapper a.get-directions.loading-directions span {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  /* line 548, ../sass/widgets/_widget-location.scss */
+  #sidebar .widget-location.location-view .btn-wrapper a.get-directions.loading-directions .loading {
+    display: block;
+    top: -16px;
+    left: 12px;
+    -webkit-transform: scale(0.7, 0.7);
+    -moz-transform: scale(0.7, 0.7);
+    -ms-transform: scale(0.7, 0.7);
+    -o-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+  }
+
+  /* line 560, ../sass/widgets/_widget-location.scss */
+  body.no-location #sidebar #widget-location-full .other-locations {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+}
+/*******
+IE SUPPORT FOR FLIPPING TRANSITION
+*******/
+/* line 571, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 573, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta .front, html.ie #sidebar .widget-location #location-cta .back {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+/* line 577, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta .front {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+/* line 580, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta .back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+/* line 584, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 587, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* line 590, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+/* line 593, ../sass/widgets/_widget-location.scss */
+html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locations {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transition-duration: 0;
+  -moz-transition-duration: 0;
+  -o-transition-duration: 0;
+  transition-duration: 0;
+}
+
+/**
+* La Madeleine
+* Story Navigation widget
+**/
+/* line 7, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav .cat-wrapper ul {
+  padding-left: 45px;
+  list-style: circle;
+}
+/* line 10, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav .cat-wrapper ul li {
+  line-height: 16px;
+}
+/* line 13, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav .cat-wrapper ul a {
+  font-size: 12px;
+}
+/* line 17, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link {
+  display: block;
+  width: 100%;
+  min-height: 45px;
+  overflow: visible;
+  margin: 10px 0;
+  position: relative;
+  color: #7a3910;
+}
+/* line 25, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link:hover {
+  color: #7a3910;
+  background: #f4f2df;
+}
+/* line 29, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .text-wrapper {
+  width: 100%;
+  padding: 5px 30px 0 0;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 36, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .text-wrapper:after {
+  color: #b55a0f;
+  font-family: 'icomoon';
+  font-size: 24px;
+  content: "\e624";
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+/* line 48, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .text-wrapper:hover:after {
+  right: 0px;
+}
+/* line 53, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 7px;
+  font-size: 36px;
+  padding: 5px;
+  background: #edeacc;
+  float: left;
+}
+/* line 62, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .cat-name {
+  padding: 3px 0;
+  font-family: "Merriweather", serif;
+}
+/* line 66, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .cat-desc {
+  font-size: 10px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* line 78, ../sass/widgets/_widget-story-nav.scss */
+#content.stories .widget-story-nav .story-nav-link.stories,
+.category-food .widget-story-nav .story-nav-link.category-food,
+.category-culture .widget-story-nav .story-nav-link.category-culture,
+.category-community .widget-story-nav .story-nav-link.category-community {
+  background: #f4f2df;
+}
+/* line 80, ../sass/widgets/_widget-story-nav.scss */
+#content.stories .widget-story-nav .story-nav-link.stories .text-wrapper:after,
+.category-food .widget-story-nav .story-nav-link.category-food .text-wrapper:after,
+.category-culture .widget-story-nav .story-nav-link.category-culture .text-wrapper:after,
+.category-community .widget-story-nav .story-nav-link.category-community .text-wrapper:after {
+  content: "";
+}
+
+/**
+* La Madeleine
+* Text widget
+**/
+/* line 6, ../sass/widgets/_widget-text.scss */
+#content #sidebar .widget.widget_text {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 11, ../sass/widgets/_widget-text.scss */
+#content #sidebar .widget.widget_text .btn-wrapper {
+  text-align: center;
+  height: 30px;
+}
+/* line 14, ../sass/widgets/_widget-text.scss */
+#content #sidebar .widget.widget_text .btn-wrapper .btn {
+  display: block;
+  width: 46%;
+  margin: 0 2%;
+  float: left;
+}
+
+@media (min-width: 980px) {
+  /* line 24, ../sass/widgets/_widget-text.scss */
+  #content #sidebar .widget.widget_text {
+    max-width: 100%;
+    border-bottom: 1px dashed #cbaf9a;
+    margin: 0 auto 20px;
+  }
+}
+/**
+* La Madeleine
+* Homepage Styling
+**/
+@media (max-width: 979px) {
+  /* line 8, ../sass/templates/_home.scss */
+  body.home .widget-location {
+    display: none;
+  }
+  /* line 11, ../sass/templates/_home.scss */
+  body.home #content #sidebar .widget.widget_text {
+    margin: 10px auto -10px;
+    border-bottom: 0;
+  }
+}
+@media (min-width: 980px) {
+  /* line 20, ../sass/templates/_home.scss */
+  body.home #content #sidebar .widget {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  /* line 24, ../sass/templates/_home.scss */
+  body.home #content #sidebar .widget.widget_text {
+    margin: 0 auto 15px;
+  }
+}
+/**
+* La Madeleine
+* Les Menu Page Styling
+**/
+/* line 8, ../sass/templates/_les-menu.scss */
+.breakfast #main, .lunch #main, .dinner #main, .bakery #main {
+  background: #f4f2df;
+  overflow: visible;
+  border-right: 1px solid #e5d7cd;
+}
+/* line 14, ../sass/templates/_les-menu.scss */
+.breakfast #sidebar, .lunch #sidebar, .dinner #sidebar, .bakery #sidebar {
+  display: none;
+}
+/* line 19, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview, .lunch .menu-overview, .dinner .menu-overview, .bakery .menu-overview {
+  position: relative;
+}
+/* line 21, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview .menu-featured-image, .lunch .menu-overview .menu-featured-image, .dinner .menu-overview .menu-featured-image, .bakery .menu-overview .menu-featured-image {
+  overflow: hidden;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #e5d7cd;
+}
+/* line 25, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview .menu-featured-image img, .lunch .menu-overview .menu-featured-image img, .dinner .menu-overview .menu-featured-image img, .bakery .menu-overview .menu-featured-image img {
+  width: 100%;
+}
+/* line 29, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview h1.menu-title, .lunch .menu-overview h1.menu-title, .dinner .menu-overview h1.menu-title, .bakery .menu-overview h1.menu-title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: -20px;
+  color: #310d00;
+  font-size: 24px;
+}
+/* line 35, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview h1.menu-title span, .lunch .menu-overview h1.menu-title span, .dinner .menu-overview h1.menu-title span, .bakery .menu-overview h1.menu-title span {
+  background: #f4f2df;
+}
+/* line 38, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview h1.menu-title span.inner, .lunch .menu-overview h1.menu-title span.inner, .dinner .menu-overview h1.menu-title span.inner, .bakery .menu-overview h1.menu-title span.inner {
+  padding: 15px 25px 11px;
+  border: 1px solid #e5d7cd;
+  position: relative;
+  top: 17px;
+}
+/* line 44, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview h1.menu-title span.outer, .lunch .menu-overview h1.menu-title span.outer, .dinner .menu-overview h1.menu-title span.outer, .bakery .menu-overview h1.menu-title span.outer {
+  display: inline-block;
+  max-height: 30px;
+  padding: 5px;
+  position: relative;
+  top: -15px;
+}
+/* line 52, ../sass/templates/_les-menu.scss */
+.breakfast .menu-overview .menu-text, .lunch .menu-overview .menu-text, .dinner .menu-overview .menu-text, .bakery .menu-overview .menu-text {
+  padding: 15px 25px 0;
+  text-align: center;
+}
+/* line 59, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details, .lunch .menu-details, .dinner .menu-details, .bakery .menu-details {
+  width: 100%;
+  padding: 0 15px;
+  overflow: hidden;
+}
+/* line 63, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-links, .lunch .menu-details .menu-links, .dinner .menu-details .menu-links, .bakery .menu-details .menu-links {
+  padding: 30px 0;
+  margin: 10px 0 21px;
+  text-align: center;
+  border-top: 1px dashed #cbaf9a;
+  border-bottom: 1px dashed #cbaf9a;
+}
+/* line 69, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-links a.mobile-btn-link, .lunch .menu-details .menu-links a.mobile-btn-link, .dinner .menu-details .menu-links a.mobile-btn-link, .bakery .menu-details .menu-links a.mobile-btn-link {
+  display: block;
+  margin: 5px 0;
+  padding: 10px 5px;
+  background: #fffdf0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 76, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-links .location-name, .lunch .menu-details .menu-links .location-name, .dinner .menu-details .menu-links .location-name, .bakery .menu-details .menu-links .location-name {
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+/* line 81, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-links .change-location, .lunch .menu-details .menu-links .change-location, .dinner .menu-details .menu-links .change-location, .bakery .menu-details .menu-links .change-location {
+  padding: 6px 0;
+  font-size: 9px;
+  font-weight: bold;
+}
+/* line 85, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-links .change-location a, .lunch .menu-details .menu-links .change-location a, .dinner .menu-details .menu-links .change-location a, .bakery .menu-details .menu-links .change-location a {
+  font-size: 9px;
+}
+/* line 90, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .mobile-menu-legend, .lunch .menu-details .mobile-menu-legend, .dinner .menu-details .mobile-menu-legend, .bakery .menu-details .mobile-menu-legend {
+  padding: 0 20px 15px 20px;
+  border-bottom: 1px dashed #cbaf9a;
+}
+/* line 93, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .mobile-menu-legend h3, .lunch .menu-details .mobile-menu-legend h3, .dinner .menu-details .mobile-menu-legend h3, .bakery .menu-details .mobile-menu-legend h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+/* line 97, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .mobile-menu-legend .legend-item, .lunch .menu-details .mobile-menu-legend .legend-item, .dinner .menu-details .mobile-menu-legend .legend-item, .bakery .menu-details .mobile-menu-legend .legend-item {
+  font-size: 12px;
+  font-family: Georgia, serif;
+  padding: 5px 0;
+}
+/* line 101, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .mobile-menu-legend .legend-item span, .lunch .menu-details .mobile-menu-legend .legend-item span, .dinner .menu-details .mobile-menu-legend .legend-item span, .bakery .menu-details .mobile-menu-legend .legend-item span {
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}
+/* line 107, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .mobile-menu-legend .disclaimer, .lunch .menu-details .mobile-menu-legend .disclaimer, .dinner .menu-details .mobile-menu-legend .disclaimer, .bakery .menu-details .mobile-menu-legend .disclaimer {
+  font-size: 11px;
+  margin-top: 20px;
+}
+/* line 112, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-category, .lunch .menu-details .menu-category, .dinner .menu-details .menu-category, .bakery .menu-details .menu-category {
+  padding: 20px 0 30px;
+  border-bottom: 1px dashed #cbaf9a;
+}
+/* line 115, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-category:last-of-type, .lunch .menu-details .menu-category:last-of-type, .dinner .menu-details .menu-category:last-of-type, .bakery .menu-details .menu-category:last-of-type {
+  border-bottom: 0;
+}
+/* line 119, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .menu-category .columns:last-child .menu-item:last-child, .lunch .menu-details .menu-category .columns:last-child .menu-item:last-child, .dinner .menu-details .menu-category .columns:last-child .menu-item:last-child, .bakery .menu-details .menu-category .columns:last-child .menu-item:last-child {
+  margin-bottom: 0;
+}
+/* line 124, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .category-wrapper, .lunch .menu-details .category-wrapper, .dinner .menu-details .category-wrapper, .bakery .menu-details .category-wrapper {
+  padding: 0 15px;
+  margin: 15px 0 30px;
+}
+/* line 128, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .category-title, .lunch .menu-details .category-title, .dinner .menu-details .category-title, .bakery .menu-details .category-title {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #310d00;
+}
+/* line 137, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .category-desc, .lunch .menu-details .category-desc, .dinner .menu-details .category-desc, .bakery .menu-details .category-desc {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+}
+/* line 143, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .back-top, .lunch .menu-details .back-top, .dinner .menu-details .back-top, .bakery .menu-details .back-top {
+  float: right;
+  padding-top: 20px;
+  position: relative;
+  top: -30px;
+}
+/* line 148, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details .back-top span, .lunch .menu-details .back-top span, .dinner .menu-details .back-top span, .bakery .menu-details .back-top span {
+  font-size: 20px;
+  padding: 5px;
+  background: #dccabc;
+  position: relative;
+  top: 4px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+/* line 160, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item, .lunch .featured-menu-item, .dinner .featured-menu-item, .bakery .featured-menu-item {
+  width: 100%;
+  max-width: 365px;
+  height: auto;
+  position: relative;
+  margin: 0 0 30px;
+}
+/* line 166, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item img, .lunch .featured-menu-item img, .dinner .featured-menu-item img, .bakery .featured-menu-item img {
+  display: block;
+  width: 100%;
+}
+/* line 170, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .text-wrapper, .lunch .featured-menu-item .text-wrapper, .dinner .featured-menu-item .text-wrapper, .bakery .featured-menu-item .text-wrapper {
+  width: 100%;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  background: rgba(39, 23, 13, 0.8);
+}
+/* line 179, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .text-wrapper.no-story .title, .lunch .featured-menu-item .text-wrapper.no-story .title, .dinner .featured-menu-item .text-wrapper.no-story .title, .bakery .featured-menu-item .text-wrapper.no-story .title {
+  margin-bottom: 0;
+}
+/* line 183, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .title, .lunch .featured-menu-item .title, .dinner .featured-menu-item .title, .bakery .featured-menu-item .title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+}
+/* line 189, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .icon-stories, .lunch .featured-menu-item .icon-stories, .dinner .featured-menu-item .icon-stories, .bakery .featured-menu-item .icon-stories {
+  width: 15%;
+  float: left;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+/* line 196, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .story-teaser, .lunch .featured-menu-item .story-teaser, .dinner .featured-menu-item .story-teaser, .bakery .featured-menu-item .story-teaser {
+  width: 85%;
+  float: left;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.5;
+}
+/* line 202, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .story-teaser a, .lunch .featured-menu-item .story-teaser a, .dinner .featured-menu-item .story-teaser a, .bakery .featured-menu-item .story-teaser a {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ff6600;
+}
+/* line 207, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .story-teaser a:hover, .lunch .featured-menu-item .story-teaser a:hover, .dinner .featured-menu-item .story-teaser a:hover, .bakery .featured-menu-item .story-teaser a:hover {
+  color: #ff8533;
+}
+/* line 209, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .story-teaser a:hover .icon, .lunch .featured-menu-item .story-teaser a:hover .icon, .dinner .featured-menu-item .story-teaser a:hover .icon, .bakery .featured-menu-item .story-teaser a:hover .icon {
+  left: 1px;
+}
+/* line 213, ../sass/templates/_les-menu.scss */
+.breakfast .featured-menu-item .story-teaser a .icon, .lunch .featured-menu-item .story-teaser a .icon, .dinner .featured-menu-item .story-teaser a .icon, .bakery .featured-menu-item .story-teaser a .icon {
+  font-size: 16px;
+  line-height: 12px;
+  position: relative;
+  top: 3px;
+  left: -3px;
+}
+/* line 226, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item, .lunch .menu-item, .dinner .menu-item, .bakery .menu-item {
+  margin-bottom: 30px;
+}
+/* line 228, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .title-wrapper, .lunch .menu-item .title-wrapper, .dinner .menu-item .title-wrapper, .bakery .menu-item .title-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 231, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .title-wrapper .title, .lunch .menu-item .title-wrapper .title, .dinner .menu-item .title-wrapper .title, .bakery .menu-item .title-wrapper .title {
+  margin-bottom: 2px;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  float: left;
+}
+/* line 237, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .title-wrapper .menu-keys, .lunch .menu-item .title-wrapper .menu-keys, .dinner .menu-item .title-wrapper .menu-keys, .bakery .menu-item .title-wrapper .menu-keys {
+  float: left;
+  padding: 2px 0 0 5px;
+}
+/* line 240, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .title-wrapper .menu-keys .icon, .lunch .menu-item .title-wrapper .menu-keys .icon, .dinner .menu-item .title-wrapper .menu-keys .icon, .bakery .menu-item .title-wrapper .menu-keys .icon {
+  padding: 0 2px;
+}
+/* line 245, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .desc, .lunch .menu-item .desc, .dinner .menu-item .desc, .bakery .menu-item .desc {
+  font-size: 13px;
+}
+/* line 248, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .pricing, .lunch .menu-item .pricing, .dinner .menu-item .pricing, .bakery .menu-item .pricing {
+  padding-left: 5px;
+  font-style: italic;
+}
+/* line 251, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .pricing .min, .breakfast .menu-item .pricing .max, .lunch .menu-item .pricing .min, .lunch .menu-item .pricing .max, .dinner .menu-item .pricing .min, .dinner .menu-item .pricing .max, .bakery .menu-item .pricing .min, .bakery .menu-item .pricing .max {
+  display: none;
+}
+/* line 255, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .pricing.ispriced-false, .lunch .menu-item .pricing.ispriced-false, .dinner .menu-item .pricing.ispriced-false, .bakery .menu-item .pricing.ispriced-false {
+  display: none;
+}
+/* line 259, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .optional_item, .lunch .menu-item .optional_item, .dinner .menu-item .optional_item, .bakery .menu-item .optional_item {
+  margin-top: -10px;
+}
+/* line 263, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .optional_item > div, .lunch .menu-item .optional_item > div, .dinner .menu-item .optional_item > div, .bakery .menu-item .optional_item > div {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+/* line 269, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .story-teaser, .lunch .menu-item .story-teaser, .dinner .menu-item .story-teaser, .bakery .menu-item .story-teaser {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #310d00;
+  background: #fffdf0;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 276, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .story-teaser .icon-stories, .lunch .menu-item .story-teaser .icon-stories, .dinner .menu-item .story-teaser .icon-stories, .bakery .menu-item .story-teaser .icon-stories {
+  width: 15%;
+  font-size: 30px;
+  float: left;
+  text-align: center;
+}
+/* line 282, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .story-teaser p, .breakfast .menu-item .story-teaser a, .lunch .menu-item .story-teaser p, .lunch .menu-item .story-teaser a, .dinner .menu-item .story-teaser p, .dinner .menu-item .story-teaser a, .bakery .menu-item .story-teaser p, .bakery .menu-item .story-teaser a {
+  font-size: 13px;
+  line-height: 1.5;
+}
+/* line 286, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .story-teaser p, .lunch .menu-item .story-teaser p, .dinner .menu-item .story-teaser p, .bakery .menu-item .story-teaser p {
+  width: 85%;
+  float: left;
+  margin-bottom: 0;
+}
+/* line 291, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .story-teaser a, .lunch .menu-item .story-teaser a, .dinner .menu-item .story-teaser a, .bakery .menu-item .story-teaser a {
+  font-weight: bold;
+}
+/* line 296, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .story-teaser a:hover .icon-arrow-right, .lunch .menu-item .story-teaser a:hover .icon-arrow-right, .dinner .menu-item .story-teaser a:hover .icon-arrow-right, .bakery .menu-item .story-teaser a:hover .icon-arrow-right {
+  left: 1px;
+}
+/* line 300, ../sass/templates/_les-menu.scss */
+.breakfast .menu-item .story-teaser .icon-arrow-right, .lunch .menu-item .story-teaser .icon-arrow-right, .dinner .menu-item .story-teaser .icon-arrow-right, .bakery .menu-item .story-teaser .icon-arrow-right {
+  font-size: 16px;
+  line-height: 13px;
+  position: relative;
+  top: 3px;
+  left: -3px;
+}
+/* line 314, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details.min .menu-item .pricing .min, .lunch .menu-details.min .menu-item .pricing .min, .dinner .menu-details.min .menu-item .pricing .min, .bakery .menu-details.min .menu-item .pricing .min {
+  display: inline;
+}
+/* line 321, ../sass/templates/_les-menu.scss */
+.breakfast .menu-details.max .menu-item .pricing .max, .lunch .menu-details.max .menu-item .pricing .max, .dinner .menu-details.max .menu-item .pricing .max, .bakery .menu-details.max .menu-item .pricing .max {
+  display: inline;
+}
+
+/* line 331, ../sass/templates/_les-menu.scss */
+.no-location .breakfast .optional_item, .no-location .lunch .optional_item, .no-location .dinner .optional_item, .no-location .bakery .optional_item {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  /* line 339, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details, .lunch .menu-details, .dinner .menu-details, .bakery .menu-details {
+    padding: 0 15px;
+  }
+  /* line 341, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details .category-title, .breakfast .menu-details .category-desc, .lunch .menu-details .category-title, .lunch .menu-details .category-desc, .dinner .menu-details .category-title, .dinner .menu-details .category-desc, .bakery .menu-details .category-title, .bakery .menu-details .category-desc {
+    text-align: left;
+  }
+  /* line 345, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details .menu-links a, .lunch .menu-details .menu-links a, .dinner .menu-details .menu-links a, .bakery .menu-details .menu-links a {
+    display: inline;
+    font-size: 13px;
+    background: none;
+  }
+  /* line 350, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details .menu-links .location-name, .lunch .menu-details .menu-links .location-name, .dinner .menu-details .menu-links .location-name, .bakery .menu-details .menu-links .location-name {
+    margin: 10px 0;
+  }
+}
+@media (min-width: 980px) {
+  /* line 364, ../sass/templates/_les-menu.scss */
+  .breakfast .mobile-menu-legend, .lunch .mobile-menu-legend, .dinner .mobile-menu-legend, .bakery .mobile-menu-legend {
+    display: none;
+  }
+  /* line 370, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details .menu-links a.mobile-btn-link, .lunch .menu-details .menu-links a.mobile-btn-link, .dinner .menu-details .menu-links a.mobile-btn-link, .bakery .menu-details .menu-links a.mobile-btn-link {
+    padding: 0;
+    background: none;
+  }
+  /* line 374, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details .menu-links .location-name, .lunch .menu-details .menu-links .location-name, .dinner .menu-details .menu-links .location-name, .bakery .menu-details .menu-links .location-name {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    margin: 0;
+  }
+  /* line 384, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details .menu-category .columns .menu-item:last-child, .lunch .menu-details .menu-category .columns .menu-item:last-child, .dinner .menu-details .menu-category .columns .menu-item:last-child, .bakery .menu-details .menu-category .columns .menu-item:last-child {
+    margin-bottom: 0;
+  }
+  /* line 391, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar, .lunch #sidebar, .dinner #sidebar, .bakery #sidebar {
+    display: block;
+  }
+  /* line 395, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .order-online.widget, .lunch #sidebar .order-online.widget, .dinner #sidebar .order-online.widget, .bakery #sidebar .order-online.widget {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* line 398, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .order-online.widget .btn, .lunch #sidebar .order-online.widget .btn, .dinner #sidebar .order-online.widget .btn, .bakery #sidebar .order-online.widget .btn {
+    display: block;
+    width: 46%;
+    margin: 0 2%;
+    float: left;
+    text-align: center;
+  }
+  /* line 408, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .menu-legend.widget .legend-wrapper, .lunch #sidebar .menu-legend.widget .legend-wrapper, .dinner #sidebar .menu-legend.widget .legend-wrapper, .bakery #sidebar .menu-legend.widget .legend-wrapper {
+    margin-bottom: 30px;
+  }
+  /* line 411, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .menu-legend.widget .legend-item, .lunch #sidebar .menu-legend.widget .legend-item, .dinner #sidebar .menu-legend.widget .legend-item, .bakery #sidebar .menu-legend.widget .legend-item {
+    margin: 15px 0;
+    font-size: 11px;
+    font-family: georgia;
+  }
+  /* line 415, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar .menu-legend.widget .legend-item .icon, .lunch #sidebar .menu-legend.widget .legend-item .icon, .dinner #sidebar .menu-legend.widget .legend-item .icon, .bakery #sidebar .menu-legend.widget .legend-item .icon {
+    font-size: 15px;
+    padding-right: 10px;
+    position: relative;
+    top: 1px;
+  }
+  /* line 423, ../sass/templates/_les-menu.scss */
+  .breakfast #sidebar p.disclaimer, .lunch #sidebar p.disclaimer, .dinner #sidebar p.disclaimer, .bakery #sidebar p.disclaimer {
+    font-size: 10px;
+    font-style: italic;
+  }
+}
+@media (min-width: 1140px) {
+  /* line 433, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-overview .menu-text, .lunch .menu-overview .menu-text, .dinner .menu-overview .menu-text, .bakery .menu-overview .menu-text {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  /* line 437, ../sass/templates/_les-menu.scss */
+  .breakfast .menu-details, .lunch .menu-details, .dinner .menu-details, .bakery .menu-details {
+    padding: 0 30px;
+  }
+}
+/**
+* La Madeleine
+* Locations Page Styling
+**/
+/* line 10, ../sass/templates/_locations.scss */
+#content.locations #map-full {
+  height: 200px;
+  max-width: none;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+/* line 16, ../sass/templates/_locations.scss */
+#content.locations #map-full.mobile-tall {
+  height: 400px;
+}
+/* line 20, ../sass/templates/_locations.scss */
+#content.locations .gmnoprint > div > * {
+  max-width: none;
+}
+
+@media (min-width: 980px) {
+  /* line 26, ../sass/templates/_locations.scss */
+  #content.locations {
+    height: 100%;
+  }
+  /* line 28, ../sass/templates/_locations.scss */
+  #content.locations #main, #content.locations #main .post-box {
+    height: 100%;
+  }
+  /* line 31, ../sass/templates/_locations.scss */
+  #content.locations #map-full {
+    height: 100%;
+  }
+}
+/**
+* La Madeleine
+* Stories & Standard (Generic) Pages Styling
+**/
+/* line 8, ../sass/templates/_stories-pages.scss */
+body.single-post #content #main {
+  padding-bottom: 5000px;
+  margin-bottom: -4950px;
+}
+
+/* line 15, ../sass/templates/_stories-pages.scss */
+#content.page-single #main {
+  padding-bottom: 5000px;
+  margin-bottom: -4950px;
+}
+
+/* line 29, ../sass/templates/_stories-pages.scss */
+#content.stories #main, #content.page-single #main, body.category #main, body.single-post #main {
+  background: #f4f2df;
+  overflow: hidden;
+}
+/* line 33, ../sass/templates/_stories-pages.scss */
+#content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
+  display: none;
+}
+
+/* line 40, ../sass/templates/_stories-pages.scss */
+#content article .image-wrapper img {
+  width: 100%;
+  display: block;
+}
+/* line 44, ../sass/templates/_stories-pages.scss */
+#content article .text-wrapper {
+  padding: 0 15px;
+  position: relative;
+  z-index: 2;
+}
+/* line 48, ../sass/templates/_stories-pages.scss */
+#content article .text-wrapper.shadow {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 3px;
+}
+/* line 52, ../sass/templates/_stories-pages.scss */
+#content article p {
+  color: #310d00;
+}
+/* line 55, ../sass/templates/_stories-pages.scss */
+#content article .entry-header {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px dashed #cbaf9a;
+}
+/* line 60, ../sass/templates/_stories-pages.scss */
+#content article .entry-header h1 {
+  font-size: 20px;
+  text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
+}
+/* line 64, ../sass/templates/_stories-pages.scss */
+#content article .entry-header h2 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* line 75, ../sass/templates/_stories-pages.scss */
+.social-share {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 10px 0 20px;
+  overflow: hidden;
+  border-bottom: 1px solid #dccabc;
+}
+/* line 81, ../sass/templates/_stories-pages.scss */
+.social-share * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 84, ../sass/templates/_stories-pages.scss */
+.social-share .stButton {
+  padding: 3px;
+}
+/* line 86, ../sass/templates/_stories-pages.scss */
+.social-share .stButton .stArrow {
+  display: none;
+}
+
+@media (min-width: 980px) {
+  /* line 95, ../sass/templates/_stories-pages.scss */
+  #content.stories #sidebar, #content.page-single #sidebar, body.category #sidebar, body.single-post #sidebar {
+    display: block;
+  }
+
+  /* line 100, ../sass/templates/_stories-pages.scss */
+  #content.page-single #main, body.single-post #main {
+    border-right: 1px solid #e5d7cd;
+  }
+
+  /* line 105, ../sass/templates/_stories-pages.scss */
+  #content article .text-wrapper {
+    padding: 0 30px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 -3px 10px;
+  }
+  /* line 110, ../sass/templates/_stories-pages.scss */
+  #content article .entry-header h1 {
+    font-size: 33px;
+  }
+  /* line 113, ../sass/templates/_stories-pages.scss */
+  #content article .entry-header h2 {
+    font-size: 18px;
+  }
+}
+/**
+* La Madeleine
+* Store Styling
+**/
+/* line 6, ../sass/templates/_store.scss */
+.store {
+  padding-top: 10px;
+}
+/* line 10, ../sass/templates/_store.scss */
+.store p.subhead {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: #310d00;
+  line-height: 1.4;
+}
+/* line 17, ../sass/templates/_store.scss */
+.store .btn:hover {
+  cursor: pointer;
+}
+/* line 21, ../sass/templates/_store.scss */
+.store .store-text {
+  text-align: center;
+}
+/* line 25, ../sass/templates/_store.scss */
+.store .store-items {
+  text-align: center;
+  margin: 30px 20px 10px;
+  border-top: 1px dashed #cbaf9a;
+}
+/* line 29, ../sass/templates/_store.scss */
+.store .store-items p {
+  padding-top: 30px;
+  font-size: 14px;
+  font-family: "Merriweather", serif;
+}
+/* line 36, ../sass/templates/_store.scss */
+.store .store_item {
+  margin-bottom: 20px;
+}
+/* line 40, ../sass/templates/_store.scss */
+.store .store_item_image img {
+  width: 100%;
+}
+/* line 44, ../sass/templates/_store.scss */
+.store .item_added {
+  margin-top: 15px;
+}
+/* line 48, ../sass/templates/_store.scss */
+.store select {
+  width: 70%;
+  margin-bottom: 20px;
+}
+/* line 53, ../sass/templates/_store.scss */
+.store div.cart {
+  display: none;
+  text-align: left;
+  padding-left: 5%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: 5px 15px 15px;
+  /*max-width: 350px;*/
+  height: 100%;
+  padding: 7px;
+  margin-bottom: 10px;
+}
+/* line 66, ../sass/templates/_store.scss */
+.store div.cart .title {
+  float: left;
+  padding-right: 5%;
+}
+/* line 71, ../sass/templates/_store.scss */
+.store div.cart .info {
+  float: right;
+  padding-right: 25%;
+}
+/* line 76, ../sass/templates/_store.scss */
+.store div.cart .info:before {
+  content: "$";
+}
+/* line 80, ../sass/templates/_store.scss */
+.store div.cart input {
+  width: 60px;
+}
+/* line 84, ../sass/templates/_store.scss */
+.store .lineItem {
+  width: 75%;
+  overflow: visible;
+  float: left;
+  padding-right: 10px;
+}
+/* line 91, ../sass/templates/_store.scss */
+.store .tallies {
+  clear: both;
+  padding: 10px;
+}
