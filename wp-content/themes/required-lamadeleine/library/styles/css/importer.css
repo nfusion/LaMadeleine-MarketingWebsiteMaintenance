@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 /*
 SCSS custom theme styling importer
 Author: nFusion (http://nfusion.com)
@@ -25,6 +24,7 @@ Author: nFusion (http://nfusion.com)
 * La Madeleine
 * Fonts
 **/
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 @font-face {
   font-family: 'ostrich_sans_roundregular';
   src: url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot");
@@ -2951,13 +2951,19 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
 .widget.widget-story-nav a.story-nav-link .cat-wrapper:hover:after {
   right: 0px;
 }
-/* line 40, ../sass/widgets/_widget-story-nav.scss */
+/* line 41, ../sass/widgets/_widget-story-nav.scss */
+.widget.widget-story-nav a.story-nav-link .cat-wrapper ul {
+  padding-left: 45px;
+  font-size: 12px;
+  list-style: circle;
+}
+/* line 47, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .text-wrapper {
   width: 100%;
   padding: 5px 30px 0 0;
   overflow: visible;
 }
-/* line 45, ../sass/widgets/_widget-story-nav.scss */
+/* line 52, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .icon {
   width: 45px;
   height: 45px;
@@ -2967,26 +2973,26 @@ html.ie #sidebar .widget-location #location-cta.map-loaded .flipper .other-locat
   background: #edeacc;
   float: left;
 }
-/* line 54, ../sass/widgets/_widget-story-nav.scss */
+/* line 61, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-name {
   padding: 3px 0;
   font-family: "Merriweather", serif;
 }
-/* line 58, ../sass/widgets/_widget-story-nav.scss */
+/* line 65, ../sass/widgets/_widget-story-nav.scss */
 .widget.widget-story-nav a.story-nav-link .cat-desc {
   font-size: 10px;
   font-style: italic;
   line-height: 1.3;
 }
 
-/* line 70, ../sass/widgets/_widget-story-nav.scss */
+/* line 77, ../sass/widgets/_widget-story-nav.scss */
 #content.stories .widget-story-nav .story-nav-link.stories,
 .category-food .widget-story-nav .story-nav-link.category-food,
 .category-culture .widget-story-nav .story-nav-link.category-culture,
 .category-community .widget-story-nav .story-nav-link.category-community {
   background: #f4f2df;
 }
-/* line 72, ../sass/widgets/_widget-story-nav.scss */
+/* line 79, ../sass/widgets/_widget-story-nav.scss */
 #content.stories .widget-story-nav .story-nav-link.stories .cat-wrapper:after,
 .category-food .widget-story-nav .story-nav-link.category-food .cat-wrapper:after,
 .category-culture .widget-story-nav .story-nav-link.category-culture .cat-wrapper:after,
