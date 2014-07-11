@@ -1,0 +1,65 @@
+/**
+* La Madeleine
+* IE 8 & 9 fixes
+**/
+
+@import '../styleguide/colors';
+
+// IE8 and IE9
+.ie8, .ie9{
+	#sidebar{
+		.widget-location{
+			#location-cta{
+				&.map-loaded{
+					.front{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+// IE8 only
+.ie8 #container{
+	#content{
+		width: 1140px;
+		.loading .f_circleG{
+			background-color: $redBrown !important;
+		}
+		#carousel{
+			width: 820px !important;
+			.carousel-controls .icon{
+				color: $lightCream !important;
+			}
+		}
+		#location-cta{
+			.geo, .location-cta-divider{
+				display: none !important;
+			}
+			.zip{
+				bottom: 80px !important;
+			}
+			.icon-magnify{
+				color: $lightCream;
+				font-size: 50px;
+				margin-bottom: 10px;
+			}
+			#zip-input{
+				width: 200px !important;
+				padding-top: 5px;
+				margin: 0 auto;
+			}
+			#use-zip{
+				position: relative;
+				top: 25px;
+			}
+		}
+		.btn{
+			padding-right: 20px !important;
+		}
+		.btn:after{
+			content: "" !important;
+		}
+	}
+}

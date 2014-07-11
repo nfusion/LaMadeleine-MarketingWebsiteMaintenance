@@ -1,0 +1,103 @@
+/*
+Theme Name: required+ Starter
+Description: Used to style the TinyMCE editor.
+*/
+
+/*
+// Import Google Web Fonts
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('library/fonts/icomoon/icomoon.eot?-bwndc5');
+	src:url('library/fonts/icomoon/icomoon.eot?#iefix-bwndc5') format('embedded-opentype'),
+		url('library/fonts/icomoon/icomoon.woff?-bwndc5') format('woff'),
+		url('library/fonts/icomoon/icomoon.ttf?-bwndc5') format('truetype'),
+		url('library/fonts/icomoon/icomoon.svg?-bwndc5#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 { 
+	font-family: 'Merriweather', serif; 
+	font-weight: 400;
+}
+
+p, a{
+	font-family: Georgia, serif;
+}
+
+a{
+	color: #6c2904;
+}
+
+a:hover {
+  color: #e5730e;
+}
+
+a.btn {
+  color: #fffdf0;
+  font-family: "Lato", sans-serif;
+  font-style: none;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding: 7px 30px 7px 20px;
+  font-weight: bold;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: #310d00 0 -1px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 1px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b64507), color-stop(100%, #6c2904));
+  background-image: -webkit-linear-gradient(#b64507, #6c2904);
+  background-image: -moz-linear-gradient(#b64507, #6c2904);
+  background-image: -o-linear-gradient(#b64507, #6c2904);
+  background-image: linear-gradient(#b64507, #6c2904);
+  -webkit-transition-property: background-image;
+  -moz-transition-property: background-image;
+  -o-transition-property: background-image;
+  transition-property: background-image;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+a.btn:after {
+  content: "\e624";
+  font-family: 'icomoon';
+  color: #fffdf0;
+  font-size: 13px;
+  line-height: 16px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
