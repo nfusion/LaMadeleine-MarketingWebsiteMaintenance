@@ -3,17 +3,23 @@
 
     <?php
 
-    foreach(array('food','culture','community') as $cat){
-         //$cat = 'food';//strtolower(get_cat_name($cat));
-        $mypods = pods('post')->find(array('limit' => 3, 'orderby' => 'date desc', 'where'=>"category.name='".$cat."'"));
-        $stories = process_stories($mypods);
 
-        foreach($stories as $story){
-          
-            $stories_by_cat[$cat][]= array('title'=>$story['title'], 'permalink'=>$story['permalink']);
+    $key = 'stories_widget'.;
+    
+    $stories_by_cat = pods_cache_get( $key, 'foo', function($key){
+        foreach(array('food','culture','community') as $cat){
+             //$cat = 'food';//strtolower(get_cat_name($cat));
+            $mypods = pods('post')->find(array('limit' => 3, 'orderby' => 'date desc', 'where'=>"category.name='".$cat."'"));
+            $stories = process_stories($mypods);
+
+            foreach($stories as $story){
+              
+                $stories_by_cat[$cat][] = array('title'=>$story['title'], 'permalink'=>$story['permalink']);
+            }
+
         }
-
-    }
+        return  $stories_by_cat
+    });
 
     // echo"<pre>";
      // print_r($stories_by_cat);
