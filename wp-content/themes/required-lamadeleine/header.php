@@ -19,10 +19,6 @@
 	<link rel="shortcut icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico">
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 
 	<!-- ShareThis -->
 	<script type="text/javascript">var switchTo5x=true;</script>
@@ -36,6 +32,12 @@
 	<!-- If IE9 or lower -->
 	<!--[if IE]>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/library/styles/css/ie-fixes.css" />
+	<![endif]-->
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/ie-fixes/respond.min.js"></script>
 	<![endif]-->
 
 </head>

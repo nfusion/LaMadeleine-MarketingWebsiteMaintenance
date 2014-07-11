@@ -2,7 +2,63 @@
 * La Madeleine
 * IE 8 & 9 fixes
 **/
-/* line 11, ../sass/importer/ie-fixes.scss */
+/**
+* La Madeleine
+* Color Variables
+**/
+/* Standard */
+/* La Madeleine Colors */
+/* line 14, ../sass/importer/ie-fixes.scss */
 .ie8 #sidebar .widget-location #location-cta.map-loaded .front, .ie9 #sidebar .widget-location #location-cta.map-loaded .front {
   display: none;
+}
+
+/* line 25, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content {
+  width: 1140px;
+}
+/* line 27, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content .loading .f_circleG {
+  background-color: #6c2904 !important;
+}
+/* line 30, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content #carousel {
+  width: 820px !important;
+}
+/* line 32, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content #carousel .carousel-controls .icon {
+  color: #fffdf0 !important;
+}
+/* line 37, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content #location-cta .geo, .ie8 #container #content #location-cta .location-cta-divider {
+  display: none !important;
+}
+/* line 40, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content #location-cta .zip {
+  bottom: 80px !important;
+}
+/* line 43, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content #location-cta .icon-magnify {
+  color: #fffdf0;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+/* line 48, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content #location-cta #zip-input {
+  width: 200px !important;
+  padding-top: 5px;
+  margin: 0 auto;
+}
+/* line 53, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content #location-cta #use-zip {
+  position: relative;
+  top: 25px;
+}
+/* line 58, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content .btn {
+  padding-right: 20px !important;
+}
+/* line 61, ../sass/importer/ie-fixes.scss */
+.ie8 #container #content .btn:after {
+  content: "" !important;
 }
