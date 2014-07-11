@@ -301,8 +301,14 @@ var LaMadLocations = {
         },
 
         geoErr: function(error){
-            alert('Pardon, we were not able to determine your location.\nPlease feel free to continue browsing.\nMerci');   
-            $('body').addClass('location-error');  
+            alert('Pardon, we were unable to determine your location.\nPlease check your network connection and browser settings.\nMerci.');   
+            setTimeout(function(){
+                $('body').addClass('location-error');
+                $('#location-cta').removeClass('map-loading');
+                $('#location-cta').find('.front-wrapper').show();
+                $('#header').find('.icon-pin').show();
+                $('#header').find('.loading').hide();
+            }, 500);
         },
 
         geoFoundObjOnly: function(position){
