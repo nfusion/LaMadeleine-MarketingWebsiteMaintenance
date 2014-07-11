@@ -208,6 +208,12 @@ LaMadLocations.initializeLargeMap = function() {
                     // Update locations list
                     LaMadLocations.loadNearest();
                 });
+
+                // Click event for mobile location list
+                $('#widget-location-mobile').find('.other-locations .location-item').on('click touchend', function(){
+                    // Scroll to top to show result
+                    $("html, body").animate({ scrollTop: 0 }, 500);
+                });
             }
         }, 250);
     }
