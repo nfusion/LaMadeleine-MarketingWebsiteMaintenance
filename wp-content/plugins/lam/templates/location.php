@@ -45,8 +45,20 @@
             LaMadLocations.geoCodeZip($('#zip-input-secondary').val());
         });
 
+        // Submit zip form on enter
+        $('#zip-input').keypress(function(event){
+          if(event.keyCode == 13){
+            $('#use-zip').click();
+          }
+        });
+
+        // Submit zip form on enter
+        $('#zip-input-secondary').keypress(function(event){
+          if(event.keyCode == 13){
+            $('#use-zip-secondary').click();
+          }
+        });
     });
-    
 
 </script>
 

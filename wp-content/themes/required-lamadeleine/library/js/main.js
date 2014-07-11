@@ -173,21 +173,35 @@ $(function(){
 	};
 
 	// Mobile header locate/call interactions
-	// *** This needs to be cleaned up ***
 
 	var $header = $('#header');
 
+	// Interaction event for any geolocation links in header
 	$header.find('.lam-geolocate').on('click touchstart', function(){
+
+		// Get geolocation
 		LaMadLocations.getLocation();
+
+		// Hide this link
 		$(this).hide();
+
+		// Show loading
 		$header.find('.loading').show();
+
+		// Start interval to wait for response
 		locateInt = setInterval(function(){
-			console.log(LaMadLocations.nearestLocationObj.id);
+
+			// If global location object is created
 			if(LaMadLocations.nearestLocationObj.id){
+				// Clear interval
 				clearInterval(locateInt);
+				// Hide loading
 				$header.find('.loading').hide();
+				// This location
 				myLocation = LaMadLocations.nearestLocationObj;
+				// Set phone attribute
 				$header.find('.lam-call a').attr('href', 'tel:' + myLocation.phone);
+				// Show mobile location widget
 				mobileLocationWidget();
 			}
 		}, 100);

@@ -13,8 +13,6 @@
                 var str = "";
                 $.each(data, function(index, obj){
 
-                    console.log(obj);
-
                     var menuCategories = $.parseJSON(obj.menu_cat),
                         categoryList = "";
 
