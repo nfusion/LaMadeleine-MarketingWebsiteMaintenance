@@ -4,6 +4,16 @@
 /*
 **/
 
+// Check class without jQuery
+// function hasClass(ele,cls) {
+//      return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+// }
+
+// // Check for IE8, if true set global variable
+// if(hasClass(document.getElementsByTagName("body"), "ie8")){
+// 	var lamIE8 = true;
+// };
+
 $(function(){
 
 	var $content = $('#content'),
@@ -90,7 +100,7 @@ $(function(){
 				$sidebar.find('ul.categories li').on('click', function(e){
 					e.preventDefault();
 					var catName = $(this).data('cat-name');
-					console.log($('#category-' + catName));
+					//console.log($('#category-' + catName));
 					$("html, body").animate({ scrollTop: $('#category-' + catName).offset().top }, 1000);
 				});
 
