@@ -4,7 +4,7 @@
     <?php
 
 
-    $key = 'stories_widget'.;
+    $key = 'stories_widget';
     
     $stories_by_cat = pods_cache_get( $key, 'foo', function($key){
         foreach(array('food','culture','community') as $cat){
@@ -18,7 +18,7 @@
             }
 
         }
-        return  $stories_by_cat
+        return  $stories_by_cat;
     });
 
     // echo"<pre>";
