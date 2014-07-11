@@ -27,7 +27,7 @@
 	  	<div class="icon icon-food"></div>
 	  	<div class="text-wrapper">
 	  		<div class="cat-name">Food</div>
-	  		<div class="cat-desc">Behind the scenes of delicious dishes.</div>
+	  		<div class="cat-desc">Behind the scenes of délicieux dishes.</div>
 	  	</div>
         </a>
         <ul class='categories'> 

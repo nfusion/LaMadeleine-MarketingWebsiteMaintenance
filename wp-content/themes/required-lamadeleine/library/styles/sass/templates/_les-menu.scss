@@ -173,7 +173,8 @@
 			position: absolute;
 			bottom: 0;
 			color: $white;
-			background: rgba(39,23,13,0.8);
+			background-color: $darkBrown; // Legacy
+			background-color: rgba(39,23,13,0.8);
 		}
 		.text-wrapper.no-story{
 			.title{
