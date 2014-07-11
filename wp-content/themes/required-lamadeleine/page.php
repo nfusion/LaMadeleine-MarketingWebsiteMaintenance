@@ -55,23 +55,43 @@ get_header(); ?>
 								break;
 
 						}
-					$pageDetails['daypartTitle'] = $daypartTitle;
-					$params = array(
-					    //'where' => "daypart_relationship = 'Lunch'",
-					    'orderby' => 'order_weight ASC',
-					    'limit' => '0'
-					);
 
+						//pods_cache_clear();
 					$pageDetails['title']=$pagename;
-					$mypods = pods('menu_item')->find($params);
+					
+					$key = 'menu_'.$pagename;
+					$mypods = pods_cache_get( $key, '', function($key){
+						$params = array(
+						    //'where' => "daypart_relationship = 'Lunch'",
+						    'orderby' => 'order_weight ASC',
+						    'limit' => '0'
+						);
+						$mypods = pods('menu_item')->find($params);
+						pods_cache_set ( $key, $mypods, '', $expires = 300);
+						return $mypods;
+					});
 
-					$params2 = array(
+					
+					
+					$pageDetails['daypartTitle'] = $daypartTitle;
+					$key2 = 'daypart_'.$daypartTitle;
+
+					
+					$daypart = pods_cache_get( $key2, '', function($key2){
+						$params2 = array(
 					    'where' => "t.post_title = '".$daypartTitle."'",
 					    //'orderby' => 'order_weight ASC',
 					    'limit' => '0'
-					);
+						);
 
-					$daypart = pods('daypart')->find($params2 );
+						$daypart = pods('daypart')->find($params2 );
+
+						pods_cache_set ( $key2, $daypart, '', $expires = 300);
+						
+						return $daypart;
+					});
+
+					
 
 					while( $daypart->fetch() ) {
 						$pageDetails['foodCats'] = $daypart->field('menu_categories');

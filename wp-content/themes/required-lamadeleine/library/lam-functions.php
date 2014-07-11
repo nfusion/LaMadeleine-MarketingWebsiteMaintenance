@@ -675,108 +675,100 @@ function process_stories($mypod){
 
 
 function process_menu($mypod,$daypart){
+    $cachekey = 'menu-function_'.$daypart;
+    $menu = pods_cache_get( $cachekey, '', function($cachekey,$mypod,$daypart) use($mypod,$daypart){
+         $params = array(
+                            'where' => "t.post_title = '".ucfirst($daypart)."'",
+                            'orderby' => "date ASC",
+                            'limit' => '1'
+                        );
+        $daypart_pod = pods('daypart')->find($params);
 
-
-    $params = array(
-                        'where' => "t.post_title = '".ucfirst($daypart)."'",
-                        'orderby' => "date ASC",
-                        'limit' => '1'
-                    );
-    $daypart_pod = pods('daypart')->find($params);
-
-
-    while( $daypart_pod->fetch() ) {
-        $menu_categories = $daypart_pod->field('menu_categories');
-    }
-
-
-    
-    //$menu = explode(',', $menu_categories);
-    //$menu = array_flip(explode(',', $menu_categories));
-
-    //$menu_categories = str_replace(', ', ',', $menu_categories);
-
-    $menu = array_fill_keys(explode(', ', $menu_categories),array());
-    
-
-
-
-
-    if($mypod->total_found()){
-        while( $mypod->fetch() ) {
-            foreach (array('featured_item',
-                           'title',
-                           'description', 
-                           'fma_promo', 
-                           'story', 
-                           'menu_key_relationship', 
-                           'price_max', 
-                           'price_min',
-                           'daypart_relationship',
-                           'menu_category', 
-                           'description_1', 
-                           'optional_min_price_1',
-                           'optional_max_price_1',
-
-                           'description_2', 
-                           'optional_min_price_2',
-                           'optional_max_price_2',
-
-                           'description_3', 
-                           'optional_min_price_3',
-                           'optional_max_price_3',
-
-                           'description_4', 
-                           'optional_min_price_4',
-                           'optional_max_price_4',
-
-                           'description_5', 
-                           'optional_min_price_5',
-                           'optional_max_price_5'
-
-                           ) as $key => $value) {
-                 $item[$value] = $mypod->field($value);
-            }
-
-            $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
-            $item['featured_img_story'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured-story' );
-           
-
-            switch ($daypart) {
-              case 'Dinner & Wine':
-                $daySearch = 'Dinner';
-
-                break;
-               case 'Lunch':
-                $daySearch = 'Lunch';
-
-                break;
-               case 'Breakfast':
-                $daySearch = 'Breakfast';
-
-                break;
-              
-              default:
-               $daySearch = 'Bakery';
-                break;
-            }
-            
-
-              if(in_array( $item['menu_category']['slug'],  explode(', ', $menu_categories) )){
-                
-                if(in_array($daySearch , $item['daypart_relationship'])){
-
-                    $menu[$item['menu_category']['slug'] ] ['items'][] = $item;
-
-                    if($item['featured_item'] == 1){
-                        $menu[$item['menu_category']['slug']]['featured'] = $item;
-                    }
-                }
-              }
+        while( $daypart_pod->fetch() ) {
+            $menu_categories = $daypart_pod->field('menu_categories');
         }
 
-        return $menu;
-    }
+
+        $menu = array_fill_keys(explode(', ', $menu_categories),array());
+        
+        if($mypod->total_found()){
+            while( $mypod->fetch() ) {
+                foreach (array('featured_item',
+                               'title',
+                               'description', 
+                               'fma_promo', 
+                               'story', 
+                               'menu_key_relationship', 
+                               'price_max', 
+                               'price_min',
+                               'daypart_relationship',
+                               'menu_category', 
+                               'description_1', 
+                               'optional_min_price_1',
+                               'optional_max_price_1',
+
+                               'description_2', 
+                               'optional_min_price_2',
+                               'optional_max_price_2',
+
+                               'description_3', 
+                               'optional_min_price_3',
+                               'optional_max_price_3',
+
+                               'description_4', 
+                               'optional_min_price_4',
+                               'optional_max_price_4',
+
+                               'description_5', 
+                               'optional_min_price_5',
+                               'optional_max_price_5'
+
+                               ) as $key => $value) {
+                     $item[$value] = $mypod->field($value);
+                }
+
+                $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured' );
+                $item['featured_img_story'] =  get_the_post_thumbnail( $mypod->id(), 'menu-item-featured-story' );
+               
+
+                switch ($daypart) {
+                  case 'Dinner & Wine':
+                    $daySearch = 'Dinner';
+
+                    break;
+                   case 'Lunch':
+                    $daySearch = 'Lunch';
+
+                    break;
+                   case 'Breakfast':
+                    $daySearch = 'Breakfast';
+
+                    break;
+                  
+                  default:
+                   $daySearch = 'Bakery';
+                    break;
+                }
+                
+
+                  if(in_array( $item['menu_category']['slug'],  explode(', ', $menu_categories) )){
+                    
+                    if(in_array($daySearch , $item['daypart_relationship'])){
+
+                        $menu[$item['menu_category']['slug'] ] ['items'][] = $item;
+
+                        if($item['featured_item'] == 1){
+                            $menu[$item['menu_category']['slug']]['featured'] = $item;
+                        }
+                    }
+                  }
+            }
+
+            pods_cache_set( $cachekey, $menu, '', $expires = 300);
+            return $menu;
+        }
+    }); /** End pod cache */
+         return $menu;
 }
 
 add_action( 'lam_process_menu', 'process_menu' );
