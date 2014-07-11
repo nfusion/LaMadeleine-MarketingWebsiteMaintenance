@@ -210,7 +210,7 @@ LaMadLocations.initializeLargeMap = function() {
                 });
 
                 // Click event for mobile location list
-                $('#widget-location-mobile').find('.other-locations .location-item').on('click touchend', function(){
+                $('#widget-location-mobile').find('.other-locations .location-item').on('click', function(){
                     // Scroll to top to show result
                     $("html, body").animate({ scrollTop: 0 }, 500);
                 });
