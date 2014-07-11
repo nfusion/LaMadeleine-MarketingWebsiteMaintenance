@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 /*
 SCSS custom theme styling importer
 Author: nFusion (http://nfusion.com)
@@ -24,7 +25,6 @@ Author: nFusion (http://nfusion.com)
 * La Madeleine
 * Fonts
 **/
-@import url(http://fonts.googleapis.com/css?family=Lato:700|Playfair+Display:400italic|Merriweather:400,700);
 @font-face {
   font-family: 'ostrich_sans_roundregular';
   src: url("../../../library/fonts/ostrich/ostrich_sans_round_regular-webfont.eot");
@@ -1399,13 +1399,13 @@ body.has-location #header .icon-wrapper .icon-pin {
   #header .icon-menu span {
     visibility: visible;
     font-size: 22px;
-    color: #310d00;
     font-family: "ostrich_sans_roundregular", sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
     top: -5px;
     left: 15px;
+    text-shadow: #310d00 0 -1px 0;
   }
   /* line 152, ../sass/framework/_header.scss */
   #header .icon-wrapper {

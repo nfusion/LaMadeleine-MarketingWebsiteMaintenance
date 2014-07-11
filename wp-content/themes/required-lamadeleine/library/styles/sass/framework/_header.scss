@@ -140,13 +140,13 @@ body.has-location #header{
 			span{
 				visibility: visible;
 				font-size: $h3-font-size;
-				color: $darkBrown;
 				font-family: $ostrich;
 				text-transform: uppercase;
 				letter-spacing: 2px;
 				position: relative;
 				top: -5px;
 				left: 15px;
+				@include lam-text-shadow();
 			}
 		}
 		.icon-wrapper{
