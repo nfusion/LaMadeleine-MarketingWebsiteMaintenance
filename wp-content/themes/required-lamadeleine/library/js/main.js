@@ -4,21 +4,17 @@
 /*
 **/
 
-// Check class without jQuery
-// function hasClass(ele,cls) {
-//      return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
-// }
-
-// // Check for IE8, if true set global variable
-// if(hasClass(document.getElementsByTagName("body"), "ie8")){
-// 	var lamIE8 = true;
-// };
+window.lamIE8 = false;
 
 $(function(){
 
 	var $content = $('#content'),
 			$main = $content.find('#main'),
 			$sidebar = $content.find('#sidebar');
+
+	if($('html').hasClass('ie8')){
+		window.lamIE8 = true;
+	}
 
 	/********
 	COOKIES
@@ -124,7 +120,9 @@ $(function(){
 		}, 250);
 
 		// Listen for window resize to reset sticky
-		window.addEventListener('resize', resetSticky);
+		if(!lamIE8){
+			window.addEventListener('resize', resetSticky);
+		};
 
 	};
 
@@ -291,7 +289,9 @@ $(function(){
 	}, 250);
 
 	// Listen for window resize to reset sticky
-	window.addEventListener('resize', resetStickyPromo);
+	if(!lamIE8){
+		window.addEventListener('resize', resetStickyPromo);
+	};
 
 	/*********
 	IE SUPPORT
