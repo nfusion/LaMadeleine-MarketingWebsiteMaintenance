@@ -1,4 +1,13 @@
 <script>
+
+    // Polyfill trim() for IE8
+    if(typeof String.prototype.trim !== 'function') {
+      String.prototype.trim = function() {
+        return this.replace(/^\s+|\s+$/g, ''); 
+      };
+    }
+
+    // Get dayparts
     $(document).ready(function(){
         getDayParts();
     });
