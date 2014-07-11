@@ -34,11 +34,22 @@
 	display: none;
 }
 
+.has-padding{
+	padding: 10px;
+}
+
+ul.has-margin{
+	margin-left: 20px;
+}
+
 @media (min-width: $medium-screen-min){
 	.show-small{
 		display: none;
 	}
 	.hide-small{
 		display: block;
+	}
+	.has-padding{
+		padding: 15px 30px;
 	}
 }

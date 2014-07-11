@@ -3,25 +3,10 @@
 * Stories & Standard (Generic) Pages Styling
 **/
 
-// Force content area background to extend to bottom of screen
-body.single-post{
-	#content #main{
-		padding-bottom: 5000px;
-		margin-bottom: -4950px;
-	}
-}
-
-#content.page-single{
-	#main{
-		padding-bottom: 5000px;
-		margin-bottom: -4950px;
-	}
-}
-
 // Single post / Single page styling
 body.single-post, #content.page-single{
 	#main .post-box{
-		//padding-bottom: 50px;
+		padding-bottom: 50px;
 	}
 }
 
@@ -91,6 +76,22 @@ body.single-post, #content.page-single{
 }
 
 @media (min-width: $medium-screen-min){
+
+	// Force content area background to extend to bottom of screen
+	body.single-post{
+		#content #main{
+			padding-bottom: 5000px;
+			margin-bottom: -4950px;
+		}
+	}
+
+	#content.page-single{
+		#main{
+			padding-bottom: 5000px;
+			margin-bottom: -4950px;
+		}
+	}
+	
 	#content.stories, #content.page-single, body.category, body.single-post	{
 		#sidebar{
 			display: block;
