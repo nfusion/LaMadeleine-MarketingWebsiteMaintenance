@@ -5,8 +5,18 @@ class Dayparts {
 
 
     public static  function find( $app, $time, $offset ) {
+
         header("Content-Type: application/json");
-        $data = Dayparts::daypartToJson($time, $offset);
+
+        $cachekey = 'daypart_api';
+
+        $data = pods_cache_get( $cachekey, '', function($cachekey){
+            $data = Dayparts::daypartToJson($time, $offset);
+            pods_cache_set( $cachekey, $data, '', $expires = 300);
+            return $data;
+        });
+
+
         header("Content-Type: application/json");
         echo json_encode($data);
         return;
