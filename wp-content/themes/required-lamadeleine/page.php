@@ -67,7 +67,7 @@ get_header(); ?>
 						    'limit' => '0'
 						);
 						$mypods = pods('menu_item')->find($params);
-						pods_cache_set ( $key, $mypods, '', $expires = 300);
+						pods_cache_set( $key, $mypods, '', $expires = 300);
 						return $mypods;
 					});
 
@@ -86,18 +86,14 @@ get_header(); ?>
 
 						$daypart = pods('daypart')->find($params2 );
 
-						pods_cache_set ( $key2, $daypart, '', $expires = 300);
+						pods_cache_set( $key2, $daypart, '', $expires = 300);
 						
 						return $daypart;
 					});
 
-					
-
 					while( $daypart->fetch() ) {
 						$pageDetails['foodCats'] = $daypart->field('menu_categories');
 					}
-
-					
 					$sidebar = 'sidebar-menu';
 					$pagename = 'lemenue';
 
@@ -106,7 +102,14 @@ get_header(); ?>
 
 					case 'locations':
 						$pageDetails['title']=$pagename;
-						$mypods = pods('locations')->find(array('limit' => '0'));
+						$key = 'location_page';
+						//pods_cache_clear();
+						$mypods = pods_cache_get( $key, '', function($key){
+							$mypods = pods('locations')->find(array('limit' => '0'));
+							pods_cache_set( $key, $mypods, '', $expires = 300);
+							return $mypods;
+						});
+						
 						$sidebar = 'sidebar-location';
 					break;
 
@@ -123,7 +126,15 @@ get_header(); ?>
 					break;
 					
 					case 'stories':
-						$mypods = pods('post')->find(array('limit' => 0, 'where'=>'is_featured="1"', 'orderby'=>'date DESC'));
+
+
+						$key = 'stories_page';
+						$mypods = pods_cache_get( $key, '', function($key){
+							$mypods = pods('post')->find(array('limit' => 0, 'where'=>'is_featured="1"', 'orderby'=>'date DESC'));
+							pods_cache_set( $key, $mypods, '', $expires = 300);
+							return $mypods;
+						});
+
 						$sidebar = 'sidebar-story';
 						break;
 					default:
@@ -172,4 +183,4 @@ get_header(); ?>
 
 	</div><!-- End Content row -->
 
-<?php get_footer(); ?>
+<?php  get_footer(); ?>

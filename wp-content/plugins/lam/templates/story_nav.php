@@ -6,7 +6,7 @@
 
     $key = 'stories_widget';
     
-    $stories_by_cat = pods_cache_get( $key, 'foo', function($key){
+    $stories_by_cat = pods_cache_get( $key, '', function($key){
         foreach(array('food','culture','community') as $cat){
              //$cat = 'food';//strtolower(get_cat_name($cat));
             $mypods = pods('post')->find(array('limit' => 3, 'orderby' => 'date desc', 'where'=>"category.name='".$cat."'"));
@@ -18,6 +18,7 @@
             }
 
         }
+        pods_cache_set( $key, $stories_by_cat, '', $expires = 300);
         return  $stories_by_cat;
     });
 

@@ -45,38 +45,51 @@ LaMadLocations.initializeLargeMap = function() {
         
         var markers = [];
         <?php 
+
              while( $mypod->fetch() ) {
-                foreach (array(  
-                            'id',
-                            'latitude',
-                            'longitude',
-                            'title', 
-                            'address', 
-                            'address_2', 
-                            'city', 
-                            'state',
-                            'zip',
-                            'phone',
-                            'sunday_open',
-                            'monday_open',
-                            'tuesday_open',
-                            'wednesday_open',
-                            'thursday_open',
-                            'friday_open',
-                            'saturday_open',
-                            'sunday_close',
-                            'monday_close',
-                            'tuesday_close',
-                            'wednesday_close',
-                            'thursday_close',
-                            'friday_close',
-                            'saturday_close'
+                $cacheKey =' location_'.$mypod->id();
+                //pods_cache_clear();
+                $item = pods_cache_get( $cacheKey, '', function($cacheKey,$mypod) use($mypod){
+                    foreach (array(  
+                                'id',
+                                'latitude',
+                                'longitude',
+                                'title', 
+                                'address', 
+                                'address_2', 
+                                'city', 
+                                'state',
+                                'zip',
+                                'phone',
+                                'sunday_open',
+                                'monday_open',
+                                'tuesday_open',
+                                'wednesday_open',
+                                'thursday_open',
+                                'friday_open',
+                                'saturday_open',
+                                'sunday_close',
+                                'monday_close',
+                                'tuesday_close',
+                                'wednesday_close',
+                                'thursday_close',
+                                'friday_close',
+                                'saturday_close'
 
-                            ) as $key => $value) {
+                                ) as $key => $value) {
 
-                                $item[$value] = $mypod->field($value);
-                            }
-                $item['featured_img'] =  get_the_post_thumbnail( $mypod->id(), 'location-featured');
+                                    $item[$value] = $mypod->field($value);
+                                    
+                                }
+                $item['featured_img'] = get_the_post_thumbnail( $mypod->id(), 'location-featured');
+                pods_cache_set($cacheKey,$item,'',300);
+                
+                // error_log('no cache'.$cacheKey);
+                 return $item;
+             });
+           // error_log('cache'.$cacheKey);
+                
+                //end pod fetch
                 ?>
                 var Latlng = new google.maps.LatLng( <?php echo $item['latitude'] .','.  $item['longitude'] ?>);
 
