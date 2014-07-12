@@ -1,0 +1,604 @@
+/**
+* La Madeleine
+* Location widget
+**/
+
+// Homepage mobile location widget
+#mobile-location{
+	width: 100%;
+	height: 0;
+  padding: 0 6px;
+	background: $lightCream;
+	@include transition-duration(0.5s);
+	@include clearfix();
+	&.loaded{
+		height: 50px;
+		padding: 6px;
+		position: relative;
+		z-index: 2;
+		@include box-shadow(rgba(0,0,0,0.25) 0 2px 2px);
+		&:hover{
+			cursor: pointer;
+		}
+		&:after{
+      color: $lightBrown;
+      font-family: 'icomoon';
+      font-size: 24px;
+      content: "\e624";
+      position: absolute;
+      top: 15px;
+      right: 5px;
+    }
+	}
+	.icon-phone{
+		font-size: 35px;
+		border: 1px solid $darkBrown;
+		float: left;
+    position: relative;
+    z-index: 3;
+		@include background-image(linear-gradient($lightCream, lighten($fadedBrown,15%)));
+		@include border-radius(5px);
+    a{
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 45px;
+      height: 45px;
+    }
+	}
+  a.location-link{
+    display: block;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 2;
+  }
+	.location-text{
+		width: 80%;
+    margin: 0 auto;
+		text-align: center;
+		p{
+			margin: 0;
+		}
+	}
+	.title{
+		font-size: 18px;
+		line-height: 1.2	;
+		color: $medBrown;	
+	}
+	.hours{
+		font-size: 12px;
+	}
+  .location-cta{
+    display: none;
+  }
+}
+
+// Mobile sidebar location widget
+
+// Hide for map view on mobile
+#sidebar .widget-location.map-view{
+  display: none;
+}
+
+// Style for other views
+#sidebar #widget-location-mobile{
+  display: block;
+  max-width: 480px;
+  margin: 0 auto;
+  .location-title{
+    margin: 10px 0 -10px;
+    font-family: $merriweather;
+    color: $redBrown;
+  }
+  .address, .hours{
+    width: 50%;
+    float: left;
+    padding: 0 5px;
+    line-height: 1.3;
+  }
+  .btn-wrapper{
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    .btn{
+      display: block;
+      width: 48%;
+      margin: 0 1%;
+      float: left;
+      text-align: center;
+    }
+    .btn.call{
+      width: 98%;
+      margin: 20px 1%;
+    }
+    a.get-directions{
+      position: relative;
+      span{
+        @include transition-duration(0.3s);
+      }
+      .loading{
+        position: absolute;
+        top: -18px;
+        left: 0;
+        right: 0;
+        width: 65px;
+        margin: 0 auto;
+        @include scale(0.5);
+        @include opacity(0);
+      }
+      &.loading-directions{
+        span{
+          @include opacity(0);
+        }
+        .loading{
+          display: block;
+          @include opacity(1);
+        }
+      }
+    }
+    .icon.call{
+      span{
+        font-size: 30px;
+      }
+    }
+  }
+  .other-locations{
+    margin-top: 60px;
+    @include opacity(1);
+    @include transition-duration(0.5s);
+  }
+  #location-list-mobile{
+    height: 260px;
+    .location-item{
+      width: 100%;
+      margin-bottom: 15px;
+      overflow: hidden;
+      list-style: none;
+      position: relative;
+      text-align: left;
+      @include transition-duration(0.25s);
+      &:after{
+        color: $lightBrown;
+        font-family: 'icomoon';
+        font-size: 24px;
+        content: "\e624";
+        position: absolute;
+        top: 35%;
+        right: 10px;
+        @include transition-duration(0.25s);
+      }
+      &:hover{
+        background: $medCream;
+        cursor: pointer;
+        &:after{
+          right: 0px;
+        }
+      }
+    }
+    .location-thumb{
+      width: 75px;
+      height: 75px;
+      float: left;
+    }
+    .location-info{
+      padding: 20px 25px 5px 15px;
+      float: left;
+    }
+    .location-name{
+      font-family: $merriweather;
+      margin-bottom: 2px;
+    }
+    .location-city{
+      font-size: 11px;
+      font-style: italic;
+    }
+  }
+}
+
+// No location selected
+.no-location{
+  #sidebar #widget-location-mobile{
+    @include opacity(0);
+  }
+}
+
+#sidebar{
+  .zip-wrapper{
+    display: none;
+  }
+  #widget-location-full{
+    display: none;
+  }
+}
+
+// Sidebar location widget
+@media (min-width: $medium-screen-min){
+
+  #sidebar {
+    .zip-wrapper{
+      display: block;
+    }
+    #widget-location-mobile{
+      display: none;
+    }
+    #widget-location-full{
+      display: block;
+    }
+  }
+
+  #mobile-location{
+    display: none;
+  }
+
+  #sidebar .widget-location{
+    display: block;
+    border-bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    #widget-location-mobile{
+      display: none;
+    }
+    #widget-location-full{
+      position: relative;
+      #location-list{
+      height: 260px;
+    }
+    .other-locations{
+      @include opacity(1);
+      @include transition-duration(0.5s);
+      .location-item{
+        width: 100%;
+        margin-bottom: 15px;
+        overflow: hidden;
+        list-style: none;
+        position: relative;
+        text-align: left;
+        @include transition-duration(0.25s);
+        &:after{
+          color: $lightBrown;
+          font-family: 'icomoon';
+          font-size: 24px;
+          content: "\e624";
+          position: absolute;
+          top: 35%;
+          right: 10px;
+          @include transition-duration(0.25s);
+        }
+        &:hover{
+          background: $medCream;
+          cursor: pointer;
+          &:after{
+            right: 0px;
+          }
+        }
+      }
+      .location-thumb{
+        width: 75px;
+        height: 75px;
+        float: left;
+      }
+      .location-info{
+        padding: 20px 25px 5px 15px;
+        float: left;
+      }
+      .location-name{
+        font-family: $merriweather;
+        margin-bottom: 2px;
+      }
+      .location-city{
+        font-size: 11px;
+        font-style: italic;
+      }
+    }
+      .other-locations{
+        .location-item:after{
+          top: 17px;
+        }
+        .location-thumb{
+          width: 20%;
+          height: auto;
+        }
+        .location-info{
+          width: 80%;
+          padding-top: 15px;
+        }
+      }
+    }
+    .widget-title{
+      width: 100%;
+      @include clearfix();
+      h3{
+        text-align: left;
+        margin: 4px 0 5px;
+        float: left;
+      }
+      a{
+        float: right;
+        padding-top: 14px;
+      }
+    }
+    #map { 
+      height: 95px;
+      width: 100%;
+    }
+  	#location-cta{
+      display: block;
+  		width: 100%;
+  		min-height: 230px;
+      margin-top: 2px;
+  		text-align: center;
+  		position: relative;
+      @include perspective(1000);
+      &.map-loading{
+        .loading{
+          display: block;
+          @include opacity(1);
+        }
+      }
+      &.map-loaded .flipper{
+        @include rotateY(180deg);
+        .other-locations{
+          @include transition-duration(0);
+          @include rotateY(180deg);
+        }
+      }
+      &.no-cta{
+        .front{
+          // Firefox bug fix. Hide front if no flip transition is firing.
+          display: none;
+        }
+      }
+      .flipper{ 
+        position: relative;
+        @include transform-style(preserve-3d);
+      }
+      .flipper.transition{
+        @include transition-duration(0.6s);
+      }
+      .front, .back{
+        width: 100%;
+        top: 0;
+        left: 0;
+        @include backface-visibility(hidden);
+      }
+      .front{
+        height: 230px;
+        position: absolute;
+        z-index: 2;
+        background: url(../../../img/map/location-cta-bg.jpg) no-repeat;
+      }
+      .back{
+        @include rotateY(180deg);
+      }
+  	}
+    .location-cta-divider{
+      display: block;
+      width: 230px;
+      height: 16px;
+      position: absolute;
+      top: 111px;
+      left: 20px;
+      background: url(../../../img/map/location-cta-divider.png) no-repeat;
+    }
+    .loading{
+      display: none;
+      position: absolute;
+      z-index: 3;
+      top: 85px;
+      left: 38%;
+      @include opacity(0);
+      @include transition-duration(0.3s);
+    }
+  	.geo{
+  		width: 100%;
+  		position: absolute;
+  		top: 20px;
+  		left: 0;
+  		right: 0;
+  	}
+  	.zip{
+  		width: 100%;
+  		position: absolute;
+  		bottom: 25px;
+  		left: 0;
+  		right: 0;
+  	}
+  	.icon{
+  		color: $lightCream;
+  		font-size: 30px;
+      margin-bottom: 5px;
+  	}
+    #use-location{
+      position: relative;
+      top: 10px;
+    }
+    #location-info{
+      width: 100%;
+      overflow: hidden;
+      .location-title{
+        font-family: $merriweather;
+        font-size: 15px;
+        color: $medBrown;
+        margin: 10px 0 5px;
+      }
+      .info-wrapper{
+        font-family: $merriweather;
+        width: 100%;
+        padding: 5px 5px 0;
+        overflow: hidden;
+        border-bottom: 1px solid lighten($fadedBrown, 15%);
+      }
+      .address, .phone{
+        float: left;
+        text-align: left;
+        font-size: 10px;
+        line-height: 1.3;
+        padding: 0 10px 10px;
+        color: $darkBrown;
+      }
+      .address{
+        width: 60%;
+        border-right: 1px solid lighten($fadedBrown, 15%);
+      }
+      .phone{
+        width: 40%;
+      }
+      .hours{
+        font-size: 12px;
+        margin: 10px 0;
+        color: $darkBrown;
+      }
+    }
+    .btn-wrapper{
+      width: 100%;
+      min-height: 35px;
+      overflow: visible;
+    }
+    .btn-wrapper .btn{
+      width: 46%;
+      display: block;
+      float: left;
+      margin: 0 2%;
+    }
+  }
+
+  #zip-input, #zip-input-secondary{
+    width: 50%;
+    height: 29px;
+    margin-right: 3%;
+    padding: 1px 5px 0;
+    position: relative;
+    font-size: 15px;
+    font-family: $merriweather;
+    font-style: italic;
+    text-align: center;
+    border: 0;
+    color: $lightBrown;
+    background-color: $lightCream;
+    @include border-radius(5px);
+  }
+
+  #zip-input-secondary{
+    font-size: 13px;
+  }
+
+  #sidebar .zip-wrapper{
+    display: block;
+    width: 320px;
+    height: 65px;
+    padding-top: 17px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    top: -15px;
+    left: -25px;
+    background: url(../../../img/map/location-zip-bg.jpg) no-repeat;
+    @include transition-duration(0.5s);
+  }
+
+  body.no-location{
+    #sidebar .zip-wrapper{
+      height: 0;
+      padding-top: 0;
+    }
+  }
+
+  // Map view styling (homepage)
+  #sidebar .widget-location.map-view{
+    display: block;
+    position: relative;
+    .map-link{
+      display: block;
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      top: 0px;
+      z-index: 101;
+    }
+    .back{
+      padding-bottom: 20px;
+    }
+  }
+
+  // Locations view styling (locations page)
+  #sidebar .widget-location.location-view{
+    #location-cta{
+      //height: 330px;
+    }
+    #location-image{
+      height: 150px;
+      overflow: hidden;
+      background-color: $medCream;
+    }
+    .btn-wrapper{
+      width: 100%;
+      margin: 15px 0 -7px;
+      text-align: center;
+      a{
+        min-width: 65px;
+      }
+      a.get-directions{
+        margin: 0 4%;
+        position: relative;
+        span{
+          @include transition-duration(0.3s);
+        }
+        &.loading-directions{
+          span{
+            @include opacity(0);
+          }
+          .loading{
+            display: block;
+            top: -16px;
+            left: 12px;
+            @include scale(0.7);
+            @include opacity(1);
+          }
+        }
+      }
+    }
+  }
+
+  body.no-location #sidebar #widget-location-full .other-locations{
+    @include opacity(0);
+  }
+}
+
+/*******
+IE SUPPORT FOR FLIPPING TRANSITION
+*******/
+
+html.ie{
+  #sidebar .widget-location{
+    #location-cta{
+      @include transform-style(preserve-3d);
+      .front, .back{
+        @include transform-style(preserve-3d);
+        @include transition-duration(0.6s);
+      }
+      .front{
+        @include rotateY(0deg);
+      }
+      .back{
+        @include rotateY(-180deg);
+      }
+      &.map-loaded{
+        .flipper{
+          @include rotateY(0deg);
+          @include transform-style(preserve-3d);
+          .front{
+            @include rotateY(180deg);
+          }
+          .back{
+            @include rotateY(0deg);
+          }
+          .other-locations{
+            @include rotateY(0deg);
+            @include transition-duration(0);
+          }
+        }
+      }
+    }
+  }
+}
