@@ -310,4 +310,11 @@ $(function(){
 
   msieCheck();
 
+  // Is IE8
+  if(lamIE8){
+  	if($main.find('.menu-title').length > 0){
+  		$main.find('.menu-category').last().addClass('last-category');
+  	};
+  };
+
 });
