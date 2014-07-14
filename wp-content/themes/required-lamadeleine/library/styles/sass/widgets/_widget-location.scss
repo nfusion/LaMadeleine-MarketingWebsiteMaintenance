@@ -200,9 +200,23 @@
 }
 
 // No location selected
-.no-location{
+body.no-location{
   #sidebar #widget-location-mobile{
     @include opacity(0);
+  }
+}
+
+// No locations found after search
+body.no-locations-found{
+  #header{
+    .icon-wrapper{
+      display: none;
+    }
+  }
+  #container #content{
+    #widget-location-mobile{
+      display: none;
+    }
   }
 }
 
@@ -245,7 +259,10 @@
     #widget-location-full{
       position: relative;
       #location-list{
-      height: 260px;
+        height: 260px;
+        p.no-locations-list{
+          font-size: 16px;
+        }
     }
     .other-locations{
       @include opacity(1);
@@ -333,11 +350,16 @@
           @include opacity(1);
         }
       }
-      &.map-loaded .flipper{
-        @include rotateY(180deg);
-        .other-locations{
-          @include transition-duration(0);
+      &.map-loaded {
+        .flipper{
           @include rotateY(180deg);
+          .other-locations{
+            @include transition-duration(0);
+            @include rotateY(180deg);
+          }
+        }
+        .no-locations{
+          visibility: hidden;
         }
       }
       &.no-cta{
@@ -345,6 +367,20 @@
           // Firefox bug fix. Hide front if no flip transition is firing.
           display: none;
         }
+      }
+      .no-locations{
+        display: block;
+        position: absolute;
+        top: 65px;
+        z-index: 100;
+        color: $lightCream;
+        padding: 5px;
+        p{
+          font-size: 16px;
+        }
+      }
+      .no-locations{
+        display: none;
       }
       .flipper{ 
         position: relative;

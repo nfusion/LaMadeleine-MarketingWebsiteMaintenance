@@ -187,7 +187,6 @@ var LaMadLocations = {
             loadingIndicator = '<div class="loading"><div class="floatingCirclesG"><div class="f_circleG frotateG_01"></div><div class="f_circleG frotateG_02"></div><div class="f_circleG frotateG_03"></div><div class="f_circleG frotateG_04"></div><div class="f_circleG frotateG_05"></div><div class="f_circleG frotateG_06"></div><div class="f_circleG frotateG_07"></div><div class="f_circleG frotateG_08"></div></div></div>';
 
             // Full size location widget
-
             if(todayHours.closed_today == false){
                 $('#location-info').html('<h4 class="location-title">' + location.title + '</h4>' + '<div class="info-wrapper"><div class="address"><strong>Address:</strong><br>' + address + '<br>' + location.city + ', ' + location.state + ' ' + location.zip_code + '</div><div class="phone"><strong>Phone:</strong><br>' + location.phone + '</div></div><div class="hours"><strong>Today\'s Hours:</strong> ' + todayHours.open + ' - ' + todayHours.close + '</div>');
             } else {
@@ -402,8 +401,30 @@ var LaMadLocations = {
                     return data;
                 },
                 error : function(data, error){
+                    // No locations found UI handling
 
+                    // Add body utility class
                     $('body').addClass('no-locations-found');
+
+                    // Remove map-loading class from location CTA
+                    LaMadLocations.$locationCta.removeClass('map-loading');
+
+                    // Fade in no locations error message
+                    LaMadLocations.$locationCta.find('.no-locations').fadeIn('fast');
+
+                    // Wait 5 seconds before fading out error
+                    setTimeout(function(){
+                        LaMadLocations.$locationCta.find('.no-locations').fadeOut('fast');
+                        LaMadLocations.$frontWrapper().fadeIn('fast');
+                    }, 5000);
+
+                    // Handle touch devices, fire window alert
+                    if($('html').hasClass('touch')){
+                        window.alert('Pardon, there are no locations within 100 miles. Please access our Locations page to view all La Madeleine locations.');
+                    };
+
+                    // If other locations list is present, update HTML
+                    $('#location-list').html('<p class="no-locations-list">There are no locations within 100 miles of your search.</p>');
                 }
             });
         },

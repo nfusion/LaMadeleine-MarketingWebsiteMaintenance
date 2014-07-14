@@ -83,6 +83,9 @@
         </div>
 
         <div id="location-cta">
+            <div class="no-locations">
+                <p>Pardon, there are no locations within 100 miles of your search. Please visit our Locations page to view all locations.</p>
+            </div>
             <div class="flipper">
                 <div class="front">
                     <div class="front-wrapper">
