@@ -40,6 +40,10 @@
 
                 });
                 $('.widget-daypart .daypart-wrapper').append(str);
+            },
+            error : function(data, error){
+                console.log("ERROR!");
+                console.log(error);
             }
         });
 
