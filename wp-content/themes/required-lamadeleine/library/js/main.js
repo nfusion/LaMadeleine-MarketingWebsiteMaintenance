@@ -297,9 +297,10 @@ $(function(){
 	IE SUPPORT
 	*********/
 
+	var ua = window.navigator.userAgent;
+
 	function msieCheck() {
 
-		var ua = window.navigator.userAgent;
 	  var msie = ua.indexOf("MSIE ");
 
 	  // If Internet Explorer, add class to <html> with version
@@ -316,5 +317,19 @@ $(function(){
   		$main.find('.menu-category').last().addClass('last-category');
   	};
   };
+
+  /*********
+	ANDROID SUPPORT
+	*********/
+
+  // Add class for Android version support
+	if( ua.indexOf("Android") >= 0) 
+	{  
+
+	  var androidVersion = parseFloat(ua.slice(ua.indexOf("Android")+8));
+
+		$("html").addClass('android' + androidVersion); // Add Android utility class to HTML class list
+
+	};
 
 });
