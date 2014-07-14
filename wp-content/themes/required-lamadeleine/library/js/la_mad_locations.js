@@ -369,6 +369,7 @@ var LaMadLocations = {
                     
                 success: function(data){
 
+                    $('body').removeClass('no-locations-found');
                     var nearbyLocations = [];
                     
                     $.each(data, function( idx, location){
@@ -402,7 +403,7 @@ var LaMadLocations = {
                 },
                 error : function(data, error){
 
-                    $('#map').html('No Locations Found');
+                    $('body').addClass('no-locations-found');
                 }
             });
         },
