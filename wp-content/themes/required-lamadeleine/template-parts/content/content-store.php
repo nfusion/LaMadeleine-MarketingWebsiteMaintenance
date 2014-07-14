@@ -60,7 +60,6 @@ $(document).ready(function(){
 
 <style>
     
-    
 </style>
     <div class='store'>
     
@@ -137,25 +136,6 @@ $(document).ready(function(){
             </div>
             
 
-
-                <!-- <div>
-                        <img src="/wp-content/uploads/2014/06/fma-3-full-174x90.jpg"><br>
-                         <h1>Salade Dressing Duet</h1>
-                         <p class='subhead'>Make the perfect gift with two of your favorite la Madeleine salade dressings. 
-                         Choose from our signature Caesar or fat-free Caesar. The Caesar and Balsamic dressings 
-                         are “all natural” and “gluten free”.</p>
-                </div>
-
-                <select id='dressingOptions'>
-                        <option value="Two Bottles Original Caesar Dressing">Two Bottles Original Caesar</option>
-                        <option value="Two Bottles Fat Free Caesar Dressing">Two Bottles Fat Free Caesar</option>
-                        <option value="One Bottle Original Caesar Dressing and One Bottle Fat Free Caesar Dressing">One Original Caesar Dressing and One Fat Free Caesar </option>
-                </select>
-
-                <div>
-                         <p><a class='btn  product-button' data-product='Salade Dressing Duet' data-relate='dressingOptions' data-cost='<?php echo $dressingCost; ?>'  data-shipping='<?php echo $dressingShippingIncremental; ?>'> Add To Cart </a></p>
-
-                </div> -->
 
         <a name="cart"></a>
         <div class='cart row'>
