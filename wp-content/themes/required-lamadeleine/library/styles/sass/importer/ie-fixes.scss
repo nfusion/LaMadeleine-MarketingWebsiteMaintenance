@@ -29,76 +29,92 @@
 			left: 200px;
 		}
 	}
-	#container #content{
-		width: 1140px;
-		&.locations{
-			height: 800px !important;
-		}
-		.loading .f_circleG{
-			background-color: $redBrown !important;
-		}
-		#carousel{
-			width: 820px !important;
-			.carousel-controls .icon{
-				color: $lightCream !important;
+	#container{ 
+		#content{
+			&.locations{
+				height: 800px !important;
 			}
-		}
-		.get-directions{
-			display: none;
-		}
-		.menu-category.last-category{
-			border-bottom: 0;
-		}
-		#location-cta{
-			.geo, .location-cta-divider{
-				display: none !important;
+			.loading .f_circleG{
+				background-color: $redBrown !important;
 			}
-			.zip{
-				bottom: 80px !important;
-			}
-			.icon-magnify{
-				color: $lightCream;
-				font-size: 50px;
-				margin-bottom: 10px;
-			}
-			#zip-input{
-				width: 200px !important;
-				padding-top: 5px;
-				margin: 0 auto;
-			}
-			#use-zip{
-				position: relative;
-				top: 25px;
-				&:hover{
-					cursor: pointer !important;
+			#carousel{
+				//width: 686px !important;
+				.carousel-controls .icon{
+					color: $lightCream !important;
 				}
 			}
-			.btn-wrapper{
-				.btn-light{
-					margin: 0 10px;
-				}
+			.get-directions{
+				display: none;
 			}
-		}
-		.btn{
-			padding-right: 20px !important;
-		}
-		.btn:after{
-			display: none;
-		}
-		#sidebar{
-			.widget-location{
+			.menu-category.last-category{
 				border-bottom: 0;
 			}
-			#zip-input-secondary{
-				width: 200px;
-				padding-top: 7px;
-				float: left;
-				position: relative;
-				left: 20px;
+			#location-cta{
+				.geo, .location-cta-divider{
+					display: none !important;
+				}
+				.zip{
+					bottom: 80px !important;
+				}
+				.icon-magnify{
+					color: $lightCream;
+					font-size: 50px;
+					margin-bottom: 10px;
+				}
+				#zip-input{
+					width: 200px !important;
+					padding-top: 5px;
+					margin: 0 auto;
+				}
+				#use-zip{
+					position: relative;
+					top: 25px;
+					&:hover{
+						cursor: pointer !important;
+					}
+				}
+				.btn-wrapper{
+					.btn-light{
+						margin: 0 10px;
+					}
+				}
 			}
-			#use-zip-secondary{
-				position: relative;
-				top: 7px;
+			#mobile-nav a{
+				background: $lightCream;
+			}
+			.btn{
+				padding-right: 20px !important;
+			}
+			.btn:after{
+				display: none;
+			}
+			#sidebar{
+				.widget-location{
+					border-bottom: 0;
+				}
+				.zip-wrapper{
+					left: -10px !important;
+				}
+				#zip-input-secondary{
+					width: 165px;
+					padding-top: 7px;
+					float: left;
+					position: relative;
+					left: 20px;
+				}
+				#use-zip-secondary{
+					position: relative;
+					top: 7px;
+					right: 25px;
+				}
+				#widget-location-mobile{
+					.btn{
+						width: 100% !important;
+					}
+				}
+				.menu-legend .legend-item{
+					font-size: 10px !important;
+				}
 			}
 		}
 	}

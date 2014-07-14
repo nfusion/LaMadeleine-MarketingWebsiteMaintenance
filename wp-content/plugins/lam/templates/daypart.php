@@ -39,7 +39,7 @@
                     }
 
                 });
-                $('.widget-daypart .daypart-wrapper').append(str);
+                $('.widget-daypart .daypart-wrapper').html(str);
             }
         });
 
