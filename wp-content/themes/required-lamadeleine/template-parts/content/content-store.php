@@ -69,7 +69,7 @@ $(document).ready(function(){
             </div>   
                 <div class='store_item row'>
                     <div class='store_item_image six columns' >
-                            <img src="/wp-content/uploads/2014/07/card.jpg"><br>
+                            <img src="/wp-content/uploads/2014/07/gift-card.png"><br>
                     </div>
                     <div class='store_item_info six columns'>
                         <h4>Gift Cards</h4>
@@ -96,7 +96,7 @@ $(document).ready(function(){
             <div class='store_item row'>
 
                 <div class='store_item_image six columns' >
-                        <img src="/wp-content/uploads/2014/06/LM_FMA_HopeByTheJarful.jpg"><br>
+                        <img src="/wp-content/uploads/2014/07/FMA_HopeByJarful_7_8_820x750.jpg"><br>
                 </div>
                 <div class='store_item_info six columns'>
                         <h4>Tomato Basil Soupe Trio</h4>
@@ -106,7 +106,6 @@ $(document).ready(function(){
                         <select id='soupOptions'>
                             <option value="Original Tomato Basil Soupe">Original Tomato Basil Soupe</option>
                             <option value="Reduced Fat Tomato Basil Soupe">Reduced Fat Tomato Basil Soupe</option>
-                            <option value="TBD">TBD</option>
                         </select>
 
                         <p><a class='btn product-button' data-product='La Madeleine Soupe Trio' data-relate='soupOptions' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
