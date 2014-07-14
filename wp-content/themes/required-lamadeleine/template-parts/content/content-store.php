@@ -102,10 +102,12 @@ $(document).ready(function(){
                         <p>Enjoy la Madeleine’s famous Tomato Basil Soupe or Reduced Fat Tomato Basil Soupe at home! Three 15.5 fl. Oz jars.
                         <br>$<?php echo $soupCost ?>
                         </p>
-                        <select id='soupOptions'>
+                        <!-- <select id='soupOptions'>
                             <option value="Original Tomato Basil Soupe">Original Tomato Basil Soupe</option>
                             <option value="Reduced Fat Tomato Basil Soupe">Reduced Fat Tomato Basil Soupe</option>
-                        </select>
+                        </select> -->
+
+                        <input type='hidden' id='soupOptions' value='Original Tomato Basil Soup'> 
 
                         <p><a class='btn product-button' data-product='La Madeleine Soupe Trio' data-relate='soupOptions' data-cost='<?php echo $soupCost; ?>'  data-shipping='<?php echo $soupShippingIncremental; ?>' > Add To Cart </a></p>
                 </div>
@@ -125,10 +127,10 @@ $(document).ready(function(){
                         <select id='dressingOptions'>
                             <option value="Two Bottles Original Caesar Dressing">Two Bottles Original Caesar</option>
                             <option value="Two Bottles Fat Free Caesar Dressing">Two Bottles Fat Free Caesar</option>
-                            <option value="Two Bottles Balsamic Vinaigrette">Two Bottles Balsamic Vinaigrette</option>
+                            <!-- <option value="Two Bottles Balsamic Vinaigrette">Two Bottles Balsamic Vinaigrette</option> -->
                             <option value="One Bottle Original Caesar Dressing and One Fat Free Caesar Dressing">One Original Caesar Dressing and One Fat Free Caesar </option>
-                            <option value="One Bottle Original Caesar Dressing and One Balsamic Vinaigrette Dressing">One Original Caesar Dressing and Balsamic Vinaigrette Dressing </option>
-                            <option value="One Bottle Fat Free Caesar Dressing and One Balsamic Vinaigrette Dressing">One Fat Free Caesar Dressing and Balsamic Vinaigrette Dressing </option>
+                            <!-- <option value="One Bottle Original Caesar Dressing and One Balsamic Vinaigrette Dressing">One Original Caesar Dressing and Balsamic Vinaigrette Dressing </option> -->
+                            <!-- <option value="One Bottle Fat Free Caesar Dressing and One Balsamic Vinaigrette Dressing">One Fat Free Caesar Dressing and Balsamic Vinaigrette Dressing </option> -->
                         </select>
                          <p><a class='btn  product-button' data-product='Salade Dressing Duet' data-relate='dressingOptions' data-cost='<?php echo $dressingCost; ?>'  data-shipping='<?php echo $dressingShippingIncremental; ?>'> Add To Cart </a></p>
                 </div>
