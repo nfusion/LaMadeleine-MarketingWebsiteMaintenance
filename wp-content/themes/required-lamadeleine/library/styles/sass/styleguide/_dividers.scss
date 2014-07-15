@@ -3,7 +3,7 @@
 * Dividers
 **/
 
-hr.dashed{
+hr, hr.dashed{
 	border: 0;
 	border-bottom: 1px dashed $fadedBrown;
 }
