@@ -1,0 +1,29 @@
+/**
+* La Madeleine
+* Text widget
+**/
+
+#content #sidebar .widget.widget_text{
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  .btn-wrapper{
+    text-align: center;
+    height: 30px;
+    .btn{
+      display: block;
+      width: 46%;
+      margin: 0 2%;
+      float: left;
+    }
+  }
+}
+
+@media (min-width: $medium-screen-min){
+  #content #sidebar .widget.widget_text{
+    max-width: 100%;
+    border-bottom: 1px dashed $fadedBrown;
+    margin: 0 auto 20px;
+  }
+}
