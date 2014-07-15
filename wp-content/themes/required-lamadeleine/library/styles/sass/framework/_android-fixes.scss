@@ -2,3 +2,20 @@
 * La Madeleine
 * Android fixes
 **/
+
+// Apply to all Android devices
+html.android{
+
+}
+
+// All Android devices except version 4.4
+html.android:not(.android44){
+	#header{
+		position: relative;
+	}
+	#container{
+		padding-top: 0;
+	}
+}
+
+// Version specific Android devices

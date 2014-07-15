@@ -106,7 +106,7 @@ $(function(){
 
 		// Sticky the sidebar legend
 		var setSticky = function(){
-			if($sidebar.is(':visible')){
+			if($sidebar.is(':visible') && !Modernizr.touch){
 				$sidebar.find("#sticky-widgets").sticky({topSpacing: 20, className: 'menu', getWidthFrom: '#sidebar .sidebar-wrapper'});
 			}
 		};
@@ -275,7 +275,7 @@ $(function(){
 
 	// Sticky the sidebar promo
 	var setStickyPromo = function(){
-		if($sidebar.is(':visible') && $sidebar.find('.fma-promo').length > 0){
+		if($sidebar.is(':visible') && $sidebar.find('.fma-promo').length > 0 && !Modernizr.touch){
 			$sidebar.find(".fma-promo").sticky({topSpacing: 20, className: 'promo', getWidthFrom: '#sidebar .sidebar-wrapper'});
 		}
 	};
@@ -324,11 +324,15 @@ $(function(){
 
   // Add class for Android version support
 	if( ua.indexOf("Android") >= 0) 
-	{  
+	{
 
 	  var androidVersion = parseFloat(ua.slice(ua.indexOf("Android")+8));
 
-		$("html").addClass('android' + androidVersion); // Add Android utility class to HTML class list
+	  androidVersion = androidVersion + ""; // Convert to string
+
+	  androidVersion = androidVersion.replace(/\./g, "");
+
+		$("html").addClass('android android' + androidVersion); // Add Android utility class to HTML class list
 
 	};
 

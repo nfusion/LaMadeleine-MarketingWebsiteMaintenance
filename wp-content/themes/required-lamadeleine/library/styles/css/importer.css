@@ -1495,6 +1495,15 @@ body.has-location #header .icon-wrapper .icon-pin {
 * La Madeleine
 * Android fixes
 **/
+/* line 13, ../sass/framework/_android-fixes.scss */
+html.android:not(.android44) #header {
+  position: relative;
+}
+/* line 16, ../sass/framework/_android-fixes.scss */
+html.android:not(.android44) #container {
+  padding-top: 0;
+}
+
 /**
 * La Madeleine
 * Foundation overrides
