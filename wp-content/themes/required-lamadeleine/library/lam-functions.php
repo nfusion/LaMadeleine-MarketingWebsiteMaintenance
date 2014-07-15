@@ -573,7 +573,7 @@ function display_promo($promo, $type){
   		$imgSrc = wp_get_attachment_image_src( get_post_thumbnail_id($promo['ID']), $imgType);
 
   		// Add promo img
-  		$str .= '<img src="' . $imgSrc[0] . '">';
+  		$str .= '<img alt="' . $promo['post_title'] . '" src="' . $imgSrc[0] . '">';
 
   		// Open text wrapper
   		$str .= '<div class="text-wrapper">';
