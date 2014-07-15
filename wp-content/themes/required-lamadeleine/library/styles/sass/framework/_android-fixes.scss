@@ -19,3 +19,20 @@ html.android:not(.android44){
 }
 
 // Version specific Android devices
+html.android23{
+	#header{
+		position: static !important;
+	}
+	#nav{
+		position: static;
+		height: 0;
+		overflow: visible;
+		.nav-wrapper{
+			padding-top: 20px;
+			top: 69px;
+		}
+	}
+	body.nav-active{
+		overflow: visible;
+	}
+}
