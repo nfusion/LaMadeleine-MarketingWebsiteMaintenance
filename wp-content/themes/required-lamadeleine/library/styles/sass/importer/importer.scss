@@ -34,17 +34,17 @@ $legacy-support-for-ie: false;
 @import '../framework/android-fixes';
 @import '../framework/override';
 
-// COMPONENTS
+// // COMPONENTS
 @import '../components/carousel';
 @import '../components/promo';
 
-// WIDGETS
+// // WIDGETS
 @import '../widgets/widget-daypart';
 @import '../widgets/widget-location';
 @import '../widgets/widget-story-nav';
 @import '../widgets/widget-text';
 
-// TEMPLATES
+// // TEMPLATES
 @import '../templates/home';
 @import '../templates/les-menu';
 @import '../templates/locations';
