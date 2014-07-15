@@ -769,9 +769,19 @@ a.btn-light:hover {
 * Dividers
 **/
 /* line 6, ../sass/styleguide/_dividers.scss */
-hr.dashed {
+hr, hr.dashed {
   border: 0;
   border-bottom: 1px dashed #cbaf9a;
+}
+
+/**
+* La Madeleine
+* Tables
+**/
+/* line 6, ../sass/styleguide/_tables.scss */
+table {
+  background: #fffdf0;
+  border-color: #cbaf9a;
 }
 
 /**
