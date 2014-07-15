@@ -6,3 +6,4 @@ wp-content/uploads
 searchreplacedb2\.php
 wp-content/podscache/
 wp-content/podscache
+wp-content/podscache/*.php
