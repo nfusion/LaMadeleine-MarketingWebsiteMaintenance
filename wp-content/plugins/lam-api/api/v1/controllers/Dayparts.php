@@ -8,9 +8,9 @@ class Dayparts {
 
         header("Content-Type: application/json");
 
-        $cachekey = 'daypart_api';
+        $cachekey = 'daypart_api_'.$offset;
 
-        $data = pods_cache_get( $cachekey, '', function($cachekey){
+        $data = pods_cache_get( $cachekey, '', function($cachekey) use($time, $offset){
             $data = Dayparts::daypartToJson($time, $offset);
             pods_cache_set( $cachekey, $data, '', $expires = 300);
             return $data;
