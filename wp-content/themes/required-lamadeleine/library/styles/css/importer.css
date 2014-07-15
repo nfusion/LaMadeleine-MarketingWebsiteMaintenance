@@ -1504,6 +1504,26 @@ html.android:not(.android44) #container {
   padding-top: 0;
 }
 
+/* line 23, ../sass/framework/_android-fixes.scss */
+html.android23 #header {
+  position: static !important;
+}
+/* line 26, ../sass/framework/_android-fixes.scss */
+html.android23 #nav {
+  position: static;
+  height: 0;
+  overflow: visible;
+}
+/* line 30, ../sass/framework/_android-fixes.scss */
+html.android23 #nav .nav-wrapper {
+  padding-top: 20px;
+  top: 69px;
+}
+/* line 35, ../sass/framework/_android-fixes.scss */
+html.android23 body.nav-active {
+  overflow: visible;
+}
+
 /**
 * La Madeleine
 * Foundation overrides
