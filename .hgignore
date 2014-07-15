@@ -3,6 +3,7 @@
 \.hgignore
 wp-config\.php
 wp-content/uploads
+wp-content/uploads/*
 searchreplacedb2\.php
 wp-content/podscache/
 wp-content/podscache
