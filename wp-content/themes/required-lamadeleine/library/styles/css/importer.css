@@ -781,6 +781,7 @@ hr, hr.dashed {
 /* line 6, ../sass/styleguide/_tables.scss */
 table {
   background: #fffdf0;
+  border-color: #cbaf9a;
 }
 
 /**
