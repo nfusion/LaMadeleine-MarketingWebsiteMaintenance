@@ -475,8 +475,8 @@ var LaMadLocations = {
                 if( (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1)){
                     var protocol='maps';
                  } else {
-                    //var protocol='http';
-                    var protocol='maps';
+                    var protocol='http';
+                    //var protocol='maps';
                  }
 
                 directionsLink= protocol+'://maps.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
