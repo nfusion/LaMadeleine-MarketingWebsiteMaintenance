@@ -36,3 +36,14 @@ html.android23{
 		overflow: visible;
 	}
 }
+
+@media (min-width: $medium-screen-min){
+	html.android23{
+		#header{
+			position: relative !important;
+		}
+		#content{
+			margin-top: 80px;
+		}
+	}
+}
