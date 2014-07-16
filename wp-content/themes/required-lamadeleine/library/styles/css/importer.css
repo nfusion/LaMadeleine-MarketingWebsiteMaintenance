@@ -1547,11 +1547,11 @@ body.has-location #header .icon-wrapper .icon-pin {
 * Android fixes
 **/
 /* line 13, ../sass/framework/_android-fixes.scss */
-html.android4 #header, html.android41 #header, html.android42 #header {
+html.android4 #header, html.android41 #header, html.android42 #header, html.android43 #header {
   position: relative;
 }
 /* line 16, ../sass/framework/_android-fixes.scss */
-html.android4 #container, html.android41 #container, html.android42 #container {
+html.android4 #container, html.android41 #container, html.android42 #container, html.android43 #container {
   padding-top: 0;
 }
 
@@ -1581,8 +1581,14 @@ html.android23 body.nav-active {
     padding-top: 0;
   }
 }
+@media (min-width: 480px) {
+  /* line 51, ../sass/framework/_android-fixes.scss */
+  html.android4 #container, html.android41 #container, html.android42 #container, html.android43 #container {
+    padding-top: 80px;
+  }
+}
 @media (min-width: 980px) {
-  /* line 50, ../sass/framework/_android-fixes.scss */
+  /* line 59, ../sass/framework/_android-fixes.scss */
   html.android23 #header {
     position: relative !important;
   }
