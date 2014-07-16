@@ -355,11 +355,12 @@ var LaMadLocations = {
                 var protocol='maps';
              } else {
                 var protocol='http';
+                //var protocol='maps';
              }
 
 
             directionsLink= protocol+'://maps.google.com/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-            
+            alert(directionsLink);
             LaMadLocations.sendWindow(directionsLink);
             return true;
         },
