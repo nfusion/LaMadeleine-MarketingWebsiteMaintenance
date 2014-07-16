@@ -1556,33 +1556,36 @@ html.android4 #container, html.android41 #container, html.android42 #container {
 }
 
 /* line 23, ../sass/framework/_android-fixes.scss */
-html.android23 #header {
-  position: static !important;
-}
-/* line 26, ../sass/framework/_android-fixes.scss */
 html.android23 #nav {
   position: static;
   height: 0;
   overflow: visible;
 }
-/* line 30, ../sass/framework/_android-fixes.scss */
+/* line 27, ../sass/framework/_android-fixes.scss */
 html.android23 #nav .nav-wrapper {
   padding-top: 20px;
   top: 69px;
 }
-/* line 35, ../sass/framework/_android-fixes.scss */
+/* line 32, ../sass/framework/_android-fixes.scss */
 html.android23 body.nav-active {
   overflow: visible;
 }
 
+@media (max-width: 321px) {
+  /* line 38, ../sass/framework/_android-fixes.scss */
+  #header {
+    position: static;
+  }
+
+  /* line 41, ../sass/framework/_android-fixes.scss */
+  #container {
+    padding-top: 0;
+  }
+}
 @media (min-width: 980px) {
-  /* line 42, ../sass/framework/_android-fixes.scss */
+  /* line 48, ../sass/framework/_android-fixes.scss */
   html.android23 #header {
     position: relative !important;
-  }
-  /* line 45, ../sass/framework/_android-fixes.scss */
-  html.android23 #content {
-    margin-top: 80px;
   }
 }
 /**

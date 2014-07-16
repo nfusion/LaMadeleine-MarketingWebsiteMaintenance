@@ -20,9 +20,6 @@ html.android4, html.android41, html.android42{
 
 // Version specific Android devices
 html.android23{
-	#header{
-		position: static !important;
-	}
 	#nav{
 		position: static;
 		height: 0;
@@ -37,13 +34,19 @@ html.android23{
 	}
 }
 
+@media (max-width: 321px){
+	#header{
+		position: static;
+	}
+	#container{
+		padding-top: 0;
+	}
+}
+
 @media (min-width: $medium-screen-min){
 	html.android23{
 		#header{
 			position: relative !important;
-		}
-		#content{
-			margin-top: 80px;
 		}
 	}
 }
