@@ -50,61 +50,67 @@ $(function(){
 	var setNavInteraction = function(){
 		var viewportHeight = $(window).height();
 
-		if($nav.length){
-		
-			if(Modernizr.touch){
-				$navIcon.on('touchend', function(){
-					$('body').toggleClass('nav-active');
-				});
-			}
-			else{
-				// If viewport height is greater than navigation height, allow for hover reveal
-				if(viewportHeight > 830){
-					$navIcon.on('mouseover', function(){
-						$('body').addClass('nav-active');
-					});
+		// If viewport height is greater than navigation height, allow for hover reveal
+		if(viewportHeight > 830){
+			$navIcon.unbind('click');
+			$navIcon.find('span').text('More');
+			$navIcon.on('mouseover', function(){
+				$('body').addClass('nav-active');
+			});
 
-					$nav.on('mouseleave', function(){
-						$('body').removeClass('nav-active');
-					});
+			$nav.on('mouseleave', function(){
+				$('body').removeClass('nav-active');
+			});
+		}
+		else{
+
+			// Reset mouse events
+			$navIcon.unbind('mouseover');
+			$nav.unbind('mouseleave');
+			$navIcon.unbind('click');
+
+			// Else require click to open/close navigation
+			$navIcon.on('click', function(e){
+				e.stopPropagation();
+				if($('body').hasClass('nav-active')){
+					$('body').removeClass('nav-active');
+					$navIcon.find('span').text('More');
 				}
 				else{
-
-					// Reset hover events
-					$navIcon.unbind('mouseover mouseleave');
-
-					// Else require click to open/close navigation
-					$navIcon.on('click', function(e){
-						e.stopPropagation();
-						if($('body').hasClass('nav-active')){
-							$('body').removeClass('nav-active');
-							$navIcon.find('span').text('More');
-						}
-						else{
-							$('body').toggleClass('nav-active');
-							$navIcon.find('span').text('Close');
-						}
-
-						// Stop nav clicks from propagating to document and closing navigation
-						$nav.on('click', function(e){
-							e.stopPropagation();
-						});
-
-						// Any click propagated to document will close the navigation
-						$('html').on('click', function(){
-							$('body').removeClass('nav-active');
-							$navIcon.find('span').text('More');
-						});
-						
-					});
+					$('body').toggleClass('nav-active');
+					$navIcon.find('span').text('Close');
 				}
-			}
+
+				// Stop nav clicks from propagating to document and closing navigation
+				$nav.on('click', function(e){
+					e.stopPropagation();
+				});
+
+				// Any click propagated to document will close the navigation
+				$('html').on('click', function(){
+					$('body').removeClass('nav-active');
+					$navIcon.find('span').text('More');
+				});
+				
+			});
 		}
 	}
 
-	setNavInteraction();
+	if($nav.length){
+		// If touch device, use touch to open/close nav
+		if(Modernizr.touch){
+			$navIcon.on('touchend', function(){
+				$('body').toggleClass('nav-active');
+			});
+		}
+		// Else,set nav interaction based on viewport height
+		else{
+			setNavInteraction();
+			window.addEventListener('resize', setNavInteraction);
+		}
+	};
 
-	window.addEventListener('resize', setNavInteraction);
+	
 
 	/********
 	MENUS
