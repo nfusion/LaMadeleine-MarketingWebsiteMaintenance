@@ -7,9 +7,10 @@ $h1-font-size: 32px;
 $h2-font-size: 26px;
 $h3-font-size: 22px;
 $h4-font-size: 18px;
+$h5-font-size: 16px;
 $base-font-size: 14px;
 
-h1, h2, h3, h4{
+h1, h2, h3, h4, h5{
 	font-family: $merriweather;
 	line-height: 1.2;
 	color: $darkBrown;
@@ -29,6 +30,10 @@ h3{
 
 h4{
 	font-size: $h4-font-size;
+}
+
+h5{
+	font-size: $h5-font-size;
 }
 
 p, a{
