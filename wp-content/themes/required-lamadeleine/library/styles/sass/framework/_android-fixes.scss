@@ -9,7 +9,7 @@ html.android{
 }
 
 // All Android devices except version 4.4
-html.android4, html.android41, html.android42{
+html.android4, html.android41, html.android42, html.android43{
 	#header{
 		position: relative;
 	}
@@ -41,6 +41,15 @@ html.android23{
 		}
 		#container{
 			padding-top: 0;
+		}
+	}
+}
+
+@media (min-width: $xsmall-screen-min){
+	// All Android devices except version 4.4
+	html.android4, html.android41, html.android42, html.android43{
+		#container{
+			padding-top: 80px;
 		}
 	}
 }
