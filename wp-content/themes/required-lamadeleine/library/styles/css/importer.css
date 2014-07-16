@@ -37,40 +37,45 @@ Author: nFusion (http://nfusion.com)
 * La Madeleine
 * Text styling
 **/
-/* line 12, ../sass/styleguide/_text.scss */
-h1, h2, h3, h4 {
+/* line 13, ../sass/styleguide/_text.scss */
+h1, h2, h3, h4, h5 {
   font-family: "Merriweather", serif;
   line-height: 1.2;
   color: #310d00;
 }
 
-/* line 18, ../sass/styleguide/_text.scss */
+/* line 19, ../sass/styleguide/_text.scss */
 h1 {
   font-size: 32px;
 }
 
-/* line 22, ../sass/styleguide/_text.scss */
+/* line 23, ../sass/styleguide/_text.scss */
 h2 {
   font-size: 26px;
 }
 
-/* line 26, ../sass/styleguide/_text.scss */
+/* line 27, ../sass/styleguide/_text.scss */
 h3 {
   font-size: 22px;
 }
 
-/* line 30, ../sass/styleguide/_text.scss */
+/* line 31, ../sass/styleguide/_text.scss */
 h4 {
   font-size: 18px;
 }
 
-/* line 34, ../sass/styleguide/_text.scss */
+/* line 35, ../sass/styleguide/_text.scss */
+h5 {
+  font-size: 16px;
+}
+
+/* line 39, ../sass/styleguide/_text.scss */
 p, a {
   font-family: Georgia, serif;
   font-size: 14px;
 }
 
-/* line 39, ../sass/styleguide/_text.scss */
+/* line 44, ../sass/styleguide/_text.scss */
 a {
   color: #6c2904;
   -webkit-transition-duration: 0.25s;
@@ -78,12 +83,12 @@ a {
   -o-transition-duration: 0.25s;
   transition-duration: 0.25s;
 }
-/* line 42, ../sass/styleguide/_text.scss */
+/* line 47, ../sass/styleguide/_text.scss */
 a:hover {
   color: #e5730e;
 }
 
-/* line 48, ../sass/styleguide/_text.scss */
+/* line 53, ../sass/styleguide/_text.scss */
 #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4 {
   font-family: "ostrich_sans_roundregular", sans-serif;
   text-align: center;
