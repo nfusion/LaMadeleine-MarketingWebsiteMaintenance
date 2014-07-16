@@ -1,0 +1,55 @@
+/**
+* La Madeleine
+* Utility classes
+**/
+
+.block{
+	padding: 20px;
+	text-align: center;
+	height: 100%;
+	p{
+		margin: 0;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	&.gray{
+		background-color: $gray;
+	}
+	&.light-gray{
+		background-color: lighten($gray, 10%);
+	}
+}
+
+.row.no-gutter{
+	.column, .columns{
+		padding: 0;
+	}
+}
+
+.show-small{
+	display: block;
+}
+
+.hide-small{
+	display: none;
+}
+
+.has-padding{
+	padding: 10px;
+}
+
+ul.has-margin{
+	margin-left: 20px;
+}
+
+@media (min-width: $medium-screen-min){
+	.show-small{
+		display: none;
+	}
+	.hide-small{
+		display: block;
+	}
+	.has-padding{
+		padding: 15px 30px;
+	}
+}
