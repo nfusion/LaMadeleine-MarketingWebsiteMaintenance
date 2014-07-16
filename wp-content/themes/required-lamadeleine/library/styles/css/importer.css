@@ -1317,7 +1317,7 @@ body.nav-active #nav .nav-wrapper {
   height: 70px;
   padding: 8px 10px;
   position: fixed;
-  z-index: 101;
+  z-index: 102;
   text-align: center;
   background: url(../../../img/header/header-bg-tile.jpg) 0 -10px repeat-x;
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
@@ -1572,18 +1572,17 @@ html.android23 body.nav-active {
 }
 
 @media (max-width: 321px) {
-  /* line 38, ../sass/framework/_android-fixes.scss */
-  #header {
+  /* line 39, ../sass/framework/_android-fixes.scss */
+  html.android23 #header {
     position: static;
   }
-
-  /* line 41, ../sass/framework/_android-fixes.scss */
-  #container {
+  /* line 42, ../sass/framework/_android-fixes.scss */
+  html.android23 #container {
     padding-top: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 48, ../sass/framework/_android-fixes.scss */
+  /* line 50, ../sass/framework/_android-fixes.scss */
   html.android23 #header {
     position: relative !important;
   }
@@ -2581,7 +2580,7 @@ body.no-locations-found #header .icon-wrapper {
     width: 50%;
     float: right;
     position: relative;
-    top: 3px;
+    top: 2px;
     width: 230px;
   }
 }
