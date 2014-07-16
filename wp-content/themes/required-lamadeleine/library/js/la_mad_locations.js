@@ -284,12 +284,12 @@ var LaMadLocations = {
                     // Add temporary .loading-directions class for loading indicator purposes
                     $directionsLink.addClass('loading-directions');
 
-                    navigator.geolocation.getCurrentPosition(this.geoLinkDir, this.geoErr);
+                    navigator.geolocation.getCurrentPosition(this.geoLinkDir, this.geoErr, {timeout:10000});
                 }else if(navigator.geolocation){
                     if(typeof(objOnly) != 'undefined'){
-                        navigator.geolocation.getCurrentPosition(this.geoFoundObjOnly, this.geoErr);
+                        navigator.geolocation.getCurrentPosition(this.geoFoundObjOnly, this.geoErr, {timeout:10000});
                     } else {
-                        navigator.geolocation.getCurrentPosition(this.geoFound, this.geoErr);
+                        navigator.geolocation.getCurrentPosition(this.geoFound, this.geoErr, {timeout:10000});
                     }
                 }
                 else {
