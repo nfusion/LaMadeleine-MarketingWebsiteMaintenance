@@ -342,22 +342,17 @@ var LaMadLocations = {
         },
 
         geoLinkDir: function(position){
-
-
             $directionsLink.removeClass('loading-directions');
-
             $directionsLink = "";
-
             LaMadLocations.currentLocationObj.latitude = position.coords.latitude;
             LaMadLocations.currentLocationObj.longitude = position.coords.longitude;
 
              if( (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1)){
                 var protocol='maps';
              } else {
-                var protocol='http';
-                //var protocol='maps';
+                //var protocol='http';
+                var protocol='maps';
              }
-
 
             directionsLink= protocol+'://maps.google.com/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
             alert(directionsLink);
