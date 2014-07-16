@@ -42,6 +42,22 @@ ul.has-margin{
 	margin-left: 20px;
 }
 
+.no-top-margin{
+	margin-top: 0;
+}
+
+.no-right-margin{
+	margin-right: 0;
+}
+
+.no-left-margin{
+	margin-left: 0;
+}
+
+.no-bottom-margin{
+	margin-bottom: 0;
+}
+
 @media (min-width: $medium-screen-min){
 	.show-small{
 		display: none;
