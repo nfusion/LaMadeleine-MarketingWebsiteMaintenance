@@ -35,11 +35,13 @@ html.android23{
 }
 
 @media (max-width: 321px){
-	#header{
-		position: static;
-	}
-	#container{
-		padding-top: 0;
+	html.android23{
+		#header{
+			position: static;
+		}
+		#container{
+			padding-top: 0;
+		}
 	}
 }
 
