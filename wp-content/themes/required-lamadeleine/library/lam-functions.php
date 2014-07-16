@@ -651,12 +651,6 @@ add_action( 'pods_meta_groups', 'lam_metaboxes', 10, 2 );
 
 function process_stories($mypod){
 
-  $params = array(
-      'where' => "t.post_title = '".ucfirst($daypart)."'",
-      'orderby' => "date ASC",
-      'limit' => '1'
-  );
-
    while( $mypod->fetch() ) {
             foreach (array('id', 'title', 'excerpt', 'content','fma_promo', 'top_image', 'is_featured', 'call_to_action', 'category', 'has_gradient') as $key => $value) {
                 $item[$value] = $mypod->field($value);
