@@ -242,23 +242,6 @@ LaMadLocations.initializeLargeMap = function() {
 
 </script>  
 
-<!-- <div id="mobile-nav" class="two">
-    <a href="#" class="active">
-        <div class="nav-item">
-            <div class="icon icon-map"></div>
-            Map
-        </div>
-    </a>
-    <a href="/locations?list=true">
-        <div class="nav-item">
-            <div class="icon icon-menu-dots"></div>
-            See All
-        </div>
-    </a>
-</div> -->
-
 <div id='map-full'>
 
 </div>
-<?php
-//print_r($mypod);

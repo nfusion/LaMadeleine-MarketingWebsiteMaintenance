@@ -217,6 +217,12 @@ var LaMadLocations = {
                 LaMadLocations.getDirections(this);
             });
 
+            // If any .btn.locate links exist, fire refreshLocation() method when clicked.
+            $('#content').find('.btn.locate').on(this.clickEvent, function(e){
+                e.preventDefault();
+                LaMadLocations.refreshLocation(this);
+            });
+
             // Find any .lam-call links and set href attribute to current location phone number
             $('#content').find('.lam-call a').attr('href', 'tel:' + location.phone);
 
@@ -291,6 +297,10 @@ var LaMadLocations = {
                     } else {
                         navigator.geolocation.getCurrentPosition(this.geoFound, this.geoErr, {timeout:10000});
                     }
+
+                    if(el){
+                        $(el).addClass('geolocate-loading');
+                    }
                 }
                 else {
                     $('#map').innerHTML = "Geolocation is not supported by this browser.";
@@ -302,10 +312,12 @@ var LaMadLocations = {
             alert('Pardon, we were unable to determine your location.\nPlease check your network connection and browser settings.\nMerci.');   
             setTimeout(function(){
                 $('body').addClass('location-error');
+                // Remove any loading states, reset UI
                 $('#location-cta').removeClass('map-loading');
                 $('#location-cta').find('.front-wrapper').show();
                 $('#header').find('.icon-pin').show();
                 $('#header').find('.loading').hide();
+                $('#content').find('.geolocate-loading').removeClass('geolocate-loading');
             }, 500);
         },
 
@@ -321,10 +333,12 @@ var LaMadLocations = {
             if(typeof(LaMadLocations.setLargLocation) != 'undefined'){
                // LaMadLocations.setLargLocation(position.coords.latitude, position.coords.longitude);
                 LaMadLocations.loadNearest();
-                
             }
 
             LaMadLocations.showPosition(position.coords.latitude, position.coords.longitude)
+
+            // Remove any loading states
+            $('#content').find('.geolocate-loading').removeClass('geolocate-loading');
         },
 
         geoLinkDir: function(position){
@@ -424,7 +438,7 @@ var LaMadLocations = {
                     };
 
                     // If other locations list is present, update HTML
-                    $('#location-list').html('<p class="no-locations-list">There are no locations within 100 miles of your search.</p>');
+                    $('#location-list, #widget-location-mobile').html('<p class="no-locations-list">There are no locations within 100 miles of your search.</p>');
                 }
             });
         },
@@ -449,7 +463,10 @@ var LaMadLocations = {
                 directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
                 this.sendWindow(directionsLink);
             }
-    
+        },
+
+        refreshLocation: function(el){
+            LaMadLocations.getLocation(undefined, el);
         },
 
         changeSideImage: function(url){

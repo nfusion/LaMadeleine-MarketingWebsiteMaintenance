@@ -213,19 +213,85 @@ body.no-locations-found{
       display: none;
     }
   }
-  #container #content{
-    #widget-location-mobile{
-      display: none;
-    }
-  }
 }
 
 #sidebar{
+  .secondary-wrapper{
+    max-width: 480px;
+    margin: 0 auto 15px;
+    border-bottom: 1px dashed $fadedBrown;
+  }
   .zip-wrapper{
-    display: none;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+  #zip-input-secondary{
+    font-size: 13px;
+    width: 150px;
+    padding: 6px 3px 6px;
+    margin-right: 5px;
+    font-family: $merriweather;
+    font-style: italic;
+    text-align: center;
+    border: 1px solid $fadedBrown;
+    color: $lightBrown;
+    background-color: $white;
+    @include border-radius(5px);
+  }
+  .btn.locate{
+    display: block;
+    width: 230px;
+    margin: 10px auto 20px;
+    .text, .loading{
+      font-size: 12px;
+      @include transition-duration(0.3s);
+    }
+    .loading{
+      width: 50px;
+      margin: 0 auto;
+      position: absolute;
+      top: -18px;
+      left: 0;
+      right: 0;
+      @include scale(0.5);
+      @include opacity(0);
+    }
+  }
+  .btn.locate.geolocate-loading{
+    .text{
+      @include opacity(0);
+    }
+    .loading{
+      @include opacity(1);
+    }
   }
   #widget-location-full{
     display: none;
+  }
+  p.no-locations-list{
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+@media (min-width: $xsmall-screen-min){
+  #sidebar{
+    .secondary-wrapper{
+      width: 100%;
+      overflow: hidden;
+    }
+    .zip-wrapper{
+      width: 50%;
+      float: left;
+    }
+    .btn.locate{
+      width: 50%;
+      float: right;
+      position: relative;
+      top: 3px;
+      width: 230px;
+    }
   }
 }
 
@@ -233,8 +299,17 @@ body.no-locations-found{
 @media (min-width: $medium-screen-min){
 
   #sidebar {
+    .secondary-wrapper{
+      border-bottom: 0;
+      margin: 0;
+      overflow: visible;
+      .btn.locate{
+        display: none;
+      }
+    }
     .zip-wrapper{
       display: block;
+      margin-top: 0;
     }
     #widget-location-mobile{
       display: none;
@@ -260,9 +335,6 @@ body.no-locations-found{
       position: relative;
       #location-list{
         height: 260px;
-        p.no-locations-list{
-          font-size: 16px;
-        }
     }
     .other-locations{
       @include opacity(1);
@@ -496,38 +568,34 @@ body.no-locations-found{
     }
   }
 
-  #zip-input, #zip-input-secondary{
+  #zip-input, #sidebar #zip-input-secondary{
     width: 50%;
     height: 29px;
     margin-right: 3%;
     padding: 1px 5px 0;
     position: relative;
     font-size: 15px;
-    font-family: $merriweather;
-    font-style: italic;
-    text-align: center;
-    border: 0;
-    color: $lightBrown;
-    background-color: $lightCream;
-    @include border-radius(5px);
   }
 
-  #zip-input-secondary{
-    font-size: 13px;
-  }
-
-  #sidebar .zip-wrapper{
-    display: block;
-    width: 320px;
-    height: 65px;
-    padding-top: 17px;
-    overflow: hidden;
-    text-align: center;
-    position: relative;
-    top: -15px;
-    left: -25px;
-    background: url(../../../img/map/location-zip-bg.jpg) no-repeat;
-    @include transition-duration(0.5s);
+  #sidebar{ 
+    #zip-input-secondary{
+      font-size: 13px;
+      background: $lightCream;
+      border: 0;
+    }
+    .zip-wrapper{
+      display: block;
+      width: 320px;
+      height: 65px;
+      padding-top: 17px;
+      overflow: hidden;
+      text-align: center;
+      position: relative;
+      top: -15px;
+      left: -25px;
+      background: url(../../../img/map/location-zip-bg.jpg) no-repeat;
+      @include transition-duration(0.5s);
+    }
   }
 
   body.no-location{
@@ -562,7 +630,6 @@ body.no-locations-found{
     #location-image{
       height: 150px;
       overflow: hidden;
-      background-color: $medCream;
     }
     .btn-wrapper{
       width: 100%;
