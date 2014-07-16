@@ -58,6 +58,19 @@ a.btn.call{
 	}
 }
 
+a.btn.locate{
+	text-align: center;
+	&:after{
+		content: "";
+	}
+	span.icon-pin{
+		font-size: 20px;
+		line-height: 0;
+		position: relative;
+		top: 5px;
+	}
+}
+
 a.btn-light{
 	color: $darkBrown;
 	font-family: $lato;

@@ -110,14 +110,12 @@ $(function(){
 				}
 			});
 		}
-		// Else,set nav interaction based on viewport height
+		// Else, set nav interaction based on viewport height
 		else{
 			setNavInteraction();
 			window.addEventListener('resize', setNavInteraction);
 		}
 	};
-
-	
 
 	/********
 	MENUS
@@ -199,12 +197,6 @@ $(function(){
 	if(hasLocation){
 		$('body').addClass('has-location');
 		$('.lam-call a').attr('href', 'tel:' + myLocation.phone);
-
-		// If any .get-directions links and fire getDirections() method when clicked.
-		// $content.find('a.get-directions').on('click touchend', function(e){
-		// 		e.preventDefault();
-	 //      LaMadLocations.getDirections();
-	  // });
 	}
 	// Else add .no-location class to body
 	else{
