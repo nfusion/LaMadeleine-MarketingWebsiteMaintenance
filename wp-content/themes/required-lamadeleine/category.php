@@ -14,7 +14,7 @@
 get_header();
 	
 $cat = strtolower(get_cat_name($cat));
-$mypods = pods('post')->find(array('limit' => 0, 'where'=>"category.name='".$cat."'"));
+$mypods = pods('post')->find(array('limit' => 0, 'where'=>"category.name='".$cat."'", 'orderby' => "date DESC"));
 $stories = process_stories($mypods);
 
 ?>

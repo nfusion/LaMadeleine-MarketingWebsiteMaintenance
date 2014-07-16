@@ -293,6 +293,10 @@ $(function(){
 		window.addEventListener('resize', resetStickyPromo);
 	};
 
+	/********
+	MISC
+	********/
+
 	/*********
 	IE SUPPORT
 	*********/
