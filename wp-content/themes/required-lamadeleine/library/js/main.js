@@ -392,6 +392,8 @@ $(function(){
 
 	  androidVersion = androidVersion.replace(/\./g, "");
 
+	  window.alert('android' + androidVersion);
+
 		$("html").addClass('android android' + androidVersion); // Add Android utility class to HTML class list
 
 	};

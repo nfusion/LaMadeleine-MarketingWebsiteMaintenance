@@ -9,7 +9,7 @@ html.android{
 }
 
 // All Android devices except version 4.4
-html.android:not(.android44){
+html.android4, html.android41, html.android42{
 	#header{
 		position: relative;
 	}
