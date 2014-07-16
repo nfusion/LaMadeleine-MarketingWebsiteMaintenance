@@ -42,26 +42,69 @@ $(function(){
 	NAVIGATION
 	********/
 
-	var $nav = $('#nav .nav-wrapper');
+	var $nav = $('#nav .nav-wrapper'),
+			$navIcon = $('#header .icon-menu'),
+			viewportHeight;
 
-	if($nav.length){
-		var $navIcon = $('#header .icon-menu');
+	// Check viewport height, set navigation interaction accordingly
+	var setNavInteraction = function(){
+		var viewportHeight = $(window).height();
 
-		if(Modernizr.touch){
-			$navIcon.on('touchend', function(){
-				$('body').toggleClass('nav-active');
-			});
-		}
-		else{
-			$navIcon.on('mouseover', function(){
-				$('body').addClass('nav-active');
-			});
+		if($nav.length){
+		
+			if(Modernizr.touch){
+				$navIcon.on('touchend', function(){
+					$('body').toggleClass('nav-active');
+				});
+			}
+			else{
+				// If viewport height is greater than navigation height, allow for hover reveal
+				if(viewportHeight > 830){
+					$navIcon.on('mouseover', function(){
+						$('body').addClass('nav-active');
+					});
 
-			$nav.on('mouseleave', function(){
-				$('body').removeClass('nav-active');
-			});
+					$nav.on('mouseleave', function(){
+						$('body').removeClass('nav-active');
+					});
+				}
+				else{
+
+					// Reset hover events
+					$navIcon.unbind('mouseover mouseleave');
+
+					// Else require click to open/close navigation
+					$navIcon.on('click', function(e){
+						e.stopPropagation();
+						if($('body').hasClass('nav-active')){
+							$('body').removeClass('nav-active');
+							$navIcon.find('span').text('More');
+						}
+						else{
+							$('body').toggleClass('nav-active');
+							$navIcon.find('span').text('Close');
+						}
+
+						// Stop nav clicks from propagating to document and closing navigation
+						$nav.on('click', function(e){
+							e.stopPropagation();
+						});
+
+						// Any click propagated to document will close the navigation
+						$('html').on('click', function(){
+							$('body').removeClass('nav-active');
+							$navIcon.find('span').text('More');
+						});
+						
+					});
+				}
+			}
 		}
 	}
+
+	setNavInteraction();
+
+	window.addEventListener('resize', setNavInteraction);
 
 	/********
 	MENUS

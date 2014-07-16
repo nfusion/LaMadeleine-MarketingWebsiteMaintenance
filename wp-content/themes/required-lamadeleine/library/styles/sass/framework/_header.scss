@@ -34,6 +34,9 @@
 		left: 0;
 		font-size: 30px;
 		color: $lightCream;
+		&:hover{
+			cursor: pointer;
+		}
 		&:before{
 			@include lam-text-shadow();
 		}
@@ -134,9 +137,6 @@ body.has-location #header{
 			left: 2px;
 		}
 		.icon-menu{
-			&:hover{
-				cursor: pointer;
-			}
 			span{
 				visibility: visible;
 				font-size: $h3-font-size;
