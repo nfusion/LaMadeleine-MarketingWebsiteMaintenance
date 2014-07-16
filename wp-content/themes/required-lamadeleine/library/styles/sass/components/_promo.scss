@@ -1,0 +1,82 @@
+/**
+* La Madeleine
+* FMA/Promo component
+**/
+
+#main .fma-promo.mobile{
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $fadedBrown;
+  background: $lightCream;
+  img{
+    display: block;
+    width: 25%;
+    float: left;
+  }
+  .text-wrapper{
+    width: 75%;
+    float: right;
+  }
+  h4, p{
+    color: $medBrown;
+  }
+  h4{
+    font-size: 15px;
+    margin: 3px 0;
+  }
+  p{
+    font-size: 12px;
+    font-style: italic;
+    margin: 0;
+  }
+  .cta{
+    white-space: nowrap;
+  }
+  .icon{
+    position: relative;
+    top: 2px;
+  }
+  .link-cover{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+  }
+}
+
+@media (min-width: $medium-screen-min){
+
+  // Hide mobile version
+  #container #content #main .fma-promo.mobile{
+    display: none;
+  }
+
+  // Style widget version
+  #container #content #sidebar .fma-promo{
+    width: 100%;
+    background: $medCream;
+    padding: 0 0 15px 0;
+    border: 1px solid;
+    border-color: $fadedBrown $fadedBrown $medBrown $fadedBrown;
+    img{
+      width: 100%;
+    }
+    .text-wrapper{
+      padding: 5px 15px;
+      text-align: center;
+    }
+    h4, p{
+      color: $medBrown;
+    }
+    h4{
+      margin: 5px 0;
+      font-family: $merriweather;
+      font-weight: normal;
+    }
+  }
+
+}
