@@ -355,7 +355,7 @@ var LaMadLocations = {
              }
 
             directionsLink= protocol+'://maps.google.com/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
-            alert(directionsLink);
+            
             LaMadLocations.sendWindow(directionsLink);
             return true;
         },
@@ -472,7 +472,15 @@ var LaMadLocations = {
             if(LaMadLocations.currentLocationObj.latitude == null){
                 this.getLocation('linkOut', el);
             } else {
-                directionsLink='http://www.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
+
+                if( (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1)){
+                    var protocol='maps';
+                 } else {
+                    //var protocol='http';
+                    var protocol='maps';
+                 }
+
+                directionsLink= protocol+'://maps.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
                 this.sendWindow(directionsLink);
             }
         },
