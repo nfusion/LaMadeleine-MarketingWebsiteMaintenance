@@ -113,7 +113,10 @@ $(function(){
 		// Else, set nav interaction based on viewport height
 		else{
 			setNavInteraction();
-			window.addEventListener('resize', setNavInteraction);
+			// Listen for window resize to check viewport height
+			if(!lamIE8){
+				window.addEventListener('resize', setNavInteraction);
+			}
 		}
 	};
 
@@ -383,8 +386,6 @@ $(function(){
 	  androidVersion = androidVersion + ""; // Convert to string
 
 	  androidVersion = androidVersion.replace(/\./g, "");
-
-	  window.alert('android' + androidVersion);
 
 		$("html").addClass('android android' + androidVersion); // Add Android utility class to HTML class list
 
