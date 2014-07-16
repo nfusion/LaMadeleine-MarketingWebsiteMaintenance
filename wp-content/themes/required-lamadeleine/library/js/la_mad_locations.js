@@ -433,8 +433,16 @@ var LaMadLocations = {
                     }, 5000);
 
                     // Handle touch devices, fire window alert
-                    if($('html').hasClass('touch') && !$('#content').hasClass('locations')){
-                        window.alert('Pardon, there are no locations within 100 miles. Please access our Locations page to view all La Madeleine locations.');
+                    if($('html').hasClass('touch')){
+
+                        if($('#content').hasClass('locations')){
+                            alertMsg = "Pardon, there are no locations within 100 miles.";
+                        }
+                        else{
+                            alertMsg = "Pardon, there are no locations within 100 miles. Please access our Locations page to view all La Madeleine locations.";
+                        }
+
+                        window.alert(alertMsg);
                     };
 
                     // If other locations list is present, update HTML

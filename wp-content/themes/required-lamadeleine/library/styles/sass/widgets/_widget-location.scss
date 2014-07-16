@@ -199,13 +199,6 @@
   }
 }
 
-// No location selected
-body.no-location{
-  #sidebar #widget-location-mobile{
-    @include opacity(0);
-  }
-}
-
 // No locations found after search
 body.no-locations-found{
   #header{
