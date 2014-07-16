@@ -199,6 +199,22 @@
   }
 }
 
+// No location selected
+body.no-location{
+  #sidebar{
+    .secondary-wrapper{
+      border-bottom: 0;
+    }
+    .zip-wrapper{
+      width: 100%;
+      float: none;
+    }
+    .btn.locate{
+      display: none;
+    }
+  }
+}
+
 // No locations found after search
 body.no-locations-found{
   #header{
