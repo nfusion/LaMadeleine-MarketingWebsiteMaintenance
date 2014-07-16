@@ -1559,6 +1559,16 @@ html.android23 body.nav-active {
   overflow: visible;
 }
 
+@media (min-width: 980px) {
+  /* line 42, ../sass/framework/_android-fixes.scss */
+  html.android23 #header {
+    position: relative !important;
+  }
+  /* line 45, ../sass/framework/_android-fixes.scss */
+  html.android23 #content {
+    margin-top: 80px;
+  }
+}
 /**
 * La Madeleine
 * Foundation overrides

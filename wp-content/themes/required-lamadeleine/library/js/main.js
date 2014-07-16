@@ -100,7 +100,14 @@ $(function(){
 		// If touch device, use touch to open/close nav
 		if(Modernizr.touch){
 			$navIcon.on('touchend', function(){
-				$('body').toggleClass('nav-active');
+				if($('body').hasClass('nav-active')){
+					$('body').removeClass('nav-active');
+					$navIcon.find('span').text('More');
+				}
+				else{
+					$('body').toggleClass('nav-active');
+					$navIcon.find('span').text('Close');
+				}
 			});
 		}
 		// Else,set nav interaction based on viewport height
