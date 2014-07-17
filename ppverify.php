@@ -1,5 +1,7 @@
 <?php 
 if ($_POST) {
+$ppl = '/apache/hosts/lamadeleine.nfusion.com/legacy-main/prod/ppl.log'; // Pay Pal Log File
+/*
 	$req = '';
 	foreach ($_POST as $key => $value) {
 		$value = urlencode(stripslashes($value));
@@ -72,6 +74,8 @@ if ($_POST) {
 
 	$query = "INSERT INTO `wp_order_history` (" . $keyFields . ") VALUES (" . $valueFields . ")";
 	$con->query($query);
+*/
+
 
 	// Send fulfillment emails
 	if($_POST['RESPMSG'] == "Approved") {
@@ -112,7 +116,7 @@ Shipping Address
   ' . $_POST['CITYTOSHIP'] . ', ' . $_POST['STATETOSHIP'] . ' ' . $_POST['ZIPTOSHIP'] . '
 ';
 
-		require_once('/apache/hosts/lamadeleine.nfusion.com/legacy-main/prod/phpmailer/PHPMailerAutoload.php');
+		require_once('/apache/hosts/lamadeleine.nfusion.com/2014-main/prod/phpmailer/PHPMailerAutoload.php');
 
 		$mail = new PHPMailer;
 
@@ -146,6 +150,7 @@ Shipping Address
 		$mail->Subject = $mailSubject;
 		$mail->Body = $mailBody;
 		// $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
 
 		if(!$mail->send()) {
 			$fh = fopen($ppl, 'a') or die("can't open file");
