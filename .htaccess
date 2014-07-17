@@ -197,6 +197,15 @@
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
+# for fishbowl
+RewriteRule ^css/(.*) /wp-content/themes/lamadeleine/css/$1 [QSA,L]
+RewriteRule ^styles/(.*) /wp-content/themes/lamadeleine/css/$1 [QSA,L]
+RewriteRule ^js/(.*) /wp-content/themes/lamadeleine/js/$1 [QSA,L]
+RewriteRule ^img/(.*) /wp-content/themes/lamadeleine/img/$1 [QSA,L]
+RewriteRule ^images/(.*) /wp-content/themes/lamadeleine/img/$1 [QSA,L]
+RewriteRule ^swf/(.*) /wp-content/themes/lamadeleine/swf/$1 [QSA,L]
+RewriteRule ^plugins/(.*) /wp-content/plugins/$1 [QSA,L]
+#
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
