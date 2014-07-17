@@ -118,6 +118,8 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 
+					<?php lam_single_content_nav( 'nav-below' ); ?>
+
 				</article>
 
 			</div>

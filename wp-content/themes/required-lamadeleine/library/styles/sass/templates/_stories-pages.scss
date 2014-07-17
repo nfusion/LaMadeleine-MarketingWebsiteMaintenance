@@ -54,6 +54,22 @@ body.single-post, #content.page-single{
 			line-height: 1.4;
 		}
 	}
+	.nav-single-stories{
+		padding: 20px 10px 0;
+		span{
+			position: relative;
+			top: 2px;
+		}
+		a{
+			line-height: 1.4;	
+		}
+		.nav-previous a:hover span{
+			left: -5px;
+		}
+		.nav-next a:hover span{
+			right: -5px;
+		}
+	}
 }
 
 // Social Share
@@ -114,6 +130,9 @@ body.single-post, #content.page-single{
 			h2{
 				font-size: 18px;
 			}
+		}
+		.nav-single-stories{
+			padding: 20px 30px 0;
 		}
 	}
 }
