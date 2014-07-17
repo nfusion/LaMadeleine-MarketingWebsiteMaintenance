@@ -88,7 +88,7 @@ $menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
                 <span class="icon icon-legend-gluten-free"></span> Gluten free
             </div>
         </div>
-        <p class="disclaimer"><strong>Please note:</strong> The consumption of raw or undercooked eggs may increase your risk of foodborne illness.</p>
+        <p class="disclaimer"><strong>* Please note:</strong> The consumption of raw or undercooked eggs may increase your risk of foodborne illness.</p>
         <p class="disclaimer">Some menu items may not be available at all locations.</p>
     </div>
 
