@@ -14,7 +14,7 @@ get_header();
 		<div id="main" role="main">
 			<div class="post-box has-padding">
 
-				<h2>Pardon, the page you requested was not found.</h2>
+				<h2>D&eacute;sol&eacute;, the page you requested was not found.</h2>
 
 				<p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
 
