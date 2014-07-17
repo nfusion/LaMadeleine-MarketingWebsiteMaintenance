@@ -85,18 +85,20 @@ function required_lam_enqueue() {
 add_action( 'widgets_init', 'required_lam_widgets_init', 15 );
 add_action( 'wp_enqueue_scripts', 'required_lam_enqueue' );
 
-/** Meta info for blog posts **/
-// function required_posted_on() {
-// 	printf( __( '<p>Posted by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span> on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a></p>', 'requiredfoundation' ),
-// 		esc_url( get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')) ),
-// 		esc_attr( get_the_time() ),
-// 		esc_attr( get_the_date( 'c' ) ),
-// 		esc_html( get_the_date() ),
-// 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-// 		sprintf( esc_attr__( 'View all posts by %s', 'requiredfoundation' ), get_the_author() ),
-// 		esc_html( get_the_author() )
-// 	);
-// }
+/**
+*
+* Display next and previous stories
+*
+**/
+function lam_single_content_nav( ) {
+	?>
+	<nav class="nav-single-stories">
+		<h3 class="assistive-text"><?php _e( 'Post navigation', 'requiredfoundation' ); ?></h3>
+		<span class="nav-previous"><?php previous_post_link( '%link', '<span class="icon icon-arrow-left-large"></span> %title' ); ?></span>
+		<span class="nav-next"><?php next_post_link( '%link', '%title <span class="icon icon-arrow-right-large"></span>' ); ?></span>
+	</nav><!-- .nav-single -->
+	<?php
+};
 
 /**
 *
