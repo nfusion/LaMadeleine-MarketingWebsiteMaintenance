@@ -1,0 +1,18 @@
+/**
+* La Madeleine
+* Custom mixins
+**/
+
+// La Madeleine text shadow effect
+@mixin lam-text-shadow {
+	@include text-shadow($darkBrown 0 -1px 0);
+}
+
+// Vertically align content inside of container
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
