@@ -1333,7 +1333,7 @@ body.nav-active #nav .nav-wrapper {
 }
 /* line 22, ../sass/framework/_header.scss */
 #header .logo {
-  width: 180px;
+  width: 190px;
   height: auto;
   margin-top: 2px;
 }
@@ -1439,7 +1439,7 @@ body.has-location #header .icon-wrapper .icon-pin {
   }
   /* line 116, ../sass/framework/_header.scss */
   #header .logo {
-    width: 200px;
+    width: 210px;
     margin-top: 0;
   }
 }
