@@ -133,7 +133,13 @@ LaMadLocations.initializeLargeMap = function() {
                    
         <?php } ?>
 
-                 var markerclusterer = new MarkerClusterer(largeMap, markers);
+
+                mcOptions = {styles: [{
+                height: 53,
+                url: "<?php echo $base; ?>/wp-content/uploads/2014/07/m1.png",
+                    width: 53
+                }]};
+                 var markerclusterer = new MarkerClusterer(largeMap, markers,  mcOptions);
 
                  //getLocationCookieLg(largeMap);
                  LaMadLocations.setCenterToCookie();
