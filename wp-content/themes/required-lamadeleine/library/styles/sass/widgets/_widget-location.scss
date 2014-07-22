@@ -313,7 +313,11 @@ body.no-locations-found{
       margin: 0;
       overflow: visible;
       .btn.locate{
-        display: none;
+        //display: none;
+        float:none;
+        display: inline-block;
+        width: 100%;
+        top: -8px;
       }
     }
     .zip-wrapper{
@@ -603,6 +607,7 @@ body.no-locations-found{
       top: -15px;
       left: -25px;
       background: url(../../../img/map/location-zip-bg.jpg) no-repeat;
+      background-size: cover;
       @include transition-duration(0.5s);
     }
   }
