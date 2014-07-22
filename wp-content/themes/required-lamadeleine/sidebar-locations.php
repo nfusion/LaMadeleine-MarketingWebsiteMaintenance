@@ -24,7 +24,7 @@
             <div class="f_circleG frotateG_07"></div>
             <div class="f_circleG frotateG_08"></div>
         </div>
-    </div>
+        </div>
 	</a>
 </div>
 
