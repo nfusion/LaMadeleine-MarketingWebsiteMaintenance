@@ -451,6 +451,7 @@ deny from 178.33.170.0/24
 deny from 178.90.0.0/16
 deny from 178.151.143.0/24
 deny from 178.253.62.0/24
+deny from 179.216.247.0/24
 deny from 180.183.0.0/16
 deny from 180.194.30.0/24
 deny from 180.250.200.0/24
