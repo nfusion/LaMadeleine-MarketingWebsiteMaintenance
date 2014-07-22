@@ -135,10 +135,24 @@ LaMadLocations.initializeLargeMap = function() {
 
 
                 mcOptions = {styles: [{
-                height: 53,
-                url: "<?php echo $base; ?>/wp-content/uploads/2014/07/m1.png",
-                    width: 53
-                }]};
+                    height: 53,
+                    url: "<?php echo $base; ?>/wp-content/uploads/2014/07/m1.png",
+                    width: 53,
+                    textColor: '#fff9e5'
+                },
+                {
+                    height: 55,
+                    url: "<?php echo $base; ?>/wp-content/uploads/2014/07/m2.png",
+                    width: 56,
+                    textColor: '#fff9e5'
+                },
+                {
+                    height: 65,
+                    url: "<?php echo $base; ?>/wp-content/uploads/2014/07/m3.png",
+                    width: 66,
+                    textColor: '#fff9e5'
+                }
+                ]};
                  var markerclusterer = new MarkerClusterer(largeMap, markers,  mcOptions);
 
                  //getLocationCookieLg(largeMap);
