@@ -119,6 +119,6 @@
   font-size: 10px !important;
 }
 /* line 118, ../sass/importer/ie-fixes.scss */
-.ie8 #container #content #sidebar .loading {
+.ie8 #container #content #sidebar .locate.btn .loading {
   display: none;
 }
