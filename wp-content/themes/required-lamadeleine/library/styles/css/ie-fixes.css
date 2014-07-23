@@ -107,7 +107,7 @@
 /* line 105, ../sass/importer/ie-fixes.scss */
 .ie8 #container #content #sidebar #use-zip-secondary {
   position: relative;
-  top: 7px;
+  top: 0px;
   right: 25px;
 }
 /* line 111, ../sass/importer/ie-fixes.scss */
