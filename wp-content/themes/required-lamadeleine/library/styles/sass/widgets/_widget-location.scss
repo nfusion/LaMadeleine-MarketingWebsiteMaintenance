@@ -228,18 +228,18 @@ body.no-locations-found{
 #sidebar{
   .secondary-wrapper{
     max-width: 480px;
-    margin: 0 auto 15px;
+    margin: 10px auto 15px;
     border-bottom: 1px dashed $fadedBrown;
   }
   .zip-wrapper{
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     text-align: center;
   }
   #zip-input-secondary{
     font-size: 13px;
     width: 150px;
-    padding: 6px 3px 6px;
+    padding: 5px 3px 6px;
     margin-right: 5px;
     font-family: $merriweather;
     font-style: italic;
@@ -252,7 +252,7 @@ body.no-locations-found{
   .btn.locate{
     display: block;
     width: 230px;
-    margin: 10px auto 20px;
+    margin: 0px auto 20px;
     .text, .loading{
       font-size: 12px;
       @include transition-duration(0.3s);
@@ -294,12 +294,13 @@ body.no-locations-found{
     .zip-wrapper{
       width: 50%;
       float: left;
+      #use-zip-secondary {display: inline-block;}
     }
     .btn.locate{
       width: 50%;
       float: right;
       position: relative;
-      top: 2px;
+      //top: 2px;
       width: 230px;
     }
   }
