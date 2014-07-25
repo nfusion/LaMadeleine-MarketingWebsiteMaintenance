@@ -109,13 +109,15 @@ LaMadLocations.initializeLargeMap = function() {
                     
                     google.maps.event.addListener(marker_<?php echo $item['id'] ?>, 'click', function() {
                         console.log('click listener fired');
+                        
                         <?php
                             $featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($item['id']), 'location-featured');
                         ?>
 
                         var img = '<?php echo $featuredImg[0]; ?>';
-
-                        LaMadLocations.changeSideImage(img);
+												
+												setTimeout(function(){LaMadLocations.changeSideImage(img);}, 1000);
+                        // LaMadLocations.changeSideImage(img);
 
                         LaMadLocations.showPosition(<?php echo $item['latitude'].',' .$item['longitude']?> );
                         largeMap.setZoom(12);
