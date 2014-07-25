@@ -121,7 +121,7 @@ LaMadLocations.initializeLargeMap = function() {
 
                         LaMadLocations.showPosition(<?php echo $item['latitude'].',' .$item['longitude']?> );
                         largeMap.setZoom(12);
-                        largeMap.setCenter(marker_<?php echo $item['id'] ?>.getPosition());
+                        //largeMap.setCenter(marker_<?php echo $item['id'] ?>.getPosition());
                         LaMadLocations.loadNearest();
    
                     });
