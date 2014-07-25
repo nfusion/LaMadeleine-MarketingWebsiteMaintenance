@@ -116,7 +116,7 @@ LaMadLocations.initializeLargeMap = function() {
 
                         var img = '<?php echo $featuredImg[0]; ?>';
 												
-												setTimeout(function(){LaMadLocations.changeSideImage(img);}, 1000);
+												//setTimeout(function(){LaMadLocations.changeSideImage(img);}, 1000);
                         // LaMadLocations.changeSideImage(img);
 
                         LaMadLocations.showPosition(<?php echo $item['latitude'].',' .$item['longitude']?> );
