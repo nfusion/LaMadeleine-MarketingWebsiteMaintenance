@@ -108,7 +108,7 @@ LaMadLocations.initializeLargeMap = function() {
                     marker_<?php echo $item['id'] ?>.info = new google.maps.InfoWindow({ content: '<b>'+ <?php echo $items['title']; ?>+':</b>' });
                     
                     google.maps.event.addListener(marker_<?php echo $item['id'] ?>, 'click', function() {
-                        
+                        console.log('click listener fired');
                         <?php
                             $featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id($item['id']), 'location-featured');
                         ?>
