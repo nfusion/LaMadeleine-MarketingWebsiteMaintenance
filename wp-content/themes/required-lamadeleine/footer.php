@@ -30,5 +30,9 @@
 
 	<?php wp_footer(); ?>
 
+	<!-- ShareThis -->
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "a4b51520-3ddd-42fe-9a2f-ddab93b3d123", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
 </body>
 </html>
