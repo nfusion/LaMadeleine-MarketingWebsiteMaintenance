@@ -40,10 +40,22 @@ switch($env){
          error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
       //  @ini_set('display_errors', 0);
-
-
             break;
     case "heath":
+        define('DB_NAME', 'lam_wp');
+        /** MySQL database username */
+        define('DB_USER', 'root');
+        /** MySQL database password */
+        define('DB_PASSWORD', 'root');
+        /** MySQL hostname */
+        define('DB_HOST', '127.0.0.1');
+
+        // define('WP_DEBUG', true);
+        // define('WP_DEBUG_LOG', true);
+        // define('WP_DEBUG_DISPLAY', true);
+        // @ini_set('display_errors', 0);
+            break;
+    case "kwhite":
         define('DB_NAME', 'lam_wp');
         /** MySQL database username */
         define('DB_USER', 'root');
