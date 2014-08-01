@@ -375,6 +375,7 @@ deny from 91.218.0.0/16
 deny from 91.224.160.0/24
 deny from 94.23.99.0/24
 deny from 94.45.71.0/24
+deny from 94.69.3.0/24
 deny from 94.76.73.0/24
 deny from 94.120.67.0/24
 deny from 94.122.133.0/24
