@@ -1,6 +1,6 @@
 <?php
 /***** CONFIG ****/
-
+				$paypalBase = "https://www.sandbox.paypal.com/";
         //Soup  Cost
         $soupCost = 12.99;
         $soupShippingIncremental = 3.99;
@@ -12,7 +12,7 @@
         //Shippig
         $shippingBase = 5.99;
 
-        $paypalLink = "https://www.paypal.com/cgi-bin/webscr";//https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/cps/general/OptionalAccount-outside";
+        $paypalLink = $paypalBase."cgi-bin/webscr";//https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/cps/general/OptionalAccount-outside";
         /*** https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/cps/general/OptionalAccount-outside **/
         $paypalUser = "guestrelations@lamadeleine.com"; 
         
