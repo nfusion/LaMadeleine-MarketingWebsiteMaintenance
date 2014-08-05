@@ -1,7 +1,6 @@
 <?php
 // Send an empty HTTP 200 OK response to acknowledge receipt of the notification 
 header('HTTP/1.1 200 OK'); 
-wls_simple_log( 'paypal', 'script run', $severity = 1 );
 // Assign payment notification values to local variables
   $item_name        = $_POST['item_name'];
   $item_number      = $_POST['item_number'];
@@ -34,15 +33,11 @@ fputs($fp, $header . $req);
 while (!feof($fp)) {                     // While not EOF
 	$res = fgets($fp, 1024);               // Get the acknowledgement response
 	if (strcmp ($res, "VERIFIED") == 0) {  // Response contains VERIFIED - process notification
-
-		if (defined('WLS')) {
-			wls_simple_log( 'paypal', $req, $severity = 1 );
-		}
-
+	
 		// Send an email announcing the IPN message is VERIFIED
-		$mail_From    = "noreply@lamadeleine.com";
+		$mail_From    = "noreply@nfusion.com";
 		$mail_To      = "devteam@nfusion.com";
-		$mail_Subject = "IPN PayPal Transaction Notification";
+		$mail_Subject = "IPN PayPal Transaction Notification - Verified";
 		$mail_Body    = $req;
 		mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
 
@@ -60,11 +55,9 @@ while (!feof($fp)) {                     // While not EOF
 	else if (strcmp ($res, "INVALID") == 0) { //Response contains INVALID - reject notification
 
 		// Authentication protocol is complete - begin error handling
-	if (defined('WLS')) {
-			wls_simple_log( 'paypal', 'invalid submission', $severity = 1 );
-		}
+		
 		// Send an email announcing the IPN message is INVALID
-		$mail_From    = "noreply@lamadeleine.com";
+		$mail_From    = "noreply@nfusion.com";
 		$mail_To      = "devteam@nfusion.com";
 		$mail_Subject = "IPN PayPal Transaction Notification - Rejected";
 		$mail_Body    = $req;
