@@ -72,3 +72,4 @@ while (!feof($fp)) {                     // While not EOF
 }
 
 fclose($fp);  // Close the file
+echo 'loaded.';?>
