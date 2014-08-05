@@ -1,7 +1,7 @@
 <?php
 // Send an empty HTTP 200 OK response to acknowledge receipt of the notification 
 header('HTTP/1.1 200 OK'); 
-
+wls_simple_log( 'paypal', 'script run', $severity = 1 );
 // Assign payment notification values to local variables
   $item_name        = $_POST['item_name'];
   $item_number      = $_POST['item_number'];
