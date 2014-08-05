@@ -1,4 +1,5 @@
 <?php
+die(defined('WLS'));
 // Send an empty HTTP 200 OK response to acknowledge receipt of the notification 
 header('HTTP/1.1 200 OK'); 
 
@@ -35,7 +36,7 @@ while (!feof($fp)) {                     // While not EOF
 	$res = fgets($fp, 1024);               // Get the acknowledgement response
 	if (strcmp ($res, "VERIFIED") == 0) {  // Response contains VERIFIED - process notification
 
-		if (WLS) {
+		if (defined('WLS')) {
 			wls_simple_log( 'paypal', $req, $severity = 1 );
 		}
 
