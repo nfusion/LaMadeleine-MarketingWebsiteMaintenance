@@ -1,5 +1,4 @@
 <?php
-die(defined('WLS'));
 // Send an empty HTTP 200 OK response to acknowledge receipt of the notification 
 header('HTTP/1.1 200 OK'); 
 
@@ -61,7 +60,9 @@ while (!feof($fp)) {                     // While not EOF
 	else if (strcmp ($res, "INVALID") == 0) { //Response contains INVALID - reject notification
 
 		// Authentication protocol is complete - begin error handling
-
+	if (defined('WLS')) {
+			wls_simple_log( 'paypal', 'invalid submission', $severity = 1 );
+		}
 		// Send an email announcing the IPN message is INVALID
 		$mail_From    = "noreply@lamadeleine.com";
 		$mail_To      = "devteam@nfusion.com";
