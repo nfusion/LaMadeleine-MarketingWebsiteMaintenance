@@ -1,0 +1,49 @@
+/**
+* La Madeleine
+* Global footer layout
+**/
+
+#container #footer{
+	padding: 20px 10px 10px;
+	background-color: $lightCream;
+	.footer-wrapper{
+		width: 100%;
+		padding-top: 20px;
+		border-top: 1px dashed $fadedBrown;
+		text-align: center;
+		.footer-links{
+			width: 100%;
+			max-width: 550px;
+			margin: 0 auto;
+			text-align: center;
+			overflow: hidden;
+		}
+		p, a{
+			margin-bottom: 5px;
+			font-size: 9px;
+			color: $fadedBrown;
+			text-transform: uppercase;
+			font-family: Arial, Helvetica, sans-serif;
+			white-space: nowrap;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	// .page-id-201 = "Stories"
+	.home, .page-id-201, .category{
+		#container #footer{
+			padding: 30px 20px 10px;
+		}
+	}
+	#container #footer{
+		padding: 0 0 10px;
+		p{
+			float: left;
+			padding: 0 30px;
+		}
+	}
+}
