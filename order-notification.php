@@ -57,7 +57,7 @@ while (!feof($fp)) {                     // While not EOF
 		// Process payment
 
 	} 
-	else if (strcmp ($res, "INVALID") == 0) { Response contains INVALID - reject notification
+	else if (strcmp ($res, "INVALID") == 0) { //Response contains INVALID - reject notification
 
 		// Authentication protocol is complete - begin error handling
 
@@ -72,4 +72,3 @@ while (!feof($fp)) {                     // While not EOF
 }
 
 fclose($fp);  // Close the file
-echo 'loaded.';?>
