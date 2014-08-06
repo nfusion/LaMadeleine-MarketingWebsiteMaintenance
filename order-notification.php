@@ -25,7 +25,7 @@ $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 $header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
 
 // Open a socket for the acknowledgement request
-$fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+$fp = fsockopen('https://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
 
 // Send the HTTP POST request back to PayPal for validation
 fputs($fp, $header . $req);
