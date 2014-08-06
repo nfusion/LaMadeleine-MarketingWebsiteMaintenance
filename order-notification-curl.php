@@ -171,7 +171,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
 					$items[$i]['option'] = $_POST['option_name'.$product_index];
 					// match to item number and quantity
 				}
-				$1++;
+				$i++;
 			}
 			$cart['items'] = $items;
 			
