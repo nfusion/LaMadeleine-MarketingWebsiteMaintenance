@@ -78,7 +78,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 
 $cert = __DIR__ . "/cacert.pem";
 //$cert = __DIR__ . "/ca-bundle.crt";
-echo $cert;
+//echo $cert;
 curl_setopt($ch, CURLOPT_CAINFO, $cert);
 
 $res = curl_exec($ch);
