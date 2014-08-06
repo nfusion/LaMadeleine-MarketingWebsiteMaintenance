@@ -9,7 +9,7 @@ define("DEBUG", 1);
 define("USE_SANDBOX", 1);
 
 
-define("LOG_FILE", "ipn.log");
+define("LOG_FILE", __DIR__ ."/ipn.log");
 
 
 // Read POST data
@@ -77,6 +77,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 // This is mandatory for some environments.
 
 $cert = __DIR__ . "/cacert.pem";
+//$cert = __DIR__ . "/ca-bundle.crt";
+echo $cert;
 curl_setopt($ch, CURLOPT_CAINFO, $cert);
 
 $res = curl_exec($ch);
