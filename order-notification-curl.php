@@ -122,7 +122,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
 	if(DEBUG == true) {
 		error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
 	}
-	extract($_POST,EXTR_PREFIX_ALL,'pp_');
+	extract($_POST,EXTR_PREFIX_ALL,'pp');
 	
 	// create array of payer data 
 	$payer = array(
