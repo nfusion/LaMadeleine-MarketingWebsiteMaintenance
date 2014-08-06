@@ -31,8 +31,9 @@ if ($fp) {
 	// Send the HTTP POST request back to PayPal for validation
 	fputs($fp, $header . $req);
 
-	while (!feof($fp)) {                     // While not EOF
-		$res = fgets($fp, 1024);               // Get the acknowledgement response
+	//while (!feof($fp)) {                     // While not EOF
+		//$res = fgets($fp);               // Get the acknowledgement response - testing omitted line length 1024
+		$res=stream_get_contents($fp, 1024);
 		if (strcmp ($res, "VERIFIED") == 0) {  // Response contains VERIFIED - process notification
 	
 			// Send an email announcing the IPN message is VERIFIED
@@ -65,7 +66,7 @@ if ($fp) {
 
 			mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
 		}
-	}
+	//}
 
 fclose($fp);  // Close the file
 } else {
