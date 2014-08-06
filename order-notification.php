@@ -23,6 +23,7 @@ foreach ($_POST as $key => $value) {         // Loop through the notification NV
 $header  = "POST /cgi-bin/webscr HTTP/1.1\r\n";                    // HTTP POST request
 $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 $header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
+$header .= "Connection: Close";
 
 // Open a socket for the acknowledgement request
 $fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
@@ -33,7 +34,7 @@ if ($fp) {
 
 	//while (!feof($fp)) {                     // While not EOF
 		//$res = fgets($fp);               // Get the acknowledgement response - testing omitted line length 1024
-		$res=stream_get_contents($fp, 1024);
+		$res = stream_get_contents($fp, 1024);
 		if (strcmp ($res, "VERIFIED") == 0) {  // Response contains VERIFIED - process notification
 	
 			// Send an email announcing the IPN message is VERIFIED
