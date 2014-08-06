@@ -121,15 +121,75 @@ if (strcmp ($res, "VERIFIED") == 0) {
 	
 	if(DEBUG == true) {
 		error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
+	}
+	extract($_POST,EXTR_PREFIX_ALL,'pp_');
+	
+	// create array of payer data 
+	$payer = array(
+		'first_name' => $pp_first_name,
+		'last_name' => $pp_last_name,
+		'payer_business_name' => $pp_payer_business_name,
+		'payer_email' => $pp_payer_email,
+		'contact_phone' => $pp_contact_phone,
+		'payer_id' => $pp_payer_id,
+		
+		'address_name' => $pp_address_name,
+		'address_street' => $pp_address_street,
+		'address_city' => $pp_address_city,
+		'address_state' => $pp_address_state,
+		'address_zip' => $pp_address_zip,
+		'address_country_code' => $pp_address_country_code,
+		'address_country' => $pp_address_country	
+	);
+	
+	$txn_type = $_POST['txn_type'];
+	
+	// perform action by transaction type.
+	switch($txn_type) {
+		case 'cart':
+			$cart = array();
+			$items = array();
+			$totals = array(
+				'mc_gross' => $pp_mc_gross,
+				'mc_fee' => $pp_mc_fee,
+				'mc_shipping'=> $pp_mc_shipping,
+				'mc_currency' => $pp_mc_currency,
+				'exchange_rate' => $pp_exchange_rate,
+				'memo' => $pp_memo
+			);
+			
+			$cart['num_cart_items'] = $pp_num_cart_items;
+			
+			//shopping cart transaction
+			//for multiple items, traverse the post array for all item elements.
+			foreach ($_POST as $key->$val) {
+				if ( strpos($key,'item_name') ) {
+					$product_index = substr($key, 10);
+					$items[$product_index]['item_name'] = $val;
+					$items[$product_index]['item_number'] = $_POST['item_number'.$product_index];
+					$items[$product_index]['quantity'] = $_POST['quantity'.$product_index];
+					$items[$product_index]['option'] = $_POST['option_name'.$product_index];
+					// match to item number and quantity
+				}
+			}
+			$cart['items'] = $items;
+			
+			// email dev
+
+		
+		$mail_Body = print_r($payer,1)."\n\n".print_r($totals,1)."\n\n".print_r($cart,1);
 		
 		// Send an email announcing the IPN message is VERIFIED
 			$mail_From    = "noreply@nfusion.com";
 			$mail_To      = "devteam@nfusion.com";
-			$mail_Subject = "IPN PayPal Transaction Notification - Verified";
-			$mail_Body    = $req;
+			$mail_Subject = "PayPal Cart Transaction Notification";
+			//$mail_Body    = $req;
 			$header = 'From: '.$mail_From;
 			mail($mail_To, $mail_Subject, $mail_Body, $header);
+			
+			break;
 	}
+	
 } else if (strcmp ($res, "INVALID") == 0) {
 	// log for manual investigation
 	// Add business logic here which deals with invalid IPN messages
