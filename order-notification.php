@@ -25,45 +25,55 @@ $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 $header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
 
 // Open a socket for the acknowledgement request
-$fp = fsockopen('https://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+$fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
 
-// Send the HTTP POST request back to PayPal for validation
-fputs($fp, $header . $req);
+if ($fp) {
+	// Send the HTTP POST request back to PayPal for validation
+	fputs($fp, $header . $req);
 
-while (!feof($fp)) {                     // While not EOF
-	$res = fgets($fp, 1024);               // Get the acknowledgement response
-	if (strcmp ($res, "VERIFIED") == 0) {  // Response contains VERIFIED - process notification
+	while (!feof($fp)) {                     // While not EOF
+		$res = fgets($fp, 1024);               // Get the acknowledgement response
+		if (strcmp ($res, "VERIFIED") == 0) {  // Response contains VERIFIED - process notification
 	
-		// Send an email announcing the IPN message is VERIFIED
-		$mail_From    = "noreply@nfusion.com";
-		$mail_To      = "devteam@nfusion.com";
-		$mail_Subject = "IPN PayPal Transaction Notification - Verified";
-		$mail_Body    = $req;
-		mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
+			// Send an email announcing the IPN message is VERIFIED
+			$mail_From    = "noreply@nfusion.com";
+			$mail_To      = "devteam@nfusion.com";
+			$mail_Subject = "IPN PayPal Transaction Notification - Verified";
+			$mail_Body    = $req;
+			mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
 
-		// Authentication protocol is complete - OK to process notification contents
+			// Authentication protocol is complete - OK to process notification contents
 
-		// Possible processing steps for a payment include the following:
+			// Possible processing steps for a payment include the following:
 
-		// Check that the payment_status is Completed
-		// Check that txn_id has not been previously processed
-		// Check that receiver_email is your Primary PayPal email
-		// Check that payment_amount/payment_currency are correct
-		// Process payment
+			// Check that the payment_status is Completed
+			// Check that txn_id has not been previously processed
+			// Check that receiver_email is your Primary PayPal email
+			// Check that payment_amount/payment_currency are correct
+			// Process payment
 
-	} 
-	else if (strcmp ($res, "INVALID") == 0) { //Response contains INVALID - reject notification
+		} 
+		else if (strcmp ($res, "INVALID") == 0) { //Response contains INVALID - reject notification
 
-		// Authentication protocol is complete - begin error handling
+			// Authentication protocol is complete - begin error handling
 		
-		// Send an email announcing the IPN message is INVALID
-		$mail_From    = "noreply@nfusion.com";
-		$mail_To      = "devteam@nfusion.com";
-		$mail_Subject = "IPN PayPal Transaction Notification - Rejected";
-		$mail_Body    = $req;
+			// Send an email announcing the IPN message is INVALID
+			$mail_From    = "noreply@nfusion.com";
+			$mail_To      = "devteam@nfusion.com";
+			$mail_Subject = "IPN PayPal Transaction Notification - Rejected";
+			$mail_Body    = $req;
 
-		mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
+			mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
+		}
 	}
-}
 
 fclose($fp);  // Close the file
+} else {
+	// Send an email announcing socket connection failed.
+	$mail_From    = "noreply@nfusion.com";
+	$mail_To      = "devteam@nfusion.com";
+	$mail_Subject = "IPN - Socket connection failed.";
+	$mail_Body    = "connection to ssl://www.sandbox.paypal.com failed.";
+	mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
+
+}
