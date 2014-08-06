@@ -163,15 +163,15 @@ if (strcmp ($res, "VERIFIED") == 0) {
 			//shopping cart transaction
 			//for multiple items, traverse the post array for all item elements.
 			foreach ($_POST as $key->$val) {
-				if ( strpos($key,'item_name') !== 0 ) {
+				if ( !strpos($key,'item_name') === false ) {
 					$product_index = substr($key, 10);
 					$items[$i]['item_name'] = $val;
 					$items[$i]['item_number'] = $_POST['item_number'.$product_index];
 					$items[$i]['quantity'] = $_POST['quantity'.$product_index];
 					$items[$i]['option'] = $_POST['option_name'.$product_index];
 					// match to item number and quantity
+					$i++;
 				}
-				$i++;
 			}
 			$cart['items'] = $items;
 			
