@@ -1,6 +1,22 @@
 <?php
 // Send an empty HTTP 200 OK response to acknowledge receipt of the notification 
 header('HTTP/1.1 200 OK'); 
+// Send an email announcing the IPN message is VERIFIED
+$mail_From    = "noreply@nfusion.com";
+$mail_To      = "devteam@nfusion.com";
+$mail_Subject = "IPN PayPal Transaction Raw Data";
+$mail_Body    = print_r($_POST,1);
+$header = 'From: '.$mail_From;
+mail($mail_To, $mail_Subject, $mail_Body, $header);
+
+$use_sandbox = 1;
+
+if ($use_sandbox) {
+	$paypal_url = "ssl://www.sandbox.paypal.com";
+} else {
+	$paypal_url = "ssl://www.paypal.com";
+}
+
 // Assign payment notification values to local variables
   $item_name        = $_POST['item_name'];
   $item_number      = $_POST['item_number'];
@@ -22,13 +38,14 @@ foreach ($_POST as $key => $value) {         // Loop through the notification NV
 // Set up the acknowledgement request headers
 $header  = "POST /cgi-bin/webscr HTTP/1.1\r\n";                    // HTTP POST request
 $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
-$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
-$header .= "Connection: Close";
+$header .= "Content-Length: " . strlen($req);
+$header .= "Connection: Close" . "\r\n\r\n";
 
 // Open a socket for the acknowledgement request
-$fp = fsockopen('ssl://www.sandbox.paypal.com/cgi-bin/webscr', 443, $errno, $errstr, 30);
+$fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
 
 if ($fp) {
+	echo $req;
 	// Send the HTTP POST request back to PayPal for validation
 	fputs($fp, $header . $req);
 
@@ -42,7 +59,8 @@ if ($fp) {
 			$mail_To      = "devteam@nfusion.com";
 			$mail_Subject = "IPN PayPal Transaction Notification - Verified";
 			$mail_Body    = $req;
-			mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
+			$header = 'From: '.$mail_From;
+			mail($mail_To, $mail_Subject, $mail_Body, $header);
 
 			// Authentication protocol is complete - OK to process notification contents
 
@@ -64,8 +82,9 @@ if ($fp) {
 			$mail_To      = "devteam@nfusion.com";
 			$mail_Subject = "IPN PayPal Transaction Notification - Rejected";
 			$mail_Body    = $req;
+			$header = 'From: '.$mail_From;
 
-			mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
+			mail($mail_To, $mail_Subject, $mail_Body, $header);
 		}
 	//}
 
@@ -76,6 +95,7 @@ fclose($fp);  // Close the file
 	$mail_To      = "devteam@nfusion.com";
 	$mail_Subject = "IPN - Socket connection failed.";
 	$mail_Body    = "connection to ssl://www.sandbox.paypal.com failed.";
-	mail($mail_To, $mail_Subject, $mail_Body, $mail_From);
+	$header = 'From: '.$mail_From;
+	mail($mail_To, $mail_Subject, $mail_Body, $header);
 
 }
