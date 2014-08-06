@@ -11,7 +11,9 @@ define("USE_SANDBOX", 1);
 
 define("LOG_FILE", __DIR__ ."/ipn.log");
 
-
+$key = 'item_name1';
+echo strpos($key,'item_name');
+die;
 // Read POST data
 // reading posted data directly from $_POST causes serialization
 // issues with array data in POST. Reading raw POST data from input stream instead.
@@ -163,7 +165,7 @@ if (strcmp ($res, "VERIFIED") == 0) {
 			//shopping cart transaction
 			//for multiple items, traverse the post array for all item elements.
 			foreach ($_POST as $key->$val) {
-				if ( !strpos($key,'item_name') === false ) {
+				if ( strpos($key,'item_name') !== false ) {
 					$product_index = substr($key, 10);
 					$items[$i]['item_name'] = $val;
 					$items[$i]['item_number'] = $_POST['item_number'.$product_index];
