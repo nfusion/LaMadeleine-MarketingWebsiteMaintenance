@@ -77,8 +77,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 // This is mandatory for some environments.
 
 $cert = __DIR__ . "/cacert.pem";
-//$cert = __DIR__ . "/ca-bundle.crt";
-//echo $cert;
 curl_setopt($ch, CURLOPT_CAINFO, $cert);
 
 $res = curl_exec($ch);
@@ -123,11 +121,27 @@ if (strcmp ($res, "VERIFIED") == 0) {
 	
 	if(DEBUG == true) {
 		error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
+		
+		// Send an email announcing the IPN message is VERIFIED
+			$mail_From    = "noreply@nfusion.com";
+			$mail_To      = "devteam@nfusion.com";
+			$mail_Subject = "IPN PayPal Transaction Notification - Verified";
+			$mail_Body    = $req;
+			$header = 'From: '.$mail_From;
+			mail($mail_To, $mail_Subject, $mail_Body, $header);
 	}
 } else if (strcmp ($res, "INVALID") == 0) {
 	// log for manual investigation
 	// Add business logic here which deals with invalid IPN messages
 	if(DEBUG == true) {
 		error_log(date('[Y-m-d H:i e] '). "Invalid IPN: $req" . PHP_EOL, 3, LOG_FILE);
+		
+		// Send an email announcing the IPN message is INVALID
+		$mail_From    = "noreply@nfusion.com";
+		$mail_To      = "devteam@nfusion.com";
+		$mail_Subject = "IPN PayPal Transaction Notification - Invalid";
+		$mail_Body    = $req;
+		$header = 'From: '.$mail_From;
+		mail($mail_To, $mail_Subject, $mail_Body, $header);
 	}
 }
