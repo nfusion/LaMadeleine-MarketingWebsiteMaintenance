@@ -26,7 +26,7 @@ $header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
 $header .= "Connection: Close";
 
 // Open a socket for the acknowledgement request
-$fp = fsockopen('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+$fp = fsockopen('ssl://www.sandbox.paypal.com/cgi-bin/webscr', 443, $errno, $errstr, 30);
 
 if ($fp) {
 	// Send the HTTP POST request back to PayPal for validation
