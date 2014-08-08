@@ -544,6 +544,7 @@ deny from 201.244.117.0/24
 deny from 202.29.178.0/24
 deny from 203.94.92.0/24
 deny from 210.22.113.0/24
+deny from 212.46.235.0/24
 deny from 212.154.89.0/24
 deny from 217.64.142.0/24
 deny from 217.76.78.0/24
