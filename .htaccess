@@ -413,7 +413,7 @@ deny from 112.111.0.0/16
 deny from 112.198.0.0/16
 deny from 112.203.183.0/24
 deny from 112.210.165.0/24
-denu from 113.171.156.0/24
+deny from 113.171.156.0/24
 deny from 113.189.32.0/24
 deny from 113.199.135.0/24
 deny from 114.26.0.0/16
