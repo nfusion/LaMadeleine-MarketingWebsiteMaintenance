@@ -1,6 +1,6 @@
 <?php
 /***** CONFIG ****/
-				$paypalBase = "https://www.sandbox.paypal.com/";
+				$paypalBase = "https://www.paypal.com/";
         //Soup  Cost
         $soupCost = 12.99;
         $soupShippingIncremental = 3.99;
