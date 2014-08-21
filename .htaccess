@@ -610,6 +610,7 @@ deny from 109.135.7.42/32
 deny from 95.110.186.170/32
 deny from 188.122.85.190/32
 deny from 130.185.86.213/32
+deny from 142.4.212.217/32
 
 # End IP lockouts
 
