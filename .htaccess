@@ -316,6 +316,7 @@ deny from 27.153.255.0/24
 deny from 27.159.0.0/16
 deny from 31.0.0.0/16
 deny from 31.192.29.0/24
+deny from 31.193.192.0/24
 deny from 36.77.186.0/24
 deny from 37.16.61.0/24
 deny from 37.139.97.0/24
@@ -388,6 +389,8 @@ deny from 91.192.194.0/24
 deny from 91.218.0.0/16
 deny from 91.224.160.0/24
 deny from 92.37.47.0/24
+deny from 93.113.20.0/24
+deny from 94.20.63.0/24
 deny from 94.23.99.0/24
 deny from 94.45.71.0/24
 deny from 94.69.3.0/24
@@ -408,6 +411,7 @@ deny from 101.108.196.0/24
 deny from 103.15.245.0/24
 deny from 103.27.2.0/24
 deny from 103.31.186.0/25
+deny from 103.251.90.0/24
 deny from 105.184.118.0/24
 deny from 105.237.32.0/24
 deny from 105.248.199.0/24
@@ -584,6 +588,7 @@ deny from 203.94.92.0/24
 deny from 210.22.113.0/24
 deny from 210.211.220.0/24
 deny from 212.46.235.0/24
+deny from 212.82.217.0/24
 deny from 212.154.89.0/24
 deny from 217.64.142.0/24
 deny from 217.70.32.0/24
@@ -597,20 +602,23 @@ deny from 223.206.192.0/24
 deny from 223.207.0.0/16
 
 # single EU bad people IPs
-deny from 192.210.192.35/32
-deny from 91.192.194.216/32
-deny from 37.130.227.133/32
-deny from 195.154.243.53/32
+deny from 5.39.222.250/32
 deny from 5.39.49.231/32
-deny from 37.187.67.49/32
-deny from 188.165.201.137/32
-deny from 188.122.85.191/32
 deny from 5.9.243.242/32
-deny from 109.135.7.42/32
+deny from 37.130.227.133/32
+deny from 37.187.67.49/32
+deny from 64.15.138.14/32
+deny from 89.200.138.207/32
+deny from 91.192.194.216/32
 deny from 95.110.186.170/32
-deny from 188.122.85.190/32
+deny from 109.135.7.42/32
 deny from 130.185.86.213/32
 deny from 142.4.212.217/32
+deny from 188.122.85.190/32
+deny from 188.122.85.191/32
+deny from 188.165.201.137/32
+deny from 192.210.192.35/32
+deny from 195.154.243.53/32
 
 # End IP lockouts
 
