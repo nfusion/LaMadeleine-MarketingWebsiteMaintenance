@@ -524,6 +524,7 @@ deny from 183.80.17.0/24
 deny from 183.92.77.0/24
 deny from 185.3.33.0/24
 deny from 185.7.182.0/24
+deny from 186.3.11.0/24
 deny from 186.6.176.0/24
 deny from 186.28.206.0/24
 deny from 186.29.245.0/24
