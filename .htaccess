@@ -606,6 +606,7 @@ deny from 223.206.192.0/24
 deny from 223.207.0.0/16
 
 # single EU bad people IPs
+deny from 5.39.222.191/32
 deny from 5.39.222.250/32
 deny from 5.39.49.231/32
 deny from 5.9.243.242/32
