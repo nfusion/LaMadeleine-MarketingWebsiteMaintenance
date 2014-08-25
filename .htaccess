@@ -611,6 +611,7 @@ deny from 5.39.49.231/32
 deny from 5.9.243.242/32
 deny from 37.130.227.133/32
 deny from 37.187.67.49/32
+deny from 50.87.144.170/32
 deny from 64.15.138.14/32
 deny from 89.200.138.207/32
 deny from 91.192.194.216/32
