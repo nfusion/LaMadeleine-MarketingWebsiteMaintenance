@@ -152,8 +152,7 @@
 		RewriteCond %{HTTP_USER_AGENT} ^Wells\ Search\ II [NC,OR]
 		RewriteCond %{HTTP_USER_AGENT} ^WEP\ Search [NC,OR]
 		RewriteCond %{HTTP_USER_AGENT} ^zermelo [NC,OR]
-		RewriteCond %{HTTP_USER_AGENT} ^ZyBorg [NC,OR]
-		RewriteCond %{HTTP_USER_AGENT} "[%\ tools\.ua\.random()\ %] [NC]
+		RewriteCond %{HTTP_USER_AGENT} ^ZyBorg [NC]
 		RewriteRule ^.* - [F]
 	# END Ban Users
 # END iThemes Security
