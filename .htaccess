@@ -345,6 +345,7 @@ deny from 49.48.0.0/16
 deny from 49.205.140.0/24
 deny from 49.230.149.0/24
 deny from 58.22.155.0/24
+deny from 58.64.194.0/24
 deny from 58.186.253.0/24
 deny from 58.187.105.0/24
 deny from 59.20.210.0/24
