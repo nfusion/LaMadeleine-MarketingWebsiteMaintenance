@@ -152,7 +152,8 @@
 		RewriteCond %{HTTP_USER_AGENT} ^Wells\ Search\ II [NC,OR]
 		RewriteCond %{HTTP_USER_AGENT} ^WEP\ Search [NC,OR]
 		RewriteCond %{HTTP_USER_AGENT} ^zermelo [NC,OR]
-		RewriteCond %{HTTP_USER_AGENT} ^ZyBorg [NC]
+		RewriteCond %{HTTP_USER_AGENT} ^ZyBorg [NC,OR]
+		RewriteCond %{HTTP_USER_AGENT} "[%\ tools\.ua\.random()\ %] [NC]
 		RewriteRule ^.* - [F]
 	# END Ban Users
 # END iThemes Security
@@ -520,6 +521,7 @@ deny from 182.93.186.0/24
 deny from 182.160.0.0/16
 deny from 182.253.49.0/24
 deny from 183.80.17.0/24
+deny from 183.92.77.0/24
 deny from 185.3.33.0/24
 deny from 185.7.182.0/24
 deny from 186.6.176.0/24
@@ -595,6 +597,7 @@ deny from 210.22.113.0/24
 deny from 210.211.220.0/24
 deny from 212.46.235.0/24
 deny from 212.82.217.0/24
+deny from 212.98.167.0/24
 deny from 212.154.89.0/24
 deny from 217.64.142.0/24
 deny from 217.70.32.0/24
