@@ -325,6 +325,7 @@ deny from 37.212.41.0/24
 deny from 37.213.178.0/24
 deny from 37.221.0.0/16
 deny from 37.235.21.0/24
+deny from 37.235.228.0/24
 deny from 37.254.34.0/24
 deny from 41.35.0.0/16
 deny from 41.97.0.0/16
