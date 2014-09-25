@@ -1,11 +1,10 @@
-
 === iThemes Security (formerly Better WP Security) ===
 Contributors: ithemes, ChrisWiegman, mattdanner, chrisjean
 Donate link: http://ithemes.com
 Tags: security, malware, secure, multi-site, network, mu, login, lockdown, htaccess, hack, header, cleanup, ban, restrict, access, protect, protection, disable, images, image, hotlink, admin, username, database, prefix, wp-content, rename, directory, directories, secure, SSL, iThemes, BackupBuddy, Exchange, iThemes Exchange
 Requires at least: 3.9
 Tested up to: 4.0
-Stable tag: 4.3.9
+Stable tag: 4.4.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,11 +35,17 @@ Pro Features:
 * 2-factor authentication - Use Google Authenticator or Authy to send a custom code to your phone when you log in
 * Import/export settings - saves time setting up multiple WordPress sites
 * Malware scanning - Automatically check any URL or individual file on a specified schedule and scan your whole site automatically as users browse through it
+* Password Expiration - Set a maximum password age and force users to choose a new password. You can also force all users to choose a new password immediately (if needed)
+* Generate Strong Passwords - Generate strong passwords right from your profile screen
 * GeoIP banning - coming soon
 
 = iThemes Sync Integration =
 
 Manage more than one site? Manage away mode, handle malware scanning, release lockouts and make sure your WordPress site is up to date with <a href="http://ithemes.com/sync/">iThemes Sync</a>.
+
+= New! iThemes Brute Force Protection Network =
+
+Network Brute Force Protection takes brute force protection to the next level by further banning users who have tried to break into other sites from breaking into yours. The iThemes Brute Force Protection Network will automatically report IP addresses of failed login attempts to iThemes and will block them for a length of time necessary to protect your site based on the number of sites that have seen a similar attack.
 
 = Obscure =
 
@@ -185,6 +190,65 @@ Free support may be available with the help of the community in the <a href="htt
 5. Easy-to-navigate Security dashboard
 
 == Changelog ==
+
+= 4.4.13 =
+* Enhancement: Default log rotation changed from 30 days to 14 days
+* Fixed: All logs page will properly display even with 50,000+ entries in the log
+
+= 4.4.11 =
+* Enhancement: Updated copy on Virustotal API key to indicate that a private key is not needed.
+* Fixed: More complete check for user id when resettings password will prevent undefined index login on line 62 error.
+* Fixed: Fixed a bug that prevented the api key from saving after resetting the key.
+* Fixed: Removed errors that could occur due to the use of custom capabilities and roles.
+
+= 4.4.9 =
+* New Pro Feature: Automatically generate strong passwords
+* New Pro Feature: Password expiration
+* Enhancement: Added a link to the actual timezone settings in the general settings page (instead of the top of the page)
+* Fixed: When an invalid log directory is detected it will not fail but will instead reset it to the original.
+* Fixed: No more duplicate digest emails
+* Fixed: No more "Array" message appearing in digest emails from user lockouts
+* Fixed: HTML in traditional file log emails will display correctly.
+* Fixed: From address in notification emails will now display correctly.
+* Fixed: MySQL errors will no longer appear for missing iThemes Security tables. Instead it will attempt to recreate them.
+* Fixed: Fixed missing "no changes" text in file change emails.
+* Fixed: Formatting of individual file change emails will now work.
+* Fixed: Fixed a bug in ban users user agents that would cause a crash on Apache if the user agent contained a space
+* Fixed: When an invalid backup directory is detected it will not fail but will instead reset it to the original.
+
+= 4.4.6 =
+* Fixed: fixed possible undefined api_error variable on line 316 if WordPress believes the email address is invalid.
+* Fixed: failed calls to various apis will no longer throw a php error on failure.
+
+= 4.4.5 =
+* Fixed: Fixed typos in digest email.
+* Fixed: Fixed typos in default network lockout message.
+* Fixed: Force stylesheet reload for new nags and other items by pushing plugin build number to stylesheet registrations
+
+= 4.4.3 =
+* Fixed: Fixed an error that could occur on multisite due to a missing "core" object
+
+= 4.4.2 =
+* New Feature: Add IPCheck Brute Force API integration
+* New Feature: Add ability to receive a daily digest email instead of individual emails per event.
+* Enhancement: Added "Go Pro" menu item to admin menus.
+* Enhancement: Added button to release IP address from temporary whitelist.
+* Enhancement: Reordered sidebar items to make it easier for the user to get to the information they need from iThemes
+* Fixed: introduction screen should now display completely on computers with low-resolution screens.
+* Fixed: multisite bug that still showed BackupBuddy (if present) even though BackupBuddy is not multisite compatible.
+* Fixed: Scrolling table of contents should not cover side-bar items on pro.
+* Fixed: When changing admin user login form will no show the correct path when WordPress is not installed in the same directory as the website address.
+* Fixed: The plugins_loaded hook which fires on logout will now fire later to improve compatibility with iThemes Exchange
+* Fixed: multisite bug that still showed BackupBuddy (if present) even though BackupBuddy is not multisite compatible.
+* Fixed: Added an extra flag in an attempt to reduce duplicate file-change detection executions.
+* Fixed: Added missing index.php files to directories that were missing them to ensure no information could be attained if directory is turned on.
+* Fixed: Make sure hide backend rewrite rules are consistent with the correct location of the WordPress login page when WordPress is not installed in the main website folder.
+* Fixed: File locking will try to create the iThemes Directory if it isn't already present rather than just saying a lock could not be attained.
+* Fixed: Fixed an error whereas an empty filter could display an error when building the log tables.
+
+= 4.3.11 =
+* Low Severity Security Fix - Lack of access control patched - Sucuri (reported 19Aug2014)
+* Fixed an error in XMLRPC blocking when $username variable cannot be found
 
 = 4.3.9 =
 * Remove error message if WP_Error is returned with wp_remote_post in malware scan
@@ -1216,6 +1280,21 @@ This release is a complete rewrite from the ground up. Special thanks to Cory Mi
 * First alpha release including simple feature set.
 
 == Upgrade Notice ==
+
+= 4.4.13 =
+Version 4.4.13 is a bug-fix release addressing numerous minor bugs affecting some users. It is recommended for all users.
+
+= 4.4.11 =
+Version 4.4.11 is a bug-fix release addressing numerous minor bugs affecting some users. It is recommended for all users.
+
+= 4.4.9 =
+Version 4.4.9 is a bugfix release for the free version and contains new features for pro users. It is a recommended update for all users.
+
+= 4.4.6 =
+Version 4.4.6 adds new features, enhancements, bug fixes and more. It is recommended for all users.
+
+= 4.3.11 =
+Version 4.3.11 contains a security fix and should be installed by all users.
 
 = 4.3.9 =
 Version 4.3.9 is a bug-fix release addressing numerous minor bugs affecting some users. It is recommended for all users.
