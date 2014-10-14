@@ -338,6 +338,7 @@ deny from 41.224.122.0/24
 deny from 41.231.155.0/24
 deny from 41.254.5.0/24
 deny from 42.119.0.0/16
+deny from 42.229.202.0/24
 deny from 46.16.228.0/24
 deny from 46.164.142.0/24
 deny from 46.209.197.0/24
