@@ -31,7 +31,7 @@
 		<hr>
 		<div class="eclub">
 			<p>Get the latest news and offers.</p>
-			<p><a target="_blank" href="http://lamadeleinecafe.fbmta.com/members/UpdateProfile.aspx" class="btn">Join Our eClub</a></p>
+			<p><a target="_blank" href="http://lamadeleinecafe.fbmta.com/members/UpdateProfile.aspx?Action=Subscribe&_Theme=40802189483" class="btn">Join Our eClub</a></p>
 		</div>
 			<hr>
 			<div class="bottom-links">
