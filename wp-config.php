@@ -47,7 +47,7 @@ switch($env){
         define('DB_USER', 'root');
         define('DB_PASSWORD', 'root');
         define('DB_HOST', '127.0.0.1');
-        define('WP_DEBUG', true);
+        define('WP_DEBUG', false);
         break;
     case "test":
     	define('SITE_URL', 'test.lamadeleine.nfusion.com');
@@ -133,7 +133,7 @@ define('WPLANG', '');
 define( 'WP_ALLOW_MULTISITE', true );
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', true);
-define('DOMAIN_CURRENT_SITE', $SITE_URL);
+define('DOMAIN_CURRENT_SITE', SITE_URL);
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
