@@ -1,5 +1,5 @@
 <?php
-/**
+/***
  * The template for displaying all single posts.
  *
  * This is the template that displays all single posts by default.
