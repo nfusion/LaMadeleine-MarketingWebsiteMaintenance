@@ -25,99 +25,47 @@ $env = isset($_SERVER['APPLICATION_ENVIRONMENT'])?$_SERVER['APPLICATION_ENVIRONM
 define('ENV',$env);
 
 switch($env){
-    case "serna":
-        define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
-        define('DB_USER', 'nfusion');
-        /** MySQL database password */
-        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
-        /** MySQL hostname */
-        define('DB_HOST', '127.0.0.1');
-
-         //define('WP_DEBUG', true);
-         define('WP_DEBUG_LOG', true);
-         define('WP_DEBUG_DISPLAY', true);
-         error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
-      //  @ini_set('display_errors', 0);
-            break;
-    case "heath":
-        define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
-        define('DB_USER', 'root');
-        /** MySQL database password */
-        define('DB_PASSWORD', 'root');
-        /** MySQL hostname */
-        define('DB_HOST', '127.0.0.1');
-
-        // define('WP_DEBUG', true);
-        // define('WP_DEBUG_LOG', true);
-        // define('WP_DEBUG_DISPLAY', true);
-        // @ini_set('display_errors', 0);
-            break;
     case "kwhite":
+    	define('SITE_URL', 'local.lamadeleine.nfusion.com');
         define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
         define('DB_USER', 'root');
-        /** MySQL database password */
         define('DB_PASSWORD', 'root');
-        /** MySQL hostname */
         define('DB_HOST', '127.0.0.1');
-
-        // define('WP_DEBUG', true);
-        // define('WP_DEBUG_LOG', true);
-        // define('WP_DEBUG_DISPLAY', true);
-        // @ini_set('display_errors', 0);
-            break;
-    case "staging":
-        define('DB_NAME', 'lam_wp_staging');
-        /** MySQL database username */
-        define('DB_USER', 'LAM-14');
-        /** MySQL database password */
-        define('DB_PASSWORD', 'Bagu3tt314');
-
-        /** MySQL hostname */
-        define('DB_HOST', 'localhost');
-
         define('WP_DEBUG', true);
-        define('WP_DEBUG_LOG', true);
-        define('WP_DEBUG_DISPLAY', false);
-       // @ini_set('display_errors', 0);
         break;
-    case "remote":
+    case "mdavis":
+    	define('SITE_URL', 'local.lamadeleine.nfusion.com');
         define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
-        define('DB_USER', 'nfusion');
-        /** MySQL database password */
-        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
-        /** MySQL hostname */
-        define('DB_HOST', 'localhost');
-
+        define('DB_USER', 'root');
+        define('DB_PASSWORD', 'root');
+        define('DB_HOST', '127.0.0.1');
         define('WP_DEBUG', true);
-        define('WP_DEBUG_LOG', true);
-        define('WP_DEBUG_DISPLAY', false);
-        @ini_set('display_errors', 0);
-
-            break;
-    case "production":
-    default:
-        /** The name of the database for WordPress */
+        break;
+    case "test":
+    	define('SITE_URL', 'test.lamadeleine.nfusion.com');
         define('DB_NAME', 'lam_wp');
-
-        /** MySQL database username */
         define('DB_USER', 'LAM-14');
-
-        /** MySQL database password */
         define('DB_PASSWORD', 'Bagu3tt314');
-
-        /** MySQL hostname */
+        define('DB_HOST', 'localhost');
+        define('WP_DEBUG', false);
+        break;
+    case "staging":
+    	define('SITE_URL', 'staging.lamadeleine.nfusion.com');
+        define('DB_NAME', 'lam_wp_staging');
+        define('DB_USER', 'LAM-14');
+        define('DB_PASSWORD', 'Bagu3tt314');
+        define('DB_HOST', 'localhost');
+        define('WP_DEBUG', false);
+        break;
+    default: /* production */
+    	define('SITE_URL', 'lamadeleine.com');
+        define('DB_NAME', 'lam_wp');
+        define('DB_USER', 'LAM-14');
+        define('DB_PASSWORD', 'Bagu3tt314');
         define('DB_HOST', 'localhost');
         define('WP_DEBUG', false);
 
 }
-
-
-
 
 
 /** Database Charset to use in creating database tables. */
@@ -177,7 +125,7 @@ define('WPLANG', '');
 define( 'WP_ALLOW_MULTISITE', true );
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', true);
-define('DOMAIN_CURRENT_SITE', 'test.lamadeleine.nfusion.com');
+define('DOMAIN_CURRENT_SITE', $SITE_URL);
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
