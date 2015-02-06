@@ -41,6 +41,14 @@ switch($env){
         define('DB_HOST', '127.0.0.1');
         define('WP_DEBUG', true);
         break;
+    case "roger":
+    	define('SITE_URL', 'local.lamadeleine.nfusion.com');
+        define('DB_NAME', 'lam_wp');
+        define('DB_USER', 'root');
+        define('DB_PASSWORD', 'root');
+        define('DB_HOST', '127.0.0.1');
+        define('WP_DEBUG', true);
+        break;
     case "test":
     	define('SITE_URL', 'test.lamadeleine.nfusion.com');
         define('DB_NAME', 'lam_wp');
