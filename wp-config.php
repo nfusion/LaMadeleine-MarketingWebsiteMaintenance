@@ -55,7 +55,7 @@ switch($env){
         define('DB_USER', 'LAM-14');
         define('DB_PASSWORD', 'Bagu3tt314');
         define('DB_HOST', 'localhost');
-        define('WP_DEBUG', true);
+        define('WP_DEBUG', false);
         break;
     case "staging":
     	define('SITE_URL', 'staging.lamadeleine.nfusion.com');
