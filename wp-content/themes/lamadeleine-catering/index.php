@@ -1,4 +1,4 @@
-<?php require_once('header.php'); ?>
+<?php get_header(); ?>
 <?php include_once('js/trackingjs.html'); ?>
 
 <div id="banners">
@@ -51,4 +51,4 @@
 		<div class="clear"></div>
 	</div><!-- /.container -->
 </div><!-- /#main -->
-<?php require_once('footer.php'); ?>
+<?php get_footer(); ?> ?>
