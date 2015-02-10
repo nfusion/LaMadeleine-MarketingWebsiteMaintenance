@@ -113,45 +113,8 @@ else {
 				<div id="mobile_close">Close</div>
 			</div>
 			<nav id="nav_main" role="navigation">
-				<!-- <div class="left_nav">
-					<ul>
-						<li class="nav_catering">
-							<a href="/menu">CATERING MENU</a>
-							<ul class="submenu">
-								<li><a href="/menu#breakfast">Breakfast</a></li>
-								<li><a href="/menu#sandwiches">Sandwiches</a></li>
-								<li><a href="/menu#boxes">bistro box lunches</a></li>
-								<li><a href="/menu#salades">salades</a></li>
-								<li><a href="/menu#entrees">entrées</a></li>
-								<li><a href="/menu#pastas">pastas</a></li>
-								<li><a href="/menu#soupes">soupes</a></li>
-								<li><a href="/menu#a-la-carte">à la carte</a></li>
-								<li><a href="/menu#beverages">beverages</a></li>
-								<li><a href="/menu#pastries-desserts">pastries & desserts</a></li>
-								<li class="nav_download"><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">Download Catering Menu</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="http://order.cateringbylamadeleine.com/">ORDER ONLINE</a>
-						</li>
-						<li class="nav_locations">
-							<a href="/#location_list">FIND A CAFé</a>
-							<ul class="submenu"><?php echo $states_menu; ?></ul>
-						</li>
-					</ul>
-				</div> -->
-				<?php echo wp_nav_menu( array( 'theme_location' => 'left-menu', 'container_class' => 'left_nav' ) ); ?>
-				<?php echo wp_nav_menu( array( 'theme_location' => 'right-menu', 'container_class' => 'right_nav' ) ); ?>
-				<!-- <div class="right_nav">
-					<ul>
-						<li>
-							<a href="/faq">FREQUENTLY ASKED QUESTIONS</a>
-						</li>
-						<li>
-							<a target="_blank" href="http://lamadeleine.com/">LAMADELEINE.COM</a>
-						</li>
-					</ul>
-				</div> -->
+			<?php echo wp_nav_menu( array( 'theme_location' => 'left-menu', 'container_class' => 'left_nav' ) ); ?>
+			<?php echo wp_nav_menu( array( 'theme_location' => 'right-menu', 'container_class' => 'right_nav' ) ); ?>
 			</nav>
 		</div>
 	</header>
