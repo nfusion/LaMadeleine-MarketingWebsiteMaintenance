@@ -113,7 +113,7 @@ else {
 				<div id="mobile_close">Close</div>
 			</div>
 			<nav id="nav_main" role="navigation">
-				<div class="left_nav">
+				<!-- <div class="left_nav">
 					<ul>
 						<li class="nav_catering">
 							<a href="/menu">CATERING MENU</a>
@@ -139,8 +139,10 @@ else {
 							<ul class="submenu"><?php echo $states_menu; ?></ul>
 						</li>
 					</ul>
-				</div>
-				<div class="right_nav">
+				</div> -->
+				<?php echo wp_nav_menu( array( 'theme_location' => 'left-menu', 'container_class' => 'left_nav' ) ); ?>
+				<?php echo wp_nav_menu( array( 'theme_location' => 'right-menu', 'container_class' => 'right_nav' ) ); ?>
+				<!-- <div class="right_nav">
 					<ul>
 						<li>
 							<a href="/faq">FREQUENTLY ASKED QUESTIONS</a>
@@ -149,7 +151,7 @@ else {
 							<a target="_blank" href="http://lamadeleine.com/">LAMADELEINE.COM</a>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 			</nav>
 		</div>
 	</header>
