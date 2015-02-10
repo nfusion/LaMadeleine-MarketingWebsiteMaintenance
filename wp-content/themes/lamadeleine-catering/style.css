@@ -540,7 +540,7 @@ li.nav_download {
 #accordion .ui-corner-right, 
 #accordion .ui-corner-br {border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
 
-#accordion .ui-widget-content {background: #FDFBE8; border: 0px; border-bottom: 1px solid #452513; padding:1em 2.2em 1em 3.5em;}
+#accordion .ui-widget-content {background: #FDFBE8; border: 0px; border-bottom: 1px solid #452513; padding:1em 2.2em 1em 3.5em; font-size: 14px;}
 
 /* =============================================================================
 	 Menu
