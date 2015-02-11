@@ -170,3 +170,10 @@ function lam_locations_taxonomy() {
 	register_taxonomy( 'geographie', array( 'locations' ), $args );
 }
 add_action( 'init', 'lam_locations_taxonomy', 0 );
+
+add_action( 'plugins_loaded', 'lam_admin_disable_cache', 9 );
+function lam_admin_disable_cache() {
+	if (is_admin()) {
+		define( 'PODS_ALT_CACHE', false );
+	}
+}
