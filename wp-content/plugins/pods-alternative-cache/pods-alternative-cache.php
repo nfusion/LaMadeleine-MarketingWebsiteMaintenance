@@ -340,8 +340,8 @@ function pods_alternative_cache_db_clear() {
 	return true;
 
 }
-//add_action( 'pods_view_clear_transient', 'pods_alternative_cache_clear' );
-//add_action( 'pods_view_clear_cache', 'pods_alternative_cache_clear' );
+add_action( 'pods_view_clear_transient', 'pods_alternative_cache_clear' );
+add_action( 'pods_view_clear_cache', 'pods_alternative_cache_clear' );
 
 global $pods_alternative_cache_last, $pods_alternative_cache_last_key;
 $pods_alternative_cache_last = null;
