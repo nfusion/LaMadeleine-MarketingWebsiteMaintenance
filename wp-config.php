@@ -33,7 +33,6 @@ switch($env){
         define('WP_DEBUG_LOG', true);
         define('WP_DEBUG_DISPLAY', false);
         error_reporting(E_ALL ^ E_WARNING);
-
         break;
     case "mdavis":
     	define('SITE_URL', 'local.lamadeleine.nfusion.com');
@@ -74,7 +73,6 @@ switch($env){
         define('DB_PASSWORD', 'Bagu3tt314');
         define('DB_HOST', 'localhost');
         define('WP_DEBUG', false);
-
 }
 
 
