@@ -148,6 +148,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 * Accepts string and length value, returns teaser
 */
 function create_teaser($content,$length,$hellip=TRUE) {
+	$teaser = '';
 	$i=0; // array units
 	$c=0; // character counter
 	$para = explode(" ", $content);
@@ -193,7 +194,7 @@ function display_featured_item($featuredObj){
       // Start featured item element
       $str = '<div class="featured-menu-item">';
 
-      if($hasStory) :
+      if( !empty($hasStory) ) :
 	      // This featured item has a story. Use a larger image size to make room for story teaser. 
 	      $str .= $featured['featured_img_story'];
 	    	$featuredItemClass = "has-story";
@@ -210,7 +211,7 @@ function display_featured_item($featuredObj){
       $str .= '<p class="title">' . $featured['title'] . '</p>';
 
       // If there is a story associated with this featured item
-      if($hasStory) :
+      if( !empty($hasStory) ) :
 
           // This story
           $story = $featured['story'];
@@ -244,7 +245,7 @@ function display_featured_item($featuredObj){
 *
 **/
 function display_menu_item($menuItemObj, $featuredItemObj){
-
+	$str = '';
 	// Does this menu item  have a story related? 
 	if(count($menuItemObj['story']) > 1) :
 		$hasStory = true;
@@ -278,6 +279,7 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   $str .= '</div>';
 
   // Echo menu item description
+  $isPriced = '';
   if($menuItemObj['price_min'] == '0.00' || $menuItemObj['price_max'] == '0.00'):
   	$isPriced = "ispriced-false";
   endif;
@@ -300,7 +302,7 @@ function display_menu_item($menuItemObj, $featuredItemObj){
 
   $str .='</div>';
 
-  if($hasStory) :
+  if( !empty($hasStory) )  :
   	// If this menu item is not also the featured item, display the story CTA under the menu item in the category
   	if($menuItemObj['title'] != $featuredItemObj['title']) :
   		// Generate and include story teaser
@@ -614,41 +616,6 @@ function display_promo($promo, $type){
 
   endif;
 }
-
-
-function lam_metaboxes() {
-    // Loction
-    pods_group_add('locations', 'Location Details', 'address, address_2, city, state, zip_code, phone, latitude, longitude, menu_pricing');
-    pods_group_add('locations', 'Store Hours', 'days_closed, monday_open, monday_close, tuesday_open, tuesday_close, wednesday_open, wednesday_close, thursday_open, thursday_close, friday_open,friday_close,saturday_open, saturday_close, sunday_open, sunday_close');
-
-
-    pods_group_add('menu_item', 
-                    'Menu Details',
-                   'description , price_min, price_max, menu_key_relationship, story, fma_promo, daypart_relationship, menu_category, featured_item, order_weight');
-
-    pods_group_add( 'menu_item',
-                    'First Option',
-                     'description_1, optional_min_price_1, optional_max_price_1'
-                   );
-    pods_group_add( 'menu_item',
-                    'Second Option',
-                     'description_2, optional_min_price_2, optional_max_price_2'
-                   );
-     pods_group_add( 'menu_item',
-                    'Third Option',
-                     'description_3, optional_min_price_3, optional_max_price_3'
-                   );
-      pods_group_add( 'menu_item',
-                    'Fourth Option',
-                     'description_4, optional_min_price_4, optional_max_price_4'
-                   );
-     pods_group_add( 'menu_item',
-                    'Fifth Option',
-                     'description_5, optional_min_price_5, optional_max_price_5'
-                   );
-}
-
-add_action( 'pods_meta_groups', 'lam_metaboxes', 10, 2 );
 
 
 function process_stories($mypod){
