@@ -19,8 +19,6 @@
 //define('DB_NAME', 'lam_wp');
 
 /*** We are going to use up Environments Vars to identify Configurations **/
-//define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/private/var/www/nfusion/lam/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 $env = isset($_SERVER['APPLICATION_ENVIRONMENT'])?$_SERVER['APPLICATION_ENVIRONMENT']:'production';
 define('ENV',$env);
 
@@ -31,7 +29,11 @@ switch($env){
         define('DB_USER', 'root');
         define('DB_PASSWORD', 'root');
         define('DB_HOST', '127.0.0.1');
-        define('WP_DEBUG', true);
+        define('WP_DEBUG', false);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        error_reporting(E_ALL ^ E_WARNING);
+
         break;
     case "mdavis":
     	define('SITE_URL', 'local.lamadeleine.nfusion.com');
@@ -128,6 +130,9 @@ define('WPLANG', '');
  * in their development environments.
  */
 //define('WP_DEBUG', false);
+
+/* PODS Cache */
+#if (stristr($_SERVER['REQUEST_URI'],"wp-admin")) {define( 'PODS_ALT_CACHE', false );}
 
 /* Multisite */
 define( 'WP_ALLOW_MULTISITE', true );
