@@ -135,6 +135,9 @@ define('BLOG_ID_CURRENT_SITE', 1);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
+/* Multisite */
+define( 'SUNRISE', 'on' );
+
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
