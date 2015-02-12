@@ -1,16 +1,19 @@
 <?php
+ 
+ $menu_categories = get_terms( 'menu_categories', array(
+    'orderby'    => 'count',
+    'hide_empty' => 0,
+ ) );
+
 // menu item args
 $menu_items = array(
 'numberposts' => -1,
 'post_type' => 'menu_items'
 );
+
 // get menu items
 $get_items = new WP_Query( $menu_items );
 
- $menu_categories = get_terms( 'menu_categories', array(
-    'orderby'    => 'count',
-    'hide_empty' => 0,
- ) );
 
 ?>
 <?php get_header(); ?>
@@ -19,10 +22,9 @@ $get_items = new WP_Query( $menu_items );
         <div id="menu_wrapper">
             <div id="menu_nav">
                 <ul>
-                       <?php
-                            foreach ( $menu_categories as $category ) : ?>
-                                <li><a href="#<?php echo $category->slug ?>"><?php echo $category->name ?></a></li>   
-                        <?php endforeach; ?>
+                <?php foreach ( $menu_categories as $category ) : ?>
+                    <li><a href="#<?php echo $category->slug ?>"><?php echo $category->name ?></a></li>   
+                <?php endforeach; ?>
                     <li class="nav_download"><a href="http://order.cateringbylamadeleine.com">Click to<br />Order Online</a></li>
                 </ul>
             </div>
@@ -63,7 +65,7 @@ $get_items = new WP_Query( $menu_items );
                                 <?php endif; ?>
                                 <?php wp_reset_query(); //reset query?>
                             </div>
-                        <?php endforeach; ?>
+                        <?php endforeach; // end category loop ?>
                             <p><small>*contains nuts | ** contains alcohol | items may vary by location</small></p>
                         </div>
                         <div class="catering_block menu-footer">
