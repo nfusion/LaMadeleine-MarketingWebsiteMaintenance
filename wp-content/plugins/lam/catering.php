@@ -162,7 +162,7 @@ class Catering_Locations {
     	$url = $upload_dir['baseurl'] . '/json';
     	if ( ! file_exists($path) ) mkdir($path, 0775);
 
-		$fp = fopen(trailingslashit($path).'locations.json', 'w');
+		$fp = fopen(trailingslashit($path).'catering-locations.json', 'w');
 		fwrite($fp, json_encode($build));
 		fclose($fp);
 	}
@@ -180,6 +180,10 @@ class Catering_Locations {
 	// terms come through as objects
 	if (is_object($a)) {
 		return strcasecmp($a->name, $b->name);
+	}
+
+	public function getLocations() {
+
 	}
 	
 }
