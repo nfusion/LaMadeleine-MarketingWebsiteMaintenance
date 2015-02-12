@@ -7,16 +7,15 @@
  * and that other 'posts' on your WordPress site will use a
  * different template.
  *
- * @package required+ Foundation
- * @since required+ Foundation 0.3.0
+ * 
  */
 
 get_header(); ?>
 
 	<!-- Row for main content area -->
-	<div id="content" class="row">
+	<div id="content">
 
-		<div id="main" class="eight columns" role="main">
+		<div id="main" role="main">
 
 			<div class="post-box">
 
@@ -32,7 +31,7 @@ get_header(); ?>
 
 		</div><!-- /#main -->
 
-		<aside id="sidebar" class="four columns" role="complementary">
+		<aside id="sidebar" role="complementary">
 
 			<div class="sidebar-box">
 
