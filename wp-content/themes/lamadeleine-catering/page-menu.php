@@ -21,7 +21,7 @@ $get_items = new WP_Query( $menu_items );
                 <ul>
                        <?php
                             foreach ( $menu_categories as $category ) : ?>
-                                <li><a href="#<?php $category->slug ?>"><?php echo $category->name ?></a></li>   
+                                <li><a href="#<?php echo $category->slug ?>"><?php echo $category->name ?></a></li>   
                         <?php endforeach; ?>
                     <li class="nav_download"><a href="http://order.cateringbylamadeleine.com">Click to<br />Order Online</a></li>
                 </ul>
@@ -37,8 +37,9 @@ $get_items = new WP_Query( $menu_items );
                         <?php the_content(); ?>
                         </div><!-- .entry-content -->
                         <div id="menu">
-                            <div class="menu_group" id="breakfast">
-                                <h2>CATEGORY NAME HERE</h2>
+                        <?php foreach ( $menu_categories as $category ) : ?>
+                            <div class="menu_group" id="<?php echo $category->slug ?>">
+                                <h2><?php echo $category->name ?></h2>
                                 
                                 <?php if( $get_items->have_posts() ): ?>
 	                                <?php while ( $get_items->have_posts() ) : $get_items->the_post(); ?>
@@ -62,11 +63,12 @@ $get_items = new WP_Query( $menu_items );
                                 <?php endif; ?>
                                 <?php wp_reset_query(); //reset query?>
                             </div>
+                        <?php endforeach; ?>
                             <p><small>*contains nuts | ** contains alcohol | items may vary by location</small></p>
                         </div>
                         <div class="catering_block menu-footer">
                             <p class="center"><a href="#">Back To Top</a></p>
-                            <p><a target="_blank" href="/assets/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">DOWNLOAD CATERING MENU</a></p>
+                            <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">DOWNLOAD CATERING MENU</a></p>
                         </div>
                     </div>
                     <?php endwhile; // end of the loop. ?>
