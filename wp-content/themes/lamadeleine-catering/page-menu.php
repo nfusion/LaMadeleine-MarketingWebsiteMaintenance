@@ -40,17 +40,24 @@ $the_query = new WP_Query( $args );
                             <div class="menu_group" id="breakfast">
                                 <h2>bakery collections</h2>
                                 <?php if( $the_query->have_posts() ): ?>
-                                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                                <div class="menu_item">
-                                    <h3><?php the_title(); ?></h3>
+                                
+	                                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+	                                
+	                                <div class="menu_item">
 
-                                    <?php the_content(); ?>
+	                                	<!-- menu item title -->
+	                                    <h3><?php the_title(); ?></h3>
+										
+										<!-- menu item content -->
+	                                    <?php the_content(); ?>
+	                                    
+	                                    <p><small>SMALL VAR HERE&nbsp;<span>$<?php the_field('small_item_price'); ?></span>&nbsp;MEDIUM VAR HERE <span>&nbsp;$<?php the_field('medium_item_price'); ?></small></p>
+	                                </div>
+	                                
+	                                <?php endwhile; ?>
 
-                                    <p><small>SMALL VAR HERE&nbsp;<span>$<?php the_field('small_item_price'); ?></span>&nbsp;MEDIUM VAR HERE <span>&nbsp;$<?php the_field('medium_item_price'); ?></small></p>
-                                </div>
-                                <?php endwhile; ?>
                                 <?php endif; ?>
-                                <?php wp_reset_query(); ?>
+                                <?php wp_reset_query(); //reset query?>
                             </div>
                             <p><small>*contains nuts | ** contains alcohol | items may vary by location</small></p>
                         </div>
@@ -62,6 +69,6 @@ $the_query = new WP_Query( $args );
                     <?php endwhile; // end of the loop. ?>
                 </div>
                 <div class="clear"></div>
-                </div><!-- /.container -->
-                </div><!-- /#main -->
-                <?php get_footer(); ?>
+</div><!-- /.container -->
+</div><!-- /#main -->
+<?php get_footer(); ?>
