@@ -20,10 +20,9 @@ $get_items = new WP_Query( $menu_items );
             <div id="menu_nav">
                 <ul>
                        <?php
-                            foreach ( $menu_categories as $category ) {
-                                echo '<li><a href="#'. $category->slug .'">' . $category->name . '</a></li>';
-                            }
-                        ?>
+                            foreach ( $menu_categories as $category ) : ?>
+                                <li><a href="#<?php $category->slug ?>"><?php echo $category->name ?></a></li>   
+                        <?php endforeach; ?>
                     <li class="nav_download"><a href="http://order.cateringbylamadeleine.com">Click to<br />Order Online</a></li>
                 </ul>
             </div>
@@ -39,7 +38,7 @@ $get_items = new WP_Query( $menu_items );
                         </div><!-- .entry-content -->
                         <div id="menu">
                             <div class="menu_group" id="breakfast">
-                                <h2>bakery collections</h2>
+                                <h2>CATEGORY NAME HERE</h2>
                                 
                                 <?php if( $get_items->have_posts() ): ?>
 	                                <?php while ( $get_items->have_posts() ) : $get_items->the_post(); ?>
