@@ -38,7 +38,8 @@
 		<?php endwhile; ?>
 		<div id="location_list">
 			<h2><?php echo the_title(); ?></h2>
-			<?php echo $locations; ?>
+			<?php $locations = getCateringLocations(); ?>
+			<pre><?print_r($locations);?></pre>
 		</div>
 		<div class="clear"></div>
 	</div><!-- /.container -->
