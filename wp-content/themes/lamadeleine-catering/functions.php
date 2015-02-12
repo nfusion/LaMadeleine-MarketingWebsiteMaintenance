@@ -72,7 +72,6 @@ function menu_post_type() {
 add_action( 'init', 'menu_post_type' );
 
 function getCateringLocations() {
-  // cURL request for JSON file in the uploads directory.
   $upload_dir = wp_upload_dir();
   $file = network_site_url('/wp-content/uploads/json/catering-locations.json');
   $json = file_get_contents($file);
