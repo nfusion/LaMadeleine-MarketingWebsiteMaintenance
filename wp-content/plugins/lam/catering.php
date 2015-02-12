@@ -173,18 +173,13 @@ class Catering_Locations {
 	 * @return void
 	 */
 	private function alphaSort($a, $b) {
-	// posts come through as arrays
-	if (is_array($a)) {
-		return strcasecmp($a['name'], $b['name']);
+		// posts come through as arrays
+		if (is_array($a)) {
+			return strcasecmp($a['name'], $b['name']);
+		}
+		// terms come through as objects
+		if (is_object($a)) {
+			return strcasecmp($a->name, $b->name);
+		}
 	}
-	// terms come through as objects
-	if (is_object($a)) {
-		return strcasecmp($a->name, $b->name);
-	}
-
-	public function getLocations() {
-
-	}
-	
-}
 } // End Class
