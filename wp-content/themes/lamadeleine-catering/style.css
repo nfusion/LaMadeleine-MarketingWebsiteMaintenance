@@ -190,11 +190,11 @@ h1.lobster {font-size: 48px; color: #831110; font-weight: normal;}
 }
 #nav_main ul li.bolded a,
 #menu_nav ul li.bolded a,
-#nav_main ul li ul.submenu li.bolded a {
+#nav_main ul li ul.sub-menu li.bolded a {
 	color:#831110;
 } 
 
-#nav_main ul li ul.submenu {
+#nav_main ul li ul.sub-menu {
 	float: none;
 	position: absolute;
 	height: auto;
@@ -205,25 +205,25 @@ h1.lobster {font-size: 48px; color: #831110; font-weight: normal;}
 	padding: 15px 25px;
 	font-size: 1em;
 }
-#nav_main ul li ul.submenu li {
+#nav_main ul li ul.sub-menu li {
 	float: none;
 	display: block;
 }
-#nav_main ul li ul.submenu li a {
+#nav_main ul li ul.sub-menu li a {
 	float: none;
 	display: block;
 	color: #9fbd7a;
 }
-#nav_main ul li ul.submenu li a:hover, #nav_main ul li ul.submenu li a:active {
+#nav_main ul li ul.sub-menu li a:hover, #nav_main ul li ul.sub-menu li a:active {
 	color: #452513;
 }
-#nav_main ul li:hover ul.submenu {
+#nav_main ul li:hover ul.sub-menu {
 	left: -27px;
 }
-#nav_main ul li.nav_catering ul.submenu {
+#nav_main ul li.nav_catering ul.sub-menu {
 	width: 220px;
 }
-#nav_main ul li.nav_locations ul.submenu {
+#nav_main ul li.nav_locations ul.sub-menu {
 	width: 170px;
 }
 li.nav_download {
@@ -733,11 +733,11 @@ li.nav_download {
 	#nav_main ul li {
 		padding: 0 5px;
 	}
-	#nav_main ul li ul.submenu {
+	#nav_main ul li ul.sub-menu {
 		line-height: 30px;
 		padding: 10px 25px;
 	}
-	#nav_main ul li ul.submenu li {
+	#nav_main ul li ul.sub-menu li {
 		height: 30px;
 	}
 
@@ -858,7 +858,7 @@ li.nav_download {
 	#nav_main ul li a:hover, #nav_main ul li a:active {
 		color: #fff;
 	}
-	#nav_main ul li ul.submenu {
+	#nav_main ul li ul.sub-menu {
 		line-height: 30px;
 		padding: 0 15px;
 		position: relative;
@@ -868,29 +868,29 @@ li.nav_download {
 		border: 0;
 		display: none;
 	}
-	#nav_main ul li ul.submenu li {
+	#nav_main ul li ul.sub-menu li {
 		height: 30px;
 		padding: 0;
 	}
-	#nav_main ul li ul.submenu li a:hover, #nav_main ul li ul.submenu li a:active {
+	#nav_main ul li ul.sub-menu li a:hover, #nav_main ul li ul.sub-menu li a:active {
 		color: #fff;
 	}
-	#nav_main ul li:hover ul.submenu {
+	#nav_main ul li:hover ul.sub-menu {
 		left: auto;
 	}
-	#nav_main ul li.show_sub ul.submenu {
+	#nav_main ul li.show_sub ul.sub-menu {
 		display: block;
 	}
 	#nav_main ul li.show_sub a {
 		color: #fff;
 	}
-	#nav_main ul li.show_sub a ul.submenu li a {
+	#nav_main ul li.show_sub a ul.sub-menu li a {
 		color: #9fbd7a;
 	}
-	#nav_main ul li.nav_catering ul.submenu {
+	#nav_main ul li.nav_catering ul.sub-menu {
 		width: auto;
 	}
-	#nav_main ul li.nav_locations ul.submenu {
+	#nav_main ul li.nav_locations ul.sub-menu {
 		width: auto;
 	}
 
