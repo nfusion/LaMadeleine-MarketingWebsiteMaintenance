@@ -3,7 +3,7 @@
 /*
 Plugin Name: la Madeleine Pods Configuration
 Depends: Pods - Custom Content Types and Fields
-Plugin URI: http://drillinginfo.com
+Plugin URI: http://lamadeleine.com
 Description: Custom Pods functionality for site administration.
 Author: Katherine White <kwhite@nfusion.com>
 Version: 1.0
