@@ -39,37 +39,23 @@ $get_items = new WP_Query( $args );
                         <div id="menu">
                             <div class="menu_group" id="breakfast">
                                 <h2>bakery collections</h2>
-                                <?php if( $get_items->have_posts() ): ?>
                                 
+                                <?php if( $get_items->have_posts() ): ?>
 	                                <?php while ( $get_items->have_posts() ) : $get_items->the_post(); ?>
 	                                
-	                                <div class="menu_item">
+                                    <div class="menu_item">
 
 	                                	<!-- menu item title -->
 	                                    <h3><?php the_title(); ?></h3>
-										
+										<!-- content description header -->
+                                        <h4><?php the_field('description_header'); ?></h4>
 										<!-- menu item content -->
 	                                    <?php the_content(); ?>
-                                        
-                                        <?php 
-                                            // get item sizes
-                                            $small_size = get_field('small_item_size');
-                                            $med_size = get_field('medium_item_size'); 
-                                        ?>
-                                        <p><small>
-    	                                    
-                                            <?php if($small_size) : ?>
-                                                <?php the_field('small_item_size'); ?>&nbsp;<span>$<?php the_field('small_size_price'); ?></span>&nbsp;
-                                            <?php endif; ?>
-                                            
-                                            <?php if($med_size) : ?>
-                                                <?php the_field('medium_item_size'); ?> <span>&nbsp;$<?php the_field('medium_size_price'); ?>
-    	                                    <?php endif; ?>
-                                        </small></p>
-                                    </div>
-	                                
-	                                <?php endwhile; // end menu item loop ?>
+                                        <p><small><?php the_field('item_price'); ?></small></p>
 
+                                    </div><!-- // end menu item -->
+	                                
+                                    <?php endwhile; // end menu item loop ?>
                                 <?php endif; ?>
                                 <?php wp_reset_query(); //reset query?>
                             </div>
