@@ -28,7 +28,7 @@ $get_items = new WP_Query( $menu_items );
             <!--//The Loop -->
             <?php while ( have_posts() ) : the_post(); ?>
             <?php // if this post has this term. ?>
-            <?php if ( has_term($category->term_id, 'menu_categories', $post->ID) ) :?>
+            <?php if ( has_term($category->term_id, 'menu_categories') ) :?>
 
                 <header class="entry-header">
                     <h1 class="entry-title"><?php the_title(); ?></h1>
