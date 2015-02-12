@@ -107,7 +107,7 @@ class Catering_Locations {
 			$termsById['t'.$term->term_id] = $term;
 		}
 		$terms = $termsById;
-		
+
 		// build array of posts nested under terms.
 		foreach ( $terms as $key=>$term ) {
 			
@@ -145,12 +145,17 @@ class Catering_Locations {
 		}
 
 		$this->writeJSON(array_values($terms));
-		$logger->AddRow( print_r($terms,1) );
+		//$logger->AddRow( print_r($terms,1) );
 
-		$logger->Commit();
+		//$logger->Commit();
 		return true;
 	}
-
+	/**
+	 * File write for static JSON locations file.
+	 * @access private
+	 * @since  1.0.0
+	 * @return void
+	 */
 	private function writeJSON($build) {
 		$upload_dir = wp_upload_dir();
     	$path = $upload_dir['basedir'] . '/json';
