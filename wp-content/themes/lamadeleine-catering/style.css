@@ -220,7 +220,7 @@ h1.lobster {font-size: 48px; color: #831110; font-weight: normal;}
 #nav_main ul li:hover ul.sub-menu {
 	left: -27px;
 }
-#nav_main ul li.nav_catering ul.sub-menu {
+#nav_main ul li.menu-item ul.sub-menu {
 	width: 220px;
 }
 #nav_main ul li.nav_locations ul.sub-menu {
@@ -887,7 +887,7 @@ li.nav_download {
 	#nav_main ul li.show_sub a ul.sub-menu li a {
 		color: #9fbd7a;
 	}
-	#nav_main ul li.nav_catering ul.sub-menu {
+	#nav_main ul li.menu-item ul.sub-menu {
 		width: auto;
 	}
 	#nav_main ul li.nav_locations ul.sub-menu {
