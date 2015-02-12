@@ -1,11 +1,17 @@
 <?php
-// args
-$args = array(
+// menu item args
+$menu_items = array(
 'numberposts' => -1,
 'post_type' => 'menu_items'
 );
-// get results
-$get_items = new WP_Query( $args );
+// get menu items
+$get_items = new WP_Query( $menu_items );
+
+ $menu_categories = get_terms( 'menu_categories', array(
+    'orderby'    => 'count',
+    'hide_empty' => 0,
+ ) );
+
 ?>
 <?php get_header(); ?>
 <div id="main" role="document">
@@ -13,16 +19,11 @@ $get_items = new WP_Query( $args );
         <div id="menu_wrapper">
             <div id="menu_nav">
                 <ul>
-                    <li><a href="#breakfast">Breakfast</a></li>
-                    <li><a href="#sandwiches">Sandwiches</a></li>
-                    <li><a href="#boxes">bistro box lunches</a></li>
-                    <li><a href="#salades">salades</a></li>
-                    <li><a href="#entrees">entrées</a></li>
-                    <li><a href="#pastas">pastas</a></li>
-                    <li><a href="#soupes">soupes</a></li>
-                    <li><a href="#a-la-carte">à la carte</a></li>
-                    <li><a href="#beverages">beverages</a></li>
-                    <li><a href="#pastries-desserts">pastries & desserts</a></li>
+                       <?php
+                            foreach ( $menu_categories as $category ) {
+                                echo '<li><a href="#'. $category->slug .'">' . $category->name . '</a></li>';
+                            }
+                        ?>
                     <li class="nav_download"><a href="http://order.cateringbylamadeleine.com">Click to<br />Order Online</a></li>
                 </ul>
             </div>
@@ -65,8 +66,8 @@ $get_items = new WP_Query( $args );
                             <p><small>*contains nuts | ** contains alcohol | items may vary by location</small></p>
                         </div>
                         <div class="catering_block">
-                            <p class="center"><a href="#">Back To Top</a>
-                            <a target="_blank" href="/assets/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">DOWNLOAD CATERING MENU</a></p>
+                            <p class="center"><a href="#">Back To Top</a></p>
+                            <p><a target="_blank" href="/assets/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">DOWNLOAD CATERING MENU</a></p>
                         </div>
                     </div>
                     <?php endwhile; // end of the loop. ?>
