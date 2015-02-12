@@ -144,17 +144,17 @@ add_action( 'pods_meta_groups', 'lam_metaboxes', 10, 2 );
 function lam_locations_taxonomy() {
 	// Add new taxonomy, make it hierarchical (like categories)
 	$labels = array(
-		'name'              => _x( 'Geo Areas', 'taxonomy general name' ),
+		'name'              => _x( 'La G&eacute;ographie', 'taxonomy general name' ),
 		'singular_name'     => _x( 'Geo Area', 'taxonomy singular name' ),
-		'search_items'      => __( 'Search Geo Areas' ),
+		'search_items'      => __( 'Search La G&eacute;ographie' ),
 		'all_items'         => __( 'All Geo Areas' ),
 		'parent_item'       => __( 'Parent Area' ),
 		'parent_item_colon' => __( 'Parent Area:' ),
-		'edit_item'         => __( 'Edit Geo Area' ),
+		'edit_item'         => __( 'Edit Area' ),
 		'update_item'       => __( 'Update Area' ),
-		'add_new_item'      => __( 'Add New Geo Area' ),
-		'new_item_name'     => __( 'New Geo Area Name' ),
-		'menu_name'         => __( 'Geo Area' )
+		'add_new_item'      => __( 'Add New Area' ),
+		'new_item_name'     => __( 'New Area Name' ),
+		'menu_name'         => __( 'La G&eacute;ographie' )
 	);
 
 	$args = array(

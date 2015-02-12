@@ -101,12 +101,16 @@ class Catering_Locations {
 			'hide_empty' => false
 		);
 		$terms = get_terms('geographie', $args);
+		$termsById = array();
 
+		foreach ($terms as $term) {
+			$termsById['t'.$term->term_id] = $term;
+		}
+		$terms = $termsById;
+		
 		// build array of posts nested under terms.
 		foreach ( $terms as $key=>$term ) {
-			// create the container for posts and child terms.
-			$terms[$key]->places = array();
-
+			
 			$children = get_term_children( $term->term_id, 'geographie' );
 			$args = array(
 				'post_type' => 'locations',
@@ -128,18 +132,35 @@ class Catering_Locations {
 			);
 			$term_posts = get_posts($args);
 
-		foreach ($term_posts as $post) {
+			foreach ($term_posts as $post) {
 				// build array of post data from pods.
-				$terms[$key]->places[$post->ID] = $locations[$post->ID]; 
+				$terms[$key]->places[] = $locations[$post->ID]; 
 			}
+
+			if ( !empty($term->parent) ) {
+
+				$terms['t'.$term->parent]->places[] = $term;
+				unset($terms[$key]);
+			} 
 		}
-		
+
+		$this->writeJSON(array_values($terms));
 		$logger->AddRow( print_r($terms,1) );
 
 		$logger->Commit();
 		return true;
 	}
 
+	private function writeJSON($build) {
+		$upload_dir = wp_upload_dir();
+    	$path = $upload_dir['basedir'] . '/json';
+    	$url = $upload_dir['baseurl'] . '/json';
+    	if ( ! file_exists($path) ) mkdir($path, 0775);
+
+		$fp = fopen(trailingslashit($path).'locations.json', 'w');
+		fwrite($fp, json_encode($build));
+		fclose($fp);
+	}
 	/**
 	 * Alphabetical sort utility for aggregated posts/terms.
 	 * @access private
