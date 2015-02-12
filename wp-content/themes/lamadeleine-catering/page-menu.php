@@ -50,8 +50,8 @@ $the_query = new WP_Query( $args );
 										
 										<!-- menu item content -->
 	                                    <?php the_content(); ?>
-	                                    
-	                                    <p><small>SMALL VAR HERE&nbsp;<span>$<?php the_field('small_item_price'); ?></span>&nbsp;MEDIUM VAR HERE <span>&nbsp;$<?php the_field('medium_item_price'); ?></small></p>
+
+	                                    <p><small>SMALL VAR HERE&nbsp;<span>$<?php the_field('small_size_price'); ?></span>&nbsp;MEDIUM VAR HERE <span>&nbsp;$<?php the_field('medium_size_price'); ?></small></p>
 	                                </div>
 	                                
 	                                <?php endwhile; ?>
