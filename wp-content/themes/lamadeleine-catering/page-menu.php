@@ -45,14 +45,17 @@ $get_items = new WP_Query( $args );
 	                                
                                     <div class="menu_item">
 
-	                                	<!-- menu item title -->
-	                                    <h3><?php the_title(); ?></h3>
-										<!-- content description header -->
-                                        <h4><?php the_field('description_header'); ?></h4>
-										<!-- menu item content -->
-	                                    <?php the_content(); ?>
-                                        <p><small><?php the_field('item_price'); ?></small></p>
+	                                    <h3><?php the_title(); //menu item title ?></h3>
+										
+                                        <?php if(get_field('description_header')) : ?>
+                                            <h4><?php the_field('description_header'); // content description header ?></h4>
+                                        <? endif; ?>
+	                                    
+                                        <?php the_content(); //menu item content ?>
 
+                                        <?php if(get_field('item_price')) : ?>
+                                            <p><small><?php the_field('item_price'); // menu item quantity and price ?></small></p>
+                                        <? endif; ?>
                                     </div><!-- // end menu item -->
 	                                
                                     <?php endwhile; // end menu item loop ?>
