@@ -646,7 +646,8 @@ li.nav_download {
 #sandwiches .menu_item, #entrees .menu_item, #pastas .menu_item {
 	margin-top: 45px;
 }
-
+.menu-footer {width: 375px; margin: 0px auto;}
+.menu-footer p {display: inline-block; margin:0 0 0 20px;}
 /* =============================================================================
 	 Footer
 	 ========================================================================== */
