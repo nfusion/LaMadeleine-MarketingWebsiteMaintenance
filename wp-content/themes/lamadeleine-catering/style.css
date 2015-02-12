@@ -121,7 +121,7 @@ h1.lobster {font-size: 48px; color: #831110; font-weight: normal;}
 .cta {font-weight: bold; color: #831110; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;}
 .uppercase {text-transform: uppercase;}
 .download-link {color:#831110;}
-
+.alignright {float: right;}
 /* =============================================================================
 	 Header
 	 ========================================================================== */
@@ -381,6 +381,11 @@ li.nav_download {
 	background-position: -60px -30px;
 }
 
+.home h1,
+.home h2 {
+	font-family:"Lobster", Arial, sans-serif;
+	font-size: 3.7em;
+}
 /*==============================================================================
 	Holiday Feast
 ===============================================================================*/
@@ -648,6 +653,7 @@ li.nav_download {
 }
 .menu-footer {width: 375px; margin: 0px auto;}
 .menu-footer p {display: inline-block; margin:0 0 0 20px;}
+#menu_content h1 {font-size: 3.6em;}
 /* =============================================================================
 	 Footer
 	 ========================================================================== */

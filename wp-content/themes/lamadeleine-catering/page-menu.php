@@ -1,19 +1,15 @@
 <?php
- 
- $menu_categories = get_terms( 'menu_categories', array(
-    'orderby'    => 'count',
-    'hide_empty' => 0,
- ) );
+
+$menu_categories = get_terms( 'menu_categories' );
 
 // menu item args
 $menu_items = array(
-'numberposts' => -1,
-'post_type' => 'menu_items'
+    'numberposts' => -1,
+    'post_type' => 'menu_items',
 );
 
 // get menu items
 $get_items = new WP_Query( $menu_items );
-
 
 ?>
 <?php get_header(); ?>
