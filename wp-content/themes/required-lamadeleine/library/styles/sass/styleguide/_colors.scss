@@ -1,0 +1,29 @@
+/**
+* La Madeleine
+* Color Variables
+**/ 
+
+/* Standard */
+$white: #FFFFFF;
+$gray:	#CCCCCC;
+$black: #000000;
+
+/* La Madeleine Colors */
+
+// Browns
+$darkBrown: #310d00;
+$medBrown: #7a3910;
+$lightBrown: #b55a0f;
+$fadedBrown: #cbaf9a;
+$lightFadedBrown: lighten($fadedBrown, 15%);
+$redBrown: #6c2904;
+$tan: #e7d5b8;
+
+// Creams
+$medCream: #f4f2df;
+$darkCream: darken($medCream, 5%);
+$lightCream: #fffdf0;
+
+// Other
+$orange: #e5730e;
+$deepOrange: #ff6600;
