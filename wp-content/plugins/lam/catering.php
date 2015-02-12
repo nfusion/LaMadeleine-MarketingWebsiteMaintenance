@@ -162,7 +162,7 @@ class Catering_Locations {
     	$url = $upload_dir['baseurl'] . '/json';
     	if ( ! file_exists($path) ) mkdir($path, 0775);
 
-		$fp = fopen(trailingslashit($path).'locations.json', 'w');
+		$fp = fopen(trailingslashit($path).'catering-locations.json', 'w');
 		fwrite($fp, json_encode($build));
 		fclose($fp);
 	}
@@ -173,14 +173,13 @@ class Catering_Locations {
 	 * @return void
 	 */
 	private function alphaSort($a, $b) {
-	// posts come through as arrays
-	if (is_array($a)) {
-		return strcasecmp($a['name'], $b['name']);
+		// posts come through as arrays
+		if (is_array($a)) {
+			return strcasecmp($a['name'], $b['name']);
+		}
+		// terms come through as objects
+		if (is_object($a)) {
+			return strcasecmp($a->name, $b->name);
+		}
 	}
-	// terms come through as objects
-	if (is_object($a)) {
-		return strcasecmp($a->name, $b->name);
-	}
-	
-}
 } // End Class
