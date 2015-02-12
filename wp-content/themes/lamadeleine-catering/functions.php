@@ -15,10 +15,33 @@ function header_menus() {
 add_action( 'init', 'header_menus' );
 
 /*** Custom Taxonomies ***/
-// function add_custom_taxonomies() {
-// 	register_taxonomy('Menu Categories','page', array(
-// 		),)
-// }
+
+
+// Now register the taxonomy
+function custom_menu_taxonomies() {
+    $labels = array(
+    'name' => _x( 'Menu Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Menu Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Menu Categories' ),
+    'all_items' => __( 'All Menu Categories' ),
+    'parent_item' => __( 'Parent Menu Categories' ),
+    'parent_item_colon' => __( 'Parent Menu Category:' ),
+    'edit_item' => __( 'Edit Menu Category' ), 
+    'update_item' => __( 'Update Menu Category' ),
+    'add_new_item' => __( 'Add New Menu Category' ),
+    'new_item_name' => __( 'New Menu Category' ),
+    'menu_name' => __( 'Menu Categories' ),
+  );  
+	register_taxonomy('Menu Categories','page', array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'menu-categories' ),
+  ));
+}
+add_action( 'init', 'custom_menu_taxonomies', 0 );
 
 /*** Custom Post Types ***/
 function menu_post_type() {
