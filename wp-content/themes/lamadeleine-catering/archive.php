@@ -7,15 +7,13 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package required+ Foundation
- * @since required+ Foundation 0.1.0
  */
 get_header(); ?>
 
 	<!-- Row for main content area -->
-	<div id="content" class="row">
+	<div id="content">
 
-		<div id="main" class="eight columns" role="main">
+		<div id="main" role="main">
 			<div class="post-box">
 			<?php if ( have_posts() ) : ?>
 
@@ -27,11 +25,6 @@ get_header(); ?>
 					 * properly with a call to rewind_posts().
 					 */
 					the_post();
-
-					/* Get the archive title for the specific archive we are
-					 * dealing with.
-					 */
-					required_archive_title();
 
 					/* Since we called the_post() above, we need to
 					 * rewind the loop back to the beginning that way
@@ -64,7 +57,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<aside id="sidebar" class="four columns" role="complementary">
+		<aside id="sidebar" role="complementary">
 			<div class="sidebar-box">
 				<?php get_sidebar(); ?>
 			</div>

@@ -12,11 +12,9 @@
 get_header(); ?>
 
 	<!-- Row for main content area -->
-	<div id="content" class="row">
-
-		<div id="main" class="eight columns" role="main">
+	<div id="content">
+		<div id="main" role="main">
 			<div class="post-box">
-
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
@@ -33,7 +31,7 @@ get_header(); ?>
 			</div>
 		</div><!-- /#main -->
 
-		<aside id="sidebar" class="four columns" role="complementary">
+		<aside id="sidebar" role="complementary">
 			<div class="sidebar-box">
 				<?php get_sidebar(); ?>
 			</div>
