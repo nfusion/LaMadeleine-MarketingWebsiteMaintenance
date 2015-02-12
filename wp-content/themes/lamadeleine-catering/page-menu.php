@@ -28,8 +28,7 @@ $get_items = new WP_Query( $menu_items );
             <!--//The Loop -->
             <?php while ( have_posts() ) : the_post(); ?>
             <?php // if this post has this term. ?>
-            <?php if ( has_term($category->term_id, 'menu_categories') ) :?>
-
+                <?php print_r(has_term($category->term_id, 'menu_categories')); ?>
                 <header class="entry-header">
                     <h1 class="entry-title"><?php the_title(); ?></h1>
                 </header><!-- .entry-header -->
@@ -44,7 +43,7 @@ $get_items = new WP_Query( $menu_items );
                             
                             <?php if( $get_items->have_posts() ): ?>
                                 <?php while ( $get_items->have_posts() ) : $get_items->the_post(); ?>
-                                
+                                <?php if ( has_term($category->term_id, 'menu_categories') ) :?>
                                 <div class="menu_item">
 
                                     <h3><?php the_title(); //menu item title ?></h3>
@@ -59,7 +58,7 @@ $get_items = new WP_Query( $menu_items );
                                         <p><small><?php the_field('item_price'); // menu item quantity and price ?></small></p>
                                     <? endif; ?>
                                 </div><!-- // end menu item -->
-                                
+                                <?php endif; ?>
                                 <?php endwhile; // end menu item loop ?>
                             <?php endif; //items have posts ?>
                             <?php wp_reset_query(); //reset query?>
@@ -71,7 +70,6 @@ $get_items = new WP_Query( $menu_items );
                             <p class="center"><a href="#">Back To Top</a></p>
                             <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">DOWNLOAD CATERING MENU</a></p>
                         </div>
-            <?php endif; ?>
             <?php endwhile; // end of the loop. ?>
             </div><!-- /menu-content -->
         </div>
