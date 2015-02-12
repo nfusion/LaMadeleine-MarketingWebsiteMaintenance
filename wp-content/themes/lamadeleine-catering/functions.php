@@ -32,7 +32,7 @@ function custom_menu_taxonomies() {
     'new_item_name' => __( 'New Menu Category' ),
     'menu_name' => __( 'Menu Categories' ),
   );  
-	register_taxonomy('Menu Categories','page', array(
+	register_taxonomy('menu_categories','menu_items', array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
