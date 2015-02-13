@@ -6,7 +6,7 @@
 include_once('Walker_Left_Menu.class.php');
 
 /*** Header Navigation ***/
-function catering_menus() {
+function header_menus() {
   register_nav_menus(
     array(
       'left-menu' => __( 'Left Header' ),
@@ -14,10 +14,10 @@ function catering_menus() {
     )
   );
 }
-add_action( 'init', 'catering_menus' );
+add_action( 'init', 'header_menus' );
 
 /*** Custom Taxonomies ***/
-// register the taxonomy
+// Now register the taxonomy
 function custom_menu_taxonomies() {
     $labels = array(
     'name' => _x( 'Menu Categories', 'taxonomy general name' ),
