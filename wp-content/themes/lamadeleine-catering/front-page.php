@@ -50,8 +50,13 @@
 		
 			<?php $locations = getCateringLocations(); ?>
 			<pre><?php //print_r($locations) ?></pre>
+			<div id="jump_links">
+			<?php foreach ($locations as $loc) : // get top jump links?>
+				<a href="#<?php echo $loc->name ?>"><?php echo $loc->name ?></a>
+			<?php endforeach ?>
+			</div>
 			<?php foreach ($locations as $loc) : ?>
-				<div id="" class="state_group">
+				<div id="<?php echo $loc->name ?>" class="state_group">
 				<h3><?php echo $loc->name ?></h3>
 					<div class="region_group">
 						<?php $count=0; ?>
