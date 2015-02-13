@@ -8,17 +8,13 @@
 <head>
 	<meta charset="utf-8" />
 
-	<title>Catering by La Madeleine</title>
+	<title><?php wp_title(); ?> </title>
 
 	<meta name="author" content="" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-	<link rel="shortcut icon" href="/img/favicon.ico">
-	<link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico">
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/libs/modernizr-2.5.3.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Lobster' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
