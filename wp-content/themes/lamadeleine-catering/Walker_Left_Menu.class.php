@@ -17,9 +17,6 @@ class Walker_Left_Menu extends Walker_Nav_Menu {
 		if (empty($this->menu_tax)) {
 			$this->menu_tax = get_taxonomy('menu_categories' );
 		}
-		if (empty($this->geo_tax)) {
-			$this->geo_tax = get_taxonomy('geographie' );
-		}
 	}
 
 	/**
@@ -83,12 +80,7 @@ class Walker_Left_Menu extends Walker_Nav_Menu {
 			//print_r($segments);
 			$atts['href'] = get_site_url() . "/menu#" . $segments[4];
 		}
-
-		if ( strpos( $atts['href'], $this->geo_tax->rewrite['slug'] ) ) {
-			$segments = explode("/", $atts['href']);
-			//print_r($segments);
-			$atts['href'] = get_site_url() . "/#" . $segments[4];
-		}
+		
 		/**
 		 * Filter the HTML attributes applied to a menu item's anchor element.
 		 *
