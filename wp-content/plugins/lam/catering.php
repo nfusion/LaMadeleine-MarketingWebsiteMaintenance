@@ -86,12 +86,17 @@ class Catering_Locations {
 
 		// stashing this for later use.
 		$catering = $wpdb->get_results( 
-			'SELECT * FROM ' . $table_prefix . 'pods_locations l ' . 
-			'WHERE l.catering_available = 1', OBJECT );
+			"SELECT * " . 
+			"FROM " . $wpdb->prefix . "posts p " . 
+			"INNER JOIN " . $wpdb->prefix . "pods_locations l " . 
+			"ON p.ID = l.id " . 
+			"WHERE l.catering_available = 1", OBJECT );
 		
 		// build an array that is keyed off of the post ID.
 		foreach ($catering as $location) {
-			$locations[$location->id] = $location;
+			// Two ID fields is rather confusing. We'll use the one coming from the posts table.
+			unset ($location->id);
+			$locations[$location->ID] = $location;
 		}
 
 		// get all terms with assigned posts
@@ -147,7 +152,7 @@ class Catering_Locations {
 		$this->writeJSON(array_values($terms));
 		//$logger->AddRow( print_r($terms,1) );
 
-		//$logger->Commit();
+		$logger->Commit();
 		return true;
 	}
 	/**
