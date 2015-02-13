@@ -10,14 +10,15 @@ function header_menus() {
   register_nav_menus(
     array(
       'left-menu' => __( 'Left Header' ),
-      'right-menu' => __( 'Right Header ' )
+      'right-menu' => __( 'Right Header ' ),
+      'footer-menu' => __( 'Footer' )
     )
   );
 }
 add_action( 'init', 'header_menus' );
 
 /*** Custom Taxonomies ***/
-// Now register the taxonomy
+// register the taxonomy
 function custom_menu_taxonomies() {
     $labels = array(
     'name' => _x( 'Menu Categories', 'taxonomy general name' ),

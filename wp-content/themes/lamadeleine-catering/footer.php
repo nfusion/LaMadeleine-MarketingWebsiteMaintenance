@@ -5,7 +5,7 @@
 				<img id="footer_lamad" src="<?php echo get_stylesheet_directory_uri(); ?>/img/lamad-logo.png" alt="La Madeleine" />
 
 				<nav id="nav_footer" role="navigation">
-					<?php //wp_nav_menu( array('menu' => 'Footer' )); ?>
+					<?php wp_nav_menu( array('menu' => 'Footer' )); ?>
 				</nav>
 
 				<div id="copyright">
