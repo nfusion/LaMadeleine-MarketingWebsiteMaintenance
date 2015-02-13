@@ -73,7 +73,7 @@ add_action( 'init', 'menu_post_type' );
 
 function getCateringLocations() {
   $upload_dir = wp_upload_dir();
-  $file = network_site_url('/wp-content/uploads/json/catering-locations.json');
+  $file = network_site_url('/wp-content/uploads/json/catering-locations.json?t='.mktime());
   $json = file_get_contents($file);
   return json_decode($json);
 }
