@@ -84,7 +84,7 @@ class Walker_Left_Menu extends Walker_Nav_Menu {
 			$atts['href'] = get_site_url() . "/menu#" . $segments[4];
 		}
 
-		if ( strpos( $atts['href'], $this->geo_tax->rewrite['slug'] ) {
+		if ( strpos( $atts['href'], $this->geo_tax->rewrite['slug'] ) ) {
 			$segments = explode("/", $atts['href']);
 			//print_r($segments);
 			$atts['href'] = get_site_url() . "/#" . $segments[4];
