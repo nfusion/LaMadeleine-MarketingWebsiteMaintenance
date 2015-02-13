@@ -5,12 +5,7 @@
 				<img id="footer_lamad" src="<?php echo get_stylesheet_directory_uri(); ?>/img/lamad-logo.png" alt="La Madeleine" />
 
 				<nav id="nav_footer" role="navigation">
-					<ul>
-						<li><a href="/menu">view catering menu</a><li>
-						<li><a href="/#location_list">find a café</a><li>
-						<li><a href="/faqs#1">how to order</a><li>
-						<li><a href="/faqs">frequently asked questions</a><li>
-					</ul>
+					<?php echo wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 				</nav>
 
 				<div id="copyright">
