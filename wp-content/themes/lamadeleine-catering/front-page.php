@@ -86,7 +86,7 @@
 			<?php else: ?>
 				<p><em>D&eacute;sol&eacute;</em>, the catering location list is temporarially unavailable. 
 					Please access our <a href="http://order.cateringbylamadeleine.com/">online ordering site</a> 
-					directly to search for your nearest catering location! <em>Merci!</em>
+					directly to search for your nearest catering location! <em>Merci! </em>
 				</p>
 			<?php endif; ?>
 		</div>
