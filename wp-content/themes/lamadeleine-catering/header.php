@@ -40,7 +40,11 @@
 				<div id="mobile_close">Close</div>
 			</div>
 			<nav id="nav_main" role="navigation">
-			<?php echo wp_nav_menu( array( 'theme_location' => 'left-menu', 'container_class' => 'left_nav' ) ); ?>
+			<?php echo wp_nav_menu( array( 
+				'theme_location' => 'left-menu', 
+				'container_class' => 'left_nav',
+				'walker' => new Walker_Left_Menu 
+			) ); ?>
 			<?php echo wp_nav_menu( array( 'theme_location' => 'right-menu', 'container_class' => 'right_nav' ) ); ?>
 			</nav>
 		</div>
