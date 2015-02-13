@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 <?php include_once('js/trackingjs.html'); ?>
-
+<?php function displaylocation($place) { ob_start(); ?>
+	<span class="location_name"><?php echo $place->post_title?></span>
+	<span class="location_street"><?php echo $place->address ?></span>
+	<span class="location_street2"><?php echo $place->address_2 ?></span>
+	<span class="location_citystatezip"><?php echo $place->city ?>, <?php echo $place->state ?> <?php echo $place->zip_code ?></span>
+	<span class="location_phone"><?php echo $place->phone ?></span>
+	<span class="location_menu"><a href="http://order.cateringbylamadeleine.com/" title="Click to Order" target="_blank">Click to Order</a></span>
+	<?php
+    return ob_get_clean();
+} ?>
 <div id="banners">
 	<div class="container">
 		<div id="banner_images">
@@ -38,8 +47,40 @@
 		<?php endwhile; ?>
 		<div id="location_list">
 			<h2><?php echo the_title(); ?></h2>
+		
 			<?php $locations = getCateringLocations(); ?>
-			<pre><?print_r($locations);?></pre>
+			<pre><?php //print_r($locations) ?></pre>
+			<div id="jump_links">
+			<?php foreach ($locations as $loc) : // get top jump links?>
+				<a href="#<?php echo $loc->name ?>"><?php echo $loc->name ?></a>
+			<?php endforeach ?>
+			</div>
+			<?php foreach ($locations as $loc) : ?>
+				<div id="<?php echo $loc->name ?>" class="state_group">
+				<h3><?php echo $loc->name ?></h3>
+					<div class="region_group">
+						<?php $count=0; ?>
+						<?php foreach ($loc->places as $place) : // is this place a region or store? ?>
+						
+							<?php if (!empty($place->term_id)) : // it's a region ?>
+								<div class="region_group">
+								<h4 class="clear"><?php echo $place->name ?></h4> 
+								<?php $count=0; ?>
+								<?php foreach ($place->places as $store) : ?>
+									<div class="location_item <?php echo (++$count % 2) ? "item1" : "item2"; ?>">
+									<?php echo displaylocation($store); ?>
+									<?php echo '</div>'; ?>
+								<?php endforeach; ?>
+								</div>
+							<?php else : // it's a store ?>
+								<div class="location_item <?php echo (++$count % 2) ? "item1" : "item2"; ?>">
+									<?php echo displaylocation($place); ?>
+								</div>
+							<?php endif; ?>
+						<?php endforeach ?>
+					</div>
+				</div>
+			<?php endforeach; ?>
 		</div>
 		<div class="clear"></div>
 	</div><!-- /.container -->
