@@ -49,6 +49,8 @@
 			<h2><?php echo the_title(); ?></h2>
 		
 			<?php $locations = getCateringLocations(); ?>
+			<?php if (!empty($locations)) : ?>
+
 			<pre><?php //print_r($locations) ?></pre>
 			<div id="jump_links">
 			<?php foreach ($locations as $loc) : // get top jump links?>
@@ -77,10 +79,19 @@
 									<?php echo displaylocation($place); ?>
 								</div>
 							<?php endif; ?>
+							<?php if (!empty($place->term_id)) : // it's a region ?>
+							</div>
+							<?php endif; ?>
 						<?php endforeach ?>
 					</div>
 				</div>
 			<?php endforeach; ?>
+			<?php else: ?>
+				<p><em>D&eacute;sol&eacute;</em>, the catering location list is temporarially unavailable. 
+					Please access our <a href="http://order.cateringbylamadeleine.com/">online ordering site</a> 
+					directly to search for your nearest catering location! <em>Merci!</em>
+				</p>
+			<?php endif; ?>
 		</div>
 		<div class="clear"></div>
 	</div><!-- /.container -->
