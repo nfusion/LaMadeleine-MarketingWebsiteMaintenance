@@ -79,9 +79,6 @@
 									<?php echo displaylocation($place); ?>
 								</div>
 							<?php endif; ?>
-							<?php if (!empty($place->term_id)) : // it's a region ?>
-							</div>
-							<?php endif; ?>
 						<?php endforeach ?>
 					</div>
 				</div>
