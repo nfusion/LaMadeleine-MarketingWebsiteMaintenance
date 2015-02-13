@@ -2,6 +2,8 @@
 /** La Madeleine Catering - functions.php
 * 	Author: nFusion
 */
+// include custom walker.
+include_once('Walker_Left_Menu.class.php');
 
 /*** Header Navigation ***/
 function header_menus() {
