@@ -6,20 +6,19 @@
 include_once('Walker_Left_Menu.class.php');
 
 /*** Header Navigation ***/
-function header_menus() {
+function catering_menus() {
   register_nav_menus(
     array(
       'left-menu' => __( 'Left Header' ),
-      'right-menu' => __( 'Right Header ' )
+      'right-menu' => __( 'Right Header ' ),
+      'footer-menu' => __( 'Footer' )
     )
   );
 }
-add_action( 'init', 'header_menus' );
+add_action( 'init', 'catering_menus' );
 
 /*** Custom Taxonomies ***/
-
-
-// Now register the taxonomy
+// register the taxonomy
 function custom_menu_taxonomies() {
     $labels = array(
     'name' => _x( 'Menu Categories', 'taxonomy general name' ),
