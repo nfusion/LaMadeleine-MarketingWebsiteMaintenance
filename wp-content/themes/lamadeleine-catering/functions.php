@@ -11,7 +11,6 @@ function catering_menus() {
     array(
       'left-menu' => __( 'Left Header' ),
       'right-menu' => __( 'Right Header ' ),
-      'footer-menu' => __( 'Footer' )
     )
   );
 }
