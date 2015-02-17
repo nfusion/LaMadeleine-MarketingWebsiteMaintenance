@@ -122,6 +122,7 @@ h1.lobster {font-size: 48px; color: #831110; font-weight: normal;}
 .uppercase {text-transform: uppercase;}
 .download-link {color:#831110;}
 .alignright {float: right;}
+
 /* =============================================================================
 	 Header
 	 ========================================================================== */
@@ -1059,4 +1060,5 @@ li.nav_download {
 	#menu #order-dates p {margin-top:20px;}
 	#menu_content .catering_block p {display: block; text-align: center;}
 	#jump_links a {display: block; border: 0px; margin-bottom: 8px;}
+	.hide-on-mobile {display: none;}
 }
