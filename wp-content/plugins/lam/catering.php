@@ -90,7 +90,8 @@ class Catering_Locations {
 			"FROM " . $wpdb->prefix . "posts p " . 
 			"INNER JOIN " . $wpdb->prefix . "pods_locations l " . 
 			"ON p.ID = l.id " . 
-			"WHERE l.catering_available = 1", OBJECT );
+			"WHERE l.catering_available = 1 " . 
+			"ORDER BY l.city ASC", OBJECT );
 		
 		// build an array that is keyed off of the post ID.
 		foreach ($catering as $location) {
@@ -132,7 +133,7 @@ class Catering_Locations {
 				),
 				'post__in' => array_keys($locations),
 				'posts_per_page' => -1,
-				'orderby' => 'title',
+				'orderby' => 'post__in',
 				'order'   => 'ASC'
 			);
 			$term_posts = get_posts($args);
