@@ -53,7 +53,9 @@ $get_items = new WP_Query( $menu_items );
                                     <? endif; ?>
                                     
                                     <?php the_content(); //menu item content ?>
-
+                                    <?php if(get_field('subitem_name')) : ?>
+                                        <h4></h4>
+                                    <? endif; ?>
                                     <?php if(get_field('item_price')) : ?>
                                         <p><small><?php the_field('item_price'); // menu item quantity and price ?></small></p>
                                     <? endif; ?>
