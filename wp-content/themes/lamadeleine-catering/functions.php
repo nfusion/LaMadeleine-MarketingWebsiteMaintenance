@@ -5,9 +5,6 @@
 // include custom walker.
 include_once('Walker_Left_Menu.class.php');
 
-//incrase file upload limit
-@ini_set( 'upload_max_size' , '64M' );
-
 /*** Header Navigation ***/
 function header_menus() {
   register_nav_menus(

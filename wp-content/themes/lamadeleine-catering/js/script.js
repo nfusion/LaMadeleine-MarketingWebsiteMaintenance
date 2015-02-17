@@ -126,7 +126,7 @@ jQuery( document ).ready(function() {
 		else jQuery( '#header' ).addClass('nav_open');
 	});
 
-	jQuery( '.submenu' ).each(function(index,sub){
+	jQuery( '.sub-menu' ).each(function(index,sub){
 		jQuery( sub ).prev('a').click(function(){
 			if(jQuery(window).width() < 768) {
 				if(jQuery( sub ).closest('li').hasClass('show_sub')) jQuery( sub ).closest('li').removeClass('show_sub');
