@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8" />
 
-	<title><?php wp_title(''); ?></title>
+	<title>Catering by La Madeleine</title>
 
 	<meta name="author" content="" />
 
