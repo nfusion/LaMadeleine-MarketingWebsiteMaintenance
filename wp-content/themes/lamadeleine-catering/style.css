@@ -22,7 +22,7 @@ body {
 	color: #452513;
 	background: #f0ecda url('img/background.png') repeat center top;
 }
-p, ul, ol, dl {
+p, ol, dl {
 	font-size: 1.4em;
 	line-height: 1.7em;
 	margin: 0 0 1.5em;
@@ -568,6 +568,7 @@ li.nav_download {
 	line-height: 20px;
 }
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {display: none;}
+.ui-widget-content ul a {color: #9fbd7a;}
 /* =============================================================================
 	 Menu
 	 ========================================================================== */
