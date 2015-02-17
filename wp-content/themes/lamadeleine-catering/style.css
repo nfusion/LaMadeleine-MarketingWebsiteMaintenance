@@ -1051,4 +1051,6 @@ li.nav_download {
 		margin: 0;
 	}
 	#menu #order-dates p {margin-top:20px;}
+
+	#jump_links a {display: block; border: 0px; margin-bottom: 8px;}
 }
