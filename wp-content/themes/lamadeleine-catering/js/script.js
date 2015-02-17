@@ -82,7 +82,7 @@ jQuery( document ).ready(function() {
 		var curr_menu_pos = -1;
 		var autoScroll = false;
 		var menuScrollSpeed = isiPad ? 0 : 1000;
-		$('#menu_wrapper').css('padding-bottom', jQuery(window).height() - jQuery(menu_groups[menu_groups.length - 1]).height() - jQuery('#footer').height() - 300);
+		//$('#menu_wrapper').css('padding-bottom', jQuery(window).height() - jQuery(menu_groups[menu_groups.length - 1]).height() - jQuery('#footer').height() - 300);
 
 		menu_sections.each(function(index,menunav){
 			//if( jQuery( jQuery(this).attr('href') ).length > 0 ) menu_positions[ index ] = jQuery( jQuery(this).attr('href') ).offset().top;
