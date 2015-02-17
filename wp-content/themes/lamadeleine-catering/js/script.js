@@ -85,7 +85,7 @@ jQuery( document ).ready(function() {
 		$('#menu_wrapper').css('padding-bottom', jQuery(window).height() - jQuery(menu_groups[menu_groups.length - 1]).height() - jQuery('#footer').height() - 300);
 
 		menu_sections.each(function(index,menunav){
-			if( jQuery( jQuery(this).attr('href') ).length > 0 ) menu_positions[ index ] = jQuery( jQuery(this).attr('href') ).offset().top;
+			//if( jQuery( jQuery(this).attr('href') ).length > 0 ) menu_positions[ index ] = jQuery( jQuery(this).attr('href') ).offset().top;
 			
 			jQuery(menunav).click(function(){
 				autoScroll = true;
@@ -122,6 +122,7 @@ jQuery( document ).ready(function() {
 	/* Menu Navigation END */
 
 	jQuery( '#mobile_nav' ).click(function(){
+		console.log('click');
 		if(jQuery( '#header' ).hasClass('nav_open')) jQuery( '#header' ).removeClass('nav_open');
 		else jQuery( '#header' ).addClass('nav_open');
 	});
