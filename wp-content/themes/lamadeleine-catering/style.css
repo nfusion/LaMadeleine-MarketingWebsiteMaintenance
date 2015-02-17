@@ -294,7 +294,7 @@ li.nav_download {
 }
 
 .entry-title {
-	font-family: "Lobster", Arial, sans-serif;
+	font-family: "Lobster", Arial, sans-serif; text-transform: lowercase;
 }
 #swirl {
 	text-align: center;
@@ -611,6 +611,7 @@ li.nav_download {
 	font-weight: 400;
 	margin: 0 0 0.75em;
 	padding: 0;
+	text-transform: lowercase;
 }
 #menu h3 {
 	color: #452513;
@@ -620,6 +621,7 @@ li.nav_download {
 	font-weight: 400;
 	margin: 0 0 0.5em;
 	padding: 0;
+	text-transform: lowercase;
 }
 #menu h4 {
 	color: #452513;
@@ -629,6 +631,7 @@ li.nav_download {
 	font-weight: 400;
 	margin: 0.5em 0 0.25em;
 	padding: 0;
+	text-transform: lowercase;
 }
 #menu p {
 	line-height: 1.25em;
@@ -661,6 +664,7 @@ li.nav_download {
 .menu-footer {width: 375px; margin: 0px auto;}
 .menu-footer p {display: inline-block; margin:0 0 0 20px;}
 #menu_content h1 {font-size: 3.6em;}
+
 /* =============================================================================
 	 Footer
 	 ========================================================================== */
@@ -1050,7 +1054,9 @@ li.nav_download {
 		padding: 50px 20px;
 		margin: 0;
 	}
+	.catering_block.menu-footer {width: 100%; margin-top: 20px;}
+	#footer_content {padding-left: 20px;}
 	#menu #order-dates p {margin-top:20px;}
-
+	#menu_content .catering_block p {display: block; text-align: center;}
 	#jump_links a {display: block; border: 0px; margin-bottom: 8px;}
 }

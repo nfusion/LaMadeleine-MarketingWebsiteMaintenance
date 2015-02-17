@@ -68,7 +68,7 @@ $get_items = new WP_Query( $menu_items );
                         </div>
                         <div class="catering_block menu-footer">
                             <p class="center"><a href="#">Back To Top</a></p>
-                            <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">DOWNLOAD CATERING MENU</a></p>
+                            <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/LAMAD_8957_4_mch_mnu_catering_ForWeb.pdf">DOWNLOAD CATERING MENU</a></p>
                         </div>
             <?php endwhile; // end of the loop. ?>
             </div><!-- /menu-content -->
