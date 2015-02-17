@@ -686,6 +686,4 @@ RewriteRule ^(.*\.php)$ $1 [L]
 RewriteRule . index.php [L]
 </IfModule>
 
-php_value upload_max_filesize 64M
-
 # END WordPress
