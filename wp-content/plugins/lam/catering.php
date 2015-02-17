@@ -133,7 +133,7 @@ class Catering_Locations {
 				),
 				'post__in' => array_keys($locations),
 				'posts_per_page' => -1,
-				'orderby' => 'title',
+				'orderby' => 'post__in',
 				'order'   => 'ASC'
 			);
 			$term_posts = get_posts($args);
