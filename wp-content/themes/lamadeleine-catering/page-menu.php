@@ -53,8 +53,12 @@ $get_items = new WP_Query( $menu_items );
                                     <? endif; ?>
                                     
                                     <?php the_content(); //menu item content ?>
-                                    <?php if(get_field('subitem_name')) : ?>
-                                        <h4></h4>
+                                    <?php if(have_rows('subitem')) : ?>
+                                        <?php while ( have_rows('subitem') ) : the_row(); ?>
+                                            <p class="prepend-with"><?php the_sub_field('prepend_with_and'); // subitem name ?></h4></p>
+                                            <h4><?php the_sub_field('subitem_name'); // subitem name ?></h4>
+                                            <p><?php the_sub_field('subitem_description'); // subitem description ?></p>
+                                        <?php endwhile; ?>
                                     <? endif; ?>
                                     <?php if(get_field('item_price')) : ?>
                                         <p><small><?php the_field('item_price'); // menu item quantity and price ?></small></p>
