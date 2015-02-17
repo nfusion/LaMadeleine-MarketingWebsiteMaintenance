@@ -1,0 +1,11 @@
+\.DS_Store
+\.sass-cache
+\.hgignore
+wp-config\.php
+wp-content/uploads
+wp-content/uploads/*
+searchreplacedb2\.php
+wp-content/podscache/
+wp-content/podscache
+wp-content/podscache/*.php
+wp-content/plugins/lam/logs/cron\.txt

@@ -1,0 +1,57 @@
+/**
+* La Madeleine
+* Mobile secondary navigation
+**/
+
+#mobile-nav{
+	width: 100%;
+	height: 60px;
+	max-height: 60px;
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
+	@include box-shadow(rgba(0,0,0,0.25) 0 2px 2px);
+	a{
+		display: block;
+		float: left;
+		width: 25%;
+		padding: 5px 2% 6px;
+		border-left: 1px solid $fadedBrown;
+		&.active{
+			@include background-image(linear-gradient($lightCream, $tan));
+		}
+		&:first-child{
+			border-left: 0;
+		}
+	}
+	.nav-item{
+		font-size: 9px;
+		text-align: center;
+		color: $darkBrown;
+	}
+	.icon{
+		font-size: 40px;
+		color: $medBrown;
+	}
+}
+
+#mobile-nav.two{
+	a{
+		width: 50%;
+	}
+}
+
+#mobile-nav.three{
+	a{
+		width: 33%;
+	}
+	&:first-child{
+		width: 34%;
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	#mobile-nav{
+		display: none;
+	}
+}
