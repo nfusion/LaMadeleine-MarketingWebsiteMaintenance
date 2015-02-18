@@ -78,3 +78,10 @@ function getCateringLocations() {
   $json = file_get_contents($file);
   return json_decode($json);
 }
+
+function overrideFAQ() {
+  wp_dequeue_script('jeweltheme-custom-js');
+  wp_register_script('lamc-accordion-js', get_stylesheet_directory_uri()."/js/accordion.js", array('jquery-ui-accordion'),true);
+  wp_enqueue_script("lamc-accordion-js" );
+}
+add_action('init', 'overrideFAQ',11);
