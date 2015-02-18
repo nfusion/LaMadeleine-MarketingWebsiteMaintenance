@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 	// set up the check to fire once the accordion has rendered.
 	jQuery("#accordion").on("accordioncreate", function(){
 		if (window.location.hash) {
-			var id = window.location.hash.substr(1);
+			var id = window.location.hash;
 			openAccordionElement(id);
 		}
 	});
@@ -16,6 +16,6 @@ jQuery(document).ready(function() {
 });
 
 function openAccordionElement(id) {
-	var header = jQuery('#accordion').find('.ui-accordion-header[aria-controls=ui-id-' + id + ']');
+	var header = jQuery('#accordion').find(id);
   	header.click();
 }
