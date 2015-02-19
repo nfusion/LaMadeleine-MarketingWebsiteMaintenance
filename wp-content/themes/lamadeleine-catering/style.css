@@ -679,7 +679,7 @@ li.nav_download {
 .menu-footer {width: 375px; margin: 0px auto;}
 .menu-footer p {display: inline-block; margin:0 0 0 20px;}
 .prepend-with {font-size: 19px; font-weight:500; margin: 13px 0; }
-#menu p.menu_cat-subline {margin-top: -20px; margin-bottom: 25px;}
+#menu p.menu_cat-subline {margin-bottom: 15px;}
 /* =============================================================================
 	 Footer
 	 ========================================================================== */
