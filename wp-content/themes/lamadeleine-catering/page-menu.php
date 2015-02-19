@@ -40,7 +40,7 @@ $get_items = new WP_Query( $menu_items );
                     <?php foreach ( $menu_categories as $category ) : ?>
                         <div class="menu_group" id="<?php echo $category->slug ?>">
                             <h2><?php echo $category->name ?></h2>
-                            
+                            <p class="menu_cat-subline"><?php echo $category->description; ?></p>
                             <?php if( $get_items->have_posts() ): ?>
                                 <?php while ( $get_items->have_posts() ) : $get_items->the_post(); ?>
                                 <?php if ( has_term($category->term_id, 'menu_categories') ) :?>
