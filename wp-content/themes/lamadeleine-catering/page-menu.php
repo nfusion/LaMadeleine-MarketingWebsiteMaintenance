@@ -4,13 +4,12 @@ $menu_categories = get_terms( 'menu_categories' );
 
 // menu item args
 $menu_items = array(
-    'numberposts' => -1,
+    'posts_per_page' => -1,
     'post_type' => 'menu_items',
 );
 
 // get menu items
 $get_items = new WP_Query( $menu_items );
-
 ?>
 <?php get_header(); ?>
 <div id="main" role="document">
@@ -39,8 +38,11 @@ $get_items = new WP_Query( $menu_items );
                     <div id="menu">
                     <?php foreach ( $menu_categories as $category ) : ?>
                         <div class="menu_group" id="<?php echo $category->slug ?>">
+
                             <h2><?php echo $category->name ?></h2>
                             <p class="menu_cat-subline"><?php echo $category->description; ?></p>
+
+
                             <?php if( $get_items->have_posts() ): ?>
                                 <?php while ( $get_items->have_posts() ) : $get_items->the_post(); ?>
                                 <?php if ( has_term($category->term_id, 'menu_categories') ) :?>
@@ -67,7 +69,9 @@ $get_items = new WP_Query( $menu_items );
                                 <?php endif; ?>
                                 <?php endwhile; // end menu item loop ?>
                             <?php endif; //items have posts ?>
-                            <?php wp_reset_query(); //reset query?>
+                            <?php $get_items->rewind_posts(); ?>
+
+
                         </div>
                     <?php endforeach; // end category loop ?>
                     <p><small>*contains nuts | ** contains alcohol | items may vary by location</small></p>
