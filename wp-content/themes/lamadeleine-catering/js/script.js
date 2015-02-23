@@ -85,8 +85,12 @@ jQuery( document ).ready(function() {
 		//$('#menu_wrapper').css('padding-bottom', jQuery(window).height() - jQuery(menu_groups[menu_groups.length - 1]).height() - jQuery('#footer').height() - 300);
 
 		menu_sections.each(function(index,menunav){
-			//if( jQuery( jQuery(this).attr('href') ).length > 0 ) menu_positions[ index ] = jQuery( jQuery(this).attr('href') ).offset().top;
-			
+			var t = $(this);
+			var sectionId = t.attr('href');
+			if( (sectionId.length > 0) && (sectionId.indexOf('#') == 0) ) {
+				menu_positions[ index ] = jQuery( sectionId ).offset().top;
+			}
+
 			jQuery(menunav).click(function(){
 				autoScroll = true;
 				if(curr_menu_pos >= 0) jQuery(menu_sections[curr_menu_pos]).removeClass('menu_active');
