@@ -122,7 +122,8 @@ h1.lobster {font-size: 48px; color: #831110; font-weight: normal;}
 .uppercase {text-transform: uppercase;}
 .download-link {color:#831110;}
 .alignright {float: right;}
-
+.menu-bottom {bottom: 180px;}
+.menu-top {top: 180px;}
 /* =============================================================================
 	 Header
 	 ========================================================================== */
