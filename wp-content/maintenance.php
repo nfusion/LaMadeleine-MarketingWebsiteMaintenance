@@ -8,7 +8,7 @@
 			box-sizing:border-box;
 		}
 		body, html {padding:0; margin:0;}
-		body {background: url("/maintenance/LM_Cloth_Tile.png"); font:16px Georgia,serif;}
+		body {background: url("maintenance/LM_Cloth_Tile.png"); font:16px Georgia,serif;}
 
 		#header {
 		  width: 100%;
@@ -18,25 +18,22 @@
 		  position: fixed;
 		  z-index: 102;
 		  text-align: center;
-		  background: url("/maintenance/header-bg-tile.jpg") 0 -10px repeat-x;
+		  background: url("maintenance/header-bg-tile.jpg") 0 -10px repeat-x;
 		  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
 		  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
 		  box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
 		}
-		/* line 16, ../sass/framework/_header.scss */
 		#header .header-wrapper {
 		  max-width: 1140px;
 		  margin: 0 auto;
 		  position: relative;
 		  overflow: hidden;
 		}
-		/* line 22, ../sass/framework/_header.scss */
 		#header .logo {
 		  width: 190px;
 		  height: auto;
 		  margin-top: 2px;
 		}
-		/* line 27, ../sass/framework/_header.scss */
 		#header .tagline {
 		  display: none;
 		}
@@ -46,7 +43,6 @@
 		    position: relative;
 			background-position: 0 0;
 		}
-		  /* line 116, ../sass/framework/_header.scss */
 		#header .logo {
 		    width: 210px;
 		    margin-top: 0;
