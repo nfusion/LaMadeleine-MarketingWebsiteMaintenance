@@ -82,8 +82,6 @@ jQuery( document ).ready(function() {
 		var curr_menu_pos = -1;
 		var autoScroll = false;
 		var menuScrollSpeed = isiPad ? 0 : 1000;
-		//$('#menu_nav').css('margin-bottom', jQuery(window).height() - jQuery(menu_groups[menu_groups.length - 1]).height() - jQuery('#footer').height() - 428);
-
 		menu_sections.each(function(index,menunav){
 			var t = $(this);
 			var sectionId = t.attr('href');
@@ -120,8 +118,15 @@ jQuery( document ).ready(function() {
 					if(curr_menu_pos >= 0) jQuery(menu_sections[curr_menu_pos]).addClass('menu_active');
 				}
 			}
+			//Keep menu for overscrolling into footer and header
+			var menuNav = $('#menu_nav');
+			if($(window).scrollTop() + $(window).height() == $(document).height()) {
+		       	menuNav.addClass('menu-bottom');
+		   	} 
+		   	else if($(window).scrollTop() == 0) {
+		        menuNav.removeClass('menu-bottom');	
+		    }
 		});
-
 	}
 	/* Menu Navigation END */
 
