@@ -8,7 +8,7 @@
 			box-sizing:border-box;
 		}
 		body, html {padding:0; margin:0;}
-		body {background: url("maintenance/LM_Cloth_Tile.png"); font:16px Georgia,serif;}
+		body {background: url("/wp-content/maintenance/LM_Cloth_Tile.png"); font:16px Georgia,serif;}
 
 		#header {
 		  width: 100%;
@@ -18,7 +18,7 @@
 		  position: fixed;
 		  z-index: 102;
 		  text-align: center;
-		  background: url("maintenance/header-bg-tile.jpg") 0 -10px repeat-x;
+		  background: url("/wp-content/maintenance/header-bg-tile.jpg") 0 -10px repeat-x;
 		  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
 		  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
 		  box-shadow: rgba(0, 0, 0, 0.6) 0 2px 2px;
