@@ -6,6 +6,7 @@ var LaMadLocations = {
        
         $locationCta: $('#location-cta'),
         $directionsLink: "",
+        $toGoLink: "https://online.lamadeleine.com",
         clickEvent: "",
         setClickEvent: function(Modernizr){
             if($('html').hasClass('touch')){
@@ -215,6 +216,11 @@ var LaMadLocations = {
             $('#content').find('a.get-directions').on(this.clickEvent, function(e){
                 e.preventDefault();
                 LaMadLocations.getDirections(this);
+            });
+
+            $('#content').find('a.order-online').on(this.clickEvent, function(e) {
+                e.preventDefault();
+                LaMadLocations.getToGoLink(this);
             });
 
             // If any .btn.locate links exist, fire refreshLocation() method when clicked.
@@ -482,6 +488,17 @@ var LaMadLocations = {
                 directionsLink= protocol+'://maps.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
                 this.sendWindow(directionsLink);
             }
+        },
+
+        getToGoLink: function(el){
+            var toGoLink = LaMadLocations.$toGoLink;
+            if ( $.cookie('LAM-location') ) {
+                var loc =  JSON.parse( $.cookie('LAM-location') );
+                if (loc.title == 'Frisco') {
+                    toGoLink = 'https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1';
+                }
+            }
+            this.sendWindow(toGoLink);
         },
 
         refreshLocation: function(el){
