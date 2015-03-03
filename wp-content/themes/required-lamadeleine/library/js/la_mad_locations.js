@@ -419,6 +419,9 @@ var LaMadLocations = {
                         LaMadLocations.setNearbyLocationsStorage(nearbyLocations);
                     }
 
+                    // Frisco market to go link refresh
+                    LaMadLocations.refreshToGoLink('.widget_lam_orderlinks a[href^="https://online"]');
+
                     // Done loading
                     LaMadLocations.$locationCta.removeClass('map-loading').addClass('map-loaded');
                     return data;
@@ -499,6 +502,19 @@ var LaMadLocations = {
                 }
             }
             this.sendWindow(toGoLink);
+        },
+
+        refreshToGoLink: function(el) {
+
+            var link = $(el);
+            var toGoLink = LaMadLocations.$toGoLink;
+            if ( $.cookie('LAM-location') ) {
+                var loc =  JSON.parse( $.cookie('LAM-location') );
+                if (loc.title == 'Frisco') {
+                    toGoLink = 'https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1';
+                }
+                link.attr('href',toGoLink);
+            }
         },
 
         refreshLocation: function(el){
