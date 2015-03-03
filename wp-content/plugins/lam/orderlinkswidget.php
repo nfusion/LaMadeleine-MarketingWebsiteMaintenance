@@ -44,7 +44,7 @@ class lam_orderlinks_widget extends WP_Widget {
         // This is where you run the code and display the output
         echo '<div class="textwidget">';
         echo '<div class="btn-wrapper">';
-        echo '<a class="btn" target="_blank" href="'. $toGoUrl .'">To Go</a>';
+        echo '<a class="btn order-online" target="_blank" href="'. $toGoUrl .'">To Go</a>';
         echo '<a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a>';
         echo '</div></div>';
 
