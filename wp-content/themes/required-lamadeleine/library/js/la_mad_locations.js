@@ -213,14 +213,16 @@ var LaMadLocations = {
             $('body').addClass('has-location');
 
             // If any .get-directions links exist, fire getDirections() method when clicked.
-            $('#content').find('a.get-directions').on(this.clickEvent, function(e){
+            $('#content').find('a.get-directions').off(this.clickEvent).on(this.clickEvent, function(e){
                 e.preventDefault();
                 LaMadLocations.getDirections(this);
+
             });
 
-            $('#content').find('a.order-online').on(this.clickEvent, function(e) {
+            $('#content').find('a.order-online').off(this.clickEvent).on(this.clickEvent, function(e) {
                 e.preventDefault();
                 LaMadLocations.getToGoLink(this);
+                e.stopPropagation();
             });
 
             // If any .btn.locate links exist, fire refreshLocation() method when clicked.
@@ -491,6 +493,10 @@ var LaMadLocations = {
                 directionsLink= protocol+'://maps.google.com/maps/?saddr='+LaMadLocations.currentLocationObj.latitude+','+LaMadLocations.currentLocationObj.longitude+'&daddr='+LaMadLocations.nearestLocationObj.latitude+','+LaMadLocations.nearestLocationObj.longitude+'&directionsmode=driving';          
                 this.sendWindow(directionsLink);
             }
+        },
+
+        launchDirections: function(e) {
+            e.preventDefault();
         },
 
         getToGoLink: function(el){
