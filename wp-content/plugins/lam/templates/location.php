@@ -84,7 +84,7 @@
 
         <div id="location-cta">
             <div class="no-locations">
-                <p>Pardon, there are no locations within 100 miles of your search. Please visit our Locations page to view all locations.</p>
+                <p>D&eacute;sol&eacute;, there are no locations within 100 miles of your search. Please visit our Locations page to view all locations.</p>
             </div>
             <div class="flipper">
                 <div class="front">
@@ -139,8 +139,8 @@
                 <div class="btn-wrapper">
                     <a class="btn-light daypart-menu" href="#">Menu</a>
                     <a class="btn-light get-directions" href="#"><span class="text">Directions</span>' . $loading . '</a>
-                    <a class="btn-light" target="_blank" href="https://online.lamadeleine.com">Order</a>
-                </div>';
+                    <a class="btn-light order-online" target="_blank" href="#"><span class="text">Order</span>'  . $loading . '</a>
+                </div>'; //https://online.lamadeleine.com
 
                 // Locations view - Locations list container
                 $locationsList = '<div id="location-list"></div>';
