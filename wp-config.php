@@ -19,105 +19,61 @@
 //define('DB_NAME', 'lam_wp');
 
 /*** We are going to use up Environments Vars to identify Configurations **/
-//define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/private/var/www/nfusion/lam/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 $env = isset($_SERVER['APPLICATION_ENVIRONMENT'])?$_SERVER['APPLICATION_ENVIRONMENT']:'production';
 define('ENV',$env);
 
 switch($env){
-    case "serna":
-        define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
-        define('DB_USER', 'nfusion');
-        /** MySQL database password */
-        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
-        /** MySQL hostname */
-        define('DB_HOST', '127.0.0.1');
-
-         //define('WP_DEBUG', true);
-         define('WP_DEBUG_LOG', true);
-         define('WP_DEBUG_DISPLAY', true);
-         error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
-      //  @ini_set('display_errors', 0);
-            break;
-    case "heath":
-        define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
-        define('DB_USER', 'root');
-        /** MySQL database password */
-        define('DB_PASSWORD', 'root');
-        /** MySQL hostname */
-        define('DB_HOST', '127.0.0.1');
-
-        // define('WP_DEBUG', true);
-        // define('WP_DEBUG_LOG', true);
-        // define('WP_DEBUG_DISPLAY', true);
-        // @ini_set('display_errors', 0);
-            break;
     case "kwhite":
+    	define('SITE_URL', 'local.lamadeleine.nfusion.com');
         define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
         define('DB_USER', 'root');
-        /** MySQL database password */
         define('DB_PASSWORD', 'root');
-        /** MySQL hostname */
         define('DB_HOST', '127.0.0.1');
-
-        // define('WP_DEBUG', true);
-        // define('WP_DEBUG_LOG', true);
-        // define('WP_DEBUG_DISPLAY', true);
-        // @ini_set('display_errors', 0);
-            break;
-    case "staging":
-        define('DB_NAME', 'lam_wp_staging');
-        /** MySQL database username */
-        define('DB_USER', 'LAM-14');
-        /** MySQL database password */
-        define('DB_PASSWORD', 'Bagu3tt314');
-
-        /** MySQL hostname */
-        define('DB_HOST', 'localhost');
-
-        define('WP_DEBUG', true);
+        define('WP_DEBUG', false);
         define('WP_DEBUG_LOG', true);
         define('WP_DEBUG_DISPLAY', false);
-       // @ini_set('display_errors', 0);
+        error_reporting(E_ALL ^ E_WARNING);
         break;
-    case "remote":
+    case "mdavis":
+    	define('SITE_URL', 'local.lamadeleine.nfusion.com');
         define('DB_NAME', 'lam_wp');
-        /** MySQL database username */
-        define('DB_USER', 'nfusion');
-        /** MySQL database password */
-        define('DB_PASSWORD', '6ZXEkK8v;V,^%!9');
-        /** MySQL hostname */
-        define('DB_HOST', 'localhost');
-
+        define('DB_USER', 'root');
+        define('DB_PASSWORD', 'root');
+        define('DB_HOST', '127.0.0.1');
         define('WP_DEBUG', true);
-        define('WP_DEBUG_LOG', true);
-        define('WP_DEBUG_DISPLAY', false);
-        @ini_set('display_errors', 0);
-
-            break;
-    case "production":
-    default:
-        /** The name of the database for WordPress */
+        break;
+    case "roger":
+    	define('SITE_URL', 'local.lamadeleine.nfusion.com');
         define('DB_NAME', 'lam_wp');
-
-        /** MySQL database username */
+        define('DB_USER', 'root');
+        define('DB_PASSWORD', 'root');
+        define('DB_HOST', '127.0.0.1');
+        define('WP_DEBUG', false);
+        break;
+    case "test":
+    	define('SITE_URL', 'test.lamadeleine.nfusion.com');
+        define('DB_NAME', 'lam_wp');
         define('DB_USER', 'LAM-14');
-
-        /** MySQL database password */
         define('DB_PASSWORD', 'Bagu3tt314');
-
-        /** MySQL hostname */
         define('DB_HOST', 'localhost');
         define('WP_DEBUG', false);
-
+        break;
+    case "staging":
+    	define('SITE_URL', 'staging.lamadeleine.nfusion.com');
+        define('DB_NAME', 'lam_wp_staging');
+        define('DB_USER', 'LAM-14');
+        define('DB_PASSWORD', 'Bagu3tt314');
+        define('DB_HOST', 'localhost');
+        define('WP_DEBUG', false);
+        break;
+    default: /* production */
+    	define('SITE_URL', 'lamadeleine.com');
+        define('DB_NAME', 'lam_wp');
+        define('DB_USER', 'LAM-14');
+        define('DB_PASSWORD', 'Bagu3tt314');
+        define('DB_HOST', 'localhost');
+        define('WP_DEBUG', false);
 }
-
-
-
 
 
 /** Database Charset to use in creating database tables. */
@@ -164,20 +120,23 @@ $table_prefix  = 'lwp_';
  */
 define('WPLANG', '');
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-//define('WP_DEBUG', false);
+/* Multisite */
+define( 'WP_ALLOW_MULTISITE', true );
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', true);
+define('DOMAIN_CURRENT_SITE', SITE_URL);
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
+
+/* Multisite */
+define( 'SUNRISE', 'on' );
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

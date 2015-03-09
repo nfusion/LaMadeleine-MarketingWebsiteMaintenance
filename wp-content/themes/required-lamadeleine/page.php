@@ -142,10 +142,10 @@ get_header(); ?>
 				}
 
 				$mypods = isset($mypods) ? $mypods : array();
-				if($defaultTemplate && $pagename){
+				if( !empty($defaultTemplate) && !empty($pagename) ) {
 					get_template_part( 'content', 'page' );
 				}
-				else if($pagename){
+				else if( !empty($pagename) ){
 					pods_view( '/template-parts/content/content-'.$pagename.'.php' , array('mypod' => $mypods, 'pageDetails'=>$pageDetails));
 				}
 
