@@ -30,7 +30,7 @@
 	<h2>La Madeleine Stories</h2>
   
   	<div class="cat-wrapper">
-        <a href='/stories/food' class="story-nav-link category-food">
+        <a href='<?php echo $stories_by_cat['food'][0]['permalink'] ?>' class="story-nav-link category-food">
 	  	<div class="icon icon-food"></div>
 	  	<div class="text-wrapper">
 	  		<div class="cat-name">Food</div>
@@ -50,7 +50,7 @@
   
   
   	<div class="cat-wrapper">
-        <a href='/stories/culture' class="story-nav-link category-culture">
+        <a href='<?php echo $stories_by_cat['culture'][0]['permalink'] ?>' class="story-nav-link category-culture">
 	  	<div class="icon icon-culture"></div>
 	  	<div class="text-wrapper">
 	  		<div class="cat-name">Culture</div>
@@ -70,7 +70,7 @@
   
   
   	<div class="cat-wrapper">
-        <a href='/stories/community' class="story-nav-link category-community">
+        <a href='<?php echo $stories_by_cat['community'][0]['permalink'] ?>' class="story-nav-link category-community">
 	  	<div class="icon icon-community"></div>
 	  	<div class="text-wrapper">
 	    	<div class="cat-name">Community</div>
