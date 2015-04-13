@@ -1,0 +1,63 @@
+/**
+* La Madeleine
+* Android fixes
+**/
+
+// Apply to all Android devices
+html.android{
+
+}
+
+// All Android devices except version 4.4
+html.android4, html.android41, html.android42, html.android43{
+	#header{
+		position: relative;
+	}
+	#container{
+		padding-top: 0;
+	}
+}
+
+// Version specific Android devices
+html.android23{
+	#nav{
+		position: static;
+		height: 0;
+		overflow: visible;
+		.nav-wrapper{
+			padding-top: 20px;
+			top: 69px;
+		}
+	}
+	body.nav-active{
+		overflow: visible;
+	}
+}
+
+@media (max-width: 321px){
+	html.android23{
+		#header{
+			position: static;
+		}
+		#container{
+			padding-top: 0;
+		}
+	}
+}
+
+@media (min-width: $xsmall-screen-min){
+	// All Android devices except version 4.4
+	html.android4, html.android41, html.android42, html.android43{
+		#container{
+			padding-top: 80px;
+		}
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	html.android23{
+		#header{
+			position: relative !important;
+		}
+	}
+}
