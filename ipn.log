@@ -1,0 +1,168 @@
+[2014-08-06 12:21 America/Chicago] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.sandbox.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 20
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate
+[2014-08-06 12:21 America/Chicago] HTTP response of validation request: HTTP/1.1 200 OK
+Date: Wed, 06 Aug 2014 17:21:28 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=J0Wjn-65idFD1Pt72Rit0aneXJnS9rXOl4rjkfKvPju4HCz_iz8mFzyWp3ZbMBI4Mq6h1O8aej1-rqh_mr8iua5cW8vrXmVLjYghDWWYMltOt1v0SHqsqOk4I-1RYz36A37uAZcrtuKbea_dHrGvK52UIvBu3vibW_5V63Y8U2qCG0NCcZsYvO592-w-RIFcxA_xS8bKOAXcqCjYwMxclEfomS2GMCJM467qKCZITlCJ4sVp0HB2PQH9gX5SYbLffjq4XQp1-7ADKtjtMKzI3XhBtAvOE_bvYvpYZW0yK6Krqa-wDhXmROkK0XmU1o9NPkiEbe20TkxkBQDHyyyNFFkH80naseSgjmww-ytsCwkp7_mcjPefduwtyAQSkmhaeWcB6BkAnhEczU9_PVIwl_w6sVfhtaKBA0krBFmsJ_9FQS0op_nG_eWuKCO; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Aug-2024 17:21:28 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 05-Aug-2016 17:21:28 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1407345688403222; path=/; expires=Fri, 29-Jul-44 17:21:28 GMT
+Connection: close
+Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D409264723; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.72.128.11.1407345688390940; path=/; expires=Fri, 29-Jul-44 17:21:28 GMT
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=14400
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+INVALID
+[2014-08-06 12:21 America/Chicago] Invalid IPN: cmd=_notify-validate
+[2014-08-06 12:26 America/Chicago] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.sandbox.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 893
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=897214448&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=10%3A26%3A06+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31A6HWuKV3IrqqVsR9aGdQ.myJqaEQ&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street
+[2014-08-06 12:26 America/Chicago] HTTP response of validation request: HTTP/1.1 200 OK
+Date: Wed, 06 Aug 2014 17:26:13 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=GGRbdigOivGFr5trJjuM8pX_XIK-j28uE_BUzfexTeahyNYpFCWt0Lwz4dZ3MshdQvdhM3w72VKbFu7uJBLGq0PqAmXMq2d6tvTadzvsN2d1Ei3E1uwnDRe9uJqdepcPFuJYWEljPYEjopC4f-c3keoGylz3lwAu5Ri9ODIhauozmEl2Ea_XhOl5W8dOs6Qf4_TqgDBC-C35dwf0H5wOgV2pZzhhAW7t4YuMXWjLp46jGqRrcEa9lATxzdwB1qY9ueOwZdyWXuC5Dhl0EnLH3YJaVyIR1oZcaBdukIfYCZlrOFvW3yGZ5yqZkErjcy1kCI3qDKFPdG0kMVp-Q5MAlvzxIgd59J2N65Ekqiav8fbkNSE8krCBwcpkfo1R1klDfDnMggozuHVZl0htnqcnVlXjjVCPVzpoBDQlEN63MB9mVi05UWE9241A1_8; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Aug-2024 17:26:14 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 05-Aug-2016 17:26:14 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1407345973732332; path=/; expires=Fri, 29-Jul-44 17:26:13 GMT
+Connection: close
+Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D895869523; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.72.128.11.1407345973719336; path=/; expires=Fri, 29-Jul-44 17:26:13 GMT
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=14400
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+VERIFIED
+[2014-08-06 12:26 America/Chicago] Verified IPN: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=897214448&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=10%3A26%3A06+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31A6HWuKV3IrqqVsR9aGdQ.myJqaEQ&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street 
+[2014-08-06 13:23 America/Chicago] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.sandbox.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 893
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=337501830&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A23%3A12+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAJ3VS3bv04E3GJEcf4Vz2DZ6KhQL&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street
+[2014-08-06 13:23 America/Chicago] HTTP response of validation request: HTTP/1.1 200 OK
+Date: Wed, 06 Aug 2014 18:23:16 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=zV1Dlb7e2BCCe0HyoWo6lXVfPzyOZUvo7chFSev_dWhxMfumKheXXGYLLPXJIFkFuHX7zW-PsrY0vsq8-Sevj0mck-LSdya6NmiarbGIBLpn9uo-cBNxL3sR8Iug7Sp5M5bZOBcGH4wgsGDL1HYnFRdMbtskA4xwMcHpt6oQRMkojn8mirA7gI4F0pNvcOstruN8pTKNSbaonUE7a7sFqqFpzFnNii5AzuCBzvKFT2yoriGdT0FrxMv9op5ZZd8MwKiUaeCZQyQDDtgwCh5mhQNUkH96CeW21S4xqbdyHqke3Y06omr9B6JY08F6ylIwF5R8uyICgiNGkI3usfrnGwvXKmLlWFr-4tR-uaufqfPiq-d_mb3B4dJnaZvCsI48JI_9Mr-QTRuvHNSacEfxiJnkGMR56IaxcTdS_xGdbQklhYsun6ROv7ZtJ6q; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Aug-2024 18:23:16 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 05-Aug-2016 18:23:16 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1407349396537477; path=/; expires=Fri, 29-Jul-44 18:23:16 GMT
+Connection: close
+Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D2490557011; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.72.128.11.1407349396524409; path=/; expires=Fri, 29-Jul-44 18:23:16 GMT
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=14400
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+VERIFIED
+[2014-08-06 13:23 America/Chicago] Verified IPN: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=337501830&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A23%3A12+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAJ3VS3bv04E3GJEcf4Vz2DZ6KhQL&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street 
+[2014-08-06 13:25 America/Chicago] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.sandbox.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 893
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=809581171&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A23%3A16+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31Akv1cjLQUVWwhIMX6D79N.oCxlF-&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street
+[2014-08-06 13:25 America/Chicago] HTTP response of validation request: HTTP/1.1 200 OK
+Date: Wed, 06 Aug 2014 18:25:35 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=IQiGkBnmKhKFUYyLyTqicbX7YW_ifEtXS0ffhQebPoXL9rHwOO4dI95lUhf8u4dkf2dbNh7XS2pHV8J_bR8MYMFF5Oih4_pvhgC16_RoNFMCx-p5HM6J05jwEP2-UY5ZhoA_oKTWIvnxssOvvAhBfaImkZUfLjz_BBqOIVGpOT2_ORjAhpO1NTTjzFpqqoRrZN34-vXnZGEmk3zgNlWh4PbBQJnk9xLCXrw2ws3HEUK8f0oy_bqDWUrjoHNLpWLom899W_1X62lKG1aP3pInCoiAVMvPAm0JlYU1qVbqyBPYjtDvyeHSkft-BrBF9BR7mLZ17Iy0mRT3vVQz_iqoK-qzHVf02J4Ss6aobtxMd9GG4Z6bXwXH6WtswrFYfPCtvvhStiZR64FObwMkO7bl4tZSduX8nWyBkjFGm0TLP4NXBzd8bCGBMHtZQse; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Aug-2024 18:25:35 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 05-Aug-2016 18:25:35 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1407349535058919; path=/; expires=Fri, 29-Jul-44 18:25:35 GMT
+Connection: close
+Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D527688275; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.72.128.11.1407349535049343; path=/; expires=Fri, 29-Jul-44 18:25:35 GMT
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=14400
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+VERIFIED
+[2014-08-06 13:25 America/Chicago] Verified IPN: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=809581171&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A23%3A16+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31Akv1cjLQUVWwhIMX6D79N.oCxlF-&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street 
+[2014-08-06 13:51 America/Chicago] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.sandbox.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 893
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=550875413&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A50%3A14+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAP42DN28s4XwoN6jd0tvWuEe6iJg&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street
+[2014-08-06 13:51 America/Chicago] HTTP response of validation request: HTTP/1.1 200 OK
+Date: Wed, 06 Aug 2014 18:51:16 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=CDsasJs0eaiSkSp6q7513P4K4yhaAdiEWkNXl62_KFISXbIRACgjTasB2oVSD53iRqcaswX3d0nZkeuRx7sq2zGqjWuE9z1iTg5qUm3RdmWhJDtAYuaR9aSvip0PZIX4dLvFLqHWd275PKU_wAREhCbC6uQOgpaN5bt-4BKTe2Ilh-k7oiXK0cjfBVM5OglbrdgmvFtl8u4W766T_-TI2Iw4vYM-jYxLygCpVG17tYMCgD6yMuJY8oYHSvFH5IuElUdTcHQuR4EwOPJQzYL8jAdwbceqZQHZWkoBZi7uwzZS-q6uCULCrjFzkguTxvWPhMNq2fO65Os_8KtHwt15mq-Ht9v0thEdjhPY6K41qTcEbXEKRIrQPrmG2bgw_H2aMEaBNzdtQaPVyorf6ThMJG33rytjcR77ZY9e3kh6wLfep82Z2Uv5x1kYsYC; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Aug-2024 18:51:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 05-Aug-2016 18:51:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1407351076710194; path=/; expires=Fri, 29-Jul-44 18:51:16 GMT
+Connection: close
+Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D611967571; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.72.128.11.1407351076698812; path=/; expires=Fri, 29-Jul-44 18:51:16 GMT
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=14400
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+VERIFIED
+[2014-08-06 13:51 America/Chicago] Verified IPN: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=550875413&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A50%3A14+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAP42DN28s4XwoN6jd0tvWuEe6iJg&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street 
+[2014-08-06 13:54 America/Chicago] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.sandbox.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 893
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=871878734&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A51%3A16+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31A2LKSsMKPrsZil5mTmtHJOH6Z0jy&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street
+[2014-08-06 13:54 America/Chicago] HTTP response of validation request: HTTP/1.1 200 OK
+Date: Wed, 06 Aug 2014 18:54:24 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=Id5g0i_bHn53NVu0Wf0yoJloj_WN-2HXTSTNvcVuw4TK2K-J83NrZw229Pm9ExPCmZMJt4wmmRpnPCYQHHjjecev7_DzvhyxIEkyxWYaO4fIcekArWnlhFBqwwzzE-IS-I4AABJH0I9TpCQiwa11RwcR78A4tPZMWRNwNLnoq6P2_4ePhZ9Y_K0XOKYE315GXN27q-BDmJzqVGZlxk4sYL2Q7iwTaEf-28xcBXLDgvrTtrDFq79xeJ8qNDHrhwScu6-bOheB2S4CU4Vs4sHiBO0mAB5UuoBbU3bAAt90uk5DSJF6jBSN_rGG4kZPP_9pA9S4jDbqFH0ETR39XUpxPtshn2cx7jQ_HMnX3y1QWRoM9a7OJKD963WJ6fhKxOLJythnFPHNl095UGBUPWt9TcaW_7wCzoTuNEjBY205w4GS9gDaRitNnDWMSWm; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 03-Aug-2024 18:54:24 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 05-Aug-2016 18:54:24 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.109.11.1407351264497163; path=/; expires=Fri, 29-Jul-44 18:54:24 GMT
+Connection: close
+Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D3766084179; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.72.128.11.1407351264483705; path=/; expires=Fri, 29-Jul-44 18:54:24 GMT
+Vary: Accept-Encoding
+Strict-Transport-Security: max-age=14400
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+VERIFIED
+[2014-08-06 13:54 America/Chicago] Verified IPN: cmd=_notify-validate&residence_country=US&invoice=abc1234&address_city=San+Jose&first_name=John&payer_id=TESTBUYERID01&mc_fee=0.44&txn_id=871878734&receiver_email=seller%40paypalsandbox.com&custom=xyz123&payment_date=11%3A51%3A16+6+Aug+2014+PDT&address_country_code=US&address_zip=95131&item_name1=something&mc_handling=2.06&mc_handling1=1.67&tax=2.02&address_name=John+Smith&last_name=Smith&receiver_id=seller%40paypalsandbox.com&verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31A2LKSsMKPrsZil5mTmtHJOH6Z0jy&address_country=United+States&payment_status=Completed&address_status=confirmed&business=seller%40paypalsandbox.com&payer_email=buyer%40paypalsandbox.com&notify_version=2.4&txn_type=cart&test_ipn=1&payer_status=verified&mc_currency=USD&mc_gross=15.34&mc_shipping=3.02&mc_shipping1=1.02&item_number1=AK-1234&address_state=CA&mc_gross1=12.34&payment_type=instant&address_street=123%2C+any+street 
