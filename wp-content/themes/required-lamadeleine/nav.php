@@ -33,24 +33,24 @@
 			<p>Get the latest news and offers.</p>
 			<p><a target="_blank" href="http://lamadeleinecafe.fbmta.com/members/UpdateProfile.aspx?Action=Subscribe&_Theme=40802189483" class="btn">Join Our eClub</a></p>
 		</div>
+			<hr>
 		<div class="eclub">
 			<p>Say Bonjour to a Job You Will Love</p>
 			<p><a target="_blank" href="/careers/" class="btn">Join Our Team</a></p>
 		</div>
 			<hr>
-			<div class="bottom-links">
-				<div class="link-wrapper">
-					<p><a href="/about/">About Us</a></p>
-					<p><a href="/stories/">Stories</a></p>
-				</div>
-				<div class="link-wrapper">
-					<p><a href="/franchise/">Franchise</a></p>
-					<p><a href="/careers/">Careers</a></p>
-				</div>
+		<div class="bottom-links">
+			<div class="link-wrapper">
+				<p><a href="/about/">About Us</a></p>
 			</div>
-			<!-- <div class="copyright">
-					<p>&copy; <?php //echo date('Y'); ?> La Madeleine de Corps, Inc.</p>
-			</div> -->
+			<div class="link-wrapper">
+				<p><a href="/franchise/">Franchise</a></p>
+				<!--<p><a href="/careers/">Careers</a></p>-->
+			</div>
+		</div>
+		<!-- <div class="copyright">
+				<p>&copy; <?php //echo date('Y'); ?> La Madeleine de Corps, Inc.</p>
+		</div> -->
  	</div>
 </nav>
 
