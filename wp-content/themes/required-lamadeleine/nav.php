@@ -35,7 +35,7 @@
 		</div>
 			<hr>
 		<div class="eclub">
-			<p>Say Bonjour to a Job You Will Love</p>
+			<p>Say bonjour to a job you will love!</p>
 			<p><a target="_blank" href="/careers/" class="btn">Join Our Team</a></p>
 		</div>
 			<hr>
