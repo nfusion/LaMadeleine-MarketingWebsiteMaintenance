@@ -14,7 +14,7 @@ Text Domain: requiredstarter
 */
 
 @import url(../required-foundation/style.css);
-@import url(styles/css/importer.css)
+@import url(styles/css/importer.css?v=2)
 
 h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; font-weight: 300; }
 
