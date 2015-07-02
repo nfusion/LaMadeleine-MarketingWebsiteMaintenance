@@ -21,7 +21,7 @@ function lam_register_globals() {
         'Flower Mound',
         'McKinney',
         'Mockingbird',
-        'Plano (Preston/544)',
+        'Plano',
         'Rockwall',
         /* DFW Central */
         'Addison',
@@ -34,7 +34,7 @@ function lam_register_globals() {
         'Arboretum',
         'Round Rock',
         'Sunset Valley',
-        'West Lake',
+        'Westlake',
         'Lakeline',
         'Mueller',
         /* Atlanta */ 
@@ -42,7 +42,7 @@ function lam_register_globals() {
         'Gwinnett',
         'Perimeter Center',
     );
-    
+
     $GLOBALS['toGoLocations'] = $toGoLocations;
 }
 add_action('init', 'lam_register_globals');
