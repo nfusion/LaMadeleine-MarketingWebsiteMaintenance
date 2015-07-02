@@ -4,7 +4,7 @@ Plugin Name: La Madeleine Order Links Widget
 Plugin URI: http://lamadeleine.com
 Description: Dynamically determines To Go and Catering links by location.
 Author: Katherine White 
-Version: 1
+Version: 1.1
 Author URI: http://nfusion.com
 */
 
@@ -32,7 +32,7 @@ class lam_orderlinks_widget extends WP_Widget {
         $toGoUrl = 'https://online.lamadeleine.com/';
         if ( !empty($_COOKIE['LAM-location']) ) {
             $curLocation = json_decode( stripslashes( $_COOKIE['LAM-location']) );
-            if ($curLocation->title == "Frisco") {
+            if ( in_array($curLocation->title, $GLOBALS['toGoLocations']) ) {
                 $toGoUrl = "https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1";
             }
         }
