@@ -7,6 +7,37 @@ var LaMadLocations = {
         $locationCta: $('#location-cta'),
         $directionsLink: "",
         $toGoLink: "https://online.lamadeleine.com",
+        $mmToGoLocations: [
+            'Frisco',
+
+            /* added 2015-07-02 */
+            /* DFW North (includes Frisco) */
+            'Coit & Campbell',
+            'Collin Creek',
+            'Flower Mound',
+            'McKinney',
+            'Mockingbird',
+            'Plano (Preston/544)',
+            'Rockwall',
+            /* DFW Central */
+            'Addison',
+            'Lemmon',
+            'Midway',
+            'NorthPark',
+            'Preston Center',
+            'Preston Forest',
+            /* Austin */
+            'Arboretum',
+            'Round Rock',
+            'Sunset Valley',
+            'West Lake',
+            'Lakeline',
+            'Mueller',
+            /* Atlanta */ 
+            'East Cobb',
+            'Gwinnett',
+            'Perimeter Center'
+        ],
         clickEvent: "",
         setClickEvent: function(Modernizr){
             if($('html').hasClass('touch')){
@@ -421,7 +452,7 @@ var LaMadLocations = {
                         LaMadLocations.setNearbyLocationsStorage(nearbyLocations);
                     }
 
-                    // Frisco market to go link refresh
+                    // Some markets require a to go link refresh
                     LaMadLocations.refreshToGoLink('.widget_lam_orderlinks a[href^="https://online"]');
 
                     // Done loading
@@ -503,7 +534,7 @@ var LaMadLocations = {
             var toGoLink = LaMadLocations.$toGoLink;
             if ( $.cookie('LAM-location') ) {
                 var loc =  JSON.parse( $.cookie('LAM-location') );
-                if (loc.title == 'Frisco') {
+                if ( LaMadLocations.$mmToGoLocations.indexOf(loc.title) !== -1 ) {
                     toGoLink = 'https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1';
                 }
             }
@@ -516,7 +547,7 @@ var LaMadLocations = {
             var toGoLink = LaMadLocations.$toGoLink;
             if ( $.cookie('LAM-location') ) {
                 var loc =  JSON.parse( $.cookie('LAM-location') );
-                if (loc.title == 'Frisco') {
+                if ( LaMadLocations.$mmToGoLocations.indexOf(loc.title) !== -1 ) {
                     toGoLink = 'https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1';
                 }
                 link.attr('href',toGoLink);

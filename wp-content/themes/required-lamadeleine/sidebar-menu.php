@@ -22,7 +22,7 @@
             <?php if ( !empty($_COOKIE['LAM-location']) ) {
                 $curLocation = json_decode( stripslashes( $_COOKIE['LAM-location']) );
 
-                if ($curLocation->title == "Frisco") {
+                if ( in_array($curLocation->title, $GLOBALS['toGoLocations']) ) {
                     $toGoUrl = "https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1";
                 }
 
