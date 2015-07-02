@@ -23,7 +23,7 @@ var LaMadLocations = {
             'Addison',
             'Lemmon',
             'Midway',
-            'NorthPark',
+            'Northpark',
             'Preston Center',
             'Preston Forest',
             /* Austin */
@@ -31,12 +31,12 @@ var LaMadLocations = {
             'Round Rock',
             'Sunset Valley',
             'Westlake',
-            'Lakeline',
-            'Mueller',
+            'Lakeline - Now Open!',
+            'Mueller - Now Open!',
             /* Atlanta */ 
             'East Cobb',
             'Gwinnett',
-            'Perimeter Center'
+            'Perimeter'
         ],
         clickEvent: "",
         setClickEvent: function(Modernizr){

@@ -27,7 +27,7 @@ function lam_register_globals() {
         'Addison',
         'Lemmon',
         'Midway',
-        'NorthPark',
+        'Northpark',
         'Preston Center',
         'Preston Forest',
         /* Austin */
@@ -35,12 +35,12 @@ function lam_register_globals() {
         'Round Rock',
         'Sunset Valley',
         'Westlake',
-        'Lakeline',
-        'Mueller',
+        'Lakeline - Now Open!',
+        'Mueller - Now Open!',
         /* Atlanta */ 
         'East Cobb',
         'Gwinnett',
-        'Perimeter Center',
+        'Perimeter'
     );
 
     $GLOBALS['toGoLocations'] = $toGoLocations;
