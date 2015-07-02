@@ -17,7 +17,7 @@ var LaMadLocations = {
             'Flower Mound',
             'McKinney',
             'Mockingbird',
-            'Plano (Preston/544)',
+            'Plano',
             'Rockwall',
             /* DFW Central */
             'Addison',
@@ -30,7 +30,7 @@ var LaMadLocations = {
             'Arboretum',
             'Round Rock',
             'Sunset Valley',
-            'West Lake',
+            'Westlake',
             'Lakeline',
             'Mueller',
             /* Atlanta */ 
