@@ -168,7 +168,7 @@ body.nav-active{
 			position: fixed;
 			z-index: 101;
 			overflow: auto;
-			-webkit-overflow-scrolling: touch;
+			//-webkit-overflow-scrolling: touch;
 		}
 		body.nav-active{
 			overflow: hidden;
