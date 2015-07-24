@@ -550,7 +550,7 @@ li.nav_download {
 }
 .ui-accordion .ui-accordion-content p {font-size: 14px;}
 .accordion .ui-state-default a,
-.accordion .ui-state-default a:link {color:#452513;}
+.accordion .ui-state-default a:link {color:#452513 !important;}
 .accordion .ui-state-default.ui-state-active {border-bottom: 0px; background:#FDFBE8;}
 .accordion .ui-state-active a, 
 .accordion .ui-state-active a:link {color: #9FBD7A !important;}
