@@ -535,10 +535,10 @@ li.nav_download {
 }
 
 /*= accordion */
-#accordion .ui-state-default, 
-#accordion .ui-widget-content 
-#accordion .ui-state-default, 
-#accordion .ui-widget-header .ui-state-default {
+.accordion .ui-state-default, 
+.accordion .ui-widget-content 
+.accordion .ui-state-default, 
+.accordion .ui-widget-header .ui-state-default {
 	background: transparent;
 	border: 0px;
 	font-size: 18px;
@@ -548,23 +548,24 @@ li.nav_download {
 	outline: none;
 	color: #452513;
 }
-#accordion .ui-state-default a,
-#accordion .ui-state-default a:link {color:#452513;}
-#accordion .ui-state-default.ui-state-active {border-bottom: 0px; background:#FDFBE8;}
-#accordion .ui-state-active a, 
-#accordion .ui-state-active a:link {color: #9FBD7A;}
-#accordion .ui-state-default:hover {background:#FDFBE8;}
+.ui-accordion .ui-accordion-content p {font-size: 14px;}
+.accordion .ui-state-default a,
+.accordion .ui-state-default a:link {color:#452513;}
+.accordion .ui-state-default.ui-state-active {border-bottom: 0px; background:#FDFBE8;}
+.accordion .ui-state-active a, 
+.accordion .ui-state-active a:link {color: #9FBD7A !important;}
+.accordion .ui-state-default:hover {background:#FDFBE8;}
 
-#accordion .ui-corner-all, 
-#accordion .ui-corner-bottom, 
-#accordion .ui-corner-right, 
-#accordion .ui-corner-br {border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
+.accordion .ui-corner-all, 
+.accordion .ui-corner-bottom, 
+.accordion .ui-corner-right, 
+.accordion .ui-corner-br {border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
 
-#accordion .ui-widget-content {
+.accordion .ui-widget-content {
 	background: #FDFBE8;
 	border: 0px;
 	border-bottom: 1px solid #452513;
-	padding:1em 2.2em 1em 3.5em;
+	padding:1em 2.2em 1em 3em !important;
 	font-size: 14px;
 	line-height: 20px;
 }
