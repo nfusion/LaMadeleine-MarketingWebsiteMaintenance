@@ -443,6 +443,7 @@ body.no-locations-found{
       &.map-loaded {
         .flipper{
           @include rotateY(180deg);
+          @include backface-visibility(hidden);
           .other-locations{
             @include transition-duration(0);
             @include rotateY(180deg);

@@ -1950,7 +1950,10 @@ body.no-locations-found #header .icon-wrapper {
       #sidebar .widget-location #location-cta.map-loaded .flipper {
         -moz-transform: rotateY(180deg);
         -webkit-transform: rotateY(180deg);
-        transform: rotateY(180deg); }
+        transform: rotateY(180deg);
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden; }
         #sidebar .widget-location #location-cta.map-loaded .flipper .other-locations {
           -moz-transition-duration: 0;
           -o-transition-duration: 0;
