@@ -6,38 +6,7 @@ var LaMadLocations = {
        
         $locationCta: $('#location-cta'),
         $directionsLink: "",
-        $toGoLink: "https://online.lamadeleine.com",
-        $mmToGoLocations: [
-            'Frisco',
-
-            /* added 2015-07-02 */
-            /* DFW North (includes Frisco) */
-            'Coit & Campbell',
-            'Collin Creek',
-            'Flower Mound',
-            'McKinney',
-            'Mockingbird',
-            'Plano',
-            'Rockwall',
-            /* DFW Central */
-            'Addison',
-            'Lemmon',
-            'Midway',
-            'Northpark',
-            'Preston Center',
-            'Preston Forest',
-            /* Austin */
-            'Arboretum',
-            'Round Rock',
-            'Sunset Valley',
-            'Westlake',
-            'Lakeline - Now Open!',
-            'Mueller - Now Open!',
-            /* Atlanta */ 
-            'East Cobb',
-            'Gwinnett',
-            'Perimeter'
-        ],
+        $toGoLink: "https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1",
         clickEvent: "",
         setClickEvent: function(Modernizr){
             if($('html').hasClass('touch')){
@@ -534,9 +503,6 @@ var LaMadLocations = {
             var toGoLink = LaMadLocations.$toGoLink;
             if ( $.cookie('LAM-location') ) {
                 var loc =  JSON.parse( $.cookie('LAM-location') );
-                if ( LaMadLocations.$mmToGoLocations.indexOf(loc.title) !== -1 ) {
-                    toGoLink = 'https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1';
-                }
             }
             this.sendWindow(toGoLink);
         },
@@ -547,9 +513,6 @@ var LaMadLocations = {
             var toGoLink = LaMadLocations.$toGoLink;
             if ( $.cookie('LAM-location') ) {
                 var loc =  JSON.parse( $.cookie('LAM-location') );
-                if ( LaMadLocations.$mmToGoLocations.indexOf(loc.title) !== -1 ) {
-                    toGoLink = 'https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1';
-                }
                 link.attr('href',toGoLink);
             }
         },
