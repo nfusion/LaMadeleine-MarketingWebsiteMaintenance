@@ -10,40 +10,6 @@
 
 /* Actions & Filters */
 function lam_register_globals() {
-    // we are rolling out the new ordering in phases. here's the master list.
-    $toGoLocations = array(
-        'Frisco',
-
-        /* added 2015-07-02 */
-        /* DFW North (includes Frisco) */
-        'Coit & Campbell',
-        'Collin Creek',
-        'Flower Mound',
-        'McKinney',
-        'Mockingbird',
-        'Plano',
-        'Rockwall',
-        /* DFW Central */
-        'Addison',
-        'Lemmon',
-        'Midway',
-        'Northpark',
-        'Preston Center',
-        'Preston Forest',
-        /* Austin */
-        'Arboretum',
-        'Round Rock',
-        'Sunset Valley',
-        'Westlake',
-        'Lakeline - Now Open!',
-        'Mueller - Now Open!',
-        /* Atlanta */ 
-        'East Cobb',
-        'Gwinnett',
-        'Perimeter'
-    );
-
-    $GLOBALS['toGoLocations'] = $toGoLocations;
 }
 add_action('init', 'lam_register_globals');
 

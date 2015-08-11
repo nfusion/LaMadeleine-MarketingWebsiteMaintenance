@@ -29,13 +29,7 @@ class lam_orderlinks_widget extends WP_Widget {
     // This is where the action happens
     public function widget( $args, $instance ) {
         $title = apply_filters( 'widget_title', $instance['title'] );
-        $toGoUrl = 'https://online.lamadeleine.com/';
-        if ( !empty($_COOKIE['LAM-location']) ) {
-            $curLocation = json_decode( stripslashes( $_COOKIE['LAM-location']) );
-            if ( in_array($curLocation->title, $GLOBALS['toGoLocations']) ) {
-                $toGoUrl = "https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1";
-            }
-        }
+        $toGoUrl = 'https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1';
         // before and after widget arguments are defined by themes
         echo $args['before_widget'];
         if ( ! empty( $title ) )
