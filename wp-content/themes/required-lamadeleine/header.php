@@ -37,7 +37,7 @@
 
 </head>
 <body <?php body_class(); ?>>
-	<!-- sizemek versatag -->
+	<!-- sizmek versatag -->
 	<script>
 		var versaTag = {};
 		versaTag.id = "3677";
@@ -75,8 +75,8 @@
 		acp=$$$$&amp;"
 		style="display:none;width:0px;height:0px"></iframe>
 	</noscript>
-	<!-- /sizemek -->
-	
+	<!-- /sizmek -->
+
 	<?php include_once ('nav.php'); ?>
 
 	<header id="header" role="banner">
