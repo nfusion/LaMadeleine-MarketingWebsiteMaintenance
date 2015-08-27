@@ -4,9 +4,7 @@
 				<div id="footerLinks">
 
 					<?php if( is_front_page() ) : ?>
-					<p style="margin: 10px 0pt 40px 70px;"><a href="http://cateringbylamadeleine.com/"><img border="0" alt="Catering by Le Madeleine" src="/img/LAMAD-8519-5-Catering_468x70.jpg" /></a></p>
-					<?php /* <p style="margin: 10px 0 40px -175px;"><a href="http://cateringbylamadeleine.com/holiday-feast"><img border="0" alt="Catering by Le Madeleine" src="/img/feast-home-banner.jpg" /></a></p> */ ?>
-					<?php /* <p style="margin: 10px 0pt 40px 70px;"><a href="https://www.facebook.com/laMadeleineCafe/app_199663950209895" target="_blank" rel="nofollow"><img border="0" alt="La Madeleine" src="/img/home-banner.png" /></a></p> */ ?>
+					<p style="margin: 10px 0pt 40px 70px;"><a href="https://order.lamadeleine.com/"><img border="0" alt="Catering by Le Madeleine" src="/img/LAMAD-8519-5-Catering_468x70.jpg" /></a></p>
 					<?php endif; ?>
 
 					<?php wp_nav_menu(array('theme_location' => 'footer_navigation', 'walker' => new Roots_Navbar_Nav_Walker())); ?>

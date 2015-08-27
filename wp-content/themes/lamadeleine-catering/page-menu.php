@@ -20,7 +20,7 @@ $get_items = new WP_Query( $menu_items );
                 <?php foreach ( $menu_categories as $category ) : ?>
                     <li><a href="#<?php echo $category->slug ?>"><?php echo $category->name ?></a></li>   
                 <?php endforeach; ?>
-                    <li class="nav_download"><a href="http://order.cateringbylamadeleine.com">Click to<br />Order Online</a></li>
+                    <li class="nav_download"><a href="https://order.lamadeleine.com/">Click to<br />Order Online</a></li>
                 </ul>
             </div>
             <div id="menu_content">

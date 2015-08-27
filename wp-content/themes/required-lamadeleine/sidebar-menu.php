@@ -29,7 +29,7 @@
             } ?>
             <a class="btn" target="_blank" href="<?php echo $toGoUrl; ?>">To Go</a>
 
-            <a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a>
+            <a class="btn" target="_blank" href="https://order.lamadeleine.com/">Catering</a>
         </div>
 
     </div>

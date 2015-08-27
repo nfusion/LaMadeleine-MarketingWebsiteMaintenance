@@ -23,22 +23,10 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-45813434-1', 'cateringbylamadeleine.com');
+  ga('create', 'UA-45813434-1', 'https://order.lamadeleine.com/');
   ga('send', 'pageview');
 
 </script>
 <?php wp_footer(); ?>
-<?php /*
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-43765244-1");
-pageTracker._trackPageview();
-} catch(err) {}
-</script>
-*/ ?>
 </body>
 </html>

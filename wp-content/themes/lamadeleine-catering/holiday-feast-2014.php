@@ -20,7 +20,7 @@
 				<h5 class="lobster">There’s a reason every recipe in our holiday feast is crafted with care…</h5>
 				<p>So you can impress every single guest. Discover how <strong>la Madeleine Holiday Feasts</strong> can make your gatherings the simplest, most délicieux you’ve ever hosted.</p>
 				<div class="catering_block">
-						<a href="http://order.cateringbylamadeleine.com/" id="splat"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/orderonline.png" alt="Online Ordering Now Available!" /></a>
+						<a href="https://order.lamadeleine.com/" id="splat"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/orderonline.png" alt="Online Ordering Now Available!" /></a>
 						<div id="splat2">or call 800-96-LAMAD</div>
 				</div>
 				<p class="social_links"><a class="facebook" href="http://www.facebook.com/laMadeleineCafe">&nbsp;</a><a class="twitter" href="http://twitter.com/lamadeleine">&nbsp;</a><a class="pinterest" href="http://pinterest.com/lamadeleinecafe/">&nbsp;</a></p>
