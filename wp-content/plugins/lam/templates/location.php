@@ -108,13 +108,6 @@
                 // Home view - Small map container
                 $map = '<div id="map"></div>';
 
-                // Home view - Button wrapper and buttons
-                // $btnWrapper = '
-                // <div class="btn-wrapper">
-                //     <a class="btn" target="_blank" href="https://online.lamadeleine.com/">To Go</a>
-                //     <a class="btn" target="_blank" href="http://cateringbylamadeleine.com">Catering</a>
-                // </div>';
-
                 $btnWrapper = '';
 
                 /** Location view only **/

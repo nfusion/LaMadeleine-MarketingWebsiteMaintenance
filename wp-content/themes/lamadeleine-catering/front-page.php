@@ -6,7 +6,7 @@
 	<span class="location_street2"><?php echo $place->address_2 ?></span>
 	<span class="location_citystatezip"><?php echo $place->city ?>, <?php echo $place->state ?> <?php echo $place->zip_code ?></span>
 	<span class="location_phone"><?php echo $place->phone ?></span>
-	<span class="location_menu"><a href="http://order.cateringbylamadeleine.com/" title="Click to Order" target="_blank">Click to Order</a></span>
+	<span class="location_menu"><a href="https://order.lamadeleine.com/" title="Click to Order" target="_blank">Click to Order</a></span>
 	<?php
     return ob_get_clean();
 } ?>
@@ -39,7 +39,7 @@
 	            <!--//The Loop -->
         <?php while ( have_posts() ) : the_post(); ?>
 		<div id="content">
-			<a href="http://order.cateringbylamadeleine.com/" id="splat"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/orderonline.png" alt="Online Ordering Now Available!" /></a>
+			<a href="https://order.lamadeleine.com/" id="splat"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/orderonline.png" alt="Online Ordering Now Available!" /></a>
 			<div id="splat2">or call 800-96-LAMAD</div>
 			<h1><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/headline.png" alt="delight your guests with catering by la madeleine for any occasion" /></h1>
 				<?php the_content(); ?>
@@ -85,7 +85,7 @@
 			<?php endforeach; ?>
 			<?php else: ?>
 				<p><em>D&eacute;sol&eacute;</em>, the catering location list is temporarially unavailable. 
-					Please access our <a href="http://order.cateringbylamadeleine.com/">online ordering site</a> 
+					Please access our <a href="https://order.lamadeleine.com/">online ordering site</a> 
 					directly to search for your nearest catering location! <em>Merci! </em>
 				</p>
 			<?php endif; ?>

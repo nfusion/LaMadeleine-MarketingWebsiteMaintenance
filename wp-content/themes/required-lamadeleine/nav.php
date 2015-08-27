@@ -12,7 +12,7 @@
 			<a class="nav-item" href="/lunch/"><span class="icon icon-lunch"><span class="item-title">Lunch</span></span></a>
 			<a class="nav-item" href="/dinner/"><span class="icon icon-dinner"><span class="item-title">Dinner &amp; Wine</span></span></a>
 			<a class="nav-item" href="/bakery/"><span class="icon icon-bakery"><span class="item-title">Bakery</span></span></a>
-			<a class="nav-item" target="_blank" href="http://cateringbylamadeleine.com"><span class="icon icon-catering"><span class="item-title">Catering</span></span></a>
+			<a class="nav-item" target="_blank" href="https://order.lamadeleine.com/"><span class="icon icon-catering"><span class="item-title">Catering</span></span></a>
 		</div>
 		<div class="nav-group">
 			<h4>More La Madeleine</h4>

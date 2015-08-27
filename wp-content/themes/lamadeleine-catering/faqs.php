@@ -17,7 +17,7 @@
 					<p style="margin-bottom:0;"><strong>Answer: </strong><br />
 						It’s your choice!</p>
 						<ul style="font-size:1.4em;padding-left:18px;">
-							<li>You can place your catering order online <a href="http://order.cateringbylamadeleine.com/">here</a>.</li>
+							<li>You can place your catering order online <a href="https://order.lamadeleine.com/">here</a>.</li>
 							<li>Or you can call 800-965-2623 (800-96-LAMAD).</li>
 							<li>Last but not least, you can always call your nearest café and request to speak with the Catering Specialist. Our dedicated Catering Specialist will compose your order with you capturing every detail to make your event a great success.</li>
 						</ul>
