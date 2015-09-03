@@ -622,6 +622,15 @@ deny from 223.207.0.0/16
 
 # End IP lockouts
 
+# Block admin name discovery
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{QUERY_STRING} author= [NC]
+RewriteCond %{REQUEST_URI} !export.php
+RewriteRule (.*) $1? [R,L]
+</IfModule>
+# End block admin
+
 # font fix
 <FilesMatch "\.(ttf|otf|eot|woff|svg)$">
 	<IfModule mod_headers.c>
