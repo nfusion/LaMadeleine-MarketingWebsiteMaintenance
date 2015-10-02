@@ -18,7 +18,7 @@
         <h3>Place an order online</h3>
 
         <div class="btn-wrapper">
-            <?php $toGoUrl = 'https://online.lamadeleine.com'; ?>
+            <?php $toGoUrl = 'https://order.lamadeleine.com'; ?>
             <?php if ( !empty($_COOKIE['LAM-location']) ) {
                 $curLocation = json_decode( stripslashes( $_COOKIE['LAM-location']) );
 

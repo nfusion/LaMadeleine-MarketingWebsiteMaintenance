@@ -133,7 +133,7 @@
                     <a class="btn-light daypart-menu" href="#">Menu</a>
                     <a class="btn-light get-directions" href="#"><span class="text">Directions</span>' . $loading . '</a>
                     <a class="btn-light order-online" target="_blank" href="#"><span class="text">Order</span>'  . $loading . '</a>
-                </div>'; //https://online.lamadeleine.com
+                </div>'; //https://order.lamadeleine.com
 
                 // Locations view - Locations list container
                 $locationsList = '<div id="location-list"></div>';
