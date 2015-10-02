@@ -62,7 +62,7 @@ $menuArray  = process_menu($mypod,$pageDetails['daypartTitle']);
             <a target="_blank" class="mobile-btn-link" href="http://www.nutritionix.com/la-madeleine/portal">Get Nutritional Information</a>
         </div>
         <div class="four columns">
-            <a target="_blank" class="mobile-btn-link" href="https://online.lamadeleine.com/">Place an Order Online, S'il Vous Pla&icirc;t</a>
+            <a target="_blank" class="mobile-btn-link" href="https://order.lamadeleine.com/">Place an Order Online, S'il Vous Pla&icirc;t</a>
         </div>
     </div>
 
