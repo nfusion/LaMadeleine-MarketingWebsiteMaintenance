@@ -19,6 +19,7 @@
 			<a class="nav-item" href="/locations/"><span class="icon icon-pin"><span class="item-title">Locations</span></span></a>
 			<a class="nav-item" href="/store/"><span class="icon icon-store"><span class="item-title">Retail &amp; Gift Cards</span></span></a>
 			<a class="nav-item" href="/stories/"><span class="icon icon-stories"><span class="item-title">La Madeleine Stories</span></span></a>
+			<a class="nav-item" href="/rewards/"><span class="icon icon-rewards"><span class="item-title">Rewards</span></span></a>
 		</div>
 		<div class="social-group">
 			<h4>Connect</h4>
