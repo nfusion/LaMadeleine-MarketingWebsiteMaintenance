@@ -71,6 +71,12 @@ ul.has-margin{
  margin-left: 10px;
 }
 
+.center {
+	text-align: center;
+	margin: 0 auto !important;
+    display: block !important;
+}
+
 @media (min-width: $medium-screen-min){
 	.show-small{
 		display: none;
