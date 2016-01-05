@@ -661,6 +661,11 @@ ul.has-margin {
   content: url(../../../img/layout/quote-close.png);
   margin-left: 10px; }
 
+.center {
+  text-align: center;
+  margin: 0 auto !important;
+  display: block !important; }
+
 @media (min-width: 980px) {
   .show-small {
     display: none; }
