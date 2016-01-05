@@ -58,6 +58,19 @@ ul.has-margin{
 	margin-bottom: 0 !important;
 }
 
+.fancy-quote {
+	margin: 35px 0;
+}
+.fancy-quote:before {
+ content: url(../../../img/layout/quote-open.png);
+ margin-right: 10px;
+}
+
+.fancy-quote:after {
+ content: url(../../../img/layout/quote-close.png);
+ margin-left: 10px;
+}
+
 @media (min-width: $medium-screen-min){
 	.show-small{
 		display: none;
