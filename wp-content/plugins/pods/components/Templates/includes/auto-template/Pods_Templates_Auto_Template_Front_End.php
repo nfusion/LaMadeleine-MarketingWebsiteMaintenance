@@ -99,10 +99,10 @@ class Pods_Templates_Auto_Template_Front_End {
 
 			//start output array empty
 			$auto_pods = array();
-			
+
 			//get pods api class
 			$api = pods_api();
-			
+
 			//loop through each to see if auto templates is enabled
 			foreach ( $the_pods as $the_pod => $the_pod_label ) {
 				//get this Pods' data.
@@ -115,9 +115,9 @@ class Pods_Templates_Auto_Template_Front_End {
 					$archive = pods_v( 'pfat_archive', $pod_data[ 'options' ], false, true );
 					$single_append = pods_v( 'pfat_append_single', $pod_data[ 'options' ], true, true );
 					$archive_append = pods_v( 'pfat_append_archive', $pod_data[ 'options' ], true, true );
-					$type = pods_v( 'object_type', $pod_data, false, true );
+					$type = pods_v( 'type', $pod_data, false, true );
 					//check if it's a post type that has an arhive
-					if ( $pod_data['type'] === 'post_type' && $the_pod !== 'post' || $the_pod !== 'page' ) {
+					if ( $type === 'post_type' && $the_pod !== 'post' || $the_pod !== 'page' ) {
 						$has_archive = pods_v( 'has_archive', $pod_data['options'], false, true );
 					}
 					else {
@@ -273,6 +273,18 @@ class Pods_Templates_Auto_Template_Front_End {
 
 		//prevent infinite loops caused by this method acting on post_content
 		remove_filter( 'the_content', array( $this, 'front' ) );
+
+		/**
+		 * Change which template -- by name -- to be used.
+		 *
+		 * @since 2.5.6
+		 *
+		 * @param string        $template_name  The name of a Pods Template to load.
+		 * @param Pods          $pods           Current Pods object.
+		 * @param bool|string   $append         Whether Template will be appended (true), prepended ("prepend") or replaced (false).
+		 */
+		$template_name = apply_filters( 'pods_auto_template_template_name', $template_name, $pods, $append );
+
 		$template = $pods->template( $template_name );
 		add_filter( 'the_content', array( $this, 'front' ) );
 

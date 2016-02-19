@@ -3,8 +3,8 @@ Contributors: pressupinc, davidbhayes
 Plugin URI: http://pressupinc.com/wordpress-plugins/require-featured-image/
 Tags: featured image, images, edit, post, admin, require featured image, image, media, thumbnail, thumbnails, post thumbnail, photo, pictures
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 1.1.1
+Tested up to: 4.4.1
+Stable tag: 1.2.1
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -14,13 +14,13 @@ Requires content you specify to have a featured image set before they can be pub
 
 = Simplify Your Editing Life =
 
-Requires your various post types — as specified in a simple options page — to have a featured image set before they can be published. If a lack of featured images causes your layout to break, or just look less-than-optimal, this is the plugin for you. 
+Requires your various post types — as specified in a simple options page — to have a featured image set before they can be published. If a lack of featured images causes your layout to break, or just look less-than-optimal, this is the plugin for you.
 
-Rather than forcing you to manually enforce your editorial standards of including a featured image in every post, if your contributors fail to add a featured image to a post before publishing it they'll simply find it impossible to publish. 
+Rather than forcing you to manually enforce your editorial standards of including a featured image in every post, if your contributors fail to add a featured image to a post before publishing it they'll simply find it impossible to publish.
 
 = Setting up the Plugin =
 
-By default it works on the "Post" content type only, but you can specify other content types, or turn it off for Posts in the new options page in your left sidebar: Settings > Req Featured Image. Simply check and uncheck the appropriate types, hit save and you're all set. Happy publishing!
+By default it works on the "Post" content type only, but you can specify other content types, or turn it off for Posts in the new options page in your left sidebar: Settings > Req Featured Image. Simply check and uncheck the appropriate types, set a minimum image size if you desire, hit save and you're all set. Happy publishing!
 
 = Anything else? =
 
@@ -28,9 +28,9 @@ Don't forget to check out [the plugins page on our website](http://pressupinc.co
 
 == Installation ==
 
-Activate the plugin. No other steps are necessary to require featured images on Posts only. 
+Activate the plugin. No other steps are necessary to require featured images on Posts only.
 
-If you want to require featured images on a different content type, or allow Posts to be published without them simply go to the settings page in your left sidebar: Settings > Req Featured Image. Check and uncheck the appropriate types, hit "Save", and you're all set. Happy publishing!
+If you want to require featured images on a different content type, or allow Posts to be published without them simply go to the settings page in your left sidebar: Settings > Req Featured Image. Check and uncheck the appropriate types, set a minimum image size if you desire, hit "Save", and you're all set. Happy publishing!
 
 == Frequently Asked Questions ==
 
@@ -54,11 +54,13 @@ Because you want it to be *required* that your posts have featured images before
 
 = Are there any options? =
 
-Yep, just for different "custom post types." In your left sidebar under Settings, you should see "Req Featured Image". There are options. Or an option, more accurately. Happy publishing!
+Yep, just for different "custom post types." In your left sidebar under Settings, you should see "Req Featured Image". There are options. You can choose which Post Types you want check as well as setting a minimum size for the featured image. Happy publishing!
 
 = Support for other languages? =
 
-The plugin does support other languages, and we're happy to accept contributions of translation packs.
+Yes. We're currently (early 2016) hoping that these can start being done on [traslate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/require-featured-image), so if you'd like to contribute one and are familiar with the process, go ahead and do it there.
+
+As the dust is still settling on that process, we will continue supporting other languages via contributions of translations which will be rolled into the next point release of the plugin, as we've done historically.
 
 == Screenshots ==
 
@@ -67,6 +69,24 @@ The plugin does support other languages, and we're happy to accept contributions
 2. The settings page, which lets you specify which post types the plugin should operate on.
 
 == CHANGELOG ==
+
+= 1.2.1 (2016.02.08) =
+* Smattering of small changes to make code more readable and standardized in formatting.
+* Addressed and issue where a translation function was being used in the wrong place at the wrong time.
+
+= 1.2.0 (2016.02.01) =
+* Adding the ability to declare, check for, and enforce a minimum featured image size. Big props to [@cjk508](https://github.com/cjk508) for making that happen.
+
+= 1.1.4 (2015.12.7) =
+* Adding Finnish translation. This commit might/should also unlock language packs on .org, so it could be the last one!
+* Added support for WordPress v4.4
+
+= 1.1.3 (2015.10.19) =
+* Improving support for WP4.3 by getting right of h1/h2 targetting issue in jQuery. Thanks [Jamie](https://github.com/hubdotcom).
+* Added Danish translation. Thanks [Jess](https://github.com/JessNielsen)!
+
+= 1.1.2 (2015.10.01) =
+* Added support for WordPress v4.3+
 
 = 1.1.1 (2015.06.22) =
 * Fixed an logic error that made it nearly impossible to publish posts. Apologies to all affected.

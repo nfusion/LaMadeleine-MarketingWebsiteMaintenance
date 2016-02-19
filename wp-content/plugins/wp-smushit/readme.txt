@@ -1,31 +1,30 @@
 === WP Smush ===
 Plugin Name: WP Smush
-Version: 2.0.6.2
+Version: 2.1.3
 Author: WPMU DEV
 Author URI: http://premium.wpmudev.org/
 Contributors: WPMUDEV, alexdunae
 Tags: Attachment,Attachments,Compress,Compress Image File,Compress Image Size,Compress JPG,Compressed JPG, Compression Image,Image,Images,JPG,Optimise,Optimize,Photo,Photos,Pictures,PNG,Reduce Image Size,Smush,Smush.it,Upload,WordPress Compression,WordPress Image Tool,Yahoo, Yahoo Smush.it
 Requires at least: 3.5
-Tested up to: 4.3
-Stable tag: 2.0.6.2
+Tested up to: 4.4.1
+Stable tag: 2.1.3
 License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 Reduce image file sizes, improve performance and boost your SEO using the free <a href="https://premium.wpmudev.org/">WPMU DEV</a> WordPress Smush API.
 
 == Description ==
 
-<blockquote>
-<h4>All new massively improved smushing!</h4>
-<br />
-Try now for a completely new, incredibly powerful, and 100% free image smushing process, brought to you by the team at WPMU DEV!
-<br>
-</blockquote>
+<strong>Optimize unlimited images</strong> with our <strong>incredibly powerful</strong> and <strong>100% free image Smusher</strong>, brought to you by the superheroes at WPMU DEV!
+
+We'll do all the heavy lifting with our superhero servers, your site will be loading quicker in no time at all, leaving you to concentrate on making your content great! 
 
 WP Smush strips hidden, bulky information from your images, reducing the file size without losing quality. The faster your site loads, the more Google, Bing, Yahoo and other search engines will like it.
 
 [youtube https://www.youtube.com/watch?v=GCzH7z05s5U]
 
 Heavy image files may be slowing down your site without you even knowing it. WP Smush meticulously scans every image you upload – or have already added to your site – and cuts all the unnecessary data for you.
+
+<a href="https://garage.godaddy.com/wordpress-plugin-partner-program/directory/?cvosrc=advocacy.evangelism.WP3" rel="nofollow"><img src="https://garage.godaddy.com/wp-content/uploads/badges/godaddy-plugin-partner-program-badge.svg" title="GoDaddy Plugin Program Partner" alt="GoDaddy Plugin Program Partner"/></a>
 
 ★★★★★ <br>
 “I had no idea that my page load time was being dragged down by the images. The plugin nearly halved the time it took.” - <a href="http://profiles.wordpress.org/karlcw">karlcw</a>
@@ -59,7 +58,7 @@ Features available to both WP Smush and Pro users include:
 	<li>Use of WPMU DEV's fast and reliable Smush API service.</li>
 	<li>View advanced compression stats per-attachment and library totals.</li>
 </ul>
-Discover for yourself why WP Smush is the most popular free image optimization plugin with more than a million downloads.
+Discover for yourself why WP Smush is the most popular free image optimization plugin with more than two million downloads.
 
 
 == Screenshots ==
@@ -80,6 +79,55 @@ Yahoo's Smush.it API is gone forever. So WPMU DEV built our own free API that is
 
 
 == Changelog ==
+
+= 2.1.3 =
+* Fixed: Compatibility with WPMU DEV Dashboard plugin v4.0, was not detecting pro status
+
+= 2.1.2 =
+* Fixed: Important fix for transient issue leading to mutliple api requests
+
+= 2.1.1 =
+* Fixed: Workaround for terrible bug in W3TC file based object caching
+
+= 2.1 =
+* Fixed: Untranslatable strings in settings
+* Fixed: Increased is_pro() API timeouts
+* Fixed: Remove redundant _get_api_key() cache check
+* Fixed: Some PHP notices on fresh installs
+
+= 2.0.7.1 =
+
+* Fixed: Bulk Smush button keeps spinning after 50 images for free version
+* Fixed: NextGen Bulk Smush button issue
+
+= 2.0.7 =
+
+* Fixed: Invalid header issue
+* Fixed: Warnings in file functions
+* Updated: Added limit on query results, for sites with higher image count, Use filter `wp_smush_media_query_limit` to adjust values
+* Added: Sortable WP Smush column in Media Library
+* Added: Filters `wp_smush_media_image` for Media Gallery, `wp_smush_nextgen_image` For NextGen gallery,
+          allows to skip a particular image size from smushing
+* Added: NextGen Gallery support (Pro feature)
+
+= 2.0.6.5 =
+
+* Updated: Skip webp images ( causing ajax error for few sites )
+* Fixed: Warning and Notices ( Media Library not loading )
+* Fixed: Smush full size image if no other sizes are available
+* Added: Detailed text for stats and settings
+
+= 2.0.6.3 =
+
+* Fixed: Change File permission after replacing image
+* Fixed: Directory path for files
+* Fixed: Workaround for Auto Smush issue on Hostgator
+* Fixed: Smush button doesn't works in media library dialog on post screen, when add media is clicked
+		 (https://wordpress.org/support/topic/like-wp-smush-a-lot)
+* New:   Show number of images smushed in stats column
+* Added: Support for WP Retina 2x Plugin
+* Added: Filter `WP_SMUSH_API_TIMEOUT` to change the default time out value from 60s
+* Added: Smush original image option (Pro Only)
 
 = 2.0.6.2 =
 
