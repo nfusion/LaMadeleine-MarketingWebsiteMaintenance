@@ -2,8 +2,8 @@
 Contributors: ithemes, chrisjean, aaroncampbell, gerroald, mattdanner
 Tags: security, malware, secure, multi-site, network, mu, login, lockdown, htaccess, hack, header, cleanup, ban, restrict, access, protect, protection, disable, images, image, hotlink, admin, username, database, prefix, wp-content, rename, directory, directories, secure, SSL, iThemes, BackupBuddy, Exchange, iThemes Exchange
 Requires at least: 4.1
-Tested up to: 4.3.1
-Stable tag: 5.0.1
+Tested up to: 4.4.2
+Stable tag: 5.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ Released under the terms of the GNU General Public License.
 
 iThemes Security (formerly Better WP Security) gives you over 30+ ways to secure and protect your WordPress site. On average, 30,000 new websites are hacked each day. WordPress sites can be an easy target for attacks because of plugin vulnerabilities, weak passwords and obsolete software.
 
-Most WordPress admins don't even know they’re vulnerable, but iThemes Security works to fix common holes, stop automated attacks and strengthen user credentials. With one-click activation for most features, as well as advanced features for experienced users, iThemes Security can help protect any WordPress site.
+Most WordPress admins don't know they're vulnerable, but iThemes Security works to fix common holes, stop automated attacks and strengthen user credentials. With one-click activation for most features, as well as advanced features for experienced users, iThemes Security can help protect any WordPress site.
 
 = Maintained and Supported by iThemes =
 
@@ -99,7 +99,7 @@ For complete site backups and the ability to restore or move WordPress easily, c
 
 = Tutorials =
 
-Learn how to use iThemes Security with our series of <a href="http://ithemes.com/tutorial/category/ithemes-security/">in-depth tutorial videos</a> taught by lead developer Chris Wiegman:
+Learn how to use iThemes Security with our series of <a href="http://ithemes.com/tutorial/category/ithemes-security/">in-depth tutorial videos</a>:
 
 * <a href="http://ithemes.com/tutorials/getting-started-ithemes-security-part-1/">Getting Started</a>
 * <a href="http://ithemes.com/tutorials/getting-started-ithemes-security-part-2-global-settings/">Global Settings</a>
@@ -169,7 +169,7 @@ DISCLAIMER: Under no circumstances do we release this plugin with any warranty, 
 * <a href="http://ithemes.com/fixing-ithemes-security-lockouts/">Fixing iThemes Security Lockouts</a>
 * <a href="http://ithemes.com/what-is-changed-by-ithemes-security/">What is Changed By iThemes Security</a>
 
-= I've enabled the Enforce SSL option and it broke my site. How do I get back in? =
+= I've enabled the Enforce SSL option, and it broke my site. How do I get back in? =
 * Open your wp-config.php file in a text editor and remove the following 2 lines:
 * define('FORCE_SSL_LOGIN', true);
 * define('FORCE_SSL_ADMIN', true);
@@ -189,10 +189,63 @@ Free support may be available with the help of the community in the <a href="htt
 
 == Changelog ==
 
+= 5.3.0 =
+* New Feature: Added support for IPv6 addresses. This includes support for IPv6 in lockouts, ban hosts, and white lists.
+* Bug Fix: Fixed issue that could cause username-based lockouts to fail for long usernames.
+* Bug Fix: Fixed issue that prevented wildcard IP ranges from being blacklisted or whitelisted.
+* Bug Fix: Removed warnings generated when the Away Mode module is disabled and iThemes Sync contacts the site.
+* Enhancement: Updated descriptions of valid IP and IP range formats for the Lockout White List and the Ban Hosts settings.
+* Enhancement: Updated host entries in log details to link to traceip.net rather than ip-adress.com. This is because ip-adress.com does not support IPv6 addresses.
+* Enhancement: Updated some translatable strings relating to blacklisting and whitelisting to allow for better translations.
+* Enhancement: Added details about how wildcard IP ranges are converted to CIDR format (this improves performance).
+
+= 5.2.1 =
+* Bug Fix: Comparisons of IPv4 addresses and ranges now include the IP's at the edge of the ranges.
+* Bug Fix: IPv4 tests now work as expected when deciding if a blacklisted IP or range overlaps a whitelisted IP's and ranges.
+* Bug Fix: Fixed styling issue that affected the display of the horizontal tabs on settings pages in WordPress 4.5.
+* Bug Fix: Replaced old module sorting order in settings screens.
+* Bug Fix: Fixed PHP 7 compatibility issue that triggers the following error: "Uncaught Error: Call to undefined function mysql_get_client_info()".
+* Bug Fix: Fixed warnings and errors that could occur when deleting the plugin.
+* Bug Fix: Fixed warning that could occur on a failed login when Local Brute Force Detection is disabled.
+* Bug Fix: All data added to the options table by iThemes Security is removed on uninstall.
+* Bug Fix: Fixed the cause of the following warning: call_user_func_array() expects parameter 1 to be a valid callback, class 'ITSEC_SSL_Setup' does not have a method 'execute_deactivate'
+* Enhancement: When a lockout is being executed, wp_logout() will only be called if the current page request comes from a logged in user. This prevents plugins that log logout events from logging log outs from unknown users.
+* Enhancement: Improved the descriptions used for some of the data displayed in the "System Information" section of Security > Dashboard.
+* Enhancement: Added "Use MySQLi" entry to the "System Information" section of Security > Dashboard to show whether the MySQLi driver is enabled.
+* Enhancement: Updated the "SQL Mode" entry in the "System Information" section of Security > Dashboard to show the full details if that value is set.
+* Enhancement: Improved code that ensures that tables and options table entries created by iThemes Security are removed on uninstall only when no other iThemes Security plugin is active.
+
+= 5.2.0 =
+* Security Fix: Fixed PHP code that could allow AJAX requests to list directories and files outside the directory structure of the WordPress installation. Note that these AJAX requests required a logged in user with admin-level privileges. This vulnerability was unable to be exploited by non-privileged or anonymous requests.
+* Bug Fix: Updated the SSL feature to use 301 redirects rather than 302 redirects.
+* Bug Fix: Fixed situations where security nonces would incorrectly trigger "security check" errors when enabling specific combinations of features on the settings page.
+* Bug Fix: Enabling scheduled database backups and setting a backup interval of 0 days no longer results in a backup being created on every page load.
+* Bug Fix: Module-specific data is properly initialized/removed on plugin activation, deactivation, and uninstallation.
+* Feature Removal: Removed the "Security Status" portion of the Security > Dashboard page. This is in preparation for a new tool that provides suggestions tailored to the site and server that Security is running on.
+* Enhancement: Updated the way the feature modules function in order to allow them to be redesigned in a more efficient and flexible way for future releases.
+* Enhancement: Updated the File Change Detection feature to attempt a max memory limit of 256M rather than 128M as some users experience out of memory issues which could be fixed with the higher memory limit.
+* Enhancement: Updated the Database Backup feature to attempt a max memory limit of 256M rather than 128M as some users experience out of memory issues which could be fixed with the higher memory limit.
+* Enhancement: Added localization support for some non-localized strings.
+* Enhancement: Improved detection of multiple active versions of iThemes Security.
+
+= 5.1.1 =
+* Enhancement: Removed Yandex and Sogou from the HackRepair blacklist as they are legitimate search engine bots.
+* Enhancement: Added detailed information about Sucuri malware scan errors to Malware Scan log details.
+* Bug Fix: No longer enables display of database errors when an event is logged.
+
+= 5.1.0 =
+* New Feature: Added "Multiple Authentication Attempts per XML-RPC Request" setting to the WordPress Tweaks section. When this setting is set to "Block", iThemes Security will block brute force login attacks against XML-RPC as described by Sucuri in this blog post: https://blog.sucuri.net/2015/10/brute-force-amplification-attacks-against-wordpress-xmlrpc.html
+* Enhancement: Updated text describing the XML-RPC setting in the WordPress Tweaks section to better explain what the setting is for and which setting is recommended.
+* Enhancement: Improved IP detection when proxy detection is active by processing the header set by CloudFlare.
+* Enhancement: Added a filter named itsec_filter_remote_addr_headers which can be used to change which headers are searched for the client IP. This allows for tailoring the IP detection for specific reverse proxies and load balancers.
+* Bug Fix: Updated the Banned Users settings to no longer add a newline to the Ban Hosts input each time the settings page is saved.
+* Compatibility Fix: Updated code triggered by the ITSEC_TEST_MALWARE_SCAN_DISABLE_SSLVERIFY define. This avoids plugin compatibility issues that prevent disabling the SSL peer verification.
+
 = 5.0.1 =
 * Compatibility Fix: Added support for ITSEC_TEST_MALWARE_SCAN_DISABLE_SSLVERIFY. Setting it to true can bypass "SSL peer certificate or SSH remote key was not OK" errors on servers with bad SSL configurations.
 
 = 5.0.0 =
+* Compatibility Fix: Changed translation domain from it-l10n-better-wp-security to better-wp-security. This change was necessary in order to be included in the translate.wordpress.org project.
 * New Feature: Added malware scanning provided by Sucuri SiteCheck.
 
 = 4.9.0 =

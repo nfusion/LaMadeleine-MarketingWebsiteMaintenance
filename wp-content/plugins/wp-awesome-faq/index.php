@@ -3,7 +3,7 @@
 Plugin Name: WP Awesome FAQ
 Plugin URI: http://jeweltheme.com/product/wp-awesome-faq-pro/
 Description: Accordion based Awesome WordPress FAQ Plugin
-Version: 2.0.0
+Version: 3.1.4
 Author: Liton Arefin
 Author URI: http://www.jeweltheme.com
 License: GPL2
@@ -167,8 +167,10 @@ function jeweltheme_wp_awesome_faq_admin_notice() {
     global $current_user ;
         $user_id = $current_user->ID;
     if ( ! get_user_meta($user_id, 'jeweltheme_ignore_notice') ) {
-        echo '<div class="updated"><p>'; 
-        printf(__('Check out Premium Features of <a href="http://jeweltheme.com/product/wp-awesome-faq-pro/" target="_blank">WP Awesome FAQ</a> Plugin.  Why this Plugin is really awesome !!! | Check out other Awesome stuffs <a href="http://jeweltheme.com" target="_blank">here</a> <a style="float: right;" href="%1$s">X</a>'), '?jeweltheme_ignore=0');
+        echo '<div class="updated"><p>';         
+        printf(__('<h4 style="font-size: 20px; color: #5FA52A; font-weight: normal; margin-bottom: 10px; margin-top: 5px;"><a href="http://jeweltheme.com/product/wp-awesome-faq-pro/" target="_blank">Get WP Awesome FAQ PRO Today!</a></h4>Check out Premium Features of <a href="http://jeweltheme.com/product/wp-awesome-faq-pro/" target="_blank">WP Awesome FAQ</a> Plugin. Compare Why this Plugin is really awesome !!! <br>
+            Jewel Theme, always express the power of WordPress. We are one of the best Team for creating stunning WordPress Themes - Plugins and Website Templates. <br>
+            Check all of our <a href="http://jeweltheme.com/product-category/wordpress-themes/" target="_blank">Free and Premium WordPress Themes</a> and <a href="http://jeweltheme.com/product-category/wordpress-plugins/" target="_blank">WordPress Plugins </a> <a style="float: right;" href="%1$s">X</a>'), '?jeweltheme_ignore=0');
         echo "</p></div>";
     }
 }
@@ -221,3 +223,50 @@ function jeweltheme_wp_awesome_faq_cat_columns($out, $column_name, $theme_id) {
     }
     return $out;    
 }
+
+
+
+
+
+
+add_action('admin_head', 'jeweltheme_wp_awesome_faq_tinymce_button');
+
+function jeweltheme_wp_awesome_faq_tinymce_button() {
+    global $typenow;
+    
+    // check user permissions
+    if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) {
+    return;
+    }
+    
+    // verify the post type
+    if( ! in_array( $typenow, array( 'post', 'page' ) ) )
+        return;
+
+    // check if WYSIWYG is enabled
+    if ( get_user_option('rich_editing') == 'true') {
+        add_filter("mce_external_plugins", "jeweltheme_wp_awesome_faq_tinymce_plugin");
+        add_filter('mce_buttons', 'jeweltheme_wp_awesome_faq_register_tinymce_button');
+    }
+}
+
+function jeweltheme_wp_awesome_faq_tinymce_plugin($plugin_array) {
+    $plugin_array['jeweltheme_faq_button'] = plugins_url( '/editor-button.js', __FILE__ ); 
+    return $plugin_array;
+}
+
+function jeweltheme_wp_awesome_faq_register_tinymce_button($buttons) {
+   array_push($buttons, "jeweltheme_faq_button");
+   return $buttons;
+}
+
+function admin_inline_js(){ ?>
+    <style>
+        i.mce-ico.mce-i-faq-icon {
+            background-image: url('<?php echo  plugins_url( 'icon.png', __FILE__ );?>');
+        }
+    </style>
+<?php }
+add_action( 'admin_print_scripts', 'admin_inline_js' );
+
+
