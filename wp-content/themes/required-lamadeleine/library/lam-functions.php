@@ -284,7 +284,12 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   	$isPriced = "ispriced-false";
   endif;
 
-  $str .= '<p class="desc">' . $menuItemObj['description'] . '<span class="pricing ' . $isPriced . '"><span class="min">$' . $menuItemObj['price_min'] . '</span><span class="max">$' . $menuItemObj['price_max'] . '</span></span></p>';
+  $str .= '<p class="desc">' . $menuItemObj['description'] . '<span class="pricing ' . $isPriced . '">
+  <span class="min">$' . $menuItemObj['price_min'] . '</span>
+  <span class="tier2">$' . $menuItemObj['price_tier_2'] . '</span>
+  <span class="tier3">$' . $menuItemObj['price_tier_3'] . '</span>
+  <span class="max">$' . $menuItemObj['price_max'] . '</span>
+  </span></p>';
 
   $str .='<div class="optional_item">';
   for($i=1; $i<=5; $i++){
@@ -293,6 +298,8 @@ function display_menu_item($menuItemObj, $featuredItemObj){
         $str .= "<div class='pricing'>".$menuItemObj['description_'.$i];
         $str .= '<span class="pricing ' . $isPriced . '">
               	<span class="min">$' . $menuItemObj['optional_min_price_'.$i] . '</span>
+                <span class="tier2">$' . $menuItemObj['optional_price_'.$i.'_tier_2'] . '</span>
+                <span class="tier3">$' . $menuItemObj['optional_price_'.$i.'_tier_3'] . '</span>
                 <span class="max">$' . $menuItemObj['optional_max_price_'.$i] . '</span>
                 </span>
                 </div>
@@ -663,28 +670,40 @@ function process_menu($mypod,$daypart){
                                'story', 
                                'menu_key_relationship', 
                                'price_max', 
+                               'price_tier_2',
+							   'price_tier_3',
                                'price_min',
                                'daypart_relationship',
                                'menu_category', 
                                'description_1', 
                                'optional_min_price_1',
                                'optional_max_price_1',
+                               'optional_price_1_tier_2', 
+								'optional_price_1_tier_3',
 
                                'description_2', 
                                'optional_min_price_2',
                                'optional_max_price_2',
+                               'optional_price_2_tier_2', 
+								'optional_price_2_tier_3',
 
                                'description_3', 
                                'optional_min_price_3',
                                'optional_max_price_3',
+                               'optional_price_3_tier_2', 
+								'optional_price_3_tier_3',
 
                                'description_4', 
                                'optional_min_price_4',
                                'optional_max_price_4',
+                               'optional_price_4_tier_2', 
+								'optional_price_4_tier_3',
 
                                'description_5', 
                                'optional_min_price_5',
-                               'optional_max_price_5'
+                               'optional_max_price_5',
+                               'optional_price_5_tier_2', 
+								'optional_price_5_tier_3'
 
                                ) as $key => $value) {
                      $item[$value] = $mypod->field($value);

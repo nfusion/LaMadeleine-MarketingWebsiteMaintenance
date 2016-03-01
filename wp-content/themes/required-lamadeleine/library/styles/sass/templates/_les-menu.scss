@@ -249,7 +249,7 @@
 		.pricing{
 			padding-left: 5px;
 			font-style: italic;
-			.min,.max{
+			.min,.max, .tier2, .tier3 {
 				display: none;
 			}
 		}
@@ -320,6 +320,16 @@
 	// Max prices
 	.menu-details.max{
 		.menu-item .pricing .max{
+			display: inline;
+		}
+	}
+	.menu-details.tier2 {
+		.menu-item .pricing .tier2{
+			display: inline;
+		}
+	}
+	.menu-details.tier3 {
+		.menu-item .pricing .tier3{
 			display: inline;
 		}
 	}

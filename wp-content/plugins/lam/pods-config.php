@@ -68,11 +68,9 @@ function lam_metaboxes() {
 	$pod = 'menu_item';
 	$metaboxes = array(
 		array(
-			'label' => 'Menu Details',
+			'label' => 'Menu Item Details',
 			'fields' => array(
-				'description' , 
-				'price_min', 
-				'price_max', 
+				'description' ,  
 				'menu_key_relationship', 
 				'story', 
 				'fma_promo', 
@@ -82,11 +80,22 @@ function lam_metaboxes() {
 				'order_weight'
 			)
 		),
+		array (
+			'label' => 'Menu Item Pricing',
+			'fields' => array(
+				'price_min', 
+				'price_tier_2',
+				'price_tier_3',
+				'price_max',
+			)
+		),
 		array(
 			'label' => 'First Option',
 			'fields' => array(
 				'description_1', 
 				'optional_min_price_1', 
+				'optional_price_1_tier_2', 
+				'optional_price_1_tier_3', 
 				'optional_max_price_1'
 			)
 		),
@@ -94,7 +103,9 @@ function lam_metaboxes() {
 			'label' => 'Second Option',
 			'fields' => array(
 				'description_2', 
-				'optional_min_price_2', 
+				'optional_min_price_2',
+				'optional_price_2_tier_2',  
+				'optional_price_2_tier_3', 
 				'optional_max_price_2'
 			)
 		),
@@ -103,6 +114,8 @@ function lam_metaboxes() {
 			'fields' => array(
 				'description_3', 
 				'optional_min_price_3', 
+				'optional_price_3_tier_2',  
+				'optional_price_3_tier_3', 
 				'optional_max_price_3'
 			)
 		),
@@ -111,6 +124,8 @@ function lam_metaboxes() {
 			'fields' => array(
 				'description_4', 
 				'optional_min_price_4', 
+				'optional_price_4_tier_2',  
+				'optional_price_4_tier_3', 
 				'optional_max_price_4'
 			)
 		),
@@ -119,6 +134,8 @@ function lam_metaboxes() {
 			'fields' => array(
 				'description_5', 
 				'optional_min_price_5', 
+				'optional_price_5_tier_2',  
+				'optional_price_5_tier_3', 
 				'optional_max_price_5'
 			)
 		)
