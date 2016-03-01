@@ -1,35 +1,25 @@
 jQuery(document).ready(function($) {
 
-	function postTypeSupportsFeaturedImage() {
-		return $.find('#postimagediv').length !== 0;
-	}
-
-	function lacksFeaturedImage() {
-		return $('#postimagediv').find('img').length === 0;
-	}
-
-	function imageIsTooSmall() {
+	function checkImageReturnWarningMessageOrEmpty() {
 		var $img = $('#postimagediv').find('img');
-		var regex = /-\d+[Xx]\d+\./g;
-		var input = $img[0].src;
-		var pathToImage = input.replace(regex, ".");
+		if ($img.length === 0) {
+			return passedFromServer.jsWarningHtml;
+		}
+		if (passedImageIsTooSmall($img)) {
+			return passedFromServer.jsSmallHtml;
+		}
+		return '';
+	}
 
+	function passedImageIsTooSmall($img) {
+		var input = $img[0].src;
+		var pathToImage = input.replace(/-\d+[Xx]\d+\./g, ".");
 		var featuredImage = new Image();
 		featuredImage.src = pathToImage;
-
 		return featuredImage.width < passedFromServer.width || featuredImage.height < passedFromServer.height;
 	}
 
-	function publishButtonIsPublishText() {
-		return $('#publish').attr('name') === 'publish';
-	}
-
-	function disablePublishAndWarn(reason) {
-		if (reason == 'none') {
-			var message = passedFromServer.jsWarningHtml;
-		} else {
-			var message = passedFromServer.jsSmallHtml;
-		}
+	function disablePublishAndWarn(message) {
 		createMessageAreaIfNeeded();
 		$('#nofeature-message').addClass("error")
 			.html('<p>'+message+'</p>');
@@ -48,17 +38,14 @@ jQuery(document).ready(function($) {
 	}
 
     function detectWarnFeaturedImage() {
-		if (postTypeSupportsFeaturedImage()) {
-			if (lacksFeaturedImage() && publishButtonIsPublishText()) {
-				disablePublishAndWarn( 'none' );
-			} else if (imageIsTooSmall() && publishButtonIsPublishText()) {
-				disablePublishAndWarn( 'too-small' );
-			} else {
-				clearWarningAndEnablePublish();
-			}
+		if (checkImageReturnWarningMessageOrEmpty()) {
+			disablePublishAndWarn(checkImageReturnWarningMessageOrEmpty());
+		} else {
+			clearWarningAndEnablePublish();
 		}
 	}
 
 	detectWarnFeaturedImage();
-	setInterval(detectWarnFeaturedImage, 3000);
+	setInterval(detectWarnFeaturedImage, 800);
+
 });

@@ -470,3 +470,12 @@
 	Enhancement: Updated host entries in log details to link to traceip.net rather than ip-adress.com. This is because ip-adress.com does not support IPv6 addresses.
 	Enhancement: Updated some translatable strings relating to blacklisting and whitelisting to allow for better translations.
 	Enhancement: Added details about how wildcard IP ranges are converted to CIDR format (this improves performance).
+5.3.1 - 2016-02-29 - Chris Jean & Aaron D. Campbell
+	Security Fix: Hardened the created backups and logs directories. Thanks to Nicolas Chatelain (SYSDREAM IT Security Services) for notifying us of this issue.
+	Security Fix: More secure backup and log file names. Thanks to Nicolas Chatelain (SYSDREAM IT Security Services) for notifying us of this issue.
+	Bug Fix: The "NGINX Conf File" setting is now properly respected, causing the generated NGINX configuration file to be stored in that location.
+	Enhancement: Generated database backup file names now contain a human-readable timestamp in the format of YYYYMMDD-HHMMSS.
+	Enhancement: Zipped database backup files no longer contain a deeply nested directory structure. Instead, they only contain the sql file.
+	Enhancement: When the "Force Unique Nickname" feature is enabled, the generated display name now uses an improved randomization function.
+	Enhancement: Improved tabbing of rules in generated nginx.conf files.
+	Enhancement: Removed the "See what's new button" as it has fulfilled its purpose.

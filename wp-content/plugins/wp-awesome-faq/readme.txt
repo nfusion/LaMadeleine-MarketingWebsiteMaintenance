@@ -17,6 +17,7 @@ No need extra configurations for WP Awesome FAQ Plugin. WP Awesome FAQ Plugin al
 * No Post Description Limits.
 * Category Shortcode based FAQ (very much requested feature !!!).
 * Window Resize Auto Height.
+* FAQ Settings Options Added like - Close All, Open All and 1st Item Open.
 * Many more settings are comming!!!
 
 Installation Video Tutorial:
@@ -54,6 +55,7 @@ Installation Video Tutorial:
 4. Category added Shortcode FAQ's by ID
 5. Editor Button FAQ
 6. Popup Editor FAQ Button 
+7. FAQ Settings. Options Added: Close All, Open All and 1st Item Open.
 
 
 == Changelog ==

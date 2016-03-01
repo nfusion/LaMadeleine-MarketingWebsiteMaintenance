@@ -3,7 +3,7 @@
 Plugin Name: WP Awesome FAQ
 Plugin URI: http://jeweltheme.com/product/wp-awesome-faq-pro/
 Description: Accordion based Awesome WordPress FAQ Plugin
-Version: 3.1.4
+Version: 4.0.0
 Author: Liton Arefin
 Author URI: http://www.jeweltheme.com
 License: GPL2
@@ -75,13 +75,46 @@ function jeweltheme_wp_awesome_faq_enqueue_scripts(){
      if(!is_admin()){
         wp_register_style('jeweltheme-jquery-ui-style',plugins_url('/jquery-ui.css', __FILE__ ));
         wp_enqueue_style('jeweltheme-jquery-ui-style');
-        wp_enqueue_script('jquery');
-        wp_enqueue_script('jquery-ui-core');
-        wp_register_script('jeweltheme-custom-js', plugins_url('/accordion.js', __FILE__ ), array('jquery-ui-accordion'),true);
-        wp_enqueue_script('jeweltheme-custom-js');
+        wp_enqueue_style('dashicons');
+        wp_enqueue_script('jquery-ui-accordion');
     }   
 }
 add_action( 'init', 'jeweltheme_wp_awesome_faq_enqueue_scripts' );
+
+
+//Option Based Script Loads FAQ
+function jeweltheme_wp_awesome_faq_accordion_scripts() {
+?>
+<script type="text/javascript">
+<?php $faq_layout = get_option('jeweltheme_faq_collapse'); 
+
+//print_r($faq_layout['layout']);
+?>
+<?php if( $faq_layout['layout'] == "1st Item Open"){ ?>
+    jQuery(document).ready(function($) {
+        jQuery(".accordion").accordion({heightStyle: "content", collapsible: true, active: 0});
+    });
+<?php } ?>
+
+<?php if( $faq_layout['layout'] == "Close All"){ ?>
+    jQuery(document).ready(function($) {
+            jQuery(".accordion").accordion({heightStyle: "content", collapsible: true, active: false});
+    });
+<?php } ?>
+
+<?php if( $faq_layout['layout'] == "Open All"){ ?>
+    jQuery(document).ready(function($) {
+        jQuery('.ui-accordion-header').removeClass('ui-corner-all').addClass('ui-accordion-header-active ui-state-active ui-corner-top').attr({
+            'aria-selected': 'true',
+            'tabindex': '0'
+        });
+    });
+<?php } ?>
+    
+</script>
+<?php
+}
+add_action( 'wp_head', 'jeweltheme_wp_awesome_faq_accordion_scripts', 9999 );
 
 
 function jeweltheme_wp_awesome_faq_shortcode($atts, $content= null) { 
@@ -134,17 +167,14 @@ function jeweltheme_wp_awesome_faq_shortcode($atts, $content= null) {
         <div class="accordion" id="<?php echo $accordion .  $count;?>">
             <?php if( $query->have_posts() ) { while ( $query->have_posts() ) { $query->the_post(); ?>
 
-                <h3><a href=""><?php the_title();?></a></h3><div>
-                <?php if($image){ ?>
-                    <img src="<?php echo $image;?>">
-                <?php } ?>
-
-                    <?php the_content();?></div>    
+                <h3><?php the_title();?></h3>
+                <div>
+                <?php if($image) echo "<img src='" . $image ."'>"; ?>
+                    <?php the_content();?>
+                </div>    
 
                 <?php } //end while
-            } else{
-                echo "<p>No FAQ Items. Please add some Items</p>";
-                } ?>
+            } ?>
         </div>
     <?php
         //Reset the query
@@ -270,3 +300,61 @@ function admin_inline_js(){ ?>
 add_action( 'admin_print_scripts', 'admin_inline_js' );
 
 
+
+
+
+
+
+//WP Awesome FAQ Settings Fields
+
+add_action('admin_menu', 'jeweltheme_wp_awesome_faq_options');
+add_action('admin_init', 'jeweltheme_wp_awesome_faq_settings_store');
+
+//Add options page 
+function jeweltheme_wp_awesome_faq_options() {
+    add_submenu_page( 'edit.php?post_type=faq', esc_html__('WP Awesome FAQ Admin Options', 'jeweltheme'), esc_html__('FAQ Settings', 'jeweltheme'), 'edit_posts', 'faq_options', 'jeweltheme_wp_awesome_faq_setting_functions');
+
+   register_setting( 'faq_settings', 'plugin_options' );
+}
+
+//Register Settings Page
+function jeweltheme_wp_awesome_faq_settings_store() {
+    register_setting('jeweltheme_faq_settings', 'jeweltheme_faq_collapse');   
+}
+
+function jeweltheme_wp_awesome_faq_setting_functions(){
+    ?>
+        <div class="wrap">
+       <div class="icon32" id="icon-options-general"><br></div>
+        <h2><?php echo esc_html__('WP Awesome FAQ Settings', 'jeweltheme');?></h2>
+     <p><?php echo esc_html__('Settings sections for WP Awesome FAQ Options', 'jeweltheme');?></p>
+       <form method="post" action="options.php">
+
+            <?php settings_fields('jeweltheme_faq_settings'); ?>
+                <table class="form-table">       
+
+            <tr><th>
+                <label><?php echo esc_html__('Collapse/Toggle Options', 'jeweltheme');?></label>
+            </th><td>
+            <?php 
+                $options = get_option('jeweltheme_faq_collapse');
+                $items = array("Close All", "Open All","1st Item Open");
+                echo "<select id='layout' name='jeweltheme_faq_collapse[layout]'>";
+                foreach($items as $item) {
+                    $selected = ($options['layout']==$item) ? 'selected="selected"' : '';
+                    echo "<option value='$item' $selected>$item</option>";
+                }
+                echo "</select>";
+            ?>
+            </td></tr>
+
+
+        <tr><td>
+            <input type="submit" class="button-primary" value="Save Changes" />
+        </td></tr>
+
+            </table>
+        </form>
+
+<?php
+}
