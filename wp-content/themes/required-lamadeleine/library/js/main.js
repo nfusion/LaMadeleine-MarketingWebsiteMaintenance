@@ -135,6 +135,7 @@ $(function(){
 
 		// If user has selected a location
 		if(myLocation){
+			console.log(myLocation);
 
 			// Show pricing
 			$content.find('.menu-details').addClass(myLocation.menu_pricing.toLowerCase());
