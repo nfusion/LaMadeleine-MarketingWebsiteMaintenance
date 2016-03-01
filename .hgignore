@@ -9,3 +9,4 @@ wp-content/podscache/
 wp-content/podscache
 wp-content/podscache/*.php
 wp-content/plugins/lam/logs/cron\.txt
+wp-cli\.yml
