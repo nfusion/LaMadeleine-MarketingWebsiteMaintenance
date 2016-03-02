@@ -285,10 +285,14 @@ function display_menu_item($menuItemObj, $featuredItemObj){
   endif;
 
   $str .= '<p class="desc">' . $menuItemObj['description'] . '<span class="pricing ' . $isPriced . '">
-  <span class="min">$' . $menuItemObj['price_min'] . '</span>
-  <span class="tier2">$' . $menuItemObj['price_tier_2'] . '</span>
-  <span class="tier3">$' . $menuItemObj['price_tier_3'] . '</span>
-  <span class="max">$' . $menuItemObj['price_max'] . '</span>
+  <span class="min">$' . $menuItemObj['price_min'] . '</span>';
+  if (!empty($menuItemObj['price_tier_2'])) {
+  	$str .= '<span class="tier2">$' . $menuItemObj['price_tier_2'] . '</span>';
+  }
+  if (!empty($menuItemObj['price_tier_2'])) {
+  	$str .= '<span class="tier3">$' . $menuItemObj['price_tier_3'] . '</span>';
+  }
+  $str .= '<span class="max">$' . $menuItemObj['price_max'] . '</span>
   </span></p>';
 
   $str .='<div class="optional_item">';
@@ -297,13 +301,16 @@ function display_menu_item($menuItemObj, $featuredItemObj){
         $isPriced = '';
         $str .= "<div class='pricing'>".$menuItemObj['description_'.$i];
         $str .= '<span class="pricing ' . $isPriced . '">
-              	<span class="min">$' . $menuItemObj['optional_min_price_'.$i] . '</span>
-                <span class="tier2">$' . $menuItemObj['optional_price_'.$i.'_tier_2'] . '</span>
-                <span class="tier3">$' . $menuItemObj['optional_price_'.$i.'_tier_3'] . '</span>
-                <span class="max">$' . $menuItemObj['optional_max_price_'.$i] . '</span>
+              	<span class="min">$' . $menuItemObj['optional_min_price_'.$i] . '</span>';
+              	if (!empty($menuItemObj['optional_price_'.$i.'_tier_2'])) {
+                	$str .= '<span class="tier2">$' . $menuItemObj['optional_price_'.$i.'_tier_2'] . '</span>';
+                }
+                if (!empty($menuItemObj['optional_price_'.$i.'_tier_3'])) {
+                	$str .= '<span class="tier3">$' . $menuItemObj['optional_price_'.$i.'_tier_3'] . '</span>';
+                }
+                $str .= '<span class="max">$' . $menuItemObj['optional_max_price_'.$i] . '</span>
                 </span>
-                </div>
-                ';
+                </div>';
      }
   }
 
