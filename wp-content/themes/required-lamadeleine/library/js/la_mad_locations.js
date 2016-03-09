@@ -378,8 +378,8 @@ var LaMadLocations = {
 
                         if(typeof(LaMadLocations.setLargLocation) != 'undefined'){
                             LaMadLocations.setLargLocation(results_array[0].geometry.location.lat(), results_array[0].geometry.location.lng());
-                        };
-                    };
+                        }
+                    }
             });
         },
 
