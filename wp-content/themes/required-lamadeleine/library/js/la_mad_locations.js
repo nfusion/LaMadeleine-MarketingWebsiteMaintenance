@@ -116,7 +116,7 @@ var LaMadLocations = {
                         url: '/wp-content/themes/required-lamadeleine/img/map/custom-pin-drop.png',
                         // size: new google.maps.Size(96, 104), // Actual size, @2x for retina
                         scaledSize: new google.maps.Size(48, 52) // Size on map
-                    }
+                    };
                 }
                 var marker = new google.maps.Marker({ 
                                                     position: myLatlng, 
@@ -147,14 +147,14 @@ var LaMadLocations = {
             var d=new Date();
             dayIndex = d.getDay();
             dayOfWeek = weekday[dayIndex];
-            ucaseDayofWeek = dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1)
+            ucaseDayofWeek = dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1);
 
 
-            closed_today = false;
+            var closed_today = false;
            
-            if(( location.days_closed !=null )){
+            if(( location.days_closed != null )){
                 if(location.days_closed.indexOf(ucaseDayofWeek) >=0){
-                        var closed_today = 'Closed on '+ucaseDayofWeek;
+                        closed_today = 'Closed on ' + ucaseDayofWeek;
                     }   
              }
 
@@ -174,14 +174,12 @@ var LaMadLocations = {
         setLocation: function(location, reloadmap, skipCookie){
             
             var mapContainer = 'map',
-                todayHours = LaMadLocations.getTodayHours(location);
+                todayHours = LaMadLocations.getTodayHours(location),
+                address = location.address;
 
             if(location.address_2.length > 0){
-                var address = location.address + '<br>' + location.address_2;
+                address += '<br>' + location.address_2;
             }
-            else{
-                var address = location.address;
-            };
 
             LaMadLocations.nearestLocationObj = location;
 
@@ -241,12 +239,12 @@ var LaMadLocations = {
             if(typeof(cookieDaypart) != 'undefined'){
                 var myDaypart = $.parseJSON(cookieDaypart),
                     hasDaypart = true;
-            };
+            }
 
             // If we have a daypart, find any .daypart-menu links and set href to current daypart menu
             if(hasDaypart){
                 $('#content').find('a.daypart-menu').attr('href', myDaypart.link.guid);
-            };
+            }
         },
 
         setLocationCookie: function (location){
@@ -285,7 +283,7 @@ var LaMadLocations = {
             else{
                 // Add CSS transitions to prepare for flip
                 LaMadLocations.$locationCta.find('.flipper').addClass('transition');
-            };
+            }
         },
 
         getLocation: function(objOnly, el){
@@ -343,7 +341,7 @@ var LaMadLocations = {
                 LaMadLocations.loadNearest();
             }
 
-            LaMadLocations.showPosition(position.coords.latitude, position.coords.longitude)
+            LaMadLocations.showPosition(position.coords.latitude, position.coords.longitude);
 
             // Remove any loading states
             $('#content').find('.geolocate-loading').removeClass('geolocate-loading');
