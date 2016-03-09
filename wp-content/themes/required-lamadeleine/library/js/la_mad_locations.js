@@ -252,7 +252,7 @@ var LaMadLocations = {
         setLocationCookie: function (location){
             this.nearestLocationObj = location;
             $.cookie("LAM-location", JSON.stringify(location), {
-               expires : 10,          //expires in 10 days
+               expires : 2,          //expires in 2 days; reduced from 10 for 2016-03-30 pricing launch.
                path: '/'
             });
         }, 
