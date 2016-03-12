@@ -38,6 +38,14 @@ $(function(){
 				hasDaypart = true;
 	}
 
+	// Check rewards cookie
+	var cookieRewards = $.cookie('LAM-rewards');
+
+	// Parse as JSON
+	if(typeof(cookieRewards) != 'undefined'){
+		var myCookieRewards = $.parseJSON(cookieRewards)
+	}
+	console.log(myCookieRewards);
 	/********
 	NAVIGATION
 	********/
@@ -349,7 +357,40 @@ $(function(){
 	MISC
 	********/
 
-	/*********
+	/* BONNE REWARDS TRACKING */
+	function sizmekTrack(activityID) {
+		console.log('Tracking ID = ' + activityID);
+		var ebSession = '[SessionID]';
+		var ebRand = Math.random()+'';
+		ebRand = ebRand * 1000000;
+
+		var script = document.createElement('script');
+		script.type='text/javascript';
+		script.src='http://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=' + activityID + '&amp;rnd=' + ebRand + '&amp;Session='+ebSession+'';       
+
+		$(script).appendTo('body');      
+	}
+	
+	//Click tracking for app download
+	$('#download-app a').on('click', function(){
+		//if(typeof(myCookieRewards) != 'undefined'){
+			
+			//Set proper ID for button clicked
+			if($(this).is('#google-play')){
+				var activityID = 748215;
+			} else {
+				var activityID = 748206;
+			}
+			
+			//Fire tracking
+			sizmekTrack(activityID);
+
+			//Set cookie
+			cookieRewards;
+		//}
+	});
+
+   	/*********
 	IE SUPPORT
 	*********/
 
