@@ -38,14 +38,14 @@ $(function(){
 				hasDaypart = true;
 	}
 
-	// Check rewards cookie
-	var cookieRewards = $.cookie('LAM-rewards');
+	// // Check rewards cookie
+	// var myCookieRewards = $.cookie('LAM-rewards');
 
-	// Parse as JSON
-	if(typeof(cookieRewards) != 'undefined'){
-		var myCookieRewards = $.parseJSON(cookieRewards)
-	}
-	console.log(myCookieRewards);
+	// // Parse as JSON
+	// if(typeof(cookieRewards) != 'undefined'){
+	// 	var myCookieRewards = $.parseJSON(cookieRewards)
+	// }
+	// console.log(cookieLoc);
 	/********
 	NAVIGATION
 	********/
@@ -373,7 +373,7 @@ $(function(){
 	
 	//Click tracking for app download
 	$('#download-app a').on('click', function(){
-		//if(typeof(myCookieRewards) != 'undefined'){
+		if(jQuery.cookie('LAM-rewards') != 'undefined'){
 			
 			//Set proper ID for button clicked
 			if($(this).is('#google-play')){
@@ -386,8 +386,8 @@ $(function(){
 			sizmekTrack(activityID);
 
 			//Set cookie
-			cookieRewards;
-		//}
+			 $.cookie('LAM-rewards');
+		}
 	});
 
    	/*********
