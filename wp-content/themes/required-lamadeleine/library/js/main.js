@@ -364,6 +364,10 @@ $(function(){
 	}
 	
 	//Click tracking for app download
+	
+	//Set cookie
+	
+
 	$('#download-app a').on('click', function(){
 		if(jQuery.cookie('LAM-rewards') == null ){
 			
@@ -378,10 +382,10 @@ $(function(){
 			sizmekTrack(activityID);
 
 			//Set cookie
-			 $.cookie('LAM-rewards');
+			$.cookie('LAM-rewards','rewards');
 		}
 	});
-
+	
    	/*********
 	IE SUPPORT
 	*********/
