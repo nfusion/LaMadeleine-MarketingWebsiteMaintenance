@@ -365,7 +365,7 @@ $(function(){
 	
 	//Click tracking for app download
 	$('#download-app a').on('click', function(){
-		if(jQuery.cookie('LAM-rewards') != 'undefined'){
+		if(jQuery.cookie('LAM-rewards') == null ){
 			
 			//Set proper ID for button clicked
 			if($(this).is('#google-play')){
