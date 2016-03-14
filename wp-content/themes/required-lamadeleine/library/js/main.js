@@ -363,26 +363,29 @@ $(function(){
 		$(script).appendTo('body');      
 	}
 	
-	//Click tracking for app download
-	
-	//Set cookie
-	
-
-	$('#download-app a').on('click', function(){
-		if(jQuery.cookie('LAM-rewards') == null ){
+	//Click tracking for app downloads
+	$('#download-app #google-play').on('click', function(){
+		if(jQuery.cookie('LAM-rewards-g') == null ){
 			
-			//Set proper ID for button clicked
-			if($(this).is('#google-play')){
-				var activityID = 748215;
-			} else {
-				var activityID = 748206;
-			}
-			
+			var activityID = 748215;
 			//Fire tracking
 			sizmekTrack(activityID);
 
 			//Set cookie
-			$.cookie('LAM-rewards','rewards');
+			$.cookie('LAM-rewards-g','rewards');
+		}
+	});
+
+	//Click tracking for app downloads
+	$('#download-app #app-store').on('click', function(){
+		if(jQuery.cookie('LAM-rewards-i') == null ){
+			
+			//Fire tracking
+			var activityID = 748206;
+			sizmekTrack(activityID);
+
+			//Set cookie
+			$.cookie('LAM-rewards-i','rewards');
 		}
 	});
 	
