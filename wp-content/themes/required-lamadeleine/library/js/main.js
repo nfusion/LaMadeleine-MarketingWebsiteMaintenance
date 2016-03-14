@@ -38,14 +38,6 @@ $(function(){
 				hasDaypart = true;
 	}
 
-	// // Check rewards cookie
-	// var myCookieRewards = $.cookie('LAM-rewards');
-
-	// // Parse as JSON
-	// if(typeof(cookieRewards) != 'undefined'){
-	// 	var myCookieRewards = $.parseJSON(cookieRewards)
-	// }
-	// console.log(cookieLoc);
 	/********
 	NAVIGATION
 	********/
