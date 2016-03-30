@@ -69,7 +69,7 @@ $(document).ready(function(){
             </div>   
                 <div class='store_item row'>
                     <div class='store_item_image six columns' >
-                            <img src="/wp-content/uploads/2014/07/gift-card.png"><br>
+                            <img src="/wp-content/uploads/2016/03/giftcard_group.png"><br>
                     </div>
                     <div class='store_item_info six columns'>
                         <h4>Gift Cards</h4>
