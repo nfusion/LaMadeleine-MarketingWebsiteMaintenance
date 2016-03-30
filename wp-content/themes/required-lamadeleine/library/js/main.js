@@ -349,7 +349,47 @@ $(function(){
 	MISC
 	********/
 
-	/*********
+	/* BONNE REWARDS TRACKING */
+	function sizmekTrack(activityID) {
+		console.log('Tracking ID = ' + activityID);
+		var ebSession = '[SessionID]';
+		var ebRand = Math.random()+'';
+		ebRand = ebRand * 1000000;
+
+		var script = document.createElement('script');
+		script.type='text/javascript';
+		script.src='http://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=' + activityID + '&amp;rnd=' + ebRand + '&amp;Session='+ebSession+'';       
+
+		$(script).appendTo('body');      
+	}
+	
+	//Click tracking for app downloads
+	$('#download-app #google-play').on('click', function(){
+		if(jQuery.cookie('LAM-rewards-g') == null ){
+			
+			var activityID = 748215;
+			//Fire tracking
+			sizmekTrack(activityID);
+
+			//Set cookie
+			$.cookie('LAM-rewards-g','rewards');
+		}
+	});
+
+	//Click tracking for app downloads
+	$('#download-app #app-store').on('click', function(){
+		if(jQuery.cookie('LAM-rewards-i') == null ){
+			
+			//Fire tracking
+			var activityID = 748206;
+			sizmekTrack(activityID);
+
+			//Set cookie
+			$.cookie('LAM-rewards-i','rewards');
+		}
+	});
+	
+   	/*********
 	IE SUPPORT
 	*********/
 
