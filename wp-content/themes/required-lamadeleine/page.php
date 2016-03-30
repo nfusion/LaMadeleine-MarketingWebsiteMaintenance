@@ -64,7 +64,8 @@ get_header(); ?>
 						$params = array(
 						    //'where' => "daypart_relationship = 'Lunch'",
 						    'orderby' => 'order_weight ASC',
-						    'limit' => '0'
+						    'limit' => '0',
+						    'posts_per_page' => -1
 						);
 						$mypods = pods('menu_item')->find($params);
 						pods_cache_set( $key, $mypods, '', $expires = 300);
