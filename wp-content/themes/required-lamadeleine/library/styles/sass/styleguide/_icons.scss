@@ -1,0 +1,209 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../../../library/fonts/icomoon/icomoon.eot?-bwndc5');
+	src:url('../../../library/fonts/icomoon/icomoon.eot?#iefix-bwndc5') format('embedded-opentype'),
+		url('../../../library/fonts/icomoon/icomoon.woff?-bwndc5') format('woff'),
+		url('../../../library/fonts/icomoon/icomoon.ttf?-bwndc5') format('truetype'),
+		url('../../../library/fonts/icomoon/icomoon.svg?-bwndc5#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bakery:before {
+	content: "\e601";
+}
+.icon-breakfast:before {
+	content: "\e602";
+}
+.icon-catering:before {
+	content: "\e603";
+}
+.icon-community:before {
+	content: "\e604";
+}
+.icon-culture:before {
+	content: "\e605";
+}
+.icon-dinner:before {
+	content: "\e606";
+}
+.icon-food:before {
+	content: "\e607";
+}
+.icon-legend-alcohol:before {
+	content: "\e608";
+	color: #9c2f21;
+}
+.icon-legend-egg-whites:before {
+	content: "\e609";
+	color: #dedab9;
+}
+.icon-legend-gluten-free:before {
+	content: "\e60a";
+	color: #ffa200;
+}
+.icon-legend-low-calorie:before {
+	content: "\e60b";
+	color: #95ac00;
+}
+.icon-legend-nuts:before {
+	content: "\e60c";
+	color: #bb922c;
+}
+.icon-legend-signature:before {
+	content: "\e60d";
+	color: #5b2a06;
+}
+.icon-lunch:before {
+	content: "\e60e";
+}
+.icon-magnify:before {
+	content: "\e60f";
+}
+.icon-map:before {
+	content: "\e610";
+}
+.icon-menu:before {
+	content: "\e611";
+}
+.icon-nearby:before {
+	content: "\e612";
+}
+.icon-dots:before {
+	content: "\e613";
+}
+.icon-phone:before {
+	content: "\e614";
+}
+.icon-pin:before {
+	content: "\e615";
+}
+.icon-shopping:before {
+	content: "\e616";
+}
+.icon-store:before {
+	content: "\e617";
+}
+.icon-stories:before {
+	content: "\e618";
+}
+.icon-facebook:before {
+	content: "\e619";
+}
+.icon-instagram:before {
+	content: "\e61a";
+}
+.icon-twitter:before {
+	content: "\e61b";
+}
+.icon-pinterest:before {
+	content: "\e61c";
+}
+.icon-youtube:before {
+	content: "\f167";
+}
+.icon-arrow-left:before {
+	content: "\e61d";
+}
+.icon-arrow-down:before {
+	content: "\e61e";
+}
+.icon-arrow-up:before {
+	content: "\e61f";
+}
+.icon-arrow-right:before {
+	content: "\e620";
+}
+.icon-arrow-left-large:before {
+	content: "\e621";
+}
+.icon-arrow-down-large:before {
+	content: "\e622";
+}
+.icon-arrow-up-large:before {
+	content: "\e623";
+}
+.icon-arrow-right-large:before {
+	content: "\e624";
+}
+
+@font-face {
+    font-family: 'icomoon-reward';
+    src:    url('../../../library/fonts/icomoon/icomoon-reward.eot?vpehvs');
+    src:    url('../../../library/fonts/icomoon/icomoon-reward.eot?vpehvs#iefix') format('embedded-opentype'),
+        url('../../../library/fonts/icomoon/icomoon-reward.ttf?vpehvs') format('truetype'),
+        url('../../../library/fonts/icomoon/icomoon-reward.woff?vpehvs') format('woff'),
+        url('../../../library/fonts/icomoon/icomoon-reward.svg?vpehvs#icomoon-reward') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-rewards {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon-reward' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-rewards:before {
+    content: "\e900";
+}
+
+//Newspaper icon
+@font-face {
+    font-family: 'icomoon-newspaper';
+    src:    url('../../../library/fonts/icomoon/icomoon-newspaper.eot?2h9tjw');
+    src:    url('../../../library/fonts/icomoon/icomoon-newspaper.eot?2h9tjw#iefix') format('embedded-opentype'),
+        url('../../../library/fonts/icomoon/icomoon-newspaper.ttf?2h9tjw') format('truetype'),
+        url('../../../library/fonts/icomoon/icomoon-newspaper.woff?2h9tjw') format('woff'),
+        url('../../../library/fonts/icomoon/icomoon-newspaper.svg?2h9tjw#icomoon-newspaper') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-newspaper {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon-newspaper' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-newspaper:before {
+    content: "\e009";
+    font-size: 20px;
+    top: -4px;
+    position: relative;
+    margin-left: 4px;
+}
+
+

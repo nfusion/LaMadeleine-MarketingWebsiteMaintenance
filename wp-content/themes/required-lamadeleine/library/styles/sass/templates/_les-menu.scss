@@ -1,0 +1,453 @@
+/**
+* La Madeleine
+* Les Menu Page Styling
+**/
+
+.breakfast,.lunch,.dinner,.bakery{
+	
+	#main{
+		background: $medCream;
+		overflow: visible;
+		border-right: 1px solid $lightFadedBrown;
+	}
+
+	#sidebar{
+		display: none;
+	}
+
+	// Menu overview
+	.menu-overview{
+		position: relative;
+		.menu-featured-image{
+			overflow: hidden;
+			padding-bottom: 3px;
+			border-bottom: 1px solid $lightFadedBrown;
+			img{
+				width: 100%;
+			}
+		}
+		h1.menu-title{
+			text-align: center;
+			text-transform: uppercase;
+			margin-top: -20px;
+			color: $darkBrown;
+			font-size: 24px;
+			span{
+				background: $medCream;
+			}
+			span.inner{
+				padding: 15px 25px 11px;
+				border: 1px solid $lightFadedBrown;
+				position: relative;
+				top: 17px;
+			}
+			span.outer{
+				display: inline-block;
+				max-height: 30px;
+				padding: 5px;
+				position: relative;
+				top: -15px
+			}
+		}
+		.menu-text{
+			padding: 15px 25px 0;
+			text-align: center;
+		}
+	}
+
+	// Menu details
+	.menu-details{
+		width: 100%;
+		padding: 0 15px;
+		overflow: hidden;
+		.menu-links{
+			padding: 30px 0;
+			margin: 10px 0 21px;
+			text-align: center;
+			border-top: 1px dashed $fadedBrown;
+			border-bottom: 1px dashed $fadedBrown;
+			a.mobile-btn-link{
+				display: block;
+				margin: 5px 0;
+				padding: 10px 5px;
+				background: $lightCream;
+				@include border-radius(5px);
+			}
+			.location-name{
+				font-weight: bold;
+				font-style: italic;
+				margin-bottom: 10px;
+			}
+			.change-location{
+				padding: 6px 0;
+				font-size: 9px;
+				font-weight: bold;
+				a{
+					font-size: 9px;
+				}
+			}
+		}
+		.mobile-menu-legend{
+			padding: 0 20px 15px 20px;
+			border-bottom: 1px dashed $fadedBrown;
+			h3{
+				margin: 10px 0;
+				font-size: 18px;
+			}
+			.legend-item{
+				font-size: 12px;
+				font-family: $georgia;
+				padding: 5px 0;
+				span{
+					font-size: 16px;
+					position: relative;
+					top: 2px;
+				}
+			}
+			.disclaimer{
+				font-size: 11px;
+				margin-top: 20px;
+			}
+		}
+		.menu-category{
+			padding: 20px 0 30px;
+			border-bottom: 1px dashed $fadedBrown;
+			&:last-of-type{
+				border-bottom: 0;
+			}
+			.columns:last-child{
+				.menu-item:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+		.category-wrapper{
+			padding: 0 15px;
+			margin: 15px 0 30px;
+		}
+		.category-title{
+			margin: 0;
+			text-transform: uppercase;
+			font-family: $playfair;
+			font-size: 20px;
+			text-align: center;
+			letter-spacing: 1px;
+			color: $darkBrown;
+		}
+		.category-desc{
+			margin: 0;
+			font-size: 12px;
+			font-style: italic;
+			text-align: center;
+		}
+		.back-top{
+			float: right;
+			padding-top: 20px;
+			position: relative;
+			top: -30px;
+			span{
+				font-size: 20px;
+				padding: 5px;
+				background: lighten($fadedBrown, 10%);
+				position: relative;
+				top: 4px;
+				@include border-radius(20px);
+			}
+		}
+	}
+
+	// Featured menu item
+	.featured-menu-item{
+		width: 100%;
+		max-width: 365px;
+		height: auto;
+		position: relative;
+		margin: 0 0 30px;
+		img{
+			display: block;
+			width: 100%;
+		}
+		.text-wrapper{
+			width: 100%;
+			padding: 15px;
+			position: absolute;
+			bottom: 0;
+			color: $white;
+			background-color: $darkBrown; // Legacy
+			background-color: rgba(39,23,13,0.8);
+		}
+		.text-wrapper.no-story{
+			.title{
+				margin-bottom: 0;
+			}
+		}
+		.title{
+			margin-bottom: 10px;
+			text-align: center;
+			font-family: $merriweather;
+			font-style: italic;
+		}
+		.icon-stories{
+			width: 15%;
+			float: left;
+			color: $white;
+			font-size: 30px;
+			text-align: center;
+		}
+		.story-teaser{
+			width: 85%;
+			float: left;
+			font-style: italic;
+			font-size: 13px;
+			line-height: 1.5;
+			a{
+				display: block;
+				font-size: 13px;
+				font-weight: bold;
+				color: $deepOrange;
+				&:hover{
+					color: lighten($deepOrange, 10%);
+					.icon{
+						left: 1px;
+					}
+				}
+				.icon{
+					font-size: 16px;
+					line-height: 12px;
+					position: relative;
+					top: 3px;
+					left: -3px;
+				}
+			}
+		}
+	}
+
+	// Menu item
+
+	.menu-item{
+		margin-bottom: 30px;
+		.title-wrapper{
+			width: 100%;
+			overflow: hidden;
+			.title{
+				margin-bottom: 2px;
+				font-family: $merriweather;
+				font-weight: bold;
+				float: left;
+			}
+			.menu-keys{
+				float: left;
+				padding: 2px 0 0 5px;
+				.icon{
+					padding: 0 2px;
+				}
+			}
+		}
+		.desc{
+			font-size: 13px;
+		}
+		.pricing{
+			padding-left: 5px;
+			font-style: italic;
+			.min,.max, .tier2, .tier3 {
+				display: none;
+			}
+		}
+		.pricing.ispriced-false{
+			display: none;
+		}
+
+		.optional_item{
+			margin-top: -10px;
+		}
+
+		.optional_item > div{
+			margin-bottom:5px;
+			font-size: 13px;
+		}
+
+
+		.story-teaser{
+			width: 100%;
+			padding: 15px;
+			border: 1px solid $darkBrown;
+			background: $lightCream;
+			overflow: hidden;
+			@include border-radius(5px);
+			.icon-stories{
+				width: 15%;
+				font-size: 30px;
+				float: left;
+				text-align: center;
+			}
+			p, a{
+				font-size: 13px;
+				line-height: 1.5;
+			}
+			p{
+				width: 85%;
+				float: left;
+				margin-bottom: 0;
+			}
+			a{
+				font-weight: bold;
+				// white-space: nowrap;
+			}
+			a:hover{
+				.icon-arrow-right{
+					left: 1px;
+				}
+			}
+			.icon-arrow-right{
+				font-size: 16px;
+				line-height: 13px;
+				position: relative;
+				top: 3px;
+				left: -3px;
+			}
+		}
+	}
+
+	// Show pricing
+
+	// Min prices
+	.menu-details.min{
+		.menu-item .pricing .min{
+			display: inline;
+		}
+	}
+
+	// Max prices
+	.menu-details.max{
+		.menu-item .pricing .max{
+			display: inline;
+		}
+	}
+	.menu-details.tier2 {
+		.menu-item .pricing .tier2{
+			display: inline;
+		}
+	}
+	.menu-details.tier3 {
+		.menu-item .pricing .tier3{
+			display: inline;
+		}
+	}
+
+}
+
+// Hide option pricing if no location
+.no-location{
+	.breakfast,.lunch,.dinner,.bakery{
+		.optional_item{
+			display: none;
+		}
+	}
+}
+
+@media (min-width: $small-screen-min){
+	.breakfast,.lunch,.dinner,.bakery{
+		.menu-details{
+			padding: 0 15px;
+			.category-title, .category-desc{
+				text-align: left;
+			}
+			.menu-links{
+				a{ 
+					display: inline;
+					font-size: 13px;
+					background: none;
+				}
+				.location-name{
+					margin: 10px 0;
+				}
+			}
+		}
+		.featured-menu-item .story-teaser a{
+			// white-space: nowrap;
+		}
+	}
+}
+
+@media (min-width: $medium-screen-min){
+	.breakfast,.lunch,.dinner,.bakery{
+
+		.mobile-menu-legend{
+			display: none;
+		}
+
+		.menu-details{
+			.menu-links{
+				a.mobile-btn-link{
+					padding: 0;
+					background: none;
+				}
+				.location-name{
+					position: absolute;
+					top: -2px;
+					left: 0;
+					right: 0;
+					margin: 0;
+				}
+			}
+			.menu-category{
+				.columns{
+					.menu-item:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		#sidebar{
+			display: block;
+
+			// Static widgets
+			.order-online.widget{
+				width: 100%;
+				overflow: hidden;
+				.btn{
+					display: block;
+					width: 46%;
+					margin: 0 2%;
+					float: left;
+					text-align: center;
+				}
+			}
+
+			.menu-legend.widget{
+				.legend-wrapper{
+					margin-bottom: 30px;
+				}
+				.legend-item{
+					margin: 15px 0;
+					font-size: 11px;
+					font-family: georgia;
+					.icon{
+						font-size: 15px;
+						padding-right: 10px;
+						position: relative;
+						top: 1px;
+					}
+				}
+			}
+			p.disclaimer{
+				font-size: 10px;
+				font-style: italic;
+			}
+		}
+	}
+}
+
+@media (min-width: $large-screen-min){
+	.breakfast,.lunch,.dinner,.bakery{
+		.menu-overview .menu-text{
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+		.menu-details{
+			padding: 0 30px;
+		}
+	}
+}
+
