@@ -87,7 +87,7 @@ $(document).ready(function(){
             });
             //end pod fetch
             ?>
-            <?php if ( !empty($item) && !empty($item['latitude']) && !empty($item['longitude']) ) : ?>
+            <?php if (!empty($item) && !empty($item['latitude']) && !empty($item['longitude']) ) : ?>
 
                 var Latlng = new google.maps.LatLng( <?php echo $item['latitude'] .','.  $item['longitude'] ?>);
 
