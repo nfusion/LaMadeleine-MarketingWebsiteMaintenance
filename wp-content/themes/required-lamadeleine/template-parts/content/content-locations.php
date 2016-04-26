@@ -12,11 +12,11 @@
 
 $(document).ready(function(){
 
-var largeMap = [];
+    var largeMap = [];
 
-var markerclusterer = null;
+    var markerclusterer = null;
 
-LaMadLocations.initializeLargeMap = function() {
+    LaMadLocations.initializeLargeMap = function() {
         var styledMap = new google.maps.StyledMapType(LaMadLocations.mapStyles, {name: "La Madeleine"});
         var myLatlng = new google.maps.LatLng(32.2997,-90.5783);
         var mapOptions = {
@@ -45,54 +45,49 @@ LaMadLocations.initializeLargeMap = function() {
         
         var markers = [];
         <?php 
+        while($mypod->fetch()) {
+            $cacheKey =' location_'.$mypod->id();
+            //pods_cache_clear();
+            $item = pods_cache_get( $cacheKey, '', function($cacheKey,$mypod) use($mypod){
+                $item_fields = array(  
+                    'id',
+                    'latitude',
+                    'longitude',
+                    'title', 
+                    'address', 
+                    'address_2', 
+                    'city', 
+                    'state',
+                    'zip',
+                    'phone',
+                    'sunday_open',
+                    'monday_open',
+                    'tuesday_open',
+                    'wednesday_open',
+                    'thursday_open',
+                    'friday_open',
+                    'saturday_open',
+                    'sunday_close',
+                    'monday_close',
+                    'tuesday_close',
+                    'wednesday_close',
+                    'thursday_close',
+                    'friday_close',
+                    'saturday_close'
+                );
 
-             while( $mypod->fetch() ) {
-                $cacheKey =' location_'.$mypod->id();
-                //pods_cache_clear();
-                $item = pods_cache_get( $cacheKey, '', function($cacheKey,$mypod) use($mypod){
-                    foreach (array(  
-                                'id',
-                                'latitude',
-                                'longitude',
-                                'title', 
-                                'address', 
-                                'address_2', 
-                                'city', 
-                                'state',
-                                'zip',
-                                'phone',
-                                'sunday_open',
-                                'monday_open',
-                                'tuesday_open',
-                                'wednesday_open',
-                                'thursday_open',
-                                'friday_open',
-                                'saturday_open',
-                                'sunday_close',
-                                'monday_close',
-                                'tuesday_close',
-                                'wednesday_close',
-                                'thursday_close',
-                                'friday_close',
-                                'saturday_close'
+                foreach ($item_fields as $key => $value) {
+                    $item[$value] = $mypod->field($value);
+                }
 
-                                ) as $key => $value) {
-
-                                    $item[$value] = $mypod->field($value);
-                                    
-                                }
                 $item['featured_img'] = get_the_post_thumbnail( $mypod->id(), 'location-featured');
+                
                 pods_cache_set($cacheKey,$item,'',300);
-                
-                // error_log('no cache'.$cacheKey);
-                 return $item;
-             });
-           // error_log('cache'.$cacheKey);
-                
-                //end pod fetch
-                ?>
-
-                <?php if (!empty($item['latitude']) && !empty($item['longitude']) : ?>
+                return $item;
+            });
+            //end pod fetch
+            ?>
+            <?php if (!empty($item) && !empty($item['latitude'] && $item['longitude'])) : ?>
 
                 var Latlng = new google.maps.LatLng( <?php echo $item['latitude'] .','.  $item['longitude'] ?>);
 
@@ -105,10 +100,11 @@ LaMadLocations.initializeLargeMap = function() {
                 var marker_<?php echo $item['id'] ?> = new google.maps.Marker({
                         position: Latlng,
                         map: largeMap,
-                        title: 'Closest Location',
+                        //title: 'Closest Location',
+                        title: '<?php echo addslashes($item['title']); ?>',
                         icon: displayIcon,
                     });
-                    marker_<?php echo $item['id'] ?>.info = new google.maps.InfoWindow({ content: '<b>'+ <?php echo $items['title']; ?>+':</b>' });
+                    marker_<?php echo $item['id'] ?>.info = new google.maps.InfoWindow({ content: '<b>'+ '<?php echo addslashes($item['title']); ?>'+':</b>' });
                     
                     google.maps.event.addListener(marker_<?php echo $item['id'] ?>, 'click', function() {
                         //console.log('click listener fired');
@@ -119,7 +115,7 @@ LaMadLocations.initializeLargeMap = function() {
 
                         var img = '<?php echo $featuredImg[0]; ?>';
 												
-												//setTimeout(function(){LaMadLocations.changeSideImage(img);}, 1000);
+						//setTimeout(function(){LaMadLocations.changeSideImage(img);}, 1000);
                         // LaMadLocations.changeSideImage(img);
 
                         LaMadLocations.showPosition(<?php echo $item['latitude'].',' .$item['longitude']?> );
@@ -135,8 +131,9 @@ LaMadLocations.initializeLargeMap = function() {
                     //     LaMadLocations.loadNearest();
                     // }
                     markers.push(marker_<?php echo $item['id'] ?>);
-                <?php endif; ?>
-        <?php } ?>
+            <?php endif; ?>
+                   
+        <?php } // end while ?>
 
 
                 mcOptions = {styles: [{
@@ -267,6 +264,4 @@ LaMadLocations.initializeLargeMap = function() {
 
 </script>  
 
-<div id='map-full'>
-
-</div>
+<div id='map-full'></div>
