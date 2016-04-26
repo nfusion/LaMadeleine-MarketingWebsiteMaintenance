@@ -3,8 +3,8 @@ Contributors: litonice13, jwthemeltd
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthemeltd@gmail.com&lc=US&item_name=Donate&currency_code=USD&bn=PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest
 Tags: WordPress, WordPress FAQ, Frequently asked questions,WordPress Plugin
 Requires at least: 4.0
-Tested up to: 4.3.1
-Stable tag: 3.0.4
+Tested up to: 4.5
+Stable tag: 4.0.1
 
 	
 Best WordPress FAQ Plugin integrated with Custom Post Type. WP Awesome FAQ comes with accordion based jQuery UI. 

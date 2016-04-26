@@ -11,16 +11,63 @@ jQuery( document ).ready( function( $ ) {
 
 
 
-  // Assign the uploaded file url to the input.
-  window.send_to_editor = function( html ) {
+  if( location.search.indexOf( 'slack_notifications' ) !== -1 ) {
 
-    var botImage = $( 'img', html );
+    // Assign the uploaded file url to the input.
+    window.send_to_editor = function( html ) {
 
-    $( '#slack_bot_image' ).val( botImage.attr( 'src' ) );
-    $( '#slack_bot_image_preview' ).html( botImage );
+      var botImage = $( 'img', html );
 
-    tb_remove();
+      $( '#slack_bot_image' ).val( botImage.attr( 'src' ) );
+      $( '#slack_bot_image_preview' ).html( botImage );
+
+      tb_remove();
+
+    }
 
   }
+
+
+
+  // Dismiss the admin notices.
+  $( document ).on( 'click', '.dorzki-slack-notice .notice-dismiss', function() {
+
+    $.ajax( {
+      url: ajaxurl,
+      data: {
+        action: 'dorzki-slack-dismiss-notice'
+      }
+    } );
+
+  } );
+
+
+
+  // Test notification.
+  $( '#dorzki-test-integration' ).on( 'click', function() {
+
+    $( this ).prop( 'disabled', true );
+    $( '#test-spinner' ).show();
+
+    $.ajax( {
+      url: ajaxurl,
+      dataType: 'json',
+      data: {
+        action: 'dorzki-slack-test-integration'
+      },
+      success: function( data ) {
+
+        $( '#test-spinner' ).hide();
+
+        if( data.success ) {
+          $( '#dorzki-test-integration' ).after( '<span class="dashicons dashicons-yes test-success"></span>' );
+        } else {
+          $( '#dorzki-test-integration' ).after( '<span class="dashicons dashicons-no-alt test-fail"></span>' );
+        }
+
+      }
+    } )
+
+  } );
 
 } );
