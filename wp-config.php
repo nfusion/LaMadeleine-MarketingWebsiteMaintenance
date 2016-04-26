@@ -29,7 +29,7 @@ switch($env){
         define('DB_USER', 'root');
         define('DB_PASSWORD', 'root');
         define('DB_HOST', '127.0.0.1');
-        define('WP_DEBUG', false);
+        define('WP_DEBUG', true);
         define('WP_DEBUG_LOG', true);
         define('WP_DEBUG_DISPLAY', false);
         error_reporting(E_ALL ^ E_WARNING);
