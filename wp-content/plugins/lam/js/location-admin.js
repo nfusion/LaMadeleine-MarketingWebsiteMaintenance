@@ -3,7 +3,7 @@ $(document).ready(function(){
      This is Hacking the UI to fit our needs 
      TODO :: Work with CSS
      ***/
-    var tr = '<tr><td><input id="locateStore" type="button" class="button tagadd button-large locateStore" id="codespacing_search_address" value="Map" style="float:left;"></td></tr>'
+    var tr = '<tr><td><input id="locateStore" type="button" class="button tagadd button-large locateStore" id="codespacing_search_address" value="Map" style="float:left;"></td></tr>';
      $('div#pods-meta-location-details > div.inside > table.form-table.pods-metabox.pods-admin.pods-dependency > tbody').append(tr);
 
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
         addAddress();
      });
 
-     if($('#pods-form-ui-pods-meta-zip-code').val()  != 0){
+     if($('#pods-form-ui-pods-meta-zip-code').val()  !== 0){
         addAddress();
      }
 
@@ -46,8 +46,8 @@ function addAddress(){
 
 function getLatLong(address){
 
-    var address = encodeURIComponent(address);
-     $.ajax({
+    address = encodeURIComponent(address);
+    $.ajax({
         url:'http://maps.googleapis.com/maps/api/geocode/json?address='+address,
         success: function(data){
             $('#pods-form-ui-pods-meta-latitude').val(data.results[0].geometry.location.lat);

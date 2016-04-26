@@ -94,6 +94,7 @@ get_header(); ?>
 
 					while( $daypart->fetch() ) {
 						$pageDetails['foodCats'] = $daypart->field('menu_categories');
+						print_r($pageDetails['foodCats']);
 					}
 					$sidebar = 'sidebar-menu';
 					$pagename = 'lemenue';

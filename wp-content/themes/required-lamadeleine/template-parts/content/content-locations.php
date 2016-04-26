@@ -91,6 +91,9 @@ LaMadLocations.initializeLargeMap = function() {
                 
                 //end pod fetch
                 ?>
+
+                <?php if (!empty($item['latitude']) && !empty($item['longitude']) : ?>
+
                 var Latlng = new google.maps.LatLng( <?php echo $item['latitude'] .','.  $item['longitude'] ?>);
 
                 var displayIcon = {
@@ -132,7 +135,7 @@ LaMadLocations.initializeLargeMap = function() {
                     //     LaMadLocations.loadNearest();
                     // }
                     markers.push(marker_<?php echo $item['id'] ?>);
-                   
+                <?php endif; ?>
         <?php } ?>
 
 
