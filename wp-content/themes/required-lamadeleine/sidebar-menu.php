@@ -18,17 +18,7 @@
         <h3>Place an order online</h3>
 
         <div class="btn-wrapper">
-            <?php $toGoUrl = 'https://order.lamadeleine.com'; ?>
-            <?php if ( !empty($_COOKIE['LAM-location']) ) {
-                $curLocation = json_decode( stripslashes( $_COOKIE['LAM-location']) );
-
-                if ( in_array($curLocation->title, $GLOBALS['toGoLocations']) ) {
-                    $toGoUrl = "https://order.lamadeleine.com/index.cfm?fuseaction=order&action=preorder&isToGo=1";
-                }
-
-            } ?>
-            <a class="btn" target="_blank" href="<?php echo $toGoUrl; ?>">To Go</a>
-
+            <a class="btn" target="_blank" href="https://order.lamadeleine.com">To Go</a>
             <a class="btn" target="_blank" href="https://order.lamadeleine.com/">Catering</a>
         </div>
 

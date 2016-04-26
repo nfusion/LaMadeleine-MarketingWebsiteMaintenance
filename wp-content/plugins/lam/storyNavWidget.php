@@ -16,12 +16,15 @@ Author URI: http://nfusion.com
  */
 class story_nav_widget extends WP_Widget 
 {
-    
-   
-    /** constructor */
-    public function story_nav_widget() 
+    /**
+     * Register widget with WordPress.
+     */
+    public function __construct()
     {
-        parent::WP_Widget(false, $name = 'La Madeleine - Story Navigation');
+        parent::__construct(
+            'story_nav_widget', // Base ID
+            __('La Madeleine - Story Navigation', 'lam')
+        );
     }
 
     public function widget($args, $instance)

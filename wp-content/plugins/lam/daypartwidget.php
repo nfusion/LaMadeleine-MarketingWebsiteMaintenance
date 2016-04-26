@@ -19,11 +19,15 @@ class dayparts_widget extends WP_Widget
     
     protected $dayPartPods;
 
-
-    /** constructor */
-    public function dayparts_widget() 
+     /**
+     * Register widget with WordPress.
+     */
+    public function __construct()
     {
-        parent::WP_Widget(false, $name = 'La Madeleine - Daypart Widget');
+        parent::__construct(
+            'dayparts_widget', // Base ID
+            __('La Madeleine - Daypart Widget', 'lam')
+        );
     }
 
     public function widget($args, $instance)

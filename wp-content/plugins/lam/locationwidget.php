@@ -16,12 +16,16 @@ Author URI: http://nfusion.com
  */
 class location_widget extends WP_Widget 
 {
-    
-   
-    /** constructor */
-    public function location_widget() 
+
+    /**
+     * Register widget with WordPress.
+     */
+    public function __construct()
     {
-        parent::WP_Widget(false, $name = 'La Madeleine - Location Widget');
+        parent::__construct(
+            'location_widget', // Base ID
+            __('La Madeleine - Location Widget', 'lam')
+        );
     }
 
     public function widget($args, $instance)
