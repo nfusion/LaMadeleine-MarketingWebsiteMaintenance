@@ -1,17 +1,20 @@
 <?php
 /**
+ * WordPress Slack
+ *
  * @package   Slack Notifications
  * @since     1.0.0
- * @version   1.0.1
+ * @version   1.0.5
  * @author    Dor Zuberi <me@dorzki.co.il>
  * @link      https://www.dorzki.co.il
- * 
- * 
- * WORDPRESS CLASS
  */
-if ( ! class_exists( wpSlack ) ) {
 
-	class wpSlack {
+if ( ! class_exists( 'WPSlack' ) ) {
+
+	/**
+	 * Class WPSlack
+	 */
+	class WPSlack {
 
 		/**
 		 * Registerd Post Types.
@@ -25,8 +28,8 @@ if ( ! class_exists( wpSlack ) ) {
 
 		/**
 		 * Notifications class handler.
-		 * 
-		 * @var 	  wpNotifications
+		 *
+		 * @var 	  WPNotifications
 		 * @since   1.0.1
 		 */
 		private $notifs;
@@ -41,13 +44,22 @@ if ( ! class_exists( wpSlack ) ) {
 		public function __construct() {
 
 			// Initiate the Notifications Class.
-			$this->notifs = new wpNotifications();
+			$this->notifs = new WPNotifications();
 
 			add_action( 'admin_init', array( &$this, 'plugin_init' ) );
-			add_action( 'init', array( &$this, 'plugin_translate' ) );
+			add_action( 'plugins_loaded', array( &$this, 'plugin_translate' ) );
 			add_action( 'admin_menu', array( &$this, 'plugin_menu' ) );
 			add_action( 'admin_enqueue_scripts', array( &$this, 'plugin_register_assets' ) );
 			add_action( 'registered_post_type', array( &$this, 'get_registered_post_types' ) );
+
+			// Admin Notices
+			if( 1 == get_option( 'slack_notice_connectivity' ) ) {
+				add_action( 'admin_notices', array( &$this, 'notice_error_connectivity' ) );
+			}
+
+			// AJAX
+			add_action( 'wp_ajax_dorzki-slack-dismiss-notice', array( &$this, 'dismiss_admin_notices' ) );
+			add_action( 'wp_ajax_dorzki-slack-test-integration', array( &$this, 'test_integration' ) );
 
 			$this->get_registered_post_types();
 			$this->register_notifs_hooks();
@@ -88,6 +100,7 @@ if ( ! class_exists( wpSlack ) ) {
 			delete_option( 'slack_channel_name' );
 			delete_option( 'slack_bot_username' );
 			delete_option( 'slack_bot_image' );
+			delete_option( 'slack_notice_connectivity' );
 			delete_option( 'slack_notif_core_update' );
 			delete_option( 'slack_notif_theme_update' );
 			delete_option( 'slack_notif_plugin_update' );
@@ -101,7 +114,7 @@ if ( ! class_exists( wpSlack ) ) {
 			delete_option( 'slack_notif_plugins_version' );
 
 			// Delte custom post types settings.
-			foreach( $this->postTypes as $postType ) {
+			foreach ( $this->postTypes as $postType ) {
 
 				delete_option( 'slack_notif_new_' . $postType->name );
 
@@ -122,6 +135,7 @@ if ( ! class_exists( wpSlack ) ) {
 			register_setting( 'dorzki-slack', 'slack_channel_name' );
 			register_setting( 'dorzki-slack', 'slack_bot_username' );
 			register_setting( 'dorzki-slack', 'slack_bot_image' );
+			register_setting( 'dorzki-slack', 'slack_notice_connectivity' );
 			register_setting( 'dorzki-slack', 'slack_notif_core_update' );
 			register_setting( 'dorzki-slack', 'slack_notif_theme_update' );
 			register_setting( 'dorzki-slack', 'slack_notif_plugin_update' );
@@ -145,7 +159,7 @@ if ( ! class_exists( wpSlack ) ) {
 		 */
 		public function plugin_translate() {
 
-			load_plugin_textdomain( 'dorzki-slack', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+			load_plugin_textdomain( 'dorzki-notifications-to-slack', false, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/' );
 
 		}
 
@@ -158,7 +172,7 @@ if ( ! class_exists( wpSlack ) ) {
 		 */
 		public function plugin_menu() {
 
-			add_options_page( __( 'Slack Notifications', 'dorzki-slack' ), __( 'Slack Notifications Integration', 'dorzki-slack' ), 'manage_options', 'slack_notifications', array( &$this, 'plugin_settings_page' ) );
+			add_options_page( __( 'Slack Notifications', 'dorzki-notifications-to-slack' ), __( 'Slack Notifications Integration', 'dorzki-notifications-to-slack' ), 'manage_options', 'slack_notifications', array( &$this, 'plugin_settings_page' ) );
 
 		}
 
@@ -174,7 +188,7 @@ if ( ! class_exists( wpSlack ) ) {
 			global $postTypes;
 
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( __( 'Oops... It\'s seems like you don\'t meet the required level of permissions', 'dorzki-slack' ) );
+				wp_die( esc_html__( 'Oops... It\'s seems like you don\'t meet the required level of permissions', 'dorzki-notifications-to-slack' ) );
 			}
 
 			$postTypes = $this->postTypes;
@@ -192,20 +206,21 @@ if ( ! class_exists( wpSlack ) ) {
 		 */
 		public function plugin_register_assets() {
 
-			wp_register_script( 'dorzki-slack-media-upload', PLUGIN_ROOT_URL . 'assets/js/admin-scripts.js' );
+			wp_register_script( 'dorzki-slack-scripts', PLUGIN_ROOT_URL . 'assets/js/admin-scripts.js' );
 			wp_register_style( 'dorzki-slack-settings-css', PLUGIN_ROOT_URL . 'assets/css/admin-styles.css' );
 
-			if ( get_current_screen()->id == 'settings_page_slack_notifications' ) {
+			if ( get_current_screen()->id === 'settings_page_slack_notifications' ) {
 
 				wp_enqueue_script( 'jquery' );
 				wp_enqueue_script( 'thickbox' );
 				wp_enqueue_script( 'media_upload' );
-				wp_enqueue_script( 'dorzki-slack-media-upload' );
 
 				wp_enqueue_style( 'thickbox' );
 				wp_enqueue_style( 'dorzki-slack-settings-css' );
 
 			}
+
+			wp_enqueue_script( 'dorzki-slack-scripts' );
 
 		}
 
@@ -221,48 +236,46 @@ if ( ! class_exists( wpSlack ) ) {
 			$notifs = $this->notifs;
 
 			// Get the selected user notifications.
-			$core_update = get_option( 'slack_notif_core_update' );
-			$theme_update = get_option( 'slack_notif_theme_update' );
-			$plugin_update = get_option( 'slack_notif_plugin_update' );
-			$new_post = get_option( 'slack_notif_new_post' );
-			$new_page = get_option( 'slack_notif_new_page' );
-			$new_comment = get_option( 'slack_notif_new_comment' );
-			$new_user = get_option( 'slack_notif_new_user' );
-			$admin_logged = get_option( 'slack_notif_admin_logged' );
+			$core_update   = intval( get_option( 'slack_notif_core_update' ) );
+			$theme_update  = intval( get_option( 'slack_notif_theme_update' ) );
+			$plugin_update = intval( get_option( 'slack_notif_plugin_update' ) );
+			$new_post      = intval( get_option( 'slack_notif_new_post' ) );
+			$new_page      = intval( get_option( 'slack_notif_new_page' ) );
+			$new_comment   = intval( get_option( 'slack_notif_new_comment' ) );
+			$new_user      = intval( get_option( 'slack_notif_new_user' ) );
+			$admin_logged  = intval( get_option( 'slack_notif_admin_logged' ) );
 
-
-
-			// Register Hooks
-			if ( $core_update == 1 ) {
-				add_action( 'slack_notif_check_versions', array( &$notifs, 'coreUpdateNotif' ) );
+			// Register Hooks.
+			if ( 1 === $core_update ) {
+				add_action( 'slack_notif_check_versions', array( &$notifs, 'core_update_notif' ) );
 			}
 
-			if ( $theme_update == 1 ) {
-				add_action( 'slack_notif_check_versions', array( &$notifs, 'themeUpdateNotif' ) );
+			if ( 1 === $theme_update ) {
+				add_action( 'slack_notif_check_versions', array( &$notifs, 'theme_update_notif' ) );
 			}
 
-			if ( $plugin_update == 1 ) {
-				add_action( 'slack_notif_check_versions', array( &$notifs, 'pluginUpdateNotif' ) );
+			if ( 1 === $plugin_update ) {
+				add_action( 'slack_notif_check_versions', array( &$notifs, 'plugin_update_notif' ) );
 			}
 
-			if ( $new_post == 1 ) {
-				add_action( 'publish_post', array( &$notifs, 'postPublishNotif' ), 10, 2 );
+			if ( 1 === $new_post ) {
+				add_action( 'publish_post', array( &$notifs, 'post_publish_notif' ), 10, 2 );
 			}
 
-			if ( $new_page == 1 ) {
-				add_action( 'publish_page', array( &$notifs, 'pagePublishNotif' ), 10, 2 );
+			if ( 1 === $new_page ) {
+				add_action( 'publish_page', array( &$notifs, 'page_publish_notif' ), 10, 2 );
 			}
 
-			if ( $new_comment == 1 ) {
-				add_action( 'comment_post', array( &$notifs, 'commentAddedNotif' ), 10, 2 );
+			if ( 1 === $new_comment ) {
+				add_action( 'comment_post', array( &$notifs, 'comment_added_notif' ), 10, 2 );
 			}
 
-			if ( $new_user == 1 ) {
-				add_action( 'user_register', array( &$notifs, 'userRegisteredNotif' ), 10, 1 );
+			if ( 1 === $new_user ) {
+				add_action( 'user_register', array( &$notifs, 'user_registered_notif' ), 10, 1 );
 			}
 
-			if ( $admin_logged == 1 ) {
-				add_action( 'wp_login', array( &$notifs, 'adminLoggedInNotif' ), 10, 2 );
+			if ( 1 === $admin_logged ) {
+				add_action( 'wp_login', array( &$notifs, 'admin_logged_in_notif' ), 10, 2 );
 			}
 
 		}
@@ -279,7 +292,7 @@ if ( ! class_exists( wpSlack ) ) {
 			// Retrieve custom post types.
 			$this->postTypes = get_post_types( array(
 				'public' => true,
-				'_builtin' => false
+				'_builtin' => false,
 				), 'objects' );
 
 			add_action( 'admin_init', array( &$this, 'register_post_types_settings' ) );
@@ -295,7 +308,7 @@ if ( ! class_exists( wpSlack ) ) {
 		 */
 		public function register_post_types_settings() {
 
-			foreach( $this->postTypes as $postType ) {
+			foreach ( $this->postTypes as $postType ) {
 
 				register_setting( 'dorzki-slack', 'slack_notif_new_' . $postType->name );
 
@@ -309,7 +322,7 @@ if ( ! class_exists( wpSlack ) ) {
 
 		/**
 		 * Register custom post types notifications hooks.
-		 * 
+		 *
 		 * @since   1.0.1
 		 */
 		public function register_post_types_notifs_hooks() {
@@ -317,19 +330,62 @@ if ( ! class_exists( wpSlack ) ) {
 			$notifs = $this->notifs;
 
 			// Get selected settings for custom post types.
-			foreach( $this->postTypes as $postType ) {
+			foreach ( $this->postTypes as $postType ) {
 
-				if ( get_option( 'slack_notif_new_' . $postType->name ) == 1 ) {
+				if ( intval( get_option( 'slack_notif_new_' . $postType->name ) ) === 1 ) {
 
-					if ( has_action( 'publish_' . $postType->name, array( &$notifs, 'cptPublishNotif' ) ) === false ) {
-						add_action( 'publish_' . $postType->name, array( &$notifs, 'cptPublishNotif' ), 10, 2 );
+					if ( has_action( 'publish_' . $postType->name, array( &$notifs, 'cpt_publish_notif' ) ) === false ) {
+						add_action( 'publish_' . $postType->name, array( &$notifs, 'cpt_publish_notif' ), 10, 2 );
 					}
-
 				}
-
 			}
 
 		}
+
+
+
+		/**
+		 * Display admin notice if there was an error with the webhook connection.
+		 * 
+		 * @since 1.0.5
+		 */
+		public function notice_error_connectivity() {
+
+			echo '<div class="error notice dorzki-slack-notice is-dismissible">';
+    	echo '	<p>' . sprintf( __( 'There seem to be an error with the <a href="%s">webhook configuration</a>, please try again.', 'dorzki-notifications-to-slack' ), admin_url( 'options-general.php?page=slack_notifications' ) ) . '</p>';
+			echo '</div>';
+
+		}
+
+
+
+		/**
+		 * Dismiss requested admin notice.
+		 *
+		 * @since 1.0.5
+		 */
+		public function dismiss_admin_notices() {
+
+			update_option( 'slack_notice_connectivity', 0 );
+
+		}
+
+
+
+		/**
+		 * Test integration by sending a test notification.
+		 * 
+		 * @since 1.0.5
+		 */
+		public function test_integration() {
+
+			$response = $this->notifs->send_test_message();
+
+			echo json_encode( array( 'success' => $response ) );
+			die();
+
+		}
+
 	}
 
 }

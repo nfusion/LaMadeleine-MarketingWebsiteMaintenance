@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WP Awesome FAQ
-Plugin URI: http://jeweltheme.com/product/wp-awesome-faq-pro/
+Plugin URI: https://jeweltheme.com/product/wordpress-faq-plugin/
 Description: Accordion based Awesome WordPress FAQ Plugin
-Version: 4.0.0
+Version: 4.0.2
 Author: Liton Arefin
-Author URI: http://www.jeweltheme.com
+Author URI: https://jeweltheme.com
 License: GPL2
 http://www.gnu.org/licenses/gpl-2.0.html
 */
