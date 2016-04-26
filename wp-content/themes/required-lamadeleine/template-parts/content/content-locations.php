@@ -87,7 +87,7 @@ $(document).ready(function(){
             });
             //end pod fetch
             ?>
-            <?php if (!empty($item) && !empty($item['latitude'] && $item['longitude'])) : ?>
+            <?php if ( !empty($item) && !empty($item['latitude']) && !empty($item['longitude']) ) : ?>
 
                 var Latlng = new google.maps.LatLng( <?php echo $item['latitude'] .','.  $item['longitude'] ?>);
 
@@ -104,7 +104,7 @@ $(document).ready(function(){
                         title: '<?php echo addslashes($item['title']); ?>',
                         icon: displayIcon,
                     });
-                    marker_<?php echo $item['id'] ?>.info = new google.maps.InfoWindow({ content: '<b>'+ '<?php echo addslashes($item['title']); ?>'+':</b>' });
+                    marker_<?php echo $item['id'] ?>.info = new google.maps.InfoWindow({ content: '<b>'+ '<?php echo addslashes($item['title']); ?>'+':</b>'});
                     
                     google.maps.event.addListener(marker_<?php echo $item['id'] ?>, 'click', function() {
                         //console.log('click listener fired');
@@ -134,7 +134,7 @@ $(document).ready(function(){
             <?php endif; ?>
                    
         <?php } // end while ?>
-
+                <?php if(empty($base)) $base = ''; ?>
 
                 mcOptions = {styles: [{
                     height: 53,
