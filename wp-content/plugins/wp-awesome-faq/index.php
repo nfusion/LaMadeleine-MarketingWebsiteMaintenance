@@ -3,12 +3,18 @@
 Plugin Name: WP Awesome FAQ
 Plugin URI: https://jeweltheme.com/product/wordpress-faq-plugin/
 Description: Accordion based Awesome WordPress FAQ Plugin
-Version: 4.0.2
+Version: 4.0.4
 Author: Liton Arefin
 Author URI: https://jeweltheme.com
 License: GPL2
 http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+define('WP_AWESOME_FAQ_VERSION', '4.0.4');
+$plugin_wp_awesome_faq = plugin_basename(__FILE__);
+define('WP_AWESOME_FAQ_FILE', __FILE__);
+define('WP_AWESOME_FAQ_DIR', WP_PLUGIN_DIR.'/'.basename(dirname(WP_AWESOME_FAQ_FILE)));
+define('WP_AWESOME_FAQ_PRO_URL', 'https://jeweltheme.com/product/wordpress-faq-plugin/');
 
 //Custom FAQ Post Type 
 function jeweltheme_wp_awesome_faq_post_type() {
@@ -215,8 +221,19 @@ function jeweltheme_wp_awesome_faq_ignore() {
     }
 }
 
+add_filter("plugin_action_links_$plugin_wp_awesome_faq", 'wp_awesome_faq_plugin_action_links');
+// Add settings link on plugin page
+function wp_awesome_faq_plugin_action_links($links) {
+    
+    if(!defined('WP_FAQ_PREMIUM')){
+         $links[] = '<a href="'.WP_AWESOME_FAQ_PRO_URL.'" style="color:#fff; padding:3px 10px; background: red;" target="_blank">'._x('Upgrade', 'Plugin action link label.', 'jeweltheme').'</a>';
+    }
 
-
+    $settings_link = '<a href="edit.php?post_type=faq&page=faq_options">Settings</a>'; 
+    array_unshift($links, $settings_link); 
+    
+    return $links;
+}
 
 
 // Manage Category Shortcode Columns
@@ -323,38 +340,191 @@ function jeweltheme_wp_awesome_faq_settings_store() {
 }
 
 function jeweltheme_wp_awesome_faq_setting_functions(){
+    wp_awesome_faq_page_header('WP Awesome FAQ Dashboard');
     ?>
+    <style>
+        .welcome-panel{
+            margin: 0px;
+            padding: 10px;
+        }
+
+        input[type="text"], textarea {
+            width: 70%;
+        }
+
+        .form-table label{
+            font-weight:bold;
+        }
+
+        .exp{
+            font-size:12px;
+        }
+    </style>
+
         <div class="wrap">
-       <div class="icon32" id="icon-options-general"><br></div>
-        <h2><?php echo esc_html__('WP Awesome FAQ Settings', 'jeweltheme');?></h2>
-     <p><?php echo esc_html__('Settings sections for WP Awesome FAQ Options', 'jeweltheme');?></p>
-       <form method="post" action="options.php">
+            <div class="icon32" id="icon-options-general"><br></div>
+                <p><?php echo esc_html__('Settings sections for WP Awesome FAQ Options', 'jeweltheme');?></p>
+                
+                <form action="options.php" method="post" enctype="multipart/form-data">
 
-            <?php settings_fields('jeweltheme_faq_settings'); ?>
-                <table class="form-table">       
+                    <?php settings_fields('jeweltheme_faq_settings'); ?>
 
-            <tr><th>
-                <label><?php echo esc_html__('Collapse/Toggle Options', 'jeweltheme');?></label>
-            </th><td>
-            <?php 
-                $options = get_option('jeweltheme_faq_collapse');
-                $items = array("Close All", "Open All","1st Item Open");
-                echo "<select id='layout' name='jeweltheme_faq_collapse[layout]'>";
-                foreach($items as $item) {
-                    $selected = ($options['layout']==$item) ? 'selected="selected"' : '';
-                    echo "<option value='$item' $selected>$item</option>";
-                }
-                echo "</select>";
-            ?>
-            </td></tr>
+                    <table class="form-table">       
+                        <tr>
+                            <th>
+                                <label><?php echo esc_html__('Collapse/Toggle Options', 'jeweltheme');?></label>
+                            </th>
+                            <td>
+                                <?php 
+                                    $options = get_option('jeweltheme_faq_collapse');
+                                    $items = array("Close All", "Open All","1st Item Open");
+                                    echo "<select id='layout' name='jeweltheme_faq_collapse[layout]'>";
+                                    foreach($items as $item) {
+                                        $selected = ($options['layout']==$item) ? 'selected="selected"' : '';
+                                        echo "<option value='$item' $selected>$item</option>";
+                                    }
+                                    echo "</select>";
+                                ?>
+                            </td>
+                        </tr>
 
+                        <tr>
+                            <td>
+                                <input type="submit" class="button-primary" value="Save Changes" />
+                            </td>
+                        </tr>
 
-        <tr><td>
-            <input type="submit" class="button-primary" value="Save Changes" />
-        </td></tr>
+                    </table>
+                </form>
 
-            </table>
-        </form>
+                <?php echo wp_awesome_faq_page_footer(); ?>
+        </div>
 
 <?php
+}
+
+
+// Is the premium features there ?
+if(file_exists(WP_AWESOME_FAQ_DIR.'/premium.php')){
+    
+    // Include the file
+    include_once(WP_AWESOME_FAQ_DIR.'/premium.php');
+    
+    wp_awesome_faq_init();
+    
+}
+
+
+
+
+
+// The WP Awesome FAQ Admin Options Page
+function wp_awesome_faq_page_header($title = 'WP Awesome FAQ'){?>
+<style>
+.lz-right-ul{
+    padding-left: 10px !important;
+}
+
+.lz-right-ul li{
+    list-style: circle !important;
+}
+</style>
+<?php
+    
+    echo '<div style="margin: 10px 20px 0 2px;">    
+            <div class="metabox-holder columns-2">
+                <div class="postbox-container"> 
+                <div id="top-sortables" class="meta-box-sortables ui-sortable">
+                    
+                    <table cellpadding="2" cellspacing="1" width="100%" class="fixed" border="0">
+                        <tr>
+                            <td valign="top"><h3>'.$title.'</h3></td>
+                        </tr>
+                    </table>
+                    <hr />
+                    
+                    <!--Main Table-->
+                    <table cellpadding="8" cellspacing="1" width="100%" class="fixed">
+                    <tr>
+                    <td valign="top">';
+
+}
+// The WP_AWESOME_FAQ Theme footer
+function wp_awesome_faq_page_footer(){
+    
+    echo '</td>
+    <td width="200" valign="top" id="wp-awesome-right-bar">';
+    
+    if(!defined('WP_FAQ_PREMIUM')){
+        
+        echo '
+        <div class="postbox" style="min-width:0px !important;">
+            <h2 class="hndle ui-sortable-handle">
+                <span>Premium Version</span>
+            </h2>
+            <div class="inside">
+                <i>Upgrade to the premium version and get the following features </i>:<br>
+                <ul class="lz-right-ul">
+                    <li>Fully Responsive</li>
+                    <li>Easy Customization</li>
+                    <li>Powerful Shortcode Generator</li>
+                    <li>Categorized FAQ\'s</li>
+                    <li>Nested FAQ</li>
+                    <li>Post Format: aside, video, audio, gallery, image, standard etc </li>
+                    <li>Title, Content Text and Background Color Change Option</li>
+                    <li>And many more ...</li>
+                </ul>
+                <center><a class="button button-primary" href="https://jeweltheme.com/product/wordpress-faq-plugin/">Upgrade Now</a></center>
+            </div>
+        </div>';
+        
+    }else{
+    
+        echo '
+        <div class="postbox" style="min-width:0px !important;">
+            <h2 class="hndle ui-sortable-handle">
+                <span>Recommedations</span>
+            </h2>
+            <div class="inside">
+                <i>We recommed that you enable atleast one of the following security features</i>:<br>
+                <ul class="lz-right-ul">
+                    <li>Rename Login Page</li>
+                    <li>Login Challenge Question</li>
+                    <li>reCAPTCHA</li>
+                    <li>Two Factor Auth - Email</li>
+                    <li>Two Factor Auth - App</li>
+                </ul>
+            </div>
+        </div>';
+    }
+    
+    echo '</td>
+    </tr>
+    </table>
+    <br />
+    <div style="width:45%;background:#FFF;padding:15px; margin:auto">
+        <b>Let your friends know that you have "WP Awesome FAQ" Looks on your website :</b>
+        <form method="get" action="http://twitter.com/intent/tweet" id="tweet" onsubmit="return dotweet(this);">
+            <textarea name="text" cols="45" row="3" style="resize:none;">I just Installed "WP Awesome FAQ" on my @WordPress site and my "Frequently Asked Questions" are looking Great. Thanks @jwthemeltd</textarea>
+            &nbsp; &nbsp; <input type="submit" value="Tweet!" class="button button-primary" onsubmit="return false;" id="twitter-btn" style="margin-top:20px;"/>
+        </form>
+        
+    </div>
+    <br />
+    
+    <script>
+    function dotweet(ele){
+        window.open(jQuery("#"+ele.id).attr("action")+"?"+jQuery("#"+ele.id).serialize(), "_blank", "scrollbars=no, menubar=no, height=400, width=500, resizable=yes, toolbar=no, status=no");
+        return false;
+    }
+    </script>
+    
+    <hr />
+    <a href="https://jeweltheme.com/product/wordpress-faq-plugin" target="_blank">WP Awesome FAQ</a> v'.WP_AWESOME_FAQ_VERSION.'. You can report any bugs <a href="https://wordpress.org/plugins/wp-awesome-faq/" target="_blank">here</a>.
+
+</div>  
+</div>
+</div>
+</div>';
+
 }
