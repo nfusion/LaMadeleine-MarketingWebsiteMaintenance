@@ -1,6 +1,6 @@
 <?php wp_enqueue_script('myscript', '/wp-content/plugins/lam/js/jQuery.cookie.js'); ?>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAItXxPNPzrIbkyON8OBGVNZX1ctAojfc8"> </script>
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.3/src/markerclusterer.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/markerclusterer.js"></script>
 
 <script type="text/javascript">
 
