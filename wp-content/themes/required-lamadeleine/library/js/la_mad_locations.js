@@ -315,7 +315,8 @@ var LaMadLocations = {
         },
 
         geoErr: function(error){
-            alert('Pardon, we were unable to determine your location.\nPlease check your network connection and browser settings.\nMerci.');   
+            //console.log(error);
+            alert('Desolé, we were unable to determine your location.\n\nPlease check your network connection and browser settings, or search for a location by zip code.\n\nMerci!');   
             setTimeout(function(){
                 $('body').addClass('location-error');
                 // Remove any loading states, reset UI
